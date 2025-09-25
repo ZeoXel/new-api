@@ -82,11 +82,21 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 	if req.HasImage() {
 		action = constant.TaskActionGenerate
 		if info.ChannelType == constant.ChannelTypeVidu {
-			// vidu 增加 首尾帧生视频和参考图生视频
-			if len(req.Images) == 2 {
+			// vidu 支持显式指定生成模式
+			switch req.Mode {
+			case "firstTail":
 				action = constant.TaskActionFirstTailGenerate
-			} else if len(req.Images) > 2 {
+			case "reference":
 				action = constant.TaskActionReferenceGenerate
+			case "img2video":
+				action = constant.TaskActionGenerate
+			default:
+				// 保持向后兼容：根据图片数量自动判断模式
+				if len(req.Images) == 2 {
+					action = constant.TaskActionFirstTailGenerate
+				} else if len(req.Images) > 2 {
+					action = constant.TaskActionReferenceGenerate
+				}
 			}
 		}
 	}

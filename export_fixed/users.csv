@@ -1,0 +1,2 @@
+id,username,password,display_name,role,status,email,github_id,wechat_id,lark_id,access_token,quota,used_quota,request_count,group_name,affiliation,inviter_id,created_time,deleted_at
+1,zeo,$2a$10$19r6oJ5uK4Uxiit4mFcnXuHln5PBL5hXupVof3WbCQAVmkUDB8WLy,Root User,100,1,,,,,,84543688,15456312,33,default,,0,1758612807,

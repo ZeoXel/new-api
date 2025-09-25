@@ -1,14 +1,35 @@
+# IDE和编辑器
 .idea
 .vscode
-upload
-*.exe
-*.db
-build
-*.db-journal
-logs
-web/dist
-.env
-one-api
 .DS_Store
-tiktoken_cache
 .eslintcache
+
+# 构建产物
+*.exe
+build
+web/dist
+one-api
+
+# 数据库文件
+*.db
+*.db-journal
+
+# 日志和缓存
+logs
+tiktoken_cache
+
+# 配置文件（保留.env用于模板）
+# .env
+
+# 上传文件
+upload
+
+# 部署备份和临时文件
+deployment_backup/
+*.backup.*
+cleanup_before_deploy.sh
+*.tmp
+
+# Railway配置（自动生成）
+railway.json
+.railway/
