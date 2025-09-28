@@ -16,7 +16,15 @@ const (
 	VertexKeyTypeAPIKey VertexKeyType = "api_key"
 )
 
+type CozeAuthType string
+
+const (
+	CozeAuthTypePAT   CozeAuthType = "pat"
+	CozeAuthTypeOAuth CozeAuthType = "oauth"
+)
+
 type ChannelOtherSettings struct {
 	AzureResponsesVersion string        `json:"azure_responses_version,omitempty"`
 	VertexKeyType         VertexKeyType `json:"vertex_key_type,omitempty"` // "json" or "api_key"
+	CozeAuthType          CozeAuthType  `json:"coze_auth_type,omitempty"`  // "pat" or "oauth"
 }

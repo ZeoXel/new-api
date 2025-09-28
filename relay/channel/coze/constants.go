@@ -25,6 +25,7 @@ var ModelList = []string{
 	"Doubao-1.5-pro-32k",
 	"Doubao-1.5-thinking-pro",
 	"Doubao-1.5-pro-256k",
+	"coze-workflow",
 }
 
 var ChannelName = "coze"

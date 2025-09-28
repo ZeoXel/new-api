@@ -85,7 +85,7 @@ const REGION_EXAMPLE = {
   'claude-3-5-sonnet-20240620': 'europe-west1',
 };
 
-function type2secretPrompt(type) {
+function type2secretPrompt(type, cozeAuthType) {
   // inputs.type === 15 ? '按照如下格式输入：APIKey|SecretKey' : (inputs.type === 18 ? '按照如下格式输入：APPID|APISecret|APIKey' : '请输入渠道对应的鉴权密钥')
   switch (type) {
     case 15:
@@ -98,6 +98,11 @@ function type2secretPrompt(type) {
       return '按照如下格式输入：AppId|SecretId|SecretKey';
     case 33:
       return '按照如下格式输入：Ak|Sk|Region';
+    case 49:
+      if (cozeAuthType === 'oauth') {
+        return '请输入OAuth配置JSON，格式: {"app_id":"xxx","key_id":"xxx","private_key":"xxx","aud":"api.coze.com"}';
+      }
+      return '请输入Coze PAT令牌';
     case 50:
       return '按照如下格式输入: AccessKey|SecretKey, 如果上游是New API，则直接输ApiKey';
     case 51:
@@ -144,6 +149,8 @@ const EditChannelModal = (props) => {
     settings: '',
     // 仅 Vertex: 密钥格式（存入 settings.vertex_key_type）
     vertex_key_type: 'json',
+    // 仅 Coze: 认证方式（存入 settings.coze_auth_type）
+    coze_auth_type: 'pat',
   };
   const [batch, setBatch] = useState(false);
   const [multiToSingle, setMultiToSingle] = useState(false);
@@ -413,15 +420,19 @@ const EditChannelModal = (props) => {
             parsedSettings.azure_responses_version || '';
           // 读取 Vertex 密钥格式
           data.vertex_key_type = parsedSettings.vertex_key_type || 'json';
+          // 读取 Coze 认证方式
+          data.coze_auth_type = parsedSettings.coze_auth_type || 'pat';
         } catch (error) {
           console.error('解析其他设置失败:', error);
           data.azure_responses_version = '';
           data.region = '';
           data.vertex_key_type = 'json';
+          data.coze_auth_type = 'pat';
         }
       } else {
         // 兼容历史数据：老渠道没有 settings 时，默认按 json 展示
         data.vertex_key_type = 'json';
+        data.coze_auth_type = 'pat';
       }
 
       setInputs(data);
@@ -858,8 +869,9 @@ const EditChannelModal = (props) => {
     delete localInputs.pass_through_body_enabled;
     delete localInputs.system_prompt;
     delete localInputs.system_prompt_override;
-    // 顶层的 vertex_key_type 不应发送给后端
+    // 顶层的 vertex_key_type 和 coze_auth_type 不应发送给后端
     delete localInputs.vertex_key_type;
+    delete localInputs.coze_auth_type;
 
     let res;
     localInputs.auto_ban = localInputs.auto_ban ? 1 : 0;
@@ -1433,7 +1445,7 @@ const EditChannelModal = (props) => {
                               ? t('密钥（编辑模式下，保存的密钥不会显示）')
                               : t('密钥')
                           }
-                          placeholder={t(type2secretPrompt(inputs.type))}
+                          placeholder={t(type2secretPrompt(inputs.type, inputs.coze_auth_type))}
                           rules={
                             isEdit
                               ? []
@@ -1575,13 +1587,34 @@ const EditChannelModal = (props) => {
                   )}
 
                   {inputs.type === 49 && (
-                    <Form.Input
-                      field='other'
-                      label={t('智能体ID')}
-                      placeholder={'请输入智能体ID，例如：7342866812345'}
-                      onChange={(value) => handleInputChange('other', value)}
-                      showClear
-                    />
+                    <>
+                      <Form.Select
+                        field='coze_auth_type'
+                        label={t('认证方式')}
+                        placeholder={t('请选择认证方式')}
+                        optionList={[
+                          { label: 'PAT (个人访问令牌)', value: 'pat' },
+                          { label: 'OAuth JWT', value: 'oauth' },
+                        ]}
+                        style={{ width: '100%' }}
+                        value={inputs.coze_auth_type || 'pat'}
+                        onChange={(value) => {
+                          handleChannelOtherSettingsChange('coze_auth_type', value);
+                        }}
+                        extraText={
+                          (inputs.coze_auth_type || 'pat') === 'oauth'
+                            ? t('OAuth JWT 模式需要配置完整的 JSON 格式密钥')
+                            : t('PAT 模式使用个人访问令牌')
+                        }
+                      />
+                      <Form.Input
+                        field='other'
+                        label={t('智能体ID')}
+                        placeholder={'请输入智能体ID，例如：7342866812345'}
+                        onChange={(value) => handleInputChange('other', value)}
+                        showClear
+                      />
+                    </>
                   )}
 
                   {inputs.type === 1 && (

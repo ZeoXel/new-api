@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"one-api/common"
 	"one-api/dto"
 	"one-api/relay/channel"
-	"one-api/relay/common"
+	relaycommon "one-api/relay/common"
 	"one-api/types"
 	"time"
 
@@ -18,41 +19,47 @@ import (
 type Adaptor struct {
 }
 
-func (a *Adaptor) ConvertGeminiRequest(*gin.Context, *common.RelayInfo, *dto.GeminiChatRequest) (any, error) {
+func (a *Adaptor) ConvertGeminiRequest(*gin.Context, *relaycommon.RelayInfo, *dto.GeminiChatRequest) (any, error) {
 	//TODO implement me
 	return nil, errors.New("not implemented")
 }
 
 // ConvertAudioRequest implements channel.Adaptor.
-func (a *Adaptor) ConvertAudioRequest(c *gin.Context, info *common.RelayInfo, request dto.AudioRequest) (io.Reader, error) {
+func (a *Adaptor) ConvertAudioRequest(c *gin.Context, info *relaycommon.RelayInfo, request dto.AudioRequest) (io.Reader, error) {
 	return nil, errors.New("not implemented")
 }
 
 // ConvertClaudeRequest implements channel.Adaptor.
-func (a *Adaptor) ConvertClaudeRequest(c *gin.Context, info *common.RelayInfo, request *dto.ClaudeRequest) (any, error) {
+func (a *Adaptor) ConvertClaudeRequest(c *gin.Context, info *relaycommon.RelayInfo, request *dto.ClaudeRequest) (any, error) {
 	return nil, errors.New("not implemented")
 }
 
 // ConvertEmbeddingRequest implements channel.Adaptor.
-func (a *Adaptor) ConvertEmbeddingRequest(c *gin.Context, info *common.RelayInfo, request dto.EmbeddingRequest) (any, error) {
+func (a *Adaptor) ConvertEmbeddingRequest(c *gin.Context, info *relaycommon.RelayInfo, request dto.EmbeddingRequest) (any, error) {
 	return nil, errors.New("not implemented")
 }
 
 // ConvertImageRequest implements channel.Adaptor.
-func (a *Adaptor) ConvertImageRequest(c *gin.Context, info *common.RelayInfo, request dto.ImageRequest) (any, error) {
+func (a *Adaptor) ConvertImageRequest(c *gin.Context, info *relaycommon.RelayInfo, request dto.ImageRequest) (any, error) {
 	return nil, errors.New("not implemented")
 }
 
 // ConvertOpenAIRequest implements channel.Adaptor.
-func (a *Adaptor) ConvertOpenAIRequest(c *gin.Context, info *common.RelayInfo, request *dto.GeneralOpenAIRequest) (any, error) {
+func (a *Adaptor) ConvertOpenAIRequest(c *gin.Context, info *relaycommon.RelayInfo, request *dto.GeneralOpenAIRequest) (any, error) {
 	if request == nil {
 		return nil, errors.New("request is nil")
 	}
+
+	// Check if this is a workflow request
+	if request.Model == "coze-workflow" || request.WorkflowId != "" {
+		return convertCozeWorkflowRequest(c, *request), nil
+	}
+
 	return convertCozeChatRequest(c, *request), nil
 }
 
 // ConvertOpenAIResponsesRequest implements channel.Adaptor.
-func (a *Adaptor) ConvertOpenAIResponsesRequest(c *gin.Context, info *common.RelayInfo, request dto.OpenAIResponsesRequest) (any, error) {
+func (a *Adaptor) ConvertOpenAIResponsesRequest(c *gin.Context, info *relaycommon.RelayInfo, request dto.OpenAIResponsesRequest) (any, error) {
 	return nil, errors.New("not implemented")
 }
 
@@ -62,7 +69,15 @@ func (a *Adaptor) ConvertRerankRequest(c *gin.Context, relayMode int, request dt
 }
 
 // DoRequest implements channel.Adaptor.
-func (a *Adaptor) DoRequest(c *gin.Context, info *common.RelayInfo, requestBody io.Reader) (any, error) {
+func (a *Adaptor) DoRequest(c *gin.Context, info *relaycommon.RelayInfo, requestBody io.Reader) (any, error) {
+	common.SysLog(fmt.Sprintf("DoRequest called with OriginModelName: %s", info.OriginModelName))
+
+	// Check if this is a workflow request
+	if info.OriginModelName == "coze-workflow" {
+		common.SysLog("Processing as Coze workflow request")
+		return channel.DoApiRequest(a, c, info, requestBody)
+	}
+
 	if info.IsStream {
 		return channel.DoApiRequest(a, c, info, requestBody)
 	}
@@ -101,7 +116,18 @@ func (a *Adaptor) DoRequest(c *gin.Context, info *common.RelayInfo, requestBody 
 }
 
 // DoResponse implements channel.Adaptor.
-func (a *Adaptor) DoResponse(c *gin.Context, resp *http.Response, info *common.RelayInfo) (usage any, err *types.NewAPIError) {
+func (a *Adaptor) DoResponse(c *gin.Context, resp *http.Response, info *relaycommon.RelayInfo) (usage any, err *types.NewAPIError) {
+	// Check if this is a workflow request
+	common.SysLog(fmt.Sprintf("DoResponse called with OriginModelName: %s", info.OriginModelName))
+	if info.OriginModelName == "coze-workflow" {
+		if info.IsStream {
+			usage, err = cozeWorkflowStreamHandler(c, info, resp)
+		} else {
+			usage, err = cozeWorkflowHandler(c, info, resp)
+		}
+		return
+	}
+
 	if info.IsStream {
 		usage, err = cozeChatStreamHandler(c, info, resp)
 	} else {
@@ -121,18 +147,57 @@ func (a *Adaptor) GetModelList() []string {
 }
 
 // GetRequestURL implements channel.Adaptor.
-func (a *Adaptor) GetRequestURL(info *common.RelayInfo) (string, error) {
+func (a *Adaptor) GetRequestURL(info *relaycommon.RelayInfo) (string, error) {
+	// Check if this is a workflow request
+	if info.OriginModelName == "coze-workflow" {
+		// Get workflow_id from request
+		if req, ok := info.Request.(*dto.GeneralOpenAIRequest); ok {
+			workflowId := req.WorkflowId
+			if workflowId == "" {
+				return "", fmt.Errorf("workflow_id is required for coze-workflow model")
+			}
+			if info.IsStream {
+				return fmt.Sprintf("%s/v1/workflow/stream_run", info.ChannelBaseUrl), nil
+			} else {
+				return fmt.Sprintf("%s/v1/workflow/run", info.ChannelBaseUrl), nil
+			}
+		}
+		return "", fmt.Errorf("invalid request type for workflow")
+	}
+
 	return fmt.Sprintf("%s/v3/chat", info.ChannelBaseUrl), nil
 }
 
 // Init implements channel.Adaptor.
-func (a *Adaptor) Init(info *common.RelayInfo) {
+func (a *Adaptor) Init(info *relaycommon.RelayInfo) {
 
 }
 
 // SetupRequestHeader implements channel.Adaptor.
-func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Header, info *common.RelayInfo) error {
+func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Header, info *relaycommon.RelayInfo) error {
 	channel.SetupApiRequestHeader(info, c, req)
-	req.Set("Authorization", "Bearer "+info.ApiKey)
+
+	authType := info.ChannelOtherSettings.CozeAuthType
+	if authType == "" {
+		authType = "pat"
+	}
+
+	var token string
+	var err error
+
+	if authType == "oauth" {
+		oauthConfig, parseErr := ParseCozeOAuthConfig(info.ApiKey)
+		if parseErr != nil {
+			return fmt.Errorf("failed to parse OAuth config: %w", parseErr)
+		}
+		token, err = GetCozeAccessToken(info, oauthConfig)
+		if err != nil {
+			return fmt.Errorf("failed to get OAuth access token: %w", err)
+		}
+	} else {
+		token = info.ApiKey
+	}
+
+	req.Set("Authorization", "Bearer "+token)
 	return nil
 }

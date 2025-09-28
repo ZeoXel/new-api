@@ -75,6 +75,9 @@ type GeneralOpenAIRequest struct {
 	WebSearch json.RawMessage `json:"web_search,omitempty"`
 	// doubao,zhipu_v4
 	THINKING json.RawMessage `json:"thinking,omitempty"`
+	// coze workflow
+	WorkflowParameters map[string]interface{} `json:"workflow_parameters,omitempty"`
+	WorkflowId         string                 `json:"workflow_id,omitempty"`
 }
 
 func (r *GeneralOpenAIRequest) GetTokenCountMeta() *types.TokenCountMeta {
