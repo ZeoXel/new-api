@@ -47,6 +47,8 @@ func expandEnvVar(value string) string {
 		envVarName := strings.TrimPrefix(value, "$")
 		envValue := os.Getenv(envVarName)
 		if envValue != "" {
+			// 处理转义的换行符，将 \n 转换为实际的换行符
+			envValue = strings.ReplaceAll(envValue, "\\n", "\n")
 			return envValue
 		}
 	}
