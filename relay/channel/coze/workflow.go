@@ -88,7 +88,7 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 	} else {
 		// 处理成功响应
 		var content string
-		if len(workflowResponse.Data) > 0 && workflowResponse.Data[0] != nil && workflowResponse.Data[0].Output != "" {
+		if len(workflowResponse.Data) > 0 && workflowResponse.Data[0].Output != "" {
 			content = workflowResponse.Data[0].Output
 		} else if workflowResponse.Msg != "" {
 			content = workflowResponse.Msg
@@ -115,7 +115,7 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 	}
 
 	// 尝试从响应中解析 usage 信息
-	if workflowResponse.Code == 0 && len(workflowResponse.Data) > 0 && workflowResponse.Data[0] != nil && workflowResponse.Data[0].Usage != nil {
+	if workflowResponse.Code == 0 && len(workflowResponse.Data) > 0 && workflowResponse.Data[0].Usage != nil {
 		usage.PromptTokens = workflowResponse.Data[0].Usage.InputCount
 		usage.CompletionTokens = workflowResponse.Data[0].Usage.OutputCount
 		usage.TotalTokens = workflowResponse.Data[0].Usage.TokenCount
