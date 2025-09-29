@@ -106,8 +106,9 @@ func GetCozeAccessToken(info *relaycommon.RelayInfo, oauthConfig *CozeOAuthConfi
 		return "", fmt.Errorf("failed to exchange JWT for access token: %w", err)
 	}
 
-	if err := cozeOAuthCache.SetDefault(cacheKey, newToken); err {
-		return newToken, nil
+	if err := cozeOAuthCache.SetDefault(cacheKey, newToken); err != nil {
+		// 即使缓存设置失败，也返回token，只记录错误
+		common.SysLog(fmt.Sprintf("设置OAuth token缓存失败: %v", err))
 	}
 
 	return newToken, nil
