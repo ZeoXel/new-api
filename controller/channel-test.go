@@ -351,6 +351,21 @@ func buildTestRequest(model string) *dto.GeneralOpenAIRequest {
 		Stream: false,
 	}
 
+	// 检查是否为 coze-workflow 模型
+	if model == "coze-workflow" {
+		testRequest.Model = model
+		testRequest.WorkflowId = "7342866812345" // 使用测试工作流ID
+		testRequest.WorkflowParameters = map[string]interface{}{
+			"param1": "test value",
+		}
+		testMessage := dto.Message{
+			Role:    "user",
+			Content: "hi",
+		}
+		testRequest.Messages = append(testRequest.Messages, testMessage)
+		return testRequest
+	}
+
 	// 先判断是否为 Embedding 模型
 	if strings.Contains(strings.ToLower(model), "embedding") || // 其他 embedding 模型
 		strings.HasPrefix(model, "m3e") || // m3e 系列模型
