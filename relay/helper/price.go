@@ -44,6 +44,11 @@ func HandleGroupRatio(ctx *gin.Context, relayInfo *relaycommon.RelayInfo) types.
 func ModelPriceHelper(c *gin.Context, info *relaycommon.RelayInfo, promptTokens int, meta *types.TokenCountMeta) (types.PriceData, error) {
 	modelPrice, usePrice := ratio_setting.GetModelPrice(info.OriginModelName, false)
 
+	// 修复: 当modelPrice为-1时(未配置价格),应使用ratio模式
+	if modelPrice == -1 {
+		usePrice = false
+	}
+
 	groupRatioInfo := HandleGroupRatio(c, info)
 
 	var preConsumedQuota int
