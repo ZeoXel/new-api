@@ -144,6 +144,7 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 }
 
 func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http.Response) (*dto.Usage, *types.NewAPIError) {
+	common.SysLog("=== cozeWorkflowStreamHandler called ===")
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Split(bufio.ScanLines)
 	helper.SetEventStreamHeaders(c)
@@ -155,6 +156,7 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 
 	for scanner.Scan() {
 		data := scanner.Text()
+		common.SysLog(fmt.Sprintf("[Stream] 原始行: %s", data))
 		if !strings.HasPrefix(data, "data:") {
 			continue
 		}
@@ -163,14 +165,17 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 		data = strings.TrimSpace(data)
 
 		if data == "" || data == "[DONE]" {
+			common.SysLog(fmt.Sprintf("[Stream] 收到结束信号: %s", data))
 			continue
 		}
 
 		var event CozeWorkflowEvent
 		err := json.Unmarshal([]byte(data), &event)
 		if err != nil {
+			common.SysLog(fmt.Sprintf("[Stream] 解析事件失败: %s, 数据: %s", err.Error(), data))
 			continue
 		}
+		common.SysLog(fmt.Sprintf("[Stream] 解析到事件: %s", event.Event))
 
 		switch event.Event {
 		case "Message":
@@ -210,11 +215,20 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 			}
 
 		case "Done":
+			common.SysLog(fmt.Sprintf("[Stream] Done事件数据: %s", string(event.Data)))
 			var doneData CozeWorkflowDoneData
 			if err := json.Unmarshal(event.Data, &doneData); err == nil && doneData.Usage != nil {
 				usage.PromptTokens = doneData.Usage.InputCount
 				usage.CompletionTokens = doneData.Usage.OutputCount
 				usage.TotalTokens = doneData.Usage.TokenCount
+				common.SysLog(fmt.Sprintf("[Stream] 解析到Token: input=%d, output=%d, total=%d",
+					usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
+			} else {
+				if err != nil {
+					common.SysLog(fmt.Sprintf("[Stream] 解析Done数据失败: %s", err.Error()))
+				} else {
+					common.SysLog("[Stream] Done数据中没有usage信息")
+				}
 			}
 			finishReason := "stop"
 			stopResponse := helper.GenerateStopResponse(id, common.GetTimestamp(), info.UpstreamModelName, finishReason)
@@ -235,5 +249,7 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 	helper.Done(c)
 	service.CloseResponseBodyGracefully(resp)
 
+	common.SysLog(fmt.Sprintf("[Stream] 最终返回usage: input=%d, output=%d, total=%d",
+		usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
 	return usage, nil
 }
