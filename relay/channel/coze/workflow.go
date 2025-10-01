@@ -144,7 +144,7 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 }
 
 func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http.Response) (*dto.Usage, *types.NewAPIError) {
-	common.SysLog("=== cozeWorkflowStreamHandler called ===")
+	common.SysLog("=== cozeWorkflowStreamHandler (标准SSE格式) ===")
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Split(bufio.ScanLines)
 	helper.SetEventStreamHeaders(c)
@@ -154,91 +154,122 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 	var lastNodeTitle string
 	var usage = &dto.Usage{}
 
+	var currentEvent string
+	var currentData string
+
 	for scanner.Scan() {
-		data := scanner.Text()
-		common.SysLog(fmt.Sprintf("[Stream] 原始行: %s", data))
-		if !strings.HasPrefix(data, "data:") {
+		line := scanner.Text()
+		common.SysLog(fmt.Sprintf("[SSE] 原始行: %s", line))
+
+		if strings.HasPrefix(line, "event:") {
+			currentEvent = strings.TrimSpace(strings.TrimPrefix(line, "event:"))
+			common.SysLog(fmt.Sprintf("[SSE] 事件类型: %s", currentEvent))
 			continue
 		}
 
-		data = strings.TrimPrefix(data, "data:")
-		data = strings.TrimSpace(data)
-
-		if data == "" || data == "[DONE]" {
-			common.SysLog(fmt.Sprintf("[Stream] 收到结束信号: %s", data))
+		if strings.HasPrefix(line, "data:") {
+			currentData = strings.TrimSpace(strings.TrimPrefix(line, "data:"))
 			continue
 		}
 
-		var event CozeWorkflowEvent
-		err := json.Unmarshal([]byte(data), &event)
-		if err != nil {
-			common.SysLog(fmt.Sprintf("[Stream] 解析事件失败: %s, 数据: %s", err.Error(), data))
-			continue
-		}
-		common.SysLog(fmt.Sprintf("[Stream] 解析到事件: %s", event.Event))
+		if line == "" && currentEvent != "" && currentData != "" {
+			common.SysLog(fmt.Sprintf("[SSE] 处理事件 %s", currentEvent))
 
-		switch event.Event {
-		case "Message":
-			var messageData CozeWorkflowMessageData
-			if err := json.Unmarshal(event.Message, &messageData); err == nil {
-				if messageData.NodeTitle != "" && messageData.NodeTitle != lastNodeTitle {
-					lastNodeTitle = messageData.NodeTitle
-				}
+			switch currentEvent {
+			case "Message":
+				var messageData map[string]interface{}
+				if err := json.Unmarshal([]byte(currentData), &messageData); err == nil {
+					content, _ := messageData["content"].(string)
+					nodeTitle, _ := messageData["node_title"].(string)
 
-				if messageData.Content != "" {
-					fullContent.WriteString(messageData.Content)
-
-					streamResponse := dto.ChatCompletionsStreamResponse{
-						Id:      id,
-						Object:  "chat.completion.chunk",
-						Created: common.GetTimestamp(),
-						Model:   info.UpstreamModelName,
+					if nodeTitle != "" && nodeTitle != lastNodeTitle {
+						lastNodeTitle = nodeTitle
 					}
 
-					choice := dto.ChatCompletionsStreamResponseChoice{
-						Index: 0,
+					if usageMap, ok := messageData["usage"].(map[string]interface{}); ok {
+						if inputCount, ok := usageMap["input_count"].(float64); ok {
+							usage.PromptTokens = int(inputCount)
+						}
+						if outputCount, ok := usageMap["output_count"].(float64); ok {
+							usage.CompletionTokens = int(outputCount)
+						}
+						if tokenCount, ok := usageMap["token_count"].(float64); ok {
+							usage.TotalTokens = int(tokenCount)
+						}
+						common.SysLog(fmt.Sprintf("[SSE] 从Message提取Token: input=%d, output=%d, total=%d",
+							usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
 					}
-					choice.Delta.SetContentString(messageData.Content)
-					streamResponse.Choices = []dto.ChatCompletionsStreamResponseChoice{choice}
 
-					helper.ObjectData(c, streamResponse)
-				}
-			}
+					if content != "" {
+						fullContent.WriteString(content)
 
-		case "Error":
-			var errorData CozeWorkflowErrorData
-			if err := json.Unmarshal(event.Data, &errorData); err == nil {
-				return nil, types.NewError(
-					errors.New(errorData.ErrorMessage),
-					types.ErrorCodeBadResponse,
-				)
-			}
+						streamResponse := dto.ChatCompletionsStreamResponse{
+							Id:      id,
+							Object:  "chat.completion.chunk",
+							Created: common.GetTimestamp(),
+							Model:   info.UpstreamModelName,
+						}
 
-		case "Done":
-			common.SysLog(fmt.Sprintf("[Stream] Done事件数据: %s", string(event.Data)))
-			var doneData CozeWorkflowDoneData
-			if err := json.Unmarshal(event.Data, &doneData); err == nil && doneData.Usage != nil {
-				usage.PromptTokens = doneData.Usage.InputCount
-				usage.CompletionTokens = doneData.Usage.OutputCount
-				usage.TotalTokens = doneData.Usage.TokenCount
-				common.SysLog(fmt.Sprintf("[Stream] 解析到Token: input=%d, output=%d, total=%d",
-					usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
-			} else {
-				if err != nil {
-					common.SysLog(fmt.Sprintf("[Stream] 解析Done数据失败: %s", err.Error()))
+						choice := dto.ChatCompletionsStreamResponseChoice{
+							Index: 0,
+						}
+						choice.Delta.SetContentString(content)
+						streamResponse.Choices = []dto.ChatCompletionsStreamResponseChoice{choice}
+
+						helper.ObjectData(c, streamResponse)
+						if len(content) > 50 {
+							common.SysLog(fmt.Sprintf("[SSE] 转发内容: %s...", content[:50]))
+						} else {
+							common.SysLog(fmt.Sprintf("[SSE] 转发内容: %s", content))
+						}
+					}
 				} else {
-					common.SysLog("[Stream] Done数据中没有usage信息")
+					common.SysLog(fmt.Sprintf("[SSE] 解析Message失败: %s", err.Error()))
 				}
+
+			case "Done":
+				if usage.TotalTokens == 0 {
+					var doneData map[string]interface{}
+					if err := json.Unmarshal([]byte(currentData), &doneData); err == nil {
+						if usageMap, ok := doneData["usage"].(map[string]interface{}); ok {
+							if inputCount, ok := usageMap["input_count"].(float64); ok {
+								usage.PromptTokens = int(inputCount)
+							}
+							if outputCount, ok := usageMap["output_count"].(float64); ok {
+								usage.CompletionTokens = int(outputCount)
+							}
+							if tokenCount, ok := usageMap["token_count"].(float64); ok {
+								usage.TotalTokens = int(tokenCount)
+							}
+							common.SysLog(fmt.Sprintf("[SSE] 从Done提取Token: input=%d, output=%d, total=%d",
+								usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
+						}
+					}
+				}
+
+				finishReason := "stop"
+				stopResponse := helper.GenerateStopResponse(id, common.GetTimestamp(), info.UpstreamModelName, finishReason)
+				helper.ObjectData(c, stopResponse)
+
+			case "Error":
+				var errorData map[string]interface{}
+				if err := json.Unmarshal([]byte(currentData), &errorData); err == nil {
+					errorMsg, _ := errorData["error_message"].(string)
+					if errorMsg == "" {
+						errorMsg = "Workflow execution error"
+					}
+					return nil, types.NewError(errors.New(errorMsg), types.ErrorCodeBadResponse)
+				}
+
+			case "Interrupt":
+				common.SysLog("[SSE] 收到Interrupt事件")
+
+			default:
+				common.SysLog(fmt.Sprintf("[SSE] 未知事件类型: %s", currentEvent))
 			}
-			finishReason := "stop"
-			stopResponse := helper.GenerateStopResponse(id, common.GetTimestamp(), info.UpstreamModelName, finishReason)
-			helper.ObjectData(c, stopResponse)
 
-		case "Interrupt":
-			continue
-
-		default:
-			continue
+			currentEvent = ""
+			currentData = ""
 		}
 	}
 
@@ -249,7 +280,7 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 	helper.Done(c)
 	service.CloseResponseBodyGracefully(resp)
 
-	common.SysLog(fmt.Sprintf("[Stream] 最终返回usage: input=%d, output=%d, total=%d",
+	common.SysLog(fmt.Sprintf("[SSE] 最终返回usage: input=%d, output=%d, total=%d",
 		usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
 	return usage, nil
 }
