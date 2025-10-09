@@ -141,6 +141,9 @@ func Path2RelaySuno(method, path string) int {
 		relayMode = RelayModeSunoFetchByID
 	} else if strings.Contains(path, "/submit/") {
 		relayMode = RelayModeSunoSubmit
+	} else if strings.HasSuffix(path, "/generate") {
+		// 🔄 旧API兼容：/suno/generate 映射为提交模式
+		relayMode = RelayModeSunoSubmit
 	}
 	return relayMode
 }

@@ -160,8 +160,14 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 			relayMode == relayconstant.RelayModeSunoFetchByID {
 			shouldSelectChannel = false
 		} else {
-			modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, c.Param("action"))
-			modelRequest.Model = modelName
+			// 兼容旧API: /suno/generate 路径
+			if strings.HasSuffix(c.Request.URL.Path, "/generate") {
+				modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
+				modelRequest.Model = modelName
+			} else {
+				modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, c.Param("action"))
+				modelRequest.Model = modelName
+			}
 		}
 		c.Set("platform", string(constant.TaskPlatformSuno))
 		c.Set("relay_mode", relayMode)

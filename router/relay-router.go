@@ -180,6 +180,12 @@ func SetRelayRouter(router *gin.Engine) {
 		relaySunoRouter.POST("/submit/:action", controller.RelayTask)
 		relaySunoRouter.POST("/fetch", controller.RelayTask)
 		relaySunoRouter.GET("/fetch/:id", controller.RelayTask)
+		// 🔄 旧API兼容路由 - /suno/generate 映射到 /suno/submit/music
+		relaySunoRouter.POST("/generate", func(c *gin.Context) {
+			// 设置action参数为music，这样后续处理逻辑可以正确识别
+			c.Params = append(c.Params, gin.Param{Key: "action", Value: "music"})
+			controller.RelayTask(c)
+		})
 	}
 
 	relayGeminiRouter := router.Group("/v1beta")
