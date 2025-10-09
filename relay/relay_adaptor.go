@@ -124,6 +124,8 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 	}
 	if channelType, err := strconv.ParseInt(string(platform), 10, 64); err == nil {
 		switch channelType {
+		case constant.ChannelTypeSunoAPI:
+			return &suno.TaskAdaptor{}
 		case constant.ChannelTypeKling:
 			return &kling.TaskAdaptor{}
 		case constant.ChannelTypeJimeng:
