@@ -66,8 +66,9 @@ func AudioRequestConvert() gin.HandlerFunc {
 			c.Request.Body = io.NopCloser(bytes.NewBuffer(newBody))
 			c.Request.ContentLength = int64(len(newBody))
 
-			// 修改内部路由路径
+			// 修改内部路由路径并设置action参数供Suno TaskAdaptor使用
 			c.Request.URL.Path = "/suno/submit/music"
+			c.Params = append(c.Params, gin.Param{Key: "action", Value: "music"})
 		}
 
 		// GET /v1/audio/generations/:id -> /suno/fetch/:id
