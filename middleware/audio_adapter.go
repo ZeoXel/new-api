@@ -13,15 +13,15 @@ import (
 // AudioRequestConvert converts OpenAI-style /v1/audio/generations requests to Suno format
 // OpenAI format -> Suno format:
 // {
-//   "model": "suno-v3.5",
+//   "model": "suno_music",
 //   "prompt": "一首欢快的音乐"
 // }
 // ->
 // {
-//   "model": "suno_music",    // 保留原始model用于渠道分发
 //   "prompt": "一首欢快的音乐",
-//   "mv": "chirp-v3-5"
+//   "mv": "chirp-v3-0"
 // }
+// 注意：model字段不会被传递给Suno API，因为渠道分发已在此中间件之前完成
 func AudioRequestConvert() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		// 只处理 /v1/audio/generations 路径
@@ -50,9 +50,9 @@ func AudioRequestConvert() gin.HandlerFunc {
 				return
 			}
 
-			// 转换为Suno格式（保留原始model字段用于渠道分发）
+			// 转换为Suno格式（不保留model字段，因为Suno API不需要）
+			// 渠道分发已在此中间件之前完成
 			sunoReq := map[string]interface{}{
-				"model":  openAIReq.Model, // 保留原始模型名称，用于渠道分发
 				"prompt": openAIReq.Prompt,
 				"mv":     mapModelToVersion(openAIReq.Model),
 			}

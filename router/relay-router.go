@@ -164,9 +164,11 @@ func SetRelayRouter(router *gin.Engine) {
 	// 🆕 音频生成 OpenAI 兼容路由（映射到 Suno）
 	// POST /v1/audio/generations -> /suno/submit/music
 	// GET  /v1/audio/generations/:id -> /suno/fetch/:id
+	// 中间件顺序：TokenAuth -> Distribute -> AudioRequestConvert
+	// Distribute根据原始model字段选择渠道，AudioRequestConvert转换为Suno格式
 	relayAudioRouter := router.Group("/v1")
-	relayAudioRouter.Use(middleware.AudioRequestConvert()) // 🆕 格式转换中间件
-	relayAudioRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	relayAudioRouter.Use(middleware.TokenAuth(), middleware.Distribute()) // 先认证和分发
+	relayAudioRouter.Use(middleware.AudioRequestConvert()) // 后格式转换
 	{
 		relayAudioRouter.POST("/audio/generations", controller.RelayTask)
 		relayAudioRouter.GET("/audio/generations/:id", controller.RelayTask)
