@@ -215,18 +215,31 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 	}
 	if strings.HasPrefix(c.Request.URL.Path, "/v1/audio") {
 		relayMode := relayconstant.RelayModeAudioSpeech
-		if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/speech") {
+		if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/generations") {
+			// OpenAI兼容的音频生成路由（映射到Suno）
+			// 从请求体读取model字段，该字段用于渠道分发
+			// AudioRequestConvert中间件会在后续将其转换为Suno格式
+			relayMode = relayconstant.RelayModeSunoSubmit
+			if c.Request.Method == "GET" {
+				relayMode = relayconstant.RelayModeSunoFetchByID
+				shouldSelectChannel = false
+			}
+			c.Set("platform", string(constant.TaskPlatformSuno))
+			c.Set("relay_mode", relayMode)
+		} else if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/speech") {
 			modelRequest.Model = common.GetStringIfEmpty(modelRequest.Model, "tts-1")
+			c.Set("relay_mode", relayMode)
 		} else if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/translations") {
 			modelRequest.Model = common.GetStringIfEmpty(modelRequest.Model, c.PostForm("model"))
 			modelRequest.Model = common.GetStringIfEmpty(modelRequest.Model, "whisper-1")
 			relayMode = relayconstant.RelayModeAudioTranslation
+			c.Set("relay_mode", relayMode)
 		} else if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/transcriptions") {
 			modelRequest.Model = common.GetStringIfEmpty(modelRequest.Model, c.PostForm("model"))
 			modelRequest.Model = common.GetStringIfEmpty(modelRequest.Model, "whisper-1")
 			relayMode = relayconstant.RelayModeAudioTranscription
+			c.Set("relay_mode", relayMode)
 		}
-		c.Set("relay_mode", relayMode)
 	}
 	if strings.HasPrefix(c.Request.URL.Path, "/pg/chat/completions") {
 		// playground chat completions
