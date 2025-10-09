@@ -161,6 +161,17 @@ func SetRelayRouter(router *gin.Engine) {
 	registerMjRouterGroup(relayMjModeRouter)
 	//relayMjRouter.Use()
 
+	// 🆕 音频生成 OpenAI 兼容路由（映射到 Suno）
+	// POST /v1/audio/generations -> /suno/submit/music
+	// GET  /v1/audio/generations/:id -> /suno/fetch/:id
+	relayAudioRouter := router.Group("/v1")
+	relayAudioRouter.Use(middleware.AudioRequestConvert()) // 🆕 格式转换中间件
+	relayAudioRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayAudioRouter.POST("/audio/generations", controller.RelayTask)
+		relayAudioRouter.GET("/audio/generations/:id", controller.RelayTask)
+	}
+
 	relaySunoRouter := router.Group("/suno")
 	relaySunoRouter.Use(middleware.TokenAuth(), middleware.Distribute())
 	{

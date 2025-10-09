@@ -213,6 +213,32 @@ func TokenAuth() func(c *gin.Context) {
 				c.Request.Header.Set("Authorization", "Bearer "+xGoogKey)
 			}
 		}
+
+		// 🆕 支持应用端自定义认证头（x-ptoken, x-vtoken, x-ctoken）
+		// 优先级：Authorization > x-ptoken > x-vtoken > x-ctoken
+		authHeader := c.Request.Header.Get("Authorization")
+		if authHeader == "" {
+			// 尝试从 x-ptoken 读取（应用端用户token，优先级最高）
+			xPtoken := c.Request.Header.Get("x-ptoken")
+			if xPtoken != "" {
+				c.Request.Header.Set("Authorization", "Bearer "+xPtoken)
+			}
+		}
+		if authHeader == "" && c.Request.Header.Get("Authorization") == "" {
+			// 尝试从 x-vtoken 读取（应用端验证token）
+			xVtoken := c.Request.Header.Get("x-vtoken")
+			if xVtoken != "" {
+				c.Request.Header.Set("Authorization", "Bearer "+xVtoken)
+			}
+		}
+		if authHeader == "" && c.Request.Header.Get("Authorization") == "" {
+			// 尝试从 x-ctoken 读取（应用端其他token）
+			xCtoken := c.Request.Header.Get("x-ctoken")
+			if xCtoken != "" {
+				c.Request.Header.Set("Authorization", "Bearer "+xCtoken)
+			}
+		}
+
 		key := c.Request.Header.Get("Authorization")
 		parts := make([]string, 0)
 		key = strings.TrimPrefix(key, "Bearer ")
