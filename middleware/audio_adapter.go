@@ -18,6 +18,7 @@ import (
 // }
 // ->
 // {
+//   "model": "suno_music",    // 保留原始model用于渠道分发
 //   "prompt": "一首欢快的音乐",
 //   "mv": "chirp-v3-5"
 // }
@@ -35,7 +36,7 @@ func AudioRequestConvert() gin.HandlerFunc {
 
 			// 解析OpenAI格式请求
 			var openAIReq struct {
-				Model  string `json:"model"`  // "suno-v3.5", "suno-v3-0", etc.
+				Model  string `json:"model"`  // "suno_music", "suno-v3.5", "suno-v3-0", etc.
 				Prompt string `json:"prompt"` // 音乐描述
 			}
 			if err := json.Unmarshal(bodyBytes, &openAIReq); err != nil {
@@ -49,8 +50,9 @@ func AudioRequestConvert() gin.HandlerFunc {
 				return
 			}
 
-			// 转换为Suno格式
+			// 转换为Suno格式（保留原始model字段用于渠道分发）
 			sunoReq := map[string]interface{}{
+				"model":  openAIReq.Model, // 保留原始模型名称，用于渠道分发
 				"prompt": openAIReq.Prompt,
 				"mv":     mapModelToVersion(openAIReq.Model),
 			}
