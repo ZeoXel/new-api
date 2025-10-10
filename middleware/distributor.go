@@ -126,7 +126,17 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 	var modelRequest ModelRequest
 	shouldSelectChannel := true
 	var err error
-	if strings.Contains(c.Request.URL.Path, "/mj/") {
+
+	// 🆕 优先处理直接 /generate 路径（应用端直接调用）
+	// 必须在解析请求体之前设置模型，避免 "未指定模型名称" 错误
+	if (c.Request.URL.Path == "/generate" || c.Request.URL.Path == "/generate/description-mode") &&
+		c.Request.Method == http.MethodPost {
+		// 从router层获取的platform确认这是Suno请求
+		if platform, ok := c.Get("platform"); ok && platform == string(constant.TaskPlatformSuno) {
+			modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
+			modelRequest.Model = modelName
+		}
+	} else if strings.Contains(c.Request.URL.Path, "/mj/") {
 		relayMode := relayconstant.Path2RelayModeMidjourney(c.Request.URL.Path)
 		if relayMode == relayconstant.RelayModeMidjourneyTaskFetch ||
 			relayMode == relayconstant.RelayModeMidjourneyTaskFetchByCondition ||
@@ -254,20 +264,6 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 			return nil, false, errors.New("无效的请求, " + err.Error())
 		}
 		common.SetContextKey(c, constant.ContextKeyTokenGroup, modelRequest.Group)
-	}
-
-	// 🆕 直接 /generate 或 /generate/description-mode 路径（应用端直接调用）
-	// 必须放在最后检查，避免与其他路径冲突
-	if (c.Request.URL.Path == "/generate" || c.Request.URL.Path == "/generate/description-mode") &&
-		c.Request.Method == http.MethodPost {
-		// 从router层获取的platform和relay_mode
-		if platform, ok := c.Get("platform"); ok && platform == string(constant.TaskPlatformSuno) {
-			// 如果model还未设置，则设置为suno_music
-			if modelRequest.Model == "" {
-				modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
-				modelRequest.Model = modelName
-			}
-		}
 	}
 
 	return &modelRequest, shouldSelectChannel, nil
