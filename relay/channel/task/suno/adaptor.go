@@ -120,7 +120,9 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, info *rela
 		return
 	}
 
-	return sunoResponse.Data, nil, nil
+	// 初始化taskData为空数组，避免前端map报错
+	emptyData := []byte("[]")
+	return sunoResponse.Data, emptyData, nil
 }
 
 func (a *TaskAdaptor) GetModelList() []string {
