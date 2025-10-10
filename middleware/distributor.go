@@ -131,11 +131,12 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 	// 必须在解析请求体之前设置模型，避免 "未指定模型名称" 错误
 	if (c.Request.URL.Path == "/generate" || c.Request.URL.Path == "/generate/description-mode") &&
 		c.Request.Method == http.MethodPost {
-		// 从router层获取的platform确认这是Suno请求
-		if platform, ok := c.Get("platform"); ok && platform == string(constant.TaskPlatformSuno) {
-			modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
-			modelRequest.Model = modelName
-		}
+		// 直接设置为Suno音乐模型
+		modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
+		modelRequest.Model = modelName
+		// 设置platform和relay_mode
+		c.Set("platform", string(constant.TaskPlatformSuno))
+		c.Set("relay_mode", relayconstant.RelayModeSunoSubmit)
 	} else if strings.Contains(c.Request.URL.Path, "/mj/") {
 		relayMode := relayconstant.Path2RelayModeMidjourney(c.Request.URL.Path)
 		if relayMode == relayconstant.RelayModeMidjourneyTaskFetch ||
