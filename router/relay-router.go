@@ -188,6 +188,8 @@ func SetRelayRouter(router *gin.Engine) {
 			c.Params = append(c.Params, gin.Param{Key: "action", Value: "music"})
 			controller.RelayTask(c)
 		})
+		// 🆕 添加 /feed/{ids} 路由支持前端轮询查询
+		directGenerateRouter.GET("/feed/:id", controller.RelayTask)
 	}
 
 	relaySunoRouter := router.Group("/suno")

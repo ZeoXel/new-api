@@ -245,24 +245,55 @@ func sunoFetchRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *dto.Ta
 }
 
 func sunoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *dto.TaskError) {
-	taskId := c.Param("id")
+	taskIds := c.Param("id")
 	userId := c.GetInt("id")
 
-	originTask, exist, err := model.GetByTaskId(userId, taskId)
-	if err != nil {
-		taskResp = service.TaskErrorWrapper(err, "get_task_failed", http.StatusInternalServerError)
-		return
-	}
-	if !exist {
-		taskResp = service.TaskErrorWrapperLocal(errors.New("task_not_exist"), "task_not_exist", http.StatusBadRequest)
-		return
-	}
+	// 支持逗号分隔的多个ID: /feed/id1,id2,id3
+	ids := strings.Split(taskIds, ",")
 
-	respBody, err = json.Marshal(dto.TaskResponse[any]{
-		Code: "success",
-		Data: TaskModel2Dto(originTask),
-	})
-	return
+	if len(ids) == 1 {
+		// 单个ID查询
+		originTask, exist, err := model.GetByTaskId(userId, ids[0])
+		if err != nil {
+			taskResp = service.TaskErrorWrapper(err, "get_task_failed", http.StatusInternalServerError)
+			return
+		}
+		if !exist {
+			taskResp = service.TaskErrorWrapperLocal(errors.New("task_not_exist"), "task_not_exist", http.StatusBadRequest)
+			return
+		}
+
+		// 将任务数据转换为 Suno clip 格式
+		clip := taskToClip(originTask)
+
+		// 返回 clips 数组格式（即使只有一个）
+		clipsResponse := []interface{}{clip}
+		respBody, err = json.Marshal(clipsResponse)
+		return
+	} else {
+		// 多个ID查询
+		var taskIDs []interface{}
+		for _, id := range ids {
+			taskIDs = append(taskIDs, id)
+		}
+
+		taskModels, err := model.GetByTaskIds(userId, taskIDs)
+		if err != nil {
+			taskResp = service.TaskErrorWrapper(err, "get_tasks_failed", http.StatusInternalServerError)
+			return
+		}
+
+		// 将任务数据转换为 Suno clips 格式
+		clips := make([]interface{}, 0, len(taskModels))
+		for _, task := range taskModels {
+			clip := taskToClip(task)
+			clips = append(clips, clip)
+		}
+
+		// 返回 clips 数组格式
+		respBody, err = json.Marshal(clips)
+		return
+	}
 }
 
 func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *dto.TaskError) {
@@ -383,4 +414,65 @@ func TaskModel2Dto(task *model.Task) *dto.TaskDto {
 		Progress:   task.Progress,
 		Data:       task.Data,
 	}
+}
+
+// taskToClip 将内部任务模型转换为 Suno clip 格式
+func taskToClip(task *model.Task) map[string]interface{} {
+	// 解析存储的 Data 字段
+	var dataMap map[string]interface{}
+	if task.Data != nil {
+		_ = json.Unmarshal(task.Data, &dataMap)
+	}
+	if dataMap == nil {
+		dataMap = make(map[string]interface{})
+	}
+
+	// 映射状态: submitted/streaming/complete/error
+	status := "submitted"
+	switch task.Status {
+	case "submitted", "queueing":
+		status = "submitted"
+	case "processing":
+		status = "streaming"
+	case "success":
+		status = "complete"
+	case "failed":
+		status = "error"
+	default:
+		status = string(task.Status)
+	}
+
+	// 构建 Suno clip 对象
+	clip := map[string]interface{}{
+		"id":                  task.TaskID,
+		"status":              status,
+		"video_url":           dataMap["video_url"],
+		"audio_url":           dataMap["audio_url"],
+		"image_url":           dataMap["image_url"],
+		"image_large_url":     dataMap["image_large_url"],
+		"is_video_pending":    false,
+		"major_model_version": dataMap["major_model_version"],
+		"model_name":          dataMap["model_name"],
+		"title":               dataMap["title"],
+		"metadata":            dataMap["metadata"],
+		"created_at":          dataMap["created_at"],
+		"is_liked":            false,
+		"is_trashed":          false,
+		"is_public":           false,
+	}
+
+	// 如果失败,添加错误信息
+	if task.FailReason != "" {
+		if metadata, ok := clip["metadata"].(map[string]interface{}); ok {
+			metadata["error_message"] = task.FailReason
+			metadata["error_type"] = "generation_error"
+		} else {
+			clip["metadata"] = map[string]interface{}{
+				"error_message": task.FailReason,
+				"error_type":    "generation_error",
+			}
+		}
+	}
+
+	return clip
 }

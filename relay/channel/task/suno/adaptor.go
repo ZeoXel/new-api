@@ -97,32 +97,131 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, info *rela
 		taskErr = service.TaskErrorWrapper(err, "read_response_body_failed", http.StatusInternalServerError)
 		return
 	}
-	var sunoResponse dto.TaskResponse[string]
-	err = json.Unmarshal(responseBody, &sunoResponse)
+
+	// 首先尝试解析为原始响应,检测格式
+	var rawResponse map[string]interface{}
+	err = json.Unmarshal(responseBody, &rawResponse)
 	if err != nil {
 		taskErr = service.TaskErrorWrapper(err, "unmarshal_response_body_failed", http.StatusInternalServerError)
 		return
 	}
-	if !sunoResponse.IsSuccess() {
-		taskErr = service.TaskErrorWrapper(fmt.Errorf(sunoResponse.Message), sunoResponse.Code, http.StatusInternalServerError)
-		return
+
+	var finalResponse []byte
+
+	// 场景1: 如果响应已经包含 clips 字段(真实 Suno API 格式),直接透传
+	if clips, hasClips := rawResponse["clips"]; hasClips {
+		finalResponse = responseBody
+
+		// 提取第一个 clip 的 ID 作为任务 ID
+		if clipsArray, ok := clips.([]interface{}); ok && len(clipsArray) > 0 {
+			if firstClip, ok := clipsArray[0].(map[string]interface{}); ok {
+				if id, ok := firstClip["id"].(string); ok {
+					taskID = id
+				}
+			}
+		}
+	} else if _, hasCode := rawResponse["code"]; hasCode {
+		// 场景2: 如果是包装格式 {code, data, message} (Go Suno API)
+		var wrappedResponse dto.TaskResponse[json.RawMessage]
+		err = json.Unmarshal(responseBody, &wrappedResponse)
+		if err != nil {
+			taskErr = service.TaskErrorWrapper(err, "unmarshal_wrapped_response_failed", http.StatusInternalServerError)
+			return
+		}
+
+		// 检查是否成功
+		if !wrappedResponse.IsSuccess() {
+			taskErr = service.TaskErrorWrapper(fmt.Errorf(wrappedResponse.Message), wrappedResponse.Code, http.StatusInternalServerError)
+			return
+		}
+
+		// 检查 data 字段的类型
+		var dataObj map[string]interface{}
+		dataErr := json.Unmarshal(wrappedResponse.Data, &dataObj)
+
+		if dataErr == nil && dataObj["clips"] != nil {
+			// data 已经是 {clips: [...]} 格式,直接使用
+			finalResponse = wrappedResponse.Data
+
+			// 提取任务 ID
+			if clipsArray, ok := dataObj["clips"].([]interface{}); ok && len(clipsArray) > 0 {
+				if firstClip, ok := clipsArray[0].(map[string]interface{}); ok {
+					if id, ok := firstClip["id"].(string); ok {
+						taskID = id
+					}
+				}
+			}
+		} else {
+			// data 是简单的任务 ID 字符串,需要获取原始请求创建基础 clip 对象
+			var stringID string
+			if err := json.Unmarshal(wrappedResponse.Data, &stringID); err == nil {
+				taskID = stringID
+
+				// 从请求中获取信息来构建基础 clip 对象
+				sunoRequest, exists := c.Get("task_request")
+				var title, tags, prompt string
+				if exists {
+					if req, ok := sunoRequest.(*dto.SunoSubmitReq); ok {
+						title = req.Title
+						tags = req.Tags
+						prompt = req.Prompt
+					}
+				}
+
+				// 构建符合前端期望的 clips 响应
+				clipsResponse := map[string]interface{}{
+					"clips": []map[string]interface{}{
+						{
+							"id":                  stringID,
+							"status":              "submitted",
+							"title":               title,
+							"video_url":           "",
+							"audio_url":           "",
+							"image_url":           "",
+							"image_large_url":     "",
+							"is_video_pending":    false,
+							"major_model_version": "v4",
+							"model_name":          "chirp-bluejay",
+							"metadata": map[string]interface{}{
+								"tags":   tags,
+								"prompt": prompt,
+								"type":   "gen",
+							},
+							"created_at": time.Now().Format(time.RFC3339),
+						},
+					},
+				}
+
+				finalResponse, err = json.Marshal(clipsResponse)
+				if err != nil {
+					taskErr = service.TaskErrorWrapper(err, "marshal_clips_response_failed", http.StatusInternalServerError)
+					return
+				}
+			} else {
+				// 无法解析,返回原始响应
+				finalResponse = responseBody
+			}
+		}
+	} else {
+		// 场景3: 未知格式,直接透传
+		finalResponse = responseBody
 	}
 
+	// 设置响应头
 	for k, v := range resp.Header {
 		c.Writer.Header().Set(k, v[0])
 	}
 	c.Writer.Header().Set("Content-Type", "application/json")
 	c.Writer.WriteHeader(resp.StatusCode)
 
-	_, err = io.Copy(c.Writer, bytes.NewBuffer(responseBody))
+	// 写入响应
+	_, err = io.Copy(c.Writer, bytes.NewBuffer(finalResponse))
 	if err != nil {
 		taskErr = service.TaskErrorWrapper(err, "copy_response_body_failed", http.StatusInternalServerError)
 		return
 	}
 
-	// 初始化taskData为空数组，避免前端map报错
-	emptyData := []byte("[]")
-	return sunoResponse.Data, emptyData, nil
+	return taskID, finalResponse, nil
 }
 
 func (a *TaskAdaptor) GetModelList() []string {
