@@ -207,8 +207,12 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, info *rela
 		finalResponse = responseBody
 	}
 
-	// 设置响应头
+	// 设置响应头 (排除Content-Length,因为我们可能修改了响应体)
 	for k, v := range resp.Header {
+		// 跳过 Content-Length,让 Gin 自动设置
+		if k == "Content-Length" {
+			continue
+		}
 		c.Writer.Header().Set(k, v[0])
 	}
 	c.Writer.Header().Set("Content-Type", "application/json")
