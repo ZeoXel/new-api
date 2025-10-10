@@ -255,6 +255,21 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 		}
 		common.SetContextKey(c, constant.ContextKeyTokenGroup, modelRequest.Group)
 	}
+
+	// 🆕 直接 /generate 或 /generate/description-mode 路径（应用端直接调用）
+	// 必须放在最后检查，避免与其他路径冲突
+	if (c.Request.URL.Path == "/generate" || c.Request.URL.Path == "/generate/description-mode") &&
+		c.Request.Method == http.MethodPost {
+		// 从router层获取的platform和relay_mode
+		if platform, ok := c.Get("platform"); ok && platform == string(constant.TaskPlatformSuno) {
+			// 如果model还未设置，则设置为suno_music
+			if modelRequest.Model == "" {
+				modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
+				modelRequest.Model = modelName
+			}
+		}
+	}
+
 	return &modelRequest, shouldSelectChannel, nil
 }
 

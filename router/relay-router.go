@@ -174,6 +174,24 @@ func SetRelayRouter(router *gin.Engine) {
 		relayAudioRouter.GET("/audio/generations/:id", controller.RelayTask)
 	}
 
+	// 🆕 直接 /generate 路由 (应用端直接调用，无/suno前缀)
+	// 用于支持应用端直接发送 POST /generate 请求
+	directGenerateRouter := router.Group("")
+	directGenerateRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		directGenerateRouter.POST("/generate", func(c *gin.Context) {
+			// 设置platform和relay_mode，模拟 /suno/generate 的行为
+			c.Set("platform", string(constant.TaskPlatformSuno))
+			c.Params = append(c.Params, gin.Param{Key: "action", Value: "music"})
+			controller.RelayTask(c)
+		})
+		directGenerateRouter.POST("/generate/description-mode", func(c *gin.Context) {
+			c.Set("platform", string(constant.TaskPlatformSuno))
+			c.Params = append(c.Params, gin.Param{Key: "action", Value: "music"})
+			controller.RelayTask(c)
+		})
+	}
+
 	relaySunoRouter := router.Group("/suno")
 	relaySunoRouter.Use(middleware.TokenAuth(), middleware.Distribute())
 	{
