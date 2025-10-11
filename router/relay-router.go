@@ -221,9 +221,31 @@ func SetRelayRouter(router *gin.Engine) {
 		})
 	}
 
-	// 注意：Runway/Kling/Luma/Vidu 已有任务模式路由（video-router.go）
-	// 如需透传模式，请在对应路由组中按需添加具体路径
-	// 例如：relaySunoRouter.POST("/generate", controller.RelaySunoPassthrough)
+	// 注意：Kling 已在 video-router.go 中有路由，如需透传模式，请在 video-router.go 中修改
+
+	// 🆕 Vidu 透传模式路由
+	relayViduRouter := router.Group("/vidu")
+	relayViduRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		// 透传模式端点（按需添加具体路径）
+		relayViduRouter.Any("/*path", controller.RelayViduPassthrough)
+	}
+
+	// 🆕 Runway 透传模式路由
+	relayRunwayRouter := router.Group("/runway")
+	relayRunwayRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		// 透传模式端点（按需添加具体路径）
+		relayRunwayRouter.Any("/*path", controller.RelayRunwayPassthrough)
+	}
+
+	// 🆕 Luma 透传模式路由
+	relayLumaRouter := router.Group("/luma")
+	relayLumaRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		// 透传模式端点（按需添加具体路径）
+		relayLumaRouter.Any("/*path", controller.RelayLumaPassthrough)
+	}
 }
 
 func registerMjRouterGroup(relayMjRouter *gin.RouterGroup) {

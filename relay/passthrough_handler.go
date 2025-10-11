@@ -6,6 +6,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// 注意：RelaySunoPassthrough 定义在 suno_handler.go 中
+
 // RelayRunwayPassthrough Runway服务透传处理函数
 func RelayRunwayPassthrough(c *gin.Context) {
 	commonChannel.RelayPassthrough(c, "runway")
