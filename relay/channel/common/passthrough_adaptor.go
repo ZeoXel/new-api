@@ -70,7 +70,7 @@ func (a *PassthroughAdaptor) DoRequest(c *gin.Context, channelId int, channelKey
 }
 
 // DoResponse 处理响应，返回响应体和配额，但不发送响应
-func (a *PassthroughAdaptor) DoResponse(c *gin.Context, resp *http.Response, channelId int) (responseBody []byte, quota int, statusCode int, err error) {
+func (a *PassthroughAdaptor) DoResponse(c *gin.Context, resp *http.Response, channelId int, passthroughQuota int) (responseBody []byte, quota int, statusCode int, err error) {
 	defer resp.Body.Close()
 
 	// 读取响应体
@@ -79,17 +79,19 @@ func (a *PassthroughAdaptor) DoResponse(c *gin.Context, resp *http.Response, cha
 		return nil, 0, 0, fmt.Errorf("failed to read response body: %w", readErr)
 	}
 
-	// 计算配额（使用固定值，后续可从渠道配置读取）
-	quota = a.calculateQuota(body)
+	// 计算配额（从渠道配置读取）
+	quota = a.calculateQuota(body, passthroughQuota)
 
 	return body, quota, resp.StatusCode, nil
 }
 
 // calculateQuota 计算配额
-// 默认返回固定配额1000 tokens
-// TODO: 可以扩展为从渠道配置中读取自定义配额规则
-func (a *PassthroughAdaptor) calculateQuota(body []byte) int {
-	// 默认固定配额
+// 从渠道配置读取固定配额，未配置则默认1000 tokens
+func (a *PassthroughAdaptor) calculateQuota(body []byte, passthroughQuota int) int {
+	// 使用渠道配置的配额，如果为0则使用默认值1000
+	if passthroughQuota > 0 {
+		return passthroughQuota
+	}
 	return 1000
 }
 
@@ -160,8 +162,12 @@ func RelayPassthrough(c *gin.Context, serviceName string) {
 		return
 	}
 
+	// 获取渠道配置的透传配额
+	channelSettings := channel.GetSetting()
+	passthroughQuota := channelSettings.PassthroughQuota
+
 	// 处理响应，获取响应体、配额和状态码
-	responseBody, quota, statusCode, err := adaptor.DoResponse(c, resp, channelId)
+	responseBody, quota, statusCode, err := adaptor.DoResponse(c, resp, channelId, passthroughQuota)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, dto.TaskError{
 			Code:       "response_processing_failed",

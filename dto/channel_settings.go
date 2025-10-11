@@ -7,7 +7,9 @@ type ChannelSettings struct {
 	PassThroughBodyEnabled bool   `json:"pass_through_body_enabled,omitempty"`
 	SystemPrompt           string `json:"system_prompt,omitempty"`
 	SystemPromptOverride   bool   `json:"system_prompt_override,omitempty"`
-	SunoMode               string `json:"suno_mode,omitempty"` // "task" or "passthrough"
+	SunoMode               string `json:"suno_mode,omitempty"`            // "task" or "passthrough"
+	PassthroughQuota       int    `json:"passthrough_quota,omitempty"`    // 透传模式的固定配额（tokens），默认1000
+	PassthroughQuotaMode   string `json:"passthrough_quota_mode,omitempty"` // "fixed" or "dynamic" (future)
 }
 
 type VertexKeyType string
