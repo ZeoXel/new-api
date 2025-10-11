@@ -32,4 +32,4 @@ cleanup_before_deploy.sh
 
 # Railway配置（自动生成）
 railway.json
-.railway/
+.railway/new-api

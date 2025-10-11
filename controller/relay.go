@@ -474,3 +474,32 @@ func shouldRetryTaskRelay(c *gin.Context, channelId int, taskErr *dto.TaskError,
 	}
 	return true
 }
+
+// RelaySunoPassthrough Suno透传模式控制器
+// 根据渠道设置判断是使用透传模式还是任务模式
+func RelaySunoPassthrough(c *gin.Context) {
+	channelId := c.GetInt("channel_id")
+
+	// 获取渠道信息
+	channel, err := model.GetChannelById(channelId, true)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, dto.TaskError{
+			Code:       "get_channel_failed",
+			Message:    fmt.Sprintf("failed to get channel: %s", err.Error()),
+			StatusCode: http.StatusInternalServerError,
+		})
+		return
+	}
+
+	// 获取渠道设置
+	channelSettings := channel.GetSetting()
+
+	// 检查是否配置为透传模式
+	if channelSettings.SunoMode == "passthrough" {
+		// 使用透传模式 - 直接导入并调用
+		relay.RelaySunoPassthrough(c)
+	} else {
+		// 默认使用任务模式 - 调用原有的 RelayTask
+		RelayTask(c)
+	}
+}

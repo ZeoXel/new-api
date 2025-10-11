@@ -39,6 +39,10 @@ const (
 	RelayModeSunoFetch
 	RelayModeSunoFetchByID
 	RelayModeSunoSubmit
+	RelayModeSunoPassthroughGenerate
+	RelayModeSunoPassthroughFeed
+	RelayModeSunoPassthroughLyrics
+	RelayModeSunoPassthroughCredits
 
 	RelayModeVideoFetchByID
 	RelayModeVideoSubmit
@@ -141,9 +145,18 @@ func Path2RelaySuno(method, path string) int {
 		relayMode = RelayModeSunoFetchByID
 	} else if strings.Contains(path, "/submit/") {
 		relayMode = RelayModeSunoSubmit
-	} else if strings.HasSuffix(path, "/generate") {
-		// 🔄 旧API兼容：/suno/generate 映射为提交模式
-		relayMode = RelayModeSunoSubmit
+	} else if strings.Contains(path, "/generate") {
+		// 透传模式: /generate, /generate/description-mode, /generate/lyrics, /generate/concat
+		relayMode = RelayModeSunoPassthroughGenerate
+	} else if strings.Contains(path, "/feed/") {
+		// 透传模式: /feed/:ids
+		relayMode = RelayModeSunoPassthroughFeed
+	} else if strings.Contains(path, "/lyrics/") {
+		// 透传模式: /lyrics/:id
+		relayMode = RelayModeSunoPassthroughLyrics
+	} else if strings.Contains(path, "/credits") {
+		// 透传模式: /credits
+		relayMode = RelayModeSunoPassthroughCredits
 	}
 	return relayMode
 }

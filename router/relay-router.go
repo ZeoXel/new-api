@@ -195,15 +195,19 @@ func SetRelayRouter(router *gin.Engine) {
 	relaySunoRouter := router.Group("/suno")
 	relaySunoRouter.Use(middleware.TokenAuth(), middleware.Distribute())
 	{
+		// 任务模式端点（保持向后兼容）
 		relaySunoRouter.POST("/submit/:action", controller.RelayTask)
 		relaySunoRouter.POST("/fetch", controller.RelayTask)
 		relaySunoRouter.GET("/fetch/:id", controller.RelayTask)
-		// 🔄 旧API兼容路由 - /suno/generate 映射到 /suno/submit/music
-		relaySunoRouter.POST("/generate", func(c *gin.Context) {
-			// 设置action参数为music，这样后续处理逻辑可以正确识别
-			c.Params = append(c.Params, gin.Param{Key: "action", Value: "music"})
-			controller.RelayTask(c)
-		})
+
+		// 透传模式端点（兼容旧网关格式）
+		relaySunoRouter.POST("/generate", controller.RelaySunoPassthrough)
+		relaySunoRouter.POST("/generate/description-mode", controller.RelaySunoPassthrough)
+		relaySunoRouter.POST("/generate/lyrics", controller.RelaySunoPassthrough)
+		relaySunoRouter.POST("/generate/concat", controller.RelaySunoPassthrough)
+		relaySunoRouter.GET("/feed/:ids", controller.RelaySunoPassthrough)
+		relaySunoRouter.GET("/lyrics/:id", controller.RelaySunoPassthrough)
+		relaySunoRouter.GET("/credits", controller.RelaySunoPassthrough)
 	}
 
 	relayGeminiRouter := router.Group("/v1beta")

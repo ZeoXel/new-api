@@ -170,6 +170,12 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 		if relayMode == relayconstant.RelayModeSunoFetch ||
 			relayMode == relayconstant.RelayModeSunoFetchByID {
 			shouldSelectChannel = false
+		} else if relayMode == relayconstant.RelayModeSunoPassthroughGenerate ||
+			relayMode == relayconstant.RelayModeSunoPassthroughFeed ||
+			relayMode == relayconstant.RelayModeSunoPassthroughLyrics ||
+			relayMode == relayconstant.RelayModeSunoPassthroughCredits {
+			// 透传模式：使用固定模型名 "suno"
+			modelRequest.Model = "suno"
 		} else {
 			// 兼容旧API: /suno/generate 路径
 			if strings.HasSuffix(c.Request.URL.Path, "/generate") {

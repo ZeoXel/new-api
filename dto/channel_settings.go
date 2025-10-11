@@ -7,6 +7,7 @@ type ChannelSettings struct {
 	PassThroughBodyEnabled bool   `json:"pass_through_body_enabled,omitempty"`
 	SystemPrompt           string `json:"system_prompt,omitempty"`
 	SystemPromptOverride   bool   `json:"system_prompt_override,omitempty"`
+	SunoMode               string `json:"suno_mode,omitempty"` // "task" or "passthrough"
 }
 
 type VertexKeyType string
