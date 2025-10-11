@@ -170,10 +170,7 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 		if relayMode == relayconstant.RelayModeSunoFetch ||
 			relayMode == relayconstant.RelayModeSunoFetchByID {
 			shouldSelectChannel = false
-		} else if relayMode == relayconstant.RelayModeSunoPassthroughGenerate ||
-			relayMode == relayconstant.RelayModeSunoPassthroughFeed ||
-			relayMode == relayconstant.RelayModeSunoPassthroughLyrics ||
-			relayMode == relayconstant.RelayModeSunoPassthroughCredits {
+		} else if relayMode == relayconstant.RelayModeSunoPassthrough {
 			// 透传模式：使用固定模型名 "suno"
 			modelRequest.Model = "suno"
 		} else {
@@ -190,12 +187,26 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 		c.Set("relay_mode", relayMode)
 	} else if strings.Contains(c.Request.URL.Path, "/v1/video/generations") {
 		relayMode := relayconstant.RelayModeUnknown
+		// 🆕 检查是否有预设的 original_model（由视频服务中间件设置，如 KlingRequestConvert）
+		if originalModel, exists := c.Get("original_model"); exists {
+			if modelStr, ok := originalModel.(string); ok && modelStr != "" {
+				// 使用中间件预设的固定模型名（如 "kling"），用于 Bltcy 渠道匹配
+				modelRequest.Model = modelStr
+			}
+		}
 		if c.Request.Method == http.MethodPost {
-			err = common.UnmarshalBodyReusable(c, &modelRequest)
+			// 如果还没有模型名，才从请求体解析
+			if modelRequest.Model == "" {
+				err = common.UnmarshalBodyReusable(c, &modelRequest)
+			}
 			relayMode = relayconstant.RelayModeVideoSubmit
 		} else if c.Request.Method == http.MethodGet {
 			relayMode = relayconstant.RelayModeVideoFetchByID
-			shouldSelectChannel = false
+			// 🆕 如果有 original_model（Bltcy 透传模式），GET 请求也需要选择渠道
+			// 只有在没有 original_model 时（任务模式），才跳过渠道选择
+			if modelRequest.Model == "" {
+				shouldSelectChannel = false
+			}
 		}
 		if _, ok := c.Get("relay_mode"); !ok {
 			c.Set("relay_mode", relayMode)
@@ -208,6 +219,15 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 			modelRequest.Model = modelName
 		}
 		c.Set("relay_mode", relayMode)
+	} else if strings.HasPrefix(c.Request.URL.Path, "/runway/") || strings.HasPrefix(c.Request.URL.Path, "/runwayml/") {
+		// Runway/Runwayml 透传模式：使用固定模型名 "runway"
+		modelRequest.Model = "runway"
+	} else if strings.HasPrefix(c.Request.URL.Path, "/pika/") {
+		// Pika 透传模式：使用固定模型名 "pika"
+		modelRequest.Model = "pika"
+	} else if strings.HasPrefix(c.Request.URL.Path, "/kling/") {
+		// Kling 透传模式：使用固定模型名 "kling"
+		modelRequest.Model = "kling"
 	} else if !strings.HasPrefix(c.Request.URL.Path, "/v1/audio/transcriptions") && !strings.Contains(c.Request.Header.Get("Content-Type"), "multipart/form-data") {
 		err = common.UnmarshalBodyReusable(c, &modelRequest)
 	}

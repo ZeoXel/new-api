@@ -50,6 +50,7 @@ const (
 	ChannelTypeKling          = 50
 	ChannelTypeJimeng         = 51
 	ChannelTypeVidu           = 52
+	ChannelTypeBltcy          = 55 // 旧网关透传渠道
 	ChannelTypeDummy          // this one is only for count, do not add any channel after this
 
 )
@@ -108,4 +109,7 @@ var ChannelBaseURLs = []string{
 	"https://api.klingai.com",                   //50
 	"https://visual.volcengineapi.com",          //51
 	"https://api.vidu.cn",                       //52
+	"",                                          //53
+	"",                                          //54
+	"",                                          //55 Bltcy (旧网关，需要配置具体URL)
 }

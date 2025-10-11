@@ -159,6 +159,11 @@ export const CHANNEL_OPTIONS = [
     color: 'purple',
     label: 'Vidu',
   },
+  {
+    value: 55,
+    color: 'teal',
+    label: '旧网关（Bltcy）',
+  },
 ];
 
 export const MODEL_TABLE_PAGE_SIZE = 10;

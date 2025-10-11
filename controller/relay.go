@@ -381,6 +381,16 @@ func RelayNotFound(c *gin.Context) {
 }
 
 func RelayTask(c *gin.Context) {
+	// 🆕 检查渠道类型，如果是 Bltcy 就使用透传模式
+	channelType := c.GetInt("channel_type")
+	fmt.Printf("[DEBUG RelayTask] Method: %s, Path: %s, channel_type: %d\n",
+		c.Request.Method, c.Request.URL.Path, channelType)
+	if channelType == constant.ChannelTypeBltcy {
+		fmt.Printf("[DEBUG RelayTask] Using Bltcy passthrough mode\n")
+		RelayBltcy(c)
+		return
+	}
+
 	retryTimes := common.RetryTimes
 	channelId := c.GetInt("channel_id")
 	group := c.GetString("group")
@@ -502,4 +512,10 @@ func RelaySunoPassthrough(c *gin.Context) {
 		// 默认使用任务模式 - 调用原有的 RelayTask
 		RelayTask(c)
 	}
+}
+
+// RelayBltcy Bltcy（旧网关）透传模式控制器
+// 用于 Runway、Pika、Kling 等服务的透传
+func RelayBltcy(c *gin.Context) {
+	relay.RelayBltcy(c)
 }
