@@ -509,17 +509,7 @@ func RelayRunwayPassthrough(c *gin.Context) {
 	relay.RelayRunwayPassthrough(c)
 }
 
-// RelayKlingPassthrough Kling透传模式控制器
-func RelayKlingPassthrough(c *gin.Context) {
-	relay.RelayKlingPassthrough(c)
-}
-
 // RelayLumaPassthrough Luma透传模式控制器
 func RelayLumaPassthrough(c *gin.Context) {
 	relay.RelayLumaPassthrough(c)
-}
-
-// RelayViduPassthrough Vidu透传模式控制器
-func RelayViduPassthrough(c *gin.Context) {
-	relay.RelayViduPassthrough(c)
 }

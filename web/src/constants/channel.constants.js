@@ -159,6 +159,16 @@ export const CHANNEL_OPTIONS = [
     color: 'purple',
     label: 'Vidu',
   },
+  {
+    value: 53,
+    color: 'orange',
+    label: 'Runway',
+  },
+  {
+    value: 54,
+    color: 'cyan',
+    label: 'Luma',
+  },
 ];
 
 export const MODEL_TABLE_PAGE_SIZE = 10;
