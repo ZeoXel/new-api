@@ -160,14 +160,9 @@ export const CHANNEL_OPTIONS = [
     label: 'Vidu',
   },
   {
-    value: 53,
-    color: 'orange',
-    label: 'Runway',
-  },
-  {
-    value: 54,
-    color: 'cyan',
-    label: 'Luma',
+    value: 55,
+    color: 'teal',
+    label: '旧网关（Bltcy）',
   },
 ];
 
