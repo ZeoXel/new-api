@@ -146,6 +146,7 @@ const EditChannelModal = (props) => {
     pass_through_body_enabled: false,
     system_prompt: '',
     system_prompt_override: false,
+    suno_mode: '',
     settings: '',
     // 仅 Vertex: 密钥格式（存入 settings.vertex_key_type）
     vertex_key_type: 'json',
@@ -221,6 +222,7 @@ const EditChannelModal = (props) => {
     proxy: '',
     pass_through_body_enabled: false,
     system_prompt: '',
+    suno_mode: '',
   });
   const showApiConfigCard = inputs.type !== 45; // 控制是否显示 API 配置卡片（仅当渠道类型不是 豆包 时显示）
   const getInitValues = () => ({ ...originInputs });
@@ -395,6 +397,7 @@ const EditChannelModal = (props) => {
           data.system_prompt = parsedSettings.system_prompt || '';
           data.system_prompt_override =
             parsedSettings.system_prompt_override || false;
+          data.suno_mode = parsedSettings.suno_mode || '';
         } catch (error) {
           console.error('解析渠道设置失败:', error);
           data.force_format = false;
@@ -403,6 +406,7 @@ const EditChannelModal = (props) => {
           data.pass_through_body_enabled = false;
           data.system_prompt = '';
           data.system_prompt_override = false;
+          data.suno_mode = '';
         }
       } else {
         data.force_format = false;
@@ -411,6 +415,7 @@ const EditChannelModal = (props) => {
         data.pass_through_body_enabled = false;
         data.system_prompt = '';
         data.system_prompt_override = false;
+        data.suno_mode = '';
       }
 
       if (data.settings) {
@@ -453,6 +458,7 @@ const EditChannelModal = (props) => {
         pass_through_body_enabled: data.pass_through_body_enabled,
         system_prompt: data.system_prompt,
         system_prompt_override: data.system_prompt_override || false,
+        suno_mode: data.suno_mode || '',
       });
       // console.log(data);
     } else {
@@ -700,6 +706,7 @@ const EditChannelModal = (props) => {
       pass_through_body_enabled: false,
       system_prompt: '',
       system_prompt_override: false,
+      suno_mode: '',
     });
     // 重置密钥模式状态
     setKeyMode('append');
@@ -859,6 +866,7 @@ const EditChannelModal = (props) => {
       pass_through_body_enabled: localInputs.pass_through_body_enabled || false,
       system_prompt: localInputs.system_prompt || '',
       system_prompt_override: localInputs.system_prompt_override || false,
+      suno_mode: localInputs.suno_mode || '',
     };
     localInputs.setting = JSON.stringify(channelExtraSettings);
 
@@ -869,6 +877,7 @@ const EditChannelModal = (props) => {
     delete localInputs.pass_through_body_enabled;
     delete localInputs.system_prompt;
     delete localInputs.system_prompt_override;
+    delete localInputs.suno_mode;
     // 顶层的 vertex_key_type 和 coze_auth_type 不应发送给后端
     delete localInputs.vertex_key_type;
     delete localInputs.coze_auth_type;
@@ -2342,6 +2351,25 @@ const EditChannelModal = (props) => {
                       '如果用户请求中包含系统提示词，则使用此设置拼接到用户的系统提示词前面',
                     )}
                   />
+
+                  {inputs.type === 36 && (
+                    <Form.Select
+                      field='suno_mode'
+                      label={t('Suno 工作模式')}
+                      placeholder={t('请选择 Suno 工作模式')}
+                      optionList={[
+                        { label: t('任务模式（默认）'), value: 'task' },
+                        { label: t('透传模式（兼容旧网关）'), value: 'passthrough' },
+                      ]}
+                      style={{ width: '100%' }}
+                      onChange={(value) =>
+                        handleChannelSettingsChange('suno_mode', value)
+                      }
+                      extraText={t(
+                        '透传模式：直接返回 {clips:[...]} 格式，兼容旧网关；任务模式：返回任务ID，需轮询查询',
+                      )}
+                    />
+                  )}
                 </Card>
               </div>
             </Spin>
