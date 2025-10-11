@@ -223,20 +223,27 @@ func SetRelayRouter(router *gin.Engine) {
 
 	// 注意：Kling、Vidu 已有任务模式路由（video-router.go），无需透传
 
-	// 🆕 Runway 透传模式路由
-	relayRunwayRouter := router.Group("/runway")
-	relayRunwayRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	// 🆕 Bltcy（旧网关）透传模式路由
+	// 支持 Runway、Pika 等服务的透传
+	// 通过 Distribute 中间件根据模型名（如 "runway"）选择 Bltcy 渠道
+	// 渠道配置中填写旧网关的 URL 和密钥
+	relayBltcyRunwayRouter := router.Group("/runway")
+	relayBltcyRunwayRouter.Use(middleware.TokenAuth(), middleware.Distribute())
 	{
-		// 透传模式端点（按需添加具体路径）
-		relayRunwayRouter.Any("/*path", controller.RelayRunwayPassthrough)
+		relayBltcyRunwayRouter.Any("/*path", controller.RelayBltcy)
 	}
 
-	// 🆕 Luma 透传模式路由
-	relayLumaRouter := router.Group("/luma")
-	relayLumaRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	// 🆕 Runwayml 路由（兼容前端使用的路径）
+	relayBltcyRunwaymlRouter := router.Group("/runwayml")
+	relayBltcyRunwaymlRouter.Use(middleware.TokenAuth(), middleware.Distribute())
 	{
-		// 透传模式端点（按需添加具体路径）
-		relayLumaRouter.Any("/*path", controller.RelayLumaPassthrough)
+		relayBltcyRunwaymlRouter.Any("/*path", controller.RelayBltcy)
+	}
+
+	relayBltcyPikaRouter := router.Group("/pika")
+	relayBltcyPikaRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayBltcyPikaRouter.Any("/*path", controller.RelayBltcy)
 	}
 }
 
