@@ -1,12 +1,12 @@
 package relay
 
 import (
-	"one-api/relay/channel/suno"
+	commonChannel "one-api/relay/channel/common"
 
 	"github.com/gin-gonic/gin"
 )
 
-// RelaySunoPassthrough 导出Suno透传处理函数
+// RelaySunoPassthrough Suno服务透传处理函数
 func RelaySunoPassthrough(c *gin.Context) {
-	suno.RelayPassthrough(c)
+	commonChannel.RelayPassthrough(c, "suno")
 }

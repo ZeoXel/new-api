@@ -220,6 +220,35 @@ func SetRelayRouter(router *gin.Engine) {
 			controller.Relay(c, types.RelayFormatGemini)
 		})
 	}
+
+	// 🆕 Runway 透传路由组
+	relayRunwayRouter := router.Group("/runway")
+	relayRunwayRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		// 使用通配符匹配所有路径和方法
+		relayRunwayRouter.Any("/*path", controller.RelayRunwayPassthrough)
+	}
+
+	// 🆕 Kling 透传路由组
+	relayKlingRouter := router.Group("/kling")
+	relayKlingRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayKlingRouter.Any("/*path", controller.RelayKlingPassthrough)
+	}
+
+	// 🆕 Luma 透传路由组
+	relayLumaRouter := router.Group("/luma")
+	relayLumaRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayLumaRouter.Any("/*path", controller.RelayLumaPassthrough)
+	}
+
+	// 🆕 Vidu 透传路由组
+	relayViduRouter := router.Group("/vidu")
+	relayViduRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayViduRouter.Any("/*path", controller.RelayViduPassthrough)
+	}
 }
 
 func registerMjRouterGroup(relayMjRouter *gin.RouterGroup) {
