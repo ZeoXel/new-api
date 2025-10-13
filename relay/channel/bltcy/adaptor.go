@@ -11,6 +11,7 @@ import (
 	"one-api/model"
 	relaycommon "one-api/relay/common"
 	"one-api/service"
+	"one-api/setting/ratio_setting"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -225,15 +226,66 @@ func RelayBltcy(c *gin.Context) {
 		return
 	}
 
-	// 获取渠道配置的透传配额
+	// 🆕 GET 请求（查询状态）不计费，直接返回响应
+	if c.Request.Method == "GET" {
+		fmt.Printf("[DEBUG Bltcy] GET request detected, skipping billing\n")
+		// 复制响应头
+		for key, values := range resp.Header {
+			if key == "Access-Control-Allow-Origin" ||
+				key == "Access-Control-Allow-Credentials" ||
+				key == "Access-Control-Allow-Headers" ||
+				key == "Access-Control-Allow-Methods" ||
+				key == "Access-Control-Expose-Headers" ||
+				key == "Access-Control-Max-Age" {
+				continue
+			}
+			for _, value := range values {
+				c.Writer.Header().Add(key, value)
+			}
+		}
+		c.Data(resp.StatusCode, resp.Header.Get("Content-Type"), responseBody)
+		return
+	}
+
+	// 🆕 动态计费：根据模型价格计算实际配额（仅 POST/PUT 等创建/修改请求）
 	channelSettings := channel.GetSetting()
-	passthroughQuota := channelSettings.PassthroughQuota
-	if passthroughQuota == 0 {
-		passthroughQuota = 1000 // 默认配额
+	baseQuota := channelSettings.PassthroughQuota
+	if baseQuota == 0 {
+		baseQuota = 1000 // 默认基础配额
+	}
+
+	// 获取服务名（如 "runway", "kling"）
+	serviceName := c.GetString("original_model")
+
+	// 🆕 获取具体的模型名（如 "gen4_turbo", "kling-v1-6"）
+	billingModelName := c.GetString("billing_model_name")
+	fmt.Printf("[DEBUG Bltcy] serviceName: %s, billingModelName: %s\n", serviceName, billingModelName)
+	if billingModelName == "" {
+		// 如果没有具体模型名，使用服务名
+		billingModelName = serviceName
+		fmt.Printf("[DEBUG Bltcy] billing_model_name is empty, fallback to serviceName: %s\n", serviceName)
+	}
+
+	// 🆕 查询模型价格，计算实际配额
+	// 注意：这里配置的是 ModelPrice（美元/次），需要转换为 quota
+	// quota = price × 500,000（因为 1 美元 = 500,000 quota）
+	actualQuota := baseQuota
+	modelPrice := 0.0
+	priceSource := "base" // 价格来源：base（基础配额）、price（固定价格）
+
+	if price, exists := ratio_setting.GetModelPrice(billingModelName, false); exists && price > 0 {
+		// ModelPrice 单位是美元，转换为配额
+		modelPrice = price
+		actualQuota = int(price * common.QuotaPerUnit)
+		priceSource = "price"
+		fmt.Printf("[DEBUG Bltcy Billing] Model: %s, Price: $%.4f, Quota: %d\n", billingModelName, price, actualQuota)
+	} else {
+		// 如果没有配置价格，使用基础配额
+		fmt.Printf("[DEBUG Bltcy Billing] Model: %s, Using base quota: %d\n", billingModelName, baseQuota)
 	}
 
 	// 计费（在发送响应之前完成）
-	if passthroughQuota > 0 {
+	if actualQuota > 0 {
 		relayInfo := &relaycommon.RelayInfo{
 			UserId:     userId,
 			TokenId:    tokenId,
@@ -244,7 +296,7 @@ func RelayBltcy(c *gin.Context) {
 		}
 		err = service.PostConsumeQuota(
 			relayInfo,
-			passthroughQuota,
+			actualQuota,
 			0,
 			true,
 		)
@@ -252,22 +304,35 @@ func RelayBltcy(c *gin.Context) {
 			common.SysLog(fmt.Sprintf("计费失败: %s", err.Error()))
 		}
 
-		// 记录消费日志
-		modelName := c.GetString("original_model")
-		logContent := fmt.Sprintf("Bltcy透传模式（%s），消费配额: %d", modelName, passthroughQuota)
+		// 🆕 记录消费日志，使用具体模型名
+		logContent := fmt.Sprintf(
+			"Bltcy透传（%s/%s），价格: $%.4f, 配额: %d, 来源: %s",
+			serviceName, billingModelName, modelPrice, actualQuota, priceSource,
+		)
+
+		// 🆕 构建 Other 字段（与其他渠道保持一致，防止前端崩溃）
+		other := make(map[string]interface{})
+		other["model_price"] = modelPrice
+		other["completion_ratio"] = 1.0 // 透传模式默认为 1.0
+		other["model_ratio"] = 1.0
+		other["group_ratio"] = 1.0
+
 		model.RecordConsumeLog(c, userId, model.RecordConsumeLogParams{
-			ChannelId: channelId,
-			ModelName: modelName + "_passthrough",
-			TokenName: tokenName,
-			Quota:     passthroughQuota,
-			Content:   logContent,
-			TokenId:   tokenId,
-			Group:     group,
+			ChannelId:        channelId,
+			ModelName:        billingModelName, // 🆕 使用具体模型名，不添加后缀
+			TokenName:        tokenName,
+			Quota:            actualQuota,      // 🆕 使用实际配额
+			PromptTokens:     1,                // 🆕 透传模式设置为 1，避免前端计算比率错误
+			CompletionTokens: 1,                // 🆕 透传模式设置为 1，避免前端计算比率错误
+			Content:          logContent,
+			TokenId:          tokenId,
+			Group:            group,
+			Other:            other, // 🆕 添加 Other 字段，防止前端崩溃
 		})
 
 		// 更新统计
-		model.UpdateUserUsedQuotaAndRequestCount(userId, passthroughQuota)
-		model.UpdateChannelUsedQuota(channelId, passthroughQuota)
+		model.UpdateUserUsedQuotaAndRequestCount(userId, actualQuota)
+		model.UpdateChannelUsedQuota(channelId, actualQuota)
 	}
 
 	// 复制响应头（跳过 CORS 相关的头，避免与新网关的 CORS 中间件冲突）
