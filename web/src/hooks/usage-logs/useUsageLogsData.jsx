@@ -355,26 +355,26 @@ export const useLogsData = () => {
           value: other?.claude
             ? renderClaudeLogContent(
                 other?.model_ratio,
-                other.completion_ratio,
-                other.model_price,
-                other.group_ratio,
+                other?.completion_ratio,
+                other?.model_price,
+                other?.group_ratio,
                 other?.user_group_ratio,
-                other.cache_ratio || 1.0,
-                other.cache_creation_ratio || 1.0,
+                other?.cache_ratio || 1.0,
+                other?.cache_creation_ratio || 1.0,
               )
             : renderLogContent(
                 other?.model_ratio,
-                other.completion_ratio,
-                other.model_price,
-                other.group_ratio,
+                other?.completion_ratio,
+                other?.model_price,
+                other?.group_ratio,
                 other?.user_group_ratio,
-                other.cache_ratio || 1.0,
+                other?.cache_ratio || 1.0,
                 false,
                 1.0,
-                other.web_search || false,
-                other.web_search_call_count || 0,
-                other.file_search || false,
-                other.file_search_call_count || 0,
+                other?.web_search || false,
+                other?.web_search_call_count || 0,
+                other?.file_search || false,
+                other?.file_search_call_count || 0,
               ),
         });
       }
@@ -390,7 +390,7 @@ export const useLogsData = () => {
           });
           expandDataLocal.push({
             key: t('实际模型'),
-            value: other.upstream_model_name,
+            value: other?.upstream_model_name,
           });
         }
         let content = '';
@@ -414,15 +414,15 @@ export const useLogsData = () => {
           content = renderClaudeModelPrice(
             logs[i].prompt_tokens,
             logs[i].completion_tokens,
-            other.model_ratio,
-            other.model_price,
-            other.completion_ratio,
-            other.group_ratio,
+            other?.model_ratio,
+            other?.model_price,
+            other?.completion_ratio,
+            other?.group_ratio,
             other?.user_group_ratio,
-            other.cache_tokens || 0,
-            other.cache_ratio || 1.0,
-            other.cache_creation_tokens || 0,
-            other.cache_creation_ratio || 1.0,
+            other?.cache_tokens || 0,
+            other?.cache_ratio || 1.0,
+            other?.cache_creation_tokens || 0,
+            other?.cache_creation_ratio || 1.0,
           );
         } else {
           content = renderModelPrice(
