@@ -165,26 +165,10 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 			modelRequest.Model = midjourneyModel
 		}
 		c.Set("relay_mode", relayMode)
-	} else if strings.Contains(c.Request.URL.Path, "/suno/") {
-		relayMode := relayconstant.Path2RelaySuno(c.Request.Method, c.Request.URL.Path)
-		if relayMode == relayconstant.RelayModeSunoFetch ||
-			relayMode == relayconstant.RelayModeSunoFetchByID {
-			shouldSelectChannel = false
-		} else if relayMode == relayconstant.RelayModeSunoPassthrough {
-			// 透传模式：使用固定模型名 "suno"
-			modelRequest.Model = "suno"
-		} else {
-			// 兼容旧API: /suno/generate 路径
-			if strings.HasSuffix(c.Request.URL.Path, "/generate") {
-				modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, "music")
-				modelRequest.Model = modelName
-			} else {
-				modelName := service.CoverTaskActionToModelName(constant.TaskPlatformSuno, c.Param("action"))
-				modelRequest.Model = modelName
-			}
-		}
-		c.Set("platform", string(constant.TaskPlatformSuno))
-		c.Set("relay_mode", relayMode)
+	} else if strings.HasPrefix(c.Request.URL.Path, "/suno/") {
+		// 🆕 Suno 透传模式：使用固定模型名 "suno"
+		// 改为使用 Bltcy 透传，享受更好的超时配置、重试机制和动态计费
+		modelRequest.Model = "suno"
 	} else if strings.HasPrefix(c.Request.URL.Path, "/runway/") || strings.HasPrefix(c.Request.URL.Path, "/runwayml/") {
 		// Runway/Runwayml 透传模式：使用固定模型名 "runway"
 		modelRequest.Model = "runway"

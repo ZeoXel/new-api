@@ -151,15 +151,40 @@ func RelayPassthrough(c *gin.Context, serviceName string) {
 	adaptor := &PassthroughAdaptor{}
 	adaptor.Init(channelType, serviceName)
 
-	// 执行请求
-	resp, err := adaptor.DoRequest(c, channelId, channelKey, baseURL)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, dto.TaskError{
-			Code:       "request_failed",
-			Message:    fmt.Sprintf("failed to send request: %s", err.Error()),
-			StatusCode: http.StatusInternalServerError,
-		})
-		return
+	// 执行请求（GET 请求支持重试）
+	var resp *http.Response
+	isGetRequest := c.Request.Method == "GET"
+	maxRetries := 1
+	if isGetRequest {
+		maxRetries = 2 // GET 请求允许重试 1 次
+	}
+
+	for attempt := 1; attempt <= maxRetries; attempt++ {
+		resp, err = adaptor.DoRequest(c, channelId, channelKey, baseURL)
+		if err != nil {
+			if attempt < maxRetries {
+				fmt.Printf("[DEBUG %s Passthrough] GET request failed (attempt %d/%d), retrying in 1s: %s\n", serviceName, attempt, maxRetries, err.Error())
+				time.Sleep(1 * time.Second)
+				continue
+			}
+			c.JSON(http.StatusInternalServerError, dto.TaskError{
+				Code:       "request_failed",
+				Message:    fmt.Sprintf("failed to send request: %s", err.Error()),
+				StatusCode: http.StatusInternalServerError,
+			})
+			return
+		}
+
+		// GET 请求：如果遇到 5xx 错误且可以重试，则重试
+		if isGetRequest && resp.StatusCode >= 500 && attempt < maxRetries {
+			fmt.Printf("[DEBUG %s Passthrough] GET request returned %d (attempt %d/%d), retrying in 1s\n", serviceName, resp.StatusCode, attempt, maxRetries)
+			resp.Body.Close()
+			time.Sleep(1 * time.Second)
+			continue
+		}
+
+		// 请求成功或已达到最大重试次数
+		break
 	}
 
 	// 获取渠道配置的透传配额
@@ -177,7 +202,29 @@ func RelayPassthrough(c *gin.Context, serviceName string) {
 		return
 	}
 
-	// 计费（在发送响应之前完成）
+	// 🆕 GET 请求（查询状态）不计费，直接返回响应
+	if isGetRequest {
+		fmt.Printf("[DEBUG %s Passthrough] GET request completed with status %d, skipping billing\n", serviceName, statusCode)
+
+		// 🆕 如果上游返回 5xx 错误，转换为 202 Accepted（任务处理中）
+		finalStatusCode := statusCode
+		if statusCode >= 500 {
+			fmt.Printf("[DEBUG %s Passthrough] Converting upstream 5xx error to 202 Accepted\n", serviceName)
+			finalStatusCode = http.StatusAccepted
+			// 返回友好的 JSON 响应
+			c.JSON(finalStatusCode, gin.H{
+				"message": "任务处理中，请稍后重试",
+				"status":  "processing",
+			})
+			return
+		}
+
+		// 返回原始响应
+		c.Data(finalStatusCode, "application/json; charset=utf-8", responseBody)
+		return
+	}
+
+	// POST 等请求才计费（在发送响应之前完成）
 	if quota > 0 {
 		relayInfo := &relaycommon.RelayInfo{
 			UserId:     userId,

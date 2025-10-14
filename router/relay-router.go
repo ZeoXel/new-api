@@ -200,14 +200,14 @@ func SetRelayRouter(router *gin.Engine) {
 		relaySunoRouter.POST("/fetch", controller.RelayTask)
 		relaySunoRouter.GET("/fetch/:id", controller.RelayTask)
 
-		// 透传模式端点（兼容旧网关格式）
-		relaySunoRouter.POST("/generate", controller.RelaySunoPassthrough)
-		relaySunoRouter.POST("/generate/description-mode", controller.RelaySunoPassthrough)
-		relaySunoRouter.POST("/generate/lyrics", controller.RelaySunoPassthrough)
-		relaySunoRouter.POST("/generate/concat", controller.RelaySunoPassthrough)
-		relaySunoRouter.GET("/feed/:ids", controller.RelaySunoPassthrough)
-		relaySunoRouter.GET("/lyrics/:id", controller.RelaySunoPassthrough)
-		relaySunoRouter.GET("/credits", controller.RelaySunoPassthrough)
+		// 🆕 透传模式端点（使用 Bltcy 透传，享受重试、不计费GET、动态计费）
+		relaySunoRouter.POST("/generate", controller.RelayBltcy)
+		relaySunoRouter.POST("/generate/description-mode", controller.RelayBltcy)
+		relaySunoRouter.POST("/generate/lyrics", controller.RelayBltcy)
+		relaySunoRouter.POST("/generate/concat", controller.RelayBltcy)
+		relaySunoRouter.GET("/feed/:ids", controller.RelayBltcy)
+		relaySunoRouter.GET("/lyrics/:id", controller.RelayBltcy)
+		relaySunoRouter.GET("/credits", controller.RelayBltcy)
 	}
 
 	relayGeminiRouter := router.Group("/v1beta")

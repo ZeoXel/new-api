@@ -228,6 +228,10 @@ func RelayBltcy(c *gin.Context) {
 			return
 		}
 
+		// 🆕 添加详细日志，追踪状态码和重试条件
+		fmt.Printf("[DEBUG Bltcy] Response status: %d, isGetRequest: %v, attempt: %d, maxRetries: %d\n",
+			resp.StatusCode, isGetRequest, attempt, maxRetries)
+
 		// GET 请求：如果遇到 5xx 错误且可以重试，则重试
 		if isGetRequest && resp.StatusCode >= 500 && attempt < maxRetries {
 			fmt.Printf("[DEBUG Bltcy] GET request returned %d (attempt %d/%d), retrying in 1s\n", resp.StatusCode, attempt, maxRetries)
