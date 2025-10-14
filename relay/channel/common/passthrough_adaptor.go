@@ -247,6 +247,14 @@ func RelayPassthrough(c *gin.Context, serviceName string) {
 		// 记录消费日志（使用参数化的服务名）
 		logContent := fmt.Sprintf("%s透传模式，消费配额: %d", serviceName, quota)
 		modelName := fmt.Sprintf("%s_passthrough", serviceName)
+
+		// 🆕 构建 Other 字段（与其他渠道保持一致，防止前端崩溃）
+		other := make(map[string]interface{})
+		other["model_price"] = 0.0
+		other["completion_ratio"] = 1.0 // 透传模式默认为 1.0
+		other["model_ratio"] = 1.0
+		other["group_ratio"] = 1.0
+
 		model.RecordConsumeLog(c, userId, model.RecordConsumeLogParams{
 			ChannelId: channelId,
 			ModelName: modelName,
@@ -255,6 +263,7 @@ func RelayPassthrough(c *gin.Context, serviceName string) {
 			Content:   logContent,
 			TokenId:   tokenId,
 			Group:     group,
+			Other:     other, // 🆕 添加 Other 字段，防止前端崩溃
 		})
 
 		// 更新统计
