@@ -185,6 +185,15 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 		}
 		c.Set("platform", string(constant.TaskPlatformSuno))
 		c.Set("relay_mode", relayMode)
+	} else if strings.HasPrefix(c.Request.URL.Path, "/runway/") || strings.HasPrefix(c.Request.URL.Path, "/runwayml/") {
+		// Runway/Runwayml 透传模式：使用固定模型名 "runway"
+		modelRequest.Model = "runway"
+	} else if strings.HasPrefix(c.Request.URL.Path, "/pika/") {
+		// Pika 透传模式：使用固定模型名 "pika"
+		modelRequest.Model = "pika"
+	} else if strings.HasPrefix(c.Request.URL.Path, "/kling/") {
+		// Kling 透传模式：使用固定模型名 "kling"
+		modelRequest.Model = "kling"
 	} else if strings.Contains(c.Request.URL.Path, "/v1/video/generations") {
 		relayMode := relayconstant.RelayModeUnknown
 		// 🆕 检查是否有预设的 original_model（由视频服务中间件设置，如 KlingRequestConvert）

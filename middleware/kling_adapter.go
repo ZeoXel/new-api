@@ -13,25 +13,24 @@ import (
 
 func KlingRequestConvert() func(c *gin.Context) {
 	return func(c *gin.Context) {
-		// 🆕 在处理之前，先设置 original_model 为 "kling"
-		// 这样 Distribute 中间件可以用这个固定值选择 Bltcy 渠道
-		c.Set("original_model", "kling")
-
-		// 🆕 保存原始路径，用于 Bltcy 透传
+		// 保存原始路径，用于 Bltcy 透传
 		originalPath := c.Request.URL.Path
 		originalRawQuery := c.Request.URL.RawQuery
 		c.Set("bltcy_original_path", originalPath)
 		c.Set("bltcy_original_query", originalRawQuery)
 
-		// 🆕 GET 请求不需要转换请求体，直接跳过
+		// GET 请求不需要转换请求体，也不需要选择渠道（任务模式从数据库查询）
 		if c.Request.Method == "GET" {
-			fmt.Printf("[DEBUG Kling GET] Path: %s, Query: %s, original_model: %s\n",
-				originalPath, originalRawQuery, "kling")
+			fmt.Printf("[DEBUG Kling GET] Path: %s, Query: %s\n",
+				originalPath, originalRawQuery)
 			// 为 GET 请求设置空的请求体，避免后续中间件尝试读取导致错误
 			c.Set(common.KeyRequestBody, []byte{})
 			c.Next()
 			return
 		}
+
+		// POST 请求才设置 original_model，用于渠道选择
+		c.Set("original_model", "kling")
 
 		var originalReq map[string]interface{}
 		if err := common.UnmarshalBodyReusable(c, &originalReq); err != nil {

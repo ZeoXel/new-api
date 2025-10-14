@@ -204,15 +204,40 @@ func RelayBltcy(c *gin.Context) {
 	adaptor := &Adaptor{}
 	adaptor.Init(channelId, channelName, channelType)
 
-	// 执行请求
-	resp, err := adaptor.DoRequest(c, baseURL, channelKey)
-	if err != nil {
-		c.JSON(http.StatusInternalServerError, dto.TaskError{
-			Code:       "request_failed",
-			Message:    fmt.Sprintf("转发请求到旧网关失败: %s", err.Error()),
-			StatusCode: http.StatusInternalServerError,
-		})
-		return
+	// 执行请求（GET 请求支持重试）
+	var resp *http.Response
+	isGetRequest := c.Request.Method == "GET"
+	maxRetries := 1
+	if isGetRequest {
+		maxRetries = 2 // GET 请求允许重试 1 次
+	}
+
+	for attempt := 1; attempt <= maxRetries; attempt++ {
+		resp, err = adaptor.DoRequest(c, baseURL, channelKey)
+		if err != nil {
+			if attempt < maxRetries {
+				fmt.Printf("[DEBUG Bltcy] GET request failed (attempt %d/%d), retrying in 1s: %s\n", attempt, maxRetries, err.Error())
+				time.Sleep(1 * time.Second)
+				continue
+			}
+			c.JSON(http.StatusInternalServerError, dto.TaskError{
+				Code:       "request_failed",
+				Message:    fmt.Sprintf("转发请求到旧网关失败: %s", err.Error()),
+				StatusCode: http.StatusInternalServerError,
+			})
+			return
+		}
+
+		// GET 请求：如果遇到 5xx 错误且可以重试，则重试
+		if isGetRequest && resp.StatusCode >= 500 && attempt < maxRetries {
+			fmt.Printf("[DEBUG Bltcy] GET request returned %d (attempt %d/%d), retrying in 1s\n", resp.StatusCode, attempt, maxRetries)
+			resp.Body.Close()
+			time.Sleep(1 * time.Second)
+			continue
+		}
+
+		// 请求成功或已达到最大重试次数
+		break
 	}
 
 	// 处理响应
@@ -227,8 +252,22 @@ func RelayBltcy(c *gin.Context) {
 	}
 
 	// 🆕 GET 请求（查询状态）不计费，直接返回响应
-	if c.Request.Method == "GET" {
-		fmt.Printf("[DEBUG Bltcy] GET request detected, skipping billing\n")
+	if isGetRequest {
+		fmt.Printf("[DEBUG Bltcy] GET request completed with status %d\n", resp.StatusCode)
+
+		// 🆕 如果上游返回 5xx 错误，转换为 202 Accepted（任务处理中）
+		finalStatusCode := resp.StatusCode
+		if resp.StatusCode >= 500 {
+			fmt.Printf("[DEBUG Bltcy] Converting upstream 5xx error to 202 Accepted\n")
+			finalStatusCode = http.StatusAccepted
+			// 返回友好的 JSON 响应
+			c.JSON(finalStatusCode, gin.H{
+				"message": "任务处理中，请稍后重试",
+				"status":  "processing",
+			})
+			return
+		}
+
 		// 复制响应头
 		for key, values := range resp.Header {
 			if key == "Access-Control-Allow-Origin" ||
@@ -243,7 +282,7 @@ func RelayBltcy(c *gin.Context) {
 				c.Writer.Header().Add(key, value)
 			}
 		}
-		c.Data(resp.StatusCode, resp.Header.Get("Content-Type"), responseBody)
+		c.Data(finalStatusCode, resp.Header.Get("Content-Type"), responseBody)
 		return
 	}
 
