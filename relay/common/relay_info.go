@@ -477,14 +477,22 @@ type TaskRelayInfo struct {
 }
 
 type TaskSubmitReq struct {
-	Prompt   string                 `json:"prompt"`
-	Model    string                 `json:"model,omitempty"`
-	Mode     string                 `json:"mode,omitempty"`
-	Image    string                 `json:"image,omitempty"`
-	Images   []string               `json:"images,omitempty"`
-	Size     string                 `json:"size,omitempty"`
-	Duration int                    `json:"duration,omitempty"`
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Prompt            string                 `json:"prompt"`
+	Model             string                 `json:"model,omitempty"`
+	Mode              string                 `json:"mode,omitempty"`
+	Image             string                 `json:"image,omitempty"`
+	Images            []string               `json:"images,omitempty"`
+	Size              string                 `json:"size,omitempty"`
+	Duration          int                    `json:"duration,omitempty"`
+	Metadata          map[string]interface{} `json:"metadata,omitempty"`
+	// 🆕 Vidu 等渠道的特定参数（前端直接传递，不在 metadata 中）
+	AspectRatio       string `json:"aspect_ratio,omitempty"`       // 画面比例：1:1, 16:9, 9:16
+	Resolution        string `json:"resolution,omitempty"`         // 分辨率：1080p, 720p
+	Bgm               bool   `json:"bgm,omitempty"`                // 是否添加背景音乐
+	MovementAmplitude string `json:"movement_amplitude,omitempty"` // 运动幅度：auto, small, large
+	OffPeak           bool   `json:"off_peak,omitempty"`           // 是否使用非高峰时段
+	Payload           string `json:"payload,omitempty"`            // 自定义载荷
+	Seed              int    `json:"seed,omitempty"`               // 随机种子
 }
 
 func (t TaskSubmitReq) GetPrompt() string {

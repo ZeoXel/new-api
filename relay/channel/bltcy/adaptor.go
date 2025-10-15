@@ -247,13 +247,16 @@ func RelayBltcy(c *gin.Context) {
 	// 处理响应
 	responseBody, err := adaptor.DoResponse(c, resp)
 	if err != nil {
+		errMsg := fmt.Sprintf("处理响应失败: %s", err.Error())
+		fmt.Printf("[ERROR Bltcy] DoResponse failed: %s\n", errMsg)
 		c.JSON(http.StatusInternalServerError, dto.TaskError{
 			Code:       "response_processing_failed",
-			Message:    fmt.Sprintf("处理响应失败: %s", err.Error()),
+			Message:    errMsg,
 			StatusCode: http.StatusInternalServerError,
 		})
 		return
 	}
+	fmt.Printf("[DEBUG Bltcy] DoResponse success, body size: %d bytes\n", len(responseBody))
 
 	// 🆕 GET 请求（查询状态）不计费，直接返回响应
 	if isGetRequest {

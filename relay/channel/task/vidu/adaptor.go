@@ -103,6 +103,10 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 	if err != nil {
 		return nil, err
 	}
+
+	// 🆕 调试日志：输出发送给 Vidu API 的完整请求体
+	fmt.Printf("[DEBUG Vidu] Request body sent to Vidu API: %s\n", string(data))
+
 	return bytes.NewReader(data), nil
 }
 
@@ -193,6 +197,10 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 	// 🆕 从 size 或 metadata 中获取 aspect_ratio
 	aspectRatio := a.getAspectRatio(req)
 
+	// 🆕 调试日志：输出原始请求信息
+	fmt.Printf("[DEBUG Vidu] Original request - Size: %s, Metadata: %+v\n", req.Size, req.Metadata)
+	fmt.Printf("[DEBUG Vidu] Converted aspect_ratio: %s\n", aspectRatio)
+
 	r := requestPayload{
 		Model:             defaultString(req.Model, "viduq1"),
 		Images:            req.Images,
@@ -213,6 +221,10 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 	if err != nil {
 		return nil, errors.Wrap(err, "unmarshal metadata failed")
 	}
+
+	// 🆕 调试日志：输出最终发送的 aspect_ratio
+	fmt.Printf("[DEBUG Vidu] Final payload aspect_ratio: %s\n", r.AspectRatio)
+
 	return &r, nil
 }
 
@@ -230,9 +242,21 @@ func defaultInt(value, defaultValue int) int {
 	return value
 }
 
-// 🆕 getAspectRatio 将 size 或 metadata 中的 aspect_ratio 转换为 Vidu 支持的格式
+// 🆕 getAspectRatio 将 aspect_ratio 或 size 转换为 Vidu 支持的格式
 func (a *TaskAdaptor) getAspectRatio(req *relaycommon.TaskSubmitReq) string {
-	// 优先使用 metadata 中的 aspect_ratio（如果前端直接传了）
+	// 🆕 最优先：使用前端直接传递的 aspect_ratio 字段
+	if req.AspectRatio != "" {
+		// 验证是否为支持的值
+		switch req.AspectRatio {
+		case "1:1", "16:9", "9:16":
+			return req.AspectRatio
+		default:
+			// 如果是无效值，记录日志并继续
+			fmt.Printf("[WARN Vidu] Invalid aspect_ratio: %s, will try other sources\n", req.AspectRatio)
+		}
+	}
+
+	// 次优先：从 metadata 中的 aspect_ratio 读取
 	if aspectRatio, ok := req.Metadata["aspect_ratio"].(string); ok && aspectRatio != "" {
 		// 验证是否为支持的值
 		switch aspectRatio {
@@ -241,7 +265,7 @@ func (a *TaskAdaptor) getAspectRatio(req *relaycommon.TaskSubmitReq) string {
 		}
 	}
 
-	// 从 size 字段转换（支持 NewAPI 示例格式：1920x1080）
+	// 最后：从 size 字段转换（支持 NewAPI 示例格式：1920x1080）
 	switch req.Size {
 	// 方形
 	case "1024x1024", "512x512", "1:1":
