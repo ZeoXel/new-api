@@ -29,7 +29,7 @@ type requestPayload struct {
 	Prompt            string   `json:"prompt,omitempty"`
 	Duration          int      `json:"duration,omitempty"`
 	Seed              int      `json:"seed,omitempty"`
-	Resolution        string   `json:"resolution,omitempty"`
+	AspectRatio       string   `json:"aspect_ratio,omitempty"` // 🆕 修改为 aspect_ratio（Vidu 官方参数）
 	MovementAmplitude string   `json:"movement_amplitude,omitempty"`
 	Bgm               bool     `json:"bgm,omitempty"`
 	Payload           string   `json:"payload,omitempty"`
@@ -190,15 +190,20 @@ func (a *TaskAdaptor) GetChannelName() string {
 // ============================
 
 func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*requestPayload, error) {
+	// 🆕 从 size 或 metadata 中获取 aspect_ratio
+	aspectRatio := a.getAspectRatio(req)
+
 	r := requestPayload{
 		Model:             defaultString(req.Model, "viduq1"),
 		Images:            req.Images,
 		Prompt:            req.Prompt,
 		Duration:          defaultInt(req.Duration, 5),
-		Resolution:        defaultString(req.Size, "1080p"),
+		AspectRatio:       aspectRatio, // 🆕 使用转换后的 aspect_ratio
 		MovementAmplitude: "auto",
 		Bgm:               false,
 	}
+
+	// 🆕 metadata 可能会覆盖上面的默认值（例如直接传 aspect_ratio）
 	metadata := req.Metadata
 	medaBytes, err := json.Marshal(metadata)
 	if err != nil {
@@ -223,6 +228,34 @@ func defaultInt(value, defaultValue int) int {
 		return defaultValue
 	}
 	return value
+}
+
+// 🆕 getAspectRatio 将 size 或 metadata 中的 aspect_ratio 转换为 Vidu 支持的格式
+func (a *TaskAdaptor) getAspectRatio(req *relaycommon.TaskSubmitReq) string {
+	// 优先使用 metadata 中的 aspect_ratio（如果前端直接传了）
+	if aspectRatio, ok := req.Metadata["aspect_ratio"].(string); ok && aspectRatio != "" {
+		// 验证是否为支持的值
+		switch aspectRatio {
+		case "1:1", "16:9", "9:16":
+			return aspectRatio
+		}
+	}
+
+	// 从 size 字段转换（支持 NewAPI 示例格式：1920x1080）
+	switch req.Size {
+	// 方形
+	case "1024x1024", "512x512", "1:1":
+		return "1:1"
+	// 横屏 16:9
+	case "1920x1080", "1280x720", "16:9":
+		return "16:9"
+	// 竖屏 9:16
+	case "1080x1920", "720x1280", "9:16":
+		return "9:16"
+	default:
+		// 默认返回 16:9（最常用的比例）
+		return "16:9"
+	}
 }
 
 func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, error) {
