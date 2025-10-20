@@ -95,18 +95,22 @@ func GetCozeAccessToken(info *relaycommon.RelayInfo, oauthConfig *CozeOAuthConfi
 
 	val, err := cozeOAuthCache.Get(cacheKey)
 	if err == nil {
+		common.SysLog(fmt.Sprintf("[OAuth Debug] 使用缓存的 token (前20字符): %s...", val.(string)[:min(20, len(val.(string)))]))
 		return val.(string), nil
 	}
 
+	common.SysLog("[OAuth Debug] 缓存未命中，开始生成新 token")
 	signedJWT, err := createCozeSignedJWT(oauthConfig)
 	if err != nil {
 		return "", fmt.Errorf("failed to create signed JWT: %w", err)
 	}
+	common.SysLog(fmt.Sprintf("[OAuth Debug] JWT 签名成功 (前50字符): %s...", signedJWT[:min(50, len(signedJWT))]))
 
 	newToken, err := exchangeJWTForCozeAccessToken(signedJWT, oauthConfig, info)
 	if err != nil {
 		return "", fmt.Errorf("failed to exchange JWT for access token: %w", err)
 	}
+	common.SysLog(fmt.Sprintf("[OAuth Debug] Access token 获取成功 (前20字符): %s...", newToken[:min(20, len(newToken))]))
 
 	success := cozeOAuthCache.SetDefault(cacheKey, newToken)
 	if !success {
@@ -115,6 +119,13 @@ func GetCozeAccessToken(info *relaycommon.RelayInfo, oauthConfig *CozeOAuthConfi
 	}
 
 	return newToken, nil
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
 
 func createCozeSignedJWT(config *CozeOAuthConfig) (string, error) {
@@ -194,6 +205,7 @@ func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, in
 		client = service.GetHttpClient()
 	}
 
+	common.SysLog(fmt.Sprintf("[OAuth Debug] 向 %s 发送 token 交换请求", tokenURL))
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", fmt.Errorf("failed to request token: %w", err)
@@ -204,6 +216,8 @@ func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, in
 	if err != nil {
 		return "", fmt.Errorf("failed to read response body: %w", err)
 	}
+
+	common.SysLog(fmt.Sprintf("[OAuth Debug] Token 交换响应状态: %d, 响应体: %s", resp.StatusCode, string(body)))
 
 	if resp.StatusCode != http.StatusOK {
 		return "", fmt.Errorf("token request failed with status %d: %s", resp.StatusCode, string(body))

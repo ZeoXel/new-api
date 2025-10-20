@@ -20,18 +20,18 @@ import (
 )
 
 func convertCozeWorkflowRequest(c *gin.Context, request dto.GeneralOpenAIRequest) *CozeWorkflowRequest {
-	parameters := make(map[string]interface{})
+	// 透传模式：直接使用原始 WorkflowParameters，不做任何修改
+	// 这样可以支持任意格式的工作流参数，包括图片路径等
+	parameters := request.WorkflowParameters
 
-	if len(request.Messages) > 0 {
-		lastMessage := request.Messages[len(request.Messages)-1]
-		if contentStr, ok := lastMessage.Content.(string); ok {
-			parameters["BOT_USER_INPUT"] = contentStr
-		}
-	}
-
-	if request.WorkflowParameters != nil {
-		for k, v := range request.WorkflowParameters {
-			parameters[k] = v
+	// 如果没有提供 WorkflowParameters，但有 Messages，则使用 BOT_USER_INPUT
+	if parameters == nil || len(parameters) == 0 {
+		parameters = make(map[string]interface{})
+		if len(request.Messages) > 0 {
+			lastMessage := request.Messages[len(request.Messages)-1]
+			if contentStr, ok := lastMessage.Content.(string); ok {
+				parameters["BOT_USER_INPUT"] = contentStr
+			}
 		}
 	}
 
@@ -42,7 +42,7 @@ func convertCozeWorkflowRequest(c *gin.Context, request dto.GeneralOpenAIRequest
 
 	// 添加调试日志
 	requestJson, _ := json.Marshal(workflowRequest)
-	common.SysLog(fmt.Sprintf("发送给Coze的工作流请求: %s", string(requestJson)))
+	common.SysLog(fmt.Sprintf("[透传模式] 发送给Coze的工作流请求: %s", string(requestJson)))
 
 	return workflowRequest
 }

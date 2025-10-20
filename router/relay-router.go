@@ -70,6 +70,9 @@ func SetRelayRouter(router *gin.Engine) {
 		wsRouter.GET("/realtime", func(c *gin.Context) {
 			controller.Relay(c, types.RelayFormatOpenAIRealtime)
 		})
+
+		// Workflow execution query route
+		relayV1Router.GET("/workflows/executions/:execute_id", controller.GetWorkflowExecution)
 	}
 	{
 		//http router

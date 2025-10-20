@@ -26,6 +26,12 @@ var ModelList = []string{
 	"Doubao-1.5-thinking-pro",
 	"Doubao-1.5-pro-256k",
 	"coze-workflow",
+	"coze-workflow-async",
 }
+
+const (
+	ModelWorkflowSync  = "coze-workflow"       // 同步流式执行
+	ModelWorkflowAsync = "coze-workflow-async" // 异步执行
+)
 
 var ChannelName = "coze"

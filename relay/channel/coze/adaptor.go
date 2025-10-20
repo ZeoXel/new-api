@@ -50,8 +50,17 @@ func (a *Adaptor) ConvertOpenAIRequest(c *gin.Context, info *relaycommon.RelayIn
 		return nil, errors.New("request is nil")
 	}
 
-	// Check if this is a workflow request
-	if request.Model == "coze-workflow" || request.WorkflowId != "" {
+	// Check if this is an async workflow request
+	if request.Model == ModelWorkflowAsync || (request.WorkflowId != "" && !request.Stream) {
+		common.SysLog(fmt.Sprintf("[Async] Detected async workflow request: model=%s, stream=%v", request.Model, request.Stream))
+		// 标记为异步请求，在 DoRequest 中处理
+		c.Set("is_async_workflow", true)
+		c.Set("async_workflow_request", request)
+		return nil, nil // 返回 nil，在 DoRequest 中处理
+	}
+
+	// Check if this is a sync workflow request
+	if request.Model == ModelWorkflowSync || request.WorkflowId != "" {
 		return convertCozeWorkflowRequest(c, *request), nil
 	}
 
@@ -72,8 +81,38 @@ func (a *Adaptor) ConvertRerankRequest(c *gin.Context, relayMode int, request dt
 func (a *Adaptor) DoRequest(c *gin.Context, info *relaycommon.RelayInfo, requestBody io.Reader) (any, error) {
 	common.SysLog(fmt.Sprintf("DoRequest called with OriginModelName: %s", info.OriginModelName))
 
-	// Check if this is a workflow request
-	if info.OriginModelName == "coze-workflow" {
+	// Check if this is an async workflow request
+	if isAsync, _ := c.Get("is_async_workflow"); isAsync == true {
+		common.SysLog("[Async] Processing async workflow request in DoRequest")
+		requestVal, _ := c.Get("async_workflow_request")
+		request, ok := requestVal.(*dto.GeneralOpenAIRequest)
+		if !ok {
+			return nil, errors.New("invalid async workflow request")
+		}
+
+		// 处理异步请求并返回响应
+		response, err := handleAsyncWorkflowRequest(c, info, request)
+		if err != nil {
+			return nil, err
+		}
+
+		// 直接写响应到客户端
+		jsonResponse, err := json.Marshal(response)
+		if err != nil {
+			return nil, err
+		}
+
+		c.Writer.Header().Set("Content-Type", "application/json")
+		c.Writer.WriteHeader(http.StatusOK)
+		_, _ = c.Writer.Write(jsonResponse)
+
+		// 返回特殊标记，告诉 DoResponse 不要再处理
+		c.Set("async_response_sent", true)
+		return nil, nil
+	}
+
+	// Check if this is a sync workflow request
+	if info.OriginModelName == ModelWorkflowSync || info.OriginModelName == "coze-workflow" {
 		common.SysLog("Processing as Coze workflow request")
 		return channel.DoApiRequest(a, c, info, requestBody)
 	}
@@ -117,9 +156,16 @@ func (a *Adaptor) DoRequest(c *gin.Context, info *relaycommon.RelayInfo, request
 
 // DoResponse implements channel.Adaptor.
 func (a *Adaptor) DoResponse(c *gin.Context, resp *http.Response, info *relaycommon.RelayInfo) (usage any, err *types.NewAPIError) {
+	// Check if async response was already sent
+	if responseSent, _ := c.Get("async_response_sent"); responseSent == true {
+		common.SysLog("[Async] Response already sent, skipping DoResponse")
+		// Return empty usage to avoid panic in quota consumption
+		return &dto.Usage{}, nil
+	}
+
 	// Check if this is a workflow request
 	common.SysLog(fmt.Sprintf("DoResponse called with OriginModelName: %s", info.OriginModelName))
-	if info.OriginModelName == "coze-workflow" {
+	if info.OriginModelName == ModelWorkflowSync || info.OriginModelName == "coze-workflow" {
 		if info.IsStream {
 			usage, err = cozeWorkflowStreamHandler(c, info, resp)
 		} else {
@@ -177,9 +223,12 @@ func (a *Adaptor) Init(info *relaycommon.RelayInfo) {
 func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Header, info *relaycommon.RelayInfo) error {
 	channel.SetupApiRequestHeader(info, c, req)
 
+	common.SysLog(fmt.Sprintf("[OAuth Debug] ChannelOtherSettings: %+v", info.ChannelOtherSettings))
+	common.SysLog(fmt.Sprintf("[OAuth Debug] CozeAuthType 原始值: '%s'", info.ChannelOtherSettings.CozeAuthType))
 	authType := info.ChannelOtherSettings.CozeAuthType
 	if authType == "" {
 		authType = "pat"
+		common.SysLog("[OAuth Debug] authType 为空，使用默认值 'pat'")
 	}
 
 	var token string
@@ -194,10 +243,14 @@ func (a *Adaptor) SetupRequestHeader(c *gin.Context, req *http.Header, info *rel
 		if err != nil {
 			return fmt.Errorf("failed to get OAuth access token: %w", err)
 		}
+		common.SysLog(fmt.Sprintf("[OAuth Debug] 准备使用 OAuth token (前20字符): %s...", token[:min(20, len(token))]))
 	} else {
 		token = info.ApiKey
+		common.SysLog("[OAuth Debug] 使用 PAT token 模式")
 	}
 
-	req.Set("Authorization", "Bearer "+token)
+	authHeader := "Bearer " + token
+	common.SysLog(fmt.Sprintf("[OAuth Debug] 设置 Authorization 头 (前30字符): %s...", authHeader[:min(30, len(authHeader))]))
+	req.Set("Authorization", authHeader)
 	return nil
 }

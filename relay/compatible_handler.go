@@ -444,6 +444,13 @@ func postConsumeQuota(ctx *gin.Context, relayInfo *relaycommon.RelayInfo, usage 
 		other["image_generation_call"] = true
 		other["image_generation_call_price"] = imageGenerationCallPrice
 	}
+
+	// 检查是否是异步工作流请求，如果是则跳过日志记录（异步任务完成时会创建正确的日志）
+	if asyncResponseSent, _ := ctx.Get("async_response_sent"); asyncResponseSent == true {
+		logger.LogInfo(ctx, "Skipping log for async workflow - log will be created when task completes")
+		return
+	}
+
 	model.RecordConsumeLog(ctx, relayInfo.UserId, model.RecordConsumeLogParams{
 		ChannelId:        relayInfo.ChannelId,
 		PromptTokens:     promptTokens,
