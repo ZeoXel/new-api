@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 	"one-api/common"
 	"one-api/constant"
@@ -165,15 +166,30 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 		}
 	}
 
+	common.SysLog(fmt.Sprintf("[Async] 发送HTTP请求到: %s", requestURL))
+
 	resp, err := client.Do(req)
 	if err != nil {
+		common.SysLog(fmt.Sprintf("[Async] HTTP请求失败: %v", err))
 		updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("请求执行失败: %v", err), "", nil, info)
 		return
 	}
 	defer resp.Body.Close()
 
+	common.SysLog(fmt.Sprintf("[Async] 收到HTTP响应: status=%d", resp.StatusCode))
+
+	// 检查HTTP状态码
+	if resp.StatusCode != 200 {
+		bodyBytes, _ := io.ReadAll(resp.Body)
+		errorMsg := fmt.Sprintf("HTTP %d: %s", resp.StatusCode, string(bodyBytes))
+		common.SysLog(fmt.Sprintf("[Async] HTTP错误: %s", errorMsg))
+		updateTaskStatus(executeId, model.TaskStatusFailure, errorMsg, "", nil, info)
+		return
+	}
+
 	// 处理流式响应
 	// 注意：异步工作流可能需要很长时间，不应受到 STREAMING_TIMEOUT 限制
+	common.SysLog(fmt.Sprintf("[Async] 开始处理SSE流式响应"))
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Split(bufio.ScanLines)
 	// 设置更大的缓冲区以处理长时间流式传输
@@ -185,11 +201,18 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	var currentData string
 	var lastProgress int = 0
 
+	lineCount := 0
 	for scanner.Scan() {
 		line := scanner.Text()
+		lineCount++
+
+		if lineCount%100 == 0 {
+			common.SysLog(fmt.Sprintf("[Async] 已处理%d行SSE数据", lineCount))
+		}
 
 		if strings.HasPrefix(line, "event:") {
 			currentEvent = strings.TrimSpace(strings.TrimPrefix(line, "event:"))
+			common.SysLog(fmt.Sprintf("[Async] SSE事件类型: %s", currentEvent))
 			continue
 		}
 
@@ -199,6 +222,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 		}
 
 		if line == "" && currentEvent != "" && currentData != "" {
+			common.SysLog(fmt.Sprintf("[Async] 处理SSE事件: %s (数据长度: %d)", currentEvent, len(currentData)))
 			// 处理事件
 			switch currentEvent {
 			case "Message":
@@ -217,6 +241,11 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 
 					// 提取 usage
 					if usageMap, ok := messageData["usage"].(map[string]interface{}); ok {
+						// 保存旧值用于比较
+						oldPrompt := usage.PromptTokens
+						oldCompletion := usage.CompletionTokens
+						oldTotal := usage.TotalTokens
+
 						if inputCount, ok := usageMap["input_count"].(float64); ok {
 							usage.PromptTokens = int(inputCount)
 						}
@@ -226,8 +255,30 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 						if tokenCount, ok := usageMap["token_count"].(float64); ok {
 							usage.TotalTokens = int(tokenCount)
 						}
-						common.SysLog(fmt.Sprintf("[Async] Extracted usage from Message: Prompt=%d, Completion=%d, Total=%d",
-							usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
+
+						// 数据合理性校验：修复 Coze API 返回的异常 completion_tokens
+						if usage.CompletionTokens > usage.TotalTokens || usage.CompletionTokens < 0 {
+							common.SysLog(fmt.Sprintf("[Async] WARNING: 检测到异常 completion_tokens=%d (total=%d, prompt=%d), 自动修正",
+								usage.CompletionTokens, usage.TotalTokens, usage.PromptTokens))
+							usage.CompletionTokens = usage.TotalTokens - usage.PromptTokens
+							if usage.CompletionTokens < 0 {
+								usage.CompletionTokens = 0
+							}
+							common.SysLog(fmt.Sprintf("[Async] 修正后: completion_tokens=%d", usage.CompletionTokens))
+						}
+
+						// 记录 usage 变化（用于诊断）
+						if oldTotal > 0 {
+							// 检测异常：usage 不应该减少
+							if usage.TotalTokens < oldTotal {
+								common.SysLog(fmt.Sprintf("[Async] WARNING: usage 发生减少！旧值: %d, 新值: %d", oldTotal, usage.TotalTokens))
+							}
+							common.SysLog(fmt.Sprintf("[Async] Usage 更新: Prompt %d→%d, Completion %d→%d, Total %d→%d",
+								oldPrompt, usage.PromptTokens, oldCompletion, usage.CompletionTokens, oldTotal, usage.TotalTokens))
+						} else {
+							common.SysLog(fmt.Sprintf("[Async] 首次提取 usage from Message: Prompt=%d, Completion=%d, Total=%d",
+								usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
+						}
 					}
 				}
 
@@ -247,12 +298,62 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 							if tokenCount, ok := usageMap["token_count"].(float64); ok {
 								usage.TotalTokens = int(tokenCount)
 							}
+
+							// 数据合理性校验：修复 Coze API 返回的异常 completion_tokens
+							if usage.CompletionTokens > usage.TotalTokens || usage.CompletionTokens < 0 {
+								common.SysLog(fmt.Sprintf("[Async] WARNING: Done事件检测到异常 completion_tokens=%d (total=%d, prompt=%d), 自动修正",
+									usage.CompletionTokens, usage.TotalTokens, usage.PromptTokens))
+								usage.CompletionTokens = usage.TotalTokens - usage.PromptTokens
+								if usage.CompletionTokens < 0 {
+									usage.CompletionTokens = 0
+								}
+								common.SysLog(fmt.Sprintf("[Async] 修正后: completion_tokens=%d", usage.CompletionTokens))
+							}
+
+							common.SysLog(fmt.Sprintf("[Async] 从Done事件提取 usage: Prompt=%d, Completion=%d, Total=%d",
+								usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
 						}
 					}
 				}
 
 				// 更新任务为成功
-				updateTaskStatus(executeId, model.TaskStatusSuccess, "", fullOutput.String(), &usage, info)
+				// 修复：Coze API返回的output_count对视频的计费过高（49,000/视频）
+				// 实际应按合理成本计费（约5,000/视频）
+				outputText := fullOutput.String()
+
+				// 检测视频URL数量
+				videoCount := strings.Count(outputText, "tos-cn-beijing.volces.com/doubao-seedance")
+
+				// 如果检测到视频，重新计算合理的completion_tokens
+				if videoCount > 0 {
+					oldCompletionTokens := usage.CompletionTokens
+
+					// 估算文本部分的token（中英文混合，按length/3估算）
+					textTokens := len(outputText) / 3
+					if textTokens < 100 {
+						textTokens = 100
+					}
+
+					// 每个视频按合理成本计费：5000 tokens
+					const REASONABLE_TOKENS_PER_VIDEO = 5000
+					videoTokens := videoCount * REASONABLE_TOKENS_PER_VIDEO
+
+					// 重新计算completion_tokens
+					usage.CompletionTokens = textTokens + videoTokens
+					usage.TotalTokens = usage.PromptTokens + usage.CompletionTokens
+
+					common.SysLog(fmt.Sprintf("[Async] 检测到%d个视频，重新计算合理计费", videoCount))
+					common.SysLog(fmt.Sprintf("[Async] 文本tokens=%d, 视频tokens=%d(%d*%d)",
+						textTokens, videoTokens, videoCount, REASONABLE_TOKENS_PER_VIDEO))
+					common.SysLog(fmt.Sprintf("[Async] CompletionTokens修正: %d → %d",
+						oldCompletionTokens, usage.CompletionTokens))
+					common.SysLog(fmt.Sprintf("[Async] TotalTokens修正: %d → %d",
+						oldCompletionTokens+usage.PromptTokens, usage.TotalTokens))
+				}
+
+				common.SysLog(fmt.Sprintf("[Async] 最终计费 usage: Prompt=%d, Completion=%d, Total=%d",
+					usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
+				updateTaskStatus(executeId, model.TaskStatusSuccess, "", outputText, &usage, info)
 				common.SysLog(fmt.Sprintf("[Async] Task %s completed successfully", executeId))
 				return
 
@@ -270,6 +371,10 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 					common.SysLog(fmt.Sprintf("[Async] Task %s failed: %s", executeId, errorMsg))
 					return
 				}
+
+			case "PING":
+				// 记录PING事件的数据内容,可能包含进度信息
+				common.SysLog(fmt.Sprintf("[Async] PING数据: %s", currentData))
 			}
 
 			currentEvent = ""
@@ -326,18 +431,53 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 	task.FinishTime = time.Now().Unix()
 
 	var quota int
-	if usage != nil && usage.TotalTokens > 0 {
-		// 使用RelayInfo中的价格信息计算quota
-		// 计算公式：TotalTokens * ModelRatio * GroupRatio
-		ratio := info.PriceData.ModelRatio * info.PriceData.GroupRatioInfo.GroupRatio
-		quota = int(float64(usage.TotalTokens) * ratio)
-		if quota < 1 && usage.TotalTokens > 0 {
-			quota = 1 // 确保有消耗时至少扣1个quota
+
+	// ========== 工作流按次计费逻辑 START ==========
+	// 1. 提取 workflow_id
+	var taskData map[string]interface{}
+	var workflowId string
+	if err := task.GetData(&taskData); err == nil {
+		if wfId, ok := taskData["workflow_id"].(string); ok {
+			workflowId = wfId
+		}
+	}
+
+	// 2. 查询工作流定价
+	var workflowPricePerCall int
+	if workflowId != "" {
+		workflowPricePerCall = GetWorkflowPricePerCall(workflowId, info.ChannelId)
+	}
+
+	// 3. 计算 quota
+	if workflowPricePerCall > 0 {
+		// 按次计费：price * group_ratio
+		baseQuota := float64(workflowPricePerCall)
+		quota = int(baseQuota * info.PriceData.GroupRatioInfo.GroupRatio)
+
+		if quota < 1 {
+			quota = 1 // 确保至少扣1个quota
 		}
 
-		task.Quota = quota
-		common.SysLog(fmt.Sprintf("[Async] Calculated quota: %d (tokens: %d, ratio: %.2f)", quota, usage.TotalTokens, ratio))
+		common.SysLog(fmt.Sprintf("[Async] 工作流按次计费: workflow=%s, 基础价格=%d quota/次, 分组倍率=%.2f, 最终quota=%d",
+			workflowId, workflowPricePerCall, info.PriceData.GroupRatioInfo.GroupRatio, quota))
+
+	} else if usage != nil && usage.TotalTokens > 0 {
+		// 回退到 token 计费（向后兼容）
+		ratio := info.PriceData.ModelRatio * info.PriceData.GroupRatioInfo.GroupRatio
+		quota = int(float64(usage.TotalTokens) * ratio)
+
+		if quota < 1 && usage.TotalTokens > 0 {
+			quota = 1
+		}
+
+		common.SysLog(fmt.Sprintf("[Async] Token计费（未配置工作流定价）: tokens=%d, 倍率=%.2f, quota=%d",
+			usage.TotalTokens, ratio, quota))
+	} else {
+		common.SysLog("[Async] WARNING: 无法计算quota（无定价且无token usage）")
 	}
+
+	task.Quota = quota
+	// ========== 工作流按次计费逻辑 END ==========
 
 	if status == model.TaskStatusSuccess {
 		task.Progress = "100%"
@@ -360,8 +500,8 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 		return
 	}
 
-	// 记录quota消耗（成功或失败都记录，只要有usage）
-	if quota > 0 && info != nil {
+	// 记录quota消耗（只有成功时才扣费）
+	if status == model.TaskStatusSuccess && quota > 0 && info != nil {
 		// 更新用户和渠道的使用统计
 		model.UpdateUserUsedQuotaAndRequestCount(info.UserId, quota)
 		model.UpdateChannelUsedQuota(info.ChannelId, quota)
@@ -375,7 +515,9 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 		}
 
 		// 创建日志记录以正确记录token消耗
-		recordAsyncConsumeLog(task, info, usage, quota, status == model.TaskStatusFailure, failReason)
+		recordAsyncConsumeLog(task, info, usage, quota, false, "")
+	} else if status == model.TaskStatusFailure {
+		common.SysLog(fmt.Sprintf("[Async] Task failed, not consuming quota: %s", failReason))
 	}
 }
 
@@ -454,6 +596,14 @@ func recordAsyncConsumeLog(task *model.Task, info *relaycommon.RelayInfo, usage 
 		common.SysLog(fmt.Sprintf("[Async] Failed to create log: %v", err))
 	} else {
 		common.SysLog(fmt.Sprintf("[Async] Successfully created log for task %s with %d tokens", task.TaskID, usage.TotalTokens))
+	}
+
+	// 记录到数据看板 quota_data 表
+	if common.DataExportEnabled {
+		gopool.Go(func() {
+			model.LogQuotaData(info.UserId, username, info.OriginModelName, quota, task.FinishTime, usage.PromptTokens+usage.CompletionTokens)
+			common.SysLog(fmt.Sprintf("[Async] Logged quota data for task %s: quota=%d, tokens=%d", task.TaskID, quota, usage.PromptTokens+usage.CompletionTokens))
+		})
 	}
 }
 

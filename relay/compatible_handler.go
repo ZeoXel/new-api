@@ -288,6 +288,11 @@ func postConsumeQuota(ctx *gin.Context, relayInfo *relaycommon.RelayInfo, usage 
 
 	var quotaCalculateDecimal decimal.Decimal
 
+	// ========== 工作流按次计费已改用系统统一的 UsePrice 机制 ==========
+	// 通过将工作流 ID 作为模型名称，在价格配置中设置按次价格
+	// 不再需要单独的 workflow_price 字段
+	// ==========================================================
+
 	var audioInputQuota decimal.Decimal
 	var audioInputPrice float64
 	if !relayInfo.PriceData.UsePrice {
@@ -333,6 +338,7 @@ func postConsumeQuota(ctx *gin.Context, relayInfo *relaycommon.RelayInfo, usage 
 			quotaCalculateDecimal = decimal.NewFromInt(1)
 		}
 	} else {
+		// 使用价格计费（按次计费）
 		quotaCalculateDecimal = dModelPrice.Mul(dQuotaPerUnit).Mul(dGroupRatio)
 	}
 	// 添加 responses tools call 调用的配额
@@ -349,7 +355,8 @@ func postConsumeQuota(ctx *gin.Context, relayInfo *relaycommon.RelayInfo, usage 
 	var logContent string
 
 	// record all the consume log even if quota is 0
-	if totalTokens == 0 {
+	if totalTokens == 0 && !relayInfo.PriceData.UsePrice {
+		// 按次计费时 totalTokens 可能为 0，这是正常的
 		// in this case, must be some error happened
 		// we cannot just return, because we may have to return the pre-consumed quota
 		quota = 0
@@ -357,8 +364,11 @@ func postConsumeQuota(ctx *gin.Context, relayInfo *relaycommon.RelayInfo, usage 
 		logger.LogError(ctx, fmt.Sprintf("total tokens is 0, cannot consume quota, userId %d, channelId %d, "+
 			"tokenId %d, model %s， pre-consumed quota %d", relayInfo.UserId, relayInfo.ChannelId, relayInfo.TokenId, modelName, relayInfo.FinalPreConsumedQuota))
 	} else {
-		if !ratio.IsZero() && quota == 0 {
+		if !ratio.IsZero() && quota == 0 && !relayInfo.PriceData.UsePrice {
 			quota = 1
+		}
+		if relayInfo.PriceData.UsePrice && quota < 1 {
+			quota = 1 // 按次计费至少扣1个quota
 		}
 		model.UpdateUserUsedQuotaAndRequestCount(relayInfo.UserId, quota)
 		model.UpdateChannelUsedQuota(relayInfo.ChannelId, quota)

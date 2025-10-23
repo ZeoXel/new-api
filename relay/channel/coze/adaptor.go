@@ -50,9 +50,24 @@ func (a *Adaptor) ConvertOpenAIRequest(c *gin.Context, info *relaycommon.RelayIn
 		return nil, errors.New("request is nil")
 	}
 
+	// 🔧 对于工作流请求，先过滤掉空值参数（防止透传模式下的问题）
+	// 这个过滤会直接修改request对象，确保即使在透传模式下也能过滤
+	if request.WorkflowId != "" && request.WorkflowParameters != nil {
+		filterEmptyWorkflowParameters(request)
+	}
+
+	// 🆕 方案A：将工作流 ID 作为模型名称，以使用系统按次计费机制
+	if request.WorkflowId != "" {
+		// 将工作流 ID 设置为模型名称，这样可以在价格配置中为每个工作流单独定价
+		info.OriginModelName = request.WorkflowId
+		common.SysLog(fmt.Sprintf("[WorkflowModel] 工作流ID作为模型名称: %s", request.WorkflowId))
+	}
+
 	// Check if this is an async workflow request
-	if request.Model == ModelWorkflowAsync || (request.WorkflowId != "" && !request.Stream) {
-		common.SysLog(fmt.Sprintf("[Async] Detected async workflow request: model=%s, stream=%v", request.Model, request.Stream))
+	// 只有明确指定 model="coze-workflow-async" 时才使用异步执行
+	if request.Model == ModelWorkflowAsync {
+		common.SysLog(fmt.Sprintf("[Async] Detected async workflow request: model=%s, workflow_id=%s, stream=%v",
+			request.Model, request.WorkflowId, request.Stream))
 		// 标记为异步请求，在 DoRequest 中处理
 		c.Set("is_async_workflow", true)
 		c.Set("async_workflow_request", request)
@@ -112,7 +127,8 @@ func (a *Adaptor) DoRequest(c *gin.Context, info *relaycommon.RelayInfo, request
 	}
 
 	// Check if this is a sync workflow request
-	if info.OriginModelName == ModelWorkflowSync || info.OriginModelName == "coze-workflow" {
+	// 检查原始请求中是否有workflow_id
+	if req, ok := info.Request.(*dto.GeneralOpenAIRequest); ok && req.WorkflowId != "" {
 		common.SysLog("Processing as Coze workflow request")
 		return channel.DoApiRequest(a, c, info, requestBody)
 	}
@@ -163,9 +179,9 @@ func (a *Adaptor) DoResponse(c *gin.Context, resp *http.Response, info *relaycom
 		return &dto.Usage{}, nil
 	}
 
-	// Check if this is a workflow request
+	// Check if this is a workflow request by checking the original request
 	common.SysLog(fmt.Sprintf("DoResponse called with OriginModelName: %s", info.OriginModelName))
-	if info.OriginModelName == ModelWorkflowSync || info.OriginModelName == "coze-workflow" {
+	if req, ok := info.Request.(*dto.GeneralOpenAIRequest); ok && req.WorkflowId != "" {
 		if info.IsStream {
 			usage, err = cozeWorkflowStreamHandler(c, info, resp)
 		} else {
@@ -194,21 +210,13 @@ func (a *Adaptor) GetModelList() []string {
 
 // GetRequestURL implements channel.Adaptor.
 func (a *Adaptor) GetRequestURL(info *relaycommon.RelayInfo) (string, error) {
-	// Check if this is a workflow request
-	if info.OriginModelName == "coze-workflow" {
-		// Get workflow_id from request
-		if req, ok := info.Request.(*dto.GeneralOpenAIRequest); ok {
-			workflowId := req.WorkflowId
-			if workflowId == "" {
-				return "", fmt.Errorf("workflow_id is required for coze-workflow model")
-			}
-			if info.IsStream {
-				return fmt.Sprintf("%s/v1/workflow/stream_run", info.ChannelBaseUrl), nil
-			} else {
-				return fmt.Sprintf("%s/v1/workflow/run", info.ChannelBaseUrl), nil
-			}
+	// Check if this is a workflow request by checking WorkflowId in request
+	if req, ok := info.Request.(*dto.GeneralOpenAIRequest); ok && req.WorkflowId != "" {
+		if info.IsStream {
+			return fmt.Sprintf("%s/v1/workflow/stream_run", info.ChannelBaseUrl), nil
+		} else {
+			return fmt.Sprintf("%s/v1/workflow/run", info.ChannelBaseUrl), nil
 		}
-		return "", fmt.Errorf("invalid request type for workflow")
 	}
 
 	return fmt.Sprintf("%s/v3/chat", info.ChannelBaseUrl), nil
@@ -216,7 +224,14 @@ func (a *Adaptor) GetRequestURL(info *relaycommon.RelayInfo) (string, error) {
 
 // Init implements channel.Adaptor.
 func (a *Adaptor) Init(info *relaycommon.RelayInfo) {
-
+	// 🔧 对于工作流请求，在Init阶段就过滤掉空值参数
+	// 这样确保在所有模式（包括透传模式）下都能过滤
+	if req, ok := info.Request.(*dto.GeneralOpenAIRequest); ok {
+		if req.WorkflowId != "" && req.WorkflowParameters != nil {
+			filterEmptyWorkflowParameters(req)
+			common.SysLog("[Init] Coze工作流请求参数过滤完成")
+		}
+	}
 }
 
 // SetupRequestHeader implements channel.Adaptor.
