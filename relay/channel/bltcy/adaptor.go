@@ -5,6 +5,7 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"mime/multipart"
 	"net/http"
 	"one-api/common"
 	"one-api/dto"
@@ -12,6 +13,7 @@ import (
 	relaycommon "one-api/relay/common"
 	"one-api/service"
 	"one-api/setting/ratio_setting"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -35,6 +37,7 @@ func (a *Adaptor) Init(channelId int, channelName string, channelType int) {
 func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (*http.Response, error) {
 	// 🆕 优先使用保存的原始请求（用于被中间件修改过的请求，如 Kling）
 	var requestBody []byte
+	var contentType string
 	var requestPath string
 	var requestQuery string
 	var err error
@@ -60,12 +63,28 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 		}
 	}
 
-	// 如果没有保存的原始请求，使用当前请求
+	// 如果没有保存的原始请求，判断请求类型并处理
 	if len(requestBody) == 0 {
-		requestBody, err = common.GetRequestBody(c)
-		if err != nil {
-			return nil, fmt.Errorf("failed to read request body: %w", err)
+		currentContentType := c.Request.Header.Get("Content-Type")
+
+		// 🆕 检查是否是 multipart 请求
+		if strings.Contains(currentContentType, "multipart/form-data") {
+			fmt.Printf("[DEBUG Bltcy] Detected multipart request, using special handler\n")
+			requestBody, contentType, err = handleMultipartRequest(c)
+			if err != nil {
+				return nil, fmt.Errorf("failed to handle multipart request: %w", err)
+			}
+		} else {
+			// 原有的处理逻辑（JSON等）
+			requestBody, err = common.GetRequestBody(c)
+			if err != nil {
+				return nil, fmt.Errorf("failed to read request body: %w", err)
+			}
+			contentType = currentContentType
 		}
+	} else {
+		// 使用保存的原始请求体时，保持原有的 Content-Type
+		contentType = c.Request.Header.Get("Content-Type")
 	}
 
 	if requestPath == "" {
@@ -83,8 +102,8 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 	}
 
 	// 调试信息
-	fmt.Printf("[DEBUG Bltcy] Method: %s, targetURL: %s, bodyLen: %d\n",
-		c.Request.Method, targetURL, len(requestBody))
+	fmt.Printf("[DEBUG Bltcy] Method: %s, targetURL: %s, bodyLen: %d, contentType: %s\n",
+		c.Request.Method, targetURL, len(requestBody), contentType)
 
 	// 创建请求
 	req, err := http.NewRequest(c.Request.Method, targetURL, bytes.NewReader(requestBody))
@@ -98,8 +117,8 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 	defer cancel()
 	req = req.WithContext(ctx)
 
-	// 复制请求头
-	req.Header.Set("Content-Type", c.Request.Header.Get("Content-Type"))
+	// 设置请求头（🆕 使用处理后的 Content-Type）
+	req.Header.Set("Content-Type", contentType)
 	req.Header.Set("Accept", c.Request.Header.Get("Accept"))
 	req.Header.Set("Authorization", "Bearer "+channelKey)
 
@@ -399,4 +418,71 @@ func RelayBltcy(c *gin.Context) {
 
 	// 返回响应
 	c.Data(resp.StatusCode, resp.Header.Get("Content-Type"), responseBody)
+}
+
+// 🆕 处理 multipart/form-data 请求
+// 参考 OpenAI adaptor 的实现，重新构建 multipart 请求体
+func handleMultipartRequest(c *gin.Context) ([]byte, string, error) {
+	// 解析 multipart 表单（最大 32MB 内存）
+	if err := c.Request.ParseMultipartForm(32 << 20); err != nil {
+		return nil, "", fmt.Errorf("failed to parse multipart form: %w", err)
+	}
+
+	if c.Request.MultipartForm == nil {
+		return nil, "", fmt.Errorf("multipart form is nil after parsing")
+	}
+
+	// 创建新的 multipart writer
+	var requestBody bytes.Buffer
+	writer := multipart.NewWriter(&requestBody)
+
+	// 复制所有表单字段（非文件）
+	for key, values := range c.Request.MultipartForm.Value {
+		for _, value := range values {
+			if err := writer.WriteField(key, value); err != nil {
+				return nil, "", fmt.Errorf("failed to write field %s: %w", key, err)
+			}
+		}
+	}
+
+	// 复制所有文件字段
+	for key, files := range c.Request.MultipartForm.File {
+		for _, fileHeader := range files {
+			fmt.Printf("[DEBUG Bltcy] Processing file field: %s, filename: %s, size: %d bytes\n",
+				key, fileHeader.Filename, fileHeader.Size)
+
+			// 打开文件
+			file, err := fileHeader.Open()
+			if err != nil {
+				return nil, "", fmt.Errorf("failed to open file %s: %w", fileHeader.Filename, err)
+			}
+			defer file.Close()
+
+			// 创建文件字段
+			part, err := writer.CreateFormFile(key, fileHeader.Filename)
+			if err != nil {
+				return nil, "", fmt.Errorf("failed to create form file for %s: %w", fileHeader.Filename, err)
+			}
+
+			// 复制文件内容
+			written, err := io.Copy(part, file)
+			if err != nil {
+				return nil, "", fmt.Errorf("failed to copy file %s: %w", fileHeader.Filename, err)
+			}
+
+			fmt.Printf("[DEBUG Bltcy] Copied %d bytes for file %s\n", written, fileHeader.Filename)
+		}
+	}
+
+	// 关闭 writer 以设置结束边界
+	if err := writer.Close(); err != nil {
+		return nil, "", fmt.Errorf("failed to close multipart writer: %w", err)
+	}
+
+	// 返回新的请求体和 Content-Type（包含新的 boundary）
+	newContentType := writer.FormDataContentType()
+	fmt.Printf("[DEBUG Bltcy] Created new multipart body, size: %d bytes, Content-Type: %s\n",
+		requestBody.Len(), newContentType)
+
+	return requestBody.Bytes(), newContentType, nil
 }

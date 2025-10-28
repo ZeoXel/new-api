@@ -1,0 +1,40 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "main.go",
+      "use": "@vercel/go"
+    },
+    {
+      "src": "web/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "web/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/.*",
+      "dest": "main.go"
+    },
+    {
+      "src": "/v1/.*",
+      "dest": "main.go"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/web/dist/$1"
+    }
+  ],
+  "env": {
+    "GO111MODULE": "on",
+    "CGO_ENABLED": "0"
+  },
+  "functions": {
+    "main.go": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  }
+}

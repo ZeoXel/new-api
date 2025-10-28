@@ -1,0 +1,27 @@
+工作流名称,工作流ID,输入变量名,输入变量类型,输入内容,输出类型,工作流描述,,,输入例子,,,成本,本地结果,网站 结果
+emotion_montaga_v1_1,7549079559813087284,input,string,有关情感的一句话,string,一键制作情感主题混剪视频,30s,,星星不独属于你一人,,,1$,√,√
+RESEARCH_XLX,7549076385299333172,input,string,任意产品名称,string,产品调研,8m9s,,鼠标,,,1$,√,√
+zhichang_manhua,7549045650412290058,input,string,职场相关的一句话,string,漫画风格职场话题,7m,,上班要提升自己,,,2$,√,√
+TKEnglishgushi,7549041786641006626,input,string,主人和金毛有关的任何词或句子,string,TK赛道英文故事视频,4m48s,,大金毛爱跳舞,,,3$,√,√
+dianshang_10s,7549039571225739299,input/fbl/image,string/string/image,任意产品名称，可带品牌/分辨率+产品图片,string,电商宣传视频（上传单个产品图片）,1m41s,,iPhone17+产品图,,,5$,√,√
+Philosophy_1_1,7549034632123367451,input,string,任意哲学类主题（唯物主义）,string,生成哲学认知视频,3m41s,,唯心主义/虚无主义,,,3$,√,√
+,,,,,,,,,,,,,,
+manhua,7551330046477500452,input,string,任意主题漫画,string,根据主题词，一键生成漫画版视频。例如输入如何经营婚姻‘如何暴富、如何成仙？,,,2m32s,如何快速赚到人生第一桶金,,3$,√,√
+dianshang,7551731827355631655,input/production/logo/text/size/text_gg,string/image/image/string/string/string,产品名称/产品图片/logo图片/产品尺寸/产品相关文案/广告词,string/Array<image>,电商视频,30m,,保温杯,,,30$,,
+FY_video_all_1szr,7555352961393213480,audio_url/img_url/prompt/video,string/string/string/video,音频链接/图片链接/提示词/视频,string,飞影数字人免费对口型,1m,,女孩坐在椅子上说话,,,免费版,,
+huachairen,7554976982552985626,title/left_top/right_top,string/string/string,任意心理学主题,draft_url/title,心理学动态火柴人视频, 10m25s,,工作记忆模型,,,5$,√,
+chuanyue_video_anthonytgb,7555352512988823594,input/auto_text/role,string/string/string,主题/自定义文案/性别,string,人物穿越古代自拍视频（豆包剧情版本）安东特别版,6m,,唐僧穿越到现代，坐地铁，买衣服，逛商场/无/男,,,3$,,
+zhuanlianjie,7555446335664832554,input,file,任意文件资源,file,资源转链接,10s,,音频文件,,,0$,√,
+yuwenkebenjiedu,7555430474441900082,title/bgm/logo/ID,string/string/image/string,语文课本上的文章标题/背景音乐链接/logo图片/id,string,语文课本解读，输入课文标题，生成课文解读视频,5m34s,,最后一片常春藤叶,,,10$,√,
+gushici_zhonngban_v1_1,7555429396829470760,title,string,任意主题,string,根据主题生成古诗词相关视频,4m03s,,如自嘲、遗憾、思乡、边塞壮志、爱情相思、时光易逝、落花、流水、观海等,,,2$,√,
+soul_pain_v1_1,7555426708325875738,video/type,video/string,视频/抽帧方式（每5s一次）,string,灵魂画手视频（尽量在30s内不要超过1min）,2m31s,,综艺视频,,,3$,√,
+book_video_3d,7555426106914062346,input,string,名场面,string,一键生成3d名场面视频,2m34s,,大闹天宫,,,2$,√,
+fat_cat,7555426070024814602,input,string,胖橘猫的日常生活,string,胖胖橘猫的日常生活,6m,,开卡丁车开飞机开坦克,,,3.5$,√,
+huangli,7555426031244591145,date/bottom_right_text/auto_text/home_bg_gif,string/string/string/string,日期/水印/自定义文案/背景gif图,string,钦天监黄历视频工作流,2m,,10/1/25,,,1.3$,√,
+en_video_stick_v1_1,7555425611536924699,author/title/xilie/input,string/string/string/string,作者/主题/系列/自定义文案,string,黑白英语心理学双9：16,4m37s,,羊群效应/社会心理学,,,8$,√,
+video_small,7555422998796730408,input,string,任意行为事件,string,小人国视频（古代）,5m44s,,后羿射日,,,4$,√,√
+history_video,7555422050492629026,input/auto_text,string/string,任意故事主题/自定义文案,string,一键生成历史故事,8m46s,,大闹天宫,,,6.5$,√,√
+,7552857607800537129,input/input2/image,string/string/image,设计$素、风格等/产品名称/产品图片,Array<image>/Array<image>,一键生成五张海报,3m,,namemei吹风机,,,1$,√,√
+,7559028883187712036,input,string,任意现代相关行为、事件,string,小人国视频（现代）,8m,,造飞机,,,6$,√,
+,,,,,,,,,,,,,,
+,7559137542588334122,input,Array<File>,产品海报,string,动态产品海报,5m,,,,,2$,√,√

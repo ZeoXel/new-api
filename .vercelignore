@@ -1,0 +1,53 @@
+# Dependencies
+node_modules
+web/node_modules
+
+# Build artifacts
+web/dist
+bin
+*.exe
+one-api
+new-api
+new-api-fixed
+new-api-test
+one-api-test
+
+# Databases
+*.db
+*.db.backup
+oneapi.db
+one-api.db
+one-api.db.backup
+database_backup.sql
+
+# Logs
+logs
+*.log
+server.log
+web/server.log
+
+# Environment files
+.env
+.env.backup
+
+# Backup and test files
+deployment_backup
+debug_tools
+*.sh
+*.sql
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs
+*.md
+!README.md
+
+# Config files
+nginx_hidden_admin.conf
+one-api.service
+coze_oauth_config.json
+cloudflare_worker_*.js
+test_workflow_new_api.json
