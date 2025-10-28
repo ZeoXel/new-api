@@ -13,13 +13,14 @@ import (
 )
 
 type Ability struct {
-	Group     string  `json:"group" gorm:"type:varchar(64);primaryKey;autoIncrement:false"`
-	Model     string  `json:"model" gorm:"type:varchar(255);primaryKey;autoIncrement:false"`
-	ChannelId int     `json:"channel_id" gorm:"primaryKey;autoIncrement:false;index"`
-	Enabled   bool    `json:"enabled"`
-	Priority  *int64  `json:"priority" gorm:"bigint;default:0;index"`
-	Weight    uint    `json:"weight" gorm:"default:0;index"`
-	Tag       *string `json:"tag" gorm:"index"`
+	Group         string  `json:"group" gorm:"type:varchar(64);primaryKey;autoIncrement:false"`
+	Model         string  `json:"model" gorm:"type:varchar(255);primaryKey;autoIncrement:false"`
+	ChannelId     int     `json:"channel_id" gorm:"primaryKey;autoIncrement:false;index"`
+	Enabled       bool    `json:"enabled"`
+	Priority      *int64  `json:"priority" gorm:"bigint;default:0;index"`
+	Weight        uint    `json:"weight" gorm:"default:0;index"`
+	Tag           *string `json:"tag" gorm:"index"`
+	WorkflowPrice *int    `json:"workflow_price" gorm:"type:integer;default:null"` // 工作流按次定价（quota/次）
 }
 
 type AbilityWithChannel struct {

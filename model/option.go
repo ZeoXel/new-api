@@ -1,6 +1,8 @@
 package model
 
 import (
+	"encoding/json"
+	"fmt"
 	"one-api/common"
 	"one-api/setting"
 	"one-api/setting/config"
@@ -398,6 +400,10 @@ func updateOptionMap(key string, value string) (err error) {
 		err = ratio_setting.UpdateCompletionRatioByJSONString(value)
 	case "ModelPrice":
 		err = ratio_setting.UpdateModelPriceByJSONString(value)
+		// 🆕 自动同步工作流价格到 abilities 表
+		if err == nil {
+			syncWorkflowPriceToAbilities(value)
+		}
 	case "CacheRatio":
 		err = ratio_setting.UpdateCacheRatioByJSONString(value)
 	case "ImageRatio":
@@ -451,4 +457,60 @@ func handleConfigUpdate(key, value string) bool {
 	config.UpdateConfigFromMap(cfg, configMap)
 
 	return true // 已处理
+}
+
+// syncWorkflowPriceToAbilities 自动同步工作流价格到 abilities 表
+// 当用户在前端更新 ModelPrice 时，自动同步工作流定价到 abilities.workflow_price
+// 这样用户只需配置一次，同步和异步工作流都会生效
+func syncWorkflowPriceToAbilities(modelPriceJSON string) {
+	// 解析 ModelPrice JSON
+	var priceMap map[string]interface{}
+	err := json.Unmarshal([]byte(modelPriceJSON), &priceMap)
+	if err != nil {
+		common.SysLog(fmt.Sprintf("[WorkflowSync] 解析 ModelPrice JSON 失败: %v", err))
+		return
+	}
+
+	// 遍历所有价格配置
+	syncCount := 0
+	for modelName, priceValue := range priceMap {
+		// 只处理工作流 ID（以 75 开头的数字）
+		if !strings.HasPrefix(modelName, "75") {
+			continue
+		}
+
+		// 转换价格为 float64
+		var priceUSD float64
+		switch v := priceValue.(type) {
+		case float64:
+			priceUSD = v
+		case int:
+			priceUSD = float64(v)
+		case string:
+			priceUSD, _ = strconv.ParseFloat(v, 64)
+		default:
+			common.SysLog(fmt.Sprintf("[WorkflowSync] 跳过无效价格类型: %s = %v", modelName, priceValue))
+			continue
+		}
+
+		// 转换 USD 到 quota：1 USD = 500,000 quota
+		workflowPrice := int(priceUSD * 500000)
+
+		// 更新所有匹配的 abilities 记录
+		result := DB.Model(&Ability{}).
+			Where("model = ?", modelName).
+			Update("workflow_price", workflowPrice)
+
+		if result.Error != nil {
+			common.SysLog(fmt.Sprintf("[WorkflowSync] 更新失败: %s, error=%v", modelName, result.Error))
+		} else if result.RowsAffected > 0 {
+			syncCount++
+			common.SysLog(fmt.Sprintf("[WorkflowSync] ✓ 工作流 %s: $%.2f → %d quota (%d条记录)",
+				modelName, priceUSD, workflowPrice, result.RowsAffected))
+		}
+	}
+
+	if syncCount > 0 {
+		common.SysLog(fmt.Sprintf("[WorkflowSync] 成功同步 %d 个工作流定价到 abilities 表", syncCount))
+	}
 }
