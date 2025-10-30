@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sora 视频生成测试</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="text"],
+        input[type="file"],
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            border-left: 4px solid #4CAF50;
+        }
+        .error {
+            border-left-color: #f44336 !important;
+            background: #ffebee !important;
+        }
+        .success {
+            border-left-color: #4CAF50 !important;
+        }
+        .info {
+            border-left-color: #2196F3 !important;
+            background: #e3f2fd !important;
+        }
+        pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.pending { background: #fff3cd; color: #856404; }
+        .status.processing { background: #d1ecf1; color: #0c5460; }
+        .status.success { background: #d4edda; color: #155724; }
+        .status.failed { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎥 Sora 视频生成测试</h1>
+
+        <div class="form-group">
+            <label>API Token:</label>
+            <input type="text" id="apiToken" value="sk-f4S1I0MvDSnio8FbDxoPejJ6pDP5mUdSn85piIRTo8pVFC0B" />
+        </div>
+
+        <div class="form-group">
+            <label>API Base URL:</label>
+            <input type="text" id="baseUrl" value="http://localhost:3000" />
+        </div>
+
+        <div class="form-group">
+            <label>模型:</label>
+            <select id="model">
+                <option value="sora-2">sora-2</option>
+                <option value="sora-2-pro">sora-2-pro</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>提示词:</label>
+            <input type="text" id="prompt" value="基于这张图片生成视频" />
+        </div>
+
+        <div class="form-group">
+            <label>视频尺寸:</label>
+            <select id="size">
+                <option value="720x1280">720x1280 (竖屏)</option>
+                <option value="1280x720">1280x720 (横屏)</option>
+                <option value="1024x1024">1024x1024 (方形)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label>参考图片:</label>
+            <input type="file" id="imageFile" accept="image/*" />
+        </div>
+
+        <div class="form-group">
+            <label>视频时长 (秒):</label>
+            <input type="text" id="seconds" value="4" />
+        </div>
+
+        <div class="form-group">
+            <label>水印:</label>
+            <select id="watermark">
+                <option value="false">否</option>
+                <option value="true">是</option>
+            </select>
+        </div>
+
+        <button onclick="testSoraVideo()">🚀 提交视频生成任务</button>
+        <button onclick="clearResult()">🗑️ 清空结果</button>
+
+        <div id="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        let taskId = null;
+        let pollInterval = null;
+
+        function log(message, type = 'info') {
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            resultDiv.className = type;
+
+            const timestamp = new Date().toLocaleTimeString();
+            const logEntry = `[${timestamp}] ${message}`;
+
+            if (resultDiv.innerHTML === '') {
+                resultDiv.innerHTML = `<pre>${logEntry}</pre>`;
+            } else {
+                resultDiv.innerHTML += `<pre>${logEntry}</pre>`;
+            }
+        }
+
+        function clearResult() {
+            document.getElementById('result').innerHTML = '';
+            document.getElementById('result').style.display = 'none';
+            if (pollInterval) {
+                clearInterval(pollInterval);
+                pollInterval = null;
+            }
+            taskId = null;
+        }
+
+        async function testSoraVideo() {
+            clearResult();
+
+            const apiToken = document.getElementById('apiToken').value;
+            const baseUrl = document.getElementById('baseUrl').value;
+            const model = document.getElementById('model').value;
+            const prompt = document.getElementById('prompt').value;
+            const size = document.getElementById('size').value;
+            const seconds = document.getElementById('seconds').value;
+            const watermark = document.getElementById('watermark').value;
+            const fileInput = document.getElementById('imageFile');
+
+            if (!fileInput.files || fileInput.files.length === 0) {
+                log('❌ 请选择一张参考图片', 'error');
+                return;
+            }
+
+            log(`📤 开始提交视频生成任务...`, 'info');
+            log(`模型: ${model}`, 'info');
+            log(`提示词: ${prompt}`, 'info');
+            log(`尺寸: ${size}`, 'info');
+            log(`时长: ${seconds}秒`, 'info');
+
+            const formdata = new FormData();
+            formdata.append("model", model);
+            formdata.append("prompt", prompt);
+            formdata.append("size", size);
+            formdata.append("input_reference", fileInput.files[0], fileInput.files[0].name);
+            formdata.append("seconds", seconds);
+            formdata.append("watermark", watermark);
+
+            try {
+                const response = await fetch(`${baseUrl}/v1/videos`, {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${apiToken}`
+                    },
+                    body: formdata
+                });
+
+                const responseText = await response.text();
+
+                log(`📡 响应状态: ${response.status} ${response.statusText}`, response.ok ? 'success' : 'error');
+                log(`📄 响应头 Content-Type: ${response.headers.get('Content-Type')}`, 'info');
+                log(`📝 响应体:\n${responseText}`, response.ok ? 'success' : 'error');
+
+                if (!response.ok) {
+                    log(`❌ 请求失败: ${response.status} ${response.statusText}`, 'error');
+                    return;
+                }
+
+                // 尝试解析 JSON
+                try {
+                    const result = JSON.parse(responseText);
+
+                    if (result.task_id || result.id) {
+                        taskId = result.task_id || result.id;
+                        log(`✅ 任务已提交! 任务ID: ${taskId}`, 'success');
+
+                        // 开始轮询查询
+                        startPolling(baseUrl, apiToken, taskId);
+                    } else if (result.url) {
+                        log(`✅ 视频生成成功! URL: ${result.url}`, 'success');
+                    } else {
+                        log(`⚠️ 响应格式未知:\n${JSON.stringify(result, null, 2)}`, 'info');
+                    }
+                } catch (e) {
+                    log(`⚠️ 响应不是 JSON 格式，可能是其他格式的成功响应`, 'info');
+                }
+
+            } catch (error) {
+                log(`❌ 请求异常: ${error.message}`, 'error');
+                console.error(error);
+            }
+        }
+
+        function startPolling(baseUrl, apiToken, taskId) {
+            log(`🔄 开始轮询查询任务状态 (每5秒查询一次)...`, 'info');
+
+            pollInterval = setInterval(async () => {
+                try {
+                    const response = await fetch(`${baseUrl}/v1/videos/${taskId}`, {
+                        method: 'GET',
+                        headers: {
+                            'Authorization': `Bearer ${apiToken}`
+                        }
+                    });
+
+                    const result = await response.json();
+
+                    const status = result.status || 'unknown';
+                    log(`📊 任务状态: ${status}`, 'info');
+
+                    if (status === 'success' || status === 'succeeded' || status === 'completed') {
+                        clearInterval(pollInterval);
+                        log(`✅ 视频生成成功!`, 'success');
+                        if (result.url) {
+                            log(`🎬 视频地址: ${result.url}`, 'success');
+                        }
+                        log(`完整结果:\n${JSON.stringify(result, null, 2)}`, 'success');
+                    } else if (status === 'failed' || status === 'error') {
+                        clearInterval(pollInterval);
+                        log(`❌ 视频生成失败: ${result.error || result.message || '未知错误'}`, 'error');
+                        log(`完整结果:\n${JSON.stringify(result, null, 2)}`, 'error');
+                    } else {
+                        log(`⏳ 处理中... 进度: ${result.progress || 'N/A'}`, 'info');
+                    }
+
+                } catch (error) {
+                    log(`❌ 查询异常: ${error.message}`, 'error');
+                    clearInterval(pollInterval);
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>

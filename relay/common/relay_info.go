@@ -504,10 +504,11 @@ func (t TaskSubmitReq) HasImage() bool {
 }
 
 type TaskInfo struct {
-	Code     int    `json:"code"`
-	TaskID   string `json:"task_id"`
-	Status   string `json:"status"`
-	Reason   string `json:"reason,omitempty"`
-	Url      string `json:"url,omitempty"`
-	Progress string `json:"progress,omitempty"`
+	Code          int    `json:"code"`
+	TaskID        string `json:"task_id"`
+	Status        string `json:"status"`
+	Reason        string `json:"reason,omitempty"`
+	Url           string `json:"url,omitempty"`
+	Progress      string `json:"progress,omitempty"`
+	ActualCredits int    `json:"actual_credits,omitempty"` // 实际消耗的积分（用于按量计费）
 }

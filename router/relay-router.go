@@ -248,6 +248,13 @@ func SetRelayRouter(router *gin.Engine) {
 	{
 		relayBltcyPikaRouter.Any("/*path", controller.RelayBltcy)
 	}
+
+	// MiniMax 视频生成透传路由
+	relayBltcyMinimaxRouter := router.Group("/minimax")
+	relayBltcyMinimaxRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayBltcyMinimaxRouter.Any("/*path", controller.RelayBltcy)
+	}
 }
 
 func registerMjRouterGroup(relayMjRouter *gin.RouterGroup) {

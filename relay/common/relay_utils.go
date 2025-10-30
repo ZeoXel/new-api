@@ -101,6 +101,11 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 		}
 	}
 
+	// 保存模型名称到 RelayInfo（用于计费）
+	if req.Model != "" {
+		info.OriginModelName = req.Model
+	}
+
 	storeTaskRequest(c, info, action, req)
 	return nil
 }

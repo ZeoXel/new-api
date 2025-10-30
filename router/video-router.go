@@ -15,6 +15,17 @@ func SetVideoRouter(router *gin.Engine) {
 		videoV1Router.GET("/video/generations/:task_id", controller.RelayTask)
 	}
 
+	// Sora 视频生成路由 - 支持 multipart/form-data 文件上传
+	// 适用于 sora-2, sora-2-pro 等模型
+	// 示例请求: POST /v1/videos
+	// 支持参数: model, prompt, size, input_reference (文件), seconds, watermark 等
+	soraVideosRouter := router.Group("/v1")
+	soraVideosRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		soraVideosRouter.POST("/videos", controller.RelayBltcy)
+		soraVideosRouter.GET("/videos/:id", controller.RelayBltcy)
+	}
+
 	klingV1Router := router.Group("/kling/v1")
 	klingV1Router.Use(middleware.KlingRequestConvert(), middleware.TokenAuth(), middleware.Distribute())
 	{

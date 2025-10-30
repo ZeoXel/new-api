@@ -21,6 +21,42 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// ============ Vidu Credits 按量计费配置 ============
+
+// Vidu 模型默认 credits 估算值（用于预扣）
+var viduModelDefaultCredits = map[string]int{
+	"viduq1":       8,  // 按次计费，不使用 credits
+	"vidu2.0":      8,  // 按次计费，不使用 credits
+	"vidu1.5":      8,  // 按次计费，不使用 credits
+	"viduq2-turbo": 8,  // 5秒视频基础 credits
+	"viduq2-pro":   14, // 5秒视频基础 credits
+	"viduq2":       14, // 5秒视频基础 credits
+}
+
+// Vidu credits 单价：0.3125元/credit
+const viduCreditPrice = 0.3125
+
+// isViduCreditsModel 判断是否为支持 credits 按量计费的 Vidu 模型
+func isViduCreditsModel(modelName string) bool {
+	switch modelName {
+	case "viduq2-turbo", "viduq2-pro", "viduq2":
+		return true
+	default:
+		return false
+	}
+}
+
+// getViduDefaultCredits 获取 Vidu 模型的默认 credits 估算值
+func getViduDefaultCredits(modelName string) int {
+	if credits, ok := viduModelDefaultCredits[modelName]; ok {
+		return credits
+	}
+	return 8 // 默认值
+}
+
+// 已废弃：adjustViduQuotaByCredits 函数已移除
+// Vidu Credits 现在在任务提交时直接根据实际 credits 计费，无需预扣补扣机制
+
 /*
 Task 任务通过平台、Action 区分任务
 */
@@ -51,31 +87,50 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	if modelName == "" {
 		modelName = service.CoverTaskActionToModelName(platform, info.Action)
 	}
-	modelPrice, success := ratio_setting.GetModelPrice(modelName, true)
-	if !success {
-		defaultPrice, ok := ratio_setting.GetDefaultModelRatioMap()[modelName]
-		if !ok {
-			modelPrice = 0.1
-		} else {
-			modelPrice = defaultPrice
+
+	// 预扣费用计算
+	var quota int
+	var groupRatio float64
+	var userGroupRatio float64
+	var hasUserGroupRatio bool
+
+	// 判断是否为 Vidu credits 按量计费模型
+	if platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeVidu)) && isViduCreditsModel(modelName) {
+		// ===== Vidu Credits 按量计费模式：不预扣，等待实际 credits 返回后再计费 =====
+		quota = 0 // 不预扣费用
+		groupRatio = ratio_setting.GetGroupRatio(info.UsingGroup)
+		userGroupRatio, hasUserGroupRatio = ratio_setting.GetGroupGroupRatio(info.UserGroup, info.UsingGroup)
+
+	} else {
+		// ===== 传统按次计费模式 =====
+		modelPrice, success := ratio_setting.GetModelPrice(modelName, true)
+		if !success {
+			defaultPrice, ok := ratio_setting.GetDefaultModelRatioMap()[modelName]
+			if !ok {
+				modelPrice = 0.1
+			} else {
+				modelPrice = defaultPrice
+			}
 		}
+
+		groupRatio = ratio_setting.GetGroupRatio(info.UsingGroup)
+		userGroupRatio, hasUserGroupRatio = ratio_setting.GetGroupGroupRatio(info.UserGroup, info.UsingGroup)
+
+		var ratio float64
+		if hasUserGroupRatio {
+			ratio = modelPrice * userGroupRatio
+		} else {
+			ratio = modelPrice * groupRatio
+		}
+		quota = int(ratio * common.QuotaPerUnit)
 	}
 
-	// 预扣
-	groupRatio := ratio_setting.GetGroupRatio(info.UsingGroup)
-	var ratio float64
-	userGroupRatio, hasUserGroupRatio := ratio_setting.GetGroupGroupRatio(info.UserGroup, info.UsingGroup)
-	if hasUserGroupRatio {
-		ratio = modelPrice * userGroupRatio
-	} else {
-		ratio = modelPrice * groupRatio
-	}
+	// 验证用户额度
 	userQuota, err := model.GetUserQuota(info.UserId, false)
 	if err != nil {
 		taskErr = service.TaskErrorWrapper(err, "get_user_quota_failed", http.StatusInternalServerError)
 		return
 	}
-	quota := int(ratio * common.QuotaPerUnit)
 	if userQuota-quota < 0 {
 		taskErr = service.TaskErrorWrapperLocal(errors.New("user quota is not enough"), "quota_not_enough", http.StatusForbidden)
 		return
@@ -136,19 +191,34 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 			if err != nil {
 				common.SysLog("error consuming token remain quota: " + err.Error())
 			}
+
+			// Vidu Credits 按量计费：跳过预扣逻辑，等待实际 credits 返回后再计费
+			if platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeVidu)) && isViduCreditsModel(modelName) {
+				return // 不进行预扣操作
+			}
+
+			// 传统按次计费模式：执行预扣逻辑
 			if quota != 0 {
 				tokenName := c.GetString("token_name")
 				gRatio := groupRatio
 				if hasUserGroupRatio {
 					gRatio = userGroupRatio
 				}
-				logContent := fmt.Sprintf("模型固定价格 %.2f，分组倍率 %.2f，操作 %s", modelPrice, gRatio, info.Action)
+
+				var logContent string
 				other := make(map[string]interface{})
+
+				// 传统按次计费
+				modelPrice, _ := ratio_setting.GetModelPrice(modelName, false)
+				logContent = fmt.Sprintf("模型固定价格 %.2f，分组倍率 %.2f，操作 %s",
+					modelPrice, gRatio, info.Action)
 				other["model_price"] = modelPrice
+				other["billing_mode"] = "fixed"
 				other["group_ratio"] = groupRatio
 				if hasUserGroupRatio {
 					other["user_group_ratio"] = userGroupRatio
 				}
+
 				model.RecordConsumeLog(c, info.UserId, model.RecordConsumeLogParams{
 					ChannelId: info.ChannelId,
 					ModelName: modelName,
@@ -169,6 +239,56 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	if taskErr != nil {
 		return
 	}
+
+	// ===== Vidu Credits 按量计费：根据实际 credits 直接计费 =====
+	if platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeVidu)) && isViduCreditsModel(modelName) {
+		if viduCredits, exists := c.Get("vidu_credits"); exists && viduCredits.(int) > 0 {
+			actualCredits := viduCredits.(int)
+
+			// 计算实际费用（使用之前获取的分组倍率）
+			var finalRatio float64
+			if hasUserGroupRatio {
+				finalRatio = userGroupRatio
+			} else {
+				finalRatio = groupRatio
+			}
+
+			// quota = credits × creditPrice × groupRatio × QuotaPerUnit
+			quota = int(float64(actualCredits) * viduCreditPrice * finalRatio * common.QuotaPerUnit)
+
+			// 扣费
+			err = model.DecreaseUserQuota(info.UserId, quota)
+			if err != nil {
+				taskErr = service.TaskErrorWrapper(err, "insufficient_user_quota", http.StatusForbidden)
+				return
+			}
+			model.UpdateUserUsedQuotaAndRequestCount(info.UserId, quota)
+			model.UpdateChannelUsedQuota(info.ChannelId, quota)
+
+			// 记录日志
+			tokenName := c.GetString("token_name")
+			other := make(map[string]interface{})
+			other["actual_credits"] = actualCredits
+			other["credit_price"] = viduCreditPrice
+			other["billing_mode"] = "credits"
+			other["group_ratio"] = groupRatio
+			if hasUserGroupRatio {
+				other["user_group_ratio"] = userGroupRatio
+			}
+
+			model.RecordConsumeLog(c, info.UserId, model.RecordConsumeLogParams{
+				ChannelId: info.ChannelId,
+				ModelName: modelName,
+				TokenName: tokenName,
+				Quota:     quota,
+				Content:   fmt.Sprintf("视频生成任务，实际积分 %d，积分单价 %.4f元，分组倍率 %.2f，操作 %s", actualCredits, viduCreditPrice, finalRatio, info.Action),
+				TokenId:   info.TokenId,
+				Group:     info.UsingGroup,
+				Other:     other,
+			})
+		}
+	}
+
 	info.ConsumeQuota = true
 	// insert task
 	task := model.InitTask(platform, info)
@@ -352,7 +472,12 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 			if ti.Url != "" {
 				originTask.FailReason = ti.Url
 			}
+			// 保存 ActualCredits（用于记录）
+			if ti.ActualCredits > 0 {
+				originTask.ActualCredits = ti.ActualCredits
+			}
 			_ = originTask.Update()
+
 			var raw map[string]any
 			_ = json.Unmarshal(body, &raw)
 			format := "mp4"
@@ -393,6 +518,7 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 		}
 	}()
 
+	// 返回任务信息
 	if len(respBody) == 0 {
 		respBody, err = json.Marshal(dto.TaskResponse[any]{
 			Code: "success",

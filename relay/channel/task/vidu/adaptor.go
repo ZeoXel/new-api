@@ -29,11 +29,12 @@ type requestPayload struct {
 	Prompt            string   `json:"prompt,omitempty"`
 	Duration          int      `json:"duration,omitempty"`
 	Seed              int      `json:"seed,omitempty"`
-	AspectRatio       string   `json:"aspect_ratio,omitempty"` // 🆕 修改为 aspect_ratio（Vidu 官方参数）
-	MovementAmplitude string   `json:"movement_amplitude,omitempty"`
-	Bgm               bool     `json:"bgm,omitempty"`
-	Payload           string   `json:"payload,omitempty"`
-	CallbackUrl       string   `json:"callback_url,omitempty"`
+	AspectRatio       string   `json:"aspect_ratio,omitempty"`       // 画面比例：1:1, 16:9, 9:16
+	Resolution        string   `json:"resolution,omitempty"`         // 分辨率：1080p, 720p
+	MovementAmplitude string   `json:"movement_amplitude,omitempty"` // 运动幅度：auto, small, large
+	Bgm               bool     `json:"bgm,omitempty"`                // 是否添加背景音乐
+	Payload           string   `json:"payload,omitempty"`            // 自定义载荷
+	CallbackUrl       string   `json:"callback_url,omitempty"`       // 回调地址
 }
 
 type responsePayload struct {
@@ -49,6 +50,7 @@ type responsePayload struct {
 	MovementAmplitude string   `json:"movement_amplitude"`
 	Payload           string   `json:"payload"`
 	CreatedAt         string   `json:"created_at"`
+	Credits           int      `json:"credits"` // Vidu API 在提交时就返回实际消耗的 credits
 }
 
 type taskResultResponse struct {
@@ -139,7 +141,7 @@ func (a *TaskAdaptor) DoRequest(c *gin.Context, info *relaycommon.RelayInfo, req
 	return channel.DoTaskApiRequest(a, c, info, requestBody)
 }
 
-func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, _ *relaycommon.RelayInfo) (taskID string, taskData []byte, taskErr *dto.TaskError) {
+func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, info *relaycommon.RelayInfo) (taskID string, taskData []byte, taskErr *dto.TaskError) {
 	responseBody, err := io.ReadAll(resp.Body)
 	if err != nil {
 		taskErr = service.TaskErrorWrapper(err, "read_response_body_failed", http.StatusInternalServerError)
@@ -158,8 +160,24 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, _ *relayco
 		return
 	}
 
+	// 确保响应中包含模型名称（用于计费和查询）
+	if vResp.Model == "" && info.OriginModelName != "" {
+		vResp.Model = info.OriginModelName
+	}
+
+	// 将 credits 保存到上下文，用于直接计费（新模型按量计费）
+	if vResp.Credits > 0 {
+		c.Set("vidu_credits", vResp.Credits)
+	}
+
+	// 重新序列化，确保 model 字段包含在 taskData 中
+	taskData, err = json.Marshal(vResp)
+	if err != nil {
+		taskData = responseBody // 降级使用原始响应
+	}
+
 	c.JSON(http.StatusOK, vResp)
-	return vResp.TaskId, responseBody, nil
+	return vResp.TaskId, taskData, nil
 }
 
 func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http.Response, error) {
@@ -182,7 +200,14 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 }
 
 func (a *TaskAdaptor) GetModelList() []string {
-	return []string{"viduq1", "vidu2.0", "vidu1.5"}
+	return []string{
+		"viduq1",       // 传统按次计费
+		"vidu2.0",      // 传统按次计费
+		"vidu1.5",      // 传统按次计费
+		"viduq2-turbo", // 按量计费（credits）
+		"viduq2-pro",   // 按量计费（credits）
+		"viduq2",       // 按量计费（credits）
+	}
 }
 
 func (a *TaskAdaptor) GetChannelName() string {
@@ -197,9 +222,18 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 	// 🆕 从 size 或 metadata 中获取 aspect_ratio
 	aspectRatio := a.getAspectRatio(req)
 
+	// 🆕 获取分辨率配置（优先使用前端传递的 resolution 字段）
+	resolution := req.Resolution
+	if resolution == "" {
+		// 从 metadata 中读取
+		if res, ok := req.Metadata["resolution"].(string); ok {
+			resolution = res
+		}
+	}
+
 	// 🆕 调试日志：输出原始请求信息
-	fmt.Printf("[DEBUG Vidu] Original request - Size: %s, Metadata: %+v\n", req.Size, req.Metadata)
-	fmt.Printf("[DEBUG Vidu] Converted aspect_ratio: %s\n", aspectRatio)
+	fmt.Printf("[DEBUG Vidu] Original request - Size: %s, Resolution: %s, Metadata: %+v\n", req.Size, req.Resolution, req.Metadata)
+	fmt.Printf("[DEBUG Vidu] Converted aspect_ratio: %s, resolution: %s\n", aspectRatio, resolution)
 
 	r := requestPayload{
 		Model:             defaultString(req.Model, "viduq1"),
@@ -207,6 +241,7 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 		Prompt:            req.Prompt,
 		Duration:          defaultInt(req.Duration, 5),
 		AspectRatio:       aspectRatio, // 🆕 使用转换后的 aspect_ratio
+		Resolution:        resolution,  // 🆕 使用前端配置的分辨率
 		MovementAmplitude: "auto",
 		Bgm:               false,
 	}
@@ -222,8 +257,8 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 		return nil, errors.Wrap(err, "unmarshal metadata failed")
 	}
 
-	// 🆕 调试日志：输出最终发送的 aspect_ratio
-	fmt.Printf("[DEBUG Vidu] Final payload aspect_ratio: %s\n", r.AspectRatio)
+	// 🆕 调试日志：输出最终发送的参数
+	fmt.Printf("[DEBUG Vidu] Final payload - aspect_ratio: %s, resolution: %s\n", r.AspectRatio, r.Resolution)
 
 	return &r, nil
 }
@@ -302,6 +337,8 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 		if len(taskResp.Creations) > 0 {
 			taskInfo.Url = taskResp.Creations[0].URL
 		}
+		// 🆕 保存实际消耗的积分数（用于补扣计费）
+		taskInfo.ActualCredits = taskResp.Credits
 	case "failed":
 		taskInfo.Status = model.TaskStatusFailure
 		if taskResp.ErrCode != "" {
