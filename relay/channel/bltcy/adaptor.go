@@ -12,6 +12,7 @@ import (
 	relaycommon "one-api/relay/common"
 	"one-api/service"
 	"one-api/setting/ratio_setting"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
@@ -92,8 +93,18 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 		return nil, fmt.Errorf("failed to create request: %w", err)
 	}
 
-	// 设置超时上下文（增加到 300 秒以支持大图片上传）
-	timeout := time.Second * 300
+	// 🆕 根据请求方法设置不同的超时时间
+	// GET 请求（查询状态）：120 秒（轮询查询不应该太久）
+	// POST/PUT 请求（提交任务）：300 秒（支持大图片上传）
+	var timeout time.Duration
+	if c.Request.Method == "GET" {
+		timeout = time.Second * 120 // GET 请求 120 秒超时
+		fmt.Printf("[DEBUG Bltcy] Using GET request timeout: %v\n", timeout)
+	} else {
+		timeout = time.Second * 300 // POST/PUT 请求 300 秒超时
+		fmt.Printf("[DEBUG Bltcy] Using POST/PUT request timeout: %v\n", timeout)
+	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), timeout)
 	defer cancel()
 	req = req.WithContext(ctx)
@@ -128,8 +139,15 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 
 	resp, err := client.Do(req)
 	if err != nil {
+		// 记录详细错误信息，包括目标 URL 和错误类型
+		fmt.Printf("[ERROR Bltcy] Request failed: method=%s, url=%s, error=%v\n",
+			c.Request.Method, targetURL, err)
 		return nil, fmt.Errorf("failed to send request to legacy gateway: %w", err)
 	}
+
+	// 记录响应状态码
+	fmt.Printf("[DEBUG Bltcy] Response received: status=%d, method=%s, url=%s\n",
+		resp.StatusCode, c.Request.Method, targetURL)
 
 	return resp, nil
 }
@@ -204,20 +222,22 @@ func RelayBltcy(c *gin.Context) {
 	adaptor := &Adaptor{}
 	adaptor.Init(channelId, channelName, channelType)
 
-	// 执行请求（GET 请求支持重试）
+	// 执行请求（GET 请求支持重试，包括读取响应体阶段）
 	var resp *http.Response
+	var responseBody []byte
 	isGetRequest := c.Request.Method == "GET"
 	maxRetries := 1
 	if isGetRequest {
-		maxRetries = 2 // GET 请求允许重试 1 次
+		maxRetries = 3 // GET 请求允许重试 2 次
 	}
 
 	for attempt := 1; attempt <= maxRetries; attempt++ {
+		// 发送请求
 		resp, err = adaptor.DoRequest(c, baseURL, channelKey)
 		if err != nil {
 			if attempt < maxRetries {
-				fmt.Printf("[DEBUG Bltcy] GET request failed (attempt %d/%d), retrying in 1s: %s\n", attempt, maxRetries, err.Error())
-				time.Sleep(1 * time.Second)
+				fmt.Printf("[DEBUG Bltcy] Request failed (attempt %d/%d), retrying in 2s: %s\n", attempt, maxRetries, err.Error())
+				time.Sleep(2 * time.Second)
 				continue
 			}
 			c.JSON(http.StatusInternalServerError, dto.TaskError{
@@ -234,45 +254,61 @@ func RelayBltcy(c *gin.Context) {
 
 		// GET 请求：如果遇到 5xx 错误且可以重试，则重试
 		if isGetRequest && resp.StatusCode >= 500 && attempt < maxRetries {
-			fmt.Printf("[DEBUG Bltcy] GET request returned %d (attempt %d/%d), retrying in 1s\n", resp.StatusCode, attempt, maxRetries)
+			fmt.Printf("[DEBUG Bltcy] GET request returned %d (attempt %d/%d), retrying in 2s\n", resp.StatusCode, attempt, maxRetries)
 			resp.Body.Close()
-			time.Sleep(1 * time.Second)
+			time.Sleep(2 * time.Second)
 			continue
 		}
 
-		// 请求成功或已达到最大重试次数
+		// 🆕 读取响应体（包含在重试循环中，解决 context canceled 问题）
+		responseBody, err = adaptor.DoResponse(c, resp)
+		if err != nil {
+			// 🆕 检查是否是超时相关错误（context canceled, timeout）
+			errStr := err.Error()
+			isTimeoutError := strings.Contains(errStr, "context canceled") ||
+				strings.Contains(errStr, "context deadline exceeded") ||
+				strings.Contains(errStr, "timeout")
+
+			if isGetRequest && isTimeoutError && attempt < maxRetries {
+				fmt.Printf("[WARN Bltcy] Response read timeout (attempt %d/%d), retrying in 2s: %s\n",
+					attempt, maxRetries, errStr)
+				resp.Body.Close()
+				time.Sleep(2 * time.Second)
+				continue
+			}
+
+			// 如果不能重试或已达最大重试次数，返回错误
+			errMsg := fmt.Sprintf("处理响应失败: %s", err.Error())
+			fmt.Printf("[ERROR Bltcy] DoResponse failed after %d attempts: %s\n", attempt, errMsg)
+			c.JSON(http.StatusInternalServerError, dto.TaskError{
+				Code:       "response_processing_failed",
+				Message:    errMsg,
+				StatusCode: http.StatusInternalServerError,
+			})
+			return
+		}
+
+		// 请求和响应读取都成功，跳出循环
 		break
 	}
-
-	// 处理响应
-	responseBody, err := adaptor.DoResponse(c, resp)
-	if err != nil {
-		errMsg := fmt.Sprintf("处理响应失败: %s", err.Error())
-		fmt.Printf("[ERROR Bltcy] DoResponse failed: %s\n", errMsg)
-		c.JSON(http.StatusInternalServerError, dto.TaskError{
-			Code:       "response_processing_failed",
-			Message:    errMsg,
-			StatusCode: http.StatusInternalServerError,
-		})
-		return
-	}
 	fmt.Printf("[DEBUG Bltcy] DoResponse success, body size: %d bytes\n", len(responseBody))
+
+	// 🆕 如果 POST 请求收到 5xx 错误，记录详细日志
+	if !isGetRequest && resp.StatusCode >= 500 {
+		fmt.Printf("[WARN Bltcy] POST/PUT request returned 5xx error: status=%d, body=%s\n",
+			resp.StatusCode, string(responseBody))
+	}
 
 	// 🆕 GET 请求（查询状态）不计费，直接返回响应
 	if isGetRequest {
 		fmt.Printf("[DEBUG Bltcy] GET request completed with status %d\n", resp.StatusCode)
 
-		// 🆕 如果上游返回 5xx 错误，转换为 202 Accepted（任务处理中）
-		finalStatusCode := resp.StatusCode
+		// 🆕 如果上游返回 5xx 错误，记录详细日志但直接返回原始响应
+		// 让客户端知道真实的错误状态，而不是掩盖它
 		if resp.StatusCode >= 500 {
-			fmt.Printf("[DEBUG Bltcy] Converting upstream 5xx error to 202 Accepted\n")
-			finalStatusCode = http.StatusAccepted
-			// 返回友好的 JSON 响应
-			c.JSON(finalStatusCode, gin.H{
-				"message": "任务处理中，请稍后重试",
-				"status":  "processing",
-			})
-			return
+			fmt.Printf("[WARN Bltcy] Upstream returned 5xx error: %d, body: %s\n",
+				resp.StatusCode, string(responseBody))
+			// 不再转换为 202，直接返回真实状态码和错误信息
 		}
 
 		// 复制响应头
@@ -289,7 +325,8 @@ func RelayBltcy(c *gin.Context) {
 				c.Writer.Header().Add(key, value)
 			}
 		}
-		c.Data(finalStatusCode, resp.Header.Get("Content-Type"), responseBody)
+		// 返回真实状态码和响应体
+		c.Data(resp.StatusCode, resp.Header.Get("Content-Type"), responseBody)
 		return
 	}
 
