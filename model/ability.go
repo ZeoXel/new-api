@@ -13,14 +13,15 @@ import (
 )
 
 type Ability struct {
-	Group         string  `json:"group" gorm:"type:varchar(64);primaryKey;autoIncrement:false"`
-	Model         string  `json:"model" gorm:"type:varchar(255);primaryKey;autoIncrement:false"`
-	ChannelId     int     `json:"channel_id" gorm:"primaryKey;autoIncrement:false;index"`
-	Enabled       bool    `json:"enabled"`
-	Priority      *int64  `json:"priority" gorm:"bigint;default:0;index"`
-	Weight        uint    `json:"weight" gorm:"default:0;index"`
-	Tag           *string `json:"tag" gorm:"index"`
-	WorkflowPrice *int    `json:"workflow_price" gorm:"type:integer;default:null"` // 工作流按次定价（quota/次）
+	Group         string   `json:"group" gorm:"type:varchar(64);primaryKey;autoIncrement:false"`
+	Model         string   `json:"model" gorm:"type:varchar(255);primaryKey;autoIncrement:false"`
+	ChannelId     int      `json:"channel_id" gorm:"primaryKey;autoIncrement:false;index"`
+	Enabled       bool     `json:"enabled"`
+	Priority      *int64   `json:"priority" gorm:"bigint;default:0;index"`
+	Weight        uint     `json:"weight" gorm:"default:0;index"`
+	Tag           *string  `json:"tag" gorm:"index"`
+	WorkflowPrice *int     `json:"workflow_price" gorm:"type:integer;default:null"` // 工作流按次定价（quota/次）
+	ChannelRatio  *float64 `json:"channel_ratio" gorm:"type:real;default:1"`  // 渠道专属倍率
 }
 
 type AbilityWithChannel struct {
@@ -155,14 +156,21 @@ func (channel *Channel) AddAbilities(tx *gorm.DB) error {
 				continue
 			}
 			abilitySet[key] = struct{}{}
+			// 使用渠道的 channel_ratio，如果为 nil 则使用默认值 1.0
+			channelRatio := channel.ChannelRatio
+			if channelRatio == nil {
+				defaultRatio := 1.0
+				channelRatio = &defaultRatio
+			}
 			ability := Ability{
-				Group:     group,
-				Model:     model,
-				ChannelId: channel.Id,
-				Enabled:   channel.Status == common.ChannelStatusEnabled,
-				Priority:  channel.Priority,
-				Weight:    uint(channel.GetWeight()),
-				Tag:       channel.Tag,
+				Group:        group,
+				Model:        model,
+				ChannelId:    channel.Id,
+				Enabled:      channel.Status == common.ChannelStatusEnabled,
+				Priority:     channel.Priority,
+				Weight:       uint(channel.GetWeight()),
+				Tag:          channel.Tag,
+				ChannelRatio: channelRatio,
 			}
 			abilities = append(abilities, ability)
 		}
@@ -227,14 +235,21 @@ func (channel *Channel) UpdateAbilities(tx *gorm.DB) error {
 				continue
 			}
 			abilitySet[key] = struct{}{}
+			// 使用渠道的 channel_ratio，如果为 nil 则使用默认值 1.0
+			channelRatio := channel.ChannelRatio
+			if channelRatio == nil {
+				defaultRatio := 1.0
+				channelRatio = &defaultRatio
+			}
 			ability := Ability{
-				Group:     group,
-				Model:     model,
-				ChannelId: channel.Id,
-				Enabled:   channel.Status == common.ChannelStatusEnabled,
-				Priority:  channel.Priority,
-				Weight:    uint(channel.GetWeight()),
-				Tag:       channel.Tag,
+				Group:        group,
+				Model:        model,
+				ChannelId:    channel.Id,
+				Enabled:      channel.Status == common.ChannelStatusEnabled,
+				Priority:     channel.Priority,
+				Weight:       uint(channel.GetWeight()),
+				Tag:          channel.Tag,
+				ChannelRatio: channelRatio,
 			}
 			abilities = append(abilities, ability)
 		}
@@ -338,4 +353,19 @@ func FixAbility() (int, int, error) {
 	}
 	InitChannelCache()
 	return successCount, failCount, nil
+}
+
+// GetChannelRatio 获取指定分组、模型和渠道的渠道倍率
+func GetChannelRatio(group string, model string, channelId int) float64 {
+	var ability Ability
+	err := DB.Where(commonGroupCol+" = ? and model = ? and channel_id = ?", group, model, channelId).First(&ability).Error
+	if err != nil {
+		// 如果查询失败或没有找到记录，返回默认倍率 1.0
+		return 1.0
+	}
+	if ability.ChannelRatio == nil {
+		// 如果 ChannelRatio 为 nil，返回默认倍率 1.0
+		return 1.0
+	}
+	return *ability.ChannelRatio
 }

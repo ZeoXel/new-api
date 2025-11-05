@@ -1,0 +1,6 @@
+./general_setting.go
+./monitor_setting.go
+./operation_setting.go
+./payment_setting.go
+./payment_setting_old.go
+./tools.go

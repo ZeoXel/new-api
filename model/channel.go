@@ -50,7 +50,8 @@ type Channel struct {
 	// add after v0.8.5
 	ChannelInfo ChannelInfo `json:"channel_info" gorm:"type:json"`
 
-	OtherSettings string `json:"settings" gorm:"column:settings"` // 其他设置，存储azure版本等不需要检索的信息，详见dto.ChannelOtherSettings
+	OtherSettings string   `json:"settings" gorm:"column:settings"` // 其他设置，存储azure版本等不需要检索的信息，详见dto.ChannelOtherSettings
+	ChannelRatio  *float64 `json:"channel_ratio" gorm:"type:real;default:1"` // 渠道专属倍率
 
 	// cache info
 	Keys []string `json:"-" gorm:"-"`

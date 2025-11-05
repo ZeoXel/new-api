@@ -118,6 +118,16 @@ func Distribute() func(c *gin.Context) {
 		}
 		common.SetContextKey(c, constant.ContextKeyRequestStartTime, time.Now())
 		SetupContextForSelectedChannel(c, channel, modelRequest.Model)
+
+		// 🆕 对于 Runway/Runwayml 透传，尝试从请求体中提取实际的 model 字段用于计费
+		// 注意：目前使用统一的 "runway" 模型名进行计费，可通过渠道配置不同的透传配额实现差异化计费
+		if strings.HasPrefix(c.Request.URL.Path, "/runway/") || strings.HasPrefix(c.Request.URL.Path, "/runwayml/") {
+			// TODO: 未来可在此处提取请求体中的实际模型名（gen3, gen4等）用于精细计费
+			// 当前方案：所有runway请求使用统一配额，管理员可通过以下方式实现差异化计费：
+			// 1. 创建多个渠道，配置不同的透传配额
+			// 2. 在价格设置中为 "runway" 模型配置价格
+		}
+
 		c.Next()
 	}
 }

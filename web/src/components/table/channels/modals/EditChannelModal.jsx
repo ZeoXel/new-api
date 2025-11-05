@@ -138,6 +138,7 @@ const EditChannelModal = (props) => {
     priority: 0,
     weight: 0,
     tag: '',
+    channel_ratio: 1.0,
     multi_key_mode: 'random',
     // 渠道额外设置的默认值
     force_format: false,
@@ -2109,6 +2110,21 @@ const EditChannelModal = (props) => {
                       />
                     </Col>
                   </Row>
+
+                  <Form.InputNumber
+                    field='channel_ratio'
+                    label={t('渠道倍率')}
+                    placeholder={t('请输入渠道倍率')}
+                    min={0}
+                    step={0.1}
+                    onNumberChange={(value) =>
+                      handleInputChange('channel_ratio', value)
+                    }
+                    style={{ width: '100%' }}
+                    extraText={t(
+                      '渠道专属倍率，最终价格 = 基础倍率 × 分组倍率 × 渠道倍率，默认为 1.0',
+                    )}
+                  />
 
                   <Form.Switch
                     field='auto_ban'

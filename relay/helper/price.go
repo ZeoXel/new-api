@@ -3,6 +3,8 @@ package helper
 import (
 	"fmt"
 	"one-api/common"
+	"one-api/constant"
+	"one-api/model"
 	relaycommon "one-api/relay/common"
 	"one-api/setting/ratio_setting"
 	"one-api/types"
@@ -15,6 +17,7 @@ func HandleGroupRatio(ctx *gin.Context, relayInfo *relaycommon.RelayInfo) types.
 	groupRatioInfo := types.GroupRatioInfo{
 		GroupRatio:        1.0, // default ratio
 		GroupSpecialRatio: -1,
+		ChannelRatio:      1.0, // default channel ratio
 	}
 
 	// check auto group
@@ -36,6 +39,15 @@ func HandleGroupRatio(ctx *gin.Context, relayInfo *relaycommon.RelayInfo) types.
 	} else {
 		// normal group ratio
 		groupRatioInfo.GroupRatio = ratio_setting.GetGroupRatio(relayInfo.UsingGroup)
+	}
+
+	// get channel ratio
+	channelId, channelIdExists := common.GetContextKey(ctx, constant.ContextKeyChannelId)
+	if channelIdExists {
+		if channelIdInt, ok := channelId.(int); ok {
+			channelRatio := model.GetChannelRatio(relayInfo.UsingGroup, relayInfo.OriginModelName, channelIdInt)
+			groupRatioInfo.ChannelRatio = channelRatio
+		}
 	}
 
 	return groupRatioInfo
@@ -82,13 +94,13 @@ func ModelPriceHelper(c *gin.Context, info *relaycommon.RelayInfo, promptTokens 
 		imageRatio, _ = ratio_setting.GetImageRatio(info.OriginModelName)
 		audioRatio = ratio_setting.GetAudioRatio(info.OriginModelName)
 		audioCompletionRatio = ratio_setting.GetAudioCompletionRatio(info.OriginModelName)
-		ratio := modelRatio * groupRatioInfo.GroupRatio
+		ratio := modelRatio * groupRatioInfo.GroupRatio * groupRatioInfo.ChannelRatio
 		preConsumedQuota = int(float64(preConsumedTokens) * ratio)
 	} else {
 		if meta.ImagePriceRatio != 0 {
 			modelPrice = modelPrice * meta.ImagePriceRatio
 		}
-		preConsumedQuota = int(modelPrice * common.QuotaPerUnit * groupRatioInfo.GroupRatio)
+		preConsumedQuota = int(modelPrice * common.QuotaPerUnit * groupRatioInfo.GroupRatio * groupRatioInfo.ChannelRatio)
 	}
 
 	priceData := types.PriceData{
@@ -126,7 +138,7 @@ func ModelPriceHelperPerCall(c *gin.Context, info *relaycommon.RelayInfo) types.
 			modelPrice = defaultPrice
 		}
 	}
-	quota := int(modelPrice * common.QuotaPerUnit * groupRatioInfo.GroupRatio)
+	quota := int(modelPrice * common.QuotaPerUnit * groupRatioInfo.GroupRatio * groupRatioInfo.ChannelRatio)
 	priceData := types.PerCallPriceData{
 		ModelPrice:     modelPrice,
 		Quota:          quota,

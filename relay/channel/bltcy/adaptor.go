@@ -299,9 +299,23 @@ func RelayBltcy(c *gin.Context) {
 			resp.StatusCode, string(responseBody))
 	}
 
-	// 🆕 GET 请求（查询状态）不计费，直接返回响应
-	if isGetRequest {
-		fmt.Printf("[DEBUG Bltcy] GET request completed with status %d\n", resp.StatusCode)
+	// 🆕 判断是否为轮询请求（不计费）
+	// 1. GET 请求（查询状态）
+	// 2. POST /runway/v1/feed（runway 轮询接口）
+	isPollingRequest := isGetRequest ||
+		(c.Request.Method == "POST" && strings.Contains(c.Request.URL.Path, "/feed"))
+
+	// 🆕 添加详细调试日志
+	fmt.Printf("[DEBUG Bltcy Billing Check] Method: %s, Path: %s, isGetRequest: %v, contains /feed: %v, isPollingRequest: %v\n",
+		c.Request.Method, c.Request.URL.Path, isGetRequest,
+		strings.Contains(c.Request.URL.Path, "/feed"), isPollingRequest)
+
+	if isPollingRequest {
+		requestType := "GET"
+		if !isGetRequest {
+			requestType = "POST /feed (polling)"
+		}
+		fmt.Printf("[DEBUG Bltcy] %s request completed with status %d (no billing)\n", requestType, resp.StatusCode)
 
 		// 🆕 如果上游返回 5xx 错误，记录详细日志但直接返回原始响应
 		// 让客户端知道真实的错误状态，而不是掩盖它

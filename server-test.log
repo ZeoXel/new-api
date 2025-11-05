@@ -1,0 +1,20 @@
+[SYS] 2025/11/05 - 14:03:21 | initializing token encoders 
+[SYS] 2025/11/05 - 14:03:21 | token encoders initialized 
+[SYS] 2025/11/05 - 14:03:21 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/05 - 14:03:21 | database migration started 
+
+2025/11/05 14:03:21 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.389ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="channels"
+
+2025/11/05 14:03:21 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.055ms] [34;1m[rows:3][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "channels" AND sql IS NOT NULL order by type = "table" desc
+
+2025/11/05 14:03:21 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.037ms] [34;1m[rows:-][0m SELECT * FROM `channels` LIMIT 1
+
+2025/11/05 14:03:21 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:21
+[0m[33m[0.008ms] [34;1m[rows:1][0m PRAGMA foreign_keys
+
+2025/11/05 14:03:21 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:370
+[0m[33m[0.010ms] [34;1m[rows:-][0m SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = "channels" AND name = "channels"
+[FATAL] 2025/11/05 - 14:03:21 | [failed to initialize database: invalid DDL, unbalanced brackets] 
