@@ -1,5 +1,0 @@
-./common.go
-./model_mapped.go
-./price.go
-./stream_scanner.go
-./valid_request.go

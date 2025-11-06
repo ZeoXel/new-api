@@ -21,12 +21,14 @@ func (s *SimpleResponse) GetOpenAIError() *types.OpenAIError {
 }
 
 type TextResponse struct {
-	Id      string                     `json:"id"`
-	Object  string                     `json:"object"`
-	Created int64                      `json:"created"`
-	Model   string                     `json:"model"`
-	Choices []OpenAITextResponseChoice `json:"choices"`
-	Usage   `json:"usage"`
+	Id        string                     `json:"id"`
+	Object    string                     `json:"object"`
+	Created   int64                      `json:"created"`
+	Model     string                     `json:"model"`
+	Choices   []OpenAITextResponseChoice `json:"choices"`
+	Usage     `json:"usage"`
+	ExecuteId string `json:"execute_id,omitempty"`
+	DebugUrl  string `json:"debug_url,omitempty"`
 }
 
 type OpenAITextResponseChoice struct {
@@ -145,6 +147,8 @@ type ChatCompletionsStreamResponse struct {
 	SystemFingerprint *string                               `json:"system_fingerprint"`
 	Choices           []ChatCompletionsStreamResponseChoice `json:"choices"`
 	Usage             *Usage                                `json:"usage"`
+	ExecuteId         string                                `json:"execute_id,omitempty"`
+	DebugUrl          string                                `json:"debug_url,omitempty"`
 }
 
 func (c *ChatCompletionsStreamResponse) IsFinished() bool {
@@ -192,6 +196,8 @@ func (c *ChatCompletionsStreamResponse) Copy() *ChatCompletionsStreamResponse {
 		SystemFingerprint: c.SystemFingerprint,
 		Choices:           choices,
 		Usage:             c.Usage,
+		ExecuteId:         c.ExecuteId,
+		DebugUrl:          c.DebugUrl,
 	}
 }
 

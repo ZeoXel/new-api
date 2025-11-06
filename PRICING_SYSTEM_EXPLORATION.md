@@ -112,7 +112,7 @@ type Channel struct {
   ModelMapping *string  // 模型名称映射
   Status       int      // 状态 (1=启用, 0=禁用)
   Remark       string   // 备注
-  
+
   // 新增字段
   ChannelInfo  ChannelInfo // 多Key模式信息
   Setting      *string     // 渠道额外设置
@@ -133,7 +133,7 @@ type ChannelInfo struct {
 ### 2.3 渠道选择流程
 ```
 用户请求 → 获取分组 → 查询能力表(Ability)
-  → 筛选该分组下的所有可用渠道 
+  → 筛选该分组下的所有可用渠道
   → 按优先级(Priority)排序
   → 按权重(Weight)随机选择
   → 返回Channel对象
@@ -197,7 +197,7 @@ func GetAllEnableAbilityWithChannels() ([]AbilityWithChannel, error)
 
 2. 应用分组倍率:
    model_cost = base_ratio * group_ratio
-   
+
    示例: GPT-4在default分组下
    = 15(基础倍率) * 1(default分组倍率)
    = 15
@@ -231,8 +231,8 @@ var viduModelDefaultCredits = map[string]int{
   "viduq2":       14,
 }
 
-// Vidu Credits单价: 0.3125元/credit
-const viduCreditPrice = 0.3125
+// Vidu Credits单价: 0.03125元/credit
+const viduCreditPrice = 0.03125
 
 // 判断是否为Credits模式
 func isViduCreditsModel(modelName string) bool {
@@ -254,14 +254,14 @@ func isViduCreditsModel(modelName string) bool {
 2. 预扣逻辑:
    - Credits模式: 不预扣费用 (quota=0)
    - 次数模式: 使用估算价格预扣
-   
+
 3. 分组倍率应用:
    groupRatio = ratio_setting.GetGroupRatio(info.UsingGroup)
    // default分组: 1.0倍
    // 其他分组: 可自定义
 
 4. 实际费用计算:
-   - Credits: 实际返回的credits数 * 0.3125(元/credit)
+   - Credits: 实际返回的credits数 * 0.03125(元/credit)
    - 次数: 0.1(美元/次) * 分组倍率
 ```
 
@@ -411,35 +411,35 @@ func ModelPriceHelper(c *gin.Context, info *relaycommon.RelayInfo, promptTokens 
   // 第一步: 获取分组倍率
   groupRatioInfo := HandleGroupRatio(c, info)
   groupRatio := groupRatioInfo.GroupRatio  // 例如: 1.0
-  
+
   // 第二步: 获取模型倍率
   modelRatio, success, matchName := ratio_setting.GetModelRatio(info.OriginModelName)
   // 例如 GPT-4: modelRatio = 15
-  
+
   // 第三步: 应用倍率
   ratio := modelRatio * groupRatioInfo.GroupRatio
   // 例如: 15 * 1.0 = 15
-  
+
   // 第四步: 计算消耗额度
   preConsumedTokens := max(promptTokens, PreConsumedQuota) + maxTokens
   preConsumedQuota = int(float64(preConsumedTokens) * ratio)
   // 例如: 1000 tokens * 15 = 15000 quota
-  
+
   return priceData
 }
 
 // 按次计费版本 (用于MJ、Task等)
 func ModelPriceHelperPerCall(c *gin.Context, info *relaycommon.RelayInfo) (types.PerCallPriceData) {
   groupRatioInfo := HandleGroupRatio(c, info)
-  
+
   modelPrice, success := ratio_setting.GetModelPrice(info.OriginModelName)
   if !success {
     modelPrice = 0.1  // 默认0.1美元
   }
-  
+
   quota := int(modelPrice * common.QuotaPerUnit * groupRatioInfo.GroupRatio)
   // 例如: 0.1 * 1000 * 1.0 = 100 quota
-  
+
   return priceData
 }
 ```
@@ -451,7 +451,7 @@ func HandleGroupRatio(ctx *gin.Context, relayInfo *relaycommon.RelayInfo) types.
   if autoGroup, exists := ctx.Get("auto_group"); exists {
     relayInfo.UsingGroup = autoGroup.(string)
   }
-  
+
   // 优先级2: 检查用户分组的特殊倍率 (二级倍率)
   userGroupRatio, ok := ratio_setting.GetGroupGroupRatio(relayInfo.UserGroup, relayInfo.UsingGroup)
   if ok {
@@ -462,7 +462,7 @@ func HandleGroupRatio(ctx *gin.Context, relayInfo *relaycommon.RelayInfo) types.
     groupRatioInfo.GroupRatio = ratio_setting.GetGroupRatio(relayInfo.UsingGroup)
     // 如果UsingGroup="default": 返回1.0
   }
-  
+
   return groupRatioInfo
 }
 ```
@@ -512,7 +512,7 @@ const (
     ↓
 [渠道选择] 根据Priority和Weight选择渠道
     ↓
-[定价计算] 
+[定价计算]
     1. 获取基础倍率: ratio_setting.GetModelRatio()
        → 从defaultModelRatio查询 (例: 15)
     2. 获取分组倍率: ratio_setting.GetGroupRatio()
@@ -524,7 +524,7 @@ const (
     ↓
 [转发请求] 到选中渠道
     ↓
-[计费结算] 
+[计费结算]
     - 按实际消耗调整 (token计数、缓存、图片等)
     - 扣减用户额度
     ↓
@@ -566,9 +566,9 @@ Quota消耗 = 1000 * 12 = 12000
 1. 用户请求 vidu生成视频
 2. 渠道返回 Credits: 10
 3. 计费:
-   - Credits单价: 0.3125元/credit
-   - 人民币成本: 10 * 0.3125 = 3.125元
-   - 转换到Quota: 3.125 / 0.3125 * 1000 (approx)
+   - Credits单价: 0.03125元/credit
+   - 人民币成本: 10 * 0.03125 = 3.125元
+   - 转换到Quota: 3.125 / 0.03125 * 1000 (approx)
 
 4. 分组倍率应用:
    最终消耗 = 基础消耗 * 分组倍率
@@ -589,4 +589,3 @@ Quota消耗 = 1000 * 12 = 12000
 | relay/helper/price.go | 请求定价计算 | ModelPriceHelper等 |
 | relay/relay_task.go | 任务定价 | Vidu特殊处理 |
 | controller/pricing.go | 定价API | GetPricing接口 |
-

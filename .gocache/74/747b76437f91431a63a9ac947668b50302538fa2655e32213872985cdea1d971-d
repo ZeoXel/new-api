@@ -1,7 +1,0 @@
-./channel_error.go
-./error.go
-./file_data.go
-./price_data.go
-./relay_format.go
-./request_meta.go
-./set.go

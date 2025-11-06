@@ -33,8 +33,8 @@ var viduModelDefaultCredits = map[string]int{
 	"viduq2":       14, // 5秒视频基础 credits
 }
 
-// Vidu credits 单价：0.3125元/credit
-const viduCreditPrice = 0.3125
+// Vidu credits 单价：0.03125元/credit
+const viduCreditPrice = 0.03125
 
 // isViduCreditsModel 判断是否为支持 credits 按量计费的 Vidu 模型
 func isViduCreditsModel(modelName string) bool {
@@ -116,11 +116,14 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 		groupRatio = ratio_setting.GetGroupRatio(info.UsingGroup)
 		userGroupRatio, hasUserGroupRatio = ratio_setting.GetGroupGroupRatio(info.UserGroup, info.UsingGroup)
 
+		// 获取渠道倍率
+		channelRatio := model.GetChannelRatio(info.UsingGroup, modelName, info.ChannelId)
+
 		var ratio float64
 		if hasUserGroupRatio {
-			ratio = modelPrice * userGroupRatio
+			ratio = modelPrice * userGroupRatio * channelRatio
 		} else {
-			ratio = modelPrice * groupRatio
+			ratio = modelPrice * groupRatio * channelRatio
 		}
 		quota = int(ratio * common.QuotaPerUnit)
 	}
@@ -205,16 +208,20 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 					gRatio = userGroupRatio
 				}
 
+				// 获取渠道倍率
+				channelRatio := model.GetChannelRatio(info.UsingGroup, modelName, info.ChannelId)
+
 				var logContent string
 				other := make(map[string]interface{})
 
 				// 传统按次计费
 				modelPrice, _ := ratio_setting.GetModelPrice(modelName, false)
-				logContent = fmt.Sprintf("模型固定价格 %.2f，分组倍率 %.2f，操作 %s",
-					modelPrice, gRatio, info.Action)
+				logContent = fmt.Sprintf("模型固定价格 %.2f，分组倍率 %.2f，渠道倍率 %.2f，操作 %s",
+					modelPrice, gRatio, channelRatio, info.Action)
 				other["model_price"] = modelPrice
 				other["billing_mode"] = "fixed"
 				other["group_ratio"] = groupRatio
+				other["channel_ratio"] = channelRatio
 				if hasUserGroupRatio {
 					other["user_group_ratio"] = userGroupRatio
 				}
@@ -245,7 +252,7 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 		if viduCredits, exists := c.Get("vidu_credits"); exists && viduCredits.(int) > 0 {
 			actualCredits := viduCredits.(int)
 
-			// 计算实际费用（使用之前获取的分组倍率）
+			// 计算实际费用（使用之前获取的分组倍率和渠道倍率）
 			var finalRatio float64
 			if hasUserGroupRatio {
 				finalRatio = userGroupRatio
@@ -253,8 +260,11 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 				finalRatio = groupRatio
 			}
 
-			// quota = credits × creditPrice × groupRatio × QuotaPerUnit
-			quota = int(float64(actualCredits) * viduCreditPrice * finalRatio * common.QuotaPerUnit)
+			// 获取渠道倍率
+			channelRatio := model.GetChannelRatio(info.UsingGroup, modelName, info.ChannelId)
+
+			// quota = credits × creditPrice × groupRatio × channelRatio × QuotaPerUnit
+			quota = int(float64(actualCredits) * viduCreditPrice * finalRatio * channelRatio * common.QuotaPerUnit)
 
 			// 扣费
 			err = model.DecreaseUserQuota(info.UserId, quota)
@@ -272,6 +282,7 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 			other["credit_price"] = viduCreditPrice
 			other["billing_mode"] = "credits"
 			other["group_ratio"] = groupRatio
+			other["channel_ratio"] = channelRatio
 			if hasUserGroupRatio {
 				other["user_group_ratio"] = userGroupRatio
 			}
@@ -281,7 +292,7 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 				ModelName: modelName,
 				TokenName: tokenName,
 				Quota:     quota,
-				Content:   fmt.Sprintf("视频生成任务，实际积分 %d，积分单价 %.4f元，分组倍率 %.2f，操作 %s", actualCredits, viduCreditPrice, finalRatio, info.Action),
+				Content:   fmt.Sprintf("视频生成任务，实际积分 %d，积分单价 %.4f元，分组倍率 %.2f，渠道倍率 %.2f，操作 %s", actualCredits, viduCreditPrice, finalRatio, channelRatio, info.Action),
 				TokenId:   info.TokenId,
 				Group:     info.UsingGroup,
 				Other:     other,

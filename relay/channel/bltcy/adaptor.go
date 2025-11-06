@@ -365,20 +365,27 @@ func RelayBltcy(c *gin.Context) {
 
 	// 🆕 查询模型价格，计算实际配额
 	// 注意：这里配置的是 ModelPrice（美元/次），需要转换为 quota
-	// quota = price × 500,000（因为 1 美元 = 500,000 quota）
+	// quota = price × 500,000 × groupRatio × channelRatio
 	actualQuota := baseQuota
 	modelPrice := 0.0
 	priceSource := "base" // 价格来源：base（基础配额）、price（固定价格）
 
+	// 获取分组倍率和渠道倍率
+	groupRatio := ratio_setting.GetGroupRatio(group)
+	channelRatio := model.GetChannelRatio(group, billingModelName, channelId)
+
 	if price, exists := ratio_setting.GetModelPrice(billingModelName, false); exists && price > 0 {
-		// ModelPrice 单位是美元，转换为配额
+		// ModelPrice 单位是美元，转换为配额，并应用分组倍率和渠道倍率
 		modelPrice = price
-		actualQuota = int(price * common.QuotaPerUnit)
+		actualQuota = int(price * common.QuotaPerUnit * groupRatio * channelRatio)
 		priceSource = "price"
-		fmt.Printf("[DEBUG Bltcy Billing] Model: %s, Price: $%.4f, Quota: %d\n", billingModelName, price, actualQuota)
+		fmt.Printf("[DEBUG Bltcy Billing] Model: %s, Price: $%.4f, GroupRatio: %.2f, ChannelRatio: %.2f, Quota: %d\n",
+			billingModelName, price, groupRatio, channelRatio, actualQuota)
 	} else {
-		// 如果没有配置价格，使用基础配额
-		fmt.Printf("[DEBUG Bltcy Billing] Model: %s, Using base quota: %d\n", billingModelName, baseQuota)
+		// 如果没有配置价格，使用基础配额（也需要应用倍率）
+		actualQuota = int(float64(baseQuota) * groupRatio * channelRatio)
+		fmt.Printf("[DEBUG Bltcy Billing] Model: %s, Using base quota: %d, GroupRatio: %.2f, ChannelRatio: %.2f, Final: %d\n",
+			billingModelName, baseQuota, groupRatio, channelRatio, actualQuota)
 	}
 
 	// 计费（在发送响应之前完成）
@@ -412,7 +419,8 @@ func RelayBltcy(c *gin.Context) {
 		other["model_price"] = modelPrice
 		other["completion_ratio"] = 1.0 // 透传模式默认为 1.0
 		other["model_ratio"] = 1.0
-		other["group_ratio"] = 1.0
+		other["group_ratio"] = groupRatio
+		other["channel_ratio"] = channelRatio
 
 		model.RecordConsumeLog(c, userId, model.RecordConsumeLogParams{
 			ChannelId:        channelId,

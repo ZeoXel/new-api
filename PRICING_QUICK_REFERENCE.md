@@ -19,7 +19,7 @@ Vidu特殊处理:       relay/relay_task.go (line 24-126)
 ## 快速查询
 
 ### Q1: GPT-4的倍率是多少？
-**A:** 打开 `setting/ratio_setting/model_ratio.go`，搜索 `"gpt-4":` 
+**A:** 打开 `setting/ratio_setting/model_ratio.go`，搜索 `"gpt-4":`
 ```golang
 "gpt-4": 15                    // 第32行
 "gpt-4-0613": 15               // 第34行
@@ -83,7 +83,7 @@ var GroupGroupRatio = map[string]map[string]float64{
 ```
 
 ### Q7: 前端定价页面从哪里获取数据？
-**A:** 
+**A:**
 1. 调用 `/api/v1/pricing` 接口 (controller/pricing.go)
 2. 返回的数据结构：
    - `data`: 所有模型的定价信息
@@ -120,7 +120,7 @@ func GetPricing() []Pricing {
 ### Q10: Vidu的Credits单价是多少？
 **A:** 打开 `relay/relay_task.go`
 ```golang
-const viduCreditPrice = 0.3125  // 0.3125元/credit (第37行)
+const viduCreditPrice = 0.03125  // 0.03125元/credit (第37行)
 ```
 
 ---
@@ -213,9 +213,9 @@ Quota消耗:
 
 例如:
   1000 tokens × 15 倍 × 1000 = 15,000,000 quota
-  
+
   等等，这个数字太大了...
-  
+
   实际应该是:
   quota = int(tokens × final_ratio)
   其中 QuotaPerUnit = 1000
@@ -229,7 +229,7 @@ Quota消耗:
 
 ### 问题1: 模型倍率生效不了
 **原因**: 定价缓存1分钟更新一次
-**解决**: 
+**解决**:
 - 等待1分钟
 - 或重启服务立即刷新
 - 检查 model/pricing.go 的 GetPricing() 函数

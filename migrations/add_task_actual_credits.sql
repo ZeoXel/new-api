@@ -29,8 +29,8 @@ WHERE actual_credits > 0;
 --
 -- 5. 查询 Vidu credits 模型的补扣情况：
 --    SELECT task_id, quota AS pre_deducted, actual_credits,
---           (actual_credits * 0.3125 * 500000) AS actual_quota,
---           (actual_credits * 0.3125 * 500000 - quota) AS quota_delta
+--           (actual_credits * 0.03125 * 500000) AS actual_quota,
+--           (actual_credits * 0.03125 * 500000 - quota) AS quota_delta
 --    FROM tasks
 --    WHERE platform = '52' AND actual_credits > 0;
 -- ============================================================

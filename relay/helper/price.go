@@ -47,7 +47,18 @@ func HandleGroupRatio(ctx *gin.Context, relayInfo *relaycommon.RelayInfo) types.
 		if channelIdInt, ok := channelId.(int); ok {
 			channelRatio := model.GetChannelRatio(relayInfo.UsingGroup, relayInfo.OriginModelName, channelIdInt)
 			groupRatioInfo.ChannelRatio = channelRatio
+			if common.DebugEnabled {
+				println(fmt.Sprintf("Channel Ratio Debug: channelId=%d, group=%s, model=%s, channelRatio=%f", channelIdInt, relayInfo.UsingGroup, relayInfo.OriginModelName, channelRatio))
+			}
 		}
+	} else {
+		if common.DebugEnabled {
+			println(fmt.Sprintf("Channel Ratio Debug: channelId NOT found in context"))
+		}
+	}
+
+	if common.DebugEnabled {
+		println(fmt.Sprintf("GroupRatioInfo: GroupRatio=%f, ChannelRatio=%f", groupRatioInfo.GroupRatio, groupRatioInfo.ChannelRatio))
 	}
 
 	return groupRatioInfo

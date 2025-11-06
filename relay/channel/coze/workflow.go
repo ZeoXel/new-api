@@ -186,6 +186,7 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 	response.Model = info.UpstreamModelName
 	response.Id = helper.GetResponseID(c)
 	response.Created = time.Now().Unix()
+	response.Object = "chat.completion"
 
 	// 先尝试解析为通用响应结构
 	var rawResponse map[string]interface{}
@@ -210,6 +211,11 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 			},
 		}
 	} else {
+		var firstData *CozeWorkflowDataItem
+		if len(workflowResponse.Data) > 0 {
+			firstData = &workflowResponse.Data[0]
+		}
+
 		// 检查 Coze API 返回的错误码
 		if workflowResponse.Code != 0 {
 			// 工作流执行失败，返回错误而不是成功响应
@@ -223,8 +229,8 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 
 		// 处理成功响应
 		var content string
-		if len(workflowResponse.Data) > 0 && workflowResponse.Data[0].Output != "" {
-			content = workflowResponse.Data[0].Output
+		if firstData != nil && firstData.Output != "" {
+			content = firstData.Output
 		} else if workflowResponse.Msg != "" {
 			content = workflowResponse.Msg
 		} else {
@@ -240,6 +246,14 @@ func cozeWorkflowHandler(c *gin.Context, info *relaycommon.RelayInfo, resp *http
 				},
 				FinishReason: "stop",
 			},
+		}
+		if firstData != nil {
+			if firstData.ExecuteId != "" {
+				response.ExecuteId = firstData.ExecuteId
+			}
+			if firstData.DebugUrl != "" {
+				response.DebugUrl = firstData.DebugUrl
+			}
 		}
 	}
 
@@ -288,6 +302,8 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 	var fullContent strings.Builder
 	var lastNodeTitle string
 	var usage = &dto.Usage{}
+	var executeId string
+	var debugUrl string
 
 	var currentEvent string
 	var currentData string
@@ -316,6 +332,18 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 				if err := json.Unmarshal([]byte(currentData), &messageData); err == nil {
 					content, _ := messageData["content"].(string)
 					nodeTitle, _ := messageData["node_title"].(string)
+					if executeId == "" {
+						if val, ok := messageData["execute_id"].(string); ok && val != "" {
+							executeId = val
+							common.SysLog(fmt.Sprintf("[SSE] 捕获execute_id: %s", executeId))
+						}
+					}
+					if debugUrl == "" {
+						if val, ok := messageData["debug_url"].(string); ok && val != "" {
+							debugUrl = val
+							common.SysLog(fmt.Sprintf("[SSE] 捕获debug_url: %s", debugUrl))
+						}
+					}
 
 					if nodeTitle != "" && nodeTitle != lastNodeTitle {
 						lastNodeTitle = nodeTitle
@@ -377,6 +405,12 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 						}
 						choice.Delta.SetContentString(content)
 						streamResponse.Choices = []dto.ChatCompletionsStreamResponseChoice{choice}
+						if executeId != "" {
+							streamResponse.ExecuteId = executeId
+						}
+						if debugUrl != "" {
+							streamResponse.DebugUrl = debugUrl
+						}
 
 						helper.ObjectData(c, streamResponse)
 						if len(content) > 50 {
@@ -390,9 +424,21 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 				}
 
 			case "Done":
-				if usage.TotalTokens == 0 {
-					var doneData map[string]interface{}
-					if err := json.Unmarshal([]byte(currentData), &doneData); err == nil {
+				var doneData map[string]interface{}
+				if err := json.Unmarshal([]byte(currentData), &doneData); err == nil {
+					if executeId == "" {
+						if val, ok := doneData["execute_id"].(string); ok && val != "" {
+							executeId = val
+							common.SysLog(fmt.Sprintf("[SSE] Done事件捕获execute_id: %s", executeId))
+						}
+					}
+					if debugUrl == "" {
+						if val, ok := doneData["debug_url"].(string); ok && val != "" {
+							debugUrl = val
+							common.SysLog(fmt.Sprintf("[SSE] Done事件捕获debug_url: %s", debugUrl))
+						}
+					}
+					if usage.TotalTokens == 0 {
 						if usageMap, ok := doneData["usage"].(map[string]interface{}); ok {
 							if inputCount, ok := usageMap["input_count"].(float64); ok {
 								usage.PromptTokens = int(inputCount)
@@ -419,6 +465,8 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 								usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
 						}
 					}
+				} else {
+					common.SysLog(fmt.Sprintf("[SSE] 解析Done事件失败: %s", err.Error()))
 				}
 
 				// 修复：Coze API返回的output_count对视频的计费过高（49,000/视频）
@@ -461,6 +509,12 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 
 				finishReason := "stop"
 				stopResponse := helper.GenerateStopResponse(id, common.GetTimestamp(), info.UpstreamModelName, finishReason)
+				if executeId != "" {
+					stopResponse.ExecuteId = executeId
+				}
+				if debugUrl != "" {
+					stopResponse.DebugUrl = debugUrl
+				}
 				helper.ObjectData(c, stopResponse)
 
 			case "Error":
@@ -469,6 +523,18 @@ func cozeWorkflowStreamHandler(c *gin.Context, info *relaycommon.RelayInfo, resp
 					errorMsg, _ := errorData["error_message"].(string)
 					if errorMsg == "" {
 						errorMsg = "Workflow execution error"
+					}
+					if debugUrl == "" {
+						if val, ok := errorData["debug_url"].(string); ok && val != "" {
+							debugUrl = val
+							common.SysLog(fmt.Sprintf("[SSE] Error事件捕获debug_url: %s", debugUrl))
+						}
+					}
+					if executeId == "" {
+						if val, ok := errorData["execute_id"].(string); ok && val != "" {
+							executeId = val
+							common.SysLog(fmt.Sprintf("[SSE] Error事件捕获execute_id: %s", executeId))
+						}
 					}
 					return nil, types.NewError(errors.New(errorMsg), types.ErrorCodeBadResponse)
 				}
