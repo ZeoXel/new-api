@@ -30,16 +30,18 @@ type AsyncWorkflowResponse struct {
 
 // WorkflowAsyncResult 异步执行结果
 type WorkflowAsyncResult struct {
-	ExecuteId   string     `json:"execute_id"`
-	WorkflowId  string     `json:"workflow_id"`
-	Status      string     `json:"status"`
-	Progress    string     `json:"progress"`
-	Output      string     `json:"output,omitempty"`
-	Error       string     `json:"error,omitempty"`
-	Usage       *dto.Usage `json:"usage,omitempty"`
-	SubmitTime  int64      `json:"submit_time"`
-	StartTime   int64      `json:"start_time,omitempty"`
-	FinishTime  int64      `json:"finish_time,omitempty"`
+	ExecuteId     string     `json:"execute_id"`
+	WorkflowId    string     `json:"workflow_id"`
+	Status        string     `json:"status"`
+	Progress      string     `json:"progress"`
+	Output        string     `json:"output,omitempty"`
+	Error         string     `json:"error,omitempty"`
+	Usage         *dto.Usage `json:"usage,omitempty"`
+	SubmitTime    int64      `json:"submit_time"`
+	StartTime     int64      `json:"start_time,omitempty"`
+	FinishTime    int64      `json:"finish_time,omitempty"`
+	DebugUrl      string     `json:"debug_url,omitempty"`
+	CozeExecuteId string     `json:"coze_execute_id,omitempty"`
 }
 
 // handleAsyncWorkflowRequest 处理异步工作流请求
@@ -93,7 +95,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	defer func() {
 		if r := recover(); r != nil {
 			common.SysLog(fmt.Sprintf("[Async] Panic in background execution: %v", r))
-			updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("执行异常: %v", r), "", nil, info)
+			updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("执行异常: %v", r), "", nil, info, nil)
 		}
 	}()
 
@@ -110,7 +112,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	cozeRequest := convertCozeWorkflowRequest(nil, streamRequest)
 	requestBody, err := json.Marshal(cozeRequest)
 	if err != nil {
-		updateTaskStatus(executeId, model.TaskStatusFailure, "构造请求失败", "", nil, info)
+		updateTaskStatus(executeId, model.TaskStatusFailure, "构造请求失败", "", nil, info, nil)
 		return
 	}
 
@@ -118,7 +120,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	requestURL := fmt.Sprintf("%s/v1/workflow/stream_run", info.ChannelBaseUrl)
 	req, err := http.NewRequest("POST", requestURL, strings.NewReader(string(requestBody)))
 	if err != nil {
-		updateTaskStatus(executeId, model.TaskStatusFailure, "创建HTTP请求失败", "", nil, info)
+		updateTaskStatus(executeId, model.TaskStatusFailure, "创建HTTP请求失败", "", nil, info, nil)
 		return
 	}
 
@@ -135,12 +137,12 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	if authType == "oauth" {
 		oauthConfig, parseErr := ParseCozeOAuthConfig(info.ApiKey)
 		if parseErr != nil {
-			updateTaskStatus(executeId, model.TaskStatusFailure, "OAuth配置解析失败", "", nil, info)
+			updateTaskStatus(executeId, model.TaskStatusFailure, "OAuth配置解析失败", "", nil, info, nil)
 			return
 		}
 		token, err = GetCozeAccessToken(info, oauthConfig)
 		if err != nil {
-			updateTaskStatus(executeId, model.TaskStatusFailure, "获取OAuth token失败", "", nil, info)
+			updateTaskStatus(executeId, model.TaskStatusFailure, "获取OAuth token失败", "", nil, info, nil)
 			return
 		}
 	} else {
@@ -154,7 +156,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	if info.ChannelSetting.Proxy != "" {
 		client, err = service.NewProxyHttpClient(info.ChannelSetting.Proxy)
 		if err != nil {
-			updateTaskStatus(executeId, model.TaskStatusFailure, "创建代理客户端失败", "", nil, info)
+			updateTaskStatus(executeId, model.TaskStatusFailure, "创建代理客户端失败", "", nil, info, nil)
 			return
 		}
 		// 移除超时限制，允许长时间执行
@@ -171,7 +173,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	resp, err := client.Do(req)
 	if err != nil {
 		common.SysLog(fmt.Sprintf("[Async] HTTP请求失败: %v", err))
-		updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("请求执行失败: %v", err), "", nil, info)
+		updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("请求执行失败: %v", err), "", nil, info, nil)
 		return
 	}
 	defer resp.Body.Close()
@@ -183,7 +185,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 		bodyBytes, _ := io.ReadAll(resp.Body)
 		errorMsg := fmt.Sprintf("HTTP %d: %s", resp.StatusCode, string(bodyBytes))
 		common.SysLog(fmt.Sprintf("[Async] HTTP错误: %s", errorMsg))
-		updateTaskStatus(executeId, model.TaskStatusFailure, errorMsg, "", nil, info)
+		updateTaskStatus(executeId, model.TaskStatusFailure, errorMsg, "", nil, info, nil)
 		return
 	}
 
@@ -200,6 +202,8 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	var currentEvent string
 	var currentData string
 	var lastProgress int = 0
+	var upstreamExecuteId string
+	var debugUrl string
 
 	lineCount := 0
 	for scanner.Scan() {
@@ -286,6 +290,18 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 				// 工作流完成
 				var doneData map[string]interface{}
 				if err := json.Unmarshal([]byte(currentData), &doneData); err == nil {
+					if upstreamExecuteId == "" {
+						if val, ok := doneData["execute_id"].(string); ok && val != "" {
+							upstreamExecuteId = val
+							common.SysLog(fmt.Sprintf("[Async] Done事件获取Coze execute_id: %s", upstreamExecuteId))
+						}
+					}
+					if debugUrl == "" {
+						if val, ok := doneData["debug_url"].(string); ok && val != "" {
+							debugUrl = val
+							common.SysLog(fmt.Sprintf("[Async] Done事件获取Coze debug_url: %s", debugUrl))
+						}
+					}
 					// 从 Done 事件提取 usage（如果 Message 中没有）
 					if usage.TotalTokens == 0 {
 						if usageMap, ok := doneData["usage"].(map[string]interface{}); ok {
@@ -353,7 +369,10 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 
 				common.SysLog(fmt.Sprintf("[Async] 最终计费 usage: Prompt=%d, Completion=%d, Total=%d",
 					usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
-				updateTaskStatus(executeId, model.TaskStatusSuccess, "", outputText, &usage, info)
+				updateTaskStatus(executeId, model.TaskStatusSuccess, "", outputText, &usage, info, map[string]interface{}{
+					"coze_execute_id": upstreamExecuteId,
+					"debug_url":       debugUrl,
+				})
 				common.SysLog(fmt.Sprintf("[Async] Task %s completed successfully", executeId))
 				return
 
@@ -364,10 +383,25 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 					if errorMsg == "" {
 						errorMsg = "工作流执行错误"
 					}
+					if upstreamExecuteId == "" {
+						if val, ok := errorData["execute_id"].(string); ok && val != "" {
+							upstreamExecuteId = val
+							common.SysLog(fmt.Sprintf("[Async] Error事件获取Coze execute_id: %s", upstreamExecuteId))
+						}
+					}
+					if debugUrl == "" {
+						if val, ok := errorData["debug_url"].(string); ok && val != "" {
+							debugUrl = val
+							common.SysLog(fmt.Sprintf("[Async] Error事件获取Coze debug_url: %s", debugUrl))
+						}
+					}
 					// 即使失败也记录usage（如果有的话）
 					common.SysLog(fmt.Sprintf("[Async] Error occurred, usage: PromptTokens=%d, CompletionTokens=%d, TotalTokens=%d",
 						usage.PromptTokens, usage.CompletionTokens, usage.TotalTokens))
-					updateTaskStatus(executeId, model.TaskStatusFailure, errorMsg, "", &usage, info)
+					updateTaskStatus(executeId, model.TaskStatusFailure, errorMsg, "", &usage, info, map[string]interface{}{
+						"coze_execute_id": upstreamExecuteId,
+						"debug_url":       debugUrl,
+					})
 					common.SysLog(fmt.Sprintf("[Async] Task %s failed: %s", executeId, errorMsg))
 					return
 				}
@@ -383,16 +417,25 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	}
 
 	if err := scanner.Err(); err != nil {
-		updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("读取响应失败: %v", err), "", &usage, info)
+		updateTaskStatus(executeId, model.TaskStatusFailure, fmt.Sprintf("读取响应失败: %v", err), "", &usage, info, map[string]interface{}{
+			"coze_execute_id": upstreamExecuteId,
+			"debug_url":       debugUrl,
+		})
 		return
 	}
 
 	// 如果没有收到 Done 事件，设置为成功（保险）
 	if fullOutput.Len() > 0 {
-		updateTaskStatus(executeId, model.TaskStatusSuccess, "", fullOutput.String(), &usage, info)
+		updateTaskStatus(executeId, model.TaskStatusSuccess, "", fullOutput.String(), &usage, info, map[string]interface{}{
+			"coze_execute_id": upstreamExecuteId,
+			"debug_url":       debugUrl,
+		})
 		common.SysLog(fmt.Sprintf("[Async] Task %s completed (no Done event)", executeId))
 	} else {
-		updateTaskStatus(executeId, model.TaskStatusFailure, "未收到任何输出", "", &usage, info)
+		updateTaskStatus(executeId, model.TaskStatusFailure, "未收到任何输出", "", &usage, info, map[string]interface{}{
+			"coze_execute_id": upstreamExecuteId,
+			"debug_url":       debugUrl,
+		})
 	}
 }
 
@@ -419,7 +462,7 @@ func updateTaskProgress(executeId string, status model.TaskStatus, progress stri
 }
 
 // updateTaskStatus 更新任务最终状态并记录quota消耗
-func updateTaskStatus(executeId string, status model.TaskStatus, failReason string, output string, usage *dto.Usage, info *relaycommon.RelayInfo) {
+func updateTaskStatus(executeId string, status model.TaskStatus, failReason string, output string, usage *dto.Usage, info *relaycommon.RelayInfo, extra map[string]interface{}) {
 	task, exist, err := model.GetByOnlyTaskId(executeId)
 	if err != nil || !exist {
 		common.SysLog(fmt.Sprintf("[Async] Failed to get task %s: %v", executeId, err))
@@ -435,10 +478,29 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 	// ========== 工作流按次计费逻辑 START ==========
 	// 1. 提取 workflow_id
 	var taskData map[string]interface{}
+	if err := task.GetData(&taskData); err != nil || taskData == nil {
+		taskData = make(map[string]interface{})
+	}
+
 	var workflowId string
-	if err := task.GetData(&taskData); err == nil {
-		if wfId, ok := taskData["workflow_id"].(string); ok {
-			workflowId = wfId
+	if wfId, ok := taskData["workflow_id"].(string); ok {
+		workflowId = wfId
+	}
+
+	// 合并额外信息
+	if extra != nil {
+		for key, value := range extra {
+			switch v := value.(type) {
+			case string:
+				if v == "" {
+					continue
+				}
+				taskData[key] = v
+			case nil:
+				continue
+			default:
+				taskData[key] = v
+			}
 		}
 	}
 
@@ -482,15 +544,21 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 	if status == model.TaskStatusSuccess {
 		task.Progress = "100%"
 
-		// 存储结果到 Data 字段
-		result := map[string]interface{}{
-			"output": output,
+		if output != "" {
+			taskData["output"] = output
 		}
 		if usage != nil {
-			result["usage"] = usage
+			taskData["usage"] = usage
 		}
-		task.SetData(result)
+		task.SetData(taskData)
 	} else {
+		if usage != nil {
+			taskData["usage"] = usage
+		}
+		if output != "" {
+			taskData["output"] = output
+		}
+		task.SetData(taskData)
 		task.FailReason = failReason
 	}
 
@@ -636,6 +704,13 @@ func GetAsyncWorkflowResult(executeId string, userId int) (*WorkflowAsyncResult,
 
 		if output, ok := taskData["output"].(string); ok {
 			result.Output = output
+		}
+
+		if cozeExecuteId, ok := taskData["coze_execute_id"].(string); ok {
+			result.CozeExecuteId = cozeExecuteId
+		}
+		if debugUrl, ok := taskData["debug_url"].(string); ok {
+			result.DebugUrl = debugUrl
 		}
 
 		if usage, ok := taskData["usage"].(map[string]interface{}); ok {
