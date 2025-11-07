@@ -33,7 +33,7 @@ func (a *Adaptor) Init(channelId int, channelName string, channelType int) {
 }
 
 // DoRequest 执行透传请求
-func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (*http.Response, error) {
+func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (*http.Response, context.CancelFunc, error) {
 	// 🆕 优先使用保存的原始请求（用于被中间件修改过的请求，如 Kling）
 	var requestBody []byte
 	var requestPath string
@@ -95,18 +95,17 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 
 	// 🆕 根据请求方法设置不同的超时时间
 	// GET 请求（查询状态）：120 秒（轮询查询不应该太久）
-	// POST/PUT 请求（提交任务）：300 秒（支持大图片上传）
+	// POST/PUT 请求（提交任务）：900 秒（支持大图片上传）
 	var timeout time.Duration
 	if c.Request.Method == "GET" {
 		timeout = time.Second * 120 // GET 请求 120 秒超时
 		fmt.Printf("[DEBUG Bltcy] Using GET request timeout: %v\n", timeout)
 	} else {
-		timeout = time.Second * 300 // POST/PUT 请求 300 秒超时
+		timeout = time.Second * 900 // POST/PUT 请求 900 秒超时，支持大文件上传
 		fmt.Printf("[DEBUG Bltcy] Using POST/PUT request timeout: %v\n", timeout)
 	}
 
-	ctx, cancel := context.WithTimeout(context.Background(), timeout)
-	defer cancel()
+	ctx, cancel := context.WithTimeout(c.Request.Context(), timeout)
 	req = req.WithContext(ctx)
 
 	// 复制请求头
@@ -139,17 +138,18 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 
 	resp, err := client.Do(req)
 	if err != nil {
+		cancel()
 		// 记录详细错误信息，包括目标 URL 和错误类型
 		fmt.Printf("[ERROR Bltcy] Request failed: method=%s, url=%s, error=%v\n",
 			c.Request.Method, targetURL, err)
-		return nil, fmt.Errorf("failed to send request to legacy gateway: %w", err)
+		return nil, nil, fmt.Errorf("failed to send request to legacy gateway: %w", err)
 	}
 
 	// 记录响应状态码
 	fmt.Printf("[DEBUG Bltcy] Response received: status=%d, method=%s, url=%s\n",
 		resp.StatusCode, c.Request.Method, targetURL)
 
-	return resp, nil
+	return resp, cancel, nil
 }
 
 // DoResponse 处理响应
@@ -224,6 +224,7 @@ func RelayBltcy(c *gin.Context) {
 
 	// 执行请求（GET 请求支持重试，包括读取响应体阶段）
 	var resp *http.Response
+	var cancel context.CancelFunc
 	var responseBody []byte
 	isGetRequest := c.Request.Method == "GET"
 	maxRetries := 1
@@ -233,8 +234,11 @@ func RelayBltcy(c *gin.Context) {
 
 	for attempt := 1; attempt <= maxRetries; attempt++ {
 		// 发送请求
-		resp, err = adaptor.DoRequest(c, baseURL, channelKey)
+		resp, cancel, err = adaptor.DoRequest(c, baseURL, channelKey)
 		if err != nil {
+			if cancel != nil {
+				cancel()
+			}
 			if attempt < maxRetries {
 				fmt.Printf("[DEBUG Bltcy] Request failed (attempt %d/%d), retrying in 2s: %s\n", attempt, maxRetries, err.Error())
 				time.Sleep(2 * time.Second)
@@ -256,12 +260,19 @@ func RelayBltcy(c *gin.Context) {
 		if isGetRequest && resp.StatusCode >= 500 && attempt < maxRetries {
 			fmt.Printf("[DEBUG Bltcy] GET request returned %d (attempt %d/%d), retrying in 2s\n", resp.StatusCode, attempt, maxRetries)
 			resp.Body.Close()
+			if cancel != nil {
+				cancel()
+			}
 			time.Sleep(2 * time.Second)
 			continue
 		}
 
 		// 🆕 读取响应体（包含在重试循环中，解决 context canceled 问题）
 		responseBody, err = adaptor.DoResponse(c, resp)
+		if cancel != nil {
+			cancel()
+			cancel = nil
+		}
 		if err != nil {
 			// 🆕 检查是否是超时相关错误（context canceled, timeout）
 			errStr := err.Error()
@@ -273,6 +284,10 @@ func RelayBltcy(c *gin.Context) {
 				fmt.Printf("[WARN Bltcy] Response read timeout (attempt %d/%d), retrying in 2s: %s\n",
 					attempt, maxRetries, errStr)
 				resp.Body.Close()
+				if cancel != nil {
+					cancel()
+					cancel = nil
+				}
 				time.Sleep(2 * time.Second)
 				continue
 			}
@@ -426,9 +441,9 @@ func RelayBltcy(c *gin.Context) {
 			ChannelId:        channelId,
 			ModelName:        billingModelName, // 🆕 使用具体模型名，不添加后缀
 			TokenName:        tokenName,
-			Quota:            actualQuota,      // 🆕 使用实际配额
-			PromptTokens:     1,                // 🆕 透传模式设置为 1，避免前端计算比率错误
-			CompletionTokens: 1,                // 🆕 透传模式设置为 1，避免前端计算比率错误
+			Quota:            actualQuota, // 🆕 使用实际配额
+			PromptTokens:     1,           // 🆕 透传模式设置为 1，避免前端计算比率错误
+			CompletionTokens: 1,           // 🆕 透传模式设置为 1，避免前端计算比率错误
 			Content:          logContent,
 			TokenId:          tokenId,
 			Group:            group,
