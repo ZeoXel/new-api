@@ -39661,3 +39661,483 @@
 2025/11/07 10:18:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
 [0m[33m[0.152ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
 [SYS] 2025/11/07 - 10:18:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:18:36 | 任务进度轮询开始 
+
+2025/11/07 10:18:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.312ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:18:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.163ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:18:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:18:51 | 任务进度轮询开始 
+
+2025/11/07 10:18:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.256ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:18:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.154ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:18:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:18:58 | syncing options from database 
+
+2025/11/07 10:18:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.433ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:19:06 | 任务进度轮询开始 
+
+2025/11/07 10:19:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.708ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:19:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.684ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:19:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:19:21 | 任务进度轮询开始 
+
+2025/11/07 10:19:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.825ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:19:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.188ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:19:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:19:36 | 任务进度轮询开始 
+
+2025/11/07 10:19:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.411ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:19:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.579ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:19:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:19:51 | 任务进度轮询开始 
+
+2025/11/07 10:19:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.730ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:19:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.251ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:19:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:19:58 | syncing options from database 
+
+2025/11/07 10:19:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.245ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:20:06 | 任务进度轮询开始 
+
+2025/11/07 10:20:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.694ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:20:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.168ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:20:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:20:21 | 任务进度轮询开始 
+
+2025/11/07 10:20:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.935ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:20:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.119ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:20:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:20:36 | 任务进度轮询开始 
+
+2025/11/07 10:20:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.409ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:20:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.103ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:20:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:20:51 | 任务进度轮询开始 
+
+2025/11/07 10:20:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.437ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:20:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.095ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:20:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:20:58 | syncing options from database 
+
+2025/11/07 10:20:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.418ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:21:06 | 任务进度轮询开始 
+
+2025/11/07 10:21:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.459ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:21:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.456ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:21:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:21:21 | 任务进度轮询开始 
+
+2025/11/07 10:21:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.663ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:21:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.851ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:21:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:21:36 | 任务进度轮询开始 
+
+2025/11/07 10:21:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.343ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:21:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.207ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:21:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:21:51 | 任务进度轮询开始 
+
+2025/11/07 10:21:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.442ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:21:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.370ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:21:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:21:58 | syncing options from database 
+
+2025/11/07 10:21:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.367ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:22:06 | 任务进度轮询开始 
+
+2025/11/07 10:22:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[3.142ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:22:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.585ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:22:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:22:21 | 任务进度轮询开始 
+
+2025/11/07 10:22:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.757ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:22:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.136ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:22:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:22:36 | 任务进度轮询开始 
+
+2025/11/07 10:22:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.443ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:22:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.109ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:22:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:22:51 | 任务进度轮询开始 
+
+2025/11/07 10:22:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.452ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:22:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.209ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:22:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:22:54 | 正在更新数据看板数据... 
+[SYS] 2025/11/07 - 10:22:54 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/07 - 10:22:58 | syncing options from database 
+
+2025/11/07 10:22:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[1.193ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:23:06 | 任务进度轮询开始 
+
+2025/11/07 10:23:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.815ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:23:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.797ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:23:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:23:21 | 任务进度轮询开始 
+
+2025/11/07 10:23:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.780ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:23:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.109ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:23:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:23:36 | 任务进度轮询开始 
+
+2025/11/07 10:23:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.380ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:23:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.209ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:23:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:23:51 | 任务进度轮询开始 
+
+2025/11/07 10:23:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.810ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:23:51 | 任务进度轮询完成 
+
+2025/11/07 10:23:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.093ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:23:58 | syncing options from database 
+
+2025/11/07 10:23:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.915ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:24:06 | 任务进度轮询开始 
+
+2025/11/07 10:24:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.616ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:24:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.732ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:24:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:24:21 | 任务进度轮询开始 
+
+2025/11/07 10:24:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.749ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:24:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.189ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:24:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:24:36 | 任务进度轮询开始 
+
+2025/11/07 10:24:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.543ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:24:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.150ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:24:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:24:51 | 任务进度轮询开始 
+
+2025/11/07 10:24:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.929ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:24:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.227ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:24:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:24:58 | syncing options from database 
+
+2025/11/07 10:24:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[1.275ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:25:06 | 任务进度轮询开始 
+
+2025/11/07 10:25:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[3.628ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:25:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[4.010ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:25:06 | 任务进度轮询完成 
+
+2025/11/07 10:25:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.489ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:25:21 | 任务进度轮询开始 
+
+2025/11/07 10:25:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.181ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:25:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:25:36 | 任务进度轮询开始 
+
+2025/11/07 10:25:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.259ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:25:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.257ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:25:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:25:51 | 任务进度轮询开始 
+
+2025/11/07 10:25:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.278ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:25:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.208ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:25:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:25:58 | syncing options from database 
+
+2025/11/07 10:25:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[1.338ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:26:06 | 任务进度轮询开始 
+
+2025/11/07 10:26:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.873ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:26:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[4.097ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:26:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:26:21 | 任务进度轮询开始 
+
+2025/11/07 10:26:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.354ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:26:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.121ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:26:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:26:36 | 任务进度轮询开始 
+
+2025/11/07 10:26:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.494ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:26:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.102ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:26:36 | 任务进度轮询完成 
+
+2025/11/07 10:26:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.301ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:26:51 | 任务进度轮询开始 
+
+2025/11/07 10:26:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.141ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:26:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:26:58 | syncing options from database 
+
+2025/11/07 10:26:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[1.355ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:27:06 | 任务进度轮询开始 
+
+2025/11/07 10:27:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.467ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:27:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.598ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:27:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:27:21 | 任务进度轮询开始 
+
+2025/11/07 10:27:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.141ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:27:21 | 任务进度轮询完成 
+
+2025/11/07 10:27:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.605ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:27:36 | 任务进度轮询开始 
+
+2025/11/07 10:27:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.457ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:27:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.120ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:27:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:27:51 | 任务进度轮询开始 
+
+2025/11/07 10:27:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.618ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:27:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[4.553ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:27:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:27:54 | 正在更新数据看板数据... 
+[SYS] 2025/11/07 - 10:27:54 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/07 - 10:27:58 | syncing options from database 
+
+2025/11/07 10:27:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.474ms] [34;1m[rows:6][0m SELECT * FROM `options`
+
+2025/11/07 10:28:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.837ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:28:06 | 任务进度轮询开始 
+
+2025/11/07 10:28:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.264ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:28:06 | 任务进度轮询完成 
+
+2025/11/07 10:28:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.492ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:28:21 | 任务进度轮询开始 
+
+2025/11/07 10:28:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.396ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:28:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:28:36 | 任务进度轮询开始 
+
+2025/11/07 10:28:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.688ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:28:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.495ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:28:36 | 任务进度轮询完成 
+
+2025/11/07 10:28:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.108ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:28:51 | 任务进度轮询开始 
+
+2025/11/07 10:28:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.156ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:28:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:28:58 | syncing options from database 
+
+2025/11/07 10:28:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.470ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:29:06 | 任务进度轮询开始 
+
+2025/11/07 10:29:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.597ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:29:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.218ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:29:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:29:21 | 任务进度轮询开始 
+
+2025/11/07 10:29:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.397ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:29:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.347ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:29:21 | 任务进度轮询完成 
+
+2025/11/07 10:29:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.350ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:29:36 | 任务进度轮询开始 
+
+2025/11/07 10:29:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.216ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:29:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:29:51 | 任务进度轮询开始 
+
+2025/11/07 10:29:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.285ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:29:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.446ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:29:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:29:58 | syncing options from database 
+
+2025/11/07 10:29:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[1.153ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:30:06 | 任务进度轮询开始 
+
+2025/11/07 10:30:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.429ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:30:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.905ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:30:06 | 任务进度轮询完成 
+
+2025/11/07 10:30:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.932ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:30:21 | 任务进度轮询开始 
+
+2025/11/07 10:30:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.211ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:30:21 | 任务进度轮询完成 
+
+2025/11/07 10:30:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.246ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/07 - 10:30:36 | 任务进度轮询开始 
+
+2025/11/07 10:30:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.116ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:30:36 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:30:51 | 任务进度轮询开始 
+
+2025/11/07 10:30:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.390ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:30:51 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.128ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:30:51 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:30:58 | syncing options from database 
+
+2025/11/07 10:30:58 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[1.341ms] [34;1m[rows:6][0m SELECT * FROM `options`
+[SYS] 2025/11/07 - 10:31:06 | 任务进度轮询开始 
+
+2025/11/07 10:31:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.374ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:31:06 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.493ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:31:06 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:31:21 | 任务进度轮询开始 
+
+2025/11/07 10:31:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.253ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:31:21 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.112ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:31:21 | 任务进度轮询完成 
+[SYS] 2025/11/07 - 10:31:36 | 任务进度轮询开始 
+
+2025/11/07 10:31:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.555ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/07 10:31:36 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.219ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/07 - 10:31:36 | 任务进度轮询完成 

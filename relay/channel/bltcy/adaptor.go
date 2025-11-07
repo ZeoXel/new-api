@@ -65,7 +65,7 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 	if len(requestBody) == 0 {
 		requestBody, err = common.GetRequestBody(c)
 		if err != nil {
-			return nil, fmt.Errorf("failed to read request body: %w", err)
+			return nil, nil, fmt.Errorf("failed to read request body: %w", err)
 		}
 	}
 
@@ -90,7 +90,7 @@ func (a *Adaptor) DoRequest(c *gin.Context, baseURL string, channelKey string) (
 	// 创建请求
 	req, err := http.NewRequest(c.Request.Method, targetURL, bytes.NewReader(requestBody))
 	if err != nil {
-		return nil, fmt.Errorf("failed to create request: %w", err)
+		return nil, nil, fmt.Errorf("failed to create request: %w", err)
 	}
 
 	// 🆕 根据请求方法设置不同的超时时间
