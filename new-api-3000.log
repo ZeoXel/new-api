@@ -3388,3 +3388,617 @@ model_price_helper result: ModelPrice: -1.000000, ModelRatio: 70.000000, Complet
 2025/11/10 11:41:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
 [0m[33m[0.254ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
 [SYS] 2025/11/10 - 11:41:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:41:56 | 正在更新数据看板数据... 
+
+2025/11/10 11:41:56 [31;1m/Users/g/Desktop/工作/统一API网关/new-api/model/usedata.go:77 [35;1mrecord not found
+[0m[33m[0.589ms] [34;1m[rows:0][0m SELECT * FROM `quota_data` WHERE user_id = 1 and username = "zeo" and model_name = "7549079559813087284" and created_at = 1762743600 ORDER BY `quota_data`.`id` LIMIT 1
+
+2025/11/10 11:41:56 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/usedata.go:84
+[0m[33m[1.141ms] [34;1m[rows:1][0m INSERT INTO `quota_data` (`user_id`,`username`,`model_name`,`created_at`,`token_used`,`count`,`quota`) VALUES (1,"zeo","7549079559813087284",1762743600,463,1,4900000) RETURNING `id`
+
+2025/11/10 11:41:56 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/usedata.go:77
+[0m[33m[0.198ms] [34;1m[rows:1][0m SELECT * FROM `quota_data` WHERE user_id = 1 and username = "zeo" and model_name = "7520444303086125096" and created_at = 1762743600 ORDER BY `quota_data`.`id` LIMIT 1
+
+2025/11/10 11:41:56 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/usedata.go:93
+[0m[33m[3.886ms] [34;1m[rows:1][0m UPDATE `quota_data` SET `count`=count + 1,`quota`=quota + 100000,`token_used`=token_used + 614 WHERE user_id = 1 and username = "zeo" and model_name = "7520444303086125096" and created_at = 1762743600
+[SYS] 2025/11/10 - 11:41:56 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/11/10 - 11:41:57 | 任务进度轮询开始 
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.316ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[1.614ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:41:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:41:57 | syncing options from database 
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.574ms] [34;1m[rows:8][0m SELECT * FROM `options`
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.982ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2950000 WHERE model = "7555426106914062346"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.241ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555426031244591145"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.176ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=50000 WHERE model = "7520444303086125096"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.177ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=44950000 WHERE model = "7551731827355631655"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.189ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=7450000 WHERE model = "7554976982552985626"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.161ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549079559813087284"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.186ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7551330046477500452"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.182ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3400000 WHERE model = "7559137542588334122"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.180ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549034632123367451"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.174ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555425611536924699"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.183ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7564614140897378319"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.150ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559875053153108003"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.137ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=950000 WHERE model = "7555352961393213480"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.144ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555429396829470760"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.153ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=6950000 WHERE model = "7555422050492629026"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.154ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549076385299333172"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.141ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7555446335664832554"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.140ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7555422998796730408"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.213ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555426708325875738"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.174ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549045650412290058"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.141ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7549041786641006626"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.145ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555352512988823594"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.137ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559028883187712036"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555430474441900082"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.131ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4450000 WHERE model = "7555426070024814602"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.205ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7549039571225739299"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.134ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4950000 WHERE model = "7552857607800537129"
+
+2025/11/10 11:41:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7566919317590491142"
+[SYS] 2025/11/10 - 11:42:12 | 任务进度轮询开始 
+
+2025/11/10 11:42:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.733ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:42:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.086ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:42:12 | 任务进度轮询完成 
+
+2025/11/10 11:42:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.173ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:42:27 | 任务进度轮询开始 
+
+2025/11/10 11:42:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.052ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:42:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:42 | 任务进度轮询开始 
+
+2025/11/10 11:42:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.473ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:42:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.164ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:42:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:57 | 任务进度轮询开始 
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.270ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.647ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:42:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:57 | syncing options from database 
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.280ms] [34;1m[rows:8][0m SELECT * FROM `options`
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.920ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7555422998796730408"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.140ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=7450000 WHERE model = "7554976982552985626"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.138ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555426031244591145"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3400000 WHERE model = "7559137542588334122"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.148ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=50000 WHERE model = "7520444303086125096"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.199ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7549039571225739299"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.174ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559028883187712036"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.138ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555425611536924699"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.142ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549076385299333172"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=950000 WHERE model = "7555352961393213480"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7566919317590491142"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549034632123367451"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.137ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7549041786641006626"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.136ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555352512988823594"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555429396829470760"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4450000 WHERE model = "7555426070024814602"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.134ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=6950000 WHERE model = "7555422050492629026"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.134ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=44950000 WHERE model = "7551731827355631655"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.125ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555426708325875738"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.184ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2950000 WHERE model = "7555426106914062346"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.150ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559875053153108003"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.131ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7551330046477500452"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.126ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4950000 WHERE model = "7552857607800537129"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.136ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549079559813087284"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549045650412290058"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.134ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7555446335664832554"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.137ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555430474441900082"
+
+2025/11/10 11:42:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7564614140897378319"
+
+2025/11/10 11:43:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.323ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:43:12 | 任务进度轮询开始 
+
+2025/11/10 11:43:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.150ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:43:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:27 | 任务进度轮询开始 
+
+2025/11/10 11:43:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.904ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:43:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.413ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:43:27 | 任务进度轮询完成 
+
+2025/11/10 11:43:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.289ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:43:42 | 任务进度轮询开始 
+
+2025/11/10 11:43:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.159ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:43:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:57 | 任务进度轮询开始 
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.269ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.780ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:43:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:57 | syncing options from database 
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.330ms] [34;1m[rows:8][0m SELECT * FROM `options`
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.853ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549076385299333172"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.161ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4950000 WHERE model = "7552857607800537129"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=950000 WHERE model = "7555352961393213480"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.148ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555426031244591145"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555352512988823594"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.132ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7564614140897378319"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.148ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549045650412290058"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.157ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7549041786641006626"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.142ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7551330046477500452"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559028883187712036"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.128ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555430474441900082"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4450000 WHERE model = "7555426070024814602"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=50000 WHERE model = "7520444303086125096"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.128ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7549039571225739299"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.128ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555429396829470760"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555425611536924699"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.132ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559875053153108003"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.125ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7555446335664832554"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.128ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=6950000 WHERE model = "7555422050492629026"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.139ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549034632123367451"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.146ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7555422998796730408"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3400000 WHERE model = "7559137542588334122"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549079559813087284"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.126ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=44950000 WHERE model = "7551731827355631655"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=7450000 WHERE model = "7554976982552985626"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555426708325875738"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.144ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2950000 WHERE model = "7555426106914062346"
+
+2025/11/10 11:43:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7566919317590491142"
+
+2025/11/10 11:44:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.298ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:44:12 | 任务进度轮询开始 
+
+2025/11/10 11:44:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.173ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:44:12 | 任务进度轮询完成 
+
+2025/11/10 11:44:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.299ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:44:27 | 任务进度轮询开始 
+
+2025/11/10 11:44:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.132ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:44:27 | 任务进度轮询完成 
+
+2025/11/10 11:44:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.553ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:44:42 | 任务进度轮询开始 
+
+2025/11/10 11:44:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.453ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:44:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:44:57 | 任务进度轮询开始 
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[3.336ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[2.892ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:44:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:44:57 | syncing options from database 
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[0.566ms] [34;1m[rows:8][0m SELECT * FROM `options`
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[1.039ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7549039571225739299"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.174ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555426031244591145"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.144ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559875053153108003"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.136ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549045650412290058"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=7450000 WHERE model = "7554976982552985626"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.154ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555425611536924699"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.135ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=950000 WHERE model = "7555352961393213480"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.138ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555352512988823594"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.140ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555430474441900082"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.152ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549079559813087284"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.126ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7555446335664832554"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.174ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=44950000 WHERE model = "7551731827355631655"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.132ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7564614140897378319"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.125ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=6950000 WHERE model = "7555422050492629026"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.136ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555429396829470760"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.135ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2950000 WHERE model = "7555426106914062346"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.139ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4450000 WHERE model = "7555426070024814602"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7549041786641006626"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7551330046477500452"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.141ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7555422998796730408"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.132ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4950000 WHERE model = "7552857607800537129"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.144ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555426708325875738"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.128ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7566919317590491142"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.136ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559028883187712036"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.132ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3400000 WHERE model = "7559137542588334122"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.126ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=50000 WHERE model = "7520444303086125096"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549076385299333172"
+
+2025/11/10 11:44:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.127ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549034632123367451"
+[SYS] 2025/11/10 - 11:45:12 | 任务进度轮询开始 
+
+2025/11/10 11:45:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.356ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:45:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.147ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:45:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:45:27 | 任务进度轮询开始 
+
+2025/11/10 11:45:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[8.109ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:45:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[4.883ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:45:27 | 任务进度轮询完成 
+
+2025/11/10 11:45:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.527ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:45:42 | 任务进度轮询开始 
+
+2025/11/10 11:45:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.257ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:45:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:45:57 | syncing options from database 
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:25
+[0m[33m[3.889ms] [34;1m[rows:8][0m SELECT * FROM `options`
+[SYS] 2025/11/10 - 11:45:57 | 任务进度轮询开始 
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[2.238ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549045650412290058"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.169ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.228ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555426708325875738"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.137ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=6950000 WHERE model = "7555422050492629026"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.134ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555352512988823594"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.134ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4450000 WHERE model = "7555426070024814602"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.128ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3900000 WHERE model = "7549034632123367451"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[1.349ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4950000 WHERE model = "7552857607800537129"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.178ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=44950000 WHERE model = "7551731827355631655"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[3.432ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:45:57 | 任务进度轮询完成 
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[1.334ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7555446335664832554"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.219ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549079559813087284"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.158ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2450000 WHERE model = "7549076385299333172"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.145ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7549041786641006626"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.167ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=50000 WHERE model = "7520444303086125096"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.179ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7551330046477500452"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.156ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=7450000 WHERE model = "7554976982552985626"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.166ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3950000 WHERE model = "7555429396829470760"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.139ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=2950000 WHERE model = "7555426106914062346"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.137ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=4400000 WHERE model = "7555426031244591145"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=950000 WHERE model = "7555352961393213480"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555430474441900082"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.138ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=14950000 WHERE model = "7555425611536924699"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.247ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7555422998796730408"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.170ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7566919317590491142"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.133ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559875053153108003"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.142ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=9950000 WHERE model = "7549039571225739299"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.130ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=5900000 WHERE model = "7559028883187712036"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=3400000 WHERE model = "7559137542588334122"
+
+2025/11/10 11:45:57 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:502
+[0m[33m[0.129ms] [34;1m[rows:0][0m UPDATE `abilities` SET `workflow_price`=0 WHERE model = "7564614140897378319"
+
+2025/11/10 11:46:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.242ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:46:12 | 任务进度轮询开始 
+
+2025/11/10 11:46:12 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.318ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:46:12 | 任务进度轮询完成 
+
+2025/11/10 11:46:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.465ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/11/10 - 11:46:27 | 任务进度轮询开始 
+
+2025/11/10 11:46:27 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.262ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:46:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:46:42 | 任务进度轮询开始 
+
+2025/11/10 11:46:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.450ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/11/10 11:46:42 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:178
+[0m[33m[0.249ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/11/10 - 11:46:42 | 任务进度轮询完成 
