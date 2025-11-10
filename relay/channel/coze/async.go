@@ -504,6 +504,15 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 		}
 	}
 
+	// 🆕 确保 GroupRatioInfo.ChannelRatio 已初始化
+	if info.PriceData.GroupRatioInfo.ChannelRatio == 0 {
+		// 从 abilities 表查询渠道倍率（使用 coze-workflow-async 作为模型名称）
+		channelRatio := model.GetChannelRatio(info.UsingGroup, "coze-workflow-async", info.ChannelId)
+		info.PriceData.GroupRatioInfo.ChannelRatio = channelRatio
+		common.SysLog(fmt.Sprintf("[Async] 初始化渠道倍率: channel_id=%d, group=%s, ratio=%.2f",
+			info.ChannelId, info.UsingGroup, channelRatio))
+	}
+
 	// 2. 查询工作流定价
 	var workflowPricePerCall int
 	if workflowId != "" {
@@ -512,16 +521,16 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 
 	// 3. 计算 quota
 	if workflowPricePerCall > 0 {
-		// 按次计费：price * group_ratio
+		// 按次计费：price * group_ratio * channel_ratio
 		baseQuota := float64(workflowPricePerCall)
-		quota = int(baseQuota * info.PriceData.GroupRatioInfo.GroupRatio)
+		quota = int(baseQuota * info.PriceData.GroupRatioInfo.GroupRatio * info.PriceData.GroupRatioInfo.ChannelRatio)
 
 		if quota < 1 {
 			quota = 1 // 确保至少扣1个quota
 		}
 
-		common.SysLog(fmt.Sprintf("[Async] 工作流按次计费: workflow=%s, 基础价格=%d quota/次, 分组倍率=%.2f, 最终quota=%d",
-			workflowId, workflowPricePerCall, info.PriceData.GroupRatioInfo.GroupRatio, quota))
+		common.SysLog(fmt.Sprintf("[Async] 工作流按次计费: workflow=%s, 基础价格=%d quota/次, 分组倍率=%.2f, 渠道倍率=%.2f, 最终quota=%d",
+			workflowId, workflowPricePerCall, info.PriceData.GroupRatioInfo.GroupRatio, info.PriceData.GroupRatioInfo.ChannelRatio, quota))
 
 	} else if usage != nil && usage.TotalTokens > 0 {
 		// 回退到 token 计费（向后兼容）
@@ -610,11 +619,11 @@ func recordAsyncConsumeLog(task *model.Task, info *relaycommon.RelayInfo, usage 
 	// 构造日志内容
 	var logContent string
 	if !info.PriceData.UsePrice {
-		logContent = fmt.Sprintf("模型倍率 %.2f，分组倍率 %.2f",
-			info.PriceData.ModelRatio, info.PriceData.GroupRatioInfo.GroupRatio)
+		logContent = fmt.Sprintf("模型倍率 %.2f，分组倍率 %.2f，渠道倍率 %.2f",
+			info.PriceData.ModelRatio, info.PriceData.GroupRatioInfo.GroupRatio, info.PriceData.GroupRatioInfo.ChannelRatio)
 	} else {
-		logContent = fmt.Sprintf("模型价格 %.2f，分组倍率 %.2f",
-			info.PriceData.ModelPrice, info.PriceData.GroupRatioInfo.GroupRatio)
+		logContent = fmt.Sprintf("模型价格 %.2f，分组倍率 %.2f，渠道倍率 %.2f",
+			info.PriceData.ModelPrice, info.PriceData.GroupRatioInfo.GroupRatio, info.PriceData.GroupRatioInfo.ChannelRatio)
 	}
 
 	if isFailed {
@@ -627,6 +636,7 @@ func recordAsyncConsumeLog(task *model.Task, info *relaycommon.RelayInfo, usage 
 	other := make(map[string]interface{})
 	other["model_ratio"] = info.PriceData.ModelRatio
 	other["group_ratio"] = info.PriceData.GroupRatioInfo.GroupRatio
+	other["channel_ratio"] = info.PriceData.GroupRatioInfo.ChannelRatio
 	other["completion_ratio"] = info.PriceData.CompletionRatio
 	other["model_price"] = info.PriceData.ModelPrice
 	other["user_group_ratio"] = info.PriceData.GroupRatioInfo.GroupSpecialRatio
