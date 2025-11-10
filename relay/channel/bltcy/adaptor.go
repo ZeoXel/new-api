@@ -3,6 +3,7 @@ package bltcy
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -372,8 +373,28 @@ func RelayBltcy(c *gin.Context) {
 	// 🆕 获取具体的模型名（如 "gen4_turbo", "kling-v1-6"）
 	billingModelName := c.GetString("billing_model_name")
 	fmt.Printf("[DEBUG Bltcy] serviceName: %s, billingModelName: %s\n", serviceName, billingModelName)
+
+	// 如果上下文中没有 billing_model_name，从原始请求体提取
 	if billingModelName == "" {
-		// 如果没有具体模型名，使用服务名
+		if originalBody, exists := c.Get("bltcy_original_body"); exists {
+			var reqBody map[string]interface{}
+			if bodyBytes, ok := originalBody.([]byte); ok {
+				if err := json.Unmarshal(bodyBytes, &reqBody); err == nil {
+					// 支持 model 和 model_name 字段
+					if model, ok := reqBody["model"].(string); ok && model != "" {
+						billingModelName = model
+						fmt.Printf("[DEBUG Bltcy] Extracted model from original body: %s\n", model)
+					} else if modelName, ok := reqBody["model_name"].(string); ok && modelName != "" {
+						billingModelName = modelName
+						fmt.Printf("[DEBUG Bltcy] Extracted model_name from original body: %s\n", modelName)
+					}
+				}
+			}
+		}
+	}
+
+	if billingModelName == "" {
+		// 如果还是没有具体模型名，使用服务名
 		billingModelName = serviceName
 		fmt.Printf("[DEBUG Bltcy] billing_model_name is empty, fallback to serviceName: %s\n", serviceName)
 	}

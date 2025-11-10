@@ -88,6 +88,7 @@ type RelayInfo struct {
 	UsePrice               bool
 	RelayMode              int
 	OriginModelName        string
+	BillingModelName       string // 用于计费的实际模型名（如 kling-v2-master）
 	RequestURLPath         string
 	PromptTokens           int
 	ShouldIncludeUsage     bool
@@ -186,6 +187,9 @@ func (info *RelayInfo) ToString() string {
 	fmt.Fprintf(b, "IsPlayground: %t, ", info.IsPlayground)
 	fmt.Fprintf(b, "RequestURLPath: %q, ", info.RequestURLPath)
 	fmt.Fprintf(b, "OriginModelName: %q, ", info.OriginModelName)
+	if info.BillingModelName != "" {
+		fmt.Fprintf(b, "BillingModelName: %q, ", info.BillingModelName)
+	}
 	fmt.Fprintf(b, "PromptTokens: %d, ", info.PromptTokens)
 	fmt.Fprintf(b, "ShouldIncludeUsage: %t, ", info.ShouldIncludeUsage)
 	fmt.Fprintf(b, "DisablePing: %t, ", info.DisablePing)
@@ -399,6 +403,16 @@ func genBaseRelayInfo(c *gin.Context, request dto.Request) *RelayInfo {
 			IsFirstThinkingContent:  true,
 			SendLastThinkingContent: false,
 		},
+	}
+
+	// 读取实际计费模型名（如 kling-v2-master）
+	if billingModel, exists := c.Get("billing_model_name"); exists {
+		if billingModelStr, ok := billingModel.(string); ok && billingModelStr != "" {
+			info.BillingModelName = billingModelStr
+			fmt.Printf("[DEBUG genBaseRelayInfo] Set BillingModelName=%q from context\n", billingModelStr)
+		}
+	} else {
+		fmt.Printf("[DEBUG genBaseRelayInfo] No billing_model_name in context\n")
 	}
 
 	if info.RelayMode == relayconstant.RelayModeUnknown {

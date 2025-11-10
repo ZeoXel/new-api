@@ -277,6 +277,10 @@ var defaultModelPrice = map[string]float64{
 	"mj_upscale":              0.05,
 	"swap_face":               0.05,
 	"mj_upload":               0.05,
+	// Kling 模型差异化定价
+	"kling-v1":                0.1,  // 基础版本
+	"kling-v1-6":              0.15, // 6秒视频版本
+	"kling-v2-master":         0.2,  // 高级版本
 }
 
 var defaultAudioRatio = map[string]float64{

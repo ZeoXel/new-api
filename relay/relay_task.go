@@ -83,10 +83,19 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 		return
 	}
 
-	modelName := info.OriginModelName
+	// 优先使用 BillingModelName 用于计费（如 kling-v2-master）
+	// 如果不存在，则使用 OriginModelName（如 kling）
+	modelName := info.BillingModelName
+	if modelName == "" {
+		modelName = info.OriginModelName
+	}
 	if modelName == "" {
 		modelName = service.CoverTaskActionToModelName(platform, info.Action)
 	}
+
+	// 🔍 调试日志
+	fmt.Printf("[DEBUG BILLING] BillingModelName=%q, OriginModelName=%q, Final modelName=%q\n",
+		info.BillingModelName, info.OriginModelName, modelName)
 
 	// 预扣费用计算
 	var quota int
@@ -104,12 +113,18 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	} else {
 		// ===== 传统按次计费模式 =====
 		modelPrice, success := ratio_setting.GetModelPrice(modelName, true)
+
+		// 🔍 调试日志
+		fmt.Printf("[DEBUG PRICE] GetModelPrice(%q) = %f, success=%t\n", modelName, modelPrice, success)
+
 		if !success {
 			defaultPrice, ok := ratio_setting.GetDefaultModelRatioMap()[modelName]
 			if !ok {
 				modelPrice = 0.1
+				fmt.Printf("[DEBUG PRICE] Using fallback price 0.1\n")
 			} else {
 				modelPrice = defaultPrice
+				fmt.Printf("[DEBUG PRICE] Using default price %f\n", defaultPrice)
 			}
 		}
 
@@ -119,6 +134,10 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 		// 获取渠道倍率
 		channelRatio := model.GetChannelRatio(info.UsingGroup, modelName, info.ChannelId)
 
+		// 🔍 调试日志
+		fmt.Printf("[DEBUG RATIO] modelPrice=%f, groupRatio=%f, channelRatio=%f\n",
+			modelPrice, groupRatio, channelRatio)
+
 		var ratio float64
 		if hasUserGroupRatio {
 			ratio = modelPrice * userGroupRatio * channelRatio
@@ -126,6 +145,9 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 			ratio = modelPrice * groupRatio * channelRatio
 		}
 		quota = int(ratio * common.QuotaPerUnit)
+
+		// 🔍 调试日志
+		fmt.Printf("[DEBUG QUOTA] final ratio=%f, quota=%d\n", ratio, quota)
 	}
 
 	// 验证用户额度

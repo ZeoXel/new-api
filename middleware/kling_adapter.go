@@ -7,12 +7,16 @@ import (
 	"io"
 	"one-api/common"
 	"one-api/constant"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 )
 
 func KlingRequestConvert() func(c *gin.Context) {
 	return func(c *gin.Context) {
+		fmt.Printf("[DEBUG KlingRequestConvert] START - Method: %s, Path: %s\n",
+			c.Request.Method, c.Request.URL.Path)
+
 		// 保存原始路径，用于 Bltcy 透传
 		originalPath := c.Request.URL.Path
 		originalRawQuery := c.Request.URL.RawQuery
@@ -48,6 +52,12 @@ func KlingRequestConvert() func(c *gin.Context) {
 		if model == "" {
 			model, _ = originalReq["model"].(string)
 		}
+		if strings.TrimSpace(model) == "" {
+			model = "kling-v1"
+		}
+		c.Set("billing_model_name", model)
+		fmt.Printf("[DEBUG KlingRequestConvert] Set billing_model_name=%q\n", model)
+
 		prompt, _ := originalReq["prompt"].(string)
 
 		unifiedReq := map[string]interface{}{
