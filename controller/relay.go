@@ -13,6 +13,7 @@ import (
 	"one-api/middleware"
 	"one-api/model"
 	"one-api/relay"
+	"one-api/relay/channel/coze"
 	relaycommon "one-api/relay/common"
 	relayconstant "one-api/relay/constant"
 	"one-api/relay/helper"
@@ -137,6 +138,10 @@ func Relay(c *gin.Context, relayFormat types.RelayFormat) {
 		return
 	}
 
+	applyCozeWorkflowPricingIfNeeded(c, relayInfo, request, &priceData)
+	relayInfo.PriceData = priceData
+	relayInfo.UsePrice = priceData.UsePrice
+
 	// common.SetContextKey(c, constant.ContextKeyTokenCountMeta, meta)
 
 	newAPIError = service.PreConsumeQuota(c, priceData.ShouldPreConsumedQuota, relayInfo)
@@ -203,6 +208,42 @@ func addUsedChannel(c *gin.Context, channelId int) {
 	useChannel := c.GetStringSlice("use_channel")
 	useChannel = append(useChannel, fmt.Sprintf("%d", channelId))
 	c.Set("use_channel", useChannel)
+}
+
+func applyCozeWorkflowPricingIfNeeded(c *gin.Context, relayInfo *relaycommon.RelayInfo, request dto.Request, priceData *types.PriceData) {
+	generalReq, ok := request.(*dto.GeneralOpenAIRequest)
+	if !ok || generalReq.WorkflowId == "" {
+		return
+	}
+
+	if generalReq.Model != coze.ModelWorkflowSync {
+		return
+	}
+
+	channelType := common.GetContextKeyInt(c, constant.ContextKeyChannelType)
+	if channelType != constant.ChannelTypeCoze {
+		return
+	}
+
+	channelId := common.GetContextKeyInt(c, constant.ContextKeyChannelId)
+	workflowQuota := coze.GetWorkflowPricePerCall(generalReq.WorkflowId, channelId)
+	if workflowQuota <= 0 {
+		return
+	}
+
+	perCallPrice := float64(workflowQuota) / common.QuotaPerUnit
+	priceData.ModelPrice = perCallPrice
+	priceData.UsePrice = true
+
+	preConsumed := int(float64(workflowQuota) * priceData.GroupRatioInfo.GroupRatio * priceData.GroupRatioInfo.ChannelRatio)
+	if preConsumed < 1 {
+		preConsumed = 1
+	}
+	priceData.ShouldPreConsumedQuota = preConsumed
+
+	relayInfo.BillingModelName = generalReq.WorkflowId
+	common.SysLog(fmt.Sprintf("[WorkflowPricing] 同步工作流按次计费: workflow=%s, base_quota=%d, group_ratio=%.2f, channel_ratio=%.2f, preconsume=%d",
+		generalReq.WorkflowId, workflowQuota, priceData.GroupRatioInfo.GroupRatio, priceData.GroupRatioInfo.ChannelRatio, preConsumed))
 }
 
 func getChannel(c *gin.Context, group, originalModel string, retryCount int) (*model.Channel, *types.NewAPIError) {

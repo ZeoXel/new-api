@@ -10,6 +10,8 @@ build
 web/dist
 one-api
 new-api
+node_modules/
+web/node_modules/
 
 # 数据库文件
 *.db
@@ -30,6 +32,9 @@ deployment_backup/
 *.backup.*
 cleanup_before_deploy.sh
 *.tmp
+
+# 测试日志
+*-test.log
 
 # Railway配置（自动生成）
 railway.json
