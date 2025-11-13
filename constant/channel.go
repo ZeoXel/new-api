@@ -48,9 +48,10 @@ const (
 	ChannelTypeXai            = 48
 	ChannelTypeCoze           = 49
 	ChannelTypeKling          = 50
-	ChannelTypeJimeng         = 51
-	ChannelTypeVidu           = 52
-	ChannelTypeBltcy          = 55 // 旧网关透传渠道
+    ChannelTypeJimeng         = 51
+    ChannelTypeVidu           = 52
+    ChannelTypeTripo3D        = 53
+    ChannelTypeBltcy          = 55 // 旧网关透传渠道
 	ChannelTypeDummy          // this one is only for count, do not add any channel after this
 
 )
@@ -107,9 +108,9 @@ var ChannelBaseURLs = []string{
 	"https://api.x.ai",                          //48
 	"https://api.coze.cn",                       //49
 	"https://api.klingai.com",                   //50
-	"https://visual.volcengineapi.com",          //51
-	"https://api.vidu.cn",                       //52
-	"",                                          //53
-	"",                                          //54
-	"",                                          //55 Bltcy (旧网关，需要配置具体URL)
+    "https://visual.volcengineapi.com",          //51
+    "https://api.vidu.cn",                       //52
+    "https://api.tripo3d.ai",                    //53 Tripo3D
+    "",                                          //54
+    "",                                          //55 Bltcy (旧网关，需要配置具体URL)
 }

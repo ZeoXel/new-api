@@ -188,10 +188,18 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 	} else if strings.HasPrefix(c.Request.URL.Path, "/minimax/") {
 		// MiniMax 透传模式：使用固定模型名 "minimax"
 		modelRequest.Model = "minimax"
-	} else if strings.HasPrefix(c.Request.URL.Path, "/kling/") {
-		// Kling 透传模式：使用固定模型名 "kling"
-		modelRequest.Model = "kling"
-	} else if strings.Contains(c.Request.URL.Path, "/v1/video/generations") {
+    } else if strings.HasPrefix(c.Request.URL.Path, "/kling/") {
+        // Kling 透传模式：使用固定模型名 "kling"
+        modelRequest.Model = "kling"
+    } else if strings.HasPrefix(c.Request.URL.Path, "/tripo/") {
+        // Tripo3D 任务路由：使用固定模型名 "tripo"
+        modelRequest.Model = "tripo"
+        // GET /tripo/task/:task_id -> 按ID查询
+        if strings.HasPrefix(c.Request.URL.Path, "/tripo/task/") && c.Request.Method == http.MethodGet {
+            c.Set("relay_mode", relayconstant.RelayModeVideoFetchByID)
+            shouldSelectChannel = false
+        }
+    } else if strings.Contains(c.Request.URL.Path, "/v1/video/generations") {
 		relayMode := relayconstant.RelayModeUnknown
 		// 🆕 检查是否有预设的 original_model（由视频服务中间件设置，如 KlingRequestConvert）
 		if originalModel, exists := c.Get("original_model"); exists {

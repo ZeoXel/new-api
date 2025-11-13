@@ -107,6 +107,8 @@ function type2secretPrompt(type, cozeAuthType) {
       return '按照如下格式输入: AccessKey|SecretKey, 如果上游是New API，则直接输ApiKey';
     case 51:
       return '按照如下格式输入: Access Key ID|Secret Access Key';
+    case 53:
+      return '请输入 Tripo3D API Key（tsk_ 开头）';
     default:
       return '请输入渠道对应的鉴权密钥';
   }
@@ -331,6 +333,9 @@ const EditChannelModal = (props) => {
           break;
         case 36:
           localModels = ['suno_music', 'suno_lyrics'];
+          break;
+        case 53:
+          localModels = ['tripo'];
           break;
         default:
           localModels = getChannelModels(value);

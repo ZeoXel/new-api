@@ -466,14 +466,38 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 		return
 	}
 
-	func() {
-		channelModel, err2 := model.GetChannelById(originTask.ChannelId, true)
-		if err2 != nil {
-			return
-		}
-		if channelModel.Type != constant.ChannelTypeVertexAi {
-			return
-		}
+    func() {
+        channelModel, err2 := model.GetChannelById(originTask.ChannelId, true)
+        if err2 != nil {
+            return
+        }
+        // Tripo3D: 直接透传上游查询结果
+        if channelModel.Type == constant.ChannelTypeTripo3D {
+            baseURL := channelModel.GetBaseURL()
+            if baseURL == "" {
+                baseURL = constant.ChannelBaseURLs[channelModel.Type]
+            }
+            adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
+            if adaptor == nil {
+                return
+            }
+            resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, map[string]any{
+                "task_id": originTask.TaskID,
+            })
+            if err2 != nil || resp == nil {
+                return
+            }
+            defer resp.Body.Close()
+            body, err2 := io.ReadAll(resp.Body)
+            if err2 != nil {
+                return
+            }
+            respBody = body
+            return
+        }
+        if channelModel.Type != constant.ChannelTypeVertexAi {
+            return
+        }
 		baseURL := constant.ChannelBaseURLs[channelModel.Type]
 		if channelModel.GetBaseURL() != "" {
 			baseURL = channelModel.GetBaseURL()

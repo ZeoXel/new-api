@@ -255,6 +255,14 @@ func SetRelayRouter(router *gin.Engine) {
 	{
 		relayBltcyMinimaxRouter.Any("/*path", controller.RelayBltcy)
 	}
+
+	// Tripo3D 任务路由：支持提交与查询
+	relayTripoRouter := router.Group("/tripo")
+	relayTripoRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayTripoRouter.POST("/task", controller.RelayTask)
+		relayTripoRouter.GET("/task/:task_id", controller.RelayTask)
+	}
 }
 
 func registerMjRouterGroup(relayMjRouter *gin.RouterGroup) {

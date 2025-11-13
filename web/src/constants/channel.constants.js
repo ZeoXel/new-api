@@ -160,6 +160,11 @@ export const CHANNEL_OPTIONS = [
     label: 'Vidu',
   },
   {
+    value: 53,
+    color: 'purple',
+    label: 'Tripo3D',
+  },
+  {
     value: 55,
     color: 'teal',
     label: '旧网关（Bltcy）',
