@@ -17,9 +17,17 @@ func SetVideoRouter(router *gin.Engine) {
 	}
 	// openai compatible API video routes
 	// docs: https://platform.openai.com/docs/api-reference/videos/create
+
+	// Sora 视频生成路由 - 支持 multipart/form-data 文件上传
+	// 适用于 sora-2, sora-2-pro 等模型
+	// 示例请求: POST /v1/videos
+	// 支持参数: model, prompt, size, input_reference (文件), seconds, watermark 等
+	soraVideosRouter := router.Group("/v1")
+	// 仿照 Kling，中间件顺序：SoraRequestConvert -> TokenAuth -> Distribute
+	soraVideosRouter.Use(middleware.SoraRequestConvert(), middleware.TokenAuth(), middleware.Distribute())
 	{
-		videoV1Router.POST("/videos", controller.RelayTask)
-		videoV1Router.GET("/videos/:task_id", controller.RelayTask)
+		soraVideosRouter.POST("/videos", controller.RelayBltcy)
+		soraVideosRouter.GET("/videos/:id", controller.RelayBltcy)
 	}
 
 	klingV1Router := router.Group("/kling/v1")

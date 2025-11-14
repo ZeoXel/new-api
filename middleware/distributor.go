@@ -259,6 +259,31 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 			}
 		}
 	}
+	// Sora 视频生成路由 - 模型选择（支持 Header/Query 覆盖，避免解析 multipart 消耗请求体）
+	if strings.HasPrefix(c.Request.URL.Path, "/v1/videos") && c.Request.Method == http.MethodPost {
+		// 允许客户端通过 Header 或 Query 显式指定模型：sora-2 / sora-2-pro
+		// 优先级：X-Model Header > model Query > 默认 sora-2
+		desiredModel := c.Request.Header.Get("X-Model")
+		if desiredModel == "" {
+			desiredModel = c.Query("model")
+		}
+		if strings.TrimSpace(desiredModel) == "" {
+			desiredModel = "sora-2" // 默认模型
+		}
+		modelRequest.Model = desiredModel
+		// 透传计费使用 billing_model_name 区分不同 Sora 模型
+		c.Set("billing_model_name", desiredModel)
+	} else if strings.HasPrefix(c.Request.URL.Path, "/v1/videos/") && c.Request.Method == http.MethodGet {
+		// GET 查询不计费，但为渠道选择保持与提交时一致的模型选择策略
+		desiredModel := c.Request.Header.Get("X-Model")
+		if desiredModel == "" {
+			desiredModel = c.Query("model")
+		}
+		if strings.TrimSpace(desiredModel) == "" {
+			desiredModel = "sora-2"
+		}
+		modelRequest.Model = desiredModel
+	}
 	if strings.HasPrefix(c.Request.URL.Path, "/v1/audio") {
 		relayMode := relayconstant.RelayModeAudioSpeech
 		if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/speech") {

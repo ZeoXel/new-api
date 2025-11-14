@@ -179,6 +179,48 @@ func SetRelayRouter(router *gin.Engine) {
 			controller.Relay(c, types.RelayFormatGemini)
 		})
 	}
+
+	// 注意：Kling、Vidu 已有任务模式路由（video-router.go），无需透传
+
+	// 🆕 Bltcy（旧网关）透传模式路由
+	// 支持 Runway、Pika 等服务的透传
+	// 通过 Distribute 中间件根据模型名（如 "runway"）选择 Bltcy 渠道
+	// 渠道配置中填写旧网关的 URL 和密钥
+	relayBltcyRunwayRouter := router.Group("/runway")
+	relayBltcyRunwayRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayBltcyRunwayRouter.Any("/*path", controller.RelayBltcy)
+	}
+
+	// 🆕 Runwayml 路由（兼容前端使用的路径）
+	relayBltcyRunwaymlRouter := router.Group("/runwayml")
+	relayBltcyRunwaymlRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayBltcyRunwaymlRouter.Any("/*path", controller.RelayBltcy)
+	}
+
+	relayBltcyPikaRouter := router.Group("/pika")
+	relayBltcyPikaRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayBltcyPikaRouter.Any("/*path", controller.RelayBltcy)
+	}
+
+	// MiniMax 视频生成透传路由
+	relayBltcyMinimaxRouter := router.Group("/minimax")
+	relayBltcyMinimaxRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayBltcyMinimaxRouter.Any("/*path", controller.RelayBltcy)
+	}
+
+	// Tripo3D 任务路由：支持提交与查询
+	relayTripoRouter := router.Group("/tripo")
+	relayTripoRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		relayTripoRouter.POST("/task", controller.RelayTask)
+		relayTripoRouter.GET("/task/:task_id", controller.RelayTask)
+		// Tripo3D 上传凭证（STS）透传
+		relayTripoRouter.POST("/upload/sts", controller.TripoUploadSTS)
+	}
 }
 
 func registerMjRouterGroup(relayMjRouter *gin.RouterGroup) {
