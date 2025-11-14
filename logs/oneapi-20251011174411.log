@@ -1,0 +1,2569 @@
+[SYS] 2025/10/11 - 17:44:11 | initializing token encoders 
+[SYS] 2025/10/11 - 17:44:11 | token encoders initialized 
+[SYS] 2025/10/11 - 17:44:11 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/11 - 17:44:11 | database migration started 
+[SYS] 2025/10/11 - 17:44:11 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/11 - 17:44:11 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/11 - 17:44:11 | New API v0.0.0 started 
+[SYS] 2025/10/11 - 17:44:11 | running in debug mode 
+[SYS] 2025/10/11 - 17:44:11 | memory cache enabled 
+[SYS] 2025/10/11 - 17:44:11 | sync frequency: 60 seconds 
+[SYS] 2025/10/11 - 17:44:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:44:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 17:44:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 17:44:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:44:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:44:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:44:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:44:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:44:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:45:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:45:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:45:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:45:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:45:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:45:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:45:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:45:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:45:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:45:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:45:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:46:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:46:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:46:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:46:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:46:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:46:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:46:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:46:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:46:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:46:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:46:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:47:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:47:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:47:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:47:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:47:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:47:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:47:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:47:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:47:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:47:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:47:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:48:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:48:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:48:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:48:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:48:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:48:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:48:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:48:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:48:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:48:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:48:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:49:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 17:49:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 17:49:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:49:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:49:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:49:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:49:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:49:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:49:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:49:27 | 20251011174927643480000M3UgbjN8 | 200 |     683.458µs |             ::1 |     GET /console/channel
+[GIN] 2025/10/11 - 17:49:27 | 20251011174927969092000bshtQ78z | 200 |     259.417µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/11 - 17:49:27 | 20251011174927968924000lpjzaYJ3 | 200 |    1.016875ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/11 - 17:49:27 | 20251011174927969436000NIOY0tPC | 200 |    4.034791ms |             ::1 |     GET /api/status
+[GIN] 2025/10/11 - 17:49:27 | 20251011174927968628000LVHRSSMc | 200 |     5.58225ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 17:49:27 | 202510111749279692000001Kx44PPs | 200 |        5.89ms |             ::1 |     GET /api/models
+[GIN] 2025/10/11 - 17:49:27 | 20251011174927969134000VvFKeILb | 200 |    7.949584ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/11 - 17:49:28 | 20251011174928244411000e4Vo4cnX | 200 |      527.25µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 17:49:31 | 20251011174931147985000NnLfWkRr | 204 |      48.416µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[INFO] 2025/10/11 - 17:49:35 | 202510111749311510520003DPVhMKD | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:49:35 | user 1 has no email, skip sending email 
+[GIN] 2025/10/11 - 17:49:35 | 202510111749311510520003DPVhMKD | 200 |  4.175307541s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/11 - 17:49:35 | 20251011174935330213000sf1Bq26W | 204 |      15.667µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:49:36 | 2025101117493533125800009i8Sryf | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:49:36 | user 1 has no email, skip sending email 
+[GIN] 2025/10/11 - 17:49:36 | 2025101117493533125800009i8Sryf | 200 |  745.297875ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:49:41 | 20251011174941280701000z9Ge2MUx | 204 |      14.042µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:49:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:49:41 | 任务进度轮询完成 
+[INFO] 2025/10/11 - 17:49:42 | 20251011174941281974000qacj8Rvv | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:49:42 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:49:42 | 20251011174941281974000qacj8Rvv | 200 |  806.297042ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:49:47 | 20251011174947295083000pimkIH7H | 204 |        5.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:49:48 | 20251011174947295808000EqviNNpA | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:49:48 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:49:48 | 20251011174947295808000EqviNNpA | 200 |  1.031343583s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:49:53 | 20251011174953531171000lDHdBiB0 | 204 |       18.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:49:54 | 20251011174953532697000EpMvFg6V | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:49:54 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:49:54 | 20251011174953532697000EpMvFg6V | 200 |  1.195265833s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:49:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:49:56 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:49:59 | 2025101117495993209800077LXPSZF | 204 |       5.375µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:00 | 20251011174959932891000XIU7jORU | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:00 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:00 | 20251011174959932891000XIU7jORU | 200 |  969.995417ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:50:06 | 202510111750061077920009OXH6HWz | 204 |       8.333µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:06 | 20251011175006108584000Nuvibj5S | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:06 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:06 | 20251011175006108584000Nuvibj5S | 200 |   877.71075ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:50:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:50:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:50:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:50:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:50:11 | channels synced from database 
+[GIN] 2025/10/11 - 17:50:12 | 20251011175012193162000sd0SsDKd | 204 |       8.375µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:12 | 20251011175012194282000GQ7YqtDZ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:12 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:12 | 20251011175012194282000GQ7YqtDZ | 200 |  732.921958ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:50:18 | 20251011175018133190000TXyLFi5c | 204 |      11.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:18 | 20251011175018134295000AB8PwsHA | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:18 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:18 | 20251011175018134295000AB8PwsHA | 200 |  696.201708ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:50:24 | 2025101117502435244000y0xtvcdD | 204 |       5.083µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:25 | 2025101117502435941000uQS887IK | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:25 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:25 | 2025101117502435941000uQS887IK | 200 |    1.0362975s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:50:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:50:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:50:30 | 20251011175030278248000CnmImeLz | 204 |      11.584µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:30 | 20251011175030279412000lMKgAgzb | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:30 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:30 | 20251011175030279412000lMKgAgzb | 200 |   705.09275ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:50:36 | 20251011175036189513000OOyiBPS1 | 204 |      12.083µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:37 | 20251011175036190766000YgWcpKgq | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:37 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:37 | 20251011175036190766000YgWcpKgq | 200 |  1.095074792s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:50:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:50:41 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:50:42 | 20251011175042490238000t1mvxHBQ | 204 |       5.084µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:43 | 20251011175042490977000ylaEggj2 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:43 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:43 | 20251011175042490977000ylaEggj2 | 200 |  957.603709ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:50:48 | 20251011175048654591000u9E7CTLD | 204 |      12.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:50:49 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[INFO] 2025/10/11 - 17:50:49 | 20251011175048656301000QoxePxAa | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[GIN] 2025/10/11 - 17:50:49 | 20251011175048656301000QoxePxAa | 200 |  713.312208ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:50:54 | 202510111750545755740009z6lEgo4 | 204 |      11.459µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:50:55 | 20251011175054576828000XvLdmA2x | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:50:55 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:50:55 | 20251011175054576828000XvLdmA2x | 200 |  1.052913791s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:50:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:50:56 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:51:00 | 20251011175100834511000zpMtOV6a | 204 |       5.416µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:51:01 | 20251011175100835152000iKrCZmjp | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:51:01 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:51:01 | 20251011175100835152000iKrCZmjp | 200 |  830.895958ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:51:06 | 20251011175106870806000HGoGcVGV | 204 |      10.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:51:07 | 20251011175106871968000wa2i8VGT | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:51:07 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:51:07 | 20251011175106871968000wa2i8VGT | 200 |     686.808ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:51:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:51:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:51:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:51:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:51:11 | channels synced from database 
+[GIN] 2025/10/11 - 17:51:12 | 20251011175112762619000SuggsxuN | 204 |       5.833µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:51:13 | 20251011175112763419000SCOeOmLZ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:51:13 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:51:13 | 20251011175112763419000SCOeOmLZ | 200 |   684.53575ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:51:18 | 20251011175118653456000dHd1ZIoK | 204 |       12.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:51:19 | 20251011175118654523000p5L97xFV | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:51:19 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:51:19 | 20251011175118654523000p5L97xFV | 200 |  836.704125ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:51:24 | 20251011175124794966000biGCX6eZ | 204 |       7.333µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:51:25 | 20251011175124796141000anYme2pH | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:51:25 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:51:25 | 20251011175124796141000anYme2pH | 200 |  840.416833ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:51:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:51:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:51:31 | 20251011175131795441000JvjFjAdo | 204 |      11.833µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:51:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:51:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:51:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:51:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:52:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:52:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:52:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:52:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:52:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:52:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:52:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:52:31 | 20251011175131796698000oMhSysHj | 500 | 1m0.005206167s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:52:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:52:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:52:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:52:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:53:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:53:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:53:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:53:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:53:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:53:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:53:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:53:41 | 20251011175341105633000RxpqbSP4 | 204 |      12.042µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:53:41 | 20251011175341219858000oB7uNdBS | 204 |      21.916µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:53:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:53:41 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:53:49 | 20251011175349357672000YQDjiZPq | 204 |      12.458µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:53:52 | 2025101117535261497000Srg0LvqR | 204 |      13.292µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:53:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:53:56 | 任务进度轮询完成 
+[INFO] 2025/10/11 - 17:54:01 | 20251011175401225460000qN9Lz0vU | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:01 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:01 | 20251011175401225460000qN9Lz0vU | 200 |  772.732083ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[INFO] 2025/10/11 - 17:54:10 | 2025101117540936166800002SxWQDl | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:10 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:10 | 2025101117540936166800002SxWQDl | 200 |  721.370125ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[SYS] 2025/10/11 - 17:54:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 17:54:11 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/11 - 17:54:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:54:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:54:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:54:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:54:11 | channels synced from database 
+[INFO] 2025/10/11 - 17:54:12 | 2025101117541269312000DwNMr7lr | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:12 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:12 | 2025101117541269312000DwNMr7lr | 200 |  870.923458ms |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:54:26 | 202510111754263551760008cghFPml | 204 |      12.708µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[SYS] 2025/10/11 - 17:54:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:54:26 | 任务进度轮询完成 
+[INFO] 2025/10/11 - 17:54:30 | 20251011175426357448000qsP7lPD4 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:30 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:30 | 20251011175426357448000qsP7lPD4 | 200 |  4.068370083s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/11 - 17:54:30 | 20251011175430430140000b2hbzoaW | 204 |       12.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[INFO] 2025/10/11 - 17:54:31 | 20251011175430432752000axCrGx3x | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:31 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:31 | 20251011175430432752000axCrGx3x | 200 |  763.978083ms |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[GIN] 2025/10/11 - 17:54:31 | 20251011175341108237000RID8dJ5n | 500 | 50.641021791s |             ::1 |     GET /kling/v1/videos/image2video/805925676926275615
+[GIN] 2025/10/11 - 17:54:36 | 202510111754364019720005lzWRig9 | 204 |      13.583µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[INFO] 2025/10/11 - 17:54:37 | 20251011175436403270000lUZjVxd1 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:37 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:37 | 20251011175436403270000lUZjVxd1 | 200 |  822.030916ms |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 17:54:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:54:41 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:54:42 | 20251011175442430312000PLlSt1gS | 204 |       7.291µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[INFO] 2025/10/11 - 17:54:43 | 20251011175442431129000BZOutCTs | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:43 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:43 | 20251011175442431129000BZOutCTs | 200 |  749.999709ms |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[GIN] 2025/10/11 - 17:54:48 | 20251011175448387653000ZTvxa0QK | 204 |      11.292µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[INFO] 2025/10/11 - 17:54:49 | 20251011175448388795000gGGn2ojv | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:49 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:49 | 20251011175448388795000gGGn2ojv | 200 |   713.69525ms |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[GIN] 2025/10/11 - 17:54:54 | 20251011175454307507000iq093eAR | 204 |      13.666µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[INFO] 2025/10/11 - 17:54:55 | 20251011175454308782000hQdLW8Ju | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 17:54:55 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/11 - 17:54:55 | 20251011175454308782000hQdLW8Ju | 200 |  747.025833ms |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 17:54:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:54:56 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:55:00 | 20251011175500262303000iXSoBQl4 | 204 |      11.833µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 17:55:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:55:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:55:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:55:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:55:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:55:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:55:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:55:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:55:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:55:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:55:56 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:56:00 | 20251011175500263342000hywmzBaz | 500 | 1m0.005810125s |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 17:56:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:56:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:56:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:56:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:56:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:56:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:56:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:56:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:56:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:56:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:56:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:57:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:57:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:57:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:57:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:57:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:57:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:57:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:57:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:57:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:57:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:57:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:58:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:58:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:58:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:58:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:58:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:58:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:58:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:58:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:58:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:58:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:58:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:59:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 17:59:11 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/11 - 17:59:11 | syncing options from database 
+[SYS] 2025/10/11 - 17:59:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:59:11 | syncing channels from database 
+[SYS] 2025/10/11 - 17:59:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:59:11 | channels synced from database 
+[SYS] 2025/10/11 - 17:59:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:59:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:59:38 | 20251011175938578645000uHgzWpdr | 204 |       5.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 17:59:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:59:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 17:59:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 17:59:56 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 17:59:58 | 20251011175958614393000ECwZ77T9 | 204 |      41.458µs |             ::1 | OPTIONS /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 18:00:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:00:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:00:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:00:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:00:11 | channels synced from database 
+[INFO] 2025/10/11 - 18:00:19 | 20251011180018618467000AuhfJVYB | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling_passthrough","token_name":"1","quota":1000,"content":"Bltcy透传模式（kling），消费配额: 1000","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/11 - 18:00:19 | user 1 has no email, skip sending email 
+[GIN] 2025/10/11 - 18:00:19 | 20251011180018618467000AuhfJVYB | 200 |  748.896084ms |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 18:00:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:00:26 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 18:00:38 | 20251011175938580360000bXDnWeBn | 500 | 1m0.003948625s |             ::1 |     GET /kling/v1/videos/image2video/805926914162069602
+[SYS] 2025/10/11 - 18:00:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:00:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:00:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:00:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:01:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:01:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:01:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:01:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:01:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:01:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:01:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:01:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:01:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:01:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:01:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:02:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:02:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:02:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:02:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:02:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:02:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:02:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:02:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:02:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:02:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:02:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:03:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:03:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:03:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:03:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:03:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:03:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:03:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:03:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:03:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:03:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:03:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:04:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 18:04:11 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/11 - 18:04:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:04:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:04:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:04:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:04:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:04:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:04:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:04:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:04:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:04:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:04:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:05:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:05:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:05:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:05:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:05:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:05:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:05:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:05:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:05:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:05:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:05:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:06:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:06:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:06:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:06:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:06:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:06:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:06:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:06:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:06:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:06:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:06:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:07:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:07:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:07:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:07:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:07:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:07:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:07:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:07:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:07:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:07:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:07:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:08:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:08:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:08:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:08:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:08:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:08:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:08:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:08:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:08:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:08:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:08:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:09:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 18:09:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 18:09:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:09:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:09:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:09:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:09:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:09:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:09:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:09:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:09:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:09:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:09:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:10:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:10:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:10:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:10:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:10:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:10:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:10:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:10:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:10:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:10:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:10:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:11:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:11:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:11:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:11:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:11:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:11:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:11:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:11:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:11:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:11:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:11:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:12:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:12:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:12:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:12:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:12:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:12:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:12:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:12:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:12:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:12:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:12:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:13:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:13:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:13:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:13:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:13:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:13:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:13:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:13:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:13:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:13:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:13:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:14:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 18:14:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 18:14:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:14:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:14:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:14:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:14:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:14:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:14:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:14:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:14:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:14:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:14:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:15:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:15:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:15:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:15:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:15:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:15:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:15:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:15:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:15:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:15:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:15:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:16:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:16:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:16:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:16:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:16:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:16:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:16:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:16:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:16:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:16:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:16:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:17:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:17:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:17:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:17:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:17:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:17:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:17:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:17:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:17:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:17:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:17:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:18:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:18:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:18:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:18:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:18:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:18:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:18:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:18:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:18:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:18:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:18:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:19:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 18:19:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 18:19:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:19:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:19:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:19:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:19:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:19:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:19:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:19:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:19:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:19:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:19:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:20:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:20:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:20:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:20:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:20:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:20:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:20:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:20:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:20:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:20:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:20:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:21:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:21:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:21:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:21:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:21:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:21:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:21:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:21:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:21:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:21:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:21:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:22:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:22:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:22:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:22:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:22:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:22:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:22:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:22:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:22:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:22:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:22:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:23:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:23:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:23:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:23:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:23:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:23:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:23:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:23:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:23:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:23:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:23:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:24:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 18:24:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 18:24:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:24:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:24:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:24:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:24:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:24:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:24:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:24:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:24:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:24:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:24:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:25:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:25:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:25:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:25:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:25:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:25:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:25:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:25:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:25:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:25:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:25:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:26:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:26:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:26:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:26:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:26:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:26:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:26:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:26:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:26:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:26:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:26:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:27:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:27:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:27:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:27:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:27:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:27:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:27:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:27:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:27:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:27:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:27:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:28:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:28:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:28:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:28:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:28:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:28:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:28:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:28:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:28:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:28:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:28:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:29:11 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 18:29:11 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 18:29:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:29:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:29:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:29:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:29:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:29:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:29:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:29:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:29:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:29:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:29:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:30:11 | syncing options from database 
+[SYS] 2025/10/11 - 18:30:11 | syncing channels from database 
+[SYS] 2025/10/11 - 18:30:11 | channels synced from database 
+[SYS] 2025/10/11 - 18:30:11 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:30:11 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:30:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:30:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:30:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:30:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:45:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:45:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:46:14 | syncing options from database 
+[SYS] 2025/10/11 - 18:46:14 | syncing channels from database 
+[SYS] 2025/10/11 - 18:46:14 | channels synced from database 
+[SYS] 2025/10/11 - 18:46:14 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:46:14 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:46:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:46:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 18:46:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 18:46:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:02:14 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:02:14 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:02:28 | syncing options from database 
+[SYS] 2025/10/11 - 19:02:29 | syncing channels from database 
+[SYS] 2025/10/11 - 19:02:29 | channels synced from database 
+[SYS] 2025/10/11 - 19:02:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:02:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:02:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:02:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:18:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:18:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:18:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:18:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:18:55 | syncing options from database 
+[SYS] 2025/10/11 - 19:18:55 | syncing channels from database 
+[SYS] 2025/10/11 - 19:18:55 | channels synced from database 
+[SYS] 2025/10/11 - 19:18:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:18:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:36:34 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:36:34 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:36:49 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:36:49 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:37:04 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:37:04 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:37:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 19:37:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 19:37:19 | syncing options from database 
+[SYS] 2025/10/11 - 19:52:39 | syncing channels from database 
+[SYS] 2025/10/11 - 19:52:39 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:52:39 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:52:39 | channels synced from database 
+[SYS] 2025/10/11 - 19:52:54 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:52:54 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:53:09 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:53:09 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:53:24 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:53:24 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:53:38 | syncing options from database 
+[SYS] 2025/10/11 - 19:53:39 | syncing channels from database 
+[SYS] 2025/10/11 - 19:53:39 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 19:53:39 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 19:53:39 | channels synced from database 
+[SYS] 2025/10/11 - 20:09:01 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:09:01 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:09:16 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:09:16 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:09:31 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:09:31 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:25:22 | syncing options from database 
+[SYS] 2025/10/11 - 20:25:23 | syncing channels from database 
+[SYS] 2025/10/11 - 20:25:23 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:25:23 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:25:23 | channels synced from database 
+[SYS] 2025/10/11 - 20:25:38 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:25:38 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:25:53 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:25:53 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:31:51 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:31:51 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:32:05 | syncing options from database 
+[SYS] 2025/10/11 - 20:32:06 | syncing channels from database 
+[SYS] 2025/10/11 - 20:32:06 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:32:06 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:32:06 | channels synced from database 
+[SYS] 2025/10/11 - 20:32:21 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:32:21 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:32:36 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:32:36 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:48:01 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:48:01 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:48:15 | syncing options from database 
+[SYS] 2025/10/11 - 20:48:16 | syncing channels from database 
+[SYS] 2025/10/11 - 20:48:16 | channels synced from database 
+[SYS] 2025/10/11 - 20:48:16 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:48:16 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 20:48:31 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 20:48:31 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:04:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:04:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:04:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:04:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:05:13 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 21:05:13 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 21:05:13 | syncing options from database 
+[SYS] 2025/10/11 - 21:05:14 | syncing channels from database 
+[SYS] 2025/10/11 - 21:05:14 | channels synced from database 
+[SYS] 2025/10/11 - 21:05:14 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:05:14 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:05:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:05:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:05:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:05:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:05:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:05:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:06:13 | syncing options from database 
+[SYS] 2025/10/11 - 21:06:14 | syncing channels from database 
+[SYS] 2025/10/11 - 21:06:14 | channels synced from database 
+[SYS] 2025/10/11 - 21:06:14 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:06:14 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:06:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:06:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:06:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:06:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:06:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:06:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:07:13 | syncing options from database 
+[SYS] 2025/10/11 - 21:07:14 | syncing channels from database 
+[SYS] 2025/10/11 - 21:07:14 | channels synced from database 
+[SYS] 2025/10/11 - 21:07:14 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:07:14 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:07:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:07:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:07:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:07:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:07:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:07:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:08:13 | syncing options from database 
+[SYS] 2025/10/11 - 21:08:14 | syncing channels from database 
+[SYS] 2025/10/11 - 21:08:14 | channels synced from database 
+[SYS] 2025/10/11 - 21:08:14 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:08:14 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:08:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:08:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:08:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:08:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:08:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:08:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:25:42 | syncing options from database 
+[SYS] 2025/10/11 - 21:25:43 | syncing channels from database 
+[SYS] 2025/10/11 - 21:25:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:25:43 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:25:43 | channels synced from database 
+[SYS] 2025/10/11 - 21:25:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:25:58 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:26:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:26:13 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:26:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:26:28 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:41:51 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 21:41:51 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 21:41:51 | syncing options from database 
+[SYS] 2025/10/11 - 21:41:52 | syncing channels from database 
+[SYS] 2025/10/11 - 21:41:52 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:41:52 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:41:52 | channels synced from database 
+[SYS] 2025/10/11 - 21:42:07 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:42:07 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:42:22 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:42:22 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:59:16 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:59:16 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:59:30 | syncing options from database 
+[SYS] 2025/10/11 - 21:59:31 | syncing channels from database 
+[SYS] 2025/10/11 - 21:59:31 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:59:31 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 21:59:31 | channels synced from database 
+[SYS] 2025/10/11 - 21:59:46 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 21:59:46 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:00:01 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:00:01 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:00:16 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:00:16 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:16:32 | syncing options from database 
+[SYS] 2025/10/11 - 22:16:33 | syncing channels from database 
+[SYS] 2025/10/11 - 22:16:33 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:16:33 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:16:33 | channels synced from database 
+[SYS] 2025/10/11 - 22:16:48 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:16:48 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:17:03 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:17:03 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:32:23 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:32:23 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:32:37 | syncing options from database 
+[SYS] 2025/10/11 - 22:32:38 | syncing channels from database 
+[SYS] 2025/10/11 - 22:32:38 | channels synced from database 
+[SYS] 2025/10/11 - 22:32:38 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:32:38 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:32:53 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:32:53 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:49:29 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:49:29 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:49:44 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:49:44 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:49:58 | syncing options from database 
+[SYS] 2025/10/11 - 22:49:59 | syncing channels from database 
+[SYS] 2025/10/11 - 22:49:59 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 22:49:59 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 22:49:59 | channels synced from database 
+[SYS] 2025/10/11 - 23:05:19 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:05:19 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:05:34 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:05:34 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:05:49 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:05:49 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:06:03 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 23:06:03 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 23:06:03 | syncing options from database 
+[SYS] 2025/10/11 - 23:06:04 | syncing channels from database 
+[SYS] 2025/10/11 - 23:06:04 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:06:04 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:06:04 | channels synced from database 
+[SYS] 2025/10/11 - 23:06:19 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:06:19 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:22:26 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:22:26 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:22:41 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:22:41 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:22:55 | syncing options from database 
+[SYS] 2025/10/11 - 23:22:56 | syncing channels from database 
+[SYS] 2025/10/11 - 23:22:56 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:22:56 | channels synced from database 
+[SYS] 2025/10/11 - 23:22:56 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:38:46 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:38:46 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:39:01 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:39:01 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:39:16 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:39:16 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:55:18 | syncing options from database 
+[SYS] 2025/10/11 - 23:55:20 | syncing channels from database 
+[SYS] 2025/10/11 - 23:55:20 | channels synced from database 
+[SYS] 2025/10/11 - 23:55:20 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:55:20 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:55:35 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:55:35 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:55:50 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:55:50 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:56:05 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:56:05 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 23:56:18 | syncing options from database 
+[SYS] 2025/10/11 - 23:56:20 | syncing channels from database 
+[SYS] 2025/10/11 - 23:56:20 | channels synced from database 
+[SYS] 2025/10/11 - 23:56:20 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 23:56:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:00:14 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:00:14 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:00:29 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:00:29 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:00:44 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:00:44 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:16:33 | syncing options from database 
+[SYS] 2025/10/12 - 00:16:34 | syncing channels from database 
+[SYS] 2025/10/12 - 00:16:34 | channels synced from database 
+[SYS] 2025/10/12 - 00:16:34 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:16:34 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:16:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:16:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:17:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:17:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:32:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:32:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:32:44 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 00:32:44 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 00:32:44 | syncing options from database 
+[SYS] 2025/10/12 - 00:32:45 | syncing channels from database 
+[SYS] 2025/10/12 - 00:32:45 | channels synced from database 
+[SYS] 2025/10/12 - 00:32:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:32:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:33:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:33:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:49:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:49:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:49:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:49:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:50:08 | syncing options from database 
+[SYS] 2025/10/12 - 00:50:10 | syncing channels from database 
+[SYS] 2025/10/12 - 00:50:10 | channels synced from database 
+[SYS] 2025/10/12 - 00:50:10 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:50:10 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:50:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:50:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 00:50:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 00:50:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:07:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:07:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:07:16 | syncing options from database 
+[SYS] 2025/10/12 - 01:07:17 | syncing channels from database 
+[SYS] 2025/10/12 - 01:07:17 | channels synced from database 
+[SYS] 2025/10/12 - 01:07:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:07:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:07:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:07:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:23:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:23:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:23:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:23:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:23:46 | syncing options from database 
+[SYS] 2025/10/12 - 01:23:47 | syncing channels from database 
+[SYS] 2025/10/12 - 01:23:47 | channels synced from database 
+[SYS] 2025/10/12 - 01:23:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:23:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:39:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:39:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:39:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:39:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:39:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:39:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:54:56 | syncing options from database 
+[SYS] 2025/10/12 - 01:54:57 | syncing channels from database 
+[SYS] 2025/10/12 - 01:54:57 | channels synced from database 
+[SYS] 2025/10/12 - 01:54:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:54:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:55:12 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:55:12 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:55:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:55:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:55:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:55:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 01:55:56 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 01:55:56 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 01:55:56 | syncing options from database 
+[SYS] 2025/10/12 - 01:55:57 | syncing channels from database 
+[SYS] 2025/10/12 - 01:55:57 | channels synced from database 
+[SYS] 2025/10/12 - 01:55:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 01:55:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:12:07 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:12:07 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:12:22 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:12:22 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:12:37 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:12:37 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:28:40 | syncing options from database 
+[SYS] 2025/10/12 - 02:28:41 | syncing channels from database 
+[SYS] 2025/10/12 - 02:28:41 | channels synced from database 
+[SYS] 2025/10/12 - 02:28:41 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:28:41 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:28:56 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:28:56 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:29:11 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:29:11 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:44:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:44:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:44:46 | syncing options from database 
+[SYS] 2025/10/12 - 02:44:47 | syncing channels from database 
+[SYS] 2025/10/12 - 02:44:47 | channels synced from database 
+[SYS] 2025/10/12 - 02:44:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:44:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:45:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:45:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 02:45:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 02:45:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:01:48 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:01:48 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:02:02 | syncing options from database 
+[SYS] 2025/10/12 - 03:02:03 | syncing channels from database 
+[SYS] 2025/10/12 - 03:02:03 | channels synced from database 
+[SYS] 2025/10/12 - 03:02:03 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:02:03 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:02:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:02:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:18:03 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:18:03 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:18:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:18:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:18:32 | syncing options from database 
+[SYS] 2025/10/12 - 03:18:33 | syncing channels from database 
+[SYS] 2025/10/12 - 03:18:33 | channels synced from database 
+[SYS] 2025/10/12 - 03:18:33 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:18:33 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:33:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:33:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:34:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:34:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:34:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:34:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:50:55 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 03:50:55 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 03:50:56 | syncing options from database 
+[SYS] 2025/10/12 - 03:50:56 | syncing channels from database 
+[SYS] 2025/10/12 - 03:50:56 | channels synced from database 
+[SYS] 2025/10/12 - 03:50:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:50:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:51:12 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:51:12 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:51:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:51:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:51:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:51:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 03:51:56 | syncing options from database 
+[SYS] 2025/10/12 - 03:51:56 | syncing channels from database 
+[SYS] 2025/10/12 - 03:51:56 | channels synced from database 
+[SYS] 2025/10/12 - 03:51:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 03:51:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:08:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:08:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:08:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:08:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:08:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:08:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:20:13 | syncing options from database 
+[SYS] 2025/10/12 - 04:20:14 | syncing channels from database 
+[SYS] 2025/10/12 - 04:20:14 | channels synced from database 
+[SYS] 2025/10/12 - 04:20:14 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:20:14 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:20:29 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:20:29 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:20:44 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:20:44 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:36:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:36:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:37:03 | syncing options from database 
+[SYS] 2025/10/12 - 04:37:04 | syncing channels from database 
+[SYS] 2025/10/12 - 04:37:04 | channels synced from database 
+[SYS] 2025/10/12 - 04:37:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:37:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:37:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:37:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:52:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:52:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:52:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:52:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:53:11 | syncing options from database 
+[SYS] 2025/10/12 - 04:53:12 | syncing channels from database 
+[SYS] 2025/10/12 - 04:53:12 | channels synced from database 
+[SYS] 2025/10/12 - 04:53:12 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:53:12 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:53:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:53:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 04:53:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 04:53:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:09:37 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:09:37 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:09:51 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 05:09:51 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 05:09:51 | syncing options from database 
+[SYS] 2025/10/12 - 05:09:52 | syncing channels from database 
+[SYS] 2025/10/12 - 05:09:52 | channels synced from database 
+[SYS] 2025/10/12 - 05:09:52 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:09:52 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:10:07 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:10:07 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:27:09 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:27:09 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:27:24 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:27:24 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:27:38 | syncing options from database 
+[SYS] 2025/10/12 - 05:27:39 | syncing channels from database 
+[SYS] 2025/10/12 - 05:27:39 | channels synced from database 
+[SYS] 2025/10/12 - 05:27:39 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:27:39 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:43:15 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:43:15 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:43:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:43:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:43:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:43:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:43:59 | syncing options from database 
+[SYS] 2025/10/12 - 05:44:00 | syncing channels from database 
+[SYS] 2025/10/12 - 05:44:00 | channels synced from database 
+[SYS] 2025/10/12 - 05:44:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:44:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:59:31 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:59:31 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 05:59:46 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 05:59:46 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:00:01 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:00:01 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:15:39 | syncing options from database 
+[SYS] 2025/10/12 - 06:15:40 | syncing channels from database 
+[SYS] 2025/10/12 - 06:15:40 | channels synced from database 
+[SYS] 2025/10/12 - 06:15:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:15:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:15:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:15:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:16:10 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:16:10 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:21:10 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:21:10 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:21:25 | syncing options from database 
+[SYS] 2025/10/12 - 06:21:25 | syncing channels from database 
+[SYS] 2025/10/12 - 06:21:25 | channels synced from database 
+[SYS] 2025/10/12 - 06:21:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:21:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:21:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:21:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:21:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:21:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:39:10 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:39:10 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:39:23 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 06:39:23 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 06:39:24 | syncing options from database 
+[SYS] 2025/10/12 - 06:39:25 | syncing channels from database 
+[SYS] 2025/10/12 - 06:39:25 | channels synced from database 
+[SYS] 2025/10/12 - 06:39:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:39:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:39:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:39:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:57:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:57:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:57:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:57:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:57:50 | syncing options from database 
+[SYS] 2025/10/12 - 06:57:50 | syncing channels from database 
+[SYS] 2025/10/12 - 06:57:50 | channels synced from database 
+[SYS] 2025/10/12 - 06:57:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:57:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:58:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:58:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 06:58:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 06:58:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:00:06 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:00:06 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:00:20 | syncing options from database 
+[SYS] 2025/10/12 - 07:00:21 | syncing channels from database 
+[SYS] 2025/10/12 - 07:00:21 | channels synced from database 
+[SYS] 2025/10/12 - 07:00:21 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:00:21 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:00:36 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:00:36 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:17:12 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:17:12 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:17:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:17:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:17:41 | syncing options from database 
+[SYS] 2025/10/12 - 07:17:42 | syncing channels from database 
+[SYS] 2025/10/12 - 07:17:42 | channels synced from database 
+[SYS] 2025/10/12 - 07:17:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:17:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:17:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:17:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:22:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:22:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:22:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:22:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:22:46 | syncing options from database 
+[SYS] 2025/10/12 - 07:22:47 | syncing channels from database 
+[SYS] 2025/10/12 - 07:22:47 | channels synced from database 
+[SYS] 2025/10/12 - 07:22:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:22:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:40:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:40:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:40:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:40:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:40:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:40:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:54:59 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 07:54:59 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 07:55:00 | syncing options from database 
+[SYS] 2025/10/12 - 07:55:01 | syncing channels from database 
+[SYS] 2025/10/12 - 07:55:01 | channels synced from database 
+[SYS] 2025/10/12 - 07:55:01 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:55:01 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:55:16 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:55:16 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:55:31 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:55:31 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:55:46 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:55:46 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 07:56:00 | syncing options from database 
+[SYS] 2025/10/12 - 07:56:01 | syncing channels from database 
+[SYS] 2025/10/12 - 07:56:01 | channels synced from database 
+[SYS] 2025/10/12 - 07:56:01 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 07:56:01 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:12:16 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:12:16 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:12:31 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:12:31 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:12:46 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:12:46 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:19:21 | syncing options from database 
+[SYS] 2025/10/12 - 08:19:22 | syncing channels from database 
+[SYS] 2025/10/12 - 08:19:22 | channels synced from database 
+[SYS] 2025/10/12 - 08:19:22 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:19:22 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:19:37 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:19:37 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:19:52 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:19:52 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:23:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:23:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:23:18 | syncing options from database 
+[SYS] 2025/10/12 - 08:23:19 | syncing channels from database 
+[SYS] 2025/10/12 - 08:23:19 | channels synced from database 
+[SYS] 2025/10/12 - 08:23:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:23:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:23:34 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:23:34 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:23:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:23:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:40:53 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:40:53 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:41:06 | syncing options from database 
+[SYS] 2025/10/12 - 08:41:07 | syncing channels from database 
+[SYS] 2025/10/12 - 08:41:07 | channels synced from database 
+[SYS] 2025/10/12 - 08:41:08 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:41:08 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:41:23 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:41:23 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:41:38 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:41:38 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:57:48 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:57:48 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:58:01 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 08:58:01 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 08:58:02 | syncing options from database 
+[SYS] 2025/10/12 - 08:58:03 | syncing channels from database 
+[SYS] 2025/10/12 - 08:58:03 | channels synced from database 
+[SYS] 2025/10/12 - 08:58:03 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:58:03 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:58:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:58:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 08:58:33 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 08:58:33 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:14:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:14:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:14:40 | syncing options from database 
+[SYS] 2025/10/12 - 09:14:41 | syncing channels from database 
+[SYS] 2025/10/12 - 09:14:41 | channels synced from database 
+[SYS] 2025/10/12 - 09:14:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:14:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:14:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:14:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:24:11 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:24:11 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:24:26 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:24:26 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:24:40 | syncing options from database 
+[SYS] 2025/10/12 - 09:24:40 | syncing channels from database 
+[SYS] 2025/10/12 - 09:24:40 | channels synced from database 
+[SYS] 2025/10/12 - 09:24:41 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:24:41 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:40:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:40:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:40:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:40:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:40:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:40:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:40:49 | syncing options from database 
+[SYS] 2025/10/12 - 09:40:50 | syncing channels from database 
+[SYS] 2025/10/12 - 09:40:50 | channels synced from database 
+[SYS] 2025/10/12 - 09:40:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:40:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:41:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:41:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:41:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:41:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:41:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:41:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:57:37 | syncing options from database 
+[SYS] 2025/10/12 - 09:57:38 | syncing channels from database 
+[SYS] 2025/10/12 - 09:57:38 | channels synced from database 
+[SYS] 2025/10/12 - 09:57:38 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:57:38 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:57:53 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:57:53 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:58:08 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:58:08 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:58:23 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:58:23 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 09:58:36 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 09:58:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 09:58:37 | syncing options from database 
+[SYS] 2025/10/12 - 09:58:38 | syncing channels from database 
+[SYS] 2025/10/12 - 09:58:38 | channels synced from database 
+[SYS] 2025/10/12 - 09:58:38 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 09:58:38 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:15:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:15:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:15:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:15:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:15:34 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:15:34 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:25:09 | syncing options from database 
+[SYS] 2025/10/12 - 10:25:10 | syncing channels from database 
+[SYS] 2025/10/12 - 10:25:10 | channels synced from database 
+[SYS] 2025/10/12 - 10:25:11 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:25:11 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:25:26 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:25:26 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:25:41 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:25:41 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:25:56 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:25:56 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:41:45 | syncing options from database 
+[SYS] 2025/10/12 - 10:41:46 | syncing channels from database 
+[SYS] 2025/10/12 - 10:41:46 | channels synced from database 
+[SYS] 2025/10/12 - 10:41:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:41:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:42:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:42:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:42:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:42:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:58:28 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:58:28 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:58:42 | syncing options from database 
+[SYS] 2025/10/12 - 10:58:43 | syncing channels from database 
+[SYS] 2025/10/12 - 10:58:43 | channels synced from database 
+[SYS] 2025/10/12 - 10:58:43 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:58:43 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:58:58 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:58:58 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 10:59:13 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 10:59:13 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:16:56 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:16:56 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:17:10 | syncing options from database 
+[SYS] 2025/10/12 - 11:17:11 | syncing channels from database 
+[SYS] 2025/10/12 - 11:17:11 | channels synced from database 
+[SYS] 2025/10/12 - 11:17:11 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:17:11 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:17:26 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:17:26 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:26:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:26:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:26:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:26:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:26:33 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 11:26:33 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 11:26:33 | syncing options from database 
+[SYS] 2025/10/12 - 11:26:34 | syncing channels from database 
+[SYS] 2025/10/12 - 11:26:34 | channels synced from database 
+[SYS] 2025/10/12 - 11:26:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:26:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:26:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:26:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:43:39 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:43:39 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:43:54 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:43:54 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 11:44:07 | syncing options from database 
+[SYS] 2025/10/12 - 11:44:08 | syncing channels from database 
+[SYS] 2025/10/12 - 11:44:08 | channels synced from database 
+[SYS] 2025/10/12 - 11:44:09 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 11:44:09 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:00:39 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:00:39 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:00:54 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:00:54 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:01:09 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:01:09 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:18:10 | syncing options from database 
+[SYS] 2025/10/12 - 12:18:11 | syncing channels from database 
+[SYS] 2025/10/12 - 12:18:11 | channels synced from database 
+[SYS] 2025/10/12 - 12:18:12 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:18:12 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:18:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:18:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:18:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:18:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:27:07 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:27:07 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:27:20 | syncing options from database 
+[SYS] 2025/10/12 - 12:27:20 | syncing channels from database 
+[SYS] 2025/10/12 - 12:27:20 | channels synced from database 
+[SYS] 2025/10/12 - 12:27:22 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:27:22 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:27:37 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:27:37 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:27:52 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:27:52 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:43:29 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:43:29 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:43:41 | syncing options from database 
+[SYS] 2025/10/12 - 12:43:42 | syncing channels from database 
+[SYS] 2025/10/12 - 12:43:42 | channels synced from database 
+[SYS] 2025/10/12 - 12:43:44 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:43:44 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:43:59 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:43:59 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:44:14 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:44:14 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:44:29 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:44:29 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 12:59:46 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 12:59:46 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 12:59:47 | syncing options from database 
+[SYS] 2025/10/12 - 12:59:47 | syncing channels from database 
+[SYS] 2025/10/12 - 12:59:47 | channels synced from database 
+[SYS] 2025/10/12 - 12:59:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 12:59:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:00:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:00:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:00:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:00:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:17:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:17:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:17:38 | syncing options from database 
+[SYS] 2025/10/12 - 13:17:39 | syncing channels from database 
+[SYS] 2025/10/12 - 13:17:39 | channels synced from database 
+[SYS] 2025/10/12 - 13:17:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:17:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:17:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:17:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:28:13 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:28:13 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:28:28 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:28:28 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:28:41 | syncing options from database 
+[SYS] 2025/10/12 - 13:28:42 | syncing channels from database 
+[SYS] 2025/10/12 - 13:28:42 | channels synced from database 
+[SYS] 2025/10/12 - 13:28:43 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:28:43 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:28:58 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:28:58 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:46:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:46:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:46:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:46:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 13:46:33 | syncing options from database 
+[SYS] 2025/10/12 - 13:46:33 | syncing channels from database 
+[SYS] 2025/10/12 - 13:46:33 | channels synced from database 
+[SYS] 2025/10/12 - 13:46:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 13:46:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:02:13 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:02:13 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:02:29 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:02:29 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:02:44 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:02:44 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:02:56 | syncing options from database 
+[SYS] 2025/10/12 - 14:02:57 | syncing channels from database 
+[SYS] 2025/10/12 - 14:02:57 | channels synced from database 
+[SYS] 2025/10/12 - 14:02:59 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:02:59 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:18:44 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:18:44 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:18:59 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:18:59 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:19:14 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:19:14 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:19:26 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 14:19:26 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 14:19:26 | syncing options from database 
+[SYS] 2025/10/12 - 14:29:08 | syncing channels from database 
+[SYS] 2025/10/12 - 14:29:09 | channels synced from database 
+[SYS] 2025/10/12 - 14:29:09 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:29:09 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:29:24 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:29:24 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:29:39 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:29:39 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:29:54 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:29:54 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:30:07 | syncing options from database 
+[SYS] 2025/10/12 - 14:30:09 | syncing channels from database 
+[SYS] 2025/10/12 - 14:30:09 | channels synced from database 
+[SYS] 2025/10/12 - 14:30:09 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:30:09 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:47:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:47:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:47:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:47:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:48:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:48:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 14:48:17 | syncing options from database 
+[SYS] 2025/10/12 - 14:48:19 | syncing channels from database 
+[SYS] 2025/10/12 - 14:48:19 | channels synced from database 
+[SYS] 2025/10/12 - 14:48:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 14:48:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:04:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:04:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:04:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:04:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:04:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:04:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:04:48 | syncing options from database 
+[SYS] 2025/10/12 - 15:04:49 | syncing channels from database 
+[SYS] 2025/10/12 - 15:04:49 | channels synced from database 
+[SYS] 2025/10/12 - 15:20:33 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:20:33 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:20:48 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:20:48 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:21:03 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:21:03 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:21:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:21:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:30:18 | syncing options from database 
+[SYS] 2025/10/12 - 15:30:19 | syncing channels from database 
+[SYS] 2025/10/12 - 15:30:19 | channels synced from database 
+[SYS] 2025/10/12 - 15:30:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:30:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:30:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:30:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:30:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:30:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:46:51 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:46:51 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:47:02 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 15:47:02 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 15:47:03 | syncing options from database 
+[SYS] 2025/10/12 - 15:47:05 | syncing channels from database 
+[SYS] 2025/10/12 - 15:47:05 | channels synced from database 
+[SYS] 2025/10/12 - 15:47:06 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:47:06 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:47:21 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:47:21 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 15:47:36 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 15:47:36 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:04:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:04:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:04:58 | syncing options from database 
+[SYS] 2025/10/12 - 16:04:59 | syncing channels from database 
+[SYS] 2025/10/12 - 16:04:59 | channels synced from database 
+[SYS] 2025/10/12 - 16:05:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:05:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:05:15 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:05:15 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:05:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:05:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:05:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:05:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:05:58 | syncing options from database 
+[SYS] 2025/10/12 - 16:05:59 | syncing channels from database 
+[SYS] 2025/10/12 - 16:06:00 | channels synced from database 
+[SYS] 2025/10/12 - 16:06:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:06:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:06:15 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:06:15 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:06:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:06:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:06:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:06:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:06:58 | syncing options from database 
+[SYS] 2025/10/12 - 16:07:00 | syncing channels from database 
+[SYS] 2025/10/12 - 16:07:00 | channels synced from database 
+[SYS] 2025/10/12 - 16:07:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:07:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:07:15 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:07:15 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:07:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:07:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:24:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:24:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:24:29 | syncing options from database 
+[SYS] 2025/10/12 - 16:24:31 | syncing channels from database 
+[SYS] 2025/10/12 - 16:24:31 | channels synced from database 
+[SYS] 2025/10/12 - 16:24:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:24:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:24:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:24:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:31:12 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:31:12 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:31:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:31:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:31:38 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 16:31:38 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 16:31:39 | syncing options from database 
+[SYS] 2025/10/12 - 16:31:41 | syncing channels from database 
+[SYS] 2025/10/12 - 16:31:41 | channels synced from database 
+[SYS] 2025/10/12 - 16:31:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:31:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:31:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:31:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:47:53 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:47:53 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:48:08 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:48:08 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:48:21 | syncing options from database 
+[SYS] 2025/10/12 - 16:48:23 | syncing channels from database 
+[SYS] 2025/10/12 - 16:48:23 | channels synced from database 
+[SYS] 2025/10/12 - 16:48:23 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:48:23 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 16:48:38 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 16:48:38 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:05:16 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:05:16 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:05:31 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:05:31 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:05:43 | syncing options from database 
+[SYS] 2025/10/12 - 17:05:45 | syncing channels from database 
+[SYS] 2025/10/12 - 17:05:45 | channels synced from database 
+[SYS] 2025/10/12 - 17:05:46 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:05:46 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:21:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:21:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:21:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:21:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:21:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:21:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:21:48 | syncing options from database 
+[SYS] 2025/10/12 - 17:32:12 | syncing channels from database 
+[SYS] 2025/10/12 - 17:32:12 | channels synced from database 
+[SYS] 2025/10/12 - 17:32:13 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:32:13 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:32:28 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:32:28 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:32:43 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:32:43 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:32:58 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:32:58 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:50:46 | syncing options from database 
+[SYS] 2025/10/12 - 17:50:47 | syncing channels from database 
+[SYS] 2025/10/12 - 17:50:47 | channels synced from database 
+[SYS] 2025/10/12 - 17:50:48 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:50:48 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:51:03 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:51:03 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:51:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:51:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 17:51:33 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 17:51:33 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:07:15 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 18:07:15 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 18:07:16 | syncing options from database 
+[SYS] 2025/10/12 - 18:07:18 | syncing channels from database 
+[SYS] 2025/10/12 - 18:07:18 | channels synced from database 
+[SYS] 2025/10/12 - 18:07:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:07:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:07:34 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:07:34 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:07:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:07:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:23:03 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:23:03 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:23:15 | syncing options from database 
+[SYS] 2025/10/12 - 18:23:17 | syncing channels from database 
+[SYS] 2025/10/12 - 18:23:17 | channels synced from database 
+[SYS] 2025/10/12 - 18:23:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:23:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:23:33 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:23:33 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:23:48 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:23:48 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:31:01 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:31:01 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:31:13 | syncing options from database 
+[SYS] 2025/10/12 - 18:31:15 | syncing channels from database 
+[SYS] 2025/10/12 - 18:31:15 | channels synced from database 
+[SYS] 2025/10/12 - 18:31:16 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:31:16 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:31:31 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:31:31 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:33:21 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:33:21 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:33:36 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:33:36 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:33:49 | syncing options from database 
+[SYS] 2025/10/12 - 18:33:50 | syncing channels from database 
+[SYS] 2025/10/12 - 18:33:50 | channels synced from database 
+[SYS] 2025/10/12 - 18:33:51 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:33:51 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:49:21 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:49:21 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:49:36 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:49:36 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:49:51 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:49:51 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:50:03 | syncing options from database 
+[SYS] 2025/10/12 - 18:50:05 | syncing channels from database 
+[SYS] 2025/10/12 - 18:50:05 | channels synced from database 
+[SYS] 2025/10/12 - 18:50:06 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:50:06 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:55:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:55:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:55:20 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:55:20 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:55:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:55:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 18:55:47 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 18:55:47 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 18:55:48 | syncing options from database 
+[SYS] 2025/10/12 - 18:55:49 | syncing channels from database 
+[SYS] 2025/10/12 - 18:55:49 | channels synced from database 
+[SYS] 2025/10/12 - 18:55:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 18:55:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:11:43 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:11:43 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:11:58 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:11:58 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:12:13 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:12:13 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:28:22 | syncing options from database 
+[SYS] 2025/10/12 - 19:28:24 | syncing channels from database 
+[SYS] 2025/10/12 - 19:28:24 | channels synced from database 
+[SYS] 2025/10/12 - 19:28:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:28:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:28:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:28:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:28:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:28:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:44:38 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:44:38 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:44:50 | syncing options from database 
+[SYS] 2025/10/12 - 19:44:52 | syncing channels from database 
+[SYS] 2025/10/12 - 19:44:52 | channels synced from database 
+[SYS] 2025/10/12 - 19:44:53 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:44:53 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:45:08 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:45:08 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 19:45:23 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 19:45:23 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:00:53 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:00:53 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:01:05 | syncing options from database 
+[SYS] 2025/10/12 - 20:01:06 | syncing channels from database 
+[SYS] 2025/10/12 - 20:01:06 | channels synced from database 
+[SYS] 2025/10/12 - 20:01:08 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:01:08 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:01:23 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:01:23 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:01:38 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:01:38 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:17:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:17:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:17:47 | syncing options from database 
+[SYS] 2025/10/12 - 20:17:49 | syncing channels from database 
+[SYS] 2025/10/12 - 20:17:49 | channels synced from database 
+[SYS] 2025/10/12 - 20:17:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:17:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:18:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:18:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:34:27 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:34:27 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:34:42 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:34:42 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:34:53 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 20:34:53 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 20:34:54 | syncing options from database 
+[SYS] 2025/10/12 - 20:34:55 | syncing channels from database 
+[SYS] 2025/10/12 - 20:34:55 | channels synced from database 
+[SYS] 2025/10/12 - 20:34:57 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:34:57 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:50:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:50:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:51:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:51:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:51:15 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:51:15 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:51:27 | syncing options from database 
+[SYS] 2025/10/12 - 20:51:28 | syncing channels from database 
+[SYS] 2025/10/12 - 20:51:28 | channels synced from database 
+[SYS] 2025/10/12 - 20:51:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:51:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 20:51:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 20:51:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:08:22 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:08:22 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:08:37 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:08:37 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:08:49 | syncing options from database 
+[SYS] 2025/10/12 - 21:08:51 | syncing channels from database 
+[SYS] 2025/10/12 - 21:08:51 | channels synced from database 
+[SYS] 2025/10/12 - 21:08:52 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:08:52 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:09:07 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:09:07 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:09:22 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:09:22 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:27:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:27:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:27:44 | syncing options from database 
+[SYS] 2025/10/12 - 21:27:46 | syncing channels from database 
+[SYS] 2025/10/12 - 21:27:46 | channels synced from database 
+[SYS] 2025/10/12 - 21:27:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:27:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:28:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:28:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:28:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:28:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:28:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:28:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:28:44 | syncing options from database 
+[SYS] 2025/10/12 - 21:28:46 | syncing channels from database 
+[SYS] 2025/10/12 - 21:28:46 | channels synced from database 
+[SYS] 2025/10/12 - 21:28:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:28:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:29:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:29:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:29:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:29:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:29:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:29:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:29:43 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 21:29:43 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 21:29:44 | syncing options from database 
+[SYS] 2025/10/12 - 21:29:46 | syncing channels from database 
+[SYS] 2025/10/12 - 21:29:46 | channels synced from database 
+[SYS] 2025/10/12 - 21:29:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:29:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:30:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:30:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:30:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:30:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:30:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:30:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:30:44 | syncing options from database 
+[SYS] 2025/10/12 - 21:30:46 | syncing channels from database 
+[SYS] 2025/10/12 - 21:30:46 | channels synced from database 
+[SYS] 2025/10/12 - 21:30:47 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:30:47 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:31:02 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:31:02 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:31:17 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:31:17 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:31:32 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:31:32 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:48:53 | syncing options from database 
+[SYS] 2025/10/12 - 21:48:55 | syncing channels from database 
+[SYS] 2025/10/12 - 21:48:55 | channels synced from database 
+[SYS] 2025/10/12 - 21:48:56 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:48:56 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:49:11 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:49:11 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:49:26 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:49:26 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 21:49:41 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 21:49:41 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:06:32 | syncing options from database 
+[SYS] 2025/10/12 - 22:06:34 | syncing channels from database 
+[SYS] 2025/10/12 - 22:06:34 | channels synced from database 
+[SYS] 2025/10/12 - 22:06:35 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:06:35 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:06:50 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:06:50 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:07:05 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:07:05 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:24:30 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:24:30 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:24:42 | syncing options from database 
+[SYS] 2025/10/12 - 22:24:43 | syncing channels from database 
+[SYS] 2025/10/12 - 22:24:43 | channels synced from database 
+[SYS] 2025/10/12 - 22:24:45 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:24:45 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:25:00 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:25:00 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:41:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:41:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:41:34 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:41:34 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:41:45 | 正在更新数据看板数据... 
+[SYS] 2025/10/12 - 22:41:45 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/12 - 22:41:46 | syncing options from database 
+[SYS] 2025/10/12 - 22:41:48 | syncing channels from database 
+[SYS] 2025/10/12 - 22:41:48 | channels synced from database 
+[SYS] 2025/10/12 - 22:41:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:41:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:42:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:42:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:42:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:42:19 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:58:18 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:58:18 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:58:30 | syncing options from database 
+[SYS] 2025/10/12 - 22:58:32 | syncing channels from database 
+[SYS] 2025/10/12 - 22:58:32 | channels synced from database 
+[SYS] 2025/10/12 - 22:58:33 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:58:33 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:58:48 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:58:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 22:59:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 22:59:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:15:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:15:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:15:37 | syncing options from database 
+[SYS] 2025/10/12 - 23:15:39 | syncing channels from database 
+[SYS] 2025/10/12 - 23:15:39 | channels synced from database 
+[SYS] 2025/10/12 - 23:15:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:15:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:15:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:15:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:31:40 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:31:40 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:31:55 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:31:55 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:32:07 | syncing options from database 
+[SYS] 2025/10/12 - 23:32:09 | syncing channels from database 
+[SYS] 2025/10/12 - 23:32:09 | channels synced from database 
+[SYS] 2025/10/12 - 23:32:10 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:32:10 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:32:25 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:32:25 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:47:49 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:47:49 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:48:04 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:48:04 | 任务进度轮询完成 
+[SYS] 2025/10/12 - 23:48:15 | syncing options from database 
+[SYS] 2025/10/12 - 23:48:17 | syncing channels from database 
+[SYS] 2025/10/12 - 23:48:17 | channels synced from database 
+[SYS] 2025/10/12 - 23:48:19 | 任务进度轮询开始 
+[SYS] 2025/10/12 - 23:48:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:00:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:00:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:00:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:00:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:00:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:00:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:17:21 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 00:17:21 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 00:17:22 | syncing options from database 
+[SYS] 2025/10/13 - 00:17:24 | syncing channels from database 
+[SYS] 2025/10/13 - 00:17:24 | channels synced from database 
+[SYS] 2025/10/13 - 00:17:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:17:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:17:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:17:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:17:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:17:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:34:09 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:34:09 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:34:20 | syncing options from database 
+[SYS] 2025/10/13 - 00:34:22 | syncing channels from database 
+[SYS] 2025/10/13 - 00:34:22 | channels synced from database 
+[SYS] 2025/10/13 - 00:34:24 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:34:24 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:34:39 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:34:39 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:34:54 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:34:54 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:50:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:50:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:51:05 | syncing options from database 
+[SYS] 2025/10/13 - 00:51:07 | syncing channels from database 
+[SYS] 2025/10/13 - 00:51:07 | channels synced from database 
+[SYS] 2025/10/13 - 00:51:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:51:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 00:51:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 00:51:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:06:46 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:06:46 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:07:01 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:07:01 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:07:13 | syncing options from database 
+[SYS] 2025/10/13 - 01:07:15 | syncing channels from database 
+[SYS] 2025/10/13 - 01:07:15 | channels synced from database 
+[SYS] 2025/10/13 - 01:07:16 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:07:16 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:22:51 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:22:51 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:23:06 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:23:06 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:23:21 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:23:21 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:23:33 | syncing options from database 
+[SYS] 2025/10/13 - 01:23:34 | syncing channels from database 
+[SYS] 2025/10/13 - 01:23:34 | channels synced from database 
+[SYS] 2025/10/13 - 01:39:45 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:39:45 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:40:00 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:40:00 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:40:15 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:40:15 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:40:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:40:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:56:04 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 01:56:04 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 01:56:05 | syncing options from database 
+[SYS] 2025/10/13 - 01:56:06 | syncing channels from database 
+[SYS] 2025/10/13 - 01:56:06 | channels synced from database 
+[SYS] 2025/10/13 - 01:56:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:56:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:56:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:56:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:56:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:56:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 01:56:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 01:56:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:14:12 | syncing options from database 
+[SYS] 2025/10/13 - 02:14:13 | syncing channels from database 
+[SYS] 2025/10/13 - 02:14:13 | channels synced from database 
+[SYS] 2025/10/13 - 02:14:15 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:14:15 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:14:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:14:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:14:45 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:14:45 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:16:54 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:16:54 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:17:06 | syncing options from database 
+[SYS] 2025/10/13 - 02:17:07 | syncing channels from database 
+[SYS] 2025/10/13 - 02:17:07 | channels synced from database 
+[SYS] 2025/10/13 - 02:17:09 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:17:09 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:17:24 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:17:24 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:17:39 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:17:39 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:33:18 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:33:18 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:33:30 | syncing options from database 
+[SYS] 2025/10/13 - 02:33:32 | syncing channels from database 
+[SYS] 2025/10/13 - 02:33:32 | channels synced from database 
+[SYS] 2025/10/13 - 02:33:33 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:33:33 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:33:48 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:33:48 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:50:31 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:50:31 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:50:46 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:50:46 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:50:58 | syncing options from database 
+[SYS] 2025/10/13 - 02:50:59 | syncing channels from database 
+[SYS] 2025/10/13 - 02:50:59 | channels synced from database 
+[SYS] 2025/10/13 - 02:51:01 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:51:01 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 02:51:16 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 02:51:16 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:07:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:07:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:08:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:08:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:08:15 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 03:08:15 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 03:08:16 | syncing options from database 
+[SYS] 2025/10/13 - 03:08:17 | syncing channels from database 
+[SYS] 2025/10/13 - 03:08:17 | channels synced from database 
+[SYS] 2025/10/13 - 03:08:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:08:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:08:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:08:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:24:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:24:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:24:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:24:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:25:01 | syncing options from database 
+[SYS] 2025/10/13 - 03:25:02 | syncing channels from database 
+[SYS] 2025/10/13 - 03:25:02 | channels synced from database 
+[SYS] 2025/10/13 - 03:25:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:25:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:41:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:41:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:42:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:42:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:42:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:42:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:59:30 | syncing options from database 
+[SYS] 2025/10/13 - 03:59:32 | syncing channels from database 
+[SYS] 2025/10/13 - 03:59:32 | channels synced from database 
+[SYS] 2025/10/13 - 03:59:33 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:59:33 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 03:59:48 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 03:59:48 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:00:03 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:00:03 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:00:18 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:00:18 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:00:30 | syncing options from database 
+[SYS] 2025/10/13 - 04:17:00 | syncing channels from database 
+[SYS] 2025/10/13 - 04:17:00 | channels synced from database 
+[SYS] 2025/10/13 - 04:17:01 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:17:01 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:17:16 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:17:16 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:17:31 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:17:31 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:17:46 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:17:46 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:17:58 | syncing options from database 
+[SYS] 2025/10/13 - 04:18:00 | syncing channels from database 
+[SYS] 2025/10/13 - 04:18:00 | channels synced from database 
+[SYS] 2025/10/13 - 04:34:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:34:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:34:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:34:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:34:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:34:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:35:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:35:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:52:01 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 04:52:01 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 04:52:02 | syncing options from database 
+[SYS] 2025/10/13 - 04:52:04 | syncing channels from database 
+[SYS] 2025/10/13 - 04:52:04 | channels synced from database 
+[SYS] 2025/10/13 - 04:52:06 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:52:06 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:52:21 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:52:21 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 04:52:36 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 04:52:36 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:10:16 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:10:16 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:10:27 | syncing options from database 
+[SYS] 2025/10/13 - 05:10:29 | syncing channels from database 
+[SYS] 2025/10/13 - 05:10:29 | channels synced from database 
+[SYS] 2025/10/13 - 05:10:31 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:10:31 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:10:46 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:10:46 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:18:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:18:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:18:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:18:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:18:31 | syncing options from database 
+[SYS] 2025/10/13 - 05:18:32 | syncing channels from database 
+[SYS] 2025/10/13 - 05:18:32 | channels synced from database 
+[SYS] 2025/10/13 - 05:18:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:18:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:35:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:35:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:35:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:35:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:35:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:35:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:35:49 | syncing options from database 
+[SYS] 2025/10/13 - 05:35:51 | syncing channels from database 
+[SYS] 2025/10/13 - 05:35:51 | channels synced from database 
+[SYS] 2025/10/13 - 05:35:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:35:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:52:45 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:52:45 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:53:00 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:53:00 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:53:15 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:53:15 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 05:53:26 | syncing options from database 
+[SYS] 2025/10/13 - 05:53:28 | syncing channels from database 
+[SYS] 2025/10/13 - 05:53:28 | channels synced from database 
+[SYS] 2025/10/13 - 05:53:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 05:53:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:09:00 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:09:00 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:09:15 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:09:15 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:09:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:09:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:09:40 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 06:09:40 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 06:19:00 | syncing options from database 
+[SYS] 2025/10/13 - 06:19:02 | syncing channels from database 
+[SYS] 2025/10/13 - 06:19:02 | channels synced from database 
+[SYS] 2025/10/13 - 06:19:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:19:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:19:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:19:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:19:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:19:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:19:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:19:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:35:38 | syncing options from database 
+[SYS] 2025/10/13 - 06:35:40 | syncing channels from database 
+[SYS] 2025/10/13 - 06:35:40 | channels synced from database 
+[SYS] 2025/10/13 - 06:35:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:35:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:35:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:35:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:36:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:36:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:53:39 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:53:39 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:53:51 | syncing options from database 
+[SYS] 2025/10/13 - 06:53:52 | syncing channels from database 
+[SYS] 2025/10/13 - 06:53:52 | channels synced from database 
+[SYS] 2025/10/13 - 06:53:54 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:53:54 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:54:09 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:54:09 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 06:54:24 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 06:54:24 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:00:06 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:00:06 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:00:17 | syncing options from database 
+[SYS] 2025/10/13 - 07:00:19 | syncing channels from database 
+[SYS] 2025/10/13 - 07:00:19 | channels synced from database 
+[SYS] 2025/10/13 - 07:00:21 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:00:21 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:00:36 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:00:36 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:17:17 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:17:17 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:17:32 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:17:32 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:17:44 | syncing options from database 
+[SYS] 2025/10/13 - 07:17:45 | syncing channels from database 
+[SYS] 2025/10/13 - 07:17:45 | channels synced from database 
+[SYS] 2025/10/13 - 07:17:47 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:17:47 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:18:02 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:18:02 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:20:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:20:13 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:20:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:20:28 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:20:38 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 07:20:38 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 07:20:39 | syncing options from database 
+[SYS] 2025/10/13 - 07:20:41 | syncing channels from database 
+[SYS] 2025/10/13 - 07:20:41 | channels synced from database 
+[SYS] 2025/10/13 - 07:20:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:20:43 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:37:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:37:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:37:45 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:37:45 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:38:00 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:38:00 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:50:46 | syncing options from database 
+[SYS] 2025/10/13 - 07:50:48 | syncing channels from database 
+[SYS] 2025/10/13 - 07:50:48 | channels synced from database 
+[SYS] 2025/10/13 - 07:50:50 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:50:50 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:51:05 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:51:05 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:51:20 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:51:20 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:51:35 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 07:51:35 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 07:51:46 | syncing options from database 
+[SYS] 2025/10/13 - 08:08:18 | syncing channels from database 
+[SYS] 2025/10/13 - 08:08:18 | channels synced from database 
+[SYS] 2025/10/13 - 08:08:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:08:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:08:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:08:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:08:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:08:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:09:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:09:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:21:08 | syncing options from database 
+[SYS] 2025/10/13 - 08:21:11 | syncing channels from database 
+[SYS] 2025/10/13 - 08:21:11 | channels synced from database 
+[SYS] 2025/10/13 - 08:21:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:21:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:21:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:21:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:21:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:21:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:37:29 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:37:29 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:37:40 | syncing options from database 
+[SYS] 2025/10/13 - 08:37:43 | syncing channels from database 
+[SYS] 2025/10/13 - 08:37:43 | channels synced from database 
+[SYS] 2025/10/13 - 08:37:44 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:37:44 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:37:59 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:37:59 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:53:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:53:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:53:45 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:53:45 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:53:55 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 08:53:55 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 08:53:56 | syncing options from database 
+[SYS] 2025/10/13 - 08:53:58 | syncing channels from database 
+[SYS] 2025/10/13 - 08:53:58 | channels synced from database 
+[SYS] 2025/10/13 - 08:54:00 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:54:00 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:54:15 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:54:15 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 08:54:30 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 08:54:30 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:03:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:03:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:03:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:03:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:03:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:03:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:03:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:03:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:03:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:04:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:04:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:04:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:04:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:04:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:04:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:04:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:04:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:04:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:04:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:04:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:05:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:05:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:05:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:05:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:05:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:05:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:05:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:05:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:05:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:05:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:05:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:06:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:06:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:06:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:06:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:06:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:06:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:06:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:06:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:06:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:06:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:06:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:07:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:07:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:07:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:07:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:07:35 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 09:07:35 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 09:07:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:07:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:07:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:07:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:07:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:07:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:07:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:08:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:08:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:08:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:08:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:08:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:08:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:08:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:08:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:08:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:08:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:08:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:09:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:09:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:09:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:09:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:09:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:09:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:09:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:09:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:09:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:09:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:09:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:10:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:10:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:10:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:10:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:10:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:10:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:10:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:10:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:10:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:10:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:10:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:11:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:11:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:11:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:11:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:11:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:11:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:11:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:11:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:11:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:11:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:11:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:12:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:12:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:12:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:12:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:12:35 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 09:12:35 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 09:12:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:12:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:12:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:12:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:12:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:12:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:12:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:13:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:13:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:13:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:13:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:13:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:13:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:13:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:13:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:13:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:13:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:13:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:14:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:14:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:14:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:14:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:14:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:14:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:14:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:14:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:14:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:14:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:14:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:15:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:15:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:15:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:15:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:15:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:15:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:15:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:15:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:15:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:15:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:15:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:16:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:16:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:16:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:16:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:16:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:16:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:16:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:16:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:16:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:16:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:16:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:17:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:17:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:17:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:17:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:17:35 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 09:17:35 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 09:17:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:17:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:17:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:17:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:17:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:17:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:17:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:18:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:18:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:18:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:18:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:18:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:18:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:18:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:18:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:18:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:18:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:18:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:19:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:19:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:19:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:19:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:19:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:19:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:19:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:19:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:19:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:19:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:19:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:20:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:20:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:20:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:20:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:20:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:20:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:20:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:20:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:20:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:20:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:20:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:21:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:21:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:21:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:21:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:21:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:21:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:21:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:21:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:21:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:21:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:21:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:22:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:22:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:22:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:22:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:22:35 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 09:22:35 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 09:22:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:22:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:22:38 | channels synced from database 
+[SYS] 2025/10/13 - 09:22:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:22:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:22:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:22:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:23:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:23:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:23:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:23:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:23:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:23:38 | syncing channels from database 
+[SYS] 2025/10/13 - 09:23:39 | channels synced from database 
+[SYS] 2025/10/13 - 09:23:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:23:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:23:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:23:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:24:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:24:10 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:24:25 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:24:25 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:24:36 | syncing options from database 
+[SYS] 2025/10/13 - 09:24:39 | syncing channels from database 
+[SYS] 2025/10/13 - 09:24:39 | channels synced from database 
+[SYS] 2025/10/13 - 09:24:40 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:24:40 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:24:55 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:24:55 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:25:10 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:25:10 | 任务进度轮询完成 

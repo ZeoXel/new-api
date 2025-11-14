@@ -1,0 +1,485 @@
+[SYS] 2025/10/30 - 15:47:23 | initializing token encoders 
+[SYS] 2025/10/30 - 15:47:23 | token encoders initialized 
+[SYS] 2025/10/30 - 15:47:23 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/30 - 15:47:23 | database migration started 
+[SYS] 2025/10/30 - 15:47:23 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/10/30 - 15:47:23 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/30 - 15:47:23 | New API v0.0.0 started 
+[SYS] 2025/10/30 - 15:47:23 | running in debug mode 
+[SYS] 2025/10/30 - 15:47:23 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:47:23 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/30 - 15:47:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:47:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:47:43 | 20251030154742320297000eb1rozcc | 200 |  817.229375ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[SYS] 2025/10/30 - 15:47:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:47:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:48:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:48:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:48:11 | 20251030154811334781000gRnO5gSy | 204 |       60.25µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:48:13 | 20251030154811335460000IiwkvMOK | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:48:13 | user 1 has no email, skip sending email 
+[GIN] 2025/10/30 - 15:48:13 | 20251030154811335460000IiwkvMOK | 200 |  2.421137375s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 15:48:13 | 20251030154813760620000ipSIkpSd | 204 |      13.625µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1dc04enhtwmr36pn5e9tx
+[GIN] 2025/10/30 - 15:48:14 | 20251030154813761894000eS2d0Zo5 | 200 |     743.077ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1dc04enhtwmr36pn5e9tx
+[GIN] 2025/10/30 - 15:48:19 | 20251030154819711852000t0OJPJOE | 204 |       9.584µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1dc04enhtwmr36pn5e9tx
+[GIN] 2025/10/30 - 15:48:22 | 20251030154819713587000qEdNB8oL | 200 |  2.411064875s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1dc04enhtwmr36pn5e9tx
+[SYS] 2025/10/30 - 15:48:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:48:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:48:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:48:27 | 20251030154827330774000QjacqqPF | 204 |       8.792µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1dc04enhtwmr36pn5e9tx
+[GIN] 2025/10/30 - 15:48:28 | 20251030154827331716000moxBIJ25 | 200 |  846.907958ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1dc04enhtwmr36pn5e9tx
+[SYS] 2025/10/30 - 15:48:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:48:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:48:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:48:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:49:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:49:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:49:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:49:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:49:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:49:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:49:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:49:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:49:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:49:57 | 2025103015495793709000DArb23pq | 200 |     482.292µs |             ::1 |     GET /console/task
+[GIN] 2025/10/30 - 15:49:57 | 20251030154957405342000ISizQIYL | 200 |     310.917µs |             ::1 |     GET /api/status
+[GIN] 2025/10/30 - 15:49:57 | 20251030154957405102000m0aK83xv | 200 |     723.292µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 15:49:57 | 20251030154957405262000w6IrWMdB | 200 |    2.017916ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761814197
+[GIN] 2025/10/30 - 15:49:57 | 20251030154957662017000JW5qCaKC | 200 |    5.188833ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 15:49:59 | 202510301549599375270005opIUKPO | 200 |     1.12925ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761814199&channel=&group=
+[GIN] 2025/10/30 - 15:49:59 | 20251030154959949174000KSpiYhDQ | 200 |     787.666µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761814199&channel=&group=
+[GIN] 2025/10/30 - 15:50:01 | 20251030155001653825000fzOibqa8 | 200 |    1.525917ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761814201
+[GIN] 2025/10/30 - 15:50:03 | 20251030155003434990000hmnysbkE | 200 |     906.583µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761814203&channel=&group=
+[GIN] 2025/10/30 - 15:50:03 | 20251030155003440517000JHnEBjC3 | 200 |     621.333µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761814203&channel=&group=
+[SYS] 2025/10/30 - 15:50:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:50:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:50:15 | 20251030155015245053000AfhHiigO | 204 |      48.583µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:50:19 | 202510301550152464100000XRW9oYC | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:50:19 | user 1 has no email, skip sending email 
+[GIN] 2025/10/30 - 15:50:19 | 202510301550152464100000XRW9oYC | 200 |  3.793313917s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 15:50:19 | 2025103015501945021000o0BLBNYo | 204 |      12.458µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:20 | 2025103015501946456000nDuRM2t2 | 200 |  1.004867083s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:50:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:50:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:50:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:50:25 | 20251030155025257290000Sv2nLwq1 | 204 |      12.208µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:26 | 20251030155025258299000i2a4AK4M | 200 |  853.548042ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:31 | 20251030155031316850000OTarV3Xk | 204 |      12.041µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:32 | 20251030155031318009000no6lR1hR | 200 |  717.374542ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:37 | 20251030155037241273000eke8ezZW | 204 |        12.5µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:37 | 20251030155037242416000DMi1UAlq | 200 |  687.712291ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:50:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:50:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:50:44 | 20251030155044130023000vhvboqw3 | 204 |       7.708µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:45 | 20251030155044131297000uoCHNyaN | 200 |  1.264717459s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:51 | 20251030155051129589000JlEDTCBR | 204 |      11.916µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:53 | 20251030155051130724000SQixkpQc | 200 |  1.978612542s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:50:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:50:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:50:59 | 20251030155059130103000Ibx8R5Fy | 204 |      10.875µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:50:59 | 20251030155059131077000NLlj1t23 | 200 |  690.289416ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:05 | 20251030155105130874000SA9j4o4l | 204 |      24.041µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:05 | 20251030155105132689000apftdALm | 200 |     667.917ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:51:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:51:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:51:11 | 202510301551111298190005A8HeIdj | 204 |       7.417µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:11 | 20251030155111130583000Hs3jvEAi | 200 |  658.600333ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:17 | 20251030155117130571000JBCccMD3 | 204 |      11.292µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:17 | 20251030155117131713000COcAyGh9 | 200 |  688.995125ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:23 | 2025103015512325495000iZFm3Odw | 204 |           9µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:51:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:51:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:51:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:51:23 | 2025103015512326877000dYKEvAJW | 200 |  696.747625ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:28 | 20251030155128930182000r9vPFhHs | 204 |       8.042µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:30 | 2025103015512893127300010n6ovoX | 200 |     1.098155s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:35 | 20251030155135235043000EHEjhxtn | 204 |       10.25µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:35 | 202510301551352360620001cdFTplK | 200 |  759.384209ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:51:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:51:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:51:41 | 20251030155141201423000UKfbNEo3 | 204 |      11.416µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:41 | 20251030155141202463000rM7ViZtd | 200 |  677.970625ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:47 | 2025103015514786112000JtPpCiDG | 204 |      25.834µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:48 | 2025103015514787147000FUE1pKYq | 200 |  1.328793417s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:51:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:51:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:51:53 | 20251030155153621447000RaoVl51q | 204 |      12.792µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:54 | 20251030155153622475000C8IxKmxL | 200 |  769.509708ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:51:59 | 20251030155159598483000CgjR5Sob | 204 |      13.167µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:00 | 202510301551595997350006hwH4vbw | 200 |  712.875791ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:05 | 202510301552055189160000WPWRMSH | 204 |          12µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:06 | 20251030155205520029000KLxwIrFc | 200 |  763.847542ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:52:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:52:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:52:11 | 20251030155211489274000zrgJWT0W | 204 |          13µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:12 | 20251030155211490418000wNbRcNEr | 200 |  737.963917ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:17 | 20251030155217433835000AkZBDWv6 | 204 |       9.125µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:18 | 20251030155217434659000gBwTcNhQ | 200 |   1.03996775s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:52:23 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:52:23 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 15:52:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:52:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:52:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:52:23 | 2025103015522368080200025qm52Km | 204 |      11.791µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:24 | 20251030155223682044000bKyN3a8v | 200 |    662.3465ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:29 | 20251030155229550521000RSeQWpSI | 204 |      13.625µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:30 | 20251030155229551752000ARiyLAUJ | 200 |  766.477417ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:35 | 20251030155235524695000XNA6BNUf | 204 |      12.916µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:36 | 20251030155235525659000Q608M242 | 200 |  727.565875ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:52:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:52:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:52:41 | 20251030155241458437000LTdyisj5 | 204 |       7.625µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:43 | 20251030155241459213000ev2bYj6v | 200 |    1.7770415s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:48 | 202510301552484407270006EtNot3n | 204 |        4.75µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:49 | 20251030155248441283000YPTfENIc | 200 |  749.300834ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:52:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:52:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:52:54 | 20251030155254395126000GkDoNZ7k | 204 |         7.5µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:52:55 | 20251030155254395983000VIqeKQWP | 200 |      669.37ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:00 | 20251030155300270748000lzf9WmEz | 204 |      11.208µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:03 | 20251030155300272701000g520nKJo | 200 |  2.757943542s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:08 | 20251030155308235683000taH3kaGY | 204 |       7.416µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:53:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:53:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:53:10 | 20251030155308236435000fFIFNZKT | 200 |  1.948184916s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:15 | 20251030155315391077000IV4HTtJk | 204 |       11.25µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:16 | 20251030155315392549000QOetJnwb | 200 |  732.015292ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:21 | 20251030155321329930000lLs1kfCZ | 204 |       8.541µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:22 | 20251030155321331089000eCTFoEml | 200 |  912.988417ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:53:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:53:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:53:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:53:27 | 20251030155327449788000ZpmZgPSD | 204 |       11.75µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:28 | 20251030155327450912000kiaYvlBh | 200 |  683.412959ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:33 | 202510301553333398090002ky5MrEr | 204 |       9.958µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:34 | 20251030155333340751000Akwtbxps | 200 |  1.105569125s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:53:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:53:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:53:39 | 20251030155339650787000pbrPYfgI | 204 |       5.916µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:40 | 2025103015533965144900062rnsLmw | 200 |  727.020708ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:45 | 202510301553455838100001sJB8LYx | 204 |      11.583µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:46 | 20251030155345584873000gRnTpzDL | 200 |     770.397ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:51 | 20251030155351560481000pUTEcX0X | 204 |       7.458µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:52 | 20251030155351561601000KCRM3eNj | 200 |     667.444ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:53:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:53:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:53:57 | 20251030155357434794000NhnH2W2u | 204 |       7.917µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:53:58 | 20251030155357435803000DMgDtLyh | 200 |  738.508292ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:54:03 | 20251030155403379775000dS0lJCoh | 204 |      10.791µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:54:04 | 20251030155403381598000d46iTYho | 200 |  678.824542ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:54:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:54:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:54:09 | 20251030155409265093000mEBZaeQb | 204 |       6.542µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[GIN] 2025/10/30 - 15:54:11 | 20251030155409265789000kAJ3u8Zn | 200 |  1.880005208s |             ::1 |     GET /v1/videos/sora-2:task_01k8t1h68zey5b2gefmpvktntv
+[SYS] 2025/10/30 - 15:54:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:54:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:54:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:54:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:54:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:54:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:54:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:55:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:55:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:55:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:55:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:55:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:55:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:55:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:55:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:55:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:56:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:56:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:56:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:56:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:56:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:56:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:56:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:56:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:56:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:57:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:57:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:57:23 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:57:23 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/30 - 15:57:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:57:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:57:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:57:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:57:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:57:47 | 20251030155747560290008AcKbcPM | 204 |      63.541µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:57:50 | 2025103015574757659000RCBeNzQJ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2-pro","token_name":"1","quota":1000000,"content":"Bltcy透传（sora-2-pro/sora-2-pro），价格: $2.0000, 配额: 1000000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":2,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:57:50 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/30 - 15:57:50 | 2025103015574757659000RCBeNzQJ | 500 |  3.711256375s |             ::1 |    POST /v1/videos
+[SYS] 2025/10/30 - 15:57:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:57:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:58:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:58:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:58:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:58:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:58:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:58:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:58:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:58:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:58:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:59:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:59:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:59:23 | syncing options from database 
+[SYS] 2025/10/30 - 15:59:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:59:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:59:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:59:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:59:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:59:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 16:00:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:00:08 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 16:00:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:00:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:00:23 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 16:00:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:00:38 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 16:00:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:00:53 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 16:01:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:01:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:01:11 | 20251030160111301926000b9WSw5cf | 204 |        7.25µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 16:01:14 | 20251030160111302701000u1L6ixmj | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 16:01:14 | user 1 has no email, skip sending email 
+[GIN] 2025/10/30 - 16:01:14 | 20251030160111302701000u1L6ixmj | 200 |  3.521100583s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 16:01:14 | 20251030160114830102000H1KToQN8 | 204 |       7.333µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:16 | 20251030160114831388000fSGfho9M | 200 |  1.549426667s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:21 | 20251030160121584985000b22oyLbV | 204 |        7.25µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:23 | 20251030160121585865000GugBoTNu | 200 |    1.6811135s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:01:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:01:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:01:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:01:28 | 20251030160128472992000RYVLkLUe | 204 |          15µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:29 | 202510301601284743370001u50bY6z | 200 |  698.239542ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:34 | 20251030160134378638000Jcve8FJK | 204 |           8µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:37 | 20251030160134379726000n9WWVwxW | 200 |  3.105597542s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:01:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:01:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:01:42 | 20251030160142690931000aUuA2fi1 | 204 |      12.916µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:48 | 20251030160142691566000RRS6NZl2 | 200 |  5.723369209s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:53 | 20251030160153620938000K7jq8Svk | 204 |      19.083µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:01:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:01:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:01:54 | 20251030160153621599000VY0FGTye | 200 |  697.980792ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:01:59 | 20251030160159526464000GJDozXue | 204 |      39.292µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:00 | 20251030160159527610000mWNCujCs | 200 |   845.92275ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:05 | 20251030160205578528000hLHUDrIK | 204 |      57.791µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:06 | 20251030160205579371000zX0FYs7o | 200 |  955.153292ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:02:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:02:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:02:11 | 20251030160211740657000Z37xAVzE | 204 |      55.292µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:12 | 20251030160211741681000AUNzBmAi | 200 |  686.000542ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:17 | 202510301602176330700003VHVbK5Z | 204 |      16.792µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:18 | 202510301602176341570000AxlEzii | 200 |  738.330625ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:02:23 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 16:02:23 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/10/30 - 16:02:23 | syncing options from database 
+[GIN] 2025/10/30 - 16:02:23 | 20251030160223578882000TEcsQms2 | 204 |      24.917µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:02:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:02:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:02:24 | 2025103016022357973300027BybJlT | 200 |  735.975917ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:29 | 20251030160229521217000xOq1VEAw | 204 |      38.458µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:30 | 202510301602295232410002YcIl85J | 200 |  687.712708ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:35 | 20251030160235416345000B7FPyBSI | 204 |      45.958µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:36 | 20251030160235417499000TgGTRvT3 | 200 |  738.180959ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:02:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:02:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:02:41 | 20251030160241360412000ULE4Gww1 | 204 |      56.083µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:42 | 202510301602413612940006oHeR1s4 | 200 |  746.023625ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:47 | 20251030160247314281000dXVf2gku | 204 |      48.917µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:49 | 20251030160247315403000LtJAprc7 | 200 |   2.26148425s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:02:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:02:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:02:54 | 20251030160254782444000xPqy2BUM | 204 |      29.084µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:02:55 | 20251030160254783458000TPZcgZTJ | 200 |  692.824666ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:00 | 20251030160300681284000O3pdL4mb | 204 |      22.958µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:02 | 202510301603006819910007rsmTOXu | 200 |  1.382794333s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:07 | 20251030160307270499000zV3Thsn0 | 204 |        30.5µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:07 | 20251030160307272550000xAFjjgjE | 200 |  674.747583ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:03:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:03:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:03:13 | 20251030160313153291000PY6nyH1v | 204 |      40.583µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:14 | 202510301603131544320009RxnruuJ | 200 |  964.508291ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:19 | 202510301603193238780002Kut2TEr | 204 |          23µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:20 | 20251030160319325246000YFI628uM | 200 |  945.563125ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:03:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:03:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:03:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:03:25 | 20251030160325476717000TMFSFHEE | 204 |       11.75µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:26 | 20251030160325477921000sgrB7rYJ | 200 |  705.335708ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:31 | 20251030160331389516000pWApZW3Q | 204 |      12.667µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:32 | 20251030160331390842000g4gGBmZ7 | 200 |   1.03348025s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:37 | 20251030160337630114000Ab4AT6sf | 204 |      12.291µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:38 | 202510301603376312130003UxKwP2F | 200 |    772.0615ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:03:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:03:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:03:43 | 20251030160343608373000xOloSwWq | 204 |      11.709µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:44 | 20251030160343609360000Hefk8mOF | 200 |  1.265694167s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:50 | 20251030160350822310003dTsW1Jh | 204 |        8.25µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:50 | 20251030160350830540007b4Fup7p | 200 |  690.843209ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:03:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:03:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:03:55 | 20251030160355978640000CvS9q5mU | 204 |       8.625µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:03:58 | 202510301603559794810005lFvE4U2 | 200 |  2.961677708s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:04 | 202510301604041469680000BOJG8N6 | 204 |           9µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:08 | 20251030160404148120000tqdbUHqp | 200 |  4.483932542s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:04:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:04:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:04:13 | 20251030160413837417000PVFdeyOp | 204 |      10.084µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:16 | 20251030160413838453000LkFjZXID | 200 |      2.17641s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:21 | 2025103016042122124700040quIkSi | 204 |      12.542µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:22 | 20251030160421222727000hHXodpf7 | 200 |  1.101064708s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:04:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:04:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:04:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:04:27 | 20251030160427529807000aIxwoB01 | 204 |      11.709µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:28 | 20251030160427530905000zOlet561 | 200 |   714.94875ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:33 | 202510301604334513020005cwD6tQs | 204 |      14.292µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:34 | 20251030160433453339000lc4z56Z9 | 200 |  684.259042ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:04:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:04:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:04:39 | 20251030160439342211000tVbjtOZ1 | 204 |       7.208µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:41 | 20251030160439342891000JbMfplMQ | 200 |   1.78153075s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:46 | 20251030160446331901000gZ3mFl4b | 204 |      12.833µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:47 | 202510301604463343740001yaNQcWi | 200 |  710.661083ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:52 | 20251030160452249535000xo0jqmgN | 204 |       6.416µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:04:53 | 20251030160452250025000abqcMhQm | 200 |  869.502375ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:04:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:04:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:04:58 | 20251030160458324976000Cz4Zw2Dz | 204 |       7.917µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:00 | 202510301604583260970004EryqWHy | 200 |  1.942720375s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:05 | 20251030160505475673000oMzaI15L | 204 |      11.875µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:06 | 20251030160505476998000anWjrlIa | 200 |   695.25875ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:05:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:05:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:05:11 | 20251030160511379277000lUmWgt5Y | 204 |      13.084µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:12 | 20251030160511383642000neO6Bf1Q | 200 |  707.336875ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[INFO] 2025/10/30 - 16:05:13 | 20251030160459987664000OJHfmy0P | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 16:05:13 | user 1 has no email, skip sending email 
+[GIN] 2025/10/30 - 16:05:13 | 20251030160459987664000OJHfmy0P | 200 | 13.473514958s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 16:05:17 | 20251030160517297637000nQcVSeGx | 204 |      14.541µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:18 | 20251030160517299969000rk2p4iSu | 200 |  1.012441292s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:23 | 20251030160523517671000iePV8Cuq | 204 |       3.375µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:05:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:05:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:05:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:05:24 | 20251030160523518343000rfJvMZuh | 200 |  1.037553875s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:29 | 20251030160529761419000j1O2J8iS | 204 |       5.583µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:31 | 20251030160529763101000K4k0E1pS | 200 |  1.618713583s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:36 | 20251030160536587052000du7JEq2a | 204 |      12.542µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:37 | 20251030160536587673000AiEf9Ov1 | 200 |  796.810542ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:05:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:05:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:05:42 | 20251030160542589980000ts2oEx4W | 204 |       11.75µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:43 | 20251030160542591121000Kpp5QScx | 200 |  1.117463917s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:48 | 20251030160548914724000Gdnpa4b0 | 204 |       8.959µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:49 | 202510301605489155500009tbDgMyf | 200 |     839.129ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:05:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:05:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:05:54 | 20251030160554960456000Z9YxOyHH | 204 |         5.5µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:05:56 | 20251030160554961067000aTesiUlc | 200 |  1.748832625s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:01 | 20251030160601916062000UBlUY9AY | 204 |      11.583µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:02 | 20251030160601917567000fYmTSGrJ | 200 |  717.403125ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:07 | 20251030160607839628000hoUPQqFp | 204 |      11.833µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:08 | 20251030160607841128000TYsIxoR7 | 200 |  682.985959ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:06:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:06:08 | 任务进度轮询完成 
+[INFO] 2025/10/30 - 16:06:10 | 20251030160605670837000qb8DL22w | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 16:06:10 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/30 - 16:06:10 | 20251030160605670837000qb8DL22w | 200 |  4.492144334s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 16:06:13 | 202510301606137294720001vSxihpu | 204 |      12.167µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:14 | 20251030160613730671000zDPoprrT | 200 |  733.252209ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:19 | 20251030160619669035000kVnFLoUv | 204 |      13.209µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:22 | 20251030160619670102000VTw14NMo | 200 |  2.681851708s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:06:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:06:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:06:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:06:27 | 202510301606275566420002jTC8GBy | 204 |       5.458µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:28 | 20251030160627557663000HxpJl56g | 200 |     1.005252s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:33 | 20251030160633768875000f8SyMnQX | 204 |       8.625µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:34 | 20251030160633769717000YuPZeUr5 | 200 |  688.158584ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:06:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:06:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:06:39 | 202510301606396637980003MpDCHUb | 204 |           9µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:41 | 20251030160639664940000hBZXwX1F | 200 |  1.883345541s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:46 | 20251030160646754280000bF8JjCJT | 204 |      18.833µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:47 | 20251030160646755508000qOswXVmN | 200 |     776.036ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:52 | 202510301606527372220001joUUWq8 | 204 |       7.958µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:53 | 20251030160652738039000rTdhvIqC | 200 |  773.665042ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:06:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:06:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:06:58 | 20251030160658717699000muCiY7Rm | 204 |         7.5µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:06:59 | 20251030160658719255000esx3pwUo | 200 |  902.076041ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:05 | 20251030160705155623000hG2sQgzO | 204 |      41.875µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:05 | 20251030160705757261000CoLSYeno | 200 |      764.25µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1759219625000&end_timestamp=1761815225000
+[GIN] 2025/10/30 - 16:07:05 | 202510301607059899980008mDbLADl | 200 |    1.232916ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761815225&channel=&group=
+[GIN] 2025/10/30 - 16:07:06 | 2025103016070623836000LMWkDhQC | 200 |     521.042µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761815225&channel=&group=
+[GIN] 2025/10/30 - 16:07:06 | 20251030160705157060000q7VBLPFl | 200 |  1.111406875s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:08 | 20251030160708284940000OIiYS5Wb | 200 |    1.477833ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761815228
+[SYS] 2025/10/30 - 16:07:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:07:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:07:10 | 20251030160710283531000egXR6Fvb | 200 |    1.495916ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761815230&channel=&group=
+[GIN] 2025/10/30 - 16:07:10 | 20251030160710310532000lScjPkwe | 200 |     702.875µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761815230&channel=&group=
+[GIN] 2025/10/30 - 16:07:12 | 20251030160712153378000Z6nbBq19 | 204 |      11.542µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:12 | 20251030160712154605000poGq6BgH | 200 |   729.85275ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:18 | 2025103016071890670000wNP3nc32 | 204 |      14.375µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:18 | 2025103016071894147000rYEleikx | 200 |  742.529375ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:07:23 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 16:07:23 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 16:07:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:07:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:07:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:07:24 | 2025103016072439689000R8teIzmN | 204 |       9.125µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:25 | 2025103016072440587000nScfv2Gd | 200 |  1.696110041s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:30 | 202510301607309423760009KPmI3Oy | 204 |       7.833µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:34 | 20251030160730943199000O57blnlP | 200 |  3.084434375s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:07:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:07:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:07:39 | 20251030160739235012000LBrfou0F | 204 |      16.625µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:47 | 202510301607392360020002fZ83wBj | 200 |  8.284573666s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:07:53 | 20251030160753155256000XbLvxuTO | 204 |          32µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:07:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:07:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:07:54 | 20251030160753156802000p6XN8LYZ | 200 |   1.32103125s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:00 | 20251030160800154026000B6DZwFI6 | 204 |      12.125µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:01 | 202510301608001555930007jyUdIG0 | 200 |   1.79872725s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:08 | 202510301608081562630003qsxtZHx | 204 |      17.875µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:08:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:08:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:08:08 | 20251030160808157807000VkFzRZZK | 200 |  697.496458ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:14 | 20251030160814155541000XSuSb0a0 | 204 |      44.875µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:16 | 20251030160814156757000yvNDC1Vy | 200 |    2.3449735s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:22 | 20251030160822175898000rdUlsY6V | 204 |     110.792µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:22 | 20251030160822179062000eAT18izA | 200 |  752.048542ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:08:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:08:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:08:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:08:29 | 20251030160829159337000Ek3kAIHD | 204 |      10.334µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:31 | 20251030160829160584000XIL0lViU | 200 |  2.659626084s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:37 | 20251030160837156284000uhC5cC9J | 204 |      12.417µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:38 | 202510301608371580610002yLVNxYh | 200 |  896.711041ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:08:38 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:08:38 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:08:44 | 20251030160844156544000FXPmtwXS | 204 |       7.416µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:46 | 202510301608441583460004oxwF56z | 200 |  2.236257292s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:52 | 20251030160852159350000zGyHesrf | 204 |      75.375µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:52 | 20251030160852162857000za3J7Jzl | 200 |  765.749959ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:08:53 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:08:53 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:08:58 | 2025103016085815579400012KbOFQE | 204 |      38.541µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:08:58 | 20251030160858157135000Y0860jrO | 200 |  748.182375ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:09:04 | 202510301609041549710003nM63zfK | 204 |       29.75µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:09:05 | 20251030160904155724000t1wmg0TO | 200 |  965.738708ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:09:08 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:09:08 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:09:11 | 202510301609111563330009pxq4WwO | 204 |          44µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:09:12 | 20251030160911157577000Xx55wph6 | 200 |  1.439828042s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:09:18 | 202510301609181565470004ytTma5n | 204 |      22.959µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:09:19 | 202510301609181576460005GqNNSKz | 200 |  1.652700833s |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[SYS] 2025/10/30 - 16:09:23 | syncing options from database 
+[SYS] 2025/10/30 - 16:09:23 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 16:09:23 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 16:09:25 | 202510301609251557590003OPxoZMw | 204 |      31.542µs |             ::1 | OPTIONS /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f
+[GIN] 2025/10/30 - 16:09:25 | 20251030160925156982000fkxnFkRA | 200 |  677.394792ms |             ::1 |     GET /v1/videos/sora-2-pro:task_01k8t256s2exf8cy8a4h0atr7f

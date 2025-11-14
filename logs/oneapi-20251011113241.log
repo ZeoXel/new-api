@@ -1,0 +1,13 @@
+[SYS] 2025/10/11 - 11:32:41 | initializing token encoders 
+[SYS] 2025/10/11 - 11:32:41 | token encoders initialized 
+[SYS] 2025/10/11 - 11:32:41 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/11 - 11:32:41 | database migration started 
+[SYS] 2025/10/11 - 11:32:42 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/11 - 11:32:42 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/11 - 11:32:42 | New API v0.0.0 started 
+[SYS] 2025/10/11 - 11:32:42 | running in debug mode 
+[SYS] 2025/10/11 - 11:32:42 | memory cache enabled 
+[SYS] 2025/10/11 - 11:32:42 | sync frequency: 60 seconds 
+[SYS] 2025/10/11 - 11:32:42 | channels synced from database 
+[SYS] 2025/10/11 - 11:32:42 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 11:32:42 | 保存数据看板数据成功，共保存0条数据 

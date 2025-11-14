@@ -1,0 +1,5 @@
+[SYS] 2025/11/05 - 14:30:06 | initializing token encoders 
+[SYS] 2025/11/05 - 14:30:06 | token encoders initialized 
+[SYS] 2025/11/05 - 14:30:06 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/05 - 14:30:06 | database migration started 
+[FATAL] 2025/11/05 - 14:30:06 | [failed to initialize database: invalid DDL, unbalanced brackets] 

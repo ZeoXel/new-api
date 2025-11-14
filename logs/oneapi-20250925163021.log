@@ -1,0 +1,7 @@
+[SYS] 2025/09/25 - 16:30:21 | initializing token encoders 
+[SYS] 2025/09/25 - 16:30:21 | token encoders initialized 
+[SYS] 2025/09/25 - 16:30:21 | using PostgreSQL as database 
+[SYS] 2025/09/25 - 16:30:21 | database migration started 
+[FATAL] 2025/09/25 - 16:30:41 | [failed to initialize database: failed to connect to `user=postgres database=postgres`:
+	198.18.2.127:5432 (db.fzyczflyzogkxacjupjz.supabase.co): tls error: timeout: context deadline exceeded
+	198.18.2.127:5432 (db.fzyczflyzogkxacjupjz.supabase.co): dial error: timeout: context deadline exceeded] 

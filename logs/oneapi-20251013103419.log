@@ -1,0 +1,428 @@
+[SYS] 2025/10/13 - 10:34:19 | initializing token encoders 
+[SYS] 2025/10/13 - 10:34:19 | token encoders initialized 
+[SYS] 2025/10/13 - 10:34:19 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/13 - 10:34:19 | database migration started 
+[SYS] 2025/10/13 - 10:34:19 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/13 - 10:34:19 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/13 - 10:34:19 | New API v0.0.0 started 
+[SYS] 2025/10/13 - 10:34:19 | running in debug mode 
+[SYS] 2025/10/13 - 10:34:19 | memory cache enabled 
+[SYS] 2025/10/13 - 10:34:19 | sync frequency: 60 seconds 
+[SYS] 2025/10/13 - 10:34:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:34:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:34:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 10:34:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:34:34 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:34:35 | 202510131034355304550007UQ0ogD5 | 204 |      16.417µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[INFO] 2025/10/13 - 10:34:36 | 202510131034355317710007GqRNe8X | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:34:36 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 10:34:36 | 202510131034355317710007GqRNe8X | 200 |  715.656208ms |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[GIN] 2025/10/13 - 10:34:41 | 20251013103441451551000zYrh4EKd | 204 |      63.792µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[INFO] 2025/10/13 - 10:34:42 | 20251013103441452345000yvW4LGXp | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:34:42 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 10:34:42 | 20251013103441452345000yvW4LGXp | 200 |  680.017375ms |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[GIN] 2025/10/13 - 10:34:44 | 20251013103444169602000rMiJZE54 | 204 |       7.708µs |             ::1 | OPTIONS /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[INFO] 2025/10/13 - 10:34:45 | 20251013103444171444000KoQVxVcg | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":1000,"content":"Bltcy透传（runway/runway），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:34:45 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:34:45 | 20251013103444171444000KoQVxVcg | 200 |  1.359578209s |             ::1 |     GET /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[GIN] 2025/10/13 - 10:34:47 | 202510131034473374480001Dr1e1yX | 204 |       6.958µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[INFO] 2025/10/13 - 10:34:48 | 20251013103447338245000d5nyIbNz | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:34:48 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:34:48 | 20251013103447338245000d5nyIbNz | 200 |  726.616667ms |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[SYS] 2025/10/13 - 10:34:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:34:49 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:34:51 | 20251013103451336396000zz0fuVJo | 204 |        38.5µs |             ::1 | OPTIONS /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[GIN] 2025/10/13 - 10:34:53 | 20251013103453270954000VYVg4ZyE | 204 |      38.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[INFO] 2025/10/13 - 10:34:54 | 20251013103451337694000MKs20M0C | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":1000,"content":"Bltcy透传（runway/runway），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:34:54 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:34:54 | 20251013103451337694000MKs20M0C | 304 |  2.771531833s |             ::1 |     GET /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[GIN] 2025/10/13 - 10:34:58 | 20251013103453272026000eFFTZvlr | 500 |  5.034085625s |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[GIN] 2025/10/13 - 10:34:59 | 20251013103459915224000xQR8xj9K | 204 |      39.166µs |             ::1 | OPTIONS /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[INFO] 2025/10/13 - 10:35:02 | 20251013103459917070000iuAiquuA | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":1000,"content":"Bltcy透传（runway/runway），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:35:02 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:35:02 | 20251013103459917070000iuAiquuA | 304 |   2.48852525s |             ::1 |     GET /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[SYS] 2025/10/13 - 10:35:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:35:04 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:35:08 | 20251013103508212318000G1u6RUbA | 204 |      36.625µs |             ::1 | OPTIONS /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[INFO] 2025/10/13 - 10:35:10 | 2025101310350821361600095g0jft8 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":1000,"content":"Bltcy透传（runway/runway），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:35:10 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:35:10 | 2025101310350821361600095g0jft8 | 304 |  2.387034833s |             ::1 |     GET /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[GIN] 2025/10/13 - 10:35:12 | 20251013103512294910000nbNZr4Q1 | 204 |      13.334µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[INFO] 2025/10/13 - 10:35:13 | 20251013103512296128000DPQ5DKRi | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:35:13 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:35:13 | 20251013103512296128000DPQ5DKRi | 200 |  1.068219875s |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[GIN] 2025/10/13 - 10:35:16 | 20251013103516406081000pNGDfcBa | 204 |      20.708µs |             ::1 | OPTIONS /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[INFO] 2025/10/13 - 10:35:17 | 20251013103516407794000U0fY7Kld | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":1000,"content":"Bltcy透传（runway/runway），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:35:17 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:35:17 | 20251013103516407794000U0fY7Kld | 200 |  929.336166ms |             ::1 |     GET /runwayml/v1/tasks/3c1ef34b-4f2a-4320-b084-f2c4eaf897e6
+[GIN] 2025/10/13 - 10:35:18 | 20251013103518568752000REgetlcv | 204 |        8.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[SYS] 2025/10/13 - 10:35:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:35:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:35:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:35:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:35:19 | channels synced from database 
+[INFO] 2025/10/13 - 10:35:19 | 202510131035185695860004x0tuXG3 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:35:19 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:35:19 | 202510131035185695860004x0tuXG3 | 200 |  734.148291ms |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[GIN] 2025/10/13 - 10:35:24 | 202510131035245078930004N17mFL2 | 204 |      47.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806540051621875787
+[INFO] 2025/10/13 - 10:35:25 | 20251013103524508907000Cw3dNxOz | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:35:25 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:35:25 | 20251013103524508907000Cw3dNxOz | 200 |  877.784042ms |             ::1 |     GET /kling/v1/videos/image2video/806540051621875787
+[SYS] 2025/10/13 - 10:35:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:35:34 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:35:47 | 20251013103547437897000hJA9FBcr | 200 |    1.318959ms |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/13 - 10:35:47 | 20251013103547437980000g70f8fJV | 200 |     3.34825ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/13 - 10:35:47 | 20251013103547437851000d9vEqdJX | 200 |    7.026917ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/13 - 10:35:47 | 20251013103547971393000leh0KSyE | 200 |     507.167µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:35:47 | 20251013103547971447000kK9fhFhG | 200 |     682.833µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760236547&end_timestamp=1760326547&default_time=hour
+[GIN] 2025/10/13 - 10:35:47 | 20251013103547985636000NjFvKB53 | 200 |     389.916µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 10:35:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:35:49 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:35:53 | 20251013103553728194000ZHgmsidy | 200 |     369.958µs |             ::1 |     GET /console
+[GIN] 2025/10/13 - 10:35:53 | 202510131035537499280004F48K6kt | 200 |     354.333µs |             ::1 |     GET /.well-known/appspecific/com.chrome.devtools.json
+[GIN] 2025/10/13 - 10:35:53 | 20251013103553959321000aICtdtlV | 200 |         732µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:35:53 | 20251013103553959710000GdVsK5wa | 200 |     362.166µs |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 10:35:54 | 2025101310355416528400034rE808s | 200 |     488.458µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:35:54 | 20251013103554231311000fC8MeysP | 200 |      458.25µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:35:54 | 20251013103554233747000ERo4re88 | 200 |     394.917µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760236554&end_timestamp=1760326554&default_time=hour
+[GIN] 2025/10/13 - 10:35:54 | 20251013103554261954000uqPCoZom | 200 |     196.542µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 10:36:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:36:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:36:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:36:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:36:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:36:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:36:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:36:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:36:34 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635249608000Xrwxskg1 | 200 |     231.708µs |             ::1 |     GET /console
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635271430000wwBzPW5p | 200 |     339.125µs |             ::1 |     GET /.well-known/appspecific/com.chrome.devtools.json
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635281016000x7Mztv13 | 200 |    7.608875ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635292578000dZWwBt9z | 200 |       1.305ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635280770000IbfpRhhl | 200 |    14.13025ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635295100000iiaqu1Pd | 200 |    2.980792ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635280088000epaEf0jF | 200 |   20.712042ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635280447000zq6zaR9g | 200 |     26.7945ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635280825000EPc5PW9M | 200 |   66.952459ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635280551000azGFWFaI | 200 |  135.699209ms |             ::1 |     GET /assets/index-D13wZOBt.js
+[GIN] 2025/10/13 - 10:36:35 | 202510131036355184770002t1Iuxxa | 200 |     444.167µs |             ::1 |     GET /assets/IllustrationConstruction-BfOYqVqj.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635520155000inkj5esR | 200 |         838µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635521230000RQGEdlzz | 200 |     983.959µs |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635518417000VFdeaWW9 | 200 |     48.9275ms |             ::1 |     GET /assets/index-CdB8jS5p.js
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635526341000Wz0TVOWk | 200 |   141.14375ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635697932000uC8g1r8X | 200 |     655.791µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635760437000WuivyqKY | 200 |         463µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635761717000OLcO3ih3 | 200 |     389.125µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760236595&end_timestamp=1760326595&default_time=hour
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635745643000guRvgQyv | 200 |   39.405167ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/13 - 10:36:35 | 20251013103635792042000qGjaeOWo | 200 |     197.375µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 10:36:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:36:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:37:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:37:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:37:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:37:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:37:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:37:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:37:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:37:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:37:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:37:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:37:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:38:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:38:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:38:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:38:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:38:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:38:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:38:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:38:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:38:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:38:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:38:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:39:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:39:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:39:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:39:19 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/10/13 - 10:39:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:39:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:39:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:39:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:39:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:39:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:39:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:39:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:39:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:40:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:40:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:40:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:40:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:40:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:40:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:40:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:40:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:40:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:40:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:40:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:41:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:41:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:41:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:41:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:41:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:41:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:41:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:41:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:41:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:41:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:41:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:42:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:42:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:42:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:42:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:42:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:42:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:42:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:42:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:42:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:42:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:42:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:43:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:43:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:43:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:43:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:43:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:43:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:43:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:43:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:43:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:43:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:43:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:44:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:44:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:44:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:44:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 10:44:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:44:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:44:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:44:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:44:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:44:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:44:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:44:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:44:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:45:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:45:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:45:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:45:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:45:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:45:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:45:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:45:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:45:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:45:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:45:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:46:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:46:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:46:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:46:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:46:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:46:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:46:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:46:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:46:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:46:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:46:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:47:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:47:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:47:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:47:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:47:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:47:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:47:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:47:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:47:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:47:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:47:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:48:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:48:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:48:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:48:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:48:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:48:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:48:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:48:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:48:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:48:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:48:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:49:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:49:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:49:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:49:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 10:49:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:49:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:49:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:49:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:49:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:49:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:49:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:49:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:49:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:50:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:50:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:50:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:50:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:50:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:50:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:50:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:50:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:50:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:50:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:50:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:51:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:51:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:51:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:51:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:51:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:51:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:51:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:51:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:51:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:51:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:51:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:52:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:52:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:52:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:52:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:52:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:52:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:52:19 | channels synced from database 
+[GIN] 2025/10/13 - 10:52:29 | 20251013105229546588000oHK0XK1A | 200 |         107µs |             ::1 |     GET /api/status
+[SYS] 2025/10/13 - 10:52:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:52:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:52:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:52:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:53:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:53:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:53:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:53:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:53:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:53:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:53:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:53:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:53:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:53:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:53:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:54:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:54:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:54:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:54:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 10:54:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:54:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:54:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:54:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:54:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:54:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:54:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:54:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:54:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:55:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:55:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:55:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:55:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:55:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:55:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:55:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:55:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:55:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:55:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:55:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:56:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:56:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:56:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:56:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:56:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:56:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:56:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:56:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:56:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:56:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:56:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:57:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:57:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:57:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:57:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:57:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:57:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:57:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:57:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:57:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:57:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:57:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:58:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:58:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:58:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:58:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:58:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:58:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:58:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:58:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:58:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:58:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:58:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:59:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:59:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:59:19 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:59:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 10:59:19 | syncing options from database 
+[SYS] 2025/10/13 - 10:59:19 | syncing channels from database 
+[SYS] 2025/10/13 - 10:59:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:59:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:59:19 | channels synced from database 
+[SYS] 2025/10/13 - 10:59:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:59:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:59:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:59:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:00:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:00:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:00:19 | syncing options from database 
+[SYS] 2025/10/13 - 11:00:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:00:19 | syncing channels from database 
+[SYS] 2025/10/13 - 11:00:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:00:19 | channels synced from database 
+[SYS] 2025/10/13 - 11:00:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:00:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:00:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:00:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:01:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:01:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:01:19 | syncing options from database 
+[SYS] 2025/10/13 - 11:01:19 | syncing channels from database 
+[SYS] 2025/10/13 - 11:01:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:01:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:01:19 | channels synced from database 
+[SYS] 2025/10/13 - 11:01:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:01:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:01:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:01:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:02:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:02:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:02:19 | syncing options from database 
+[SYS] 2025/10/13 - 11:02:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:02:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:02:19 | syncing channels from database 
+[SYS] 2025/10/13 - 11:02:19 | channels synced from database 
+[SYS] 2025/10/13 - 11:02:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:02:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:02:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:02:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:03:04 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:03:04 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:03:19 | syncing options from database 
+[SYS] 2025/10/13 - 11:03:19 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:03:19 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:03:19 | syncing channels from database 
+[SYS] 2025/10/13 - 11:03:19 | channels synced from database 
+[SYS] 2025/10/13 - 11:03:34 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:03:34 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:03:49 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 11:03:49 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 11:04:04 | 任务进度轮询开始 

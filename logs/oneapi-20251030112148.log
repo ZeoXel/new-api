@@ -1,0 +1,158 @@
+[SYS] 2025/10/30 - 11:21:48 | initializing token encoders 
+[SYS] 2025/10/30 - 11:21:48 | token encoders initialized 
+[SYS] 2025/10/30 - 11:21:48 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/30 - 11:21:49 | database migration started 
+[SYS] 2025/10/30 - 11:21:49 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/10/30 - 11:21:49 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/30 - 11:21:49 | New API v0.0.0 started 
+[SYS] 2025/10/30 - 11:21:49 | running in debug mode 
+[SYS] 2025/10/30 - 11:21:49 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 11:21:49 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/10/30 - 11:22:00 | 20251030112200590573000dYQ73Zwl | 200 |     512.166µs |             ::1 |     GET /api/status
+[SYS] 2025/10/30 - 11:22:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:22:04 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:22:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:22:19 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:22:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:22:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:22:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:22:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:22:49 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:23:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:23:04 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:23:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:23:19 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:23:19 | 202510301123196446020007D551Egm | 200 |    1.422917ms |             ::1 |     GET /console/setting?tab=ratio
+[GIN] 2025/10/30 - 11:23:19 | 20251030112319907247000VoGYKGdu | 200 |    2.932375ms |             ::1 |     GET /api/status
+[GIN] 2025/10/30 - 11:23:19 | 20251030112319907202000gOvlHeNm | 200 |    7.518041ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 11:23:20 | 202510301123201576030008Z8sfdZi | 200 |    1.133083ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/30 - 11:23:20 | 20251030112320157604000CgTbFf42 | 200 |    3.287666ms |             ::1 |     GET /api/channel/models_enabled
+[GIN] 2025/10/30 - 11:23:20 | 20251030112320177351000Yooc9lvs | 200 |     554.375µs |             ::1 |     GET /api/user/self
+[SYS] 2025/10/30 - 11:23:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:23:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:23:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:23:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:23:49 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:24:01 | 20251030112401465553000Xhd0IGrE | 204 |        31.5µs |             ::1 | OPTIONS /v1/video/generations
+[ERR] 2025/10/30 - 11:24:01 | 20251030112401467240000reyfyiC0 | user 0 | 无效的令牌 
+[GIN] 2025/10/30 - 11:24:01 | 20251030112401467240000reyfyiC0 | 401 |    1.646041ms |             ::1 |    POST /v1/video/generations
+[SYS] 2025/10/30 - 11:24:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:24:04 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:24:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:24:19 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:24:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:24:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:24:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:24:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:24:49 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:24:58 | 20251030112458876682000xpMvCCKt | 200 |   15.390875ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/30 - 11:24:58 | 20251030112458876675000QTpB3wDt | 200 |   15.345292ms |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/30 - 11:24:58 | 202510301124588766840005e5uWiMF | 200 |   19.507917ms |             ::1 |     GET /api/user/models
+[SYS] 2025/10/30 - 11:25:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:25:04 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:25:10 | 202510301125106753330003MRbNFEb | 204 |    1.175708ms |             ::1 | OPTIONS /v1/video/generations
+[SYS] 2025/10/30 - 11:25:10 | model price not found: viduq2-turbo 
+[SYS] 2025/10/30 - 11:25:10 | [Vidu计费] 模型=viduq2-turbo, 时长=2s, 固定价格=$0.1000 (未配置duration) 
+[INFO] 2025/10/30 - 11:25:11 | 202510301125106781870004YW7qPIp | record consume log: userId=1, params={"channel_id":1,"prompt_tokens":0,"completion_tokens":0,"model_name":"viduq2-turbo","token_name":"1","quota":50000,"content":"模型固定价格 0.10，分组倍率 1.00，操作 generate","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"group_ratio":1,"model_price":0.1}} 
+[GIN] 2025/10/30 - 11:25:11 | 202510301125106781870004YW7qPIp | 200 |  578.407375ms |             ::1 |    POST /v1/video/generations
+[GIN] 2025/10/30 - 11:25:11 | 20251030112511302149000ZvVXIlon | 204 |       6.708µs |             ::1 | OPTIONS /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:11 | 20251030112511302598000xiiC3OsO | 200 |    3.113791ms |             ::1 |     GET /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:16 | 2025103011251631108000062jGwYdr | 204 |      20.458µs |             ::1 | OPTIONS /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:16 | 20251030112516311741000hQaVYXlG | 200 |       1.372ms |             ::1 |     GET /v1/video/generations/881320566169047040
+[SYS] 2025/10/30 - 11:25:19 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 11:25:19 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 11:25:19 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:25:21 | 20251030112521317624000Tr0yXCXL | 204 |      19.958µs |             ::1 | OPTIONS /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:21 | 20251030112521318260000xCWAhU4g | 200 |     940.709µs |             ::1 |     GET /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:26 | 20251030112526324012000etbE2grL | 204 |      37.542µs |             ::1 | OPTIONS /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:26 | 20251030112526325148000fYoHjdTz | 200 |    1.639625ms |             ::1 |     GET /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:31 | 2025103011253134311400061xzoOy1 | 204 |      84.416µs |             ::1 | OPTIONS /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:31 | 20251030112531346556000fubKb3RF | 200 |    3.330417ms |             ::1 |     GET /v1/video/generations/881320566169047040
+[SYS] 2025/10/30 - 11:25:34 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 11:25:34 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 11:25:34 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:25:36 | 20251030112536611367000hRLSRCwh | 204 |      47.833µs |             ::1 | OPTIONS /v1/video/generations/881320566169047040
+[GIN] 2025/10/30 - 11:25:36 | 20251030112536612872000qb18mgBw | 200 |       2.268ms |             ::1 |     GET /v1/video/generations/881320566169047040
+[SYS] 2025/10/30 - 11:25:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:25:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:25:49 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:25:56 | 202510301125562829520003feqnACv | 200 |    3.273875ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798356&channel=&group=
+[GIN] 2025/10/30 - 11:25:56 | 202510301125563168810002JjTwJEt | 200 |     697.334µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798356&channel=&group=
+[SYS] 2025/10/30 - 11:26:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:26:04 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:26:05 | 20251030112605936364000Sot3Vo6S | 200 |     872.125µs |             ::1 |     GET /console/log
+[GIN] 2025/10/30 - 11:26:05 | 20251030112605954213000zYkhmWWa | 200 |    7.642667ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/10/30 - 11:26:05 | 202510301126059649190009Khb24FX | 200 |     1.80425ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/10/30 - 11:26:05 | 20251030112605953022000TiW8uSGs | 200 |   14.614792ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/10/30 - 11:26:05 | 20251030112605969146000PlZ1dpcu | 200 |    2.435167ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/10/30 - 11:26:05 | 20251030112605954045000wQmVc3kl | 200 |    23.53375ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/10/30 - 11:26:05 | 20251030112605954183000efz1g6nb | 200 |    27.65125ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/10/30 - 11:26:06 | 202510301126059530220009urwViYr | 200 |   68.158084ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/10/30 - 11:26:06 | 20251030112605952885000xBReBRfJ | 200 |  166.874167ms |             ::1 |     GET /assets/index-sGynoyqR.js
+[GIN] 2025/10/30 - 11:26:06 | 20251030112606180437000lpmPVDEx | 200 |      360.25µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 11:26:06 | 20251030112606184629000TyOINSzu | 200 |     640.542µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798366&channel=&group=
+[GIN] 2025/10/30 - 11:26:06 | 20251030112606183668000wEM7BXM0 | 200 |       5.513ms |             ::1 |     GET /api/status
+[GIN] 2025/10/30 - 11:26:06 | 202510301126061835000007Wxagh0G | 200 |  243.826417ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/30 - 11:26:06 | 202510301126064383250007blzl3q4 | 200 |    2.160209ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798366&channel=&group=
+[GIN] 2025/10/30 - 11:26:06 | 20251030112606446221000IbKmlfas | 200 |     467.083µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 11:26:06 | 20251030112606465550000KXFNUoyK | 200 |    9.365542ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/30 - 11:26:09 | 20251030112609117843000o18rhXqo | 200 |    1.745292ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1759202769000&end_timestamp=1761798369000
+[GIN] 2025/10/30 - 11:26:09 | 20251030112609703042000VfwxnT4H | 200 |         833µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798369&channel=&group=
+[GIN] 2025/10/30 - 11:26:09 | 20251030112609707802000UTfMT3pL | 200 |     512.666µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798369&channel=&group=
+[GIN] 2025/10/30 - 11:26:10 | 20251030112610151546000zBSV2YiE | 200 |     634.292µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1759202770000&end_timestamp=1761798370000
+[GIN] 2025/10/30 - 11:26:10 | 20251030112610540732000U5EzP72N | 200 |     692.542µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761798370
+[GIN] 2025/10/30 - 11:26:11 | 2025103011261183400006EVLDTll | 200 |     1.21825ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798370&channel=&group=
+[GIN] 2025/10/30 - 11:26:11 | 20251030112611198530007L2luLOf | 200 |     445.167µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798370&channel=&group=
+[GIN] 2025/10/30 - 11:26:15 | 20251030112615660410000viRVWGFB | 200 |    1.451917ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/10/30 - 11:26:15 | 20251030112615660353000NqrdEgtv | 200 |     1.52325ms |             ::1 |     GET /api/models/?p=1&page_size=10
+[GIN] 2025/10/30 - 11:26:16 | 20251030112616563594000tsRyR43q | 200 |     114.083µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/30 - 11:26:16 | 202510301126165635170005yRIK1p2 | 200 |    1.161791ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/30 - 11:26:16 | 20251030112616564386000lYGltYYo | 200 |     637.416µs |             ::1 |     GET /api/models
+[GIN] 2025/10/30 - 11:26:16 | 20251030112616564291000TODxsjPm | 200 |    2.431166ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/10/30 - 11:26:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:26:19 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 11:26:19 | 202510301126195581840001vWnvzAE | 200 |     128.417µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/30 - 11:26:19 | 20251030112619558133000kYWbHbmh | 200 |     768.958µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/30 - 11:26:19 | 20251030112619558226000IneWI5pn | 200 |     707.167µs |             ::1 |     GET /api/channel/1
+[GIN] 2025/10/30 - 11:26:19 | 20251030112619572860000SBoQWt6j | 200 |     774.417µs |             ::1 |     GET /api/prefill_group/?type=model
+[GIN] 2025/10/30 - 11:26:23 | 20251030112623915313000MWiQ7ueG | 200 |     739.791µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/30 - 11:26:25 | 20251030112625355686000p8mB7VsZ | 200 |     821.667µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/30 - 11:26:25 | 20251030112625355462000oHG69nDP | 200 |    2.620917ms |             ::1 |     GET /api/channel/models_enabled
+[GIN] 2025/10/30 - 11:26:32 | 20251030112632702689000c7BoP4dn | 200 |     679.583µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798392&channel=&group=
+[GIN] 2025/10/30 - 11:26:32 | 20251030112632720450000xcsOpTdK | 200 |      410.75µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761798392&channel=&group=
+[SYS] 2025/10/30 - 11:26:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:26:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:26:49 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 11:26:49 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 11:26:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:26:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:26:49 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:27:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:27:04 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:27:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:27:19 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:27:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:27:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:27:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:27:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:27:49 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:28:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:28:04 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:28:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:28:19 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:28:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:28:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:28:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:28:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:28:49 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:29:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:29:04 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:29:19 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:29:19 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:29:34 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:29:34 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:29:49 | syncing options from database 
+[SYS] 2025/10/30 - 11:29:49 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:29:49 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 11:30:04 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 11:30:04 | 任务进度轮询完成 

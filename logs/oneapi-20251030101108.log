@@ -1,0 +1,5 @@
+[SYS] 2025/10/30 - 10:11:08 | initializing token encoders 
+[SYS] 2025/10/30 - 10:11:08 | token encoders initialized 
+[SYS] 2025/10/30 - 10:11:08 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/30 - 10:11:08 | database migration started 
+[FATAL] 2025/10/30 - 10:11:08 | [failed to initialize database: invalid DDL] 

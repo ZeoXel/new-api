@@ -1,0 +1,7 @@
+[SYS] 2025/09/25 - 15:01:39 | initializing token encoders 
+[SYS] 2025/09/25 - 15:01:39 | token encoders initialized 
+[SYS] 2025/09/25 - 15:01:39 | using PostgreSQL as database 
+[SYS] 2025/09/25 - 15:01:39 | database migration started 
+[FATAL] 2025/09/25 - 15:02:02 | [failed to initialize database: failed to connect to `user=postgres.fzyczflyzogkxacjupjz database=postgres`:
+	198.18.2.129:5432 (aws-0-ap-southeast-1.pooler.supabase.com): server error: FATAL: Tenant or user not found (SQLSTATE XX000)
+	198.18.2.129:5432 (aws-0-ap-southeast-1.pooler.supabase.com): server error: FATAL: Tenant or user not found (SQLSTATE XX000)] 

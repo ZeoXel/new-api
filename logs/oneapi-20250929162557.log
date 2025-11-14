@@ -1,0 +1,13 @@
+[SYS] 2025/09/29 - 16:25:57 | initializing token encoders 
+[SYS] 2025/09/29 - 16:25:57 | token encoders initialized 
+[SYS] 2025/09/29 - 16:25:57 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/29 - 16:25:57 | database migration started 
+[SYS] 2025/09/29 - 16:25:57 | system is not initialized and no root user exists 
+[SYS] 2025/09/29 - 16:25:57 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/29 - 16:25:57 | New API v0.0.0 started 
+[SYS] 2025/09/29 - 16:25:57 | memory cache enabled 
+[SYS] 2025/09/29 - 16:25:57 | sync frequency: 60 seconds 
+[SYS] 2025/09/29 - 16:25:57 | channels synced from database 
+[SYS] 2025/09/29 - 16:25:57 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:25:57 | 保存数据看板数据成功，共保存0条数据 
+[FATAL] 2025/09/29 - 16:25:57 | [failed to start HTTP server: listen tcp :3000: bind: address already in use] 

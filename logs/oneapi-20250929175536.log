@@ -1,0 +1,667 @@
+[SYS] 2025/09/29 - 17:55:36 | initializing token encoders 
+[SYS] 2025/09/29 - 17:55:36 | token encoders initialized 
+[SYS] 2025/09/29 - 17:55:36 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/29 - 17:55:36 | database migration started 
+[SYS] 2025/09/29 - 17:55:36 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/09/29 - 17:55:36 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/29 - 17:55:36 | New API v0.0.0 started 
+[SYS] 2025/09/29 - 17:55:36 | memory cache enabled 
+[SYS] 2025/09/29 - 17:55:36 | sync frequency: 60 seconds 
+[SYS] 2025/09/29 - 17:55:36 | channels synced from database 
+[SYS] 2025/09/29 - 17:55:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:55:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:55:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:55:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:56:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:56:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:56:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:56:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:56:36 | syncing channels from database 
+[SYS] 2025/09/29 - 17:56:36 | syncing options from database 
+[SYS] 2025/09/29 - 17:56:36 | channels synced from database 
+[SYS] 2025/09/29 - 17:56:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:56:36 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647733093000M9AnQo1Y | 200 |    3.839666ms |             ::1 |     GET /console/channel
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647761171000k0WtPoW3 | 200 |   17.668083ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647781173000aWrRedPe | 200 |    5.469375ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647791249000c0B1p0gs | 200 |    4.548166ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647760557000WDS7An1C | 200 |   38.745917ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647761089000O2JGRmqf | 200 |   64.463792ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647761234000qeISfKkw | 200 |   70.280583ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/09/29 - 17:56:47 | 20250929175647761266000VVRR8ABV | 200 |  120.653875ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/09/29 - 17:56:47 | 2025092917564775458400077ZDGNN8 | 200 |    188.1785ms |             ::1 |     GET /assets/index-CxXPNU0-.js
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648108566000Bf4ewn18 | 401 |     903.792µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:56:48 | 2025092917564810856600076Xe9bvL | 401 |      1.0575ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648109392000bOso6nec | 401 |     332.291µs |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 17:56:48 | 202509291756481094950002u1vmzeR | 401 |     266.208µs |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648108604000YOV3jKEa | 401 |    1.443375ms |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648109608000NHFsXdtM | 200 |     456.333µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648116808000VKz9XLJi | 200 |  230.087334ms |             ::1 |     GET /logo.png
+[GIN] 2025/09/29 - 17:56:48 | 202509291756483472200004REgU72F | 200 |     134.917µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648350796000tCF22PDb | 200 |     260.834µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648356703000w4C1oVRg | 200 |     217.666µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648359169000ZIMt7ywc | 200 |     261.083µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648360818000AR2IjvcN | 200 |     128.666µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:56:48 | 202509291756483643640003f6NLGtx | 401 |     212.167µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648364434000E48zXOSW | 200 |     159.625µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:56:48 | 20250929175648432503000XlYfeWQo | 200 |     246.917µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 17:56:49 | 20250929175649607547000q4d6Q18d | 200 |   81.142875ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2025/09/29 - 17:56:49 | 20250929175649715823000eNSvoxso | 200 |    1.901291ms |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:56:49 | 20250929175649765293000K7wpmZBq | 200 |     334.625µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:56:49 | 202509291756497663760007asvPhTq | 200 |    1.519458ms |             ::1 |     GET /api/data/?username=&start_timestamp=1759053409&end_timestamp=1759143409&default_time=hour
+[GIN] 2025/09/29 - 17:56:49 | 20250929175649797292000oYdVIkW4 | 200 |     325.416µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/09/29 - 17:56:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:56:51 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 17:56:52 | 20250929175652897845000ExjVz6R1 | 200 |     338.709µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:56:52 | 20250929175652897860000FyntifdI | 200 |     465.375µs |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 17:56:52 | 20250929175652897727000XZ2ZZmRt | 200 |     963.625µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:56:52 | 20250929175652897877000AIfPrPW7 | 200 |    5.017041ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/29 - 17:56:54 | 20250929175654202618000QvUZayE9 | 200 |     176.458µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:56:54 | 20250929175654202691000YgkJ3d49 | 200 |     488.959µs |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:56:54 | 20250929175654202487000jHkFmNbD | 200 |     796.208µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:56:54 | 20250929175654219345000wiNAH7lv | 200 |     1.93175ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:56:56 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:56:56.845194+08:00, FirstResponse: 2025-09-29T17:56:55.845194+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://cozecdn.likele-zoom.workers.dev", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:56:56 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:56:56 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:56:56 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:56:56 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:56:56 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:56:56 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:56:56 | DEBUG: Loading env var 'COZE_PRIVATE_KEY', length: 1703, starts with '-----BEGIN': true 
+[SYS] 2025/09/29 - 17:56:56 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:56:56 | DEBUG: Original private key length: 1703, first 50 chars: -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w 
+[SYS] 2025/09/29 - 17:56:56 | DEBUG: Cleaned private key length: 1624 
+[SYS] 2025/09/29 - 17:56:56 | DEBUG: PEM block parsed successfully 
+[SYS] 2025/09/29 - 17:56:56 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 17:56:56 | Sending OAuth token request to: https://cozecdn.likele-zoom.workers.dev/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 17:56:57 | OAuth response status: 200, body: {"access_token":"czs_q1jQRnpI4SzTduv0Uyqv7UKtFPfesIyTF7hCXTNdCBo1Lrpf8psrgKKPI35fzyw3h","expires_in":1759140717,"token_type":"Bearer"} 
+[GIN] 2025/09/29 - 17:56:57 | 20250929175656844098000nOdeTtJR | 200 |  1.124967958s |             ::1 |     GET /api/channel/test/6?model=
+[GIN] 2025/09/29 - 17:57:00 | 20250929175700541758000QvMCedw9 | 200 |     887.375µs |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:57:00 | 20250929175700556195000Lc2KZWdi | 200 |     352.875µs |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:57:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:57:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:57:09 | channels synced from database 
+[GIN] 2025/09/29 - 17:57:09 | 20250929175709544058000ZV3n55zT | 200 |   14.126167ms |             ::1 |     PUT /api/channel/
+[GIN] 2025/09/29 - 17:57:09 | 20250929175709562073000rPMUKtQH | 200 |     2.35425ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 17:57:10 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:57:10.653097+08:00, FirstResponse: 2025-09-29T17:57:09.653097+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:57:10 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:57:10 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:57:10 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:57:10 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:57:10 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:57:10 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:57:10 | DEBUG: Loading env var 'COZE_PRIVATE_KEY', length: 1703, starts with '-----BEGIN': true 
+[SYS] 2025/09/29 - 17:57:10 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:57:10 | DEBUG: Original private key length: 1703, first 50 chars: -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w 
+[SYS] 2025/09/29 - 17:57:10 | DEBUG: Cleaned private key length: 1624 
+[SYS] 2025/09/29 - 17:57:10 | DEBUG: PEM block parsed successfully 
+[SYS] 2025/09/29 - 17:57:10 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 17:57:10 | Sending OAuth token request to: https://api.coze.cn/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 17:57:10 | OAuth response status: 200, body: {"access_token":"czs_qMe2gRCQaNW7R0i7rG1JvNKvPQCU7TOID4gLOsR3qi4S9NJkhZOzvdspocQ1YmJxm","expires_in":1759140730,"token_type":"Bearer"} 
+[SYS] 2025/09/29 - 17:57:10 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:57:10 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/29 - 17:57:10 | Coze工作流响应: {"code":4200,"msg":"Workflow not found. Please verify the workflow exists.","detail":{"logid":"2025092917571016036B7A098AF5A7EB41"}} 
+[SYS] 2025/09/29 - 17:57:10 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/29 - 17:57:10 | SYSTEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"模型测试","quota":2,"content":"模型测试","token_id":0,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[SYS] 2025/09/29 - 17:57:10 | testing channel #6, response: 
+{"id":"chatcmpl-","object":"","created":1759139830,"model":"coze-workflow","choices":[{"index":0,"message":{"role":"assistant","content":"Workflow not found. Please verify the workflow exists."},"finish_reason":"stop"}],"usage":{"prompt_tokens":10,"completion_tokens":20,"total_tokens":30,"prompt_tokens_details":{"cached_tokens":0,"text_tokens":0,"audio_tokens":0,"image_tokens":0},"completion_tokens_details":{"text_tokens":0,"audio_tokens":0,"reasoning_tokens":0},"input_tokens":0,"output_tokens":0,"input_tokens_details":null}} 
+[GIN] 2025/09/29 - 17:57:10 | 20250929175710651807000PpWN1Xqd | 200 |  268.839291ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 17:57:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:57:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:57:36 | syncing options from database 
+[SYS] 2025/09/29 - 17:57:36 | syncing channels from database 
+[SYS] 2025/09/29 - 17:57:36 | channels synced from database 
+[SYS] 2025/09/29 - 17:57:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:57:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:57:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:57:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:58:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:58:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:58:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:58:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:58:36 | syncing options from database 
+[SYS] 2025/09/29 - 17:58:36 | syncing channels from database 
+[SYS] 2025/09/29 - 17:58:36 | channels synced from database 
+[SYS] 2025/09/29 - 17:58:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:58:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:58:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:58:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:59:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:59:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:59:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:59:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:59:36 | syncing options from database 
+[SYS] 2025/09/29 - 17:59:36 | syncing channels from database 
+[SYS] 2025/09/29 - 17:59:36 | channels synced from database 
+[SYS] 2025/09/29 - 17:59:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:59:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:59:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:59:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:00:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:00:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:00:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:00:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:00:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:00:36 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/09/29 - 18:00:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:00:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:00:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:00:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:00:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:00:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:00:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:01:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:01:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:01:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:01:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:01:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:01:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:01:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:01:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:01:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:01:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:01:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:02:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:02:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:02:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:02:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:02:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:02:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:02:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:02:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:02:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:02:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:02:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:03:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:03:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:03:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:03:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:03:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:03:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:03:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:03:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:03:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:03:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:03:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:04:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:04:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:04:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:04:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:04:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:04:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:04:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:04:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:04:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:04:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:04:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:05:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:05:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:05:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:05:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:05:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:05:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:05:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:05:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:05:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:05:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:05:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:05:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:05:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:06:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:06:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:06:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:06:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:06:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:06:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:06:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:06:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:06:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:06:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:06:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:07:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:07:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:07:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:07:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:07:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:07:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:07:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:07:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:07:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:07:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:07:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:08:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:08:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:08:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:08:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:08:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:08:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:08:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:08:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:08:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:08:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:08:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:09:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:09:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:09:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:09:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:09:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:09:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:09:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:09:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:09:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:09:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:09:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:10:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:10:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:10:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:10:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:10:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:10:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:10:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:10:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:10:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:10:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:10:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:10:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:10:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:11:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:11:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:11:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:11:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:11:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:11:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:11:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:11:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:11:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:11:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:11:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:12:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:12:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:12:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:12:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:12:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:12:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:12:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:12:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:12:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:12:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:12:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:13:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:13:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:13:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:13:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:13:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:13:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:13:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:13:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:13:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:13:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:13:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:14:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:14:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:14:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:14:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:14:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:14:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:14:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:14:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:14:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:14:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:14:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:15:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:15:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:15:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:15:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:15:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:15:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:15:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:15:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:15:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:15:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:15:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:15:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:15:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:16:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:16:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:16:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:16:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:16:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:16:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:16:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:16:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:16:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:16:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:16:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:17:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:17:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:17:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:17:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:17:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:17:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:17:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:17:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:17:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:17:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:17:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:18:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:18:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:18:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:18:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:18:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:18:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:18:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:18:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:18:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:18:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:18:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:19:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:19:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:19:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:19:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:19:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:19:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:19:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:19:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:19:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:19:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:19:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:20:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:20:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:20:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:20:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:20:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:20:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:20:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:20:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:20:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:20:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:20:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:20:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:20:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:21:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:21:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:21:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:21:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:21:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:21:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:21:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:21:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:21:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:21:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:21:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:22:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:22:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:22:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:22:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:22:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:22:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:22:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:22:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:22:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:22:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:22:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:23:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:23:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:23:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:23:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:23:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:23:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:23:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:23:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:23:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:23:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:23:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:24:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:24:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:24:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:24:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:24:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:24:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:24:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:24:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:24:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:24:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:24:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:25:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:25:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:25:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:25:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:25:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:25:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:25:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:25:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:25:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:25:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:25:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:25:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:25:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:26:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:26:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:26:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:26:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:26:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:26:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:26:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:26:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:26:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:26:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:26:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:27:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:27:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:27:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:27:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:27:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:27:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:27:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:27:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:27:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:27:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:27:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:28:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:28:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:28:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:28:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:28:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:28:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:28:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:28:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:28:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:28:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:28:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:29:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:29:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:29:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:29:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:29:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:29:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:29:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:29:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:29:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:29:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:29:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:30:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:30:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:30:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:30:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:30:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:30:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:30:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:30:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:30:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:30:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:30:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:30:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:30:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:31:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:31:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:31:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:31:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:31:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:31:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:31:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:31:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:31:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:31:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:31:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:32:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:32:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:32:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:32:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:32:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:32:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:32:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:32:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:32:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:32:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:32:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:33:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:33:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:33:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:33:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:33:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:33:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:33:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:33:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:33:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:33:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:33:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:34:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:34:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:34:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:34:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:34:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:34:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:34:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:34:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:34:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:34:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:34:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:35:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:35:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:35:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:35:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:35:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:35:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:35:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:35:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:35:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:35:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:35:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:35:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:35:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:36:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:36:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:36:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:36:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:36:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:36:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:36:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:36:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:36:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:36:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:36:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:37:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:37:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:37:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:37:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:37:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:37:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:37:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:37:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:37:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:37:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:37:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:38:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:38:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:38:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:38:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:38:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:38:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:38:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:38:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:38:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:38:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:38:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:39:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:39:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:39:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:39:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:39:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:39:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:39:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:39:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:39:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:39:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:39:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:40:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:40:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:40:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:40:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:40:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:40:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:40:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:40:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:40:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:40:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:40:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:40:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:40:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:41:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:41:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:41:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:41:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:41:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:41:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:41:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:41:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:41:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:41:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:41:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:42:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:42:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:42:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:42:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:42:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:42:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:42:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:42:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:42:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:42:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:42:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:43:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:43:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:43:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:43:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:43:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:43:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:43:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:43:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:43:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:43:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:43:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:44:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:44:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:44:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:44:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:44:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:44:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:44:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:44:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:44:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:44:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:44:51 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:45:06 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:45:06 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:45:21 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:45:21 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:45:36 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 18:45:36 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 18:45:36 | syncing options from database 
+[SYS] 2025/09/29 - 18:45:36 | syncing channels from database 
+[SYS] 2025/09/29 - 18:45:36 | channels synced from database 
+[SYS] 2025/09/29 - 18:45:36 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:45:36 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 18:45:51 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 18:45:51 | 任务进度轮询完成 

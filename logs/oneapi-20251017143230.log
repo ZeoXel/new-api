@@ -1,0 +1,1529 @@
+[SYS] 2025/10/17 - 14:32:30 | initializing token encoders 
+[SYS] 2025/10/17 - 14:32:30 | token encoders initialized 
+[SYS] 2025/10/17 - 14:32:30 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/17 - 14:32:30 | database migration started 
+[SYS] 2025/10/17 - 14:32:30 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/17 - 14:32:30 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/17 - 14:32:30 | New API v0.0.0 started 
+[SYS] 2025/10/17 - 14:32:30 | running in debug mode 
+[SYS] 2025/10/17 - 14:32:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 14:32:30 | 保存数据看板数据成功，共保存0条数据 
+[INFO] 2025/10/17 - 14:32:42 | 20251017143242808357000eisEjP3A | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/17 - 14:32:42 | [Async] Detected async workflow request: model=coze-workflow-async, stream=false 
+[DEBUG] 2025/10/17 - 14:32:42 | 20251017143242808357000eisEjP3A | text request body: null 
+[SYS] 2025/10/17 - 14:32:42 | DoRequest called with OriginModelName: coze-workflow-async 
+[SYS] 2025/10/17 - 14:32:42 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/17 - 14:32:42 | [Async] Created task chatcmpl-20251017143242808357000eisEjP3A for workflow 7549034632123367451 
+[SYS] 2025/10/17 - 14:32:42 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/10/17 - 14:32:42 | [Async] Starting background execution for task chatcmpl-20251017143242808357000eisEjP3A 
+[ERR] 2025/10/17 - 14:32:42 | 20251017143242808357000eisEjP3A | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model coze-workflow-async， pre-consumed quota 0 
+[INFO] 2025/10/17 - 14:32:42 | 20251017143242808357000eisEjP3A | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"coze-workflow-async","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":37.5,"user_group_ratio":-1}} 
+[SYS] 2025/10/17 - 14:32:42 | 发送给Coze的工作流请求: {"workflow_id":"7549034632123367451","parameters":{"BOT_USER_INPUT":"最终测试quota","input":"最终测试quota"}} 
+[SYS] 2025/10/17 - 14:32:42 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/17 - 14:32:42 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/17 - 14:32:42 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[GIN] 2025/10/17 - 14:32:42 | 20251017143242808357000eisEjP3A | 200 |   10.869084ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/17 - 14:32:42 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lc0cURWWKy20cfBBKh1efRqivSads1NJNr1l4OkiKtASUyj4Kw8mvVp6zYn5LfGpG","expires_in":1760683663,"token_type":"Bearer"} 
+[SYS] 2025/10/17 - 14:32:42 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lc0cURWWKy20cfBB... 
+[SYS] 2025/10/17 - 14:32:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:32:45 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:32:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:32:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:33:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:33:00 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:33:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:33:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:33:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:33:15 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:33:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:33:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:33:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:33:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:33:30 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:33:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:33:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:33:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:33:45 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:33:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:33:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:34:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:34:00 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:34:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:34:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:34:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:34:15 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:34:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:34:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:34:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:34:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:34:30 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:34:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:34:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:34:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:34:45 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:34:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:34:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:35:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:35:00 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:35:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:35:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:35:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:35:15 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:35:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:35:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:35:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:35:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:35:30 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:35:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:35:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:35:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:35:45 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:35:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:35:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:36:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:36:00 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:36:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:36:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:36:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:36:15 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:36:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:36:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:36:29 | [Async] Extracted usage from Message: Prompt=1965, Completion=963, Total=2928 
+[SYS] 2025/10/17 - 14:36:29 | [Async] Calculated quota: 109800 (tokens: 2928, ratio: 37.50) 
+[SYS] 2025/10/17 - 14:36:29 | [Async] Successfully consumed quota: 109800 for task chatcmpl-20251017143242808357000eisEjP3A 
+[SYS] 2025/10/17 - 14:36:29 | [Async] Task chatcmpl-20251017143242808357000eisEjP3A completed successfully 
+[SYS] 2025/10/17 - 14:36:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:36:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:36:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:36:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:36:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:36:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:36:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:36:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:36:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:37:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:37:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:37:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:37:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:37:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:37:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:37:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:37:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:37:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 14:37:30 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/17 - 14:37:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:37:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:37:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:37:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:37:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:37:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:37:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:37:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:37:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:38:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:38:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:38:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:38:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:38:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:38:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:38:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:38:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:38:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:38:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:38:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:38:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:38:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:38:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:38:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:38:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:38:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:39:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:39:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:39:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:39:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:39:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:39:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:39:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:39:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:39:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:39:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:39:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:39:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:39:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:39:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:39:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:39:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:39:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:40:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:40:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:40:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:40:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:40:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:40:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:40:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:40:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:40:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:40:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:40:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:40:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:40:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:40:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:40:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:40:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:40:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:41:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:41:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:41:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:41:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:41:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:41:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:41:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:41:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:41:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:41:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:41:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:41:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:41:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:41:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:41:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:41:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:41:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:42:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:42:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:42:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:42:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:42:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:42:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:42:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:42:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:42:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 14:42:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 14:42:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:42:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:42:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:42:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:42:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:42:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:42:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:42:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:42:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:43:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:43:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:43:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:43:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:43:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:43:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:43:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:43:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:43:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:43:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:43:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:43:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:43:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:43:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:43:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:43:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:43:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:44:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:44:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:44:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:44:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:44:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:44:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:44:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:44:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:44:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:44:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:44:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:44:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:44:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:44:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:44:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:44:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:44:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:45:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:45:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:45:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:45:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:45:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:45:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:45:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:45:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:45:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:45:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:45:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:45:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:45:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:45:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:45:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:45:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:45:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:46:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:46:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:46:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:46:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:46:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:46:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:46:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:46:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:46:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:46:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:46:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:46:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:46:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:46:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:46:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:46:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:46:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:47:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:47:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:47:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:47:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:47:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:47:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:47:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:47:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:47:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 14:47:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 14:47:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:47:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:47:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:47:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:47:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:47:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:47:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:47:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:47:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:48:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:48:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:48:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:48:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:48:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:48:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:48:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:48:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:48:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:48:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:48:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:48:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:48:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:48:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:48:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:48:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:48:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:49:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:49:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:49:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:49:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:49:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:49:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:49:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:49:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:49:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:49:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:49:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:49:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:49:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:49:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:49:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:49:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:49:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:50:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:50:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:50:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:50:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:50:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:50:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:50:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:50:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:50:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:50:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:50:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:50:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:50:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:50:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:50:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:50:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:50:45 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 14:50:47 | 20251017145047190640000h8MQ41ZG | 200 |   10.693166ms |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 14:50:47 | 20251017145047601188000fVzNM23C | 200 |      3.3045ms |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 14:50:47 | 20251017145047598131000MPqUhnlA | 200 |    13.14975ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:50:47 | 20251017145047601027000HrPcpeMW | 200 |   104.31125ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687447&channel=&group=
+[GIN] 2025/10/17 - 14:50:48 | 2025101714504815277000AYoQT2KQ | 200 |      3.3035ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687447&channel=&group=
+[GIN] 2025/10/17 - 14:50:53 | 20251017145053122617000wmBHngTU | 200 |     427.625µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:50:53 | 20251017145053123764000l93KZJOa | 200 |    1.296583ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760597453&end_timestamp=1760687453&default_time=hour
+[GIN] 2025/10/17 - 14:50:53 | 20251017145053155016000DkYvvkvN | 200 |       284.5µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/17 - 14:50:56 | 20251017145056823533000YtGxfkVo | 200 |     895.625µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687456&channel=&group=
+[GIN] 2025/10/17 - 14:50:56 | 20251017145056854820000XGUzQMTz | 200 |     438.458µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687456&channel=&group=
+[SYS] 2025/10/17 - 14:51:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:51:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:51:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:51:00 | 任务进度轮询完成 
+[INFO] 2025/10/17 - 14:51:04 | 20251017145104237754000Iaz1cg0w | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/17 - 14:51:04 | 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[DEBUG] 2025/10/17 - 14:51:04 | 20251017145104237754000Iaz1cg0w | text request body: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[SYS] 2025/10/17 - 14:51:04 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/10/17 - 14:51:04 | Processing as Coze workflow request 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] ChannelOtherSettings: {AzureResponsesVersion: VertexKeyType: CozeAuthType:oauth} 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] CozeAuthType 原始值: 'oauth' 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_hEM7wUmyu9WFWVARm0wT58DV9gftQjRwTcG3UbL4RdCqbF0MJLAWlKCqOBLzSnxZ8","expires_in":1760684764,"token_type":"Bearer"} 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] Access token 获取成功 (前20字符): czs_hEM7wUmyu9WFWVAR... 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] 准备使用 OAuth token (前20字符): czs_hEM7wUmyu9WFWVAR... 
+[SYS] 2025/10/17 - 14:51:04 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer czs_hEM7wUmyu9WFWVARm0w... 
+[SYS] 2025/10/17 - 14:51:04 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/10/17 - 14:51:04 | === cozeWorkflowStreamHandler (标准SSE格式) === 
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 原始行: id: 0 
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 原始行: event: Message 
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 事件类型: Message 
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 原始行: data: {"node_title":"输出_1","content":"生成文案中...","node_type":"Message","node_execute_uuid":"ee9b38d7-d0cb-4431-8ee4-fb0e052bf17c","node_is_finish":true,"node_seq_id":"0","content_type":"text","node_id":"183455"} 
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 原始行:  
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 处理事件 Message 
+[SYS] 2025/10/17 - 14:51:04 | [SSE] 转发内容: 生成文案中... 
+[GIN] 2025/10/17 - 14:51:09 | 20251017145109437541000eDTucrdj | 200 |     281.833µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 14:51:09 | 20251017145109552328000ABll3iXM | 200 |         332µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 14:51:09 | 202510171451095522080005Brsn5ND | 200 |     588.875µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:09 | 20251017145109552367000JOeVoM5C | 200 |    1.884875ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687469&channel=&group=
+[GIN] 2025/10/17 - 14:51:09 | 202510171451095956920001m1Vpnlg | 200 |     647.916µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:09 | 20251017145109595749000zbH5Dkey | 200 |     681.209µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687469&channel=&group=
+[GIN] 2025/10/17 - 14:51:11 | 20251017145111424826000IcuiktNz | 200 |     255.417µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 14:51:11 | 20251017145111538519000xo0DSax7 | 200 |     211.125µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 14:51:11 | 20251017145111538404000fANUIslo | 200 |     529.417µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:11 | 20251017145111538463000l7BPUqzX | 200 |     838.416µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687471&channel=&group=
+[GIN] 2025/10/17 - 14:51:11 | 20251017145111575066000i3GAs6Vs | 200 |      654.75µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:11 | 20251017145111575271000gH0h2pbh | 200 |    1.963208ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687471&channel=&group=
+[GIN] 2025/10/17 - 14:51:12 | 20251017145112984960000ko2qBvAh | 200 |     170.666µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 14:51:13 | 2025101714511333650006xvQDoka | 200 |   10.686291ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/10/17 - 14:51:13 | 2025101714511315138000kdx1xh5C | 200 |     949.584µs |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113168710001LLypLt9 | 200 |     2.99825ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113266900048dIRemS | 200 |   18.106583ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/10/17 - 14:51:13 | 202510171451133065000y9j1muZM | 200 |   23.173375ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/10/17 - 14:51:13 | 202510171451133172000NmEUJ3w2 | 200 |   25.768833ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/10/17 - 14:51:13 | 202510171451133364000xzPypDCy | 200 |   64.235375ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/10/17 - 14:51:13 | 202510171451132989000F3oXwspG | 200 |  130.152625ms |             ::1 |     GET /assets/index-sGynoyqR.js
+[GIN] 2025/10/17 - 14:51:13 | 202510171451131796210007jgOY8t1 | 200 |     371.792µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113179537000fIlAhJI1 | 200 |       949.5µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113179757000gIBZVQz0 | 200 |    1.080917ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687473&channel=&group=
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113183730000reg2NQ8z | 200 |   21.609542ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/17 - 14:51:13 | 2025101714511321130000050NN7isL | 200 |     244.125µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687473&channel=&group=
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113211049000PyEyoMcN | 200 |     759.708µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:13 | 20251017145113244448000wI3rSEdg | 200 |    6.688167ms |             ::1 |     GET /logo.png
+[SYS] 2025/10/17 - 14:51:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:51:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:51:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:51:15 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 14:51:17 | 2025101714511766608000mEN4KeD0 | 200 |     676.417µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:17 | 2025101714511767363000tNrZJK1N | 200 |      761.75µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760597477&end_timestamp=1760687477&default_time=hour
+[GIN] 2025/10/17 - 14:51:17 | 2025101714511780869000vpcl6bm6 | 200 |     128.292µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/17 - 14:51:18 | 20251017145118785806000Cuv4S3RC | 200 |    1.582041ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687478&channel=&group=
+[GIN] 2025/10/17 - 14:51:18 | 20251017145118810238000SqkjhNcC | 200 |     324.458µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687478&channel=&group=
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 原始行: id: 1 
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 原始行: event: Message 
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 事件类型: Message 
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 原始行: data: {"node_seq_id":"0","content":"生成配音中...","node_execute_uuid":"11351fa2-ac39-41cf-81e4-807015bbf069","node_is_finish":true,"node_title":"输出_2","content_type":"text","node_type":"Message","node_id":"112252"} 
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 原始行:  
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 处理事件 Message 
+[SYS] 2025/10/17 - 14:51:19 | [SSE] 转发内容: 生成配音中... 
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 原始行: id: 2 
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 原始行: event: Message 
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 事件类型: Message 
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 原始行: data: {"node_type":"Message","node_id":"113916","node_execute_uuid":"1921aedf-6eb4-4409-a32d-e091f20c25f5","node_is_finish":true,"node_seq_id":"0","content":"选择视频库视频中...","content_type":"text","node_title":"输出_3"} 
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 原始行:  
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 处理事件 Message 
+[SYS] 2025/10/17 - 14:51:28 | [SSE] 转发内容: 选择视频库视频中... 
+[SYS] 2025/10/17 - 14:51:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:51:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:51:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:51:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:51:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: id: 3 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: event: Message 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 事件类型: Message 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: data: {"node_execute_uuid":"80841cd9-09c3-4ecd-a8da-06182cdbfde8","node_seq_id":"0","node_title":"输出","content":"**复制下面地址，使用剪映小助手下载草稿**\n**草稿地址（可立即下载，推荐）**:\n```\nhttps://ts.fyshark.com/#/cozeToJianyin?drafId=https://video-snot-12220.oss-cn-shanghai.aliyuncs.com/2025-10-17/draft/c36a727c-5d21-4dd8-8f8b-2493ae732c0d.json\n```\n","content_type":"text","node_type":"Message","node_id":"129137","node_is_finish":true} 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行:  
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 处理事件 Message 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 转发内容: **复制下面地址，使用剪映小助手下载... 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: id: 4 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: event: Message 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 事件类型: Message 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: data: {"node_seq_id":"0","node_title":"End","content":"{\"output\":\"https://ts.fyshark.com/#/cozeToJianyin?drafId=https://video-snot-12220.oss-cn-shanghai.aliyuncs.com/2025-10-17/draft/c36a727c-5d21-4dd8-8f8b-2493ae732c0d.json\"}","usage":{"input_count":154,"token_count":512,"output_count":358},"node_execute_uuid":"","node_is_finish":true,"content_type":"text","node_type":"End","node_id":"900001"} 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行:  
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 处理事件 Message 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 从Message提取Token: input=154, output=358, total=512 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 转发内容: {"output":"https://ts.fyshark.com/#/cozeToJianyin?... 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: id: 5 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: event: Done 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 事件类型: Done 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行: data: {"node_execute_uuid":"","debug_url":"https://www.coze.cn/work_flow?execute_id=7562079615466340403\u0026space_id=7549033030220857353\u0026workflow_id=7549079559813087284\u0026execute_mode=2"} 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 原始行:  
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 处理事件 Done 
+[SYS] 2025/10/17 - 14:51:32 | [SSE] 最终返回usage: input=154, output=358, total=512 
+[INFO] 2025/10/17 - 14:51:32 | 20251017145104237754000Iaz1cg0w | 预扣费后补扣费：＄0.038400（实际消耗：＄0.038400，预扣费：＄0.000000） 
+[INFO] 2025/10/17 - 14:51:32 | 20251017145104237754000Iaz1cg0w | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":154,"completion_tokens":358,"model_name":"coze-workflow","token_name":"1","quota":19200,"content":"","token_id":1,"use_time_seconds":28,"is_stream":true,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":37.5,"user_group_ratio":-1}} 
+[GIN] 2025/10/17 - 14:51:32 | 20251017145104237754000Iaz1cg0w | 200 | 28.117604833s |             ::1 |    POST /v1/chat/completions
+[GIN] 2025/10/17 - 14:51:35 | 20251017145135120128000Sv7N3HlH | 200 |       180.5µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 14:51:35 | 20251017145135227658000AY4FtmjT | 200 |     460.292µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 14:51:35 | 20251017145135227571000aWfqanTG | 200 |     578.833µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:35 | 20251017145135227680000jFojQMcd | 200 |      1.8235ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687495&channel=&group=
+[GIN] 2025/10/17 - 14:51:35 | 20251017145135286010000xNaiuL50 | 200 |     994.333µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:51:35 | 202510171451352861600007bo8PMAG | 200 |     885.875µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687495&channel=&group=
+[SYS] 2025/10/17 - 14:51:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:51:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:51:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:51:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:52:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:52:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:52:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:52:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:52:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:52:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:52:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:52:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:52:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 14:52:30 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/17 - 14:52:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:52:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:52:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:52:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:52:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:52:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:52:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:52:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:52:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:53:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:53:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:53:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:53:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:53:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:53:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:53:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:53:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:53:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:53:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:53:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:53:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:53:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:53:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:53:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:53:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:53:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:54:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:54:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:54:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:54:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:54:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:54:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:54:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:54:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:54:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:54:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:54:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:54:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:54:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:54:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:54:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:54:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:54:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:55:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:55:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:55:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:55:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:55:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:55:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:55:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:55:15 | 任务进度轮询完成 
+[INFO] 2025/10/17 - 14:55:29 | 20251017145529794398000EgZLiDCZ | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/17 - 14:55:29 | [Async] Detected async workflow request: model=coze-workflow-async, stream=false 
+[DEBUG] 2025/10/17 - 14:55:29 | 20251017145529794398000EgZLiDCZ | text request body: null 
+[SYS] 2025/10/17 - 14:55:29 | DoRequest called with OriginModelName: coze-workflow-async 
+[SYS] 2025/10/17 - 14:55:29 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/17 - 14:55:29 | [Async] Created task chatcmpl-20251017145529794398000EgZLiDCZ for workflow 7549079559813087284 
+[SYS] 2025/10/17 - 14:55:29 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/10/17 - 14:55:29 | [Async] Starting background execution for task chatcmpl-20251017145529794398000EgZLiDCZ 
+[ERR] 2025/10/17 - 14:55:29 | 20251017145529794398000EgZLiDCZ | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model coze-workflow-async， pre-consumed quota 0 
+[INFO] 2025/10/17 - 14:55:29 | 20251017145529794398000EgZLiDCZ | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"coze-workflow-async","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":37.5,"user_group_ratio":-1}} 
+[SYS] 2025/10/17 - 14:55:29 | 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[SYS] 2025/10/17 - 14:55:29 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[GIN] 2025/10/17 - 14:55:29 | 20251017145529794398000EgZLiDCZ | 200 |   59.249125ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/17 - 14:55:29 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/17 - 14:55:29 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/17 - 14:55:29 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_l3TP4ETtzrdp8HbHDHLfJqIGew38v1j1NXDWPMD7xipoz5j1njzJ1qaaC3dqSVPm0","expires_in":1760685029,"token_type":"Bearer"} 
+[SYS] 2025/10/17 - 14:55:29 | [OAuth Debug] Access token 获取成功 (前20字符): czs_l3TP4ETtzrdp8HbH... 
+[SYS] 2025/10/17 - 14:55:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:55:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:55:30 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:55:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:55:30 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 14:55:33 | 202510171455334881690000Y8mWBXx | 200 |    2.255917ms |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 14:55:33 | 20251017145533608082000BfKa46iN | 200 |     824.333µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 14:55:33 | 20251017145533608026000m4O4r7Rl | 200 |    2.274417ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 14:55:33 | 20251017145533608095000DckW5He4 | 200 |    2.937667ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687733&channel=&group=
+[GIN] 2025/10/17 - 14:55:33 | 202510171455336489280001Tgacfh6 | 200 |     607.334µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760687733&channel=&group=
+[SYS] 2025/10/17 - 14:55:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:55:45 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:55:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:55:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:55:56 | [Async] Extracted usage from Message: Prompt=154, Completion=326, Total=480 
+[SYS] 2025/10/17 - 14:55:56 | [Async] Calculated quota: 18000 (tokens: 480, ratio: 37.50) 
+[SYS] 2025/10/17 - 14:55:56 | [Async] Successfully consumed quota: 18000 for task chatcmpl-20251017145529794398000EgZLiDCZ 
+[SYS] 2025/10/17 - 14:55:56 | [Async] Task chatcmpl-20251017145529794398000EgZLiDCZ completed successfully 
+[SYS] 2025/10/17 - 14:56:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:56:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:56:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:56:00 | 任务进度轮询完成 
+[INFO] 2025/10/17 - 14:56:00 | 20251017145600913990000H6yI75no | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/17 - 14:56:00 | [Async] Detected async workflow request: model=coze-workflow-async, stream=false 
+[DEBUG] 2025/10/17 - 14:56:00 | 20251017145600913990000H6yI75no | text request body: null 
+[SYS] 2025/10/17 - 14:56:00 | DoRequest called with OriginModelName: coze-workflow-async 
+[SYS] 2025/10/17 - 14:56:00 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/17 - 14:56:00 | [Async] Created task chatcmpl-20251017145600913990000H6yI75no for workflow 7549079559813087284 
+[SYS] 2025/10/17 - 14:56:00 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/17 - 14:56:00 | 20251017145600913990000H6yI75no | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model coze-workflow-async， pre-consumed quota 0 
+[SYS] 2025/10/17 - 14:56:00 | [Async] Starting background execution for task chatcmpl-20251017145600913990000H6yI75no 
+[INFO] 2025/10/17 - 14:56:00 | 20251017145600913990000H6yI75no | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"coze-workflow-async","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":37.5,"user_group_ratio":-1}} 
+[SYS] 2025/10/17 - 14:56:00 | 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[SYS] 2025/10/17 - 14:56:00 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/17 - 14:56:00 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/17 - 14:56:00 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[GIN] 2025/10/17 - 14:56:00 | 20251017145600913990000H6yI75no | 200 |   10.340958ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/17 - 14:56:01 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_h1gfQdsZWnCftJiLR64RIODqtXwjm03tiHb2yaIlxXEMi9zgbxwgItnh0Y5uJgG39","expires_in":1760685061,"token_type":"Bearer"} 
+[SYS] 2025/10/17 - 14:56:01 | [OAuth Debug] Access token 获取成功 (前20字符): czs_h1gfQdsZWnCftJiL... 
+[SYS] 2025/10/17 - 14:56:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:56:15 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 14:56:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:56:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:56:25 | [Async] Extracted usage from Message: Prompt=154, Completion=257, Total=411 
+[SYS] 2025/10/17 - 14:56:25 | [Async] Calculated quota: 15412 (tokens: 411, ratio: 37.50) 
+[SYS] 2025/10/17 - 14:56:25 | [Async] Successfully consumed quota: 15412 for task chatcmpl-20251017145600913990000H6yI75no 
+[SYS] 2025/10/17 - 14:56:25 | [Async] Task chatcmpl-20251017145600913990000H6yI75no completed successfully 
+[SYS] 2025/10/17 - 14:56:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:56:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:56:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:56:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:56:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:56:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:56:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:56:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:56:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:57:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:57:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:57:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:57:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:57:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:57:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:57:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:57:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:57:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 14:57:30 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/17 - 14:57:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:57:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:57:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:57:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:57:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:57:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:57:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:57:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:57:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:58:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:58:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:58:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:58:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:58:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:58:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:58:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:58:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:58:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:58:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:58:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:58:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:58:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:58:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:58:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:58:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:58:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:59:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:59:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:59:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:59:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:59:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:59:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:59:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:59:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:59:30 | syncing options from database 
+[SYS] 2025/10/17 - 14:59:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:59:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:59:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:59:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 14:59:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 14:59:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 14:59:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 14:59:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:00:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:00:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:00:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:00:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:00:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:00:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:00:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:00:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:00:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:00:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:00:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:00:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:00:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:00:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:00:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:00:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:00:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:01:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:01:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:01:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:01:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:01:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:01:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:01:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:01:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:01:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:01:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:01:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:01:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:01:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:01:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:01:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:01:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:01:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:02:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:02:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:02:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:02:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:02:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:02:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:02:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:02:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:02:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:02:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:02:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:02:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:02:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:02:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:02:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:02:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:02:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:02:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:02:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:03:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:03:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:03:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:03:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:03:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:03:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:03:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:03:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:03:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:03:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:03:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:03:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:03:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:03:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:03:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:03:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:03:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:04:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:04:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:04:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:04:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:04:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:04:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:04:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:04:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:04:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:04:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:04:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:04:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:04:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:04:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:04:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:04:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:04:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:05:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:05:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:05:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:05:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:05:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:05:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:05:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:05:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:05:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:05:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:05:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:05:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:05:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:05:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:05:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:05:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:05:45 | 任务进度轮询完成 
+[INFO] 2025/10/17 - 15:05:49 | 20251017150549916796000HUDWgiNI | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/17 - 15:05:49 | [Async] Detected async workflow request: model=coze-workflow-async, stream=false 
+[DEBUG] 2025/10/17 - 15:05:49 | 20251017150549916796000HUDWgiNI | text request body: null 
+[SYS] 2025/10/17 - 15:05:49 | DoRequest called with OriginModelName: coze-workflow-async 
+[SYS] 2025/10/17 - 15:05:49 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/17 - 15:05:49 | [Async] Created task chatcmpl-20251017150549916796000HUDWgiNI for workflow 7549079559813087284 
+[SYS] 2025/10/17 - 15:05:49 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/17 - 15:05:49 | 20251017150549916796000HUDWgiNI | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model coze-workflow-async， pre-consumed quota 0 
+[INFO] 2025/10/17 - 15:05:49 | 20251017150549916796000HUDWgiNI | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"coze-workflow-async","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":37.5,"user_group_ratio":-1}} 
+[SYS] 2025/10/17 - 15:05:49 | [Async] Starting background execution for task chatcmpl-20251017150549916796000HUDWgiNI 
+[GIN] 2025/10/17 - 15:05:49 | 20251017150549916796000HUDWgiNI | 200 |      21.402ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/17 - 15:05:49 | 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[SYS] 2025/10/17 - 15:05:49 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/17 - 15:05:49 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/17 - 15:05:49 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[GIN] 2025/10/17 - 15:05:49 | 20251017150549949575000dSpvGWWm | 404 |    2.293791ms |             ::1 |     GET /v1/workflows/runs/chatcmpl-20251017150549916796000HUDWgiNI
+[SYS] 2025/10/17 - 15:05:50 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qg4NfkhacuMXOn64Sq71Q043F65GvXkRbreB0e4mE66rpAJMWNa7AjeTZQmlxs1yE","expires_in":1760685650,"token_type":"Bearer"} 
+[SYS] 2025/10/17 - 15:05:50 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qg4NfkhacuMXOn64... 
+[GIN] 2025/10/17 - 15:05:58 | 20251017150558480909000ZKhHZbNL | 200 |     394.834µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 15:05:58 | 20251017150558789087000wCt8F6T6 | 200 |     1.02425ms |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 15:05:58 | 20251017150558788566000kpdT5ef2 | 200 |    6.232542ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688358&channel=&group=
+[GIN] 2025/10/17 - 15:05:58 | 20251017150558786741000rsvs5qj5 | 200 |    9.313125ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:05:59 | 2025101715055963365000kxWabjWV | 200 |       557.5µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688358&channel=&group=
+[GIN] 2025/10/17 - 15:05:59 | 2025101715055983430000ydRbwnck | 200 |     648.417µs |             ::1 |     GET /api/user/self
+[SYS] 2025/10/17 - 15:06:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:06:00 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 15:06:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:06:00 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:06:08 | 20251017150608715358000cjP5oT8v | 200 |     979.458µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/17 - 15:06:09 | 20251017150609658337000oVHiK1Gm | 200 |         189µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/17 - 15:06:09 | 20251017150609658580000kq51P6Ab | 200 |    2.184667ms |             ::1 |     GET /api/models
+[GIN] 2025/10/17 - 15:06:09 | 20251017150609657586000KvcTcabE | 200 |    4.626917ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/17 - 15:06:09 | 20251017150609654475000Syvau0uS | 200 |    9.004125ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/17 - 15:06:11 | 20251017150611445474000ilvSiddZ | 200 |     109.458µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/17 - 15:06:11 | 20251017150611445438000ERxa55sR | 200 |     590.416µs |             ::1 |     GET /api/channel/8
+[GIN] 2025/10/17 - 15:06:11 | 20251017150611445416000LVBWHS91 | 200 |       1.409ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/17 - 15:06:11 | 20251017150611482449000fFv2158F | 200 |    1.392167ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/10/17 - 15:06:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:06:15 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 15:06:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:06:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:06:22 | [Async] Extracted usage from Message: Prompt=154, Completion=412, Total=566 
+[SYS] 2025/10/17 - 15:06:22 | [Async] Calculated quota: 21225 (tokens: 566, ratio: 37.50) 
+[SYS] 2025/10/17 - 15:06:22 | [Async] Successfully consumed quota: 21225 for task chatcmpl-20251017150549916796000HUDWgiNI 
+[SYS] 2025/10/17 - 15:06:22 | [Async] Task chatcmpl-20251017150549916796000HUDWgiNI completed successfully 
+[SYS] 2025/10/17 - 15:06:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:06:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:06:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:06:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:06:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:06:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:06:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:06:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:06:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:07:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:07:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:07:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:07:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:07:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:07:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:07:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:07:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:07:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:07:30 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/17 - 15:07:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:07:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:07:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:07:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:07:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:07:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:07:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:07:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:07:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:08:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:08:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:08:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:08:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:08:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:08:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:08:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:08:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:08:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:08:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:08:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:08:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:08:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:08:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:08:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:08:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:08:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:09:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:09:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:09:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:09:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:09:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:09:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:09:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:09:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:09:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:09:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:09:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:09:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:09:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:09:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:09:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:09:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:09:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:10:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:10:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:10:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:10:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:10:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:10:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:10:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:10:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:10:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:10:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:10:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:10:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:10:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:10:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:10:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:10:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:10:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:11:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:11:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:11:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:11:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:11:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:11:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:11:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:11:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:11:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:11:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:11:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:11:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:11:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:11:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:11:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:11:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:11:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:12:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:12:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:12:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:12:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:12:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:12:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:12:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:12:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:12:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:12:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:12:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:12:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:12:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:12:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:12:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:12:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:12:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:12:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:12:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:13:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:13:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:13:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:13:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:13:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:13:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:13:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:13:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:13:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:13:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:13:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:13:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:13:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:13:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:13:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:13:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:13:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:14:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:14:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:14:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:14:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:14:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:14:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:14:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:14:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:14:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:14:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:14:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:14:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:14:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:14:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:14:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:14:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:14:45 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:15:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:15:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:15:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:15:00 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:15:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:15:15 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:15:15 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:15:15 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:15:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:15:30 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:15:30 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:15:30 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:15:30 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:15:45 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:15:45 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:15:45 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:15:45 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:15:52 | 2025101715155210198000l3gvM6bv | 200 |   17.768875ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760630400&end_timestamp=1760688951
+[SYS] 2025/10/17 - 15:16:00 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:16:00 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:16:00 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:16:00 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:16:07 | 20251017151607341560000MervtGD2 | 200 |    3.380291ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688967&channel=&group=
+[GIN] 2025/10/17 - 15:16:07 | 20251017151607375279000N53U6uIY | 200 |     428.625µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688967&channel=&group=
+[GIN] 2025/10/17 - 15:16:09 | 20251017151609384664000BZV9JpXT | 200 |     402.792µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:16:09 | 20251017151609385696000afTv0ojO | 200 |     588.416µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760598969&end_timestamp=1760688969&default_time=hour
+[GIN] 2025/10/17 - 15:16:09 | 202510171516094115750002LTWjuHY | 200 |      81.708µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/17 - 15:16:14 | 2025101715161441265000KI5AraEE | 200 |     1.30975ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/17 - 15:16:14 | 2025101715161441619000wmitOIpV | 200 |    2.363042ms |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/17 - 15:16:14 | 2025101715161441341000EoSuucRF | 200 |    9.271166ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/17 - 15:16:15 | 202510171516151149270007PqPsB3d | 200 |    1.068417ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688975&channel=&group=
+[GIN] 2025/10/17 - 15:16:15 | 20251017151615113746000j2zlDIjO | 200 |    3.136709ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688975&channel=&group=
+[SYS] 2025/10/17 - 15:16:15 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:16:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:16:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:16:16 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:16:18 | 202510171516185699980007aNxXE9r | 200 |    7.062667ms |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 15:16:18 | 20251017151618936147000RXmAzFHu | 200 |     855.791µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:16:18 | 20251017151618936460000782N22UT | 200 |      875.25µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 15:16:18 | 20251017151618936513000h0qjw5st | 200 |    1.829666ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688978&channel=&group=
+[GIN] 2025/10/17 - 15:16:19 | 20251017151619265331000Zw8Qtr8w | 200 |    9.901292ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:16:19 | 202510171516192729390001AYuOrtB | 200 |    3.586166ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760688978&channel=&group=
+[SYS] 2025/10/17 - 15:16:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:16:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:16:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:16:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:16:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:16:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:16:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:16:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:16:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:17:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:17:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:17:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:17:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:17:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:17:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:17:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:17:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:17:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:17:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:17:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:17:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:17:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:17:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:17:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:17:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:17:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:17:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:17:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:18:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:18:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:18:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:18:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:18:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:18:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:18:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:18:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:18:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:18:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:18:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:18:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:18:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:18:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:18:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:18:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:18:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:19:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:19:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:19:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:19:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:19:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:19:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:19:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:19:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:19:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:19:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:19:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:19:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:19:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:19:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:19:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:19:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:19:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:20:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:20:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:20:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:20:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:20:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:20:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:20:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:20:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:20:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:20:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:20:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:20:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:20:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:20:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:20:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:20:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:20:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:21:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:21:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:21:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:21:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:21:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:21:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:21:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:21:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:21:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:21:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:21:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:21:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:21:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:21:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:21:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:21:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:21:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:22:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:22:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:22:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:22:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:22:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:22:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:22:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:22:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:22:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:22:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:22:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:22:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:22:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:22:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:22:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:22:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:22:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:22:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:22:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:23:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:23:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:23:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:23:01 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:23:08 | 20251017152308236301000JLXh0iWA | 200 |    2.735333ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760630400&end_timestamp=1760689388
+[GIN] 2025/10/17 - 15:23:11 | 202510171523113527810008IZA4l2b | 200 |    3.281083ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689391&channel=&group=
+[GIN] 2025/10/17 - 15:23:11 | 20251017152311386885000ehm4H6Az | 200 |    1.068458ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689391&channel=&group=
+[SYS] 2025/10/17 - 15:23:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:23:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:23:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:23:16 | 任务进度轮询完成 
+[INFO] 2025/10/17 - 15:23:20 | 20251017152320918095000G79RzkZr | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/17 - 15:23:20 | [Async] Detected async workflow request: model=coze-workflow-async, stream=false 
+[DEBUG] 2025/10/17 - 15:23:20 | 20251017152320918095000G79RzkZr | text request body: null 
+[SYS] 2025/10/17 - 15:23:20 | DoRequest called with OriginModelName: coze-workflow-async 
+[SYS] 2025/10/17 - 15:23:20 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/17 - 15:23:20 | [Async] Created task chatcmpl-20251017152320918095000G79RzkZr for workflow 7549079559813087284 
+[SYS] 2025/10/17 - 15:23:20 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/17 - 15:23:20 | 20251017152320918095000G79RzkZr | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model coze-workflow-async， pre-consumed quota 0 
+[INFO] 2025/10/17 - 15:23:20 | 20251017152320918095000G79RzkZr | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"coze-workflow-async","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":37.5,"user_group_ratio":-1}} 
+[SYS] 2025/10/17 - 15:23:20 | [Async] Starting background execution for task chatcmpl-20251017152320918095000G79RzkZr 
+[GIN] 2025/10/17 - 15:23:20 | 20251017152320918095000G79RzkZr | 200 |     9.11225ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/17 - 15:23:20 | 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[SYS] 2025/10/17 - 15:23:20 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/17 - 15:23:20 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/17 - 15:23:20 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[GIN] 2025/10/17 - 15:23:20 | 20251017152320932594000JLLP45Rj | 404 |      1.0235ms |             ::1 |     GET /v1/workflows/runs/chatcmpl-20251017152320918095000G79RzkZr
+[SYS] 2025/10/17 - 15:23:21 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lbrxsgNH30HZ5qiAivQfC1im9lqY5JlkHNqXJWZMI632RZJLynYUGVsO6dmzzC1r8","expires_in":1760686701,"token_type":"Bearer"} 
+[SYS] 2025/10/17 - 15:23:21 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lbrxsgNH30HZ5qiA... 
+[GIN] 2025/10/17 - 15:23:26 | 20251017152326756515000Xr2GVEe4 | 200 |     152.042µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 15:23:27 | 20251017152327190784000koMVocvM | 200 |       317.5µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 15:23:27 | 2025101715232719006200003DpRwDG | 200 |    1.332167ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:23:27 | 20251017152327190630000MIShVRQe | 200 |    1.557791ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689407&channel=&group=
+[GIN] 2025/10/17 - 15:23:27 | 20251017152327549076000aMVermQN | 200 |     468.792µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689407&channel=&group=
+[GIN] 2025/10/17 - 15:23:27 | 20251017152327549011000OMWMJ8ZL | 200 |     558.417µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:23:30 | 20251017152330431914000Q6rOAQDy | 200 |    1.581292ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760630400&end_timestamp=1760689410
+[SYS] 2025/10/17 - 15:23:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:23:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:23:31 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 15:23:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:23:31 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:23:40 | 2025101715234072112000LVtTG0Id | 200 |         289µs |             ::1 |     GET /console/task
+[GIN] 2025/10/17 - 15:23:40 | 20251017152340175114000zd3j7awQ | 200 |     292.084µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 15:23:40 | 20251017152340175088000Gi5slWbJ | 200 |     627.125µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:23:40 | 20251017152340175191000mt3ey4OI | 200 |    1.279958ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760630400&end_timestamp=1760689420
+[GIN] 2025/10/17 - 15:23:40 | 20251017152340205734000KWMiY26E | 200 |     384.209µs |             ::1 |     GET /api/user/self
+[SYS] 2025/10/17 - 15:23:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:23:46 | SYSTEM | Channel #8 pending video tasks: 7 
+[ERR] 2025/10/17 - 15:23:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:23:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:23:47 | [Async] Extracted usage from Message: Prompt=154, Completion=388, Total=542 
+[SYS] 2025/10/17 - 15:23:47 | [Async] Calculated quota: 20325 (tokens: 542, ratio: 37.50) 
+[SYS] 2025/10/17 - 15:23:47 | [Async] Successfully consumed quota: 20325 for task chatcmpl-20251017152320918095000G79RzkZr 
+[SYS] 2025/10/17 - 15:23:47 | [Async] Task chatcmpl-20251017152320918095000G79RzkZr completed successfully 
+[SYS] 2025/10/17 - 15:24:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:24:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:24:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:24:01 | 任务进度轮询完成 
+[GIN] 2025/10/17 - 15:24:01 | 20251017152401183912000czUJ4Ptf | 200 |      168.75µs |             ::1 |     GET /console/task
+[GIN] 2025/10/17 - 15:24:01 | 202510171524013100250007Rn1H3BN | 200 |     584.333µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 15:24:01 | 20251017152401310297000eDDwNNtj | 200 |    3.153791ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:24:01 | 20251017152401310403000RnqgVqHA | 200 |    5.191167ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760630400&end_timestamp=1760689441
+[GIN] 2025/10/17 - 15:24:01 | 20251017152401361851000Z25KOjid | 200 |     381.917µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:24:04 | 20251017152404920290000zEoQpSe3 | 200 |         293µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/17 - 15:24:04 | 20251017152404920295000ZqZ95q05 | 200 |    1.915292ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/17 - 15:24:04 | 20251017152404920131000fHL0eJ1F | 200 |    5.230291ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/17 - 15:24:05 | 20251017152405502658000oNFQGNWd | 200 |     727.459µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:24:05 | 20251017152405503454000Oxl8oPfb | 200 |     649.541µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760599445&end_timestamp=1760689445&default_time=hour
+[GIN] 2025/10/17 - 15:24:05 | 20251017152405536090000spdPOgRw | 200 |      84.667µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/17 - 15:24:07 | 2025101715240771162000l6RM15bD | 200 |    1.561541ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689447&channel=&group=
+[GIN] 2025/10/17 - 15:24:07 | 20251017152407110723000OdJiKxq7 | 200 |     439.291µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689447&channel=&group=
+[GIN] 2025/10/17 - 15:24:08 | 20251017152408127910007OH398fm | 200 |     170.959µs |             ::1 |     GET /console/log
+[GIN] 2025/10/17 - 15:24:08 | 2025101715240811600200042A1i1RI | 200 |       186.5µs |             ::1 |     GET /api/status
+[GIN] 2025/10/17 - 15:24:08 | 20251017152408115884000dvP2DWQU | 200 |      352.75µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/17 - 15:24:08 | 20251017152408115936000dszsLlLO | 200 |      766.75µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689448&channel=&group=
+[GIN] 2025/10/17 - 15:24:08 | 20251017152408147096000nSzwCoS4 | 200 |     435.708µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760630400&end_timestamp=1760689448&channel=&group=
+[GIN] 2025/10/17 - 15:24:08 | 20251017152408156648000ILP3gcsU | 200 |      370.75µs |             ::1 |     GET /api/user/self
+[SYS] 2025/10/17 - 15:24:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:24:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:24:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:24:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:24:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:24:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:24:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:24:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:24:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:24:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:24:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:24:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:24:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:25:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:25:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:25:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:25:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:25:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:25:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:25:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:25:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:25:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:25:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:25:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:25:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:25:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:25:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:25:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:25:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:25:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:26:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:26:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:26:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:26:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:26:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:26:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:26:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:26:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:26:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:26:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:26:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:26:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:26:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:26:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:26:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:26:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:26:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:27:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:27:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:27:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:27:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:27:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:27:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:27:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:27:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:27:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:27:30 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/17 - 15:27:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:27:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:27:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:27:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:27:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:27:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:27:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:27:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:27:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:28:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:28:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:28:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:28:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:28:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:28:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:28:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:28:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:28:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:28:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:28:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:28:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:28:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:28:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:28:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:28:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:28:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:29:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:29:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:29:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:29:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:29:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:29:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:29:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:29:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:29:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:29:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:29:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:29:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:29:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:29:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:29:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:29:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:29:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:30:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:30:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:30:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:30:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:30:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:30:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:30:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:30:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:30:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:30:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:30:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:30:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:30:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:30:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:30:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:30:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:30:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:31:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:31:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:31:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:31:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:31:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:31:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:31:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:31:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:31:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:31:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:31:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:31:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:31:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:31:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:31:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:31:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:31:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:32:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:32:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:32:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:32:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:32:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:32:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:32:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:32:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:32:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:32:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:32:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:32:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:32:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:32:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:32:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:32:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:32:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:32:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:32:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:33:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:33:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:33:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:33:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:33:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:33:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:33:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:33:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:33:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:33:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:33:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:33:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:33:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:33:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:33:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:33:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:33:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:34:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:34:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:34:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:34:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:34:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:34:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:34:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:34:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:34:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:34:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:34:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:34:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:34:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:34:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:34:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:34:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:34:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:35:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:35:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:35:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:35:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:35:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:35:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:35:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:35:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:35:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:35:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:35:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:35:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:35:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:35:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:35:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:35:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:35:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:36:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:36:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:36:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:36:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:36:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:36:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:36:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:36:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:36:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:36:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:36:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:36:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:36:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:36:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:36:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:36:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:36:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:37:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:37:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:37:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:37:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:37:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:37:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:37:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:37:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:37:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:37:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:37:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:37:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:37:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:37:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:37:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:37:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:37:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:37:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:37:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:38:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:38:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:38:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:38:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:38:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:38:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:38:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:38:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:38:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:38:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:38:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:38:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:38:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:38:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:38:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:38:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:38:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:39:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:39:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:39:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:39:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:39:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:39:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:39:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:39:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:39:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:39:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:39:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:39:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:39:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:39:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:39:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:39:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:39:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:40:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:40:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:40:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:40:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:40:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:40:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:40:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:40:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:40:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:40:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:40:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:40:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:40:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:40:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:40:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:40:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:40:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:41:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:41:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:41:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:41:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:41:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:41:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:41:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:41:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:41:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:41:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:41:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:41:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:41:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:41:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:41:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:41:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:41:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:42:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:42:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:42:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:42:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:42:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:42:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:42:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:42:16 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:42:30 | 正在更新数据看板数据... 
+[SYS] 2025/10/17 - 15:42:30 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/17 - 15:42:30 | syncing options from database 
+[SYS] 2025/10/17 - 15:42:31 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:42:31 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:42:31 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:42:31 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:42:46 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:42:46 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:42:46 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:42:46 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:43:01 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:43:01 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:43:01 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:43:01 | 任务进度轮询完成 
+[SYS] 2025/10/17 - 15:43:16 | 任务进度轮询开始 
+[INFO] 2025/10/17 - 15:43:16 | SYSTEM | Channel #8 pending video tasks: 6 
+[ERR] 2025/10/17 - 15:43:16 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/17 - 15:43:16 | 任务进度轮询完成 

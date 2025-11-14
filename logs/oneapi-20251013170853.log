@@ -1,0 +1,273 @@
+[SYS] 2025/10/13 - 17:08:53 | initializing token encoders 
+[SYS] 2025/10/13 - 17:08:53 | token encoders initialized 
+[SYS] 2025/10/13 - 17:08:53 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/13 - 17:08:53 | database migration started 
+[SYS] 2025/10/13 - 17:08:53 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/13 - 17:08:53 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/13 - 17:08:53 | New API v0.0.0 started 
+[SYS] 2025/10/13 - 17:08:53 | running in debug mode 
+[SYS] 2025/10/13 - 17:08:53 | memory cache enabled 
+[SYS] 2025/10/13 - 17:08:53 | sync frequency: 60 seconds 
+[SYS] 2025/10/13 - 17:08:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:08:53 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 17:08:53 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 17:09:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:09:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:09:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:09:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:09:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:09:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:09:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:09:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:09:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:09:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:09:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:10:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:10:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:10:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:10:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:10:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:10:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:10:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:10:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:10:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:10:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:10:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:11:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:11:08 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:11:09 | 20251013171109316552000DRC0NxZB | 204 |       18.75µs |             ::1 | OPTIONS /pika/generate
+[INFO] 2025/10/13 - 17:11:12 | 20251013171109320888000cMteooRN | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"pika","token_name":"1","quota":1000,"content":"Bltcy透传（pika/pika），价格: $0.0000, 配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0,"model_ratio":1}} 
+[SYS] 2025/10/13 - 17:11:12 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 17:11:12 | 20251013171109320888000cMteooRN | 503 |  3.407636125s |             ::1 |    POST /pika/generate
+[SYS] 2025/10/13 - 17:11:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:11:23 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:11:32 | 20251013171132980965000mlTzHueY | 200 |    1.387833ms |             ::1 |     GET /console
+[GIN] 2025/10/13 - 17:11:33 | 2025101317113387940004QbSmJXi | 200 |     121.166µs |             ::1 |     GET /.well-known/appspecific/com.chrome.devtools.json
+[GIN] 2025/10/13 - 17:11:33 | 20251013171133264113000uxxvEm6F | 200 |    1.372541ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:11:33 | 20251013171133265428000YDHpKxDu | 200 |    3.491708ms |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 17:11:33 | 20251013171133528636000iV2BUNMd | 200 |    1.190292ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:11:33 | 20251013171133618143000uxxfCVSX | 200 |     919.583µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:11:33 | 20251013171133616871000JkXQnn8N | 200 |    2.755792ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760260293&end_timestamp=1760350293&default_time=hour
+[GIN] 2025/10/13 - 17:11:33 | 202510131711336501340007AAweuoG | 200 |     971.333µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 17:11:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:11:38 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:11:39 | 20251013171139327479000Nu0Bk1fT | 200 |    2.700458ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 17:11:40 | 20251013171140590668000upV11Dxw | 200 |    2.058959ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 17:11:41 | 20251013171141219295000TWOR6UgQ | 200 |    1.102875ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 17:11:41 | 20251013171141219839000j1Mqyz1x | 200 |     6.15875ms |             ::1 |     GET /api/channel/models_enabled
+[GIN] 2025/10/13 - 17:11:49 | 20251013171149198965000dgJ5wuCn | 200 |    3.010875ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/13 - 17:11:49 | 20251013171149234922000NUYorGOf | 200 |    8.592666ms |             ::1 |     GET /api/option/
+[SYS] 2025/10/13 - 17:11:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:11:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:11:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:11:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:11:53 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:11:55 | 20251013171155819954000wrA5audo | 200 |    1.064709ms |             ::1 |     GET /api/group/
+[GIN] 2025/10/13 - 17:11:55 | 20251013171155821040000SGVsLqrx | 200 |    1.492042ms |             ::1 |     GET /api/models
+[GIN] 2025/10/13 - 17:11:55 | 20251013171155819963000AvYDzFhC | 200 |    2.763917ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/13 - 17:11:55 | 20251013171155820833000iPJuYR8i | 200 |    4.650958ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/10/13 - 17:12:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:12:08 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:12:12 | 20251013171212917892000ldtNRYp8 | 204 |     111.375µs |             ::1 | OPTIONS /pika/generate
+[SYS] 2025/10/13 - 17:12:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:12:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:12:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:12:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:12:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:12:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:12:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:12:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:12:53 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:12:55 | 20251013171255675104000FCvB3RLc | 200 |      1.1525ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:12:55 | 202510131712556753550004kVlW3nZ | 200 |    1.712291ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760260375&end_timestamp=1760350375&default_time=hour
+[GIN] 2025/10/13 - 17:12:55 | 20251013171255708957000y8KdBUiz | 200 |      359.75µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 17:12:57 | 20251013171257638966000VdMuhrJh | 200 |    2.016458ms |             ::1 |     GET /console
+[GIN] 2025/10/13 - 17:12:57 | 20251013171257671150000jlmISLrO | 200 |    2.566708ms |             ::1 |     GET /.well-known/appspecific/com.chrome.devtools.json
+[GIN] 2025/10/13 - 17:12:57 | 20251013171257949724000X46J87qS | 200 |    1.173458ms |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 17:12:57 | 20251013171257949635000OYIAIBgx | 200 |    2.018292ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:12:58 | 20251013171258208241000BIxWaPBH | 200 |    1.200375ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:12:58 | 20251013171258207141000qzPqe0PN | 200 |    4.099125ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760260378&end_timestamp=1760350378&default_time=hour
+[GIN] 2025/10/13 - 17:12:58 | 20251013171258272676000KOqByQjC | 200 |     845.667µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 17:13:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:13:08 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:13:13 | 20251013171212920560000m5HR4KpQ | 500 | 1m0.750239375s |             ::1 |    POST /pika/generate
+[SYS] 2025/10/13 - 17:13:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:13:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:13:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:13:38 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:13:46 | 20251013171346802903000nRcib65s | 200 |     759.167µs |             ::1 |     GET /console
+[GIN] 2025/10/13 - 17:13:46 | 202510131713468526390005NfUNVMf | 200 |    1.515584ms |             ::1 |     GET /.well-known/appspecific/com.chrome.devtools.json
+[GIN] 2025/10/13 - 17:13:47 | 20251013171347170850000yWuTSX06 | 200 |     779.041µs |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 17:13:47 | 20251013171347170453000G0PmABtq | 200 |    3.864625ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:13:47 | 20251013171347417316000GcCkm8UW | 200 |     3.79375ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:13:47 | 20251013171347417141000NMLOxfl7 | 200 |    4.419958ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760260427&end_timestamp=1760350427&default_time=hour
+[GIN] 2025/10/13 - 17:13:47 | 202510131713474987090006QK2deR5 | 200 |    6.685292ms |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349165512000Iv8NVWXG | 200 |     668.625µs |             ::1 |     GET /console
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349203205000cR3qhreJ | 200 |      909.75µs |             ::1 |     GET /.well-known/appspecific/com.chrome.devtools.json
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349212154000zMa9sojq | 200 |   13.153833ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349211514000hNQ1uTJx | 200 |   15.866167ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349232097000P7BUzZI5 | 200 |      6.6275ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/10/13 - 17:13:49 | 202510131713492153150006xtqs0Wp | 200 |   30.420709ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349212650000pN4UW6f5 | 200 |    37.92975ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349227723000hYlbqwHA | 200 |      23.784ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349217795000vrbFCOU8 | 200 |   87.526208ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349210195000osRUgMgS | 200 |  200.254625ms |             ::1 |     GET /assets/index-D13wZOBt.js
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349571949000jN2WjrAn | 200 |    1.071667ms |             ::1 |     GET /assets/IllustrationConstruction-BfOYqVqj.js
+[GIN] 2025/10/13 - 17:13:49 | 202510131713495767110006oU0XNqZ | 200 |     886.959µs |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 17:13:49 | 202510131713495767750001qFw1o4v | 200 |    3.113959ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349571725000K3yUApWQ | 200 |     71.0025ms |             ::1 |     GET /assets/index-CdB8jS5p.js
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349582086000ZwWoz7On | 200 |   189.86925ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349815927000NCOVvZNk | 200 |    2.501625ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349890107000E9y78dYJ | 200 |   13.800709ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/13 - 17:13:49 | 202510131713499189680003kXhonYl | 200 |     941.125µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 17:13:49 | 2025101317134991995100003yrpKWB | 200 |    1.989166ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760260429&end_timestamp=1760350429&default_time=hour
+[GIN] 2025/10/13 - 17:13:49 | 20251013171349956400000o4XTC3j9 | 200 |     186.916µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 17:13:53 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 17:13:53 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/13 - 17:13:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:13:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:13:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:13:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:13:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:14:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:14:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:14:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:14:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:14:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:14:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:14:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:14:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:14:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:14:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:14:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:15:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:15:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:15:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:15:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:15:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:15:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:15:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:15:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:15:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:15:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:15:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:16:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:16:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:16:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:16:23 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:16:31 | 20251013171631127063000VCkoXIKk | 200 |    3.122042ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/10/13 - 17:16:31 | 20251013171631127474000einfilQd | 200 |    3.372417ms |             ::1 |     GET /api/models/?p=1&page_size=10
+[GIN] 2025/10/13 - 17:16:31 | 20251013171631689535000d3V88q5D | 200 |     478.709µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/13 - 17:16:31 | 20251013171631689582000FSdOp82n | 200 |      745.25µs |             ::1 |     GET /api/models
+[GIN] 2025/10/13 - 17:16:31 | 20251013171631689278000sONgqxMR | 200 |    1.287708ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/13 - 17:16:31 | 20251013171631689538000dj6tWTMx | 200 |    3.275708ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/13 - 17:16:34 | 20251013171634341116000cHEr7WpD | 200 |     153.666µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/13 - 17:16:34 | 20251013171634340641000utqEENFT | 200 |    1.101708ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/13 - 17:16:34 | 20251013171634341655000iZvsd8xA | 200 |    1.110334ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/10/13 - 17:16:34 | 20251013171634390779000i7wZOSdF | 200 |      7.0045ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/10/13 - 17:16:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:16:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:16:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:16:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:16:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:16:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:16:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:17:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:17:08 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:17:15 | 202510131717155867360007jVHBqwY | 204 |      53.958µs |             ::1 | OPTIONS /pika/generate
+[INFO] 2025/10/13 - 17:17:19 | 20251013171715589157000DCoM7EZe | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"pika","token_name":"1","quota":300000,"content":"Bltcy透传（pika/pika），价格: $0.6000, 配额: 300000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.6,"model_ratio":1}} 
+[SYS] 2025/10/13 - 17:17:19 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 17:17:19 | 20251013171715589157000DCoM7EZe | 503 |  3.496901041s |             ::1 |    POST /pika/generate
+[SYS] 2025/10/13 - 17:17:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:17:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:17:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:17:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:17:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:17:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:17:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:17:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:17:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:18:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:18:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:18:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:18:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:18:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:18:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:18:53 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 17:18:53 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/13 - 17:18:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:18:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:18:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:18:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:18:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:19:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:19:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:19:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:19:23 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:19:33 | 20251013171933413965000a1pNv9jJ | 204 |      65.083µs |             ::1 | OPTIONS /v1/models
+[GIN] 2025/10/13 - 17:19:33 | 20251013171933418170000xz4NBRxT | 200 |    8.507084ms |             ::1 |     GET /v1/models
+[GIN] 2025/10/13 - 17:19:36 | 20251013171936749348000YwPJtF0r | 204 |      33.625µs |             ::1 | OPTIONS /v1/models
+[GIN] 2025/10/13 - 17:19:36 | 20251013171936750912000IfWHovaw | 200 |    3.308917ms |             ::1 |     GET /v1/models
+[SYS] 2025/10/13 - 17:19:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:19:38 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:19:48 | 20251013171948637221000OJzAJP89 | 204 |       6.291µs |             ::1 | OPTIONS /v1/models
+[GIN] 2025/10/13 - 17:19:48 | 20251013171948639624000k6FvwNAu | 200 |    7.811958ms |             ::1 |     GET /v1/models
+[SYS] 2025/10/13 - 17:19:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:19:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:19:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:19:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:19:53 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 17:20:01 | 202510131720012379030005QvZbzlr | 204 |      19.334µs |             ::1 | OPTIONS /v1/models
+[GIN] 2025/10/13 - 17:20:01 | 202510131720012397280003Js3P1nL | 200 |    2.171958ms |             ::1 |     GET /v1/models
+[GIN] 2025/10/13 - 17:20:07 | 202510131720074324940001F70QQLw | 204 |     113.084µs |             ::1 | OPTIONS /v1/models
+[GIN] 2025/10/13 - 17:20:07 | 20251013172007436331000JVVjzyVV | 200 |   10.757042ms |             ::1 |     GET /v1/models
+[SYS] 2025/10/13 - 17:20:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:20:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:20:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:20:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:20:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:20:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:20:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:20:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:20:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:20:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:20:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:21:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:21:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:21:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:21:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:21:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:21:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:21:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:21:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:21:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:21:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:21:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:22:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:22:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:22:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:22:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:22:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:22:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:22:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:22:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:22:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:22:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:22:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:23:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:23:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:23:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:23:23 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:23:38 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:23:38 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:23:53 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 17:23:53 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 17:23:53 | syncing options from database 
+[SYS] 2025/10/13 - 17:23:53 | syncing channels from database 
+[SYS] 2025/10/13 - 17:23:53 | channels synced from database 
+[SYS] 2025/10/13 - 17:23:53 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:23:53 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:24:08 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:24:08 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 17:24:23 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 17:24:23 | 任务进度轮询完成 

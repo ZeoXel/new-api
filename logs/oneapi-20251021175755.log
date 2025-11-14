@@ -1,0 +1,539 @@
+[SYS] 2025/10/21 - 17:57:55 | initializing token encoders 
+[SYS] 2025/10/21 - 17:57:55 | token encoders initialized 
+[SYS] 2025/10/21 - 17:57:55 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/21 - 17:57:55 | database migration started 
+[SYS] 2025/10/21 - 17:57:55 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/21 - 17:57:55 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/21 - 17:57:55 | New API v0.0.0 started 
+[SYS] 2025/10/21 - 17:57:55 | running in debug mode 
+[SYS] 2025/10/21 - 17:57:55 | 正在更新数据看板数据... 
+[SYS] 2025/10/21 - 17:57:55 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/21 - 17:58:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:58:10 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:58:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:58:10 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:58:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:58:25 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:58:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:58:25 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:58:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:58:40 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:58:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:58:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:58:55 | syncing options from database 
+[SYS] 2025/10/21 - 17:58:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:58:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:58:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:58:55 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 17:59:03 | 2025102117590387316000YAj7dDJQ | 200 |     634.416µs |             ::1 |     GET /console/task
+[GIN] 2025/10/21 - 17:59:03 | 20251021175903342502000Nkb3pS4j | 200 |     801.916µs |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 17:59:03 | 20251021175903342220000QsNlS1j1 | 200 |    2.578667ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 17:59:03 | 20251021175903343769000br08a2gO | 200 |    9.942583ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044343
+[GIN] 2025/10/21 - 17:59:03 | 20251021175903419018000KseAz2qG | 200 |     696.958µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 17:59:05 | 20251021175905684661000vlSAtXX8 | 200 |    1.733292ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1758448745000&end_timestamp=1761044345000
+[GIN] 2025/10/21 - 17:59:06 | 20251021175906257682000PFOG9Qya | 200 |    2.514625ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044346&channel=&group=
+[GIN] 2025/10/21 - 17:59:06 | 20251021175906271043000hzNgxdUF | 200 |     851.333µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044346&channel=&group=
+[GIN] 2025/10/21 - 17:59:06 | 20251021175906613327000Bgq5vaKa | 200 |    1.671708ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044346
+[SYS] 2025/10/21 - 17:59:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:59:10 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:59:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:59:10 | 任务进度轮询完成 
+[INFO] 2025/10/21 - 17:59:15 | 20251021175915837431000TnCl3aDO | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 17:59:15 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/10/21 - 17:59:15 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"input":"石头"}} 
+[DEBUG] 2025/10/21 - 17:59:15 | 20251021175915837431000TnCl3aDO | text request body: {"workflow_id":"7520444303086125096","parameters":{"input":"石头"}} 
+[SYS] 2025/10/21 - 17:59:15 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/10/21 - 17:59:15 | [OAuth Debug] ChannelOtherSettings: {AzureResponsesVersion: VertexKeyType: CozeAuthType:oauth} 
+[SYS] 2025/10/21 - 17:59:15 | [OAuth Debug] CozeAuthType 原始值: 'oauth' 
+[SYS] 2025/10/21 - 17:59:15 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 17:59:15 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 17:59:15 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 17:59:16 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qFtsdVFVXslMuFSng3whXpafHVyE5uZbS1fXIPTUZk1eM9RKx1x32BLfMDdF6bmsN","expires_in":1761041656,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 17:59:16 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qFtsdVFVXslMuFSn... 
+[SYS] 2025/10/21 - 17:59:16 | [OAuth Debug] 准备使用 OAuth token (前20字符): czs_qFtsdVFVXslMuFSn... 
+[SYS] 2025/10/21 - 17:59:16 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer czs_qFtsdVFVXslMuFSng3w... 
+[SYS] 2025/10/21 - 17:59:16 | DoResponse called with OriginModelName: 7520444303086125096 
+[ERR] 2025/10/21 - 17:59:16 | 20251021175915837431000TnCl3aDO | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7520444303086125096， pre-consumed quota 0 
+[INFO] 2025/10/21 - 17:59:16 | 20251021175915837431000TnCl3aDO | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"7520444303086125096","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":1,"is_stream":true,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":70,"user_group_ratio":-1}} 
+[GIN] 2025/10/21 - 17:59:16 | 20251021175915837431000TnCl3aDO | 200 |  305.475334ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 17:59:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:59:25 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:59:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:59:25 | 任务进度轮询完成 
+[INFO] 2025/10/21 - 17:59:26 | 20251021175926920265000A1Avl1Cj | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 17:59:26 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/10/21 - 17:59:26 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7520444303086125096, stream=false 
+[DEBUG] 2025/10/21 - 17:59:26 | 20251021175926920265000A1Avl1Cj | text request body: null 
+[SYS] 2025/10/21 - 17:59:26 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/10/21 - 17:59:26 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/21 - 17:59:26 | [Async] Created task chatcmpl-20251021175926920265000A1Avl1Cj for workflow 7520444303086125096 
+[SYS] 2025/10/21 - 17:59:26 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/10/21 - 17:59:26 | [Async] Starting background execution for task chatcmpl-20251021175926920265000A1Avl1Cj 
+[ERR] 2025/10/21 - 17:59:26 | 20251021175926920265000A1Avl1Cj | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7520444303086125096， pre-consumed quota 0 
+[INFO] 2025/10/21 - 17:59:26 | 20251021175926920265000A1Avl1Cj | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/10/21 - 17:59:26 | 20251021175926920265000A1Avl1Cj | 200 |    4.044167ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 17:59:26 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"input":"石头"}} 
+[SYS] 2025/10/21 - 17:59:26 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 17:59:26 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 17:59:26 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 17:59:27 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qY4Qll8xXxaagunqqKBpafnuJOIwCBK6AKu6Ff1zwDJU8uMEYbR6Q2j7Bh7EH7SD0","expires_in":1761041667,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 17:59:27 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qY4Qll8xXxaagunq... 
+[GIN] 2025/10/21 - 17:59:27 | 20251021175927167375000Go4238VU | 200 |    2.620417ms |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021175926920265000A1Avl1Cj
+[GIN] 2025/10/21 - 17:59:36 | 20251021175936309242000ZyNHLtOz | 200 |    3.985292ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1758448776000&end_timestamp=1761044376000
+[GIN] 2025/10/21 - 17:59:36 | 20251021175936800240000OGg545Qd | 200 |   19.327833ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044376
+[SYS] 2025/10/21 - 17:59:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:59:40 | SYSTEM | Channel #8 pending video tasks: 38 
+[ERR] 2025/10/21 - 17:59:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:59:40 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 17:59:40 | 20251021175940732025000MjMuIZ63 | 200 |   35.854125ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044380&channel=&group=
+[GIN] 2025/10/21 - 17:59:40 | 202510211759407213960008Kdv75pn | 200 |   52.588041ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044380&channel=&group=
+[SYS] 2025/10/21 - 17:59:46 | [Async] 首次提取 usage from Message: Prompt=557, Completion=83, Total=640 
+[SYS] 2025/10/21 - 17:59:46 | [Async] 最终计费 usage: Prompt=557, Completion=83, Total=640 
+[SYS] 2025/10/21 - 17:59:46 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/10/21 - 17:59:46 | [WorkflowPricing] 输入参数: workflow_id=7520444303086125096, channel_id=8 
+[SYS] 2025/10/21 - 17:59:46 | [WorkflowPricing] 数据库中匹配的记录数: 1 
+[SYS] 2025/10/21 - 17:59:46 | [WorkflowPricing] 查询成功，workflowPrice指针: 0x14000de7098 
+[SYS] 2025/10/21 - 17:59:46 | [WorkflowPricing] workflowPrice值: 1000000 
+[SYS] 2025/10/21 - 17:59:46 | [WorkflowPricing] ===== 查询到工作流定价: workflow=7520444303086125096, channel=8, price=1000000 quota/次 ===== 
+[SYS] 2025/10/21 - 17:59:46 | [Async] 工作流按次计费: workflow=7520444303086125096, 基础价格=1000000 quota/次, 分组倍率=1.00, 最终quota=1000000 
+[SYS] 2025/10/21 - 17:59:46 | [Async] Successfully consumed quota: 1000000 for task chatcmpl-20251021175926920265000A1Avl1Cj 
+[SYS] 2025/10/21 - 17:59:46 | [Async] Successfully created log for task chatcmpl-20251021175926920265000A1Avl1Cj with 640 tokens 
+[SYS] 2025/10/21 - 17:59:46 | [Async] Task chatcmpl-20251021175926920265000A1Avl1Cj completed successfully 
+[SYS] 2025/10/21 - 17:59:55 | syncing options from database 
+[SYS] 2025/10/21 - 17:59:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:59:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:59:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:59:55 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 17:59:57 | 20251021175957553959000bXxFXJ3l | 200 |     748.125µs |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021175926920265000A1Avl1Cj
+[SYS] 2025/10/21 - 18:00:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:00:10 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:00:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:00:10 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:00:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:00:25 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:00:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:00:25 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:00:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:00:40 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:00:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:00:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:00:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:00:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:00:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:00:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:00:55 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:00:55 | 20251021180055446470000XhJHJ48j | 200 |   25.051209ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044455
+[INFO] 2025/10/21 - 18:01:00 | 20251021180100197498000YG01C2ns | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:01:00 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/10/21 - 18:01:00 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"input":"石头"}} 
+[DEBUG] 2025/10/21 - 18:01:00 | 20251021180100197498000YG01C2ns | text request body: {"workflow_id":"7520444303086125096","parameters":{"input":"石头"}} 
+[SYS] 2025/10/21 - 18:01:00 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] ChannelOtherSettings: {AzureResponsesVersion: VertexKeyType: CozeAuthType:oauth} 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] CozeAuthType 原始值: 'oauth' 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qswUqGKO86T17mnLqi7ZyGkC2d2euPsL9S1P5AoXBXxAdziuDsam2Rx5qWC0u4pkn","expires_in":1761041760,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qswUqGKO86T17mnL... 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] 准备使用 OAuth token (前20字符): czs_qswUqGKO86T17mnL... 
+[SYS] 2025/10/21 - 18:01:00 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer czs_qswUqGKO86T17mnLqi7... 
+[SYS] 2025/10/21 - 18:01:00 | DoResponse called with OriginModelName: 7520444303086125096 
+[ERR] 2025/10/21 - 18:01:00 | 20251021180100197498000YG01C2ns | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7520444303086125096， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:01:00 | 20251021180100197498000YG01C2ns | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"7520444303086125096","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":true,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":70,"user_group_ratio":-1}} 
+[GIN] 2025/10/21 - 18:01:00 | 20251021180100197498000YG01C2ns | 200 |  340.780792ms |             ::1 |    POST /v1/chat/completions
+[INFO] 2025/10/21 - 18:01:07 | 20251021180107213058000MvmfGEBA | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:01:07 | [WorkflowModel] 工作流ID作为模型名称: 7549079559813087284 
+[SYS] 2025/10/21 - 18:01:07 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"input":"爱情让人成长"}} 
+[DEBUG] 2025/10/21 - 18:01:07 | 20251021180107213058000MvmfGEBA | text request body: {"workflow_id":"7549079559813087284","parameters":{"input":"爱情让人成长"}} 
+[SYS] 2025/10/21 - 18:01:07 | DoRequest called with OriginModelName: 7549079559813087284 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] ChannelOtherSettings: {AzureResponsesVersion: VertexKeyType: CozeAuthType:oauth} 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] CozeAuthType 原始值: 'oauth' 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_l3P9EMKi6ClGgW18QG4LkfCa2gMH5UgjSwUlPfa6EYoCdlblBukPfn4P2z3QrZzIZ","expires_in":1761041767,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] Access token 获取成功 (前20字符): czs_l3P9EMKi6ClGgW18... 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] 准备使用 OAuth token (前20字符): czs_l3P9EMKi6ClGgW18... 
+[SYS] 2025/10/21 - 18:01:07 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer czs_l3P9EMKi6ClGgW18QG4... 
+[SYS] 2025/10/21 - 18:01:07 | DoResponse called with OriginModelName: 7549079559813087284 
+[ERR] 2025/10/21 - 18:01:07 | 20251021180107213058000MvmfGEBA | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7549079559813087284， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:01:07 | 20251021180107213058000MvmfGEBA | record consume log: userId=1, params={"channel_id":8,"prompt_tokens":0,"completion_tokens":0,"model_name":"7549079559813087284","token_name":"1","quota":0,"content":"（可能是上游超时）","token_id":1,"use_time_seconds":0,"is_stream":true,"group":"default","other":{"admin_info":{"use_channel":["8"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":70,"user_group_ratio":-1}} 
+[GIN] 2025/10/21 - 18:01:07 | 20251021180107213058000MvmfGEBA | 200 |  208.067208ms |             ::1 |    POST /v1/chat/completions
+[INFO] 2025/10/21 - 18:01:08 | 20251021180108518090000SOHSJbnD | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:01:08 | [WorkflowModel] 工作流ID作为模型名称: 7549079559813087284 
+[SYS] 2025/10/21 - 18:01:08 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7549079559813087284, stream=false 
+[DEBUG] 2025/10/21 - 18:01:08 | 20251021180108518090000SOHSJbnD | text request body: null 
+[SYS] 2025/10/21 - 18:01:08 | DoRequest called with OriginModelName: 7549079559813087284 
+[SYS] 2025/10/21 - 18:01:08 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/21 - 18:01:08 | [Async] Created task chatcmpl-20251021180108518090000SOHSJbnD for workflow 7549079559813087284 
+[SYS] 2025/10/21 - 18:01:08 | [Async] Starting background execution for task chatcmpl-20251021180108518090000SOHSJbnD 
+[SYS] 2025/10/21 - 18:01:08 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/21 - 18:01:08 | 20251021180108518090000SOHSJbnD | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7549079559813087284， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:01:08 | 20251021180108518090000SOHSJbnD | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/10/21 - 18:01:08 | 20251021180108518090000SOHSJbnD | 200 |   15.005333ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 18:01:08 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"input":"爱情让人成长"}} 
+[SYS] 2025/10/21 - 18:01:08 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:01:08 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:01:08 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:01:08 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lY7zPDHn4FinCGYwwjMbqi2pIVVyccv5SamwNU67Oom9XuqRHXTP1GD5126Jlbdim","expires_in":1761041768,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:01:08 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lY7zPDHn4FinCGYw... 
+[GIN] 2025/10/21 - 18:01:08 | 20251021180108787221000Kc4Lq42V | 200 |    1.383042ms |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180108518090000SOHSJbnD
+[SYS] 2025/10/21 - 18:01:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:01:10 | SYSTEM | Channel #8 pending video tasks: 38 
+[ERR] 2025/10/21 - 18:01:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:01:10 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:01:21 | 20251021180121605985000AzdPsM40 | 200 |   13.179875ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044481&channel=&group=
+[GIN] 2025/10/21 - 18:01:21 | 20251021180121587896000fnNQQbsM | 200 |   34.234083ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044481&channel=&group=
+[GIN] 2025/10/21 - 18:01:21 | 20251021180121976209000SsbE68ez | 200 |    2.543791ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044481
+[SYS] 2025/10/21 - 18:01:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:01:25 | SYSTEM | Channel #8 pending video tasks: 38 
+[ERR] 2025/10/21 - 18:01:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:01:25 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:01:25 | 202510211801252819920002nIA4He2 | 200 |     916.917µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044485&channel=&group=
+[GIN] 2025/10/21 - 18:01:25 | 20251021180125291791000ZczxUDwl | 200 |     746.125µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044485&channel=&group=
+[SYS] 2025/10/21 - 18:01:33 | [Async] 首次提取 usage from Message: Prompt=154, Completion=312, Total=466 
+[SYS] 2025/10/21 - 18:01:33 | [Async] 最终计费 usage: Prompt=154, Completion=312, Total=466 
+[SYS] 2025/10/21 - 18:01:33 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/10/21 - 18:01:33 | [WorkflowPricing] 输入参数: workflow_id=7549079559813087284, channel_id=8 
+[SYS] 2025/10/21 - 18:01:33 | [WorkflowPricing] 数据库中匹配的记录数: 1 
+[SYS] 2025/10/21 - 18:01:33 | [WorkflowPricing] 查询成功，workflowPrice指针: 0x14000d52328 
+[SYS] 2025/10/21 - 18:01:33 | [WorkflowPricing] workflowPrice值: 500000 
+[SYS] 2025/10/21 - 18:01:33 | [WorkflowPricing] ===== 查询到工作流定价: workflow=7549079559813087284, channel=8, price=500000 quota/次 ===== 
+[SYS] 2025/10/21 - 18:01:33 | [Async] 工作流按次计费: workflow=7549079559813087284, 基础价格=500000 quota/次, 分组倍率=1.00, 最终quota=500000 
+[SYS] 2025/10/21 - 18:01:33 | [Async] Successfully consumed quota: 500000 for task chatcmpl-20251021180108518090000SOHSJbnD 
+[SYS] 2025/10/21 - 18:01:33 | [Async] Successfully created log for task chatcmpl-20251021180108518090000SOHSJbnD with 466 tokens 
+[SYS] 2025/10/21 - 18:01:33 | [Async] Task chatcmpl-20251021180108518090000SOHSJbnD completed successfully 
+[GIN] 2025/10/21 - 18:01:39 | 20251021180139557015000SxYihOtH | 200 |    1.560791ms |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180108518090000SOHSJbnD
+[SYS] 2025/10/21 - 18:01:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:01:40 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:01:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:01:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:01:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:01:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:01:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:01:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:01:55 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:02:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:02:10 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:02:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:02:10 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:02:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:02:25 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:02:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:02:25 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:02:40 | 20251021180240128661000KIt920L3 | 200 |     4.20875ms |             ::1 |     GET /api/option/
+[SYS] 2025/10/21 - 18:02:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:02:40 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:02:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:02:40 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:02:41 | 20251021180241322328000JOfW3V53 | 200 |      490.75µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/21 - 18:02:41 | 20251021180241874697000jjIpUYhW | 200 |    1.366167ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/21 - 18:02:41 | 20251021180241874573000T2vUYsiI | 200 |    4.486042ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/21 - 18:02:55 | 正在更新数据看板数据... 
+[SYS] 2025/10/21 - 18:02:55 | 保存数据看板数据成功，共保存3条数据 
+[SYS] 2025/10/21 - 18:02:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:02:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:02:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:02:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:02:55 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:03:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:03:10 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:03:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:03:10 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:03:19 | 20251021180319364661000V1UORsjR | 200 |   26.325834ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044599
+[GIN] 2025/10/21 - 18:03:21 | 20251021180321811161000Hg7USfdg | 200 |     2.69225ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044601&channel=&group=
+[GIN] 2025/10/21 - 18:03:21 | 20251021180321850179000aUnQ9hZb | 200 |     599.834µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044601&channel=&group=
+[SYS] 2025/10/21 - 18:03:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:03:25 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:03:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:03:25 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:03:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:03:40 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:03:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:03:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:03:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:03:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:03:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:03:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:03:55 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:04:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:04:10 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:04:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:04:10 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:04:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:04:25 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:04:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:04:25 | 任务进度轮询完成 
+[ERR] 2025/10/21 - 18:04:31 | 20251021180431485355000zwn6qRKb | user 0 | 无效的令牌 
+[GIN] 2025/10/21 - 18:04:31 | 20251021180431485355000zwn6qRKb | 401 |    1.283167ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 18:04:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:04:40 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:04:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:04:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:04:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:04:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:04:55 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 18:04:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:04:55 | 任务进度轮询完成 
+[INFO] 2025/10/21 - 18:04:56 | 20251021180456208605000q07MLDZK | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:04:56 | [WorkflowModel] 工作流ID作为模型名称: 7552857607800537129 
+[SYS] 2025/10/21 - 18:04:56 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7552857607800537129, stream=false 
+[DEBUG] 2025/10/21 - 18:04:56 | 20251021180456208605000q07MLDZK | text request body: null 
+[SYS] 2025/10/21 - 18:04:56 | DoRequest called with OriginModelName: 7552857607800537129 
+[SYS] 2025/10/21 - 18:04:56 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/21 - 18:04:56 | [Async] Created task chatcmpl-20251021180456208605000q07MLDZK for workflow 7552857607800537129 
+[SYS] 2025/10/21 - 18:04:56 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/21 - 18:04:56 | 20251021180456208605000q07MLDZK | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7552857607800537129， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:04:56 | 20251021180456208605000q07MLDZK | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/10/21 - 18:04:56 | 20251021180456208605000q07MLDZK | 200 |       9.828ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 18:04:56 | [Async] Starting background execution for task chatcmpl-20251021180456208605000q07MLDZK 
+[SYS] 2025/10/21 - 18:04:56 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7552857607800537129","parameters":{"image":"https://d5530a48aa3b.ngrok-free.app/uploads/images/image-1761041087490-537220810.jpeg","input2":"狗绳"}} 
+[SYS] 2025/10/21 - 18:04:56 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:04:56 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:04:56 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:04:56 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lbNeG0eNTNo7PMHZET4Tg751FSFeGEvg4i1kPBIWmTz5fdGdDQ3MHjBIOC9I7iSxC","expires_in":1761041996,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:04:56 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lbNeG0eNTNo7PMHZ... 
+[GIN] 2025/10/21 - 18:04:56 | 20251021180456495102000arw0E3dc | 200 |     736.625µs |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180456208605000q07MLDZK
+[SYS] 2025/10/21 - 18:04:58 | [Async] Error occurred, usage: PromptTokens=0, CompletionTokens=0, TotalTokens=0 
+[SYS] 2025/10/21 - 18:04:58 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/10/21 - 18:04:58 | [WorkflowPricing] 输入参数: workflow_id=7552857607800537129, channel_id=8 
+[SYS] 2025/10/21 - 18:04:58 | [WorkflowPricing] 数据库中匹配的记录数: 1 
+[SYS] 2025/10/21 - 18:04:58 | [WorkflowPricing] 查询成功，workflowPrice指针: 0x14001593f98 
+[SYS] 2025/10/21 - 18:04:58 | [WorkflowPricing] workflowPrice值: 500000 
+[SYS] 2025/10/21 - 18:04:58 | [WorkflowPricing] ===== 查询到工作流定价: workflow=7552857607800537129, channel=8, price=500000 quota/次 ===== 
+[SYS] 2025/10/21 - 18:04:58 | [Async] 工作流按次计费: workflow=7552857607800537129, 基础价格=500000 quota/次, 分组倍率=1.00, 最终quota=500000 
+[SYS] 2025/10/21 - 18:04:58 | [Async] Successfully consumed quota: 500000 for task chatcmpl-20251021180456208605000q07MLDZK 
+[SYS] 2025/10/21 - 18:04:58 | [Async] Successfully created log for task chatcmpl-20251021180456208605000q07MLDZK with 0 tokens 
+[SYS] 2025/10/21 - 18:04:58 | [Async] Task chatcmpl-20251021180456208605000q07MLDZK failed: request body has an error: doesn't match schema: Error at "/image_url": string doesn't match the format "image_url" (regular expression "^(http|https)://.+$")
+Schema:
+  {
+    "description": "上传图片",
+    "format": "image_url",
+    "title": "原图",
+    "type": "string"
+  }
+
+Value:
+  ""
+ 
+[GIN] 2025/10/21 - 18:04:59 | 20251021180459384262000A6oPjEK8 | 200 |    9.143417ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1758449099000&end_timestamp=1761044699000
+[GIN] 2025/10/21 - 18:04:59 | 20251021180459720822000Vzcz8JTa | 200 |       2.128ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044699&channel=&group=
+[GIN] 2025/10/21 - 18:04:59 | 20251021180459755857000yhau9nke | 200 |    1.991625ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044699&channel=&group=
+[GIN] 2025/10/21 - 18:04:59 | 20251021180459891940000sDnesJ9L | 500 |    4.659083ms |             ::1 |    POST /v1/chat/completions
+[GIN] 2025/10/21 - 18:05:09 | 20251021180509171780000bTicGncq | 200 |    9.767083ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044709
+[SYS] 2025/10/21 - 18:05:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:05:10 | SYSTEM | Channel #8 pending video tasks: 38 
+[ERR] 2025/10/21 - 18:05:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:05:10 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:05:20 | 20251021180520356917000h1QRkPAu | 200 |   22.560708ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1758449120000&end_timestamp=1761044720000
+[GIN] 2025/10/21 - 18:05:20 | 202510211805206139860000o7CAevz | 200 |    2.342791ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044720
+[SYS] 2025/10/21 - 18:05:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:05:25 | SYSTEM | Channel #8 pending video tasks: 38 
+[ERR] 2025/10/21 - 18:05:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:05:25 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:05:26 | 20251021180526489872000epaudKNo | 200 |     729.083µs |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180456208605000q07MLDZK
+[INFO] 2025/10/21 - 18:05:27 | 20251021180527966933000PLw00cIT | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:05:27 | [WorkflowModel] 工作流ID作为模型名称: 7552857607800537129 
+[SYS] 2025/10/21 - 18:05:27 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7552857607800537129, stream=false 
+[DEBUG] 2025/10/21 - 18:05:27 | 20251021180527966933000PLw00cIT | text request body: null 
+[SYS] 2025/10/21 - 18:05:27 | DoRequest called with OriginModelName: 7552857607800537129 
+[SYS] 2025/10/21 - 18:05:27 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/21 - 18:05:27 | [Async] Created task chatcmpl-20251021180527966933000PLw00cIT for workflow 7552857607800537129 
+[SYS] 2025/10/21 - 18:05:27 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/21 - 18:05:27 | 20251021180527966933000PLw00cIT | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7552857607800537129， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:05:27 | 20251021180527966933000PLw00cIT | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/10/21 - 18:05:27 | 20251021180527966933000PLw00cIT | 200 |    2.591125ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 18:05:27 | [Async] Starting background execution for task chatcmpl-20251021180527966933000PLw00cIT 
+[SYS] 2025/10/21 - 18:05:27 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7552857607800537129","parameters":{"image":"https://d5530a48aa3b.ngrok-free.app/uploads/images/image-1761041087490-537220810.jpeg","input2":"狗绳"}} 
+[SYS] 2025/10/21 - 18:05:27 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:05:27 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:05:27 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:05:28 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qeWXqhYMpYLyIIE7hvewOk3Kf9ib3QPkP58B8RziYjgRDEmrflAPejXKeSaTRnmaI","expires_in":1761042028,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:05:28 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qeWXqhYMpYLyIIE7... 
+[GIN] 2025/10/21 - 18:05:28 | 202510211805281999150001u59Uqm0 | 200 |   51.587917ms |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180527966933000PLw00cIT
+[GIN] 2025/10/21 - 18:05:29 | 20251021180529787413000iZqwD25E | 200 |    1.493166ms |             ::1 |     GET /console/task
+[GIN] 2025/10/21 - 18:05:30 | 2025102118053096965000N8vm4Cht | 200 |     347.083µs |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 18:05:30 | 20251021180530956090006jWZxS7t | 200 |    3.500125ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044730
+[GIN] 2025/10/21 - 18:05:30 | 2025102118053097127000YiX7O77O | 200 |    2.976958ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:05:30 | 20251021180530214266000MltfLQZs | 200 |     529.875µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:05:34 | 20251021180534628646000kJpuBtE0 | 200 |     346.792µs |             ::1 |     GET /console/task
+[GIN] 2025/10/21 - 18:05:34 | 20251021180534787002000Zhp90n2G | 200 |     3.68525ms |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 18:05:34 | 20251021180534786506000gjyyhVJm | 200 |    6.227417ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:05:34 | 20251021180534786924000FEZErvwn | 200 |    7.587333ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044734
+[GIN] 2025/10/21 - 18:05:34 | 20251021180534849576000Wx7Em2oG | 200 |    1.342542ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:05:38 | 20251021180538244818000pfswKodK | 200 |    5.189458ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044738&channel=&group=
+[GIN] 2025/10/21 - 18:05:38 | 20251021180538257844000II5l9ky5 | 200 |     426.625µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044738&channel=&group=
+[INFO] 2025/10/21 - 18:05:39 | 20251021180539424081000T14Koiev | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:05:39 | [WorkflowModel] 工作流ID作为模型名称: 7549079559813087284 
+[SYS] 2025/10/21 - 18:05:39 | [Async] Detected async workflow request: model=coze-workflow, workflow_id=7549079559813087284, stream=false 
+[DEBUG] 2025/10/21 - 18:05:39 | 20251021180539424081000T14Koiev | text request body: null 
+[SYS] 2025/10/21 - 18:05:39 | DoRequest called with OriginModelName: 7549079559813087284 
+[SYS] 2025/10/21 - 18:05:39 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/21 - 18:05:39 | [Async] Created task chatcmpl-20251021180539424081000T14Koiev for workflow 7549079559813087284 
+[SYS] 2025/10/21 - 18:05:39 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/21 - 18:05:39 | 20251021180539424081000T14Koiev | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7549079559813087284， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:05:39 | 20251021180539424081000T14Koiev | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/10/21 - 18:05:39 | 20251021180539424081000T14Koiev | 200 |    2.708667ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 18:05:39 | [Async] Starting background execution for task chatcmpl-20251021180539424081000T14Koiev 
+[SYS] 2025/10/21 - 18:05:39 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"input":"星星不独属于你一人"}} 
+[SYS] 2025/10/21 - 18:05:39 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:05:39 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:05:39 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:05:39 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qchlsfwMPRQwvqubZHPkPE8tZBMyigVwEeIaPVnc7iLBUnsnF2DGAHvgpQkl1jS0B","expires_in":1761042039,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:05:39 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qchlsfwMPRQwvqub... 
+[SYS] 2025/10/21 - 18:05:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:05:40 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:05:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:05:40 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:05:42 | 20251021180542543817000HE9zHiUF | 200 |     132.625µs |             ::1 |     GET /console/log
+[GIN] 2025/10/21 - 18:05:42 | 202510211805426558270009FkI1vbd | 200 |      185.25µs |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 18:05:42 | 20251021180542655794000FQRtlSVb | 200 |    1.558625ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:05:42 | 20251021180542655848000zajkifYI | 200 |     2.23875ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044742&channel=&group=
+[GIN] 2025/10/21 - 18:05:42 | 20251021180542696504000U3Jq3OLc | 200 |   19.651167ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044742&channel=&group=
+[GIN] 2025/10/21 - 18:05:42 | 20251021180542731380000dLxuQUAH | 200 |    1.143417ms |             ::1 |     GET /api/user/self
+[SYS] 2025/10/21 - 18:05:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:05:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:05:55 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:05:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:05:55 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:05:58 | [Async] Error occurred, usage: PromptTokens=0, CompletionTokens=0, TotalTokens=0 
+[SYS] 2025/10/21 - 18:05:58 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/10/21 - 18:05:58 | [WorkflowPricing] 输入参数: workflow_id=7552857607800537129, channel_id=8 
+[SYS] 2025/10/21 - 18:05:58 | [WorkflowPricing] 数据库中匹配的记录数: 1 
+[SYS] 2025/10/21 - 18:05:58 | [WorkflowPricing] 查询成功，workflowPrice指针: 0x14000df3268 
+[SYS] 2025/10/21 - 18:05:58 | [WorkflowPricing] workflowPrice值: 500000 
+[SYS] 2025/10/21 - 18:05:58 | [WorkflowPricing] ===== 查询到工作流定价: workflow=7552857607800537129, channel=8, price=500000 quota/次 ===== 
+[SYS] 2025/10/21 - 18:05:58 | [Async] 工作流按次计费: workflow=7552857607800537129, 基础价格=500000 quota/次, 分组倍率=1.00, 最终quota=500000 
+[SYS] 2025/10/21 - 18:05:58 | [Async] Successfully consumed quota: 500000 for task chatcmpl-20251021180527966933000PLw00cIT 
+[SYS] 2025/10/21 - 18:05:58 | [Async] Successfully created log for task chatcmpl-20251021180527966933000PLw00cIT with 0 tokens 
+[SYS] 2025/10/21 - 18:05:58 | [Async] Task chatcmpl-20251021180527966933000PLw00cIT failed: request body has an error: doesn't match schema: Error at "/image_url": string doesn't match the format "image_url" (regular expression "^(http|https)://.+$")
+Schema:
+  {
+    "description": "上传图片",
+    "format": "image_url",
+    "title": "原图",
+    "type": "string"
+  }
+
+Value:
+  ""
+ 
+[GIN] 2025/10/21 - 18:05:58 | 20251021180558557725000obWQ76sX | 200 |     982.416µs |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180527966933000PLw00cIT
+[GIN] 2025/10/21 - 18:06:01 | 2025102118060190922000yhEl7jBl | 200 |   14.420416ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044761
+[GIN] 2025/10/21 - 18:06:04 | 202510211806048496730007XZJqjSl | 200 |    5.654958ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044764&channel=&group=
+[GIN] 2025/10/21 - 18:06:04 | 20251021180604870331000bPIpH8je | 200 |      775.25µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760976000&end_timestamp=1761044764&channel=&group=
+[SYS] 2025/10/21 - 18:06:09 | [Async] 首次提取 usage from Message: Prompt=157, Completion=455, Total=612 
+[SYS] 2025/10/21 - 18:06:09 | [Async] 最终计费 usage: Prompt=157, Completion=455, Total=612 
+[SYS] 2025/10/21 - 18:06:09 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/10/21 - 18:06:09 | [WorkflowPricing] 输入参数: workflow_id=7549079559813087284, channel_id=8 
+[SYS] 2025/10/21 - 18:06:09 | [WorkflowPricing] 数据库中匹配的记录数: 1 
+[SYS] 2025/10/21 - 18:06:09 | [WorkflowPricing] 查询成功，workflowPrice指针: 0x14000ded838 
+[SYS] 2025/10/21 - 18:06:09 | [WorkflowPricing] workflowPrice值: 500000 
+[SYS] 2025/10/21 - 18:06:09 | [WorkflowPricing] ===== 查询到工作流定价: workflow=7549079559813087284, channel=8, price=500000 quota/次 ===== 
+[SYS] 2025/10/21 - 18:06:09 | [Async] 工作流按次计费: workflow=7549079559813087284, 基础价格=500000 quota/次, 分组倍率=1.00, 最终quota=500000 
+[SYS] 2025/10/21 - 18:06:09 | [Async] Successfully consumed quota: 500000 for task chatcmpl-20251021180539424081000T14Koiev 
+[SYS] 2025/10/21 - 18:06:09 | [Async] Successfully created log for task chatcmpl-20251021180539424081000T14Koiev with 612 tokens 
+[SYS] 2025/10/21 - 18:06:09 | [Async] Task chatcmpl-20251021180539424081000T14Koiev completed successfully 
+[SYS] 2025/10/21 - 18:06:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:06:10 | SYSTEM | Channel #8 pending video tasks: 39 
+[ERR] 2025/10/21 - 18:06:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:06:10 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:06:19 | 202510211806196944190000D95z55u | 200 |    5.234333ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044779
+[GIN] 2025/10/21 - 18:06:20 | 202510211806202858010001m46vY2n | 200 |     451.084µs |             ::1 |     GET /console/task
+[GIN] 2025/10/21 - 18:06:20 | 20251021180620520262000IogtGB2U | 200 |    1.520542ms |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 18:06:20 | 20251021180620520896000orsiQCqd | 200 |    1.728667ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044780
+[GIN] 2025/10/21 - 18:06:20 | 20251021180620520089000EeqaReUW | 200 |    2.832875ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:06:20 | 20251021180620612878000wZ0uWCBE | 200 |   11.669125ms |             ::1 |     GET /api/user/self
+[SYS] 2025/10/21 - 18:06:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:06:25 | SYSTEM | Channel #8 pending video tasks: 39 
+[ERR] 2025/10/21 - 18:06:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:06:25 | 任务进度轮询完成 
+[INFO] 2025/10/21 - 18:06:26 | 20251021180626949483000z81FmOda | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/21 - 18:06:26 | [WorkflowModel] 工作流ID作为模型名称: 7552857607800537129 
+[SYS] 2025/10/21 - 18:06:26 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7552857607800537129, stream=false 
+[DEBUG] 2025/10/21 - 18:06:26 | 20251021180626949483000z81FmOda | text request body: null 
+[SYS] 2025/10/21 - 18:06:26 | DoRequest called with OriginModelName: 7552857607800537129 
+[SYS] 2025/10/21 - 18:06:26 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/10/21 - 18:06:26 | [Async] Created task chatcmpl-20251021180626949483000z81FmOda for workflow 7552857607800537129 
+[SYS] 2025/10/21 - 18:06:26 | [Async] Response already sent, skipping DoResponse 
+[ERR] 2025/10/21 - 18:06:26 | 20251021180626949483000z81FmOda | total tokens is 0, cannot consume quota, userId 1, channelId 8, tokenId 1, model 7552857607800537129， pre-consumed quota 0 
+[INFO] 2025/10/21 - 18:06:26 | 20251021180626949483000z81FmOda | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/10/21 - 18:06:26 | 20251021180626949483000z81FmOda | 200 |    8.798584ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/21 - 18:06:26 | [Async] Starting background execution for task chatcmpl-20251021180626949483000z81FmOda 
+[SYS] 2025/10/21 - 18:06:26 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7552857607800537129","parameters":{"image":"https://d5530a48aa3b.ngrok-free.app/uploads/images/image-1761041087490-537220810.jpeg","input2":"狗绳"}} 
+[SYS] 2025/10/21 - 18:06:26 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/10/21 - 18:06:26 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/10/21 - 18:06:27 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/10/21 - 18:06:27 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lqJqsKDSIWMJIxDoFaeBcxTG3gCoukhsQLSBqHTrVCe7p18IbmIwuh4oAuHRnN0i9","expires_in":1761042087,"token_type":"Bearer"} 
+[SYS] 2025/10/21 - 18:06:27 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lqJqsKDSIWMJIxDo... 
+[GIN] 2025/10/21 - 18:06:27 | 20251021180627198765000A88dgDc7 | 200 |     680.084µs |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180626949483000z81FmOda
+[GIN] 2025/10/21 - 18:06:28 | 20251021180628726316000felwqQ8Y | 200 |     800.458µs |             ::1 |     GET /console/task
+[GIN] 2025/10/21 - 18:06:28 | 20251021180628919668000ULs26tNN | 200 |     922.584µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 18:06:28 | 20251021180628920161000GkKSq1nn | 200 |     451.084µs |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 18:06:28 | 20251021180628920048000lIQnc8xg | 200 |    3.118917ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044788
+[GIN] 2025/10/21 - 18:06:28 | 20251021180628993995000tRsykNKn | 200 |     620.958µs |             ::1 |     GET /api/user/self
+[SYS] 2025/10/21 - 18:06:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:06:40 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:06:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:06:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:06:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:06:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:06:55 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:06:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:06:55 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:06:57 | 20251021180657653010000Dh6SjtGI | 200 |      10.441ms |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180626949483000z81FmOda
+[SYS] 2025/10/21 - 18:07:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:07:10 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:07:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:07:10 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:07:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:07:25 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:07:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:07:25 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:07:27 | 202510211807272286590001JoluGFj | 200 |    4.686541ms |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180626949483000z81FmOda
+[SYS] 2025/10/21 - 18:07:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:07:40 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:07:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:07:40 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:07:44 | [Async] Error occurred, usage: PromptTokens=0, CompletionTokens=0, TotalTokens=0 
+[SYS] 2025/10/21 - 18:07:44 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/10/21 - 18:07:44 | [WorkflowPricing] 输入参数: workflow_id=7552857607800537129, channel_id=8 
+[SYS] 2025/10/21 - 18:07:44 | [WorkflowPricing] 数据库中匹配的记录数: 1 
+[SYS] 2025/10/21 - 18:07:44 | [WorkflowPricing] 查询成功，workflowPrice指针: 0x14000df27f8 
+[SYS] 2025/10/21 - 18:07:44 | [WorkflowPricing] workflowPrice值: 500000 
+[SYS] 2025/10/21 - 18:07:44 | [WorkflowPricing] ===== 查询到工作流定价: workflow=7552857607800537129, channel=8, price=500000 quota/次 ===== 
+[SYS] 2025/10/21 - 18:07:44 | [Async] 工作流按次计费: workflow=7552857607800537129, 基础价格=500000 quota/次, 分组倍率=1.00, 最终quota=500000 
+[SYS] 2025/10/21 - 18:07:44 | [Async] Successfully consumed quota: 500000 for task chatcmpl-20251021180626949483000z81FmOda 
+[SYS] 2025/10/21 - 18:07:44 | [Async] Successfully created log for task chatcmpl-20251021180626949483000z81FmOda with 0 tokens 
+[SYS] 2025/10/21 - 18:07:44 | [Async] Task chatcmpl-20251021180626949483000z81FmOda failed: [702092028] request body has an error: doesn't match schema: Error at "/image_url": string doesn't match the format "image_url" (regular expression "^(http|https)://.+$")
+Schema:
+  {
+    "description": "原图",
+    "format": "image_url",
+    "title": "原图",
+    "type": "string"
+  }
+
+Value:
+  ""
+ 
+[SYS] 2025/10/21 - 18:07:55 | 正在更新数据看板数据... 
+[SYS] 2025/10/21 - 18:07:55 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/21 - 18:07:55 | syncing options from database 
+[SYS] 2025/10/21 - 18:07:55 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:07:55 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:07:55 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:07:55 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 18:07:57 | 20251021180757211582000YujoeE9U | 200 |      693.75µs |             ::1 |     GET /v1/workflows/executions/chatcmpl-20251021180626949483000z81FmOda
+[SYS] 2025/10/21 - 18:08:10 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:08:10 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:08:10 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:08:10 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:08:25 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:08:25 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:08:25 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:08:25 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 18:08:40 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 18:08:40 | SYSTEM | Channel #8 pending video tasks: 40 
+[ERR] 2025/10/21 - 18:08:40 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 18:08:40 | 任务进度轮询完成 

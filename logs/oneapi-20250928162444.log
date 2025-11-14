@@ -1,0 +1,28 @@
+[SYS] 2025/09/28 - 16:24:44 | initializing token encoders 
+[SYS] 2025/09/28 - 16:24:44 | token encoders initialized 
+[SYS] 2025/09/28 - 16:24:44 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/28 - 16:24:44 | database migration started 
+[SYS] 2025/09/28 - 16:24:44 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/09/28 - 16:24:44 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/28 - 16:24:44 | New API v0.0.0 started 
+[SYS] 2025/09/28 - 16:24:44 | memory cache enabled 
+[SYS] 2025/09/28 - 16:24:44 | sync frequency: 60 seconds 
+[SYS] 2025/09/28 - 16:24:44 | channels synced from database 
+[SYS] 2025/09/28 - 16:24:44 | 正在更新数据看板数据... 
+[SYS] 2025/09/28 - 16:24:44 | 保存数据看板数据成功，共保存0条数据 
+[INFO] 2025/09/28 - 16:24:50 | 20250928162450614203000llHWgLTv | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/09/28 - 16:24:50 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/28 - 16:24:50 | Processing as Coze workflow request 
+[SYS] 2025/09/28 - 16:24:51 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/28 - 16:24:51 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/28 - 16:24:51 | Coze工作流响应: {"code":5000,"msg":"System encountered an unexpected internal error. This is usually a temporary issue and should be resolved quickly. Please wait for a moment and try your operation again.","detail":{"logid":"202509281624506C42CBBE27555151C756"},"debug_url":"https://www.coze.cn/work_flow?execute_id=7555053160743813162&space_id=7549033030220857353&workflow_id=7552857607800537129&execute_mode=2"} 
+[SYS] 2025/09/28 - 16:24:51 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/28 - 16:24:51 | 20250928162450614203000llHWgLTv | 预扣费后补扣费：＄0.000004（实际消耗：＄0.000004，预扣费：＄0.000000） 
+[INFO] 2025/09/28 - 16:24:51 | 20250928162450614203000llHWgLTv | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"1","quota":2,"content":"","token_id":1,"use_time_seconds":1,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["6"]},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[GIN] 2025/09/28 - 16:24:51 | 20250928162450614203000llHWgLTv | 200 |  475.236416ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/09/28 - 16:24:59 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 16:24:59 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 16:25:14 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 16:25:14 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 16:25:29 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 16:25:29 | 任务进度轮询完成 

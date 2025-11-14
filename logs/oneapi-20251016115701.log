@@ -1,0 +1,20 @@
+[SYS] 2025/10/16 - 11:57:01 | initializing token encoders 
+[SYS] 2025/10/16 - 11:57:01 | token encoders initialized 
+[SYS] 2025/10/16 - 11:57:01 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/16 - 11:57:01 | database migration started 
+[SYS] 2025/10/16 - 11:57:01 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/16 - 11:57:01 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/16 - 11:57:01 | New API v0.0.0 started 
+[SYS] 2025/10/16 - 11:57:01 | running in debug mode 
+[SYS] 2025/10/16 - 11:57:01 | memory cache enabled 
+[SYS] 2025/10/16 - 11:57:01 | sync frequency: 60 seconds 
+[SYS] 2025/10/16 - 11:57:01 | channels synced from database 
+[SYS] 2025/10/16 - 11:57:01 | 正在更新数据看板数据... 
+[SYS] 2025/10/16 - 11:57:01 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/10/16 - 11:57:04 | 20251016115704631419000BTj06CYp | 200 |     142.959µs |             ::1 |     GET /api/status
+[ERR] 2025/10/16 - 11:57:12 | 20251016115712699261000WyRH3ddF | user 1 | 分组 default 下模型 coze-workflow 无可用渠道（distributor） 
+[GIN] 2025/10/16 - 11:57:12 | 20251016115712699261000WyRH3ddF | 503 |    2.767542ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/16 - 11:57:16 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 11:57:16 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 11:57:31 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 11:57:31 | 任务进度轮询完成 

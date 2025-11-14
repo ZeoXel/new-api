@@ -1,0 +1,470 @@
+[SYS] 2025/10/30 - 15:25:17 | initializing token encoders 
+[SYS] 2025/10/30 - 15:25:17 | token encoders initialized 
+[SYS] 2025/10/30 - 15:25:17 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/30 - 15:25:17 | database migration started 
+[SYS] 2025/10/30 - 15:25:17 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/10/30 - 15:25:17 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/30 - 15:25:17 | New API v0.0.0 started 
+[SYS] 2025/10/30 - 15:25:17 | running in debug mode 
+[SYS] 2025/10/30 - 15:25:17 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:25:17 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/30 - 15:25:32 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:25:32 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:25:47 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:25:47 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:26:02 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:26:02 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:26:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:26:17 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:26:17 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:26:32 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:26:32 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:26:47 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:26:47 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:27:02 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:27:02 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:27:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:27:17 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:27:17 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:27:32 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:27:32 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:27:34 | 20251030152734311164000GAWbH8Xm | 204 |        17.5µs |             ::1 | OPTIONS /v1/video/generations
+[SYS] 2025/10/30 - 15:27:47 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:27:47 | 任务进度轮询完成 
+[INFO] 2025/10/30 - 15:27:54 | 20251030152734312649000ajwxyWZR | record consume log: userId=1, params={"channel_id":1,"prompt_tokens":0,"completion_tokens":0,"model_name":"viduq2-turbo","token_name":"1","quota":781250,"content":"视频生成任务，实际积分 5，积分单价 0.3125元，分组倍率 1.00，操作 generate","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"actual_credits":5,"billing_mode":"credits","credit_price":0.3125,"group_ratio":1}} 
+[GIN] 2025/10/30 - 15:27:54 | 20251030152734312649000ajwxyWZR | 200 | 19.769658584s |             ::1 |    POST /v1/video/generations
+[GIN] 2025/10/30 - 15:27:54 | 20251030152754104931000j5exUX76 | 204 |       4.291µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:27:54 | 20251030152754105555000uLYhud7J | 200 |     639.375µs |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:27:59 | 20251030152759118287000gHp9uGYl | 204 |      10.917µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:27:59 | 2025103015275912056000061o7hemx | 200 |    3.521708ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:28:02 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:28:02 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:28:02 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:28:04 | 20251030152804133785000jAAzr1Q8 | 204 |      57.916µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:04 | 20251030152804135331000YJ4uLmkr | 200 |      1.5755ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:10 | 2025103015281098488000fROMewEn | 204 |      13.792µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:10 | 20251030152810100110000XN920SHI | 200 |    1.408042ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:16 | 2025103015281697728000iDKHttwi | 204 |      11.334µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:16 | 2025103015281699322000Xi5VdbMB | 200 |    1.506875ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:28:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:28:17 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:28:17 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:28:17 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:28:22 | 2025103015282297826000emjMjWsl | 204 |      12.583µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:22 | 2025103015282299064000HQCqN8Uj | 200 |    1.439334ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:28 | 20251030152828978730007GCh1IzZ | 204 |        8.25µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:28 | 2025103015282899119000gedye42U | 200 |    1.384541ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:28:32 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:28:32 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:28:32 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:28:33 | 20251030152833321575000QqY5FvNA | 200 |     473.375µs |             ::1 |     GET /console/log
+[GIN] 2025/10/30 - 15:28:33 | 20251030152833636739000UgdmmWmA | 200 |     921.875µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 15:28:33 | 20251030152833637183000lWWId4vI | 200 |     485.084µs |             ::1 |     GET /api/status
+[GIN] 2025/10/30 - 15:28:33 | 20251030152833636862000xibeoRqy | 200 |     2.03925ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761812913&channel=&group=
+[GIN] 2025/10/30 - 15:28:33 | 20251030152833885549000ixBavBye | 200 |     739.208µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761812913&channel=&group=
+[GIN] 2025/10/30 - 15:28:33 | 20251030152833885511000HWu6PrsY | 200 |     677.125µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 15:28:34 | 2025103015283497772000dR7cmV8o | 204 |       5.791µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:34 | 2025103015283498699000ovGqiEaO | 200 |    1.252375ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:40 | 2025103015284097985000tq3o5Hac | 204 |      13.417µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:40 | 2025103015284099861000RYYZee5Z | 200 |    2.867208ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:46 | 2025103015284698667000M8lDdyuS | 204 |       14.75µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:46 | 20251030152846100055000UBazNWyX | 200 |    1.375042ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:28:47 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:28:47 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:28:47 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:28:51 | 20251030152851106758000jF91fuoo | 204 |       5.792µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:51 | 20251030152851107375000cEnPVBF8 | 200 |      772.25µs |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:56 | 20251030152856113126000v6PlcZo6 | 204 |      12.584µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:28:56 | 20251030152856114230000jS31fliQ | 200 |    1.259041ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:01 | 20251030152901120186000TgM1Rs7n | 204 |       5.375µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:01 | 20251030152901120875000yIbAnOK8 | 200 |       798.5µs |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:29:02 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:29:02 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:29:02 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:29:06 | 20251030152906126293000LAxEIwO7 | 204 |       5.833µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:06 | 20251030152906126891000eCWc7kWg | 200 |     813.042µs |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:11 | 20251030152911133689000RxvPISNO | 204 |      12.416µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:11 | 20251030152911134847000QPeyjTA2 | 200 |    1.235791ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:16 | 202510301529161424240002prWBvn2 | 204 |      12.459µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:16 | 20251030152916143612000tDbkNRqU | 200 |        1.26ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:29:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:29:17 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:29:17 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:29:17 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:29:21 | 20251030152921151362000Pd5sgZuN | 204 |      12.667µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:21 | 20251030152921152649000ju1Ifnlw | 200 |       1.256ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:26 | 20251030152926160121000VHEO4Xgt | 204 |      12.375µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:26 | 20251030152926161184000vOuFGJmr | 200 |    1.345791ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:31 | 202510301529311680740002gExPjhq | 204 |      11.667µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:31 | 20251030152931169098000T5zzgiAo | 200 |    1.235625ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:29:32 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:29:32 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:29:32 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:29:36 | 20251030152936174599000vi6CCobJ | 204 |         6.5µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:36 | 20251030152936175186000J4GRlF94 | 200 |       1.653ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:38 | 20251030152938949678000sHZja8iS | 200 |       913.5µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1759217378000&end_timestamp=1761812978000
+[GIN] 2025/10/30 - 15:29:39 | 20251030152939499254000DgJR4SaW | 200 |    1.265125ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761812979
+[GIN] 2025/10/30 - 15:29:42 | 20251030152942100827000XspyvKUQ | 204 |       8.834µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:42 | 202510301529421018370003InApvN6 | 200 |    1.709083ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[SYS] 2025/10/30 - 15:29:47 | 任务进度轮询开始 
+[INFO] 2025/10/30 - 15:29:47 | SYSTEM | Channel #1 pending video tasks: 1 
+[SYS] 2025/10/30 - 15:29:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:29:48 | 20251030152948100547000rp8Q6DRx | 204 |      15.959µs |             ::1 | OPTIONS /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:29:48 | 20251030152948101753000VQ3vj2KL | 200 |    1.350625ms |             ::1 |     GET /v1/video/generations/881381645167390720
+[GIN] 2025/10/30 - 15:30:01 | 20251030153001629217000PJ3wPG49 | 200 |    1.073791ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813001&channel=&group=
+[GIN] 2025/10/30 - 15:30:01 | 20251030153001662229000o8SvyRdh | 200 |     629.625µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813001&channel=&group=
+[GIN] 2025/10/30 - 15:30:02 | 2025103015300263918000I51wENUn | 200 |    1.175583ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761813002
+[SYS] 2025/10/30 - 15:30:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:30:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:30:17 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:30:17 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 15:30:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:30:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:30:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:30:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:30:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:30:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:30:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:31:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:31:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:31:11 | 20251030153111756932000IBHlDygP | 204 |      13.292µs |             ::1 | OPTIONS /v1/video/generations/v1/videos
+[GIN] 2025/10/30 - 15:31:11 | 202510301531117598050005IyDuRgt | 404 |     459.125µs |             ::1 |    POST /v1/video/generations/v1/videos
+[SYS] 2025/10/30 - 15:31:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:31:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:31:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:31:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:31:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:31:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:31:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:32:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:32:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:32:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:32:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:32:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:32:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:32:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:32:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:32:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:33:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:33:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:33:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:33:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:33:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:33:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:33:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:33:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:33:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:34:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:34:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:34:15 | 20251030153415883771000bsUfnteE | 204 |        6.25µs |             ::1 | OPTIONS /v1/videos
+[SYS] 2025/10/30 - 15:34:17 | syncing options from database 
+[INFO] 2025/10/30 - 15:34:18 | 20251030153415885191000Y36yNwC0 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:34:18 | user 1 has no email, skip sending email 
+[GIN] 2025/10/30 - 15:34:18 | 20251030153415885191000Y36yNwC0 | 200 |  2.130626958s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 15:34:18 | 2025103015341817920000unibCOLj | 204 |       4.708µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:18 | 2025103015341818518000JjEBklIh | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:18 | 2025103015341818518000JjEBklIh | 400 |     356.833µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:34:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:34:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:34:23 | 20251030153423231148000CGxsc4p1 | 204 |      50.417µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:23 | 20251030153423232319000ZomD2IT8 | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:23 | 20251030153423232319000ZomD2IT8 | 400 |     846.375µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:34:28 | 20251030153428445519000SGgcHm8j | 204 |          13µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:28 | 20251030153428447178000JXwhjvI8 | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:28 | 20251030153428447178000JXwhjvI8 | 400 |         912µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:34:28 | 2025103015342884527900004XXqv2k | 200 |    1.692333ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813268&channel=&group=
+[GIN] 2025/10/30 - 15:34:28 | 20251030153428878358000aNC9944Q | 200 |     636.125µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813268&channel=&group=
+[GIN] 2025/10/30 - 15:34:30 | 20251030153430266242000Iy58nYQ9 | 200 |    1.213917ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761813270
+[GIN] 2025/10/30 - 15:34:31 | 20251030153431766094000AuTi6btW | 200 |     898.792µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813271&channel=&group=
+[GIN] 2025/10/30 - 15:34:31 | 202510301534317950830002UjP2JFw | 200 |     526.792µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813271&channel=&group=
+[SYS] 2025/10/30 - 15:34:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:34:33 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:34:33 | 202510301534336631830004g091GdC | 204 |      11.667µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:33 | 20251030153433664207000LJhmGktR | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:33 | 20251030153433664207000LJhmGktR | 400 |      828.75µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:34:38 | 202510301534388757340004NAE6IU9 | 204 |      30.666µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:38 | 20251030153438876792000jTcD2dEF | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:38 | 20251030153438876792000jTcD2dEF | 400 |     620.666µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:34:44 | 2025103015344488065000yjlhCyld | 204 |       6.209µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:44 | 2025103015344488716000SkzlES5E | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:44 | 2025103015344488716000SkzlES5E | 400 |     587.458µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:34:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:34:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:34:49 | 20251030153449301615000PqCd79n7 | 204 |      11.084µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:49 | 20251030153449302618000vIA9D7DF | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:49 | 20251030153449302618000vIA9D7DF | 400 |     893.167µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:34:54 | 20251030153454514723000iBXNWBVS | 204 |        11.5µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:54 | 20251030153454516613000jHUqqKRA | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:54 | 20251030153454516613000jHUqqKRA | 400 |     786.833µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:34:59 | 20251030153459729724000E93PEA8I | 204 |      13.208µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:34:59 | 20251030153459730771000TmCeME8p | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:34:59 | 20251030153459730771000TmCeME8p | 400 |      869.25µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:35:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:35:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:35:04 | 20251030153504943121000VJqjAO1q | 204 |      11.958µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:04 | 20251030153504944364000yl8ncq3I | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:04 | 20251030153504944364000yl8ncq3I | 400 |     872.083µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:35:10 | 20251030153510158142000McwOZOLG | 204 |      12.709µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:10 | 20251030153510159237000w11T6J9j | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:10 | 20251030153510159237000w11T6J9j | 400 |     913.208µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:35:15 | 20251030153515371744000P5e3qTDU | 204 |        5.25µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:15 | 20251030153515372387000jmlNqioX | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:15 | 20251030153515372387000jmlNqioX | 400 |     825.292µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:35:17 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:35:17 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 15:35:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:35:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:35:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:35:20 | 20251030153520585660000c6afhheg | 204 |       6.583µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:20 | 20251030153520586623000P2tsArZ5 | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:20 | 20251030153520586623000P2tsArZ5 | 400 |      770.25µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:35:25 | 20251030153525797836000XwCqWnKp | 204 |       7.583µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:25 | 20251030153525798822000YJWgEHKf | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:25 | 20251030153525798822000YJWgEHKf | 400 |     627.125µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:35:31 | 2025103015353110739000rVV9Jo8C | 204 |      11.125µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:31 | 2025103015353111948000yGVOKpdn | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:31 | 2025103015353111948000yGVOKpdn | 400 |     861.166µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:35:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:35:33 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:35:36 | 202510301535362254750007grItX8N | 204 |       6.584µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:36 | 20251030153536226668000qSDAbVaf | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:36 | 20251030153536226668000qSDAbVaf | 400 |     978.208µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:35:42 | 20251030153542108696000pDXTNAGD | 204 |      27.333µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:42 | 20251030153542110096000SZreIlWn | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:42 | 20251030153542110096000SZreIlWn | 400 |       1.376ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:35:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:35:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:35:48 | 20251030153548108822000MZzTaOW2 | 204 |       8.125µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:48 | 20251030153548110259000di7P2qLT | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:48 | 20251030153548110259000di7P2qLT | 400 |    1.058125ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:35:54 | 20251030153554109148000rJt555Bt | 204 |      12.333µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:35:54 | 202510301535541103250003nh0WNMb | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:35:54 | 202510301535541103250003nh0WNMb | 400 |     1.11775ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:00 | 20251030153600109039000OytGnXHV | 204 |       8.458µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:00 | 20251030153600110038000LxNe7pOz | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:00 | 20251030153600110038000LxNe7pOz | 400 |     901.125µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:36:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:36:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:36:06 | 20251030153606109211000qdmgvYAS | 204 |      64.417µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:06 | 20251030153606110666000YxYDxGQW | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:06 | 20251030153606110666000YxYDxGQW | 400 |     941.709µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:12 | 20251030153612109187000HPLSwghv | 204 |       4.625µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:12 | 20251030153612109910000iNe8b68C | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:12 | 20251030153612109910000iNe8b68C | 400 |         414µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:36:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:36:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:36:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:36:18 | 20251030153618110081000ozWeTws5 | 204 |      13.583µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:18 | 202510301536181112070009jX19D4k | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:18 | 202510301536181112070009jX19D4k | 400 |     869.458µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:24 | 20251030153624109450000cPVYtagX | 204 |      14.334µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:24 | 20251030153624110674000FiERdsO0 | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:24 | 20251030153624110674000FiERdsO0 | 400 |     926.291µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:30 | 20251030153630108997000b25NkoET | 204 |       8.708µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:30 | 20251030153630110154000Gpzi5b3l | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:30 | 20251030153630110154000Gpzi5b3l | 400 |     820.291µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:36:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:36:33 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:36:36 | 20251030153636109718000qVxA2oxU | 204 |      11.917µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:36 | 202510301536361109700007o6rBOIn | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:36 | 202510301536361109700007o6rBOIn | 400 |     987.791µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:42 | 202510301536421098220004kqiOtj0 | 204 |      12.667µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:42 | 20251030153642110997000joNdHSIL | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:42 | 20251030153642110997000joNdHSIL | 400 |      608.25µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:36:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:36:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:36:48 | 202510301536481094230009iK3NbcH | 204 |      11.291µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:48 | 20251030153648110740000niWoq1H2 | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:48 | 20251030153648110740000niWoq1H2 | 400 |     959.375µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:53 | 20251030153653332055000zfoeSuQG | 204 |      11.958µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:53 | 202510301536533330840009atQXQoh | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:53 | 202510301536533330840009atQXQoh | 400 |       869.5µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[GIN] 2025/10/30 - 15:36:58 | 20251030153658543848000wYf6VXUA | 204 |       8.041µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[ERR] 2025/10/30 - 15:36:58 | 20251030153658544854000DFUJ1JDm | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:36:58 | 20251030153658544854000DFUJ1JDm | 400 |       812.5µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0kvvjfpytsv87brjc1k9f
+[SYS] 2025/10/30 - 15:37:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:37:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:37:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:37:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:37:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:37:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:37:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:37:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:37:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:38:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:38:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:38:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:38:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:38:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:38:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:38:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:38:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:38:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:38:49 | 20251030153849927998000fNwNwAj7 | 200 |     812.083µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1759217929000&end_timestamp=1761813529000
+[GIN] 2025/10/30 - 15:38:50 | 20251030153850173039000ZNSj7Vdv | 200 |    1.100875ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813530&channel=&group=
+[GIN] 2025/10/30 - 15:38:50 | 20251030153850181436000X8PbDndx | 200 |     706.125µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813530&channel=&group=
+[GIN] 2025/10/30 - 15:38:58 | 20251030153858393650000jWOe1h2m | 200 |    1.535792ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761813538
+[GIN] 2025/10/30 - 15:39:00 | 2025103015390064492800077l0xisQ | 200 |     536.042µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1759217940000&end_timestamp=1761813540000
+[GIN] 2025/10/30 - 15:39:00 | 20251030153900897521000tFdfERkv | 200 |    1.309166ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761813540
+[GIN] 2025/10/30 - 15:39:01 | 20251030153901461165000vApf01iC | 200 |    1.742916ms |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/30 - 15:39:01 | 2025103015390146121100038EE1aOv | 200 |    1.747542ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/30 - 15:39:01 | 20251030153901461002000QxeMX9Yl | 200 |    3.323292ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/30 - 15:39:01 | 20251030153901748467000NPILIxXh | 200 |     941.833µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813541&channel=&group=
+[GIN] 2025/10/30 - 15:39:01 | 20251030153901760825000BF7EfaPc | 200 |     862.958µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813541&channel=&group=
+[SYS] 2025/10/30 - 15:39:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:39:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:39:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:39:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:39:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:39:19 | 20251030153919652950002dqVEC7n | 204 |           7µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:39:21 | 2025103015391966337000hBZJX8sF | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:39:21 | user 1 has no email, skip sending email 
+[GIN] 2025/10/30 - 15:39:21 | 2025103015391966337000hBZJX8sF | 200 |  2.515013958s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 15:39:21 | 20251030153921585709000UiO6aciG | 204 |      21.333µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0x47derf92sk3nvgf01bp
+[ERR] 2025/10/30 - 15:39:21 | 20251030153921587699000ULpJjdxQ | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:39:21 | 20251030153921587699000ULpJjdxQ | 400 |    1.441292ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t0x47derf92sk3nvgf01bp
+[GIN] 2025/10/30 - 15:39:26 | 2025103015392680678200069OjZlae | 204 |       8.125µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0x47derf92sk3nvgf01bp
+[ERR] 2025/10/30 - 15:39:26 | 20251030153926807605000RZMNlmmK | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:39:26 | 20251030153926807605000RZMNlmmK | 400 |     679.916µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0x47derf92sk3nvgf01bp
+[SYS] 2025/10/30 - 15:39:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:39:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:39:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:39:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:40:00 | 20251030154000231338000ZeYwRLeS | 204 |       7.917µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:40:02 | 202510301540002332300007NtN4AR1 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:40:02 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/30 - 15:40:02 | 202510301540002332300007NtN4AR1 | 200 |     2.351096s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 15:40:02 | 202510301540025920180005Oi3bHlo | 204 |      12.583µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:02 | 2025103015400259347300043ulra8Z | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:02 | 2025103015400259347300043ulra8Z | 400 |    3.345875ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[SYS] 2025/10/30 - 15:40:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:40:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:40:07 | 20251030154007808200000wV5lVjLT | 204 |       8.041µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:07 | 20251030154007809005000NICnZSrZ | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:07 | 20251030154007809005000NICnZSrZ | 400 |     604.875µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[GIN] 2025/10/30 - 15:40:13 | 2025103015401322253000UtP4yNvT | 204 |      10.083µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:13 | 2025103015401323350000ixO2RamV | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:13 | 2025103015401323350000ixO2RamV | 400 |     929.541µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[SYS] 2025/10/30 - 15:40:17 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:40:17 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 15:40:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:40:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:40:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:40:18 | 202510301540182341280002eW95D6A | 204 |      13.375µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:18 | 20251030154018235236000N6MJJrSk | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:18 | 20251030154018235236000N6MJJrSk | 400 |     977.042µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[GIN] 2025/10/30 - 15:40:23 | 20251030154023448233000HZ4pplDl | 204 |      13.666µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:23 | 20251030154023449313000gwnEEYHn | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:23 | 20251030154023449313000gwnEEYHn | 400 |     886.083µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[GIN] 2025/10/30 - 15:40:28 | 202510301540286610740004xaJXoNV | 204 |       14.75µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:28 | 202510301540286623940005Zp7kKBq | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:28 | 202510301540286623940005Zp7kKBq | 400 |     992.458µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[SYS] 2025/10/30 - 15:40:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:40:33 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:40:33 | 20251030154033875427000ZrhCDFmO | 204 |      15.542µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[ERR] 2025/10/30 - 15:40:33 | 20251030154033876464000lppFt8HL | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:40:33 | 20251030154033876464000lppFt8HL | 400 |     969.334µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t0ycbafygrqpwv5y41mhxp
+[SYS] 2025/10/30 - 15:40:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:40:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:40:56 | 20251030154056762807000loEiambX | 200 |       235.5µs |             ::1 |     GET /console/log
+[GIN] 2025/10/30 - 15:40:57 | 2025103015405785056000thugmQXF | 200 |     302.667µs |             ::1 |     GET /api/status
+[GIN] 2025/10/30 - 15:40:57 | 2025103015405784651000i5FSIkHh | 200 |     1.00675ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 15:40:57 | 2025103015405785007000RPm9ADn0 | 200 |    1.824833ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813657&channel=&group=
+[GIN] 2025/10/30 - 15:40:57 | 20251030154057333340000hhFxoDdu | 200 |     564.875µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1761753600&end_timestamp=1761813657&channel=&group=
+[GIN] 2025/10/30 - 15:40:57 | 20251030154057349720000bhrdwKso | 200 |     701.291µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/30 - 15:40:59 | 20251030154059823571000On3HGqsu | 200 |    2.640167ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1761753600&end_timestamp=1761813659
+[SYS] 2025/10/30 - 15:41:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:41:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:41:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:41:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:41:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:41:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:41:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:41:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:41:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:42:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:42:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:42:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:42:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:42:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:42:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:42:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:42:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:42:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:43:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:43:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:43:14 | 20251030154314785643000u7lixSEQ | 204 |      11.625µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:43:15 | 2025103015431478762100059t5ZAoA | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:43:15 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/30 - 15:43:15 | 2025103015431478762100059t5ZAoA | 500 |    890.3165ms |             ::1 |    POST /v1/videos
+[SYS] 2025/10/30 - 15:43:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:43:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:43:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:43:31 | 20251030154331454588000oVc8fLNE | 204 |      12.042µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:43:32 | 20251030154331456731000IXyVNiKQ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:43:32 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/30 - 15:43:32 | 20251030154331456731000IXyVNiKQ | 500 |     953.318ms |             ::1 |    POST /v1/videos
+[SYS] 2025/10/30 - 15:43:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:43:33 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:43:39 | 20251030154339677039000OC26aAWb | 204 |      13.791µs |             ::1 | OPTIONS /v1/videos
+[INFO] 2025/10/30 - 15:43:42 | 20251030154339678675000njrzdvTe | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"sora-2","token_name":"1","quota":50000,"content":"Bltcy透传（sora-2/sora-2），价格: $0.1000, 配额: 50000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.1,"model_ratio":1}} 
+[SYS] 2025/10/30 - 15:43:42 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/30 - 15:43:42 | 20251030154339678675000njrzdvTe | 200 |  2.453301375s |             ::1 |    POST /v1/videos
+[GIN] 2025/10/30 - 15:43:42 | 20251030154342134936000Fu5WHeyT | 204 |      11.792µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:43:42 | 20251030154342136952000fkJfja3h | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:43:42 | 20251030154342136952000fkJfja3h | 400 |    1.420916ms |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[GIN] 2025/10/30 - 15:43:47 | 20251030154347360460000b9iEC4WL | 204 |        11.5µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:43:47 | 20251030154347361448000BOG9JZHt | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:43:47 | 20251030154347361448000BOG9JZHt | 400 |     836.791µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[SYS] 2025/10/30 - 15:43:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:43:48 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:43:52 | 20251030154352573561000PPrLI5kQ | 204 |       14.25µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:43:52 | 20251030154352574500000LSjp0tt6 | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:43:52 | 20251030154352574500000LSjp0tt6 | 400 |     962.791µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[GIN] 2025/10/30 - 15:43:57 | 20251030154357789026000kgkfPd8T | 204 |      11.708µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:43:57 | 20251030154357790021000hEr6Z0tG | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:43:57 | 20251030154357790021000hEr6Z0tG | 400 |      811.25µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[GIN] 2025/10/30 - 15:44:03 | 202510301544032703000jeq4YAGF | 204 |       9.084µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:44:03 | 202510301544033510000oXmGfd9D | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:44:03 | 202510301544033510000oXmGfd9D | 400 |     936.375µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[SYS] 2025/10/30 - 15:44:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:44:03 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:44:08 | 20251030154408216438000aEzt6ae7 | 204 |      11.916µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:44:08 | 20251030154408217469000jzEDW6YW | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:44:08 | 20251030154408217469000jzEDW6YW | 400 |     828.042µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[GIN] 2025/10/30 - 15:44:13 | 20251030154413430048000FTxF5Qnx | 204 |       5.291µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:44:13 | 20251030154413430817000KQsp7lPz | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:44:13 | 20251030154413430817000KQsp7lPz | 400 |     854.542µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[SYS] 2025/10/30 - 15:44:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:44:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:44:18 | 任务进度轮询完成 
+[GIN] 2025/10/30 - 15:44:18 | 20251030154418642269000wFPG8GuV | 204 |      11.625µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:44:18 | 20251030154418643314000b9cWFprA | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:44:18 | 20251030154418643314000b9cWFprA | 400 |         853µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[GIN] 2025/10/30 - 15:44:23 | 20251030154423854858000kFTdH9Rc | 204 |           8µs |             ::1 | OPTIONS /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[ERR] 2025/10/30 - 15:44:23 | 20251030154423855650000CLon2S7q | user 1 | Invalid request, 无效的请求, unexpected end of JSON input 
+[GIN] 2025/10/30 - 15:44:23 | 20251030154423855650000CLon2S7q | 400 |     679.917µs |             ::1 |     GET /v1/videos/sora-2:task_01k8t152q2e2gvtb9z08q99k04
+[SYS] 2025/10/30 - 15:44:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:44:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:44:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:44:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:45:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:45:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:45:17 | 正在更新数据看板数据... 
+[SYS] 2025/10/30 - 15:45:17 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/30 - 15:45:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:45:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:45:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:45:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:45:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:45:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:45:48 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:46:03 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:46:03 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:46:17 | syncing options from database 
+[SYS] 2025/10/30 - 15:46:18 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:46:18 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:46:33 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:46:33 | 任务进度轮询完成 
+[SYS] 2025/10/30 - 15:46:48 | 任务进度轮询开始 
+[SYS] 2025/10/30 - 15:46:48 | 任务进度轮询完成 

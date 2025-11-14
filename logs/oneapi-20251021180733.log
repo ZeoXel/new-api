@@ -1,0 +1,4 @@
+[SYS] 2025/10/21 - 18:07:33 | initializing token encoders 
+[SYS] 2025/10/21 - 18:07:33 | token encoders initialized 
+[SYS] 2025/10/21 - 18:07:33 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/21 - 18:07:33 | database migration started 

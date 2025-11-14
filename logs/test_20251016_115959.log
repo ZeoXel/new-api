@@ -1,0 +1,1261 @@
+[SYS] 2025/10/16 - 11:59:59 | initializing token encoders 
+[SYS] 2025/10/16 - 11:59:59 | token encoders initialized 
+[SYS] 2025/10/16 - 11:59:59 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/16 - 11:59:59 | database migration started 
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[2.571ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="channels"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.060ms] [34;1m[rows:3][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "channels" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.041ms] [34;1m[rows:-][0m SELECT * FROM `channels` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.011ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "channels" AND name = "idx_channels_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.007ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "channels" AND name = "idx_channels_tag"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="tokens"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.034ms] [34;1m[rows:5][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "tokens" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.013ms] [34;1m[rows:-][0m SELECT * FROM `tokens` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tokens" AND name = "idx_tokens_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tokens" AND name = "idx_tokens_key"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tokens" AND name = "idx_tokens_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tokens" AND name = "idx_tokens_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="users"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.230ms] [34;1m[rows:14][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "users" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.016ms] [34;1m[rows:-][0m SELECT * FROM `users` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:21
+[0m[33m[0.006ms] [34;1m[rows:1][0m PRAGMA foreign_keys
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:370
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = "users" AND name = "users"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:414
+[0m[33m[0.414ms] [34;1m[rows:0][0m CREATE TABLE `users__temp` (`id` integer,`username` text UNIQUE,`password` text NOT NULL,`display_name` text,`role` integer DEFAULT 1,`status` integer DEFAULT 1,`email` text,`github_id` text,`oidc_id` text,`wechat_id` text,`telegram_id` text,`access_token` char(32),`quota` integer DEFAULT 0,`used_quota` integer DEFAULT 0,`request_count` integer DEFAULT 0,`group` varchar(64) DEFAULT "default",`aff_code` varchar(32),`aff_count` integer DEFAULT 0,`aff_quota` integer DEFAULT 0,`aff_history` integer DEFAULT 0,`inviter_id` integer,`deleted_at` datetime,`linux_do_id` text,`setting` text,`remark` varchar(255),`stripe_customer` varchar(64),PRIMARY KEY (`id`))
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.140ms] [34;1m[rows:1][0m INSERT INTO `users__temp`(`id`,`username`,`password`,`display_name`,`role`,`status`,`email`,`github_id`,`oidc_id`,`wechat_id`,`telegram_id`,`access_token`,`quota`,`used_quota`,`request_count`,`group`,`aff_code`,`aff_count`,`aff_quota`,`aff_history`,`inviter_id`,`deleted_at`,`linux_do_id`,`setting`,`remark`,`stripe_customer`) SELECT `id`,`username`,`password`,`display_name`,`role`,`status`,`email`,`github_id`,`oidc_id`,`wechat_id`,`telegram_id`,`access_token`,`quota`,`used_quota`,`request_count`,`group`,`aff_code`,`aff_count`,`aff_quota`,`aff_history`,`inviter_id`,`deleted_at`,`linux_do_id`,`setting`,`remark`,`stripe_customer` FROM `users`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[1.249ms] [34;1m[rows:1][0m DROP TABLE `users`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.816ms] [34;1m[rows:1][0m ALTER TABLE `users__temp` RENAME TO `users`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.021ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_username"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.381ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_username` ON `users`(`username`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.012ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_display_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.338ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_display_name` ON `users`(`display_name`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.010ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_git_hub_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.291ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_git_hub_id` ON `users`(`github_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.007ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_telegram_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.287ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_telegram_id` ON `users`(`telegram_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.324ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_access_token"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.342ms] [34;1m[rows:1][0m CREATE UNIQUE INDEX `idx_users_access_token` ON `users`(`access_token`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.008ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_linux_do_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.285ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_linux_do_id` ON `users`(`linux_do_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_email"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.325ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_email` ON `users`(`email`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_oidc_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.298ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_oidc_id` ON `users`(`oidc_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_we_chat_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.350ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_we_chat_id` ON `users`(`wechat_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_aff_code"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.273ms] [34;1m[rows:1][0m CREATE UNIQUE INDEX `idx_users_aff_code` ON `users`(`aff_code`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_inviter_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.256ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_inviter_id` ON `users`(`inviter_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.243ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_deleted_at` ON `users`(`deleted_at`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "users" AND name = "idx_users_stripe_customer"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.269ms] [34;1m[rows:1][0m CREATE INDEX `idx_users_stripe_customer` ON `users`(`stripe_customer`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.007ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="options"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.042ms] [34;1m[rows:1][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "options" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.008ms] [34;1m[rows:-][0m SELECT * FROM `options` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="redemptions"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.028ms] [34;1m[rows:4][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "redemptions" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.010ms] [34;1m[rows:-][0m SELECT * FROM `redemptions` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "redemptions" AND name = "idx_redemptions_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "redemptions" AND name = "idx_redemptions_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "redemptions" AND name = "idx_redemptions_key"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="abilities"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.028ms] [34;1m[rows:5][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "abilities" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.009ms] [34;1m[rows:-][0m SELECT * FROM `abilities` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "abilities" AND name = "idx_abilities_channel_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "abilities" AND name = "idx_abilities_priority"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "abilities" AND name = "idx_abilities_weight"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "abilities" AND name = "idx_abilities_tag"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="logs"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.025ms] [34;1m[rows:12][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "logs" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.018ms] [34;1m[rows:-][0m SELECT * FROM `logs` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_model_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_token_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_group"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_ip"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_created_at_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "index_username_model_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_token_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_channel_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_created_at_type"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "logs" AND name = "idx_logs_username"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.003ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="midjourneys"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.024ms] [34;1m[rows:9][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "midjourneys" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.013ms] [34;1m[rows:-][0m SELECT * FROM `midjourneys` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_action"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_mj_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_submit_time"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_start_time"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_finish_time"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_status"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "midjourneys" AND name = "idx_midjourneys_progress"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="top_ups"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.025ms] [34;1m[rows:3][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "top_ups" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.008ms] [34;1m[rows:-][0m SELECT * FROM `top_ups` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:21
+[0m[33m[0.005ms] [34;1m[rows:1][0m PRAGMA foreign_keys
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:370
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = "top_ups" AND name = "top_ups"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:414
+[0m[33m[0.117ms] [34;1m[rows:1][0m CREATE TABLE `top_ups__temp` (`id` integer,`user_id` integer,`amount` integer,`money` real,`trade_no` varchar(255) UNIQUE,`create_time` integer,`complete_time` integer,`status` text,PRIMARY KEY (`id`))
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.162ms] [34;1m[rows:0][0m INSERT INTO `top_ups__temp`(`id`,`user_id`,`amount`,`money`,`trade_no`,`create_time`,`complete_time`,`status`) SELECT `id`,`user_id`,`amount`,`money`,`trade_no`,`create_time`,`complete_time`,`status` FROM `top_ups`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.262ms] [34;1m[rows:0][0m DROP TABLE `top_ups`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.650ms] [34;1m[rows:0][0m ALTER TABLE `top_ups__temp` RENAME TO `top_ups`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.008ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "top_ups" AND name = "idx_top_ups_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.250ms] [34;1m[rows:0][0m CREATE INDEX `idx_top_ups_user_id` ON `top_ups`(`user_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "top_ups" AND name = "idx_top_ups_trade_no"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.247ms] [34;1m[rows:0][0m CREATE INDEX `idx_top_ups_trade_no` ON `top_ups`(`trade_no`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="quota_data"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.031ms] [34;1m[rows:4][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "quota_data" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.009ms] [34;1m[rows:-][0m SELECT * FROM `quota_data` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "quota_data" AND name = "idx_qdt_created_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "quota_data" AND name = "idx_quota_data_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "quota_data" AND name = "idx_qdt_model_user_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="tasks"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.029ms] [34;1m[rows:12][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "tasks" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.011ms] [34;1m[rows:-][0m SELECT * FROM `tasks` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_task_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_platform"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_channel_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_action"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_start_time"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_finish_time"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_progress"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_created_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_status"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "tasks" AND name = "idx_tasks_submit_time"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="models"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.025ms] [34;1m[rows:4][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "models" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.009ms] [34;1m[rows:-][0m SELECT * FROM `models` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:21
+[0m[33m[0.005ms] [34;1m[rows:1][0m PRAGMA foreign_keys
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:370
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = "models" AND name = "models"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:414
+[0m[33m[0.126ms] [34;1m[rows:0][0m CREATE TABLE `models__temp` (`id` integer,`model_name` text NOT NULL,`description` text,`icon` varchar(128),`tags` varchar(255),`vendor_id` integer,`endpoints` text,`status` integer DEFAULT 1,`sync_official` integer DEFAULT 1,`created_time` integer,`updated_time` integer,`deleted_at` datetime,`name_rule` integer DEFAULT 0,PRIMARY KEY (`id`))
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.013ms] [34;1m[rows:0][0m INSERT INTO `models__temp`(`id`,`model_name`,`description`,`icon`,`tags`,`vendor_id`,`endpoints`,`status`,`sync_official`,`created_time`,`updated_time`,`deleted_at`,`name_rule`) SELECT `id`,`model_name`,`description`,`icon`,`tags`,`vendor_id`,`endpoints`,`status`,`sync_official`,`created_time`,`updated_time`,`deleted_at`,`name_rule` FROM `models`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.454ms] [34;1m[rows:0][0m DROP TABLE `models`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.612ms] [34;1m[rows:0][0m ALTER TABLE `models__temp` RENAME TO `models`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.008ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "models" AND name = "uk_model_name_delete_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.255ms] [34;1m[rows:0][0m CREATE UNIQUE INDEX `uk_model_name_delete_at` ON `models`(`model_name`,`deleted_at`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "models" AND name = "idx_models_vendor_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.238ms] [34;1m[rows:0][0m CREATE INDEX `idx_models_vendor_id` ON `models`(`vendor_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "models" AND name = "idx_models_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.242ms] [34;1m[rows:0][0m CREATE INDEX `idx_models_deleted_at` ON `models`(`deleted_at`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="vendors"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.026ms] [34;1m[rows:3][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "vendors" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.007ms] [34;1m[rows:-][0m SELECT * FROM `vendors` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:21
+[0m[33m[0.004ms] [34;1m[rows:1][0m PRAGMA foreign_keys
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:370
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = "vendors" AND name = "vendors"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:414
+[0m[33m[0.103ms] [34;1m[rows:0][0m CREATE TABLE `vendors__temp` (`id` integer,`name` text NOT NULL,`description` text,`icon` varchar(128),`status` integer DEFAULT 1,`created_time` integer,`updated_time` integer,`deleted_at` datetime,PRIMARY KEY (`id`))
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.155ms] [34;1m[rows:18][0m INSERT INTO `vendors__temp`(`id`,`name`,`description`,`icon`,`status`,`created_time`,`updated_time`,`deleted_at`) SELECT `id`,`name`,`description`,`icon`,`status`,`created_time`,`updated_time`,`deleted_at` FROM `vendors`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.154ms] [34;1m[rows:18][0m DROP TABLE `vendors`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.609ms] [34;1m[rows:18][0m ALTER TABLE `vendors__temp` RENAME TO `vendors`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "vendors" AND name = "uk_vendor_name_delete_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.255ms] [34;1m[rows:18][0m CREATE UNIQUE INDEX `uk_vendor_name_delete_at` ON `vendors`(`name`,`deleted_at`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "vendors" AND name = "idx_vendors_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.258ms] [34;1m[rows:18][0m CREATE INDEX `idx_vendors_deleted_at` ON `vendors`(`deleted_at`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="prefill_groups"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.036ms] [34;1m[rows:4][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "prefill_groups" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.009ms] [34;1m[rows:-][0m SELECT * FROM `prefill_groups` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "prefill_groups" AND name = "uk_prefill_name"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "prefill_groups" AND name = "idx_prefill_groups_type"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "prefill_groups" AND name = "idx_prefill_groups_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="setups"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.025ms] [34;1m[rows:1][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "setups" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT * FROM `setups` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.004ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="two_fas"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.030ms] [34;1m[rows:3][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "two_fas" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.013ms] [34;1m[rows:-][0m SELECT * FROM `two_fas` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:21
+[0m[33m[0.004ms] [34;1m[rows:1][0m PRAGMA foreign_keys
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:370
+[0m[33m[0.005ms] [34;1m[rows:-][0m SELECT sql FROM sqlite_master WHERE type = "table" AND tbl_name = "two_fas" AND name = "two_fas"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:414
+[0m[33m[0.119ms] [34;1m[rows:18][0m CREATE TABLE `two_fas__temp` (`id` integer,`user_id` integer NOT NULL UNIQUE,`secret` varchar(255) NOT NULL,`is_enabled` numeric,`failed_attempts` integer DEFAULT 0,`locked_until` datetime,`last_used_at` datetime,`created_at` datetime,`updated_at` datetime,`deleted_at` datetime,PRIMARY KEY (`id`))
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.220ms] [34;1m[rows:0][0m INSERT INTO `two_fas__temp`(`id`,`user_id`,`secret`,`is_enabled`,`failed_attempts`,`locked_until`,`last_used_at`,`created_at`,`updated_at`,`deleted_at`) SELECT `id`,`user_id`,`secret`,`is_enabled`,`failed_attempts`,`locked_until`,`last_used_at`,`created_at`,`updated_at`,`deleted_at` FROM `two_fas`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.074ms] [34;1m[rows:0][0m DROP TABLE `two_fas`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:424
+[0m[33m[0.605ms] [34;1m[rows:0][0m ALTER TABLE `two_fas__temp` RENAME TO `two_fas`
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.012ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "two_fas" AND name = "idx_two_fas_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.372ms] [34;1m[rows:0][0m CREATE INDEX `idx_two_fas_deleted_at` ON `two_fas`(`deleted_at`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.017ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "two_fas" AND name = "idx_two_fas_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:294
+[0m[33m[0.327ms] [34;1m[rows:0][0m CREATE INDEX `idx_two_fas_user_id` ON `two_fas`(`user_id`)
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:33
+[0m[33m[0.009ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type='table' AND name="two_fa_backup_codes"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:111
+[0m[33m[0.036ms] [34;1m[rows:3][0m SELECT sql FROM sqlite_master WHERE type IN ("table","index") AND tbl_name = "two_fa_backup_codes" AND sql IS NOT NULL order by type = "table" desc
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:119
+[0m[33m[0.011ms] [34;1m[rows:-][0m SELECT * FROM `two_fa_backup_codes` LIMIT 1
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.007ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "two_fa_backup_codes" AND name = "idx_two_fa_backup_codes_user_id"
+
+2025/10/16 11:59:59 [32m/Users/g/go/pkg/mod/github.com/glebarez/sqlite@v1.9.0/migrator.go:313
+[0m[33m[0.006ms] [34;1m[rows:-][0m SELECT count(*) FROM sqlite_master WHERE type = "index" AND tbl_name = "two_fa_backup_codes" AND name = "idx_two_fa_backup_codes_deleted_at"
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/setup.go:11
+[0m[33m[0.028ms] [34;1m[rows:1][0m SELECT * FROM `setups` ORDER BY `setups`.`id` LIMIT 1
+[SYS] 2025/10/16 - 11:59:59 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.027ms] [34;1m[rows:5][0m SELECT * FROM `options`
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/ability.go:36
+[0m[33m[2.813ms] [34;1m[rows:841][0m SELECT abilities.*, channels.type as channel_type FROM `abilities` left join channels on abilities.channel_id = channels.id WHERE abilities.enabled = true
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/pricing.go:100
+[0m[33m[0.048ms] [34;1m[rows:0][0m SELECT * FROM `models` WHERE `models`.`deleted_at` IS NULL
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/pricing.go:152
+[0m[33m[0.058ms] [34;1m[rows:18][0m SELECT * FROM `vendors` WHERE `vendors`.`deleted_at` IS NULL
+[SYS] 2025/10/16 - 11:59:59 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/16 - 11:59:59 | New API v0.0.0 started 
+[SYS] 2025/10/16 - 11:59:59 | running in debug mode 
+[SYS] 2025/10/16 - 11:59:59 | memory cache enabled 
+[SYS] 2025/10/16 - 11:59:59 | sync frequency: 60 seconds 
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[0.298ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 11:59:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[1.115ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 11:59:59 | channels synced from database 
+[SYS] 2025/10/16 - 11:59:59 | 正在更新数据看板数据... 
+[SYS] 2025/10/16 - 11:59:59 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/16 - 12:00:14 | 任务进度轮询开始 
+
+2025/10/16 12:00:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.769ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:00:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[3.006ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:00:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:00:29 | 任务进度轮询开始 
+
+2025/10/16 12:00:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.294ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:00:29 | 任务进度轮询完成 
+
+2025/10/16 12:00:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.432ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:00:44 | 任务进度轮询开始 
+
+2025/10/16 12:00:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.273ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+
+2025/10/16 12:00:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.348ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:00:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:00:59 | syncing channels from database 
+[SYS] 2025/10/16 - 12:00:59 | syncing options from database 
+
+2025/10/16 12:00:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.233ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:00:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[1.744ms] [34;1m[rows:5][0m SELECT * FROM `options`
+
+2025/10/16 12:00:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[2.722ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:00:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:00:59 | 任务进度轮询开始 
+
+2025/10/16 12:00:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.157ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:00:59 | 任务进度轮询完成 
+
+2025/10/16 12:00:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.145ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:01:14 | 任务进度轮询开始 
+
+2025/10/16 12:01:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.221ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:01:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.095ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:01:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:01:29 | 任务进度轮询开始 
+
+2025/10/16 12:01:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.503ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:01:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[2.080ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:01:29 | 任务进度轮询完成 
+[GIN] 2025/10/16 - 12:01:35 | 2025101612013517621000KEVALK84 | 200 |     354.166µs |             ::1 |     GET /api/status
+
+2025/10/16 12:01:41 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/token.go:164
+[0m[33m[0.569ms] [34;1m[rows:1][0m SELECT * FROM `tokens` WHERE `key` = "f4S1I0MvDSnio8FbDxoPejJ6pDP5mUdSn85piIRTo8pVFC0B" AND `tokens`.`deleted_at` IS NULL ORDER BY `tokens`.`id` LIMIT 1
+
+2025/10/16 12:01:41 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/user.go:296
+[0m[33m[0.186ms] [34;1m[rows:1][0m SELECT `users`.`id`,`users`.`username`,`users`.`display_name`,`users`.`role`,`users`.`status`,`users`.`email`,`users`.`github_id`,`users`.`oidc_id`,`users`.`wechat_id`,`users`.`telegram_id`,`users`.`access_token`,`users`.`quota`,`users`.`used_quota`,`users`.`request_count`,`users`.`group`,`users`.`aff_code`,`users`.`aff_count`,`users`.`aff_quota`,`users`.`aff_history`,`users`.`inviter_id`,`users`.`deleted_at`,`users`.`linux_do_id`,`users`.`setting`,`users`.`remark`,`users`.`stripe_customer` FROM `users` WHERE id = 1 AND `users`.`deleted_at` IS NULL AND `users`.`id` = 1 ORDER BY `users`.`id` LIMIT 1
+[ERR] 2025/10/16 - 12:01:41 | 20251016120141409703000ttms5JF0 | user 1 | 分组 default 下模型 coze-workflow 无可用渠道（distributor） 
+[GIN] 2025/10/16 - 12:01:41 | 20251016120141409703000ttms5JF0 | 503 |    2.303417ms |             ::1 |    POST /v1/chat/completions
+
+2025/10/16 12:01:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.386ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:01:44 | 任务进度轮询开始 
+
+2025/10/16 12:01:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.138ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:01:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:01:59 | syncing options from database 
+
+2025/10/16 12:01:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.742ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:01:59 | syncing channels from database 
+
+2025/10/16 12:01:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[0.710ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:01:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.206ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:01:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:01:59 | 任务进度轮询开始 
+
+2025/10/16 12:01:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.167ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:01:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.933ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:01:59 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:02:14 | 任务进度轮询开始 
+
+2025/10/16 12:02:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.265ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:02:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.193ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:02:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:02:29 | 任务进度轮询开始 
+
+2025/10/16 12:02:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.190ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:02:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.876ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:02:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:02:44 | 任务进度轮询开始 
+
+2025/10/16 12:02:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.361ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:02:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.309ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:02:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:02:59 | syncing options from database 
+
+2025/10/16 12:02:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.374ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:02:59 | syncing channels from database 
+
+2025/10/16 12:02:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.523ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:02:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.326ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:02:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:02:59 | 任务进度轮询开始 
+
+2025/10/16 12:02:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.138ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:02:59 | 任务进度轮询完成 
+
+2025/10/16 12:02:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.803ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:03:14 | 任务进度轮询开始 
+
+2025/10/16 12:03:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.283ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:03:14 | 任务进度轮询完成 
+
+2025/10/16 12:03:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.350ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:03:29 | 任务进度轮询开始 
+
+2025/10/16 12:03:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.287ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:03:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.861ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:03:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:03:44 | 任务进度轮询开始 
+
+2025/10/16 12:03:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.343ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:03:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.343ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:03:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:03:59 | syncing options from database 
+
+2025/10/16 12:03:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.405ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:03:59 | syncing channels from database 
+
+2025/10/16 12:03:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[0.382ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:03:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[2.820ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:03:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:03:59 | 任务进度轮询开始 
+
+2025/10/16 12:03:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.155ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:03:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.885ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:03:59 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:04:14 | 任务进度轮询开始 
+
+2025/10/16 12:04:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.307ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:04:14 | 任务进度轮询完成 
+
+2025/10/16 12:04:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.450ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:04:29 | 任务进度轮询开始 
+
+2025/10/16 12:04:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.185ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:04:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.785ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:04:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:04:44 | 任务进度轮询开始 
+
+2025/10/16 12:04:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.262ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:04:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.254ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:04:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:04:59 | 正在更新数据看板数据... 
+[SYS] 2025/10/16 - 12:04:59 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/16 - 12:04:59 | syncing options from database 
+
+2025/10/16 12:04:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.583ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:04:59 | syncing channels from database 
+
+2025/10/16 12:04:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.696ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+[SYS] 2025/10/16 - 12:04:59 | 任务进度轮询开始 
+
+2025/10/16 12:04:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.268ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:04:59 | channels synced from database 
+
+2025/10/16 12:04:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.271ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:04:59 | 任务进度轮询完成 
+
+2025/10/16 12:04:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.282ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:05:14 | 任务进度轮询开始 
+
+2025/10/16 12:05:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.218ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:05:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.107ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:05:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:05:29 | 任务进度轮询开始 
+
+2025/10/16 12:05:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.281ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:05:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.105ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:05:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:05:44 | 任务进度轮询开始 
+
+2025/10/16 12:05:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.275ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:05:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.101ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:05:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:05:59 | syncing options from database 
+
+2025/10/16 12:05:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.457ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:05:59 | syncing channels from database 
+
+2025/10/16 12:05:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[2.362ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+[SYS] 2025/10/16 - 12:05:59 | 任务进度轮询开始 
+
+2025/10/16 12:05:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.295ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:05:59 | channels synced from database 
+
+2025/10/16 12:05:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.248ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:05:59 | 任务进度轮询完成 
+
+2025/10/16 12:05:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.248ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:06:14 | 任务进度轮询开始 
+
+2025/10/16 12:06:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.154ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:06:14 | 任务进度轮询完成 
+
+2025/10/16 12:06:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.463ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:06:29 | 任务进度轮询开始 
+
+2025/10/16 12:06:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.415ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:06:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.282ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:06:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:06:44 | 任务进度轮询开始 
+
+2025/10/16 12:06:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.361ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:06:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.245ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:06:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:06:59 | syncing options from database 
+
+2025/10/16 12:06:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[1.315ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:06:59 | syncing channels from database 
+
+2025/10/16 12:06:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[2.110ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:06:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.544ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:06:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:06:59 | 任务进度轮询开始 
+
+2025/10/16 12:06:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.167ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:06:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.977ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:06:59 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:07:14 | 任务进度轮询开始 
+
+2025/10/16 12:07:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.334ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:07:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.107ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:07:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:07:29 | 任务进度轮询开始 
+
+2025/10/16 12:07:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.396ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:07:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.340ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:07:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:07:44 | 任务进度轮询开始 
+
+2025/10/16 12:07:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.454ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:07:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.170ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:07:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:07:59 | syncing options from database 
+
+2025/10/16 12:07:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.684ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:07:59 | syncing channels from database 
+
+2025/10/16 12:07:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.600ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:07:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.591ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:07:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:07:59 | 任务进度轮询开始 
+
+2025/10/16 12:07:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.343ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:07:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.299ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:07:59 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:08:14 | 任务进度轮询开始 
+
+2025/10/16 12:08:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.268ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:08:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.106ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:08:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:08:29 | 任务进度轮询开始 
+
+2025/10/16 12:08:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.286ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:08:29 | 任务进度轮询完成 
+
+2025/10/16 12:08:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.400ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:08:44 | 任务进度轮询开始 
+
+2025/10/16 12:08:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.455ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:08:44 | 任务进度轮询完成 
+
+2025/10/16 12:08:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.548ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:08:59 | syncing options from database 
+
+2025/10/16 12:08:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.603ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:08:59 | syncing channels from database 
+
+2025/10/16 12:08:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.840ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:08:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.453ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:08:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:08:59 | 任务进度轮询开始 
+
+2025/10/16 12:08:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.389ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:08:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.361ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:08:59 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:09:14 | 任务进度轮询开始 
+
+2025/10/16 12:09:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.453ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:09:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.345ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:09:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:09:29 | 任务进度轮询开始 
+
+2025/10/16 12:09:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.292ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:09:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.130ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:09:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:09:44 | 任务进度轮询开始 
+
+2025/10/16 12:09:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.371ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:09:44 | 任务进度轮询完成 
+
+2025/10/16 12:09:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.481ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:09:59 | 正在更新数据看板数据... 
+[SYS] 2025/10/16 - 12:09:59 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/16 - 12:09:59 | syncing options from database 
+
+2025/10/16 12:09:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.716ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:09:59 | syncing channels from database 
+
+2025/10/16 12:09:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.731ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:09:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.254ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:09:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:09:59 | 任务进度轮询开始 
+
+2025/10/16 12:09:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.590ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:09:59 | 任务进度轮询完成 
+
+2025/10/16 12:09:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.591ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:10:14 | 任务进度轮询开始 
+
+2025/10/16 12:10:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.519ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:10:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.250ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:10:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:10:29 | 任务进度轮询开始 
+
+2025/10/16 12:10:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.322ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:10:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.244ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:10:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:10:44 | 任务进度轮询开始 
+
+2025/10/16 12:10:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.270ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:10:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.131ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:10:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:10:59 | syncing options from database 
+
+2025/10/16 12:10:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[1.286ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:10:59 | syncing channels from database 
+
+2025/10/16 12:10:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.797ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:10:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.282ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:10:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:10:59 | 任务进度轮询开始 
+
+2025/10/16 12:10:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.247ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:10:59 | 任务进度轮询完成 
+
+2025/10/16 12:10:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.261ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:11:14 | 任务进度轮询开始 
+
+2025/10/16 12:11:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.177ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:11:14 | 任务进度轮询完成 
+
+2025/10/16 12:11:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.067ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:11:29 | 任务进度轮询开始 
+
+2025/10/16 12:11:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.301ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:11:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.115ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:11:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:11:44 | 任务进度轮询开始 
+
+2025/10/16 12:11:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.285ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:11:44 | 任务进度轮询完成 
+
+2025/10/16 12:11:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.410ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:11:59 | syncing options from database 
+
+2025/10/16 12:11:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[1.012ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:11:59 | syncing channels from database 
+
+2025/10/16 12:11:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.785ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:11:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.322ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:11:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:11:59 | 任务进度轮询开始 
+
+2025/10/16 12:11:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.561ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:11:59 | 任务进度轮询完成 
+
+2025/10/16 12:11:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.698ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:12:14 | 任务进度轮询开始 
+
+2025/10/16 12:12:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.394ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:12:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.275ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:12:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:12:29 | 任务进度轮询开始 
+
+2025/10/16 12:12:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.285ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:12:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.232ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:12:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:12:44 | 任务进度轮询开始 
+
+2025/10/16 12:12:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.318ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:12:44 | 任务进度轮询完成 
+
+2025/10/16 12:12:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.384ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:12:59 | syncing options from database 
+
+2025/10/16 12:12:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.236ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:12:59 | syncing channels from database 
+
+2025/10/16 12:12:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.010ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:12:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[1.585ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:12:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:12:59 | 任务进度轮询开始 
+
+2025/10/16 12:12:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.493ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:12:59 | 任务进度轮询完成 
+
+2025/10/16 12:12:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.522ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:13:14 | 任务进度轮询开始 
+
+2025/10/16 12:13:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.245ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:13:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.150ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:13:14 | 任务进度轮询完成 
+
+2025/10/16 12:13:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.314ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:13:29 | 任务进度轮询开始 
+
+2025/10/16 12:13:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.143ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:13:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:13:44 | 任务进度轮询开始 
+
+2025/10/16 12:13:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.365ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:13:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.255ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:13:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:13:59 | syncing options from database 
+
+2025/10/16 12:13:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[1.421ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:13:59 | syncing channels from database 
+
+2025/10/16 12:13:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[1.367ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:13:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[3.392ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:13:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:13:59 | 任务进度轮询开始 
+
+2025/10/16 12:13:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.272ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:13:59 | 任务进度轮询完成 
+
+2025/10/16 12:13:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[2.208ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:14:14 | 任务进度轮询开始 
+
+2025/10/16 12:14:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.455ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:14:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.365ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:14:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:14:29 | 任务进度轮询开始 
+
+2025/10/16 12:14:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.237ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:14:29 | 任务进度轮询完成 
+
+2025/10/16 12:14:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.274ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:14:44 | 任务进度轮询开始 
+
+2025/10/16 12:14:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.302ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:14:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.224ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:14:44 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:14:59 | 正在更新数据看板数据... 
+[SYS] 2025/10/16 - 12:14:59 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/16 - 12:14:59 | syncing options from database 
+
+2025/10/16 12:14:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/option.go:23
+[0m[33m[0.407ms] [34;1m[rows:5][0m SELECT * FROM `options`
+[SYS] 2025/10/16 - 12:14:59 | syncing channels from database 
+
+2025/10/16 12:14:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:29
+[0m[33m[0.432ms] [34;1m[rows:3][0m SELECT * FROM `channels`
+
+2025/10/16 12:14:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/channel_cache.go:34
+[0m[33m[2.802ms] [34;1m[rows:841][0m SELECT * FROM `abilities`
+[SYS] 2025/10/16 - 12:14:59 | channels synced from database 
+[SYS] 2025/10/16 - 12:14:59 | 任务进度轮询开始 
+
+2025/10/16 12:14:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[1.428ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:14:59 | 任务进度轮询完成 
+
+2025/10/16 12:14:59 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[1.478ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+[SYS] 2025/10/16 - 12:15:14 | 任务进度轮询开始 
+
+2025/10/16 12:15:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.431ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:15:14 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.860ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:15:14 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:15:29 | 任务进度轮询开始 
+
+2025/10/16 12:15:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.437ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:15:29 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.338ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:15:29 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 12:15:44 | 任务进度轮询开始 
+
+2025/10/16 12:15:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/midjourney.go:97
+[0m[33m[0.252ms] [34;1m[rows:0][0m SELECT * FROM `midjourneys` WHERE progress != "100%"
+
+2025/10/16 12:15:44 [32m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:177
+[0m[33m[0.123ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE progress != "100%" ORDER BY id LIMIT 500
+[SYS] 2025/10/16 - 12:15:44 | 任务进度轮询完成 

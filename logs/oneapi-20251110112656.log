@@ -1,0 +1,530 @@
+[SYS] 2025/11/10 - 11:26:56 | initializing token encoders 
+[SYS] 2025/11/10 - 11:26:56 | token encoders initialized 
+[SYS] 2025/11/10 - 11:26:56 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/10 - 11:26:56 | database migration started 
+[SYS] 2025/11/10 - 11:26:56 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/11/10 - 11:26:56 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/11/10 - 11:26:56 | New API v0.0.0 started 
+[SYS] 2025/11/10 - 11:26:56 | running in debug mode 
+[SYS] 2025/11/10 - 11:26:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:26:56 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/10 - 11:27:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:27:11 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:27:26 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:27:26 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:27:41 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:27:41 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:27:51 | 20251110112751536601000CFWGg46z | 200 |    2.084833ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762748871&channel=&group=
+[GIN] 2025/11/10 - 11:27:51 | 20251110112751611908000cSOlXZNq | 200 |     638.042µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762748871&channel=&group=
+[GIN] 2025/11/10 - 11:27:53 | 20251110112753253314000LWgfMDBF | 200 |    2.705917ms |             ::1 |     GET /api/user/models
+[GIN] 2025/11/10 - 11:27:53 | 20251110112753260736000TT7qr7wy | 200 |         761µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/11/10 - 11:27:53 | 20251110112753260981000wESSb7ig | 200 |     811.292µs |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/11/10 - 11:27:53 | 202511101127535527490000u6y0yql | 200 |     967.875µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762748873&channel=&group=
+[GIN] 2025/11/10 - 11:27:53 | 20251110112753558148000nPc5SYy4 | 200 |     524.042µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762748873&channel=&group=
+[SYS] 2025/11/10 - 11:27:56 | syncing options from database 
+[SYS] 2025/11/10 - 11:27:56 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:27:56 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:28:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:28:11 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:28:20 | 20251110112820854862000HD7HqlNb | 200 |    1.469875ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760153300000&end_timestamp=1762748900000
+[GIN] 2025/11/10 - 11:28:21 | 20251110112821277489000NBl2bhHl | 200 |    1.122583ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762748901&channel=&group=
+[GIN] 2025/11/10 - 11:28:21 | 20251110112821303632000RGH0fDY2 | 200 |     597.917µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762748901&channel=&group=
+[GIN] 2025/11/10 - 11:28:22 | 20251110112822485221000OmPxUyEd | 200 |     916.167µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762748902
+[SYS] 2025/11/10 - 11:28:26 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:28:26 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:28:41 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:28:41 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:28:56 | syncing options from database 
+[SYS] 2025/11/10 - 11:28:56 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:28:56 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:29:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:29:11 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:29:26 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:29:26 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:29:41 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:29:41 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:29:56 | syncing options from database 
+[SYS] 2025/11/10 - 11:29:56 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:29:56 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:29:58 | 20251110112958479038000oDeCZLXc | 200 |     121.333µs |             ::1 |     GET /api/status
+[SYS] 2025/11/10 - 11:30:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:30:11 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:30:26 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:30:26 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:30:38 | 20251110113038235072000fnu9tgq1 | 500 |    1.390541ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/10 - 11:30:41 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:30:41 | 任务进度轮询完成 
+[INFO] 2025/11/10 - 11:30:55 | 20251110113055323582000eu6RDOZ6 | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/11/10 - 11:30:55 | [Init] Coze工作流请求参数过滤完成 
+[SYS] 2025/11/10 - 11:30:55 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/11/10 - 11:30:55 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7520444303086125096, stream=false 
+[DEBUG] 2025/11/10 - 11:30:55 | 20251110113055323582000eu6RDOZ6 | text request body: null 
+[SYS] 2025/11/10 - 11:30:55 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/10 - 11:30:55 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/11/10 - 11:30:55 | [Async] Created task chatcmpl-20251110113055323582000eu6RDOZ6 for workflow 7520444303086125096 
+[SYS] 2025/11/10 - 11:30:55 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/11/10 - 11:30:55 | [Async] Starting background execution for task chatcmpl-20251110113055323582000eu6RDOZ6 
+[ERR] 2025/11/10 - 11:30:55 | 20251110113055323582000eu6RDOZ6 | total tokens is 0, cannot consume quota, userId 1, channelId 7, tokenId 1, model 7520444303086125096， pre-consumed quota 0 
+[INFO] 2025/11/10 - 11:30:55 | 20251110113055323582000eu6RDOZ6 | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/11/10 - 11:30:55 | 20251110113055323582000eu6RDOZ6 | 200 |    3.752042ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/10 - 11:30:55 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"BOT_USER_INPUT":"test"}} 
+[SYS] 2025/11/10 - 11:30:55 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/11/10 - 11:30:55 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/11/10 - 11:30:55 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/11/10 - 11:30:55 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lf61eFXqzpzqsAES9GprxJMkPeY8jn2ULKxDQZpjegw6v8rjyEkJKQFaAX9RZRKzb","expires_in":1762746355,"token_type":"Bearer"} 
+[SYS] 2025/11/10 - 11:30:55 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lf61eFXqzpzqsAES... 
+[SYS] 2025/11/10 - 11:30:55 | [Async] 发送HTTP请求到: https://api.coze.cn/v1/workflow/stream_run 
+[SYS] 2025/11/10 - 11:30:56 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:30:56 | syncing options from database 
+[INFO] 2025/11/10 - 11:30:56 | SYSTEM | Channel #7 pending video tasks: 1 
+[ERR] 2025/11/10 - 11:30:56 | SYSTEM | Channel #7 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/11/10 - 11:30:56 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 收到HTTP响应: status=200 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 开始处理SSE流式响应 
+[SYS] 2025/11/10 - 11:31:11 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 处理SSE事件: Message (数据长度: 405) 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 首次提取 usage from Message: Prompt=571, Completion=87, Total=658 
+[SYS] 2025/11/10 - 11:31:11 | [Async] SSE事件类型: Done 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 处理SSE事件: Done (数据长度: 190) 
+[SYS] 2025/11/10 - 11:31:11 | [Async] Done事件获取Coze debug_url: https://www.coze.cn/work_flow?execute_id=7570934081690058767&space_id=7501536526942109731&workflow_id=7520444303086125096&execute_mode=2 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 最终计费 usage: Prompt=571, Completion=87, Total=658 
+[SYS] 2025/11/10 - 11:31:11 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/11/10 - 11:31:11 | [WorkflowPricing] 输入参数: workflow_id=7520444303086125096, channel_id=7 
+[SYS] 2025/11/10 - 11:31:11 | [WorkflowPricing] ✅ 从 ModelPrice 读取定价: workflow=7520444303086125096, price=0.01元, quota=5000 
+[SYS] 2025/11/10 - 11:31:11 | [Async] 工作流按次计费: workflow=7520444303086125096, 基础价格=5000 quota/次, 分组倍率=2.00, 最终quota=10000 
+[SYS] 2025/11/10 - 11:31:11 | [Async] Successfully consumed quota: 10000 for task chatcmpl-20251110113055323582000eu6RDOZ6 
+[SYS] 2025/11/10 - 11:31:11 | [Async] Successfully created log for task chatcmpl-20251110113055323582000eu6RDOZ6 with 658 tokens 
+[SYS] 2025/11/10 - 11:31:11 | [Async] Task chatcmpl-20251110113055323582000eu6RDOZ6 completed successfully 
+[SYS] 2025/11/10 - 11:31:11 | [Async] Logged quota data for task chatcmpl-20251110113055323582000eu6RDOZ6: quota=10000, tokens=658 
+[SYS] 2025/11/10 - 11:31:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:31:11 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:31:26 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:31:26 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:31:41 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:31:41 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:31:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:31:56 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/11/10 - 11:31:56 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:31:56 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:31:56 | syncing options from database 
+[SYS] 2025/11/10 - 11:32:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:32:11 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:32:13 | 2025111011321395072300045Eyjlqa | 200 |     393.125µs |             ::1 |     GET /console/task
+[GIN] 2025/11/10 - 11:32:14 | 20251110113214282311000oofgYMDd | 200 |     833.083µs |             ::1 |     GET /api/user/self
+[GIN] 2025/11/10 - 11:32:14 | 20251110113214282967000tppyKWbJ | 200 |      324.25µs |             ::1 |     GET /api/status
+[GIN] 2025/11/10 - 11:32:14 | 202511101132142827470004N4HWXEu | 200 |    1.042084ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749134
+[GIN] 2025/11/10 - 11:32:14 | 20251110113214522934000u7BqeOu1 | 200 |     702.208µs |             ::1 |     GET /api/user/self
+[GIN] 2025/11/10 - 11:32:16 | 20251110113216393932000wXg8rYOo | 200 |     867.167µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749136&channel=&group=
+[GIN] 2025/11/10 - 11:32:16 | 20251110113216427549000HSr1VwdK | 200 |     464.417µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749136&channel=&group=
+[SYS] 2025/11/10 - 11:32:26 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:32:26 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:32:41 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:32:41 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:32:54 | 20251110113254446553000BXP9Ho3F | 200 |    1.219292ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749174
+[GIN] 2025/11/10 - 11:32:55 | 20251110113255369359000a7cW8iE7 | 200 |     982.417µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749175&channel=&group=
+[GIN] 2025/11/10 - 11:32:55 | 20251110113255400644000SAVY1rTr | 200 |       467.5µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749175&channel=&group=
+[GIN] 2025/11/10 - 11:32:56 | 20251110113256598231000G2rIXMkh | 200 |     649.792µs |             ::1 |     GET /console/log
+[GIN] 2025/11/10 - 11:32:56 | 20251110113256705798000TTSE4KXT | 200 |     523.542µs |             ::1 |     GET /api/user/self
+[GIN] 2025/11/10 - 11:32:56 | 20251110113256707740000L5m9zwBe | 200 |       203.5µs |             ::1 |     GET /api/status
+[GIN] 2025/11/10 - 11:32:56 | 20251110113256707709000i1TfttNz | 200 |     908.791µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749176&channel=&group=
+[GIN] 2025/11/10 - 11:32:56 | 20251110113256738655000GWdvwfhX | 200 |     447.625µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749176&channel=&group=
+[GIN] 2025/11/10 - 11:32:56 | 20251110113256747713000pEFMDMxG | 200 |     860.792µs |             ::1 |     GET /api/user/self
+[SYS] 2025/11/10 - 11:32:56 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:32:56 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:32:56 | syncing options from database 
+[SYS] 2025/11/10 - 11:33:11 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:33:11 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:33:18 | 20251110113318956396000ZwCcp4y5 | 200 |    1.800208ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749198
+[GIN] 2025/11/10 - 11:33:20 | 202511101133206473000t7esk1oa | 200 |    1.384666ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760153599000&end_timestamp=1762749199000
+[GIN] 2025/11/10 - 11:33:20 | 202511101133207280480004BDYvKWd | 200 |     798.167µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749200
+[GIN] 2025/11/10 - 11:33:24 | 20251110113324122630008mwM83DN | 200 |    1.101208ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749203&channel=&group=
+[GIN] 2025/11/10 - 11:33:24 | 2025111011332415753000Bh2dUEl0 | 200 |     346.542µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749203&channel=&group=
+[GIN] 2025/11/10 - 11:33:25 | 20251110113325359263000OZU83TeD | 200 |     757.958µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760153605000&end_timestamp=1762749205000
+[GIN] 2025/11/10 - 11:33:25 | 20251110113325822425000wVoRHHFz | 200 |     1.01325ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749205&channel=&group=
+[GIN] 2025/11/10 - 11:33:25 | 20251110113325847886000fAkDPU5Q | 200 |     549.792µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749205&channel=&group=
+[SYS] 2025/11/10 - 11:33:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:33:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:33:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:33:42 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:33:46 | 20251110113346835013000imefBkCt | 200 |    1.242416ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749226
+[SYS] 2025/11/10 - 11:33:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:33:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:33:57 | syncing options from database 
+[GIN] 2025/11/10 - 11:34:00 | 20251110113400229772000FEKu5PpS | 200 |     662.542µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760153640000&end_timestamp=1762749240000
+[GIN] 2025/11/10 - 11:34:00 | 20251110113400723712000ISiFIvPO | 200 |     694.834µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749240
+[GIN] 2025/11/10 - 11:34:01 | 20251110113401557213000beZ6HAxA | 200 |     1.14675ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749241&channel=&group=
+[GIN] 2025/11/10 - 11:34:01 | 20251110113401584565000CY5JNSik | 200 |     498.667µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749241&channel=&group=
+[GIN] 2025/11/10 - 11:34:02 | 2025111011340230964700015UE34ng | 200 |     674.167µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749242
+[GIN] 2025/11/10 - 11:34:03 | 202511101134039614640005Pul63is | 200 |     244.167µs |             ::1 |     GET /console/task
+[GIN] 2025/11/10 - 11:34:04 | 20251110113404148291000Ft0bVBXL | 200 |     249.375µs |             ::1 |     GET /api/status
+[GIN] 2025/11/10 - 11:34:04 | 20251110113404148061000QIJsQOpE | 200 |     712.208µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749244
+[GIN] 2025/11/10 - 11:34:04 | 20251110113404148025000NZkBR0Y0 | 200 |    1.635375ms |             ::1 |     GET /api/user/self
+[GIN] 2025/11/10 - 11:34:06 | 20251110113406298797000rtS4MMII | 200 |    1.257458ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749246&channel=&group=
+[GIN] 2025/11/10 - 11:34:06 | 20251110113406326617000lHDAg0r0 | 200 |     456.083µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749246&channel=&group=
+[GIN] 2025/11/10 - 11:34:06 | 20251110113406821755000zPMY9qLv | 200 |    1.054334ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749246
+[GIN] 2025/11/10 - 11:34:08 | 2025111011340890051000aSNtB10x | 200 |    1.114625ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749248&channel=&group=
+[GIN] 2025/11/10 - 11:34:08 | 2025111011340896648000bengnfCs | 200 |       482.5µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749248&channel=&group=
+[SYS] 2025/11/10 - 11:34:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:34:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:34:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:34:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:34:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:34:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:34:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:34:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:34:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:35:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:35:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:35:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:35:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:35:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:35:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:35:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:35:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:35:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:36:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:36:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:36:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:36:27 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:36:29 | 20251110113629666938000bRnJOS3f | 200 |    1.043125ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749389
+[SYS] 2025/11/10 - 11:36:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:36:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:36:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:36:56 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/10 - 11:36:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:36:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:36:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:37:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:37:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:37:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:37:27 | 任务进度轮询完成 
+[INFO] 2025/11/10 - 11:37:41 | 20251110113741252584000GGRU30wD | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/11/10 - 11:37:41 | [Init] Coze工作流请求参数过滤完成 
+[SYS] 2025/11/10 - 11:37:41 | [WorkflowModel] 工作流ID作为模型名称: 7549079559813087284 
+[SYS] 2025/11/10 - 11:37:41 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7549079559813087284, stream=false 
+[DEBUG] 2025/11/10 - 11:37:41 | 20251110113741252584000GGRU30wD | text request body: null 
+[SYS] 2025/11/10 - 11:37:41 | DoRequest called with OriginModelName: 7549079559813087284 
+[SYS] 2025/11/10 - 11:37:41 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/11/10 - 11:37:41 | [Async] Created task chatcmpl-20251110113741252584000GGRU30wD for workflow 7549079559813087284 
+[SYS] 2025/11/10 - 11:37:41 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/11/10 - 11:37:41 | [Async] Starting background execution for task chatcmpl-20251110113741252584000GGRU30wD 
+[ERR] 2025/11/10 - 11:37:41 | 20251110113741252584000GGRU30wD | total tokens is 0, cannot consume quota, userId 1, channelId 7, tokenId 1, model 7549079559813087284， pre-consumed quota 0 
+[INFO] 2025/11/10 - 11:37:41 | 20251110113741252584000GGRU30wD | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/11/10 - 11:37:41 | 20251110113741252584000GGRU30wD | 200 |   11.655334ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/10 - 11:37:41 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"测试工作流"}} 
+[SYS] 2025/11/10 - 11:37:41 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/11/10 - 11:37:41 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/11/10 - 11:37:41 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/11/10 - 11:37:41 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_ho7MoGQrjEEo1SgAJMDDTPCoGi0c3JR78FpfMLnv85zNurg9cubDf0ZMUSvxm5i70","expires_in":1762746761,"token_type":"Bearer"} 
+[SYS] 2025/11/10 - 11:37:41 | [OAuth Debug] Access token 获取成功 (前20字符): czs_ho7MoGQrjEEo1SgA... 
+[SYS] 2025/11/10 - 11:37:41 | [Async] 发送HTTP请求到: https://api.coze.cn/v1/workflow/stream_run 
+[SYS] 2025/11/10 - 11:37:41 | [Async] 收到HTTP响应: status=200 
+[SYS] 2025/11/10 - 11:37:41 | [Async] 开始处理SSE流式响应 
+[SYS] 2025/11/10 - 11:37:41 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:37:41 | [Async] 处理SSE事件: Message (数据长度: 218) 
+[SYS] 2025/11/10 - 11:37:42 | 任务进度轮询开始 
+[INFO] 2025/11/10 - 11:37:42 | SYSTEM | Channel #7 pending video tasks: 1 
+[ERR] 2025/11/10 - 11:37:42 | SYSTEM | Channel #7 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/11/10 - 11:37:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:37:53 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:37:53 | [Async] 处理SSE事件: Message (数据长度: 218) 
+[SYS] 2025/11/10 - 11:37:57 | 任务进度轮询开始 
+[INFO] 2025/11/10 - 11:37:57 | SYSTEM | Channel #7 pending video tasks: 1 
+[ERR] 2025/11/10 - 11:37:57 | SYSTEM | Channel #7 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/11/10 - 11:37:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:37:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:37:59 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:37:59 | [Async] 处理SSE事件: Message (数据长度: 227) 
+[SYS] 2025/11/10 - 11:38:03 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:38:03 | [Async] 处理SSE事件: Message (数据长度: 477) 
+[SYS] 2025/11/10 - 11:38:03 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:38:03 | [Async] 处理SSE事件: Message (数据长度: 395) 
+[SYS] 2025/11/10 - 11:38:03 | [Async] 首次提取 usage from Message: Prompt=151, Completion=312, Total=463 
+[SYS] 2025/11/10 - 11:38:03 | [Async] SSE事件类型: Done 
+[SYS] 2025/11/10 - 11:38:03 | [Async] 处理SSE事件: Done (数据长度: 190) 
+[SYS] 2025/11/10 - 11:38:03 | [Async] Done事件获取Coze debug_url: https://www.coze.cn/work_flow?execute_id=7570935823904292902&space_id=7549033030220857353&workflow_id=7549079559813087284&execute_mode=2 
+[SYS] 2025/11/10 - 11:38:03 | [Async] 最终计费 usage: Prompt=151, Completion=312, Total=463 
+[SYS] 2025/11/10 - 11:38:03 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/11/10 - 11:38:03 | [WorkflowPricing] 输入参数: workflow_id=7549079559813087284, channel_id=7 
+[SYS] 2025/11/10 - 11:38:03 | [WorkflowPricing] ✅ 从 ModelPrice 读取定价: workflow=7549079559813087284, price=4.90元, quota=2450000 
+[SYS] 2025/11/10 - 11:38:03 | [Async] 工作流按次计费: workflow=7549079559813087284, 基础价格=2450000 quota/次, 分组倍率=2.00, 最终quota=4900000 
+[SYS] 2025/11/10 - 11:38:04 | [Async] Successfully consumed quota: 4900000 for task chatcmpl-20251110113741252584000GGRU30wD 
+[SYS] 2025/11/10 - 11:38:04 | [Async] Successfully created log for task chatcmpl-20251110113741252584000GGRU30wD with 463 tokens 
+[SYS] 2025/11/10 - 11:38:04 | [Async] Task chatcmpl-20251110113741252584000GGRU30wD completed successfully 
+[SYS] 2025/11/10 - 11:38:04 | [Async] Logged quota data for task chatcmpl-20251110113741252584000GGRU30wD: quota=4900000, tokens=463 
+[SYS] 2025/11/10 - 11:38:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:38:12 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:38:25 | 20251110113825520471000ymxwOwES | 200 |    5.011583ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760153905000&end_timestamp=1762749505000
+[GIN] 2025/11/10 - 11:38:25 | 20251110113825739306000Y3v4ceXv | 200 |       973.5µs |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1762704000&end_timestamp=1762749505
+[GIN] 2025/11/10 - 11:38:26 | 20251110113826715179000Wap6qYhs | 200 |    1.511209ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749506&channel=&group=
+[GIN] 2025/11/10 - 11:38:26 | 20251110113826742901000Ji5Li6NW | 200 |     466.291µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749506&channel=&group=
+[SYS] 2025/11/10 - 11:38:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:38:27 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:38:36 | 20251110113836648617000Q1LbfapO | 200 |    1.019584ms |             ::1 |     GET /api/option/
+[GIN] 2025/11/10 - 11:38:38 | 20251110113838448946000rRW15E8O | 200 |     900.834µs |             ::1 |     GET /api/option/
+[GIN] 2025/11/10 - 11:38:40 | 20251110113840971973000mmnRzWxg | 200 |     603.542µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760153920000&end_timestamp=1762749520000
+[GIN] 2025/11/10 - 11:38:41 | 20251110113841407884000CWbnQxLX | 200 |     972.167µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749521&channel=&group=
+[GIN] 2025/11/10 - 11:38:41 | 20251110113841410818000omvxmvch | 200 |     433.625µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749521&channel=&group=
+[SYS] 2025/11/10 - 11:38:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:38:42 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:38:44 | 20251110113844753802000NQ5vEH9u | 200 |     960.167µs |             ::1 |     GET /api/option/
+[GIN] 2025/11/10 - 11:38:45 | 20251110113845796308000NZbPRR15 | 200 |     927.042µs |             ::1 |     GET /api/option/
+[GIN] 2025/11/10 - 11:38:45 | 2025111011384579594700043EgnUCb | 200 |    3.926459ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/11/10 - 11:38:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:38:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:38:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:39:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:39:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:39:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:39:27 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:39:34 | 20251110113934457163000vsXZDYX0 | 200 |    8.549209ms |             ::1 |     PUT /api/option/
+[GIN] 2025/11/10 - 11:39:34 | 20251110113934475846000HL2Jceuz | 200 |     696.709µs |             ::1 |     GET /api/option/
+[SYS] 2025/11/10 - 11:39:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:39:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:39:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:39:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:39:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:40:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:40:12 | 任务进度轮询完成 
+[INFO] 2025/11/10 - 11:40:14 | 202511101140149910750000PUvP9h5 | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/11/10 - 11:40:14 | [Init] Coze工作流请求参数过滤完成 
+[SYS] 2025/11/10 - 11:40:14 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/11/10 - 11:40:14 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7520444303086125096, stream=false 
+[DEBUG] 2025/11/10 - 11:40:14 | 202511101140149910750000PUvP9h5 | text request body: null 
+[SYS] 2025/11/10 - 11:40:14 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/10 - 11:40:14 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/11/10 - 11:40:14 | [Async] Created task chatcmpl-202511101140149910750000PUvP9h5 for workflow 7520444303086125096 
+[SYS] 2025/11/10 - 11:40:14 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/11/10 - 11:40:14 | [Async] Starting background execution for task chatcmpl-202511101140149910750000PUvP9h5 
+[ERR] 2025/11/10 - 11:40:14 | 202511101140149910750000PUvP9h5 | total tokens is 0, cannot consume quota, userId 1, channelId 7, tokenId 1, model 7520444303086125096， pre-consumed quota 0 
+[INFO] 2025/11/10 - 11:40:14 | 202511101140149910750000PUvP9h5 | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/11/10 - 11:40:14 | 202511101140149910750000PUvP9h5 | 200 |    2.203125ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/10 - 11:40:14 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"BOT_USER_INPUT":"剪刀"}} 
+[SYS] 2025/11/10 - 11:40:14 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/11/10 - 11:40:14 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/11/10 - 11:40:14 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/11/10 - 11:40:15 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_h0OTd4DhDhKzlb10ND2E4CEC6PXIG5kGgTfB6wra2IWAjLmj6oamfFupc0XI6FZDL","expires_in":1762746914,"token_type":"Bearer"} 
+[SYS] 2025/11/10 - 11:40:15 | [OAuth Debug] Access token 获取成功 (前20字符): czs_h0OTd4DhDhKzlb10... 
+[SYS] 2025/11/10 - 11:40:15 | [Async] 发送HTTP请求到: https://api.coze.cn/v1/workflow/stream_run 
+[SYS] 2025/11/10 - 11:40:27 | 任务进度轮询开始 
+[INFO] 2025/11/10 - 11:40:27 | SYSTEM | Channel #7 pending video tasks: 1 
+[ERR] 2025/11/10 - 11:40:27 | SYSTEM | Channel #7 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/11/10 - 11:40:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 收到HTTP响应: status=200 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 开始处理SSE流式响应 
+[SYS] 2025/11/10 - 11:40:28 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 处理SSE事件: Message (数据长度: 294) 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 首次提取 usage from Message: Prompt=541, Completion=73, Total=614 
+[SYS] 2025/11/10 - 11:40:28 | [Async] SSE事件类型: Done 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 处理SSE事件: Done (数据长度: 190) 
+[SYS] 2025/11/10 - 11:40:28 | [Async] Done事件获取Coze debug_url: https://www.coze.cn/work_flow?execute_id=7570936483928457270&space_id=7501536526942109731&workflow_id=7520444303086125096&execute_mode=2 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 最终计费 usage: Prompt=541, Completion=73, Total=614 
+[SYS] 2025/11/10 - 11:40:28 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/11/10 - 11:40:28 | [WorkflowPricing] 输入参数: workflow_id=7520444303086125096, channel_id=7 
+[SYS] 2025/11/10 - 11:40:28 | [WorkflowPricing] ✅ 从 ModelPrice 读取定价: workflow=7520444303086125096, price=0.10元, quota=50000 
+[SYS] 2025/11/10 - 11:40:28 | [Async] 工作流按次计费: workflow=7520444303086125096, 基础价格=50000 quota/次, 分组倍率=2.00, 最终quota=100000 
+[SYS] 2025/11/10 - 11:40:28 | [Async] Successfully consumed quota: 100000 for task chatcmpl-202511101140149910750000PUvP9h5 
+[SYS] 2025/11/10 - 11:40:28 | [Async] Successfully created log for task chatcmpl-202511101140149910750000PUvP9h5 with 614 tokens 
+[SYS] 2025/11/10 - 11:40:28 | [Async] Task chatcmpl-202511101140149910750000PUvP9h5 completed successfully 
+[SYS] 2025/11/10 - 11:40:28 | [Async] Logged quota data for task chatcmpl-202511101140149910750000PUvP9h5: quota=100000, tokens=614 
+[SYS] 2025/11/10 - 11:40:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:40:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:40:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:40:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:40:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:41:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:41:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:41:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:41:27 | 任务进度轮询完成 
+[GIN] 2025/11/10 - 11:41:28 | 20251110114128502702000wtxj5faV | 200 |    2.814375ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749688&channel=&group=
+[GIN] 2025/11/10 - 11:41:28 | 20251110114128553580000PvjFgGFv | 200 |     653.167µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762704000&end_timestamp=1762749688&channel=&group=
+[SYS] 2025/11/10 - 11:41:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:41:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:41:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:41:56 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/11/10 - 11:41:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:41:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:41:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:42:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:42:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:42:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:42:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:42:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:42:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:43:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:43:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:43:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:43:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:43:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:43:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:44:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:44:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:44:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:44:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:44:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:44:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:44:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:44:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:44:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:45:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:45:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:45:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:45:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:45:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:45:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:45:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:45:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:45:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:46:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:46:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:46:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:46:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:46:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:46:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:46:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:46:56 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/10 - 11:46:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:46:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:46:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:47:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:47:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:47:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:47:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:47:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:47:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:47:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:47:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:47:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:48:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:48:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:48:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:48:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:48:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:48:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:48:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:48:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:48:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:49:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:49:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:49:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:49:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:49:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:49:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:49:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:49:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:49:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:50:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:50:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:50:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:50:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:50:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:50:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:50:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:50:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:50:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:51:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:51:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:51:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:51:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:51:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:51:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:51:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:51:56 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/10 - 11:51:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:51:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:51:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:52:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:52:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:52:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:52:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:52:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:52:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:52:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:52:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:52:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:53:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:53:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:53:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:53:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:53:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:53:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:53:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:53:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:53:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:54:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:54:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:54:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:54:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:54:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:54:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:54:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:54:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:54:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:55:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:55:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:55:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:55:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:55:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:55:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:55:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:55:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:55:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:56:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:56:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:56:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:56:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:56:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:56:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:56:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/10 - 11:56:56 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/10 - 11:56:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:56:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:56:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:57:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:57:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:57:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:57:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:57:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:57:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:57:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:57:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:57:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:58:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:58:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:58:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:58:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:58:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:58:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:58:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:58:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:58:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:59:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:59:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:59:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:59:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:59:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:59:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 11:59:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 11:59:57 | syncing options from database 
+[SYS] 2025/11/10 - 11:59:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:00:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:00:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:00:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:00:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:00:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:00:42 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:00:57 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:00:57 | syncing options from database 
+[SYS] 2025/11/10 - 12:00:57 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:01:12 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:01:12 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:01:27 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:01:27 | 任务进度轮询完成 
+[SYS] 2025/11/10 - 12:01:42 | 任务进度轮询开始 
+[SYS] 2025/11/10 - 12:01:42 | 任务进度轮询完成 

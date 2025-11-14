@@ -1,0 +1,67 @@
+[SYS] 2025/11/11 - 16:36:40 | initializing token encoders 
+[SYS] 2025/11/11 - 16:36:40 | token encoders initialized 
+[SYS] 2025/11/11 - 16:36:40 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/11 - 16:36:40 | database migration started 
+[SYS] 2025/11/11 - 16:36:40 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/11/11 - 16:36:40 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/11/11 - 16:36:40 | New API v0.0.0 started 
+[SYS] 2025/11/11 - 16:36:40 | running in debug mode 
+[SYS] 2025/11/11 - 16:36:40 | 正在更新数据看板数据... 
+[SYS] 2025/11/11 - 16:36:40 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/11/11 - 16:36:43 | 20251111163643905107000O0J0SHG5 | 200 |    4.084875ms |             ::1 |     GET /console/log
+[GIN] 2025/11/11 - 16:36:44 | 202511111636442635280005g6IootV | 200 |    1.891166ms |             ::1 |     GET /api/status
+[GIN] 2025/11/11 - 16:36:44 | 20251111163644263040000UOHpeyfy | 200 |    5.160542ms |             ::1 |     GET /api/user/self
+[GIN] 2025/11/11 - 16:36:44 | 20251111163644263412000iy0tvMCf | 200 |    6.106583ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762790400&end_timestamp=1762853804&channel=&group=
+[GIN] 2025/11/11 - 16:36:44 | 20251111163644540492000maZfqWuh | 200 |    1.725916ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762790400&end_timestamp=1762853804&channel=&group=
+[SYS] 2025/11/11 - 16:36:55 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:36:55 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:37:10 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:37:10 | 任务进度轮询完成 
+[ERR] 2025/11/11 - 16:37:16 | 20251111163716813285000c7hISIOa | user 0 | 无效的令牌 
+[GIN] 2025/11/11 - 16:37:16 | 20251111163716813285000c7hISIOa | 401 |    3.413542ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/11 - 16:37:25 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:37:25 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:37:40 | syncing options from database 
+[SYS] 2025/11/11 - 16:37:40 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:37:40 | 任务进度轮询完成 
+[ERR] 2025/11/11 - 16:37:41 | 20251111163741343384000UHYUjaVV | user 1 | Invalid request, 无效的请求, invalid character '\n' in string literal 
+[GIN] 2025/11/11 - 16:37:41 | 20251111163741343384000UHYUjaVV | 400 |    1.468167ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/11 - 16:37:55 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:37:55 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:38:10 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:38:10 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:38:25 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:38:25 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:38:40 | syncing options from database 
+[SYS] 2025/11/11 - 16:38:40 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:38:40 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:38:55 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:38:55 | 任务进度轮询完成 
+[GIN] 2025/11/11 - 16:39:10 | 20251111163910582810000EK7GiAIh | 200 |     430.083µs |             ::1 |     GET /console/log
+[GIN] 2025/11/11 - 16:39:10 | 202511111639107721810004fhg0b6g | 200 |     455.583µs |             ::1 |     GET /api/status
+[GIN] 2025/11/11 - 16:39:10 | 20251111163910771982000lo9IeVHT | 200 |    1.525125ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762790400&end_timestamp=1762853950&channel=&group=
+[GIN] 2025/11/11 - 16:39:10 | 20251111163910771895000q8elHqJ3 | 200 |      1.9335ms |             ::1 |     GET /api/user/self
+[SYS] 2025/11/11 - 16:39:10 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:39:10 | 任务进度轮询完成 
+[GIN] 2025/11/11 - 16:39:10 | 20251111163910818380000fkyyaQJo | 200 |     574.042µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762790400&end_timestamp=1762853950&channel=&group=
+[SYS] 2025/11/11 - 16:39:25 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:39:25 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:39:40 | syncing options from database 
+[SYS] 2025/11/11 - 16:39:40 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:39:40 | 任务进度轮询完成 
+[GIN] 2025/11/11 - 16:39:47 | 2025111116394779894000YXGTEGgb | 200 |   10.155792ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1760258387000&end_timestamp=1762853987000
+[GIN] 2025/11/11 - 16:39:47 | 20251111163947450183000AXMlbVvq | 200 |    1.392334ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1762790400&end_timestamp=1762853987&channel=&group=
+[GIN] 2025/11/11 - 16:39:47 | 202511111639474792710009gNdnN7S | 200 |    3.351042ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1762790400&end_timestamp=1762853987&channel=&group=
+[SYS] 2025/11/11 - 16:39:55 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:39:55 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:40:10 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:40:10 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:40:25 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:40:25 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:40:40 | syncing options from database 
+[SYS] 2025/11/11 - 16:40:40 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:40:40 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:40:55 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:40:55 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:41:10 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:41:10 | 任务进度轮询完成 

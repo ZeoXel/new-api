@@ -1,0 +1,136 @@
+[SYS] 2025/10/11 - 14:04:43 | initializing token encoders 
+[SYS] 2025/10/11 - 14:04:43 | token encoders initialized 
+[SYS] 2025/10/11 - 14:04:43 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/11 - 14:04:43 | database migration started 
+[SYS] 2025/10/11 - 14:04:43 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/11 - 14:04:43 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/11 - 14:04:43 | New API v0.0.0 started 
+[SYS] 2025/10/11 - 14:04:43 | running in debug mode 
+[SYS] 2025/10/11 - 14:04:43 | memory cache enabled 
+[SYS] 2025/10/11 - 14:04:43 | sync frequency: 60 seconds 
+[SYS] 2025/10/11 - 14:04:43 | channels synced from database 
+[SYS] 2025/10/11 - 14:04:43 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 14:04:43 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/10/11 - 14:04:45 | 20251011140445580262000Njg0YpI9 | 200 |    1.964833ms |             ::1 |     GET /
+[SYS] 2025/10/11 - 14:04:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:04:58 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:05:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:05:13 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:05:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:05:28 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:05:43 | syncing options from database 
+[SYS] 2025/10/11 - 14:05:43 | syncing channels from database 
+[SYS] 2025/10/11 - 14:05:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:05:43 | channels synced from database 
+[SYS] 2025/10/11 - 14:05:43 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545633278000GAzwijs8 | 200 |     649.917µs |             ::1 |     GET /console/channel
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545928592000MppxE8nc | 200 |     420.542µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545928545000GQIQLrPR | 200 |    1.526333ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545928435000LShs2idY | 200 |    2.790792ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545928990000mJdgGZkk | 200 |    2.705666ms |             ::1 |     GET /api/models
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545929224000pik1bd9t | 200 |    2.483583ms |             ::1 |     GET /api/status
+[GIN] 2025/10/11 - 14:05:45 | 20251011140545928971000QbO87SVh | 200 |    3.328084ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/11 - 14:05:46 | 20251011140546197639000XRjnAvLo | 200 |     590.375µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:05:51 | 20251011140551400065000HRnc382k | 200 |     419.875µs |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/10/11 - 14:05:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:05:58 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606181457000tb0ge3Yx | 200 |     320.958µs |             ::1 |     GET /console/channel
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606194659000aH2MNjaG | 200 |    4.277833ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606200588000v4ASr2W3 | 200 |    3.869959ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606206542000zKiAYK1F | 200 |    3.262834ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606194685000xp5Qo11T | 200 |   18.689416ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/10/11 - 14:06:06 | 202510111406061943800005z37joxo | 200 |    21.58975ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/10/11 - 14:06:06 | 202510111406061944880003MVQpB9o | 200 |   25.544834ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606194618000iuzHswU4 | 200 |   63.014084ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606194545000ZcERg9Qt | 200 |  113.861709ms |             ::1 |     GET /assets/index-uzFyjPUM.js
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606356700000fKgtsLZe | 200 |     351.792µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606356537000IFSTOFTM | 200 |     527.583µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606356899000MOH63llR | 200 |     181.125µs |             ::1 |     GET /api/status
+[GIN] 2025/10/11 - 14:06:06 | 202510111406063567930004E2LLu3S | 200 |     749.042µs |             ::1 |     GET /api/models
+[GIN] 2025/10/11 - 14:06:06 | 202510111406063567380003UUx1YFG | 200 |    1.591709ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606356691000MeZAre2I | 200 |    2.291083ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/11 - 14:06:06 | 202510111406063595110005FMAWiYa | 200 |      24.066ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/11 - 14:06:06 | 20251011140606402766000Bwk1sQUi | 200 |         338µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:06:06 | 202510111406064197690009OVfOvnz | 200 |    3.379416ms |             ::1 |     GET /logo.png
+[GIN] 2025/10/11 - 14:06:08 | 20251011140608485113000t0j1PORj | 200 |     666.041µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:06:08 | 20251011140608486384000jeY4QW99 | 200 |    1.381166ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760076368&end_timestamp=1760166368&default_time=hour
+[GIN] 2025/10/11 - 14:06:08 | 20251011140608507930000koDk50EM | 200 |     160.584µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/11 - 14:06:11 | 2025101114061197367200094cnPR3E | 200 |    1.484625ms |             ::1 |     GET /cover-4.webp
+[GIN] 2025/10/11 - 14:06:11 | 20251011140611977123000YhFnqr5M | 200 |     231.958µs |             ::1 |     GET /api/user/topup/info
+[GIN] 2025/10/11 - 14:06:11 | 20251011140611977292000WILEs4op | 200 |    2.255334ms |             ::1 |     GET /api/user/aff
+[GIN] 2025/10/11 - 14:06:11 | 20251011140611986586000WqVJlieG | 200 |     490.916µs |             ::1 |    POST /api/user/amount
+[SYS] 2025/10/11 - 14:06:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:06:13 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 14:06:13 | 20251011140613686173000MyX4LlEr | 200 |     522.291µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:06:13 | 20251011140613686622000GseCSpbh | 200 |     360.959µs |             ::1 |     GET /api/user/2fa/status
+[GIN] 2025/10/11 - 14:06:17 | 20251011140617121168000SJtw7VMf | 200 |     386.792µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/11 - 14:06:17 | 202510111406171214610005KFxUoEl | 200 |    1.564125ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/11 - 14:06:17 | 202510111406171212740004tZsxdsn | 200 |      3.4115ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/11 - 14:06:18 | 20251011140618113478000Sd4O6h1V | 200 |     166.834µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/11 - 14:06:18 | 20251011140618113049000YV1DoSMj | 200 |     920.125µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/11 - 14:06:18 | 20251011140618113609000jZsDfBcz | 200 |     479.791µs |             ::1 |     GET /api/models
+[GIN] 2025/10/11 - 14:06:18 | 20251011140618113384000Vxn6HmCy | 200 |    1.624416ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/11 - 14:06:19 | 20251011140619576703000SbShH1tF | 200 |    1.880542ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/10/11 - 14:06:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:06:28 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:06:43 | syncing options from database 
+[SYS] 2025/10/11 - 14:06:43 | syncing channels from database 
+[SYS] 2025/10/11 - 14:06:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:06:43 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:06:43 | channels synced from database 
+[SYS] 2025/10/11 - 14:06:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:06:58 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:07:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:07:13 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:07:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:07:28 | 任务进度轮询完成 
+[GIN] 2025/10/11 - 14:07:37 | 20251011140737329212000vhcSjJWo | 200 |    2.914709ms |             ::1 |     GET /api/user/2fa/status
+[GIN] 2025/10/11 - 14:07:37 | 20251011140737329212000CXNwLAw6 | 200 |    3.104291ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/11 - 14:07:37 | 20251011140737785004000W7YJX2hQ | 200 |     317.291µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/11 - 14:07:37 | 20251011140737784735000Za8snbjs | 200 |        1.24ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/11 - 14:07:37 | 202510111407377853820004IynHfy9 | 200 |         684µs |             ::1 |     GET /api/models
+[GIN] 2025/10/11 - 14:07:37 | 20251011140737785431000dMgoaXkB | 200 |    2.101834ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/11 - 14:07:39 | 20251011140739287874000EulOTCJS | 200 |    1.153375ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false&type=36
+[GIN] 2025/10/11 - 14:07:39 | 202510111407397201700007UyXRuCn | 200 |    1.336584ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false&type=1
+[GIN] 2025/10/11 - 14:07:40 | 2025101114074055191000Q1ddljTa | 200 |    1.424875ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/11 - 14:07:41 | 20251011140741291583000WmOpKQUY | 200 |    2.183791ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/10/11 - 14:07:43 | syncing options from database 
+[SYS] 2025/10/11 - 14:07:43 | syncing channels from database 
+[SYS] 2025/10/11 - 14:07:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:07:43 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:07:43 | channels synced from database 
+[SYS] 2025/10/11 - 14:07:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:07:58 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:08:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:08:13 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:08:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:08:28 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:08:43 | syncing options from database 
+[SYS] 2025/10/11 - 14:08:43 | syncing channels from database 
+[SYS] 2025/10/11 - 14:08:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:08:43 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:08:43 | channels synced from database 
+[SYS] 2025/10/11 - 14:08:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:08:58 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:09:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:09:13 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:09:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:09:28 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:09:43 | 正在更新数据看板数据... 
+[SYS] 2025/10/11 - 14:09:43 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/11 - 14:09:43 | syncing options from database 
+[SYS] 2025/10/11 - 14:09:43 | syncing channels from database 
+[SYS] 2025/10/11 - 14:09:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:09:43 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:09:43 | channels synced from database 
+[SYS] 2025/10/11 - 14:09:58 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:09:58 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:10:13 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:10:13 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:10:28 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:10:28 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:10:43 | syncing options from database 
+[SYS] 2025/10/11 - 14:10:43 | syncing channels from database 
+[SYS] 2025/10/11 - 14:10:43 | 任务进度轮询开始 
+[SYS] 2025/10/11 - 14:10:43 | 任务进度轮询完成 
+[SYS] 2025/10/11 - 14:10:43 | channels synced from database 

@@ -1,0 +1,356 @@
+[SYS] 2025/09/28 - 14:42:12 | initializing token encoders 
+[SYS] 2025/09/28 - 14:42:12 | token encoders initialized 
+[SYS] 2025/09/28 - 14:42:12 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/28 - 14:42:12 | database migration started 
+[SYS] 2025/09/28 - 14:42:12 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/09/28 - 14:42:12 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/28 - 14:42:12 | New API v0.0.0 started 
+[SYS] 2025/09/28 - 14:42:12 | memory cache enabled 
+[SYS] 2025/09/28 - 14:42:12 | sync frequency: 60 seconds 
+[SYS] 2025/09/28 - 14:42:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:42:12 | 正在更新数据看板数据... 
+[SYS] 2025/09/28 - 14:42:12 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/28 - 14:42:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:42:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:42:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:42:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:42:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:42:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:43:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:43:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:43:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:43:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:43:12 | channels synced from database 
+[GIN] 2025/09/28 - 14:43:25 | 202509281443255034530006sGnrza0 | 200 |     608.792µs |             ::1 |     GET /console/channel
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325524669000kFlG0U56 | 200 |   12.822625ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325530775000SaXrW9w7 | 200 |    8.041625ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325539185000yA7Qx01H | 200 |    1.078667ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325539416000jPYf2xYr | 200 |    3.043625ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325529566000BtBXTWTV | 200 |   21.984084ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325529577000Hs16OQhg | 200 |   27.819625ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325529352000vepOTDhG | 200 |   67.558625ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325531030000AvljNlNw | 200 |  127.278833ms |             ::1 |     GET /assets/index-CxXPNU0-.js
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325806833000F9ui4GuO | 401 |     291.042µs |             ::1 |     GET /api/models
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325806742000laEvVV1e | 401 |     463.208µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325806844000lj1Sqdif | 401 |     449.125µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325807040000l1BtBZxI | 401 |     344.583µs |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/28 - 14:43:25 | 2025092814432580709800026wKuWjY | 401 |     312.833µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325808294000aUmmBpHO | 200 |       131.5µs |             ::1 |     GET /api/status
+[GIN] 2025/09/28 - 14:43:25 | 20250928144325811503000YiuW0Q3S | 200 |     4.42275ms |             ::1 |     GET /logo.png
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432674475000hjiGuSHh | 200 |     175.875µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432678316000IjChoX7w | 200 |     142.917µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432684195000js67LTHg | 200 |     256.166µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432686742000sV9XjFM1 | 200 |     141.375µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432688307000yHZHe9GI | 200 |     236.667µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432690218000Pxn2xyQx | 200 |     314.042µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/28 - 14:43:26 | 2025092814432690283000Nw8feIlN | 401 |     753.334µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/28 - 14:43:26 | 20250928144326223791000Mfmcv5VW | 200 |     353.583µs |             ::1 |     GET /api/status
+[GIN] 2025/09/28 - 14:43:27 | 20250928144327440662000u8QUq209 | 200 |   76.432916ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2025/09/28 - 14:43:27 | 202509281443275521990001CMH6eiK | 200 |     682.792µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/28 - 14:43:27 | 20250928144327602365000orWV5GgT | 200 |     401.458µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/28 - 14:43:27 | 20250928144327603364000YyDsMEXZ | 200 |    1.553875ms |             ::1 |     GET /api/data/?username=&start_timestamp=1758955407&end_timestamp=1759045407&default_time=hour
+[GIN] 2025/09/28 - 14:43:27 | 20250928144327626677000hLdFKh67 | 200 |      72.625µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/09/28 - 14:43:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:43:27 | 任务进度轮询完成 
+[GIN] 2025/09/28 - 14:43:29 | 20250928144329952187000pe5xutjt | 200 |     257.708µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/28 - 14:43:29 | 20250928144329951967000HLaShNze | 200 |     935.667µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/28 - 14:43:29 | 20250928144329952207000qrGFpgBL | 200 |     744.917µs |             ::1 |     GET /api/models
+[GIN] 2025/09/28 - 14:43:29 | 20250928144329952183000FZlfgD9x | 200 |     1.99475ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/28 - 14:43:34 | channels synced from database 
+[GIN] 2025/09/28 - 14:43:34 | 20250928144334561106000QG9WHuDb | 200 |   16.688125ms |             ::1 |     PUT /api/channel/
+[SYS] 2025/09/28 - 14:43:35 | channels synced from database 
+[GIN] 2025/09/28 - 14:43:35 | 20250928144335804744000HvbyjMGP | 200 |      9.3205ms |             ::1 |     PUT /api/channel/
+[SYS] 2025/09/28 - 14:43:38 | channels synced from database 
+[GIN] 2025/09/28 - 14:43:38 | 20250928144338361978000Z2CCGyqd | 200 |    8.070375ms |             ::1 |  DELETE /api/channel/6
+[GIN] 2025/09/28 - 14:43:38 | 20250928144338373505000UpOM0z3o | 200 |    2.611625ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/28 - 14:43:41 | 2025092814434187018000f6BB36l4 | 200 |    1.707042ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/28 - 14:43:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:43:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:43:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:43:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:44:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:44:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:44:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:44:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:44:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:44:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:44:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:44:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:44:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:44:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:44:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:45:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:45:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:45:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:45:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:45:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:45:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:45:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:45:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:45:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:45:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:45:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:46:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:46:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:46:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:46:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:46:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:46:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:46:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:46:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:46:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:46:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:46:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:47:12 | 正在更新数据看板数据... 
+[SYS] 2025/09/28 - 14:47:12 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/28 - 14:47:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:47:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:47:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:47:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:47:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:47:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:47:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:47:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:47:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:47:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:47:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:48:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:48:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:48:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:48:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:48:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:48:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:48:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:48:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:48:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:48:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:48:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:49:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:49:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:49:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:49:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:49:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:49:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:49:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:49:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:49:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:49:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:49:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:50:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:50:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:50:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:50:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:50:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:50:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:50:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:50:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:50:42 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:50:57 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:50:57 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:51:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:51:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:51:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:51:12 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:51:12 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:51:27 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:51:27 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:51:42 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:51:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:51:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:51:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:52:12 | 正在更新数据看板数据... 
+[SYS] 2025/09/28 - 14:52:12 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/28 - 14:52:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:52:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:52:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:52:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:52:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:52:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:52:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:52:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:52:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:52:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:52:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:53:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:53:12 | syncing channels from database 
+[SYS] 2025/09/28 - 14:53:12 | channels synced from database 
+[SYS] 2025/09/28 - 14:53:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:53:13 | 任务进度轮询完成 
+[INFO] 2025/09/28 - 14:53:18 | 20250928145318150552000rGsmRnOf | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[ERR] 2025/09/28 - 14:53:18 | 20250928145318150552000rGsmRnOf | relay error (channel #6, status code: 500): setup request header failed: failed to get OAuth access token: failed to exchange JWT for access token: token request failed with status 400: {"error":"invalid_request","error_code":"invalid_request","error_message":"invalid request: missing field(s)"} 
+[GIN] 2025/09/28 - 14:53:18 | 20250928145318150552000rGsmRnOf | 500 |  152.907416ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/09/28 - 14:53:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:53:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:53:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:53:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:53:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:53:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:54:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:54:13 | syncing channels from database 
+[SYS] 2025/09/28 - 14:54:13 | channels synced from database 
+[SYS] 2025/09/28 - 14:54:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:54:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:54:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:54:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:54:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:54:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:54:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:54:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:55:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:55:13 | syncing channels from database 
+[SYS] 2025/09/28 - 14:55:13 | channels synced from database 
+[SYS] 2025/09/28 - 14:55:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:55:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:55:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:55:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:55:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:55:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:55:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:55:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:56:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:56:13 | syncing channels from database 
+[SYS] 2025/09/28 - 14:56:13 | channels synced from database 
+[SYS] 2025/09/28 - 14:56:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:56:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:56:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:56:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:56:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:56:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:56:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:56:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:57:12 | 正在更新数据看板数据... 
+[SYS] 2025/09/28 - 14:57:12 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/28 - 14:57:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:57:13 | syncing channels from database 
+[SYS] 2025/09/28 - 14:57:13 | channels synced from database 
+[SYS] 2025/09/28 - 14:57:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:57:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:57:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:57:28 | 任务进度轮询完成 
+[INFO] 2025/09/28 - 14:57:41 | 20250928145741898088000MjBz7iaz | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[ERR] 2025/09/28 - 14:57:42 | 20250928145741898088000MjBz7iaz | relay error (channel #6, status code: 500): setup request header failed: failed to get OAuth access token: failed to exchange JWT for access token: token request failed with status 400: {"error":"invalid_request","error_code":"invalid_request","error_message":"invalid request: missing field(s)"} 
+[GIN] 2025/09/28 - 14:57:42 | 20250928145741898088000MjBz7iaz | 500 |  116.172166ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/09/28 - 14:57:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:57:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:57:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:57:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:58:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:58:13 | syncing channels from database 
+[SYS] 2025/09/28 - 14:58:13 | channels synced from database 
+[SYS] 2025/09/28 - 14:58:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:58:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:58:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:58:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:58:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:58:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:58:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:58:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:59:12 | syncing options from database 
+[SYS] 2025/09/28 - 14:59:13 | syncing channels from database 
+[SYS] 2025/09/28 - 14:59:13 | channels synced from database 
+[SYS] 2025/09/28 - 14:59:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:59:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:59:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:59:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:59:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:59:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 14:59:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 14:59:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:00:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:00:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:00:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:00:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:00:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:00:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:00:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:00:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:00:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:00:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:00:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:01:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:01:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:01:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:01:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:01:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:01:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:01:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:01:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:01:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:01:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:01:58 | 任务进度轮询完成 
+[INFO] 2025/09/28 - 15:02:08 | 20250928150208333074000j17RMF8g | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[ERR] 2025/09/28 - 15:02:08 | 20250928150208333074000j17RMF8g | relay error (channel #6, status code: 500): setup request header failed: failed to get OAuth access token: failed to exchange JWT for access token: token request failed with status 400: {"error":"invalid_request","error_code":"invalid_request","error_message":"invalid request: missing field(s)"} 
+[GIN] 2025/09/28 - 15:02:08 | 20250928150208333074000j17RMF8g | 500 |    98.53225ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/09/28 - 15:02:12 | 正在更新数据看板数据... 
+[SYS] 2025/09/28 - 15:02:12 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/28 - 15:02:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:02:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:02:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:02:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:02:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:02:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:02:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:02:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:02:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:02:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:02:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:03:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:03:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:03:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:03:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:03:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:03:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:03:28 | 任务进度轮询完成 
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328292238000FT9evCET | 200 |     298.167µs |             ::1 |     GET /console/channel
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328573275000EiBJR2ag | 200 |      361.25µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328573428000ZQJ8wpFZ | 200 |      501.75µs |             ::1 |     GET /api/status
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328572845000qIEdMUGj | 200 |      1.2565ms |             ::1 |     GET /api/user/self
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328573136000fxYcI3ML | 200 |    1.294125ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328573464000CBWZI6Ns | 200 |     949.167µs |             ::1 |     GET /api/models
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328573343000aUXwwhBr | 200 |    7.462833ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/28 - 15:03:28 | 20250928150328824058000ikeaQKOx | 200 |     526.375µs |             ::1 |     GET /api/user/self
+[SYS] 2025/09/28 - 15:03:32 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543681 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-28T15:03:32.538775+08:00, FirstResponse: 2025-09-28T15:03:31.538775+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[GIN] 2025/09/28 - 15:03:32 | 20250928150332537530000wp6utALz | 200 |       1.523ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/28 - 15:03:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:03:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:03:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:03:58 | 任务进度轮询完成 
+[GIN] 2025/09/28 - 15:04:11 | 20250928150411369429000ND0GdSYV | 200 |     345.834µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/09/28 - 15:04:11 | 202509281504113696410005gzsDlvb | 200 |     799.959µs |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/09/28 - 15:04:11 | 20250928150411369477000XK0K7Yn2 | 200 |    3.183416ms |             ::1 |     GET /api/user/models
+[SYS] 2025/09/28 - 15:04:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:04:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:04:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:04:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:04:13 | 任务进度轮询完成 
+[INFO] 2025/09/28 - 15:04:26 | 20250928150426200041000yKQrELDc | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[ERR] 2025/09/28 - 15:04:26 | 20250928150426200041000yKQrELDc | relay error (channel #6, status code: 500): setup request header failed: failed to get OAuth access token: failed to exchange JWT for access token: token request failed with status 400: {"error":"invalid_request","error_code":"invalid_request","error_message":"invalid request: missing field(s)"} 
+[GIN] 2025/09/28 - 15:04:26 | 20250928150426200041000yKQrELDc | 500 |   130.65825ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/09/28 - 15:04:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:04:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:04:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:04:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:04:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:04:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:05:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:05:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:05:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:05:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:05:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:05:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:05:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:05:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:05:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:05:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:05:58 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:06:12 | syncing options from database 
+[SYS] 2025/09/28 - 15:06:13 | syncing channels from database 
+[SYS] 2025/09/28 - 15:06:13 | channels synced from database 
+[SYS] 2025/09/28 - 15:06:13 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:06:13 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:06:28 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:06:28 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:06:43 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:06:43 | 任务进度轮询完成 
+[SYS] 2025/09/28 - 15:06:58 | 任务进度轮询开始 
+[SYS] 2025/09/28 - 15:06:58 | 任务进度轮询完成 

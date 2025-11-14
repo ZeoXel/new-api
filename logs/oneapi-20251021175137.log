@@ -1,0 +1,109 @@
+[SYS] 2025/10/21 - 17:51:37 | initializing token encoders 
+[SYS] 2025/10/21 - 17:51:37 | token encoders initialized 
+[SYS] 2025/10/21 - 17:51:37 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/21 - 17:51:38 | database migration started 
+[SYS] 2025/10/21 - 17:51:38 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/21 - 17:51:38 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/21 - 17:51:38 | New API v0.0.0 started 
+[SYS] 2025/10/21 - 17:51:38 | running in debug mode 
+[SYS] 2025/10/21 - 17:51:38 | 正在更新数据看板数据... 
+[SYS] 2025/10/21 - 17:51:38 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148742546000PXa7eyO9 | 200 |      771.25µs |             ::1 |     GET /console/channel
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148938946000Sp9Ovd2P | 200 |     315.625µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148939167000msPn87zJ | 200 |    5.646708ms |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148939081000g4BK37qQ | 200 |    6.421417ms |             ::1 |     GET /api/models
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148938442000xrTIA930 | 200 |    7.146041ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148938894000yhoSRv1R | 200 |    7.738666ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/21 - 17:51:48 | 20251021175148939145000gtPWHvM8 | 200 |    9.220541ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/21 - 17:51:49 | 202510211751494936000AGUaZ9qq | 200 |    2.305458ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 17:51:50 | 20251021175150867977000DlpVLVMq | 200 |         576µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/21 - 17:51:50 | 20251021175150867170000znkCcq7L | 200 |    2.161583ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/21 - 17:51:50 | 202510211751508674270003s4tn49D | 200 |     2.51675ms |             ::1 |     GET /api/channel/8
+[GIN] 2025/10/21 - 17:51:50 | 20251021175150885239000RmuCxbyX | 200 |    1.616333ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/10/21 - 17:51:53 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:51:53 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:51:53 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:51:53 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 17:51:55 | 20251021175155356914000P7m5QfvZ | 200 |         313µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/21 - 17:51:55 | 202510211751553567830009sS6nRQe | 200 |     771.208µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 17:51:55 | 20251021175155356934000HT0tiRsD | 200 |      806.25µs |             ::1 |     GET /api/user/?p=0&page_size=10
+[GIN] 2025/10/21 - 17:51:55 | 20251021175155658709000e7WqLOcC | 200 |    1.380958ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/21 - 17:51:56 | 20251021175156645697000FnqlcCz8 | 200 |     596.667µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/21 - 17:51:56 | 20251021175156990852000F1rUsmNl | 200 |      915.25µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/21 - 17:51:56 | 20251021175156990819000ZaCD3u7e | 200 |    3.304041ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/21 - 17:52:08 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:52:08 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:52:08 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:52:08 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:52:23 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:52:23 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:52:23 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:52:23 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:52:38 | syncing options from database 
+[SYS] 2025/10/21 - 17:52:38 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:52:38 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:52:38 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:52:38 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 17:52:43 | 20251021175243710652000N4VzOozn | 200 |    26.03775ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761043963
+[GIN] 2025/10/21 - 17:52:46 | 20251021175246691427000j98JfR9n | 200 |     874.625µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1758448366000&end_timestamp=1761043966000
+[GIN] 2025/10/21 - 17:52:47 | 20251021175247301502000gt5ItdHR | 200 |    3.968583ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761043967
+[SYS] 2025/10/21 - 17:52:53 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:52:53 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:52:53 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:52:53 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:53:08 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:53:08 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:53:08 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:53:08 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:53:23 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:53:23 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:53:23 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:53:23 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:53:38 | syncing options from database 
+[SYS] 2025/10/21 - 17:53:38 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:53:38 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:53:38 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:53:38 | 任务进度轮询完成 
+[GIN] 2025/10/21 - 17:53:39 | 2025102117533983779000wLYvXAOZ | 200 |    2.611833ms |             ::1 |     GET /console/task
+[GIN] 2025/10/21 - 17:53:39 | 20251021175339327811000qhmmbqX7 | 200 |    1.532959ms |             ::1 |     GET /api/status
+[GIN] 2025/10/21 - 17:53:39 | 20251021175339327891000KIfIZf0o | 200 |    3.198875ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760976000&end_timestamp=1761044019
+[GIN] 2025/10/21 - 17:53:39 | 20251021175339328170000FzBtAzeL | 200 |     3.85725ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/21 - 17:53:39 | 20251021175339403392000zxpanAfZ | 200 |     890.084µs |             ::1 |     GET /api/user/self
+[SYS] 2025/10/21 - 17:53:53 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:53:53 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:53:53 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:53:53 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:54:08 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:54:08 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:54:08 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:54:08 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:54:23 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:54:23 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:54:23 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:54:23 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:54:38 | syncing options from database 
+[SYS] 2025/10/21 - 17:54:38 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:54:38 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:54:38 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:54:38 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:54:53 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:54:53 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:54:53 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:54:53 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:55:08 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:55:08 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:55:08 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:55:08 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:55:23 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:55:23 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:55:23 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:55:23 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:55:38 | syncing options from database 
+[SYS] 2025/10/21 - 17:55:38 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:55:38 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:55:38 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:55:38 | 任务进度轮询完成 
+[SYS] 2025/10/21 - 17:55:53 | 任务进度轮询开始 
+[INFO] 2025/10/21 - 17:55:53 | SYSTEM | Channel #8 pending video tasks: 37 
+[ERR] 2025/10/21 - 17:55:53 | SYSTEM | Channel #8 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/10/21 - 17:55:53 | 任务进度轮询完成 

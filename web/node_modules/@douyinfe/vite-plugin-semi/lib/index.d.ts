@@ -1,0 +1,1 @@
+export { default as vitePluginSemi } from './vite-plugin-semi';

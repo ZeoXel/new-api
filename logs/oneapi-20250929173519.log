@@ -1,0 +1,311 @@
+[SYS] 2025/09/29 - 17:35:19 | initializing token encoders 
+[SYS] 2025/09/29 - 17:35:19 | token encoders initialized 
+[SYS] 2025/09/29 - 17:35:19 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/29 - 17:35:19 | database migration started 
+[SYS] 2025/09/29 - 17:35:19 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/09/29 - 17:35:19 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/29 - 17:35:19 | New API v0.0.0 started 
+[SYS] 2025/09/29 - 17:35:19 | memory cache enabled 
+[SYS] 2025/09/29 - 17:35:19 | sync frequency: 60 seconds 
+[SYS] 2025/09/29 - 17:35:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:35:19 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:35:19 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/09/29 - 17:35:21 | 20250929173521136860000cT6fAT7x | 200 |     413.917µs |             ::1 |     GET /console
+[GIN] 2025/09/29 - 17:35:21 | 20250929173521154756000RpsNQKBi | 200 |     141.625µs |             ::1 |     GET /console
+[GIN] 2025/09/29 - 17:35:21 | 2025092917352147779200037SiuC46 | 401 |     371.917µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:35:21 | 20250929173521477953000umclQ6uN | 200 |     303.542µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 17:35:21 | 20250929173521733275000v8BFDyNR | 200 |      178.25µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 17:35:21 | 20250929173521739278000AtF88vac | 401 |     208.375µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:35:21 | 20250929173521813478000OAxb2W6i | 200 |     182.792µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 17:35:23 | 20250929173523728658000xTALm51M | 200 |   82.973125ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2025/09/29 - 17:35:23 | 20250929173523835655000FDkpppxF | 200 |     471.042µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:35:23 | 20250929173523869451000xteZrIev | 200 |     258.458µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:35:23 | 202509291735238705340007bhzfd3W | 200 |     291.125µs |             ::1 |     GET /api/data/?username=&start_timestamp=1759052123&end_timestamp=1759142123&default_time=hour
+[GIN] 2025/09/29 - 17:35:23 | 20250929173523907834000Qiweeczz | 200 |     225.625µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/09/29 - 17:35:27 | 20250929173527718755000la6FssJk | 200 |     275.625µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:35:27 | 202509291735277187550004ddLpNoc | 200 |    2.065875ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:35:27 | 20250929173527719507000QusGVnQd | 200 |    1.408042ms |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 17:35:27 | 20250929173527720247000zfxHsJFy | 200 |    1.569583ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 17:35:29 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:35:29.33717+08:00, FirstResponse: 2025-09-29T17:35:28.33717+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:35:29 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:35:29 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:35:29 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:35:29 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:35:29 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:35:29 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:35:29 | DEBUG: Loading env var 'COZE_PRIVATE_KEY', length: 1702, starts with '-----BEGIN': true 
+[SYS] 2025/09/29 - 17:35:29 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:35:29 | DEBUG: Original private key length: 1702, first 50 chars: -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w 
+[SYS] 2025/09/29 - 17:35:29 | DEBUG: Cleaned private key length: 1623 
+[SYS] 2025/09/29 - 17:35:29 | ERROR: Failed to parse PEM block - private key format may be invalid 
+[SYS] 2025/09/29 - 17:35:29 | Failed to create signed JWT: failed to parse PEM block containing the private key 
+[GIN] 2025/09/29 - 17:35:29 | 20250929173529336110000fuV0jpzu | 200 |    1.952666ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 17:35:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:35:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:35:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:35:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:36:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:36:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:36:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:36:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:36:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:36:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:36:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:36:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:36:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:36:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:36:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:37:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:37:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:37:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:37:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:37:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:37:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:37:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:37:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:37:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:37:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:37:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:38:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:38:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:38:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:38:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:38:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:38:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:38:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:38:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:38:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:38:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:38:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:39:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:39:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:39:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:39:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:39:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:39:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:39:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:39:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:39:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:39:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:39:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:40:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:40:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:40:19 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:40:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:40:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:40:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:40:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:40:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:40:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:40:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:40:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:40:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:40:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:41:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:41:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:41:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:41:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:41:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:41:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:41:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:41:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:41:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:41:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:41:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:42:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:42:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:42:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:42:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:42:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:42:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:42:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:42:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:42:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:42:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:42:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:43:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:43:04 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 17:43:04 | 20250929174304725449000M43J2ymA | 200 |     367.959µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:43:04 | 20250929174304725723000hahccskR | 200 |     758.458µs |             ::1 |     GET /api/channel/1
+[GIN] 2025/09/29 - 17:43:04 | 20250929174304725385000YX73a49T | 200 |    1.241042ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:43:04 | 20250929174304754122000CYaA7iI2 | 200 |    1.688709ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:43:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:43:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:43:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:43:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:43:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:43:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:43:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:43:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:43:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:44:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:44:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:44:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:44:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:44:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:44:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:44:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:44:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:44:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:44:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:44:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:45:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:45:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:45:19 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:45:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:45:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:45:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:45:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:45:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:45:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:45:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:45:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:45:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:45:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:46:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:46:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:46:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:46:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:46:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:46:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:46:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:46:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:46:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:46:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:46:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:47:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:47:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:47:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:47:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:47:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:47:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:47:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:47:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:47:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:47:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:47:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:48:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:48:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:48:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:48:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:48:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:48:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:48:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:48:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:48:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:48:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:48:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:49:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:49:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:49:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:49:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:49:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:49:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:49:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:49:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:49:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:49:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:49:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:50:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:50:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:50:19 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:50:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:50:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:50:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:50:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:50:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:50:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:50:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:50:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:50:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:50:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:51:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:51:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:51:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:51:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:51:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:51:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:51:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:51:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:51:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:51:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:51:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:52:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:52:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:52:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:52:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:52:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:52:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:52:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:52:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:52:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:52:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:52:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:53:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:53:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:53:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:53:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:53:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:53:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:53:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:53:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:53:34 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 17:53:43 | 20250929175343131919000vZDsDCv9 | 200 |   24.350833ms |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:53:43 | 202509291753431319540005VZM3lB9 | 200 |   24.413625ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:53:43 | 20250929175343139390000nsqACSKR | 200 |     18.6385ms |             ::1 |     GET /api/prefill_group/?type=model
+[GIN] 2025/09/29 - 17:53:43 | 20250929175343131958000DoxDwsXH | 200 |   31.649667ms |             ::1 |     GET /api/channel/models
+[SYS] 2025/09/29 - 17:53:48 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:53:48.067953+08:00, FirstResponse: 2025-09-29T17:53:47.067953+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://cozecdn.likele-zoom.workers.dev", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:53:48 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:53:48 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:53:48 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:53:48 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:53:48 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:53:48 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:53:48 | DEBUG: Loading env var 'COZE_PRIVATE_KEY', length: 1702, starts with '-----BEGIN': true 
+[SYS] 2025/09/29 - 17:53:48 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:53:48 | DEBUG: Original private key length: 1702, first 50 chars: -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w 
+[SYS] 2025/09/29 - 17:53:48 | DEBUG: Cleaned private key length: 1623 
+[SYS] 2025/09/29 - 17:53:48 | ERROR: Failed to parse PEM block - private key format may be invalid 
+[SYS] 2025/09/29 - 17:53:48 | Failed to create signed JWT: failed to parse PEM block containing the private key 
+[GIN] 2025/09/29 - 17:53:48 | 2025092917534862226000wOoAluwz | 200 |      9.2225ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 17:53:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:53:49 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 17:53:50 | 202509291753507536620002pEuh6Uq | 200 |    1.327666ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:53:50 | 20250929175350769295000Rxu9Oyji | 200 |     1.94425ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:53:54 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:53:54.303956+08:00, FirstResponse: 2025-09-29T17:53:53.303956+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://cozecdn.likele-zoom.workers.dev", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:53:54 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:53:54 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:53:54 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:53:54 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:53:54 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:53:54 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:53:54 | DEBUG: Loading env var 'COZE_PRIVATE_KEY', length: 1702, starts with '-----BEGIN': true 
+[SYS] 2025/09/29 - 17:53:54 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:53:54 | DEBUG: Original private key length: 1702, first 50 chars: -----BEGIN PRIVATE KEY-----
+MIIEvQIBADANBgkqhkiG9w 
+[SYS] 2025/09/29 - 17:53:54 | DEBUG: Cleaned private key length: 1623 
+[SYS] 2025/09/29 - 17:53:54 | ERROR: Failed to parse PEM block - private key format may be invalid 
+[SYS] 2025/09/29 - 17:53:54 | Failed to create signed JWT: failed to parse PEM block containing the private key 
+[GIN] 2025/09/29 - 17:53:54 | 20250929175354301735000nPGYrjZC | 200 |    2.619875ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 17:54:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:54:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:54:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:54:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:54:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:54:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:54:19 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:54:34 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:54:34 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:54:49 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:54:49 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:55:04 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:55:04 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:55:19 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:55:19 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:55:19 | syncing options from database 
+[SYS] 2025/09/29 - 17:55:19 | syncing channels from database 
+[SYS] 2025/09/29 - 17:55:19 | channels synced from database 
+[SYS] 2025/09/29 - 17:55:19 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:55:19 | 任务进度轮询完成 

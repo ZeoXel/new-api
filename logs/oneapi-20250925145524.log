@@ -1,0 +1,5 @@
+[SYS] 2025/09/25 - 14:55:24 | initializing token encoders 
+[SYS] 2025/09/25 - 14:55:24 | token encoders initialized 
+[SYS] 2025/09/25 - 14:55:24 | using PostgreSQL as database 
+[SYS] 2025/09/25 - 14:55:24 | database migration started 
+[FATAL] 2025/09/25 - 14:55:49 | [failed to initialize database: failed to connect to `user=postgres database=postgres`: 198.18.2.127:5432 (db.fzyczflyzogkxacjupjz.supabase.co): tls error: EOF] 

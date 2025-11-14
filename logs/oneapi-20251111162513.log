@@ -1,0 +1,164 @@
+[SYS] 2025/11/11 - 16:25:13 | initializing token encoders 
+[SYS] 2025/11/11 - 16:25:13 | token encoders initialized 
+[SYS] 2025/11/11 - 16:25:13 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/11 - 16:25:13 | database migration started 
+[SYS] 2025/11/11 - 16:25:13 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/11/11 - 16:25:13 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/11/11 - 16:25:13 | New API v0.0.0 started 
+[SYS] 2025/11/11 - 16:25:13 | running in debug mode 
+[SYS] 2025/11/11 - 16:25:13 | 正在更新数据看板数据... 
+[SYS] 2025/11/11 - 16:25:13 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/11 - 16:25:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:25:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:25:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:25:43 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:25:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:25:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:26:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:26:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:26:13 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:26:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:26:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:26:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:26:43 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:26:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:26:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:27:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:27:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:27:13 | 任务进度轮询完成 
+[INFO] 2025/11/11 - 16:27:18 | 202511111627184110910009a2gXhZV | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/11/11 - 16:27:18 | [Init] Coze工作流请求参数过滤完成 
+[SYS] 2025/11/11 - 16:27:18 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/11/11 - 16:27:18 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"input":"给我一个旅行建议"}} 
+[DEBUG] 2025/11/11 - 16:27:18 | 202511111627184110910009a2gXhZV | text request body: {"workflow_id":"7520444303086125096","parameters":{"input":"给我一个旅行建议"}} 
+[SYS] 2025/11/11 - 16:27:18 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/11 - 16:27:18 | Processing as Coze workflow request 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] ChannelOtherSettings: {AzureResponsesVersion: VertexKeyType: CozeAuthType:oauth} 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] CozeAuthType 原始值: 'oauth' 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_lr6EwOiR9x8yzPvpBGyvWV0RKTBEIbaOVgVVajkq3gTLxtsFoZcrQoOn74LToaIKE","expires_in":1762850537,"token_type":"Bearer"} 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] Access token 获取成功 (前20字符): czs_lr6EwOiR9x8yzPvp... 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] 准备使用 OAuth token (前20字符): czs_lr6EwOiR9x8yzPvp... 
+[SYS] 2025/11/11 - 16:27:18 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer czs_lr6EwOiR9x8yzPvpBGy... 
+[SYS] 2025/11/11 - 16:27:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:27:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:27:35 | DoResponse called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/11 - 16:27:35 | === cozeWorkflowHandler called === 
+[SYS] 2025/11/11 - 16:27:35 | Coze工作流响应: {"code":0,"msg":"","data":"{\"data\":\"https://s.coze.cn/t/LayvAQ_uRh8/\",\"image\":\"\",\"out\":\"咱们在玩石头剪刀布游戏哦，请出剪刀、石头或布啦。\"}","debug_url":"https://www.coze.cn/work_flow?execute_id=7571381542174326836&space_id=7501536526942109731&workflow_id=7520444303086125096&execute_mode=2","usage":{"output_count":86,"input_count":572,"token_count":658},"detail":{"logid":"202511111627176A4DF67B6CCF95B82DFB"}} 
+[SYS] 2025/11/11 - 16:27:35 | 解析CozeWorkflowResponse失败: json: cannot unmarshal string into Go struct field CozeWorkflowResponse.data of type []coze.CozeWorkflowDataItem 
+[SYS] 2025/11/11 - 16:27:35 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/11/11 - 16:27:35 | 202511111627184110910009a2gXhZV | 预扣费后补扣费：＄0.004200（实际消耗：＄0.004200，预扣费：＄0.000000） 
+[INFO] 2025/11/11 - 16:27:35 | 202511111627184110910009a2gXhZV | record consume log: userId=1, params={"channel_id":7,"prompt_tokens":10,"completion_tokens":20,"model_name":"7520444303086125096","token_name":"1","quota":2100,"content":"","token_id":1,"use_time_seconds":17,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["7"]},"cache_ratio":1,"cache_tokens":0,"channel_ratio":0.5,"completion_ratio":1,"frt":-1000,"group_ratio":2,"model_price":-1,"model_ratio":70,"user_group_ratio":-1}} 
+[GIN] 2025/11/11 - 16:27:35 | 202511111627184110910009a2gXhZV | 200 | 16.875529542s |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/11 - 16:27:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:27:43 | 任务进度轮询完成 
+[INFO] 2025/11/11 - 16:27:47 | 20251111162747495425000o0r3Dy8b | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/11/11 - 16:27:47 | [Init] Coze工作流请求参数过滤完成 
+[SYS] 2025/11/11 - 16:27:47 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/11/11 - 16:27:47 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"input":"给我一个旅行建议"}} 
+[DEBUG] 2025/11/11 - 16:27:47 | 20251111162747495425000o0r3Dy8b | text request body: {"workflow_id":"7520444303086125096","parameters":{"input":"给我一个旅行建议"}} 
+[SYS] 2025/11/11 - 16:27:47 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/11 - 16:27:47 | Processing as Coze workflow request 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] ChannelOtherSettings: {AzureResponsesVersion: VertexKeyType: CozeAuthType:oauth} 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] CozeAuthType 原始值: 'oauth' 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_hFQcU1gytCNcpqavD6emwwnIMGqouByP6LT4TSStrW3QRQcFgQ3PhPN12FnvDRy1r","expires_in":1762850566,"token_type":"Bearer"} 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] Access token 获取成功 (前20字符): czs_hFQcU1gytCNcpqav... 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] 准备使用 OAuth token (前20字符): czs_hFQcU1gytCNcpqav... 
+[SYS] 2025/11/11 - 16:27:47 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer czs_hFQcU1gytCNcpqavD6e... 
+[SYS] 2025/11/11 - 16:27:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:27:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:28:06 | DoResponse called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/11 - 16:28:06 | === cozeWorkflowHandler called === 
+[SYS] 2025/11/11 - 16:28:06 | Coze工作流响应: {"code":0,"msg":"","data":"{\"data\":\"https://s.coze.cn/t/EYXGPK5fEMQ/\",\"image\":\"\",\"out\":\"咱们在玩石头剪刀布游戏哦，请出剪刀、石头或者布啦。\"}","debug_url":"https://www.coze.cn/work_flow?execute_id=7571381666003435566&space_id=7501536526942109731&workflow_id=7520444303086125096&execute_mode=2","usage":{"token_count":653,"output_count":84,"input_count":569},"detail":{"logid":"20251111162746AFCF26C2855E8B798CC8"}} 
+[SYS] 2025/11/11 - 16:28:06 | 解析CozeWorkflowResponse失败: json: cannot unmarshal string into Go struct field CozeWorkflowResponse.data of type []coze.CozeWorkflowDataItem 
+[SYS] 2025/11/11 - 16:28:06 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/11/11 - 16:28:06 | 20251111162747495425000o0r3Dy8b | 预扣费后补扣费：＄0.004200（实际消耗：＄0.004200，预扣费：＄0.000000） 
+[INFO] 2025/11/11 - 16:28:06 | 20251111162747495425000o0r3Dy8b | record consume log: userId=1, params={"channel_id":7,"prompt_tokens":10,"completion_tokens":20,"model_name":"7520444303086125096","token_name":"1","quota":2100,"content":"","token_id":1,"use_time_seconds":19,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":["7"]},"cache_ratio":1,"cache_tokens":0,"channel_ratio":0.5,"completion_ratio":1,"frt":-1000,"group_ratio":2,"model_price":-1,"model_ratio":70,"user_group_ratio":-1}} 
+[GIN] 2025/11/11 - 16:28:06 | 20251111162747495425000o0r3Dy8b | 200 | 19.462770583s |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/11 - 16:28:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:28:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:28:13 | 任务进度轮询完成 
+[INFO] 2025/11/11 - 16:28:14 | 20251111162814944102000C3Fi31u4 | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/11/11 - 16:28:14 | [Init] Coze工作流请求参数过滤完成 
+[SYS] 2025/11/11 - 16:28:14 | [WorkflowModel] 工作流ID作为模型名称: 7520444303086125096 
+[SYS] 2025/11/11 - 16:28:14 | [Async] Detected async workflow request: model=coze-workflow-async, workflow_id=7520444303086125096, stream=false 
+[DEBUG] 2025/11/11 - 16:28:14 | 20251111162814944102000C3Fi31u4 | text request body: null 
+[SYS] 2025/11/11 - 16:28:14 | DoRequest called with OriginModelName: 7520444303086125096 
+[SYS] 2025/11/11 - 16:28:14 | [Async] Processing async workflow request in DoRequest 
+[SYS] 2025/11/11 - 16:28:14 | [Async] Created task chatcmpl-20251111162814944102000C3Fi31u4 for workflow 7520444303086125096 
+[SYS] 2025/11/11 - 16:28:14 | [Async] Response already sent, skipping DoResponse 
+[SYS] 2025/11/11 - 16:28:14 | [Async] Starting background execution for task chatcmpl-20251111162814944102000C3Fi31u4 
+[ERR] 2025/11/11 - 16:28:14 | 20251111162814944102000C3Fi31u4 | total tokens is 0, cannot consume quota, userId 1, channelId 7, tokenId 1, model 7520444303086125096， pre-consumed quota 0 
+[INFO] 2025/11/11 - 16:28:14 | 20251111162814944102000C3Fi31u4 | Skipping log for async workflow - log will be created when task completes 
+[GIN] 2025/11/11 - 16:28:14 | 20251111162814944102000C3Fi31u4 | 200 |    3.457375ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/11/11 - 16:28:14 | [透传模式] 发送给Coze的工作流请求: {"workflow_id":"7520444303086125096","parameters":{"input":"给我一个旅行建议"}} 
+[SYS] 2025/11/11 - 16:28:14 | [OAuth Debug] 缓存未命中，开始生成新 token 
+[SYS] 2025/11/11 - 16:28:14 | [OAuth Debug] JWT 签名成功 (前50字符): eyJhbGciOiJSUzI1NiIsImtpZCI6Im9rQ0UzWE95TXZDeDlwNU... 
+[SYS] 2025/11/11 - 16:28:14 | [OAuth Debug] 向 https://api.coze.cn/api/permission/oauth2/token 发送 token 交换请求 
+[SYS] 2025/11/11 - 16:28:15 | [OAuth Debug] Token 交换响应状态: 200, 响应体: {"access_token":"czs_qcQkyJITvdlWFOSNBYaJ3svcqYWTgEAoVtTYzIm8uObc78x2NTk2LdMWem1zuX6nQ","expires_in":1762850594,"token_type":"Bearer"} 
+[SYS] 2025/11/11 - 16:28:15 | [OAuth Debug] Access token 获取成功 (前20字符): czs_qcQkyJITvdlWFOSN... 
+[SYS] 2025/11/11 - 16:28:15 | [Async] 发送HTTP请求到: https://api.coze.cn/v1/workflow/stream_run 
+[SYS] 2025/11/11 - 16:28:28 | 任务进度轮询开始 
+[INFO] 2025/11/11 - 16:28:28 | SYSTEM | Channel #7 pending video tasks: 1 
+[ERR] 2025/11/11 - 16:28:28 | SYSTEM | Channel #7 failed to update video async tasks: video adaptor not found 
+[SYS] 2025/11/11 - 16:28:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 收到HTTP响应: status=200 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 开始处理SSE流式响应 
+[SYS] 2025/11/11 - 16:28:34 | [Async] SSE事件类型: Message 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 处理SSE事件: Message (数据长度: 366) 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 首次提取 usage from Message: Prompt=572, Completion=86, Total=658 
+[SYS] 2025/11/11 - 16:28:34 | [Async] SSE事件类型: Done 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 处理SSE事件: Done (数据长度: 190) 
+[SYS] 2025/11/11 - 16:28:34 | [Async] Done事件获取Coze debug_url: https://www.coze.cn/work_flow?execute_id=7571381783654400042&space_id=7501536526942109731&workflow_id=7520444303086125096&execute_mode=2 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 最终计费 usage: Prompt=572, Completion=86, Total=658 
+[SYS] 2025/11/11 - 16:28:34 | [WorkflowPricing] ===== 开始查询工作流定价 ===== 
+[SYS] 2025/11/11 - 16:28:34 | [WorkflowPricing] 输入参数: workflow_id=7520444303086125096, channel_id=7 
+[SYS] 2025/11/11 - 16:28:34 | [WorkflowPricing] ✅ 从 ModelPrice 读取定价: workflow=7520444303086125096, price=0.10元, quota=50000 
+[SYS] 2025/11/11 - 16:28:34 | [Async] 工作流按次计费: workflow=7520444303086125096, 基础价格=50000 quota/次, 分组倍率=2.00, 渠道倍率=0.50, 最终quota=50000 
+[SYS] 2025/11/11 - 16:28:34 | [Async] Successfully consumed quota: 50000 for task chatcmpl-20251111162814944102000C3Fi31u4 
+[SYS] 2025/11/11 - 16:28:34 | [Async] Successfully created log for task chatcmpl-20251111162814944102000C3Fi31u4 with 658 tokens 
+[SYS] 2025/11/11 - 16:28:34 | [Async] Task chatcmpl-20251111162814944102000C3Fi31u4 completed successfully 
+[SYS] 2025/11/11 - 16:28:34 | [Async] Logged quota data for task chatcmpl-20251111162814944102000C3Fi31u4: quota=50000, tokens=658 
+[SYS] 2025/11/11 - 16:28:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:28:43 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:28:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:28:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:29:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:29:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:29:13 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:29:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:29:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:29:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:29:43 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:29:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:29:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:30:13 | 正在更新数据看板数据... 
+[SYS] 2025/11/11 - 16:30:13 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/11/11 - 16:30:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:30:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:30:13 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:30:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:30:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:30:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:30:43 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:30:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:30:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:31:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:31:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:31:13 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:31:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:31:28 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:31:43 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:31:43 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:31:58 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:31:58 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:32:13 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:32:13 | syncing options from database 
+[SYS] 2025/11/11 - 16:32:13 | 任务进度轮询完成 
+[SYS] 2025/11/11 - 16:32:28 | 任务进度轮询开始 
+[SYS] 2025/11/11 - 16:32:28 | 任务进度轮询完成 

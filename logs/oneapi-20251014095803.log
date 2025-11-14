@@ -1,0 +1,394 @@
+[SYS] 2025/10/14 - 09:58:03 | initializing token encoders 
+[SYS] 2025/10/14 - 09:58:03 | token encoders initialized 
+[SYS] 2025/10/14 - 09:58:03 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/14 - 09:58:03 | database migration started 
+[SYS] 2025/10/14 - 09:58:03 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/14 - 09:58:03 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/14 - 09:58:03 | New API v0.0.0 started 
+[SYS] 2025/10/14 - 09:58:03 | running in debug mode 
+[SYS] 2025/10/14 - 09:58:03 | memory cache enabled 
+[SYS] 2025/10/14 - 09:58:03 | sync frequency: 60 seconds 
+[SYS] 2025/10/14 - 09:58:03 | channels synced from database 
+[SYS] 2025/10/14 - 09:58:03 | 正在更新数据看板数据... 
+[SYS] 2025/10/14 - 09:58:03 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/14 - 09:58:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:58:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 09:58:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:58:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 09:58:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:58:48 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 09:59:03 | syncing channels from database 
+[SYS] 2025/10/14 - 09:59:03 | syncing options from database 
+[SYS] 2025/10/14 - 09:59:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:59:03 | channels synced from database 
+[SYS] 2025/10/14 - 09:59:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 09:59:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:59:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 09:59:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:59:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 09:59:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 09:59:48 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:00:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:00:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:00:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:00:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:00:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:00:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:00:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:00:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:00:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:00:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:00:48 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:01:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:01:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:01:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:01:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:01:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:01:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:01:18 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:01:21 | 20251014100121993815000JBet4lbe | 200 |    3.537459ms |             ::1 |    POST /api/channel/
+[GIN] 2025/10/14 - 10:01:22 | 20251014100121999306000PmG9k9sA | 200 |    1.312375ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/14 - 10:01:29 | 20251014100129553493000rzTJy6HE | 200 |     993.458µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/14 - 10:01:31 | 20251014100131406030000QxgTNihg | 200 |     946.875µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/14 - 10:01:31 | 20251014100131406001000eoYbIpJV | 200 |    2.486666ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/14 - 10:01:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:01:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:01:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:01:48 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:01:48 | 20251014100148938632000yR0ZP8x2 | 200 |    2.079625ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/14 - 10:01:48 | 20251014100148939262000CsQMwto9 | 200 |    3.538167ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/14 - 10:01:48 | 20251014100148939320000MJfNPcWb | 200 |    5.783333ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/14 - 10:01:48 | 20251014100148956596000AUDjgCUL | 200 |     871.916µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/14 - 10:01:48 | 20251014100148956595000fivzP6Aj | 200 |    2.892541ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/14 - 10:02:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:02:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:02:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:02:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:02:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:02:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:02:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:02:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:02:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:02:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:02:48 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:03:03 | 正在更新数据看板数据... 
+[SYS] 2025/10/14 - 10:03:03 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/14 - 10:03:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:03:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:03:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:03:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:03:03 | channels synced from database 
+[GIN] 2025/10/14 - 10:03:12 | 20251014100312413270000C3EhPCDr | 204 |      69.833µs |             ::1 | OPTIONS /runwayml/v1/image_to_video
+[INFO] 2025/10/14 - 10:03:18 | 20251014100312414688000BX3KEDMN | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":400000,"content":"Bltcy透传（runway/runway），价格: $0.8000, 配额: 400000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.8,"model_ratio":1}} 
+[SYS] 2025/10/14 - 10:03:18 | user 1 has no email, skip sending email 
+[GIN] 2025/10/14 - 10:03:18 | 20251014100312414688000BX3KEDMN | 200 |  5.855540208s |             ::1 |    POST /runwayml/v1/image_to_video
+[GIN] 2025/10/14 - 10:03:18 | 20251014100318276419000SMhUKt98 | 204 |      11.167µs |             ::1 | OPTIONS /runwayml/v1/tasks/bb4470a6-5f5b-4257-a1a7-9136e163d787
+[SYS] 2025/10/14 - 10:03:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:03:18 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:03:23 | 20251014100318277927000eQXaVV84 | 500 |  5.038450625s |             ::1 |     GET /runwayml/v1/tasks/bb4470a6-5f5b-4257-a1a7-9136e163d787
+[GIN] 2025/10/14 - 10:03:32 | 20251014100332537222000bK2r3GHL | 200 |       2.022ms |             ::1 |     GET /console/setting?tab=ratio
+[GIN] 2025/10/14 - 10:03:32 | 20251014100332800913000G69M2iK6 | 200 |     247.667µs |             ::1 |     GET /api/status
+[GIN] 2025/10/14 - 10:03:32 | 20251014100332800863000NxiQDW5m | 200 |     596.666µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/14 - 10:03:33 | 2025101410033357175000TiIOloZR | 200 |     486.958µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/14 - 10:03:33 | 2025101410033357460000TT8E4Vyx | 200 |      740.25µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/14 - 10:03:33 | 202510141003335741100028wwg9UN | 200 |    2.636542ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/14 - 10:03:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:03:33 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:03:36 | 20251014100336962186000hDJlPqwQ | 204 |       7.333µs |             ::1 | OPTIONS /runwayml/v1/image_to_video
+[GIN] 2025/10/14 - 10:03:41 | 202510141003416277800009u8MJ4pk | 200 |      351.25µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/14 - 10:03:41 | 20251014100341627670000d1Vkg5en | 200 |     866.834µs |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/14 - 10:03:41 | 202510141003416278400007HYAyYoU | 200 |    3.281375ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/14 - 10:03:42 | 20251014100342136756000HhAIU0N6 | 200 |    1.628709ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760371200&end_timestamp=1760411022&channel=&group=
+[GIN] 2025/10/14 - 10:03:42 | 20251014100342167262000jl6yJJMa | 200 |     643.167µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760371200&end_timestamp=1760411022&channel=&group=
+[INFO] 2025/10/14 - 10:03:42 | 20251014100336963183000t1Ax78di | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"runway","token_name":"1","quota":400000,"content":"Bltcy透传（runway/runway），价格: $0.8000, 配额: 400000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":0.8,"model_ratio":1}} 
+[SYS] 2025/10/14 - 10:03:42 | user 1 has no email, skip sending email 
+[GIN] 2025/10/14 - 10:03:42 | 20251014100336963183000t1Ax78di | 200 |  5.486702125s |             ::1 |    POST /runwayml/v1/image_to_video
+[GIN] 2025/10/14 - 10:03:42 | 20251014100342454563000VdeMMnjq | 204 |       6.083µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:03:43 | 20251014100342455365000grLrGtmw | 200 |  1.359743958s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[SYS] 2025/10/14 - 10:03:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:03:48 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:03:49 | 20251014100349622001000Z4BUs3Cd | 204 |      10.875µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:03:52 | 20251014100349623918000c9L51Bhv | 304 |  2.648516875s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:03:58 | 2025101410035878974000WVe49fol | 204 |       11.75µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:03:59 | 2025101410035880508000IM67O5tn | 200 |  964.727333ms |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[SYS] 2025/10/14 - 10:04:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:04:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:04:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:04:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:04:03 | channels synced from database 
+[GIN] 2025/10/14 - 10:04:04 | 20251014100404852240000btXvxiXP | 204 |       10.75µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:05 | 20251014100404853833000tHuTxwwo | 200 |  986.749125ms |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:11 | 20251014100411645355000SXGFTkAO | 204 |       6.667µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:14 | 20251014100411646476000oudDvP0x | 304 |   2.63908575s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:14 | 20251014100414960541000IztOqCAX | 204 |      15.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[SYS] 2025/10/14 - 10:04:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:04:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:04:19 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[INFO] 2025/10/14 - 10:04:19 | 20251014100414961386000pOMYtyhK | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":1,"completion_tokens":1,"model_name":"kling","token_name":"1","quota":1000000,"content":"Bltcy透传（kling/kling），价格: $2.0000, 配额: 1000000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"completion_ratio":1,"group_ratio":1,"model_price":2,"model_ratio":1}} 
+[GIN] 2025/10/14 - 10:04:19 | 20251014100414961386000pOMYtyhK | 200 |    4.4302365s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/14 - 10:04:19 | 202510141004193962430003CRlz9Ti | 204 |       9.917µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:20 | 2025101410042089766000mNvCUSpE | 204 |      18.042µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:20 | 20251014100419397679000ZzJDhZJ4 | 200 |  786.912834ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:25 | 20251014100420906490009Ve6rNDs | 500 |  5.035130834s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:25 | 20251014100425390206000u3Hac3R6 | 204 |      14.334µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:26 | 20251014100425391669000Z08niTVI | 200 |  670.658125ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:31 | 202510141004312679970007weDaJL5 | 204 |       5.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:32 | 20251014100431269397000ezNbej0B | 200 |  910.173584ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[SYS] 2025/10/14 - 10:04:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:04:33 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:04:36 | 20251014100436466334000WtDTDPll | 204 |       7.834µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:37 | 20251014100437384582000NrqqbuAp | 204 |      10.416µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:37 | 202510141004364673220007vQODp5Y | 200 |  1.345825667s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:38 | 20251014100437385706000dorieBJn | 200 |  741.610458ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:43 | 202510141004433319180001N7DcDA2 | 204 |       6.791µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:43 | 20251014100443619328000PJp8bXff | 204 |           5µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:44 | 20251014100443332771000BcQAsc0d | 200 |  694.806083ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:46 | 20251014100443620682000NtXuBOgp | 304 |  2.439011666s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[SYS] 2025/10/14 - 10:04:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:04:48 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:04:49 | 202510141004492365530001slEaGAG | 204 |        5.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:50 | 20251014100449237179000fwF3UtQ8 | 200 |   1.03753225s |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:52 | 20251014100452795852000XLlUhgNg | 204 |       7.834µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:55 | 20251014100452797729000v6OMGMrm | 304 |  2.723089834s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:04:55 | 20251014100455796184000m0MjcBEq | 204 |       7.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:04:56 | 20251014100455797116000rw9As0rE | 200 |    730.4105ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:05:01 | 20251014100501326725000dWvE5Y9J | 204 |        9.75µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:05:01 | 20251014100501733841000fMYwi7e7 | 204 |      12.333µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:05:02 | 20251014100501734908000pOu3Cg43 | 200 |  664.871417ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[SYS] 2025/10/14 - 10:05:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:05:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:05:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:05:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:05:03 | channels synced from database 
+[GIN] 2025/10/14 - 10:05:03 | 20251014100501329292000XkYZRyHU | 304 |  2.590474042s |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[SYS] 2025/10/14 - 10:05:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:05:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:05:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:05:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:05:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:05:48 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:05:57 | 20251014100557862011000YrhSQu5Q | 204 |       5.084µs |             ::1 | OPTIONS /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[GIN] 2025/10/14 - 10:05:58 | 20251014100557863731000WabGoPCD | 200 |    839.9215ms |             ::1 |     GET /runwayml/v1/tasks/133b781f-b358-412d-9d7e-d3d46caba6b4
+[SYS] 2025/10/14 - 10:06:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:06:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:06:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:06:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:06:03 | channels synced from database 
+[GIN] 2025/10/14 - 10:06:04 | 2025101410060450378000uM46SHoO | 204 |       7.541µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:06:04 | 2025101410060451457000K9W7J7k7 | 200 |  767.754208ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:06:10 | 20251014100610271460004P2WeVFc | 204 |      10.416µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:06:10 | 2025101410061029916000Jv1TiBiP | 200 |  759.154542ms |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:06:15 | 20251014100615406310000SUQAp4nc | 204 |      12.333µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806888353832013824
+[GIN] 2025/10/14 - 10:06:15 | 20251014100615994390000xp6k7tce | 204 |       7.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:06:16 | 20251014100615409208000cmQFnT9P | 200 |   717.56575ms |             ::1 |     GET /kling/v1/videos/image2video/806888353832013824
+[GIN] 2025/10/14 - 10:06:17 | 20251014100615995298000YdkKBZ3e | 200 |  1.015538416s |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[SYS] 2025/10/14 - 10:06:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:06:18 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:06:22 | 20251014100622796146000MVpXFXVF | 204 |      11.542µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806895751824949294
+[GIN] 2025/10/14 - 10:06:27 | 20251014100622797385000krUECeqY | 500 |  5.047536875s |             ::1 |     GET /kling/v1/videos/image2video/806895751824949294
+[SYS] 2025/10/14 - 10:06:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:06:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:06:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:06:48 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:07:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:07:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:07:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:07:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:07:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:07:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:07:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:07:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:07:33 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:07:48 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:07:48 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:08:03 | 正在更新数据看板数据... 
+[SYS] 2025/10/14 - 10:08:03 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/10/14 - 10:08:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:08:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:08:03 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:08:03 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:08:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:08:18 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:08:18 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:08:33 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:08:33 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:08:34 | 2025101410083483743000UnMVUrHH | 204 |         7.5µs |             ::1 | OPTIONS /v1/video/generations
+[INFO] 2025/10/14 - 10:08:34 | 2025101410083484872000VPsZoI41 | record consume log: userId=1, params={"channel_id":7,"prompt_tokens":0,"completion_tokens":0,"model_name":"viduq1","token_name":"1","quota":1250000,"content":"模型固定价格 2.50，分组倍率 1.00，操作 textGenerate","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"group_ratio":1,"model_price":2.5}} 
+[GIN] 2025/10/14 - 10:08:34 | 2025101410083484872000VPsZoI41 | 200 |  279.983791ms |             ::1 |    POST /v1/video/generations
+[GIN] 2025/10/14 - 10:08:34 | 20251014100834369274000hVXAtnwK | 204 |      13.625µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:34 | 20251014100834370201000m1spVEkM | 200 |    1.832667ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:39 | 20251014100839378700000Dfopnw9Z | 204 |      10.666µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:39 | 20251014100839379920000TMCT8weY | 200 |    1.250083ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:44 | 20251014100844385960000g6XveSnE | 204 |      11.292µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:44 | 20251014100844387025000VFOP8zO7 | 200 |    1.248958ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:08:48 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:08:48 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:08:48 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:08:49 | 20251014100849392089000DXOoWELm | 204 |      22.833µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:49 | 20251014100849392877000WB7sCRgU | 200 |     719.042µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:54 | 20251014100854398987000aE6raFBd | 204 |      11.083µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:54 | 20251014100854400267000KerAqJV4 | 200 |      1.0845ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:59 | 20251014100859405939000hJ5aSGvX | 204 |       7.167µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:08:59 | 20251014100859406902000c1LREce1 | 200 |     928.416µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:09:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:09:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:09:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:09:03 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:09:03 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:09:03 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:09:04 | 20251014100904412590000rMDu0Uub | 204 |       9.791µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:04 | 20251014100904413752000wha02JP1 | 200 |    1.302917ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:09 | 20251014100909419268000mnA0fale | 204 |      11.292µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:09 | 20251014100909420427000PRc446k4 | 200 |    1.191417ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:14 | 20251014100914426588000fDpyGTza | 204 |       7.667µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:14 | 20251014100914427860000zrK1cMi5 | 200 |     842.833µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:09:18 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:09:18 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:09:19 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:09:19 | 20251014100919435212000OrCtuwkn | 204 |       7.792µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:19 | 20251014100919436203000uzmLtHEW | 200 |    1.550083ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:24 | 2025101410092444333900085l2A64N | 204 |      10.667µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:24 | 20251014100924444353000EjOgIpbS | 200 |    1.140125ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:29 | 20251014100929451114000koKQkxxO | 204 |      10.291µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:29 | 20251014100929452652000nMlPcVoQ | 200 |    1.473417ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:09:34 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:09:34 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:09:34 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:09:34 | 20251014100934460308000eEb5g3D6 | 204 |       9.708µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:34 | 20251014100934461386000cXuM7zyl | 200 |    1.206541ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:39 | 20251014100939467169000avTVhE0v | 204 |      11.042µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:39 | 20251014100939468011000fJUFZo8p | 200 |       901.5µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:44 | 20251014100944474275000OpYTTujE | 204 |      11.041µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:44 | 20251014100944475318000RHhmyxPe | 200 |      767.25µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:09:49 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:09:49 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:09:49 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:09:49 | 20251014100949481135000soWZYn8w | 204 |      11.125µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:49 | 20251014100949482312000K6hmMjNp | 200 |    1.371333ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:54 | 20251014100954487567000TT9RoNXT | 204 |       6.625µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:54 | 20251014100954488798000cTCz4KQO | 200 |    1.075875ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:59 | 202510141009594948030003yD42Q3x | 204 |      10.875µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:09:59 | 20251014100959495935000F7s1A6eT | 200 |    1.188875ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:10:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:10:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:10:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:10:04 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:10:04 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:10:04 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:10:04 | 20251014101004501112000FrBxqil0 | 204 |       8.042µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:04 | 20251014101004501792000dEo9qrV4 | 200 |     738.792µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:09 | 20251014101009507573000UV6UC8mw | 204 |      12.791µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:09 | 202510141010095089720001jIrHoQh | 200 |    1.386583ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:14 | 20251014101014516319000DDKfSbuI | 204 |      12.166µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:14 | 20251014101014517730000GxDE9q4M | 200 |    1.189417ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:10:19 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:10:19 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:10:19 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:10:19 | 20251014101019523919000tgPI9y05 | 204 |      13.417µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:19 | 20251014101019525295000QjfxSaKK | 200 |    1.614959ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:24 | 202510141010245327550007ZRBafiD | 204 |      12.083µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:24 | 20251014101024534033000bFTfSRpo | 200 |      1.3965ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:29 | 20251014101029540948000RaDg5A4A | 204 |      42.333µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:29 | 20251014101029542278000ve4eAJKd | 200 |    1.308125ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:10:34 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:10:34 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:10:34 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:10:34 | 20251014101034548909000sdYdqKmK | 204 |      20.875µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:34 | 20251014101034549791000td8VaqEH | 200 |     818.167µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:39 | 20251014101039554860000hOgmCRCg | 204 |          38µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:39 | 20251014101039556531000cu7MfZ8o | 200 |    1.835084ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:44 | 20251014101044564109000DYnFs6Ex | 204 |      44.333µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:44 | 202510141010445653880001f5xLFdF | 200 |    1.365042ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:10:49 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:10:49 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:10:49 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:10:49 | 20251014101049571144000KvLyMC38 | 204 |      24.958µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:49 | 20251014101049571964000OHbRkI6i | 200 |     946.667µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:54 | 202510141010547979760006illssFg | 204 |      46.417µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:10:54 | 202510141010547995760002gCq5UXl | 200 |    1.229416ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:00 | 20251014101100797692000xESYNzRO | 204 |      40.083µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:00 | 202510141011008000340002gA0pEAU | 200 |       1.414ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:11:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:11:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:11:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:11:04 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:11:04 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:11:04 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:11:05 | 20251014101105806549000Jyan9IQA | 204 |      47.875µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:05 | 20251014101105807895000PONNHlRs | 200 |      1.4115ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:11 | 20251014101111799952000pswtfTll | 204 |      50.583µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:11 | 20251014101111802318000wPWn4nG1 | 200 |    1.813542ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:17 | 202510141011177981420007YmPpWxd | 204 |      44.042µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:17 | 20251014101117799515000E4ieQGsF | 200 |    1.167125ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:11:19 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:11:19 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:11:19 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:11:23 | 202510141011237982950000uVLX1Gz | 204 |          31µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:23 | 20251014101123799401000U5Dvx3Ai | 200 |    1.062833ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:29 | 20251014101129798223000Z9JK2LnW | 204 |        36.5µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:29 | 202510141011298002200007rlzaYQ8 | 200 |     1.18275ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:11:34 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:11:34 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:11:34 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:11:35 | 20251014101135798298000c7xawiJ1 | 204 |      37.958µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:35 | 20251014101135799541000ow2DtUea | 200 |    1.433917ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:41 | 20251014101141798118000umm3wDl0 | 204 |      40.834µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:41 | 20251014101141799391000qABSGpnY | 200 |    1.393375ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:47 | 202510141011477983930007wuNveKS | 204 |       37.25µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:47 | 202510141011477994800000owD2lCy | 200 |    1.147667ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:11:49 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:11:49 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:11:49 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:11:53 | 20251014101153798550000yl9QgT39 | 204 |        38.5µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:53 | 20251014101153799724000jIYtnSsu | 200 |    1.337125ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:59 | 20251014101159797236000w6CCXdc5 | 204 |      27.958µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:11:59 | 20251014101159798147000chXwxZYS | 200 |      988.75µs |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:12:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:12:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:12:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:12:04 | 任务进度轮询开始 
+[INFO] 2025/10/14 - 10:12:04 | SYSTEM | Channel #7 pending video tasks: 1 
+[SYS] 2025/10/14 - 10:12:04 | 任务进度轮询完成 
+[GIN] 2025/10/14 - 10:12:05 | 20251014101205798315000PcUPtr2F | 204 |      38.167µs |             ::1 | OPTIONS /v1/video/generations/875503074670571520
+[GIN] 2025/10/14 - 10:12:05 | 20251014101205799665000wIqZhJ5u | 200 |    1.407208ms |             ::1 |     GET /v1/video/generations/875503074670571520
+[SYS] 2025/10/14 - 10:12:19 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:12:19 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:12:34 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:12:34 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:12:49 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:12:49 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:13:03 | 正在更新数据看板数据... 
+[SYS] 2025/10/14 - 10:13:03 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/14 - 10:13:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:13:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:13:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:13:04 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:13:04 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:13:19 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:13:19 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:13:34 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:13:34 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:13:49 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:13:49 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:14:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:14:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:14:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:14:04 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:14:04 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:14:19 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:14:19 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:14:34 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:14:34 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:14:49 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:14:49 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:15:03 | syncing options from database 
+[SYS] 2025/10/14 - 10:15:03 | syncing channels from database 
+[SYS] 2025/10/14 - 10:15:03 | channels synced from database 
+[SYS] 2025/10/14 - 10:15:04 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:15:04 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:15:19 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:15:19 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:15:34 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:15:34 | 任务进度轮询完成 
+[SYS] 2025/10/14 - 10:15:49 | 任务进度轮询开始 
+[SYS] 2025/10/14 - 10:15:49 | 任务进度轮询完成 

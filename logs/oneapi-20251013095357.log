@@ -1,0 +1,746 @@
+[SYS] 2025/10/13 - 09:53:57 | initializing token encoders 
+[SYS] 2025/10/13 - 09:53:57 | token encoders initialized 
+[SYS] 2025/10/13 - 09:53:57 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/13 - 09:53:57 | database migration started 
+[SYS] 2025/10/13 - 09:53:57 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/13 - 09:53:57 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/13 - 09:53:57 | New API v0.0.0 started 
+[SYS] 2025/10/13 - 09:53:57 | running in debug mode 
+[SYS] 2025/10/13 - 09:53:57 | memory cache enabled 
+[SYS] 2025/10/13 - 09:53:57 | sync frequency: 60 seconds 
+[SYS] 2025/10/13 - 09:53:57 | channels synced from database 
+[SYS] 2025/10/13 - 09:53:57 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 09:53:57 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/10/13 - 09:54:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:54:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 09:54:17 | 20251013095417502535000YCnOE7SM | 200 |      94.042µs |             ::1 |     GET /api/status
+[SYS] 2025/10/13 - 09:54:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:54:27 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 09:54:36 | 20251013095436581414000HwQQBt1v | 200 |    4.559916ms |             ::1 |     GET /
+[GIN] 2025/10/13 - 09:54:36 | 2025101309543665374200083j670Km | 200 |  119.116167ms |             ::1 |     GET /assets/index-D13wZOBt.js
+[GIN] 2025/10/13 - 09:54:37 | 202510130954371741000007YIXFDDy | 200 |    1.112167ms |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 09:54:37 | 202510130954371867700006QjPgT1Z | 200 |   29.547417ms |             ::1 |     GET /logo.png
+[SYS] 2025/10/13 - 09:54:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:54:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 09:54:50 | 20251013095450745210000iYOYJPIH | 200 |     232.166µs |             ::1 |     GET /console
+[GIN] 2025/10/13 - 09:54:50 | 20251013095450845775000yor0XmMV | 200 |         307µs |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 09:54:50 | 20251013095450845664000ipzVxc9V | 200 |    1.047083ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 09:54:50 | 202510130954508949620000ak3dXwo | 200 |     500.042µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 09:54:50 | 20251013095450951409000uoyJ7D46 | 200 |    1.476667ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 09:54:50 | 202510130954509525900004UEox1xm | 200 |     1.69125ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760234090&end_timestamp=1760324090&default_time=hour
+[GIN] 2025/10/13 - 09:54:51 | 20251013095450993089000qWreGLA7 | 200 |       8.579ms |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 09:54:52 | 20251013095452897695000dnHcP7Yy | 200 |    1.686208ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324092&channel=&group=
+[GIN] 2025/10/13 - 09:54:52 | 202510130954529140990004wQPABKH | 200 |     555.083µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324092&channel=&group=
+[SYS] 2025/10/13 - 09:54:57 | syncing options from database 
+[SYS] 2025/10/13 - 09:54:57 | syncing channels from database 
+[SYS] 2025/10/13 - 09:54:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:54:57 | channels synced from database 
+[SYS] 2025/10/13 - 09:54:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:55:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:55:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:55:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:55:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:55:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:55:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 09:55:43 | 20251013095543298771000uD6aSLaQ | 204 |      57.958µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[INFO] 2025/10/13 - 09:55:47 | 20251013095543299770000Ac27mgmb | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling-v1","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling-v1），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 09:55:47 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 09:55:47 | 20251013095543299770000Ac27mgmb | 200 |  4.424647542s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/13 - 09:55:47 | 20251013095547729545000lHjpqSiu | 204 |       8.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806531219596419157
+[GIN] 2025/10/13 - 09:55:52 | 202510130955477362000008g7saDh5 | 500 |   5.03960925s |             ::1 |     GET /kling/v1/videos/image2video/806531219596419157
+[SYS] 2025/10/13 - 09:55:57 | syncing options from database 
+[SYS] 2025/10/13 - 09:55:57 | syncing channels from database 
+[SYS] 2025/10/13 - 09:55:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:55:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:55:57 | channels synced from database 
+[GIN] 2025/10/13 - 09:56:10 | 20251013095610113925000GB2HGElF | 200 |    1.036417ms |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/13 - 09:56:10 | 20251013095610113964000ZGetHIT1 | 200 |    1.732583ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/13 - 09:56:10 | 20251013095610113843000tkBuyKc6 | 200 |     7.44025ms |             ::1 |     GET /api/user/models
+[SYS] 2025/10/13 - 09:56:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:56:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:56:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:56:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:56:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:56:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:56:57 | syncing options from database 
+[SYS] 2025/10/13 - 09:56:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:56:57 | syncing channels from database 
+[SYS] 2025/10/13 - 09:56:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:56:57 | channels synced from database 
+[GIN] 2025/10/13 - 09:57:09 | 20251013095709805981000sT1vSNBk | 204 |      27.125µs |             ::1 | OPTIONS /v1/images/generations
+[GIN] 2025/10/13 - 09:57:09 | 20251013095709806918000WtiL3TrV | 500 |     1.19375ms |             ::1 |    POST /v1/images/generations
+[SYS] 2025/10/13 - 09:57:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:57:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:57:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:57:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:57:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:57:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:57:57 | syncing options from database 
+[SYS] 2025/10/13 - 09:57:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:57:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:57:57 | syncing channels from database 
+[SYS] 2025/10/13 - 09:57:57 | channels synced from database 
+[SYS] 2025/10/13 - 09:58:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:58:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:58:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:58:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:58:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:58:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:58:57 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 09:58:57 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/13 - 09:58:57 | syncing options from database 
+[SYS] 2025/10/13 - 09:58:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:58:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:58:57 | syncing channels from database 
+[SYS] 2025/10/13 - 09:58:57 | channels synced from database 
+[SYS] 2025/10/13 - 09:59:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:59:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:59:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:59:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:59:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:59:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:59:57 | syncing options from database 
+[SYS] 2025/10/13 - 09:59:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 09:59:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 09:59:57 | syncing channels from database 
+[SYS] 2025/10/13 - 09:59:57 | channels synced from database 
+[SYS] 2025/10/13 - 10:00:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:00:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:00:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:00:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:00:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:00:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:00:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:00:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:00:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:00:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:00:57 | channels synced from database 
+[SYS] 2025/10/13 - 10:01:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:01:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:01:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:01:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:01:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:01:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:01:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:01:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:01:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:01:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:01:57 | channels synced from database 
+[SYS] 2025/10/13 - 10:02:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:02:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:02:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:02:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:02:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:02:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:02:57 | 20251013100257727906000y4rgkzF1 | 200 |    1.126125ms |             ::1 |     GET /api/option/
+[SYS] 2025/10/13 - 10:02:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:02:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:02:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:02:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:02:57 | channels synced from database 
+[GIN] 2025/10/13 - 10:02:59 | 20251013100259105880000VXvFsnzg | 200 |     961.166µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:03:00 | 20251013100300225110000rynYTRuo | 200 |         684µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:03:00 | 2025101310030022658200060jTtVzc | 200 |    3.106583ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/13 - 10:03:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:03:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:03:16 | 202510131003161248660008pUeZ6iA | 200 |    3.560125ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/13 - 10:03:16 | 20251013100316139581000AFq2ASuN | 200 |       1.262ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:03:20 | 202510131003208692090000u4DYgid | 200 |      942.75µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:03:21 | 20251013100321122886000EfCEPFWG | 200 |     706.958µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:03:21 | 20251013100321122483000HvxRRoDf | 200 |    4.221459ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/13 - 10:03:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:03:27 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:03:41 | 20251013100341376711000aEX2jfHx | 204 |      32.542µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[SYS] 2025/10/13 - 10:03:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:03:42 | 任务进度轮询完成 
+[INFO] 2025/10/13 - 10:03:46 | 20251013100341378451000KaF4auiM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling-v1-6","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling-v1-6），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:03:46 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 10:03:46 | 20251013100341378451000KaF4auiM | 200 |  4.888225375s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/13 - 10:03:46 | 20251013100346271389000heZmcYbI | 204 |      13.916µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:03:47 | 20251013100346272683000cTclehnc | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:03:47 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 10:03:47 | 20251013100346272683000cTclehnc | 200 |  1.341547334s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:03:52 | 20251013100352821428000gUqVRVrz | 204 |      61.208µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:03:53 | 20251013100352822715000Vgx7xUUp | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:03:53 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:03:53 | 20251013100352822715000Vgx7xUUp | 200 |  679.749417ms |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:03:57 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:03:57 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/10/13 - 10:03:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:03:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:03:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:03:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:03:57 | channels synced from database 
+[GIN] 2025/10/13 - 10:03:58 | 20251013100358709630000WUZPfDuY | 204 |      20.208µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:03:59 | 20251013100358710120000gmNRKkom | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:03:59 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:03:59 | 20251013100358710120000gmNRKkom | 200 |  925.446208ms |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:05 | 20251013100405539839000DrtI0yT8 | 204 |      19.458µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:04:07 | 20251013100405540514000aK3O6r37 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:07 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:07 | 20251013100405540514000aK3O6r37 | 200 |  1.670663792s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:12 | 20251013100412567844000xMs9Py6a | 204 |        37.5µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:04:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:04:12 | 任务进度轮询完成 
+[INFO] 2025/10/13 - 10:04:13 | 20251013100412568727000yDpiqtxS | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:13 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:13 | 20251013100412568727000yDpiqtxS | 200 |  1.346003167s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:19 | 20251013100419540908000TtrwFuX4 | 204 |      42.292µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:04:20 | 20251013100419542005000T0SWfnkb | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:20 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:20 | 20251013100419542005000T0SWfnkb | 200 |  885.767667ms |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:26 | 20251013100426542776000LBbIFP6R | 204 |       37.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:26 | 202510131004266119590006TJ9A8Oo | 200 |    3.386042ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324666&channel=&group=
+[GIN] 2025/10/13 - 10:04:26 | 20251013100426648040000KK0u9rEQ | 200 |    1.885417ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324666&channel=&group=
+[SYS] 2025/10/13 - 10:04:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:04:27 | 任务进度轮询完成 
+[INFO] 2025/10/13 - 10:04:27 | 20251013100426543872000qa59lcVZ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:27 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:28 | 20251013100426543872000qa59lcVZ | 200 |   1.45842125s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:31 | 202510131004313941000mMnmX8P4 | 200 |    4.178292ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760284800&end_timestamp=1760324670
+[GIN] 2025/10/13 - 10:04:32 | 202510131004326471770000K601SEz | 200 |     449.959µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760234672&end_timestamp=1760324672&default_time=hour
+[GIN] 2025/10/13 - 10:04:32 | 20251013100432647186000A6HASG12 | 200 |     585.375µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:04:32 | 20251013100432660498000ekjBz2bC | 200 |      79.792µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 10:04:33 | 20251013100433542190000uMsyLB3o | 204 |      49.292µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:04:34 | 20251013100433543577000cjTV7m79 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:34 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:34 | 20251013100433543577000cjTV7m79 | 200 |  1.371718875s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:40 | 20251013100440541188000e15R86eB | 204 |      35.542µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:04:41 | 20251013100440542182000zXa7aFG2 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:41 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:41 | 20251013100440542182000zXa7aFG2 | 200 |  1.381989333s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:04:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:04:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:04:47 | 20251013100447539775000CZZDJ9VL | 204 |      24.417µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:04:48 | 202510131004475405720000hiaP5oi | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:48 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:48 | 202510131004475405720000hiaP5oi | 200 |  1.347653875s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:04:54 | 20251013100454542808000ZARCA13J | 204 |      29.917µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:04:55 | 20251013100454543747000rP43xc7w | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:04:55 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:04:55 | 20251013100454543747000rP43xc7w | 200 |  1.408381792s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:04:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:04:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:04:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:04:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:04:57 | channels synced from database 
+[GIN] 2025/10/13 - 10:05:01 | 20251013100501540493000PQlp540Z | 204 |      26.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:02 | 20251013100501541487000piAVEr6z | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:02 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:02 | 20251013100501541487000piAVEr6z | 200 |  1.376576709s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:05:08 | 20251013100508540378000z2guhquj | 204 |      26.708µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:09 | 202510131005085411680001IL7h6Kn | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:09 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:09 | 202510131005085411680001IL7h6Kn | 200 |  1.384713125s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:05:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:05:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:05:15 | 20251013100515539949000vs61Gygd | 204 |       30.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:17 | 20251013100515540850000rQlkyBlE | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:17 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:17 | 20251013100515540850000rQlkyBlE | 200 |  1.475730041s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:05:22 | 20251013100522541392000eDR7fXIF | 204 |      37.458µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:23 | 20251013100522542442000xfQlHdes | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:23 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:23 | 20251013100522542442000xfQlHdes | 200 |  1.306829042s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:05:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:05:27 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:05:29 | 20251013100529540987000YZ1cBQSa | 204 |      38.708µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:30 | 20251013100529541819000BzcGZXz0 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:30 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:30 | 20251013100529541819000BzcGZXz0 | 200 |  1.386427041s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[GIN] 2025/10/13 - 10:05:36 | 202510131005365399710002dxePVGK | 204 |       36.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:37 | 20251013100536540838000XdtwsMdC | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:37 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:37 | 20251013100536540838000XdtwsMdC | 200 |     1.397382s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:05:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:05:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:05:43 | 202510131005435403700008b7AR3mt | 204 |       25.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806533226449231966
+[INFO] 2025/10/13 - 10:05:44 | 20251013100543541140000FVMxo0uM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:05:44 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:05:44 | 20251013100543541140000FVMxo0uM | 200 |  1.318270333s |             ::1 |     GET /kling/v1/videos/image2video/806533226449231966
+[SYS] 2025/10/13 - 10:05:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:05:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:05:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:05:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:05:57 | channels synced from database 
+[SYS] 2025/10/13 - 10:06:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:06:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:06:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:06:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:06:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:06:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:06:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:06:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:06:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:06:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:06:57 | channels synced from database 
+[SYS] 2025/10/13 - 10:07:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:07:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:07:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:07:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:07:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:07:42 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:07:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:07:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:07:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:07:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:07:57 | channels synced from database 
+[GIN] 2025/10/13 - 10:08:09 | 20251013100809910520000SfpE93vD | 200 |    1.758083ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/10/13 - 10:08:09 | 20251013100809910524000I8HE65tg | 200 |    2.018417ms |             ::1 |     GET /api/models/?p=1&page_size=10
+[GIN] 2025/10/13 - 10:08:11 | 20251013100811674118000EziSILxT | 200 |     922.667µs |             ::1 |     GET /api/option/
+[SYS] 2025/10/13 - 10:08:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:08:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:08:13 | 20251013100813991061000wT85DQ9T | 200 |     626.666µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:08:13 | 20251013100813990696000jP3vIfex | 200 |    2.427542ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/13 - 10:08:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:08:27 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:08:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:08:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:08:43 | 20251013100843140354000Wy0Ex4mQ | 200 |    2.257042ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/13 - 10:08:43 | 20251013100843154995000iUIbpSs4 | 200 |     812.375µs |             ::1 |     GET /api/option/
+[SYS] 2025/10/13 - 10:08:57 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:08:57 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/10/13 - 10:08:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:08:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:08:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:08:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:08:57 | channels synced from database 
+[SYS] 2025/10/13 - 10:09:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:09:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:09:23 | 20251013100923291494000ZdxHSKRx | 200 |     517.791µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760234963&end_timestamp=1760324963&default_time=hour
+[GIN] 2025/10/13 - 10:09:23 | 20251013100923291452000ZIcg3vYX | 200 |     711.917µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:09:23 | 20251013100923313663000si8kpRPw | 200 |      341.25µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 10:09:24 | 20251013100924159757000cMoYqnJk | 200 |    1.118958ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324964&channel=&group=
+[GIN] 2025/10/13 - 10:09:24 | 20251013100924181098000O1QERYZU | 200 |     537.459µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324964&channel=&group=
+[GIN] 2025/10/13 - 10:09:25 | 20251013100925393369000ebJ10myF | 200 |     555.417µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760234965&end_timestamp=1760324965&default_time=hour
+[GIN] 2025/10/13 - 10:09:25 | 202510131009253933280001YZ5aoxk | 200 |     628.458µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:09:25 | 20251013100925409976000ppyXjy2s | 200 |     362.458µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 10:09:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:09:27 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:09:34 | 20251013100934849047000awcaJhf8 | 200 |       1.677ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324974&channel=&group=
+[GIN] 2025/10/13 - 10:09:34 | 20251013100934868285000MUXEVMLs | 200 |     429.458µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324974&channel=&group=
+[GIN] 2025/10/13 - 10:09:39 | 20251013100939208138000AExmlHQb | 200 |     856.625µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/10/13 - 10:09:39 | 20251013100939208121000mfL44PPV | 200 |    1.168959ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/10/13 - 10:09:39 | 20251013100939207972000qcoxCTfT | 200 |     3.85125ms |             ::1 |     GET /api/user/models
+[GIN] 2025/10/13 - 10:09:39 | 202510131009395431210007thsf4eG | 200 |     854.667µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324979&channel=&group=
+[GIN] 2025/10/13 - 10:09:39 | 20251013100939560686000Hr3hnfZU | 200 |     555.875µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760324979&channel=&group=
+[SYS] 2025/10/13 - 10:09:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:09:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:09:45 | 20251013100945426603000a2gyRivR | 200 |    1.712375ms |             ::1 |     GET /api/task/?p=1&page_size=10&channel_id=&task_id=&start_timestamp=1760284800&end_timestamp=1760324985
+[GIN] 2025/10/13 - 10:09:47 | 20251013100947192293000dX3aCuYi | 200 |     754.375µs |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1757729387000&end_timestamp=1760324987000
+[GIN] 2025/10/13 - 10:09:48 | 202510131009481265310003uZql4Ik | 200 |     198.584µs |             ::1 |     GET /api/user/topup/info
+[GIN] 2025/10/13 - 10:09:48 | 20251013100948126437000TN3oXSu9 | 200 |     586.042µs |             ::1 |     GET /api/user/aff
+[GIN] 2025/10/13 - 10:09:48 | 20251013100948133155000ddw30NQ8 | 200 |    2.296458ms |             ::1 |    POST /api/user/amount
+[GIN] 2025/10/13 - 10:09:49 | 20251013100949378989000gaMKT9Dz | 200 |     128.125µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/13 - 10:09:49 | 20251013100949378664000Fyv32cB1 | 200 |     844.833µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/13 - 10:09:49 | 20251013100949379089000Q6ib34Hy | 200 |     666.875µs |             ::1 |     GET /api/models
+[GIN] 2025/10/13 - 10:09:49 | 20251013100949379036000TcPoOB8f | 200 |    2.199708ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/13 - 10:09:51 | 20251013100951725041000okTs347w | 200 |    2.003084ms |             ::1 |     GET /api/models/?p=1&page_size=10
+[GIN] 2025/10/13 - 10:09:51 | 2025101310095172508700018iMCIwj | 200 |    2.359209ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/10/13 - 10:09:56 | 20251013100956303353000nWsargzr | 200 |         739µs |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/10/13 - 10:09:56 | 20251013100956315067000VoomlkxI | 200 |    1.951875ms |             ::1 |     GET /api/prefill_group/?type=endpoint
+[GIN] 2025/10/13 - 10:09:56 | 202510131009563147910006xeNNmQB | 200 |    2.230334ms |             ::1 |     GET /api/prefill_group/?type=tag
+[SYS] 2025/10/13 - 10:09:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:09:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:09:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:09:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:09:57 | channels synced from database 
+[GIN] 2025/10/13 - 10:10:10 | 20251013101010895709000JIGzUeoB | 200 |     476.833µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760235010&end_timestamp=1760325010&default_time=hour
+[GIN] 2025/10/13 - 10:10:10 | 20251013101010895663000ol7I2ENR | 200 |     542.042µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:10:10 | 20251013101010902951000iMCmoHte | 200 |     141.042µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 10:10:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:10:12 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:10:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:10:27 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:10:40 | 20251013101040783944000d0t9dhKY | 204 |      41.708µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[SYS] 2025/10/13 - 10:10:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:10:42 | 任务进度轮询完成 
+[INFO] 2025/10/13 - 10:10:46 | 20251013101040785096000BRoH9Ojj | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling-v1","token_name":"1","quota":500,"content":"Bltcy透传（kling/kling-v1），基础配额: 1000, 倍率: 0.50, 实际配额: 500, 来源: price","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:10:46 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:10:46 | 20251013101040785096000BRoH9Ojj | 200 |  5.382508834s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/13 - 10:10:46 | 20251013101046171176000wLlw4kJ0 | 204 |      13.458µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:10:47 | 202510131010461730750007RRp2ty6 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:10:47 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:10:47 | 202510131010461730750007RRp2ty6 | 200 |   1.42459575s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:10:52 | 202510131010528029610009mdgKIfQ | 204 |      33.542µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:10:54 | 202510131010528046910003MT3SOpR | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:10:54 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:10:54 | 202510131010528046910003MT3SOpR | 200 |  1.448156417s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:10:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:10:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:10:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:10:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:10:57 | channels synced from database 
+[GIN] 2025/10/13 - 10:10:59 | 202510131010594581230004UYpvgaL | 204 |      46.958µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:01 | 20251013101059460194000OMlA5YmJ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:01 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:01 | 20251013101059460194000OMlA5YmJ | 200 |  1.756393083s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:11:06 | 20251013101106421658000WI1m3ZHA | 204 |      27.459µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:08 | 20251013101106422719000nPh2bPBC | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:08 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:08 | 20251013101106422719000nPh2bPBC | 200 |  1.812355084s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:11:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:11:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:11:13 | 20251013101113440835000u2DQX3s4 | 204 |      39.833µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:15 | 202510131011134419580001elJLa6E | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:15 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:15 | 202510131011134419580001elJLa6E | 200 |  2.017441042s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:11:20 | 20251013101120665125000uT0llzHx | 204 |      39.166µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:11:22 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[INFO] 2025/10/13 - 10:11:22 | 20251013101120666413000lpBs5hoJ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[GIN] 2025/10/13 - 10:11:22 | 20251013101120666413000lpBs5hoJ | 200 |  1.635838833s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:11:27 | 20251013101127508061000aaZCSaCg | 204 |       39.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:11:27 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:11:27 | 任务进度轮询完成 
+[INFO] 2025/10/13 - 10:11:28 | 20251013101127509193000CyZfwFIb | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:28 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:28 | 20251013101127509193000CyZfwFIb | 200 |  1.460566208s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:11:34 | 20251013101134175067000IXAKgvuV | 204 |      42.334µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:35 | 202510131011341776690003qCEdK1P | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:35 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:35 | 202510131011341776690003qCEdK1P | 200 |  1.450275084s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:11:40 | 20251013101140833240000hG0YT3hF | 204 |      27.959µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:42 | 2025101310114083413100083jQh3Q7 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:42 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:42 | 2025101310114083413100083jQh3Q7 | 200 |  1.723353166s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:11:42 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:11:42 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:11:47 | 20251013101147762417000Y8TlYYpN | 204 |      39.709µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:49 | 20251013101147763285000qckmOrL7 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:49 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:49 | 20251013101147763285000qckmOrL7 | 200 |  1.326972125s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:11:54 | 20251013101154295555000bZotcwMo | 204 |      51.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:11:55 | 20251013101154297767000h5qOY7vY | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:11:55 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:11:55 | 20251013101154297767000h5qOY7vY | 200 |    1.6333395s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:11:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:11:57 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:11:57 | syncing channels from database 
+[SYS] 2025/10/13 - 10:11:57 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:11:58 | channels synced from database 
+[GIN] 2025/10/13 - 10:11:59 | 2025101310115930233000NhlIBzC5 | 200 |    1.417625ms |             ::1 |     GET /console
+[GIN] 2025/10/13 - 10:11:59 | 20251013101159336894000r6jJqsCp | 200 |     566.792µs |             ::1 |     GET /api/status
+[GIN] 2025/10/13 - 10:11:59 | 2025101310115933683000085MzyNfs | 200 |     615.792µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:11:59 | 20251013101159585023000SCJDzi96 | 200 |     534.917µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:11:59 | 202510131011596136610008pBgDPbF | 200 |    2.127709ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:11:59 | 202510131011596164500003aPLDhJn | 200 |     503.292µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760235119&end_timestamp=1760325119&default_time=hour
+[GIN] 2025/10/13 - 10:11:59 | 20251013101159655658000PsuWeSXv | 200 |     144.541µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 10:12:01 | 20251013101201544682000LLzonYmT | 204 |      29.209µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:02 | 20251013101201545763000AX9WvUk5 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:02 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:02 | 20251013101201545763000AX9WvUk5 | 200 |  1.337468083s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:08 | 20251013101208543057000mRYyPB7i | 204 |       44.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:10 | 20251013101208544155000LgDknzSN | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:10 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:10 | 20251013101208544155000LgDknzSN | 200 |   1.58834275s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:11 | 20251013101211324432000OuriuOXs | 200 |         947µs |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760325131&channel=&group=
+[GIN] 2025/10/13 - 10:12:11 | 20251013101211346308000VZ78xil1 | 200 |     679.042µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1760284800&end_timestamp=1760325131&channel=&group=
+[SYS] 2025/10/13 - 10:12:12 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:12:12 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:12:14 | 20251013101214677086000o6dHJJi2 | 200 |     517.708µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760235134&end_timestamp=1760325134&default_time=hour
+[GIN] 2025/10/13 - 10:12:14 | 20251013101214677038000Prvixw28 | 200 |     583.625µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:12:14 | 20251013101214688152000thBcjfNJ | 200 |     141.459µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 10:12:15 | 202510131012155443650001oPheE5v | 204 |      64.292µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:16 | 202510131012155455810001LL03MxQ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:16 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:16 | 202510131012155455810001LL03MxQ | 200 |  1.299930458s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:18 | 202510131012184428420004PN2QI3s | 200 |     115.334µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/13 - 10:12:18 | 20251013101218442779000hzEU28rk | 200 |     913.041µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/13 - 10:12:18 | 20251013101218443311000yYuIxGbg | 200 |     586.416µs |             ::1 |     GET /api/models
+[GIN] 2025/10/13 - 10:12:18 | 20251013101218443242000EhBehRrC | 200 |    1.742333ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/13 - 10:12:21 | 20251013101221376178000pBAJ8RKq | 200 |     909.583µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:12:22 | 20251013101222543134000ZDEp1rTC | 204 |      46.042µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:22 | 20251013101222984613000R2A3o5mr | 200 |         860µs |             ::1 |     GET /api/option/
+[INFO] 2025/10/13 - 10:12:23 | 202510131012225442630005LlbDzQ2 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:23 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:23 | 202510131012225442630005LlbDzQ2 | 200 |  713.982792ms |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:24 | 20251013101224122765000m0lq0aZn | 200 |      754.75µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:12:24 | 202510131012241227470002HCPFOtk | 200 |    3.122667ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/13 - 10:12:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:12:28 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:12:28 | 20251013101228546336000l2FDydLU | 204 |      50.541µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:30 | 20251013101228548288000e2Uqanot | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:30 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:30 | 20251013101228548288000e2Uqanot | 200 |   1.57546575s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:35 | 202510131012355692000001GrD9lgd | 204 |      27.208µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:36 | 20251013101235571066000SQFW2ZpK | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:36 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:36 | 20251013101235571066000SQFW2ZpK | 200 |  685.291375ms |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:41 | 20251013101241570519000TiGcDvDC | 204 |    9.115417ms |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:42 | 20251013101241584182000lfXPDg6P | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:42 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:42 | 20251013101241584182000lfXPDg6P | 200 |  1.377561875s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:12:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:12:43 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:12:48 | 20251013101248543535000XK9O9Yk0 | 204 |      33.583µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:49 | 20251013101248544467000YD8u7tgZ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:49 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:49 | 20251013101248544467000YD8u7tgZ | 200 |   1.29372725s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:12:55 | 20251013101255545074000roZj9tNu | 204 |      29.166µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:12:57 | 202510131012555459380000E9Te9Jr | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:12:57 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:12:57 | 202510131012555459380000E9Te9Jr | 200 |   1.49166225s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:12:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:12:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:12:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:12:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:12:58 | channels synced from database 
+[GIN] 2025/10/13 - 10:13:02 | 20251013101302548068000ykciwpeL | 204 |     654.667µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:13:03 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[INFO] 2025/10/13 - 10:13:03 | 20251013101302551230000Ppd8gzaA | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[GIN] 2025/10/13 - 10:13:03 | 20251013101302551230000Ppd8gzaA | 200 |   1.41307925s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:13:09 | 20251013101309542932000hAms7EfA | 204 |       33.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:13:10 | 20251013101309544171000QGL21KXs | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:13:10 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:13:10 | 20251013101309544171000QGL21KXs | 200 |  1.259106834s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:13:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:13:13 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:13:16 | 20251013101316542432000sAR3dvyd | 204 |      28.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:13:17 | 20251013101316543256000MHLMN00v | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:13:17 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:13:17 | 20251013101316543256000MHLMN00v | 200 |    1.4403745s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:13:23 | 20251013101323544628000HEjAhmFu | 204 |     150.792µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:13:23 | 20251013101323944961000MZO5ygui | 200 |    5.782417ms |             ::1 |     GET /api/data/?username=&start_timestamp=1760235203&end_timestamp=1760325203&default_time=hour
+[GIN] 2025/10/13 - 10:13:23 | 20251013101323944894000Djw0aN53 | 200 |    8.346083ms |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:13:23 | 20251013101323976461000Hm9INdCI | 200 |      194.25µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/10/13 - 10:13:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:13:28 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:13:28 | 20251013101323546526000M3nO7L4p | 500 |  5.032705875s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:13:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:13:43 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:13:57 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:13:57 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/10/13 - 10:13:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:13:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:13:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:13:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:13:58 | channels synced from database 
+[GIN] 2025/10/13 - 10:14:10 | 20251013101410513160000CHEaPYr5 | 200 |     494.333µs |             ::1 |     GET /api/group/
+[GIN] 2025/10/13 - 10:14:10 | 20251013101410513183000W03Ws5H2 | 200 |    1.713833ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/10/13 - 10:14:10 | 20251013101410513197000S6JpzI03 | 200 |     2.05125ms |             ::1 |     GET /api/models
+[GIN] 2025/10/13 - 10:14:10 | 20251013101410513154000MxSJRIPj | 200 |    2.808416ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/10/13 - 10:14:12 | 20251013101412330735000MFtR0Iuk | 200 |     923.166µs |             ::1 |     GET /api/option/
+[SYS] 2025/10/13 - 10:14:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:14:13 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:14:13 | 20251013101413467140000G43aN15w | 200 |     771.583µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:14:14 | 202510131014149132760004tpd0at9 | 200 |    1.047125ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:14:15 | 20251013101415156452000tGKjLiXI | 200 |     804.458µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:14:15 | 20251013101415156435000mioQV2qj | 200 |    3.371084ms |             ::1 |     GET /api/channel/models_enabled
+[GIN] 2025/10/13 - 10:14:26 | 20251013101426366525000TRmvHbxS | 200 |    3.507375ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/13 - 10:14:26 | 20251013101426374952000afHLyHYj | 200 |     1.15775ms |             ::1 |     GET /api/option/
+[SYS] 2025/10/13 - 10:14:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:14:28 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:14:41 | 20251013101441959491000SvoszObJ | 204 |      20.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video
+[SYS] 2025/10/13 - 10:14:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:14:43 | 任务进度轮询完成 
+[INFO] 2025/10/13 - 10:14:46 | 20251013101441960121000W7oU13me | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling-v1","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling-v1），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:14:46 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 10:14:46 | 20251013101441960121000W7oU13me | 200 |  4.438322041s |             ::1 |    POST /kling/v1/videos/image2video
+[GIN] 2025/10/13 - 10:14:46 | 20251013101446403053000fxuQvzUK | 204 |      24.375µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:14:47 | 20251013101446404268000dyA6tMaB | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:14:47 | user 1 has no email, skip sending email 
+[GIN] 2025/10/13 - 10:14:47 | 20251013101446404268000dyA6tMaB | 200 |  1.392455834s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:14:49 | 202510131014497580720004iF8C9kz | 204 |       23.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:14:51 | 20251013101449759036000GSRZ1KNH | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:14:51 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:14:51 | 20251013101449759036000GSRZ1KNH | 200 |  1.348793167s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:14:53 | 202510131014532311000GMCU3Dlu | 204 |      12.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:14:54 | 2025101310145330570009edccVRd | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:14:54 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:14:54 | 2025101310145330570009edccVRd | 200 |  1.585321875s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:14:56 | 20251013101456543982000GJlKIxMH | 204 |      16.584µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[SYS] 2025/10/13 - 10:14:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:14:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:14:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:14:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:14:58 | channels synced from database 
+[INFO] 2025/10/13 - 10:14:58 | 20251013101456545176000xFoysUqJ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:14:58 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:14:58 | 20251013101456545176000xFoysUqJ | 200 |  1.676653666s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:15:00 | 20251013101500543633000X66XoCdX | 204 |      24.709µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:01 | 20251013101500544445000q8g5Dqoz | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:01 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:01 | 20251013101500544445000q8g5Dqoz | 200 |  1.416659417s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:15:03 | 2025101310150319831000NBibBRqA | 200 |     645.458µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:15:03 | 202510131015031987800019e14X2P | 200 |     653.041µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760235303&end_timestamp=1760325303&default_time=hour
+[GIN] 2025/10/13 - 10:15:03 | 2025101310150331920000E3tbyE01 | 200 |      147.25µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 10:15:03 | 20251013101503547367000Cokba9ly | 204 |      17.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806534986790092849
+[INFO] 2025/10/13 - 10:15:04 | 20251013101503549654000S3PcNFZ5 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:04 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:04 | 20251013101503549654000S3PcNFZ5 | 200 |  1.267170084s |             ::1 |     GET /kling/v1/videos/image2video/806534986790092849
+[GIN] 2025/10/13 - 10:15:07 | 20251013101507544516000qNBShYfP | 204 |      11.167µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:09 | 20251013101507545606000kk30kijD | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:09 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:09 | 20251013101507545606000kk30kijD | 200 |  1.891715542s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:15:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:15:13 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:15:15 | 20251013101515543510000mAyASZOy | 204 |      37.041µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:17 | 20251013101515544787000cKLsjmW9 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:17 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:17 | 20251013101515544787000cKLsjmW9 | 200 |  1.470622958s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:15:22 | 20251013101522543609000YV2B0NYv | 204 |      30.417µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:23 | 20251013101522544779000xIQeS3lY | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:23 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:23 | 20251013101522544779000xIQeS3lY | 200 |  1.433244792s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:15:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:15:28 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:15:29 | 20251013101529543543000licL56TA | 204 |      24.833µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:15:30 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[INFO] 2025/10/13 - 10:15:30 | 20251013101529544369000yxAxuWUc | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[GIN] 2025/10/13 - 10:15:30 | 20251013101529544369000yxAxuWUc | 200 |  1.398425208s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:15:31 | 20251013101531353690000XhrOFIQ | 200 |    2.022833ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:15:36 | 20251013101536544931000JxztF0EV | 204 |      47.042µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:37 | 20251013101536546221000hF8W29FW | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:37 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:37 | 20251013101536546221000hF8W29FW | 200 |   1.30797775s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:15:39 | 20251013101539291395000pVLERMHa | 200 |     793.667µs |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:15:39 | 202510131015392910330008p0wByPB | 200 |    4.626541ms |             ::1 |     GET /api/channel/models_enabled
+[SYS] 2025/10/13 - 10:15:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:15:43 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:15:43 | 202510131015435449680006LaIPWNH | 204 |       21.25µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:44 | 20251013101543545973000DpI2fqOV | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:44 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:44 | 20251013101543545973000DpI2fqOV | 200 |   771.26725ms |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:15:49 | 20251013101549543501000NoA96FWp | 204 |      32.458µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:15:50 | 20251013101549544336000yprDfa5z | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:50 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:50 | 20251013101549544336000yprDfa5z | 200 |  1.384190292s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:15:56 | 20251013101556544642000zfniIERT | 204 |      40.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:15:57 | syncing options from database 
+[INFO] 2025/10/13 - 10:15:57 | 20251013101556545805000iZF6nqWy | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:15:57 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:15:57 | 20251013101556545805000iZF6nqWy | 200 |  1.406824416s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:15:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:15:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:15:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:15:58 | channels synced from database 
+[GIN] 2025/10/13 - 10:16:02 | 202510131016024436190007r4HIRcm | 200 |    2.613666ms |             ::1 |     PUT /api/option/
+[GIN] 2025/10/13 - 10:16:02 | 20251013101602455896000bPjI9lLX | 200 |       1.585ms |             ::1 |     GET /api/option/
+[GIN] 2025/10/13 - 10:16:03 | 20251013101603544455000llY6jMHc | 204 |      33.708µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:04 | 20251013101603545269000zcoF07ud | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:04 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:04 | 20251013101603545269000zcoF07ud | 200 |  1.392820458s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:16:10 | 20251013101610543969000FiAzK8lX | 204 |       23.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:11 | 20251013101610545059000pKj1Xra8 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:11 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:11 | 20251013101610545059000pKj1Xra8 | 200 |  1.355274917s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:16:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:16:13 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:16:17 | 20251013101617549836000GVfbwTeG | 204 |      40.625µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:18 | 20251013101617550890000JU9sJJEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:18 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:18 | 20251013101617550890000JU9sJJEM | 200 |  1.316358625s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:16:24 | 20251013101624544327000shWLz1tk | 204 |      36.834µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:25 | 20251013101624545406000iGMkrOeZ | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:25 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:25 | 20251013101624545406000iGMkrOeZ | 200 |   1.35567725s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:16:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:16:28 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:16:29 | 20251013101629649992000v953brYs | 200 |     691.958µs |             ::1 |     GET /api/data/?username=&start_timestamp=1760235389&end_timestamp=1760325389&default_time=hour
+[GIN] 2025/10/13 - 10:16:29 | 20251013101629650007000SgrelcfM | 200 |     788.041µs |             ::1 |     GET /api/user/self
+[GIN] 2025/10/13 - 10:16:29 | 20251013101629662362000MzdUTFWM | 200 |     165.916µs |             ::1 |     GET /api/uptime/status
+[GIN] 2025/10/13 - 10:16:31 | 20251013101631544402000z747wN7N | 204 |      37.083µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:33 | 20251013101631545957000dFuMdWlp | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:33 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:33 | 20251013101631545957000dFuMdWlp | 200 |  1.555386417s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:16:38 | 20251013101638549858000WKv182hg | 204 |      34.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:16:39 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[INFO] 2025/10/13 - 10:16:39 | 20251013101638551346000k5h6zy2a | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[GIN] 2025/10/13 - 10:16:39 | 20251013101638551346000k5h6zy2a | 200 |  691.640667ms |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:16:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:16:43 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:16:44 | 20251013101644544922000qBvkWU3h | 204 |      53.583µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:45 | 20251013101644546021000wRRvxipU | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:45 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:45 | 20251013101644546021000wRRvxipU | 200 |  1.246165292s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:16:51 | 20251013101651545382000aJQJpLkL | 204 |      18.875µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:52 | 20251013101651546074000pjfCw3qq | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:52 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:52 | 20251013101651546074000pjfCw3qq | 200 |  1.358670833s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:16:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:16:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:16:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:16:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:16:58 | channels synced from database 
+[GIN] 2025/10/13 - 10:16:58 | 20251013101658543972000xT6OhhBc | 204 |       34.75µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:16:59 | 20251013101658544747000eb4zLwel | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:16:59 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:16:59 | 20251013101658544747000eb4zLwel | 200 |  697.557125ms |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:17:04 | 20251013101704545380000YzX4wRdH | 204 |      43.125µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:05 | 20251013101704546536000RSbsmJh9 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:05 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:05 | 20251013101704546536000RSbsmJh9 | 200 |  1.423726459s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:17:11 | 20251013101711543384000TYipJdec | 204 |      38.417µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:12 | 20251013101711544276000yf69KKqx | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:12 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:12 | 20251013101711544276000yf69KKqx | 200 |    1.3366955s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:17:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:17:13 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:17:18 | 20251013101718544790000g1hPP2k4 | 204 |      27.042µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:20 | 202510131017185459900008WNg9O4o | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:20 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:20 | 202510131017185459900008WNg9O4o | 200 |  1.609225125s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:17:25 | 20251013101725544359000fA2m0JTH | 204 |      35.791µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:27 | 20251013101725545197000k8527m59 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:27 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:27 | 20251013101725545197000k8527m59 | 200 |  1.524617583s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:17:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:17:28 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:17:32 | 20251013101732545346000xo4tL93a | 204 |      68.708µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:33 | 20251013101732546462000Ggd7LpTl | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:33 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:33 | 20251013101732546462000Ggd7LpTl | 200 |    1.2770295s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:17:39 | 20251013101739545092000Xf4ISo4i | 204 |      40.583µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:40 | 2025101310173954640400005ss1ss3 | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:40 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:40 | 2025101310173954640400005ss1ss3 | 200 |  1.356946625s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:17:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:17:43 | 任务进度轮询完成 
+[GIN] 2025/10/13 - 10:17:46 | 20251013101746544302000TJh6mmXS | 204 |      38.709µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[INFO] 2025/10/13 - 10:17:47 | 20251013101746545425000UWVWQHbi | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"kling","token_name":"1","quota":1000,"content":"Bltcy透传（kling/kling），基础配额: 1000, 倍率: 1.00, 实际配额: 1000, 来源: base","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":null} 
+[SYS] 2025/10/13 - 10:17:47 | failed to send quota notify to user 1: notification limit exceeded for user 1 with type email 
+[GIN] 2025/10/13 - 10:17:47 | 20251013101746545425000UWVWQHbi | 200 |   1.30048225s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[GIN] 2025/10/13 - 10:17:53 | 20251013101753545697000b9q5wzYD | 204 |      36.583µs |             ::1 | OPTIONS /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:17:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:17:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:17:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:17:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:17:58 | channels synced from database 
+[GIN] 2025/10/13 - 10:17:58 | 20251013101753546818000Owt3rdu2 | 500 |  5.043571833s |             ::1 |     GET /kling/v1/videos/image2video/806535994870231065
+[SYS] 2025/10/13 - 10:18:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:18:13 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:18:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:18:28 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:18:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:18:43 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:18:57 | 正在更新数据看板数据... 
+[SYS] 2025/10/13 - 10:18:57 | 保存数据看板数据成功，共保存2条数据 
+[SYS] 2025/10/13 - 10:18:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:18:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:18:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:18:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:18:58 | channels synced from database 
+[SYS] 2025/10/13 - 10:19:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:19:13 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:19:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:19:28 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:19:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:19:43 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:19:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:19:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:19:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:19:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:19:58 | channels synced from database 
+[SYS] 2025/10/13 - 10:20:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:20:13 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:20:28 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:20:28 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:20:43 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:20:43 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:20:57 | syncing options from database 
+[SYS] 2025/10/13 - 10:20:58 | syncing channels from database 
+[SYS] 2025/10/13 - 10:20:58 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:20:58 | 任务进度轮询完成 
+[SYS] 2025/10/13 - 10:20:58 | channels synced from database 
+[SYS] 2025/10/13 - 10:21:13 | 任务进度轮询开始 
+[SYS] 2025/10/13 - 10:21:13 | 任务进度轮询完成 

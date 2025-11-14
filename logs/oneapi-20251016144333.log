@@ -1,0 +1,31 @@
+[SYS] 2025/10/16 - 14:43:33 | initializing token encoders 
+[SYS] 2025/10/16 - 14:43:33 | token encoders initialized 
+[SYS] 2025/10/16 - 14:43:33 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/16 - 14:43:33 | database migration started 
+[SYS] 2025/10/16 - 14:43:33 | system is already initialized at: 2025-10-10 14:30:09 +0800 CST 
+[SYS] 2025/10/16 - 14:43:33 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/10/16 - 14:43:33 | New API v0.0.0 started 
+[SYS] 2025/10/16 - 14:43:33 | running in debug mode 
+[SYS] 2025/10/16 - 14:43:33 | 正在更新数据看板数据... 
+[SYS] 2025/10/16 - 14:43:33 | 保存数据看板数据成功，共保存0条数据 
+[GIN] 2025/10/16 - 14:43:37 | 20251016144337964813000sKdXnKdV | 200 |      71.042µs |             ::1 |     GET /api/status
+[INFO] 2025/10/16 - 14:43:45 | 20251016144345417102000g0tSLaVt | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/10/16 - 14:43:45 | 发送给Coze的工作流请求: {"workflow_id":"7549076385299333172","parameters":{"BOT_USER_INPUT":"智能手机","input":"智能手机"}} 
+[DEBUG] 2025/10/16 - 14:43:45 | 20251016144345417102000g0tSLaVt | text request body: {"workflow_id":"7549076385299333172","parameters":{"BOT_USER_INPUT":"智能手机","input":"智能手机"}} 
+[SYS] 2025/10/16 - 14:43:45 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/10/16 - 14:43:45 | Processing as Coze workflow request 
+[SYS] 2025/10/16 - 14:43:45 | [OAuth Debug] 使用 PAT token 模式 
+[SYS] 2025/10/16 - 14:43:45 | [OAuth Debug] 设置 Authorization 头 (前30字符): Bearer {"app_id":"119185387741... 
+[ERR] 2025/10/16 - 14:43:45 | 20251016144345417102000g0tSLaVt | relay error (channel #8, status code: 401): access_token require prefix Bearer in the authorization header 
+[GIN] 2025/10/16 - 14:43:45 | 20251016144345417102000g0tSLaVt | 401 |  108.565375ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/10/16 - 14:43:48 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 14:43:48 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 14:44:03 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 14:44:03 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 14:44:18 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 14:44:18 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 14:44:33 | syncing options from database 
+[SYS] 2025/10/16 - 14:44:33 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 14:44:33 | 任务进度轮询完成 
+[SYS] 2025/10/16 - 14:44:48 | 任务进度轮询开始 
+[SYS] 2025/10/16 - 14:44:48 | 任务进度轮询完成 

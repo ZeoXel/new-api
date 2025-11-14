@@ -1,0 +1,53 @@
+[SYS] 2025/09/29 - 11:25:25 | initializing token encoders 
+[SYS] 2025/09/29 - 11:25:25 | token encoders initialized 
+[SYS] 2025/09/29 - 11:25:25 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/29 - 11:25:25 | database migration started 
+[SYS] 2025/09/29 - 11:25:25 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/09/29 - 11:25:25 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/29 - 11:25:25 | New API v0.0.0 started 
+[SYS] 2025/09/29 - 11:25:25 | memory cache enabled 
+[SYS] 2025/09/29 - 11:25:25 | sync frequency: 60 seconds 
+[SYS] 2025/09/29 - 11:25:25 | channels synced from database 
+[SYS] 2025/09/29 - 11:25:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 11:25:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 11:25:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:25:40 | 任务进度轮询完成 
+[INFO] 2025/09/29 - 11:25:41 | 20250929112541494927000YqPvigQy | 用户 1 额度充足且为无限额度令牌, 信任且不需要预扣费 
+[SYS] 2025/09/29 - 11:25:41 | 发送给Coze的工作流请求: {"workflow_id":"7549079559813087284","parameters":{"BOT_USER_INPUT":"爱情让人成长","input":"爱情让人成长"}} 
+[SYS] 2025/09/29 - 11:25:41 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 11:25:41 | Processing as Coze workflow request 
+[ERR] 2025/09/29 - 11:25:41 | 20250929112541494927000YqPvigQy | relay error (channel #6, status code: 500): setup request header failed: failed to get OAuth access token: failed to create signed JWT: failed to parse PEM block containing the private key 
+[GIN] 2025/09/29 - 11:25:41 | 20250929112541494927000YqPvigQy | 500 |    3.255208ms |             ::1 |    POST /v1/chat/completions
+[SYS] 2025/09/29 - 11:25:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:25:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:26:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:26:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:26:25 | syncing options from database 
+[SYS] 2025/09/29 - 11:26:25 | syncing channels from database 
+[SYS] 2025/09/29 - 11:26:25 | channels synced from database 
+[SYS] 2025/09/29 - 11:26:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:26:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:26:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:26:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:26:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:26:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:27:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:27:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:27:25 | syncing options from database 
+[SYS] 2025/09/29 - 11:27:25 | syncing channels from database 
+[SYS] 2025/09/29 - 11:27:25 | channels synced from database 
+[SYS] 2025/09/29 - 11:27:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:27:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:27:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:27:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:27:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:27:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:28:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:28:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:28:25 | syncing options from database 
+[SYS] 2025/09/29 - 11:28:25 | syncing channels from database 
+[SYS] 2025/09/29 - 11:28:25 | channels synced from database 
+[SYS] 2025/09/29 - 11:28:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:28:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 11:28:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 11:28:40 | 任务进度轮询完成 

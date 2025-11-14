@@ -1,0 +1,37 @@
+[SYS] 2025/11/05 - 14:32:56 | initializing token encoders 
+[SYS] 2025/11/05 - 14:32:56 | token encoders initialized 
+[SYS] 2025/11/05 - 14:32:56 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/05 - 14:32:56 | database migration started 
+[FATAL] 2025/11/05 - 14:32:56 | [failed to initialize database: failed to look up field channel_ratio from DDL CREATE TABLE "channels" (
+  `id` integer PRIMARY KEY,
+  `type` integer DEFAULT 0,
+  `key` text NOT NULL,
+  `open_ai_organization` text,
+  `test_model` text,
+  `status` integer DEFAULT 1,
+  `name` text,
+  `weight` integer DEFAULT 0,
+  `created_time` integer,
+  `test_time` integer,
+  `response_time` integer,
+  `base_url` text DEFAULT "",
+  `other` text,
+  `balance` real,
+  `balance_updated_time` integer,
+  `models` text,
+  `group` varchar(64) DEFAULT "default",
+  `used_quota` integer DEFAULT 0,
+  `model_mapping` text,
+  `status_code_mapping` varchar(1024) DEFAULT "",
+  `priority` integer DEFAULT 0,
+  `auto_ban` integer DEFAULT 1,
+  `other_info` text,
+  `tag` text,
+  `setting` text,
+  `param_override` text,
+  `header_override` text,
+  `remark` varchar(255),
+  `channel_info` json,
+  `settings` text,
+  `channel_ratio` real DEFAULT 1.0
+)] 

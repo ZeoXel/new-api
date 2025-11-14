@@ -1,0 +1,24 @@
+[SYS] 2025/10/30 - 11:31:56 | initializing token encoders 
+[SYS] 2025/10/30 - 11:31:56 | token encoders initialized 
+[SYS] 2025/10/30 - 11:31:56 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/10/30 - 11:31:56 | database migration started 
+[FATAL] 2025/10/30 - 11:31:56 | [failed to initialize database: failed to look up field actual_credits from DDL CREATE TABLE `tasks` (
+  `id` integer PRIMARY KEY AUTOINCREMENT,
+  `created_at` integer,
+  `updated_at` integer,
+  `task_id` varchar(50),
+  `platform` varchar(30),
+  `user_id` integer,
+  `channel_id` integer,
+  `quota` integer,
+  `action` varchar(40),
+  `status` varchar(20),
+  `fail_reason` text,
+  `submit_time` integer,
+  `start_time` integer,
+  `finish_time` integer,
+  `progress` varchar(20),
+  `properties` json,
+  `data` json,
+  `actual_credits` integer DEFAULT 0
+)] 

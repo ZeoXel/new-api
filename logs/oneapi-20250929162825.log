@@ -1,0 +1,988 @@
+[SYS] 2025/09/29 - 16:28:25 | initializing token encoders 
+[SYS] 2025/09/29 - 16:28:25 | token encoders initialized 
+[SYS] 2025/09/29 - 16:28:25 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/09/29 - 16:28:25 | database migration started 
+[SYS] 2025/09/29 - 16:28:25 | system is already initialized at: 2025-09-23 14:26:35 +0800 CST 
+[SYS] 2025/09/29 - 16:28:25 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/09/29 - 16:28:25 | New API v0.0.0 started 
+[SYS] 2025/09/29 - 16:28:25 | memory cache enabled 
+[SYS] 2025/09/29 - 16:28:25 | sync frequency: 60 seconds 
+[SYS] 2025/09/29 - 16:28:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:28:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:28:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 16:28:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:28:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:28:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:28:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:29:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:29:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:29:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:29:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:29:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:29:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:29:25 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:29:30 | 20250929162930199946000msrxBXE5 | 200 |    3.971833ms |             ::1 |     GET /
+[GIN] 2025/09/29 - 16:29:30 | 202509291629302862200003xnpNLMj | 200 |  109.955834ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/09/29 - 16:29:30 | 20250929162930283470000rAgaxalT | 200 |  185.391875ms |             ::1 |     GET /assets/index-CxXPNU0-.js
+[GIN] 2025/09/29 - 16:29:30 | 20250929162930892481000bOwbKPnk | 200 |    2.994458ms |             ::1 |     GET /api/status
+[SYS] 2025/09/29 - 16:29:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:29:40 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:29:42 | 20250929162942744147000UKZTsazI | 200 |     120.875µs |             ::1 |     GET /
+[GIN] 2025/09/29 - 16:29:43 | 20250929162943390495000vVJuaWJh | 200 |     536.458µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948719919000rfJ3L2SO | 200 |     430.959µs |             ::1 |     GET /console
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948827629000ZvcJxQP5 | 200 |     320.958µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948827121000h9Hne4fS | 401 |    1.431875ms |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948829197000AcvajCvO | 200 |   21.230542ms |             ::1 |     GET /logo.png
+[GIN] 2025/09/29 - 16:29:48 | 202509291629488567610002H8c41Dp | 200 |     227.625µs |             ::1 |     GET /login?expired=true
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948871380000OMMF0ush | 401 |     203.792µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948823913000UR4Ow5lz | 200 |   48.039708ms |             ::1 |     GET /assets/index-t_EVrr-I.js
+[GIN] 2025/09/29 - 16:29:48 | 20250929162948926566000vXSfsg38 | 200 |      128.75µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 16:29:50 | 20250929162950441379000E585YdhT | 200 |   82.713542ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2025/09/29 - 16:29:50 | 20250929162950556729000kTlfcS4q | 200 |     743.708µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 16:29:50 | 20250929162950556735000IDzZYtct | 200 |   39.148167ms |             ::1 |     GET /assets/index-t_EVrr-I.js
+[GIN] 2025/09/29 - 16:29:50 | 20250929162950623487000wv4vtEci | 200 |     259.041µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 16:29:50 | 20250929162950624509000933vTJKI | 200 |    1.595417ms |             ::1 |     GET /api/data/?username=&start_timestamp=1759048190&end_timestamp=1759138190&default_time=hour
+[GIN] 2025/09/29 - 16:29:50 | 20250929162950667952000gFjlngoR | 200 |      84.834µs |             ::1 |     GET /api/uptime/status
+[SYS] 2025/09/29 - 16:29:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:29:55 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:29:58 | 20250929162958601124000bJgW63Ht | 200 |     922.959µs |             ::1 |     GET /api/user/self/groups
+[GIN] 2025/09/29 - 16:29:58 | 20250929162958600820000IvMFhK9b | 200 |    3.220083ms |             ::1 |     GET /api/token/?p=1&size=10
+[GIN] 2025/09/29 - 16:29:58 | 202509291629586011260003yD6WrO1 | 200 |    7.596917ms |             ::1 |     GET /api/user/models
+[GIN] 2025/09/29 - 16:30:00 | 20250929163000979338000t7al9bXS | 200 |    3.146125ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1759075200&end_timestamp=1759138200&channel=&group=
+[GIN] 2025/09/29 - 16:30:01 | 2025092916300121461000TWyRGM9p | 200 |    2.343041ms |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1759075200&end_timestamp=1759138200&channel=&group=
+[SYS] 2025/09/29 - 16:30:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:30:10 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:30:12 | 202509291630126350840007kQO9eUf | 200 |    1.476791ms |             ::1 |     GET /api/mj/?p=1&page_size=10&channel_id=&mj_id=&start_timestamp=1756542612000&end_timestamp=1759138212000
+[GIN] 2025/09/29 - 16:30:12 | 20250929163012963657000nGGfQh80 | 200 |       1.261ms |             ::1 |     GET /api/log/?p=1&page_size=10&type=0&username=&token_name=&model_name=&start_timestamp=1759075200&end_timestamp=1759138212&channel=&group=
+[GIN] 2025/09/29 - 16:30:12 | 20250929163012992404000HzgRNLBl | 200 |     491.375µs |             ::1 |     GET /api/log/stat?type=0&username=&token_name=&model_name=&start_timestamp=1759075200&end_timestamp=1759138212&channel=&group=
+[GIN] 2025/09/29 - 16:30:15 | 20250929163015259433000qKeKZrYc | 200 |     161.875µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 16:30:15 | 20250929163015258902000guRzr1pA | 200 |     823.083µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 16:30:15 | 20250929163015259578000CKWLrxhi | 200 |    1.087625ms |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 16:30:15 | 20250929163015259485000AmlkDdJ7 | 200 |    2.284125ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 16:30:20 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T16:30:20.614631+08:00, FirstResponse: 2025-09-29T16:30:19.614631+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 16:30:20 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 16:30:20 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:30:20 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 16:30:20 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 16:30:20 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 16:30:20 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 16:30:20 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 16:30:20 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 16:30:20 | Sending OAuth token request to: https://api.coze.cn/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 16:30:20 | OAuth response status: 200, body: {"access_token":"czs_qQ5Jg3HtnYZE1FheRGNDkjKTiS4kPNiYMqF5ICnUCkOz4blfCy5Ny2cBCzXqF3CB6","expires_in":1759135520,"token_type":"Bearer"} 
+[SYS] 2025/09/29 - 16:30:20 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:30:20 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/29 - 16:30:20 | Coze工作流响应: {"msg":"Workflow not found. Please verify the workflow exists.","detail":{"logid":"20250929163020E91892B0CBF247920E7A"},"code":4200} 
+[SYS] 2025/09/29 - 16:30:20 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/29 - 16:30:20 | SYSTEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"模型测试","quota":2,"content":"模型测试","token_id":0,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[SYS] 2025/09/29 - 16:30:20 | testing channel #6, response: 
+{"id":"chatcmpl-","object":"","created":1759134620,"model":"coze-workflow","choices":[{"index":0,"message":{"role":"assistant","content":"Workflow not found. Please verify the workflow exists."},"finish_reason":"stop"}],"usage":{"prompt_tokens":10,"completion_tokens":20,"total_tokens":30,"prompt_tokens_details":{"cached_tokens":0,"text_tokens":0,"audio_tokens":0,"image_tokens":0},"completion_tokens_details":{"text_tokens":0,"audio_tokens":0,"reasoning_tokens":0},"input_tokens":0,"output_tokens":0,"input_tokens_details":null}} 
+[GIN] 2025/09/29 - 16:30:20 | 20250929163020612988000ukf4IB2q | 200 |  318.729917ms |             ::1 |     GET /api/channel/test/6?model=
+[GIN] 2025/09/29 - 16:30:23 | 20250929163023853058000WM96fOuK | 200 |     141.791µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 16:30:23 | 20250929163023853102000SlXjK3sC | 200 |     590.041µs |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 16:30:23 | 20250929163023852894000KMCVq7Bw | 200 |     807.541µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 16:30:23 | 202509291630238902020005CnW9V1m | 200 |    2.452541ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 16:30:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:30:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:30:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:30:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:30:25 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:30:37 | 202509291630373441900001FhdnJgW | 200 |      673.75µs |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/09/29 - 16:30:37 | 20250929163037344200000tpvQ38Ug | 200 |    8.377292ms |             ::1 |     GET /api/models/?p=1&page_size=10
+[SYS] 2025/09/29 - 16:30:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:30:40 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:30:40 | 20250929163040712841000jJLkJxDu | 200 |       1.049ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/09/29 - 16:30:40 | 20250929163040712897000iHpm8e53 | 200 |    1.028375ms |             ::1 |     GET /api/models/1
+[GIN] 2025/09/29 - 16:30:40 | 20250929163040726750000AU0K4faG | 200 |     322.334µs |             ::1 |     GET /api/prefill_group/?type=endpoint
+[GIN] 2025/09/29 - 16:30:40 | 20250929163040726677000OF28mVi4 | 200 |     390.667µs |             ::1 |     GET /api/prefill_group/?type=tag
+[SYS] 2025/09/29 - 16:30:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:30:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:31:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:31:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:31:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:31:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:31:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:31:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:31:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:31:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:31:40 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:31:50 | 20250929163150211761000Mj2rGudU | 200 |   12.985125ms |             ::1 |     PUT /api/models/
+[GIN] 2025/09/29 - 16:31:50 | 20250929163150227134000RRSILDtN | 200 |    1.049958ms |             ::1 |     GET /api/models/?p=1&page_size=10
+[SYS] 2025/09/29 - 16:31:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:31:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:32:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:32:10 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:32:14 | 20250929163214727024000GmntG5vE | 200 |    1.393417ms |             ::1 |     GET /api/vendors/?page_size=1000
+[GIN] 2025/09/29 - 16:32:14 | 20250929163214727098000GwAEIGlm | 200 |    1.671291ms |             ::1 |     GET /api/models/1
+[GIN] 2025/09/29 - 16:32:14 | 20250929163214739073000SNhKOFpQ | 200 |    1.583916ms |             ::1 |     GET /api/prefill_group/?type=tag
+[GIN] 2025/09/29 - 16:32:14 | 20250929163214739083000vnQVFtaE | 200 |       1.589ms |             ::1 |     GET /api/prefill_group/?type=endpoint
+[SYS] 2025/09/29 - 16:32:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:32:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:32:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:32:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:32:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:32:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:32:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:32:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:32:55 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:33:02 | 20250929163302767677000By8AJRfV | 200 |     235.875µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 16:33:02 | 202509291633027678560002jcuojZx | 200 |      607.75µs |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 16:33:02 | 202509291633027676290002e9M82nG | 200 |     959.125µs |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 16:33:02 | 20250929163302767708000phd3WHta | 200 |     1.61325ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/29 - 16:33:05 | 20250929163305389120000FbiVnsvg | 200 |     389.875µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 16:33:05 | 20250929163305389166000fa5DwZKA | 200 |    1.199166ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 16:33:05 | 20250929163305389048000k7mATcG7 | 200 |    1.604708ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 16:33:05 | 20250929163305403306000djr1xmKe | 200 |    1.626708ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 16:33:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:33:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:33:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:33:25 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/09/29 - 16:33:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:33:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:33:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:33:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:33:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:33:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:33:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:33:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:33:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:34:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:34:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:34:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:34:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:34:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:34:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:34:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:34:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:34:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:34:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:34:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:35:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:35:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:35:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:35:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:35:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:35:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:35:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:35:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:35:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:35:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:35:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:36:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:36:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:36:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:36:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:36:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:36:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:36:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:36:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:36:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:36:47 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T16:36:47.965007+08:00, FirstResponse: 2025-09-29T16:36:46.965007+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 16:36:47 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 16:36:47 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:36:47 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 16:36:47 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 16:36:47 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 16:36:47 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 16:36:47 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 16:36:47 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 16:36:47 | Sending OAuth token request to: https://api.coze.cn/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 16:36:48 | OAuth response status: 200, body: {"access_token":"czs_q8Sfv4T3WRiK9TgLDdaqQWk0DoxyuA4KCsvEHtGlEehgtY4pCyoOdHCBpVN8UBBws","expires_in":1759135908,"token_type":"Bearer"} 
+[SYS] 2025/09/29 - 16:36:48 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:36:48 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/29 - 16:36:48 | Coze工作流响应: {"code":4200,"msg":"Workflow not found. Please verify the workflow exists.","detail":{"logid":"2025092916364819A399081F878C7BA3BE"}} 
+[SYS] 2025/09/29 - 16:36:48 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/29 - 16:36:48 | SYSTEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"模型测试","quota":2,"content":"模型测试","token_id":0,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[SYS] 2025/09/29 - 16:36:48 | testing channel #6, response: 
+{"id":"chatcmpl-","object":"","created":1759135008,"model":"coze-workflow","choices":[{"index":0,"message":{"role":"assistant","content":"Workflow not found. Please verify the workflow exists."},"finish_reason":"stop"}],"usage":{"prompt_tokens":10,"completion_tokens":20,"total_tokens":30,"prompt_tokens_details":{"cached_tokens":0,"text_tokens":0,"audio_tokens":0,"image_tokens":0},"completion_tokens_details":{"text_tokens":0,"audio_tokens":0,"reasoning_tokens":0},"input_tokens":0,"output_tokens":0,"input_tokens_details":null}} 
+[GIN] 2025/09/29 - 16:36:48 | 20250929163647963077000c9lhO2bv | 200 |   208.41825ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 16:36:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:36:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:37:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:37:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:37:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:37:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:37:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:37:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:37:25 | channels synced from database 
+[GIN] 2025/09/29 - 16:37:30 | 20250929163730658252000qR8fhbhN | 200 |    1.380458ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 16:37:30 | 20250929163730673905000sHTB7J4X | 200 |      578.75µs |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 16:37:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:37:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:37:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:37:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:38:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:38:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:38:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:38:25 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/09/29 - 16:38:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:38:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:38:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:38:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:38:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:38:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:38:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:38:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:38:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:39:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:39:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:39:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:39:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:39:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:39:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:39:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:39:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:39:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:39:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:39:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:40:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:40:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:40:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:40:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:40:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:40:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:40:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:40:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:40:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:40:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:40:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:41:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:41:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:41:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:41:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:41:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:41:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:41:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:41:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:41:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:41:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:41:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:42:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:42:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:42:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:42:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:42:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:42:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:42:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:42:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:42:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:42:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:42:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:43:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:43:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:43:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:43:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 16:43:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:43:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:43:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:43:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:43:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:43:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:43:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:43:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:43:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:44:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:44:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:44:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:44:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:44:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:44:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:44:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:44:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:44:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:44:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:44:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:45:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:45:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:45:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:45:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:45:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:45:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:45:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:45:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:45:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:45:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:45:55 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 16:45:56 | 20250929164556754594000LBWN5IQo | 200 |    4.008709ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 16:45:56 | 20250929164556769766000U3WmQOIn | 200 |      1.9995ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 16:46:01 | channels synced from database 
+[GIN] 2025/09/29 - 16:46:01 | 20250929164601796504000Bc3FeUB5 | 200 |   31.467792ms |             ::1 |     PUT /api/channel/
+[GIN] 2025/09/29 - 16:46:01 | 20250929164601830728000YVz9cG2S | 200 |     1.52725ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 16:46:03 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T16:46:03.720097+08:00, FirstResponse: 2025-09-29T16:46:02.720097+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.com", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 16:46:03 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 16:46:03 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:46:03 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 16:46:03 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 16:46:03 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 16:46:03 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 16:46:03 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 16:46:03 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 16:46:03 | Sending OAuth token request to: https://api.coze.com/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 16:46:04 | OAuth response status: 401, body: {"error":"invalid_client","error_code":"invalid_client","error_message":"invalid jwt: kid not been registred"} 
+[SYS] 2025/09/29 - 16:46:04 | Failed to exchange JWT for access token: token request failed with status 401: {"error":"invalid_client","error_code":"invalid_client","error_message":"invalid jwt: kid not been registred"} 
+[GIN] 2025/09/29 - 16:46:04 | 20250929164603717409000eIDY0M4a | 200 |  1.041321417s |             ::1 |     GET /api/channel/test/6?model=
+[GIN] 2025/09/29 - 16:46:06 | 20250929164606555052000ZMQi3i4g | 200 |    1.148833ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 16:46:06 | 20250929164606569159000EyHJz2Iz | 200 |     352.542µs |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 16:46:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:46:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:46:11 | channels synced from database 
+[GIN] 2025/09/29 - 16:46:11 | 20250929164611756770000GCpuul3U | 200 |   14.199666ms |             ::1 |     PUT /api/channel/
+[GIN] 2025/09/29 - 16:46:11 | 20250929164611774700000oN38oolB | 200 |     2.60075ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 16:46:13 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T16:46:13.73957+08:00, FirstResponse: 2025-09-29T16:46:12.73957+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 16:46:13 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 16:46:13 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:46:13 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 16:46:13 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 16:46:13 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 16:46:13 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 16:46:13 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 16:46:13 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 16:46:13 | Sending OAuth token request to: https://api.coze.cn/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 16:46:13 | OAuth response status: 200, body: {"access_token":"czs_hS18ic6xnD8py9I0doIOzf95kIv2xEHyUIVBgYBU0AxuPiX8fNajE89wR6fsmcyOC","expires_in":1759136473,"token_type":"Bearer"} 
+[SYS] 2025/09/29 - 16:46:13 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 16:46:13 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/29 - 16:46:13 | Coze工作流响应: {"code":4200,"msg":"Workflow not found. Please verify the workflow exists.","detail":{"logid":"20250929164613596D214FFE6627ED42EE"}} 
+[SYS] 2025/09/29 - 16:46:13 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/29 - 16:46:13 | SYSTEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"模型测试","quota":2,"content":"模型测试","token_id":0,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[SYS] 2025/09/29 - 16:46:13 | testing channel #6, response: 
+{"id":"chatcmpl-","object":"","created":1759135573,"model":"coze-workflow","choices":[{"index":0,"message":{"role":"assistant","content":"Workflow not found. Please verify the workflow exists."},"finish_reason":"stop"}],"usage":{"prompt_tokens":10,"completion_tokens":20,"total_tokens":30,"prompt_tokens_details":{"cached_tokens":0,"text_tokens":0,"audio_tokens":0,"image_tokens":0},"completion_tokens_details":{"text_tokens":0,"audio_tokens":0,"reasoning_tokens":0},"input_tokens":0,"output_tokens":0,"input_tokens_details":null}} 
+[GIN] 2025/09/29 - 16:46:13 | 202509291646137385580002M8EAn0J | 200 |  223.214792ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 16:46:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:46:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:46:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:46:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:46:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:46:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:46:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:46:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:46:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:47:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:47:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:47:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:47:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:47:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:47:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:47:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:47:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:47:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:47:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:47:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:48:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:48:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:48:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:48:25 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/09/29 - 16:48:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:48:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:48:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:48:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:48:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:48:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:48:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:48:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:48:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:49:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:49:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:49:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:49:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:49:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:49:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:49:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:49:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:49:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:49:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:49:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:50:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:50:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:50:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:50:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:50:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:50:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:50:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:50:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:50:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:50:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:50:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:51:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:51:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:51:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:51:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:51:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:51:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:51:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:51:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:51:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:51:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:51:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:52:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:52:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:52:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:52:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:52:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:52:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:52:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:52:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:52:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:52:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:52:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:53:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:53:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:53:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:53:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 16:53:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:53:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:53:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:53:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:53:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:53:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:53:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:53:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:53:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:54:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:54:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:54:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:54:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:54:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:54:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:54:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:54:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:54:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:54:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:54:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:55:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:55:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:55:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:55:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:55:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:55:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:55:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:55:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:55:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:55:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:55:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:56:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:56:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:56:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:56:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:56:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:56:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:56:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:56:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:56:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:56:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:56:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:57:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:57:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:57:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:57:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:57:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:57:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:57:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:57:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:57:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:57:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:57:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:58:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:58:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:58:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 16:58:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 16:58:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:58:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:58:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:58:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:58:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:58:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:58:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:58:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:58:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:59:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:59:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:59:25 | syncing options from database 
+[SYS] 2025/09/29 - 16:59:25 | syncing channels from database 
+[SYS] 2025/09/29 - 16:59:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:59:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:59:25 | channels synced from database 
+[SYS] 2025/09/29 - 16:59:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:59:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 16:59:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 16:59:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:00:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:00:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:00:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:00:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:00:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:00:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:00:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:00:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:00:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:00:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:00:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:01:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:01:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:01:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:01:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:01:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:01:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:01:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:01:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:01:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:01:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:01:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:02:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:02:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:02:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:02:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:02:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:02:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:02:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:02:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:02:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:02:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:02:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:03:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:03:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:03:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:03:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:03:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:03:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:03:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:03:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:03:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:03:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:03:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:03:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:03:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:04:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:04:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:04:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:04:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:04:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:04:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:04:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:04:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:04:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:04:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:04:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:05:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:05:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:05:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:05:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:05:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:05:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:05:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:05:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:05:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:05:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:05:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:06:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:06:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:06:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:06:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:06:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:06:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:06:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:06:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:06:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:06:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:06:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:07:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:07:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:07:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:07:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:07:25 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:07:25 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:07:25 | channels synced from database 
+[SYS] 2025/09/29 - 17:07:40 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:07:40 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:07:55 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:07:55 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:08:10 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:08:10 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:08:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:08:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:08:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:08:25 | syncing channels from database 
+[SYS] 2025/09/29 - 17:08:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:08:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:08:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:08:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:08:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:08:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:08:56 | 任务进度轮询完成 
+[GIN] 2025/09/29 - 17:09:08 | 20250929170908339389000a0ERGKVG | 200 |   22.026083ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:09:08 | 20250929170908346861000tAxxrrrj | 200 |   15.287291ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:09:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:09:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:09:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:09:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:09:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:09:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:09:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:09:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:09:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:09:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:09:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:10:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:10:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:10:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:10:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:10:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:10:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:10:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:10:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:10:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:10:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:10:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:11:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:11:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:11:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:11:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:11:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:11:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:11:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:11:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:11:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:11:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:11:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:12:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:12:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:12:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:12:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:12:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:12:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:12:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:12:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:12:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:12:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:12:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:13:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:13:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:13:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:13:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:13:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:13:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:13:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:13:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:13:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:13:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:13:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:13:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:13:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:14:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:14:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:14:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:14:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:14:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:14:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:14:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:14:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:14:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:14:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:14:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:15:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:15:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:15:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:15:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:15:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:15:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:15:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:15:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:15:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:15:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:15:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:16:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:16:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:16:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:16:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:16:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:16:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:16:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:16:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:16:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:16:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:16:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:17:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:17:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:17:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:17:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:17:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:17:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:17:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:17:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:17:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:17:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:17:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:18:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:18:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:18:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:18:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:18:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:18:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:18:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:18:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:18:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:18:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:18:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:18:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:18:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:19:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:19:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:19:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:19:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:19:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:19:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:19:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:19:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:19:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:19:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:19:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:20:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:20:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:20:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:20:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:20:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:20:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:20:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:20:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:20:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:20:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:20:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:21:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:21:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:21:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:21:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:21:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:21:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:21:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:21:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:21:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:21:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:21:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:22:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:22:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:22:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:22:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:22:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:22:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:22:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:22:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:22:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:22:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:22:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:23:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:23:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:23:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:23:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:23:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:23:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:23:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:23:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:23:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:23:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:23:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:23:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:23:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:24:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:24:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:24:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:24:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:24:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:24:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:24:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:24:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:24:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:24:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:24:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:25:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:25:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:25:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:25:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:25:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:25:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:25:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:25:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:25:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:25:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:25:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:26:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:26:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:26:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:26:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:26:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:26:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:26:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:26:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:26:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:26:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:26:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:27:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:27:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:27:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:27:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:27:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:27:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:27:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:27:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:27:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:27:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:27:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:28:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:28:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:28:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:28:25 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/09/29 - 17:28:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:28:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:28:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:28:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:28:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:28:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:28:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:28:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:28:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:29:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:29:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:29:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:29:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:29:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:29:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:29:26 | channels synced from database 
+[GIN] 2025/09/29 - 17:29:29 | 20250929172929880190000oRIBcRZe | 200 |      12.469ms |             ::1 |     GET /console/channel
+[GIN] 2025/09/29 - 17:29:30 | 20250929172930172034000BfHRUDd6 | 200 |    2.777792ms |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 17:29:30 | 20250929172930170534000gmwRxu5A | 200 |   10.018583ms |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:29:30 | 20250929172930171697000fxNvwPBb | 200 |    9.559333ms |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 17:29:30 | 20250929172930170540000BpafgXMs | 200 |   11.314416ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:29:30 | 20250929172930170413000ShRE8dGG | 200 |   13.521625ms |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:29:30 | 20250929172930171698000dRKRzm6i | 200 |   13.627125ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/29 - 17:29:30 | 202509291729304732760000bwRIYec | 200 |         448µs |             ::1 |     GET /api/user/self
+[SYS] 2025/09/29 - 17:29:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:29:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:29:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:29:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:30:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:30:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:30:19 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:30:19.491932+08:00, FirstResponse: 2025-09-29T17:30:18.491932+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:30:19 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:30:19 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:30:19 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:30:19 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:30:19 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:30:19 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:30:19 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:30:19 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 17:30:19 | Sending OAuth token request to: https://api.coze.cn/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 17:30:19 | OAuth response status: 200, body: {"access_token":"czs_qCtoCGz9ZixzmWppzkFTFzkjt4JbjhNvXwqCyTmSyqe9JvJKZO295x29s3oyBQNgs","expires_in":1759139119,"token_type":"Bearer"} 
+[SYS] 2025/09/29 - 17:30:19 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:30:19 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/29 - 17:30:19 | Coze工作流响应: {"msg":"Workflow not found. Please verify the workflow exists.","detail":{"logid":"20250929173019CFF9C8814D403F9BD858"},"code":4200} 
+[SYS] 2025/09/29 - 17:30:19 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/29 - 17:30:19 | SYSTEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"模型测试","quota":2,"content":"模型测试","token_id":0,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[SYS] 2025/09/29 - 17:30:19 | testing channel #6, response: 
+{"id":"chatcmpl-","object":"","created":1759138219,"model":"coze-workflow","choices":[{"index":0,"message":{"role":"assistant","content":"Workflow not found. Please verify the workflow exists."},"finish_reason":"stop"}],"usage":{"prompt_tokens":10,"completion_tokens":20,"total_tokens":30,"prompt_tokens_details":{"cached_tokens":0,"text_tokens":0,"audio_tokens":0,"image_tokens":0},"completion_tokens_details":{"text_tokens":0,"audio_tokens":0,"reasoning_tokens":0},"input_tokens":0,"output_tokens":0,"input_tokens_details":null}} 
+[GIN] 2025/09/29 - 17:30:19 | 20250929173019488314000mhV2l7u6 | 200 |  501.356916ms |             ::1 |     GET /api/channel/test/6?model=
+[GIN] 2025/09/29 - 17:30:21 | 20250929173021828011000fwhlNqej | 200 |     282.084µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:30:21 | 20250929173021827871000MZc8unK8 | 200 |    1.335583ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:30:21 | 20250929173021829980000nAYgFubS | 200 |      438.75µs |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:30:21 | 20250929173021848527000GF2NRWEo | 200 |    1.635833ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:30:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:30:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:30:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:30:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:30:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:30:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:30:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:30:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:30:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:31:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:31:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:31:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:31:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:31:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:31:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:31:26 | channels synced from database 
+[SYS] 2025/09/29 - 17:31:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:31:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:31:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:31:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:32:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:32:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:32:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:32:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:32:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:32:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:32:26 | channels synced from database 
+[GIN] 2025/09/29 - 17:32:40 | 20250929173240181666000K2AUujpP | 200 |       660.5µs |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:32:40 | 20250929173240195992000ECFEmrqD | 200 |    1.670792ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:32:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:32:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:32:44 | channels synced from database 
+[GIN] 2025/09/29 - 17:32:44 | 20250929173244664251000ljEC7nqI | 200 |   13.117833ms |             ::1 |     PUT /api/channel/
+[GIN] 2025/09/29 - 17:32:44 | 20250929173244680131000cDUriRJf | 200 |     1.60725ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 17:32:45 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:32:45.748258+08:00, FirstResponse: 2025-09-29T17:32:44.748258+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.com", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:32:45 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:32:45 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:32:45 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:32:45 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:32:45 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:32:45 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:32:45 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:32:45 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 17:32:45 | Sending OAuth token request to: https://api.coze.com/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 17:32:46 | OAuth response status: 401, body: {"error":"invalid_client","error_code":"invalid_client","error_message":"invalid jwt: kid not been registred"} 
+[SYS] 2025/09/29 - 17:32:46 | Failed to exchange JWT for access token: token request failed with status 401: {"error":"invalid_client","error_code":"invalid_client","error_message":"invalid jwt: kid not been registred"} 
+[GIN] 2025/09/29 - 17:32:46 | 20250929173245745905000lPvJJAVc | 200 |  572.545417ms |             ::1 |     GET /api/channel/test/6?model=
+[GIN] 2025/09/29 - 17:32:50 | 2025092917325050089100062GytNyf | 200 |      1.2875ms |             ::1 |     GET /api/channel/6
+[GIN] 2025/09/29 - 17:32:50 | 20250929173250515450000Jp6WPfAP | 200 |    1.806583ms |             ::1 |     GET /api/prefill_group/?type=model
+[SYS] 2025/09/29 - 17:32:54 | channels synced from database 
+[GIN] 2025/09/29 - 17:32:54 | 20250929173254623460000qOtU2Zzi | 200 |    11.72925ms |             ::1 |     PUT /api/channel/
+[GIN] 2025/09/29 - 17:32:54 | 20250929173254638913000fVnaPo9J | 200 |    2.752958ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2025/09/29 - 17:32:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:32:56 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:33:11 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:33:11 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:33:25 | 正在更新数据看板数据... 
+[SYS] 2025/09/29 - 17:33:25 | 保存数据看板数据成功，共保存1条数据 
+[SYS] 2025/09/29 - 17:33:25 | syncing options from database 
+[SYS] 2025/09/29 - 17:33:26 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:33:26 | syncing channels from database 
+[SYS] 2025/09/29 - 17:33:26 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:33:26 | channels synced from database 
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328761693000usZxhhwk | 200 |      668.75µs |             ::1 |     GET /console/channel
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328793434000gvIhq1gw | 200 |    8.979916ms |             ::1 |     GET /assets/i18n-bH1aaDdY.js
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328804569000yyjCt7mU | 200 |    7.113041ms |             ::1 |     GET /assets/tools-DfDywZp9.js
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328796102000nuUV8rIm | 200 |   25.046042ms |             ::1 |     GET /assets/react-core-D-iPSUlg.js
+[GIN] 2025/09/29 - 17:33:28 | 202509291733288172490009ryL8guw | 200 |    7.111875ms |             ::1 |     GET /assets/react-components-BnylIsR_.js
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328793582000zqRw3kT2 | 200 |   35.084875ms |             ::1 |     GET /assets/semi-ui-yRXI6evF.css
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328793501000xUhtSiDo | 200 |   40.058916ms |             ::1 |     GET /assets/index-C6TxzCs_.css
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328793677000LrMp8yTG | 200 |   77.190583ms |             ::1 |     GET /assets/semi-ui-C8lvzIot.js
+[GIN] 2025/09/29 - 17:33:28 | 20250929173328792242000G5g4e414 | 200 |  143.252875ms |             ::1 |     GET /assets/index-CxXPNU0-.js
+[GIN] 2025/09/29 - 17:33:29 | 20250929173329152280007tr5LqKW | 200 |     308.666µs |             ::1 |     GET /api/group/
+[GIN] 2025/09/29 - 17:33:29 | 2025092917332915199000qnaktyZZ | 200 |    1.235625ms |             ::1 |     GET /api/channel/models
+[GIN] 2025/09/29 - 17:33:29 | 202509291733291512700071uM5kCF | 200 |    2.001834ms |             ::1 |     GET /api/models
+[GIN] 2025/09/29 - 17:33:29 | 2025092917332915233000l59Y0cZw | 200 |    2.703292ms |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:33:29 | 2025092917332916614000oYOsYCbl | 200 |     273.833µs |             ::1 |     GET /api/status
+[GIN] 2025/09/29 - 17:33:29 | 20250929173329151450007MhR8Ofu | 200 |    4.457083ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2025/09/29 - 17:33:29 | 202509291733289959020008IF43fVE | 200 |   23.800583ms |             ::1 |     GET /logo.png
+[GIN] 2025/09/29 - 17:33:29 | 2025092917332988079000nRSRCRl7 | 200 |     286.167µs |             ::1 |     GET /api/user/self
+[GIN] 2025/09/29 - 17:33:29 | 20250929173329116274000GX4WGGHL | 200 |    4.727958ms |             ::1 |     GET /logo.png
+[SYS] 2025/09/29 - 17:33:31 | testing channel 6 with model coze-workflow , info RelayInfo{ RelayFormat: openai, RelayMode: 1, IsStream: false, IsPlayground: false, RequestURLPath: "/v1/chat/completions", OriginModelName: "coze-workflow", PromptTokens: 0, ShouldIncludeUsage: false, DisablePing: false, SendResponseCount: 0, FinalPreConsumedQuota: 0, User{ Id: 0, Email: "***masked***", Group: "default", UsingGroup: "default", Quota: 84543582 }, Token{ Id: 0, Unlimited: false, Key: ***masked*** }, Timing{ Start: 2025-09-29T17:33:31.434291+08:00, FirstResponse: 2025-09-29T17:33:30.434291+08:00, LatencyMs: -1000 }, ChannelMeta{ Type: 49, Id: 6, IsMultiKey: false, MultiKeyIndex: 0, BaseURL: "https://api.coze.cn", ApiType: 28, ApiVersion: "", Organization: "", CreateTime: 0, UpstreamModelName: "coze-workflow", IsModelMapped: false, SupportStreamOptions: false, ApiKey: ***masked*** }, }  
+[SYS] 2025/09/29 - 17:33:31 | 发送给Coze的工作流请求: {"workflow_id":"7342866812345","parameters":{"BOT_USER_INPUT":"hi","param1":"test value"}} 
+[SYS] 2025/09/29 - 17:33:31 | DoRequest called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:33:31 | Processing as Coze workflow request 
+[SYS] 2025/09/29 - 17:33:31 | SetupRequestHeader: authType from config = 'oauth' 
+[SYS] 2025/09/29 - 17:33:31 | Using authType: 'oauth' 
+[SYS] 2025/09/29 - 17:33:31 | Entering OAuth flow... 
+[SYS] 2025/09/29 - 17:33:31 | Creating JWT for Coze OAuth, AppID: 1191853877415, KeyID: okCE3XOyMvCx9p5IHdvjA0oI-n_tvCgtJvwaCfc7YXs 
+[SYS] 2025/09/29 - 17:33:31 | JWT created successfully, exchanging for access token... 
+[SYS] 2025/09/29 - 17:33:31 | Sending OAuth token request to: https://api.coze.cn/api/permission/oauth2/token 
+[SYS] 2025/09/29 - 17:33:31 | OAuth response status: 200, body: {"access_token":"czs_hVHozGMbhCkrKPSULGiNmZHuamanMNQqpmGxmAHxZI9SdYYLHJwKANk50YTF3ddpD","expires_in":1759139311,"token_type":"Bearer"} 
+[SYS] 2025/09/29 - 17:33:31 | DoResponse called with OriginModelName: coze-workflow 
+[SYS] 2025/09/29 - 17:33:31 | === cozeWorkflowHandler called === 
+[SYS] 2025/09/29 - 17:33:31 | Coze工作流响应: {"msg":"Workflow not found. Please verify the workflow exists.","detail":{"logid":"2025092917333131C5575C1338B8F2D6D5"},"code":4200} 
+[SYS] 2025/09/29 - 17:33:31 | Coze响应中没有usage信息，使用默认Token统计值 
+[INFO] 2025/09/29 - 17:33:31 | SYSTEM | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":10,"completion_tokens":20,"model_name":"coze-workflow","token_name":"模型测试","quota":2,"content":"模型测试","token_id":0,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"admin_info":{"use_channel":null},"cache_ratio":1,"cache_tokens":0,"completion_ratio":1,"frt":-1000,"group_ratio":1,"model_price":-1,"model_ratio":0.075,"user_group_ratio":-1}} 
+[SYS] 2025/09/29 - 17:33:31 | testing channel #6, response: 
+{"id":"chatcmpl-","object":"","created":1759138411,"model":"coze-workflow","choices":[{"index":0,"message":{"role":"assistant","content":"Workflow not found. Please verify the workflow exists."},"finish_reason":"stop"}],"usage":{"prompt_tokens":10,"completion_tokens":20,"total_tokens":30,"prompt_tokens_details":{"cached_tokens":0,"text_tokens":0,"audio_tokens":0,"image_tokens":0},"completion_tokens_details":{"text_tokens":0,"audio_tokens":0,"reasoning_tokens":0},"input_tokens":0,"output_tokens":0,"input_tokens_details":null}} 
+[GIN] 2025/09/29 - 17:33:31 | 202509291733314314150000WXAkQHt | 200 |  191.774583ms |             ::1 |     GET /api/channel/test/6?model=
+[SYS] 2025/09/29 - 17:33:41 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:33:41 | 任务进度轮询完成 
+[SYS] 2025/09/29 - 17:33:56 | 任务进度轮询开始 
+[SYS] 2025/09/29 - 17:33:56 | 任务进度轮询完成 
