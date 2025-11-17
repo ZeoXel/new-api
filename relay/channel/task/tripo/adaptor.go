@@ -69,6 +69,8 @@ func (a *TaskAdaptor) ValidateRequestAndSetAction(c *gin.Context, info *relaycom
     switch t {
     case "generate_image":
         info.BillingModelName = "tripo_generate_image"
+    case "image_to_model":
+        info.BillingModelName = "tripo_image_to_model"
     case "multiview_to_model":
         info.BillingModelName = "tripo_multiview_to_model"
     default:
@@ -185,7 +187,7 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 
 func (a *TaskAdaptor) GetModelList() []string {
     // primary selector name + billing variants
-    return []string{"tripo", "tripo_generate_image", "tripo_multiview_to_model"}
+    return []string{"tripo", "tripo_generate_image", "tripo_image_to_model", "tripo_multiview_to_model"}
 }
 
 func (a *TaskAdaptor) GetChannelName() string {
