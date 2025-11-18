@@ -38,7 +38,11 @@
   "app_id": "你的应用ID",
   "key_id": "你的密钥ID",
   "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQI...\n-----END PRIVATE KEY-----",
-  "aud": "api.coze.cn"
+  "aud": "api.coze.cn",
+  "scopes": [
+    "workflow.run",
+    "listRunHistory"
+  ]
 }
 ```
 

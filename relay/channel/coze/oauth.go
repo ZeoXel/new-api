@@ -9,6 +9,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"net/url"
 	"one-api/common"
 	relaycommon "one-api/relay/common"
 	"one-api/service"
@@ -21,10 +22,12 @@ import (
 )
 
 type CozeOAuthConfig struct {
-	AppID      string `json:"app_id"`
-	KeyID      string `json:"key_id"`
-	PrivateKey string `json:"private_key"`
-	Aud        string `json:"aud"`
+	AppID      string   `json:"app_id"`
+	KeyID      string   `json:"key_id"`
+	PrivateKey string   `json:"private_key"`
+	Aud        string   `json:"aud"`
+	Scope      string   `json:"scope,omitempty"`
+	Scopes     []string `json:"scopes,omitempty"`
 }
 
 type CozeTokenResponse struct {
@@ -176,24 +179,28 @@ func createCozeSignedJWT(config *CozeOAuthConfig) (string, error) {
 func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, info *relaycommon.RelayInfo) (string, error) {
 	tokenURL := fmt.Sprintf("%s/api/permission/oauth2/token", info.ChannelBaseUrl)
 
-	payload := map[string]interface{}{
-		"grant_type":       "urn:ietf:params:oauth:grant-type:jwt-bearer",
-		"duration_seconds": 900,
+	scope := strings.TrimSpace(config.Scope)
+	if len(config.Scopes) > 0 {
+		scope = strings.Join(config.Scopes, " ")
+	}
+	if scope == "" {
+		scope = "workflow.run listRunHistory"
 	}
 
-	payloadBytes, err := json.Marshal(payload)
-	if err != nil {
-		return "", fmt.Errorf("failed to marshal payload: %w", err)
-	}
+	form := url.Values{}
+	form.Set("grant_type", "urn:ietf:params:oauth:grant-type:jwt-bearer")
+	form.Set("duration_seconds", "900")
+	form.Set("assertion", signedJWT)
+	form.Set("scope", scope)
 
-	req, err := http.NewRequest("POST", tokenURL, strings.NewReader(string(payloadBytes)))
+	req, err := http.NewRequest("POST", tokenURL, strings.NewReader(form.Encode()))
 	if err != nil {
 		return "", fmt.Errorf("failed to create request: %w", err)
 	}
 
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
-	req.Header.Set("Authorization", "Bearer "+signedJWT)
+	// 官方要求通过请求体中的 assertion 传递 JWT，这里无需再在 Header 里附加
 
 	var client *http.Client
 	if info.ChannelSetting.Proxy != "" {
@@ -205,7 +212,7 @@ func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, in
 		client = service.GetHttpClient()
 	}
 
-	common.SysLog(fmt.Sprintf("[OAuth Debug] 向 %s 发送 token 交换请求", tokenURL))
+	common.SysLog(fmt.Sprintf("[OAuth Debug] 向 %s 发送 token 交换请求 (scope=%s)", tokenURL, scope))
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", fmt.Errorf("failed to request token: %w", err)

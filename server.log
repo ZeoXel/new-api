@@ -3785,3 +3785,15 @@
 [SYS] 2025/11/17 - 09:21:38 | 任务进度轮询完成 
 [SYS] 2025/11/17 - 09:21:51 | 正在更新数据看板数据... 
 [SYS] 2025/11/17 - 09:21:51 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2025/11/18 - 17:56:56 | 未找到 .env 文件，使用默认环境变量，如果需要，请创建 .env 文件并设置相关变量 
+[SYS] 2025/11/18 - 17:56:56 | No .env file found, using default environment variables. If needed, please create a .env file and set the relevant variables. 
+[SYS] 2025/11/18 - 17:56:56 | initializing token encoders 
+[SYS] 2025/11/18 - 17:56:56 | token encoders initialized 
+[SYS] 2025/11/18 - 17:56:56 | SQL_DSN not set, using SQLite as database 
+[SYS] 2025/11/18 - 17:56:56 | database migration started 
+[SYS] 2025/11/18 - 17:56:56 | system is already initialized at: 2025-11-14 17:16:48 +0800 CST 
+[SYS] 2025/11/18 - 17:56:56 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2025/11/18 - 17:56:56 | New API v0.0.0 started 
+[SYS] 2025/11/18 - 17:56:56 | 正在更新数据看板数据... 
+[SYS] 2025/11/18 - 17:56:56 | 保存数据看板数据成功，共保存0条数据 
+[FATAL] 2025/11/18 - 17:56:56 | [failed to start HTTP server: listen tcp :3000: bind: address already in use] 

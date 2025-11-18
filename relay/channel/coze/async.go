@@ -184,6 +184,7 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 		}
 	}()
 
+	common.SysLog(fmt.Sprintf("[Async] 尝试官方异步接口执行任务 %s", executeId))
 	handled, err := tryExecuteWorkflowViaOfficialAsync(executeId, info, request)
 	if handled {
 		if err != nil {
@@ -735,6 +736,7 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 	task.Status = status
 	task.UpdatedAt = time.Now().Unix()
 	task.FinishTime = time.Now().Unix()
+	task.Progress = "100%"
 
 	var quota int
 
@@ -814,8 +816,6 @@ func updateTaskStatus(executeId string, status model.TaskStatus, failReason stri
 	// ========== 工作流按次计费逻辑 END ==========
 
 	if status == model.TaskStatusSuccess {
-		task.Progress = "100%"
-
 		if output != "" {
 			taskData["output"] = output
 		}
@@ -966,6 +966,11 @@ func GetAsyncWorkflowResult(executeId string, userId int) (*WorkflowAsyncResult,
 		SubmitTime: task.SubmitTime,
 		StartTime:  task.StartTime,
 		FinishTime: task.FinishTime,
+	}
+
+	// 兜底：任务已结束但 progress 未写满时，强制返回 100%
+	if (task.Status == model.TaskStatusSuccess || task.Status == model.TaskStatusFailure) && task.Progress != "100%" {
+		result.Progress = "100%"
 	}
 
 	// 从 task.Data 中提取结果
