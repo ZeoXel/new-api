@@ -326,7 +326,7 @@ func RelayBltcy(c *gin.Context) {
 		c.Request.Method, c.Request.URL.Path, isGetRequest,
 		strings.Contains(c.Request.URL.Path, "/feed"), isPollingRequest)
 
-	if isPollingRequest {
+    if isPollingRequest {
 		requestType := "GET"
 		if !isGetRequest {
 			requestType = "POST /feed (polling)"
@@ -341,8 +341,57 @@ func RelayBltcy(c *gin.Context) {
 			// 不再转换为 202，直接返回真实状态码和错误信息
 		}
 
-		// 复制响应头
-		for key, values := range resp.Header {
+        // Refund detection on polling responses
+        if shouldRefundFromBltcyResponse(responseBody) {
+            // derive billing model for recomputing quota
+            billingName := c.GetString("billing_model_name")
+            if billingName == "" {
+                // try original_model from distributor (may be sora-2/sora-2-pro)
+                billingName = c.GetString("original_model")
+            }
+            if billingName == "" {
+                // try parse from response JSON
+                if m := tryParseJSONMap(responseBody); m != nil {
+                    if v, ok := m["model"].(string); ok && v != "" {
+                        billingName = v
+                    } else if v, ok := m["model_name"].(string); ok && v != "" {
+                        billingName = v
+                    } else if v, ok := m["id"].(string); ok && strings.Contains(v, ":") {
+                        billingName = strings.SplitN(v, ":", 2)[0]
+                    }
+                }
+            }
+            if billingName == "" {
+                billingName = "sora-2"
+            }
+
+            // recompute quota consistent with submit-time billing
+            channelSettings := channel.GetSetting()
+            baseQuotaLocal := channelSettings.PassthroughQuota
+            if baseQuotaLocal == 0 {
+                baseQuotaLocal = 1000
+            }
+            refundQuota := baseQuotaLocal
+            groupRatio := ratio_setting.GetGroupRatio(group)
+            channelRatio := model.GetChannelRatio(group, billingName, channelId)
+            if price, exists := ratio_setting.GetModelPrice(billingName, false); exists && price > 0 {
+                refundQuota = int(price * common.QuotaPerUnit * groupRatio * channelRatio)
+            } else {
+                refundQuota = int(float64(baseQuotaLocal) * groupRatio * channelRatio)
+            }
+            if refundQuota > 0 {
+                relayInfo := &relaycommon.RelayInfo{UserId: userId, TokenId: tokenId, UsingGroup: group}
+                relayInfo.ChannelMeta = &relaycommon.ChannelMeta{ChannelId: channelId}
+                if err := service.PostConsumeQuota(relayInfo, -refundQuota, 0, false); err != nil {
+                    common.SysLog(fmt.Sprintf("[Bltcy Refund] 轮询检测到退款事件，返还失败: %v", err))
+                } else {
+                    common.SysLog(fmt.Sprintf("[Bltcy Refund] 轮询检测到退款事件，已返还配额 %d (model=%s)", refundQuota, billingName))
+                }
+            }
+        }
+
+        // 复制响应头
+        for key, values := range resp.Header {
 			if key == "Access-Control-Allow-Origin" ||
 				key == "Access-Control-Allow-Credentials" ||
 				key == "Access-Control-Allow-Headers" ||
@@ -424,8 +473,8 @@ func RelayBltcy(c *gin.Context) {
 			billingModelName, baseQuota, groupRatio, channelRatio, actualQuota)
 	}
 
-	// 计费（在发送响应之前完成）
-	if actualQuota > 0 {
+    // 计费（在发送响应之前完成）
+    if actualQuota > 0 {
 		relayInfo := &relaycommon.RelayInfo{
 			UserId:     userId,
 			TokenId:    tokenId,
@@ -492,6 +541,91 @@ func RelayBltcy(c *gin.Context) {
 		}
 	}
 
-	// 返回响应
-	c.Data(resp.StatusCode, resp.Header.Get("Content-Type"), responseBody)
+        // 在返回响应前检查是否需要退款（例如上游返回 refund_credits 或 refund 标记）
+        // 若检测到上游退款事件，则返还本次已扣配额
+        if shouldRefundFromBltcyResponse(responseBody) {
+            relayInfo := &relaycommon.RelayInfo{
+                UserId:     userId,
+                TokenId:    tokenId,
+                UsingGroup: group,
+            }
+            relayInfo.ChannelMeta = &relaycommon.ChannelMeta{ChannelId: channelId}
+            // 返还等额配额
+            if err := service.PostConsumeQuota(relayInfo, -actualQuota, 0, false); err != nil {
+                common.SysLog(fmt.Sprintf("[Bltcy Refund] 返还配额失败: %v", err))
+            } else {
+                common.SysLog(fmt.Sprintf("[Bltcy Refund] 检测到上游退款事件，已返还配额 %d (model=%s)", actualQuota, billingModelName))
+            }
+        }
+
+        // 返回响应
+        c.Data(resp.StatusCode, resp.Header.Get("Content-Type"), responseBody)
+}
+
+// shouldRefundFromBltcyResponse tries to detect refund signals from upstream response body.
+// It checks common fields like refund_credits in root/metadata, or boolean refund/refunded flags.
+func shouldRefundFromBltcyResponse(body []byte) bool {
+    // quick check
+    if len(body) == 0 {
+        return false
+    }
+    // Try to parse as generic map
+    var m map[string]any
+    if err := json.Unmarshal(body, &m); err != nil {
+        return false
+    }
+    // helper to read refund_credits number from any map
+    getRefundCredits := func(mm map[string]any) float64 {
+        if v, ok := mm["refund_credits"]; ok {
+            switch t := v.(type) {
+            case float64:
+                return t
+            case int:
+                return float64(t)
+            }
+        }
+        // alternate naming
+        if v, ok := mm["credits_refund"]; ok {
+            if f, ok2 := v.(float64); ok2 {
+                return f
+            }
+        }
+        return 0
+    }
+
+    // direct numeric credits
+    if rc := getRefundCredits(m); rc > 0 {
+        return true
+    }
+    // nested metadata/meta
+    for _, key := range []string{"metadata", "meta"} {
+        if sub, ok := m[key].(map[string]any); ok {
+            if rc := getRefundCredits(sub); rc > 0 {
+                return true
+            }
+            if b, ok2 := sub["refund"].(bool); ok2 && b {
+                return true
+            }
+            if b, ok2 := sub["refunded"].(bool); ok2 && b {
+                return true
+            }
+        }
+    }
+    // boolean flags at root
+    if b, ok := m["refund"].(bool); ok && b {
+        return true
+    }
+    if b, ok := m["refunded"].(bool); ok && b {
+        return true
+    }
+    return false
+}
+
+// tryParseJSONMap is a small helper to decode a JSON object body.
+func tryParseJSONMap(body []byte) map[string]any {
+    var m map[string]any
+    if err := json.Unmarshal(body, &m); err != nil {
+        return nil
+    }
+    return m
 }

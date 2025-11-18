@@ -81,6 +81,7 @@ type CozeWorkflowRequest struct {
 	WorkflowId string                 `json:"workflow_id,omitempty"`
 	Parameters map[string]interface{} `json:"parameters"`
 	BotId      string                 `json:"bot_id,omitempty"`
+	IsAsync    bool                   `json:"is_async,omitempty"`
 }
 
 type CozeWorkflowEvent struct {
@@ -90,7 +91,7 @@ type CozeWorkflowEvent struct {
 }
 
 type CozeWorkflowMessageData struct {
-	Content string `json:"content"`
+	Content   string `json:"content"`
 	NodeSeqId string `json:"node_seq_id,omitempty"`
 	NodeTitle string `json:"node_title,omitempty"`
 }
@@ -101,34 +102,34 @@ type CozeWorkflowErrorData struct {
 }
 
 type CozeWorkflowResponse struct {
-	Code   int                      `json:"code"`
-	Msg    string                   `json:"msg"`
-	Data   []CozeWorkflowDataItem   `json:"data"`
-	Detail CozeResponseDetail       `json:"detail"`
+	Code   int                    `json:"code"`
+	Msg    string                 `json:"msg"`
+	Data   []CozeWorkflowDataItem `json:"data"`
+	Detail CozeResponseDetail     `json:"detail"`
 }
 
 type CozeWorkflowDataItem struct {
-	ConnectorId        string                `json:"connector_id,omitempty"`
-	UpdateTime         int64                 `json:"update_time,omitempty"`
-	ExecuteStatus      string                `json:"execute_status,omitempty"`
-	ExecuteId          string                `json:"execute_id,omitempty"`
-	Usage              *CozeWorkflowUsageInfo `json:"usage,omitempty"`
-	IsOutputTrimmed    bool                  `json:"is_output_trimmed,omitempty"`
-	RunMode            int                   `json:"run_mode,omitempty"`
-	DebugUrl           string                `json:"debug_url,omitempty"`
-	BotId              string                `json:"bot_id,omitempty"`
-	Token              string                `json:"token,omitempty"`
-	ConnectorUid       string                `json:"connector_uid,omitempty"`
-	Logid              string                `json:"logid,omitempty"`
-	Output             string                `json:"output,omitempty"`
-	ErrorCode          string                `json:"error_code,omitempty"`
-	ErrorMessage       string                `json:"error_message,omitempty"`
-	CreateTime         int64                 `json:"create_time,omitempty"`
+	ConnectorId     string                 `json:"connector_id,omitempty"`
+	UpdateTime      int64                  `json:"update_time,omitempty"`
+	ExecuteStatus   string                 `json:"execute_status,omitempty"`
+	ExecuteId       string                 `json:"execute_id,omitempty"`
+	Usage           *CozeWorkflowUsageInfo `json:"usage,omitempty"`
+	IsOutputTrimmed bool                   `json:"is_output_trimmed,omitempty"`
+	RunMode         int                    `json:"run_mode,omitempty"`
+	DebugUrl        string                 `json:"debug_url,omitempty"`
+	BotId           string                 `json:"bot_id,omitempty"`
+	Token           string                 `json:"token,omitempty"`
+	ConnectorUid    string                 `json:"connector_uid,omitempty"`
+	Logid           string                 `json:"logid,omitempty"`
+	Output          string                 `json:"output,omitempty"`
+	ErrorCode       string                 `json:"error_code,omitempty"`
+	ErrorMessage    string                 `json:"error_message,omitempty"`
+	CreateTime      int64                  `json:"create_time,omitempty"`
 }
 
 type CozeWorkflowDoneData struct {
-	Data      string                `json:"data"`
-	ExecuteId string                `json:"execute_id,omitempty"`
+	Data      string                 `json:"data"`
+	ExecuteId string                 `json:"execute_id,omitempty"`
 	Usage     *CozeWorkflowUsageInfo `json:"usage,omitempty"`
 }
 
@@ -142,4 +143,43 @@ type CozeWorkflowUsage struct {
 	InputTokens  int `json:"input_tokens"`
 	OutputTokens int `json:"output_tokens"`
 	TotalTokens  int `json:"total_tokens"`
+}
+
+type CozeWorkflowRunResponse struct {
+	Code int                         `json:"code"`
+	Msg  string                      `json:"msg"`
+	Data CozeWorkflowRunResponseData `json:"data"`
+}
+
+type CozeWorkflowRunResponseData struct {
+	Data      string `json:"data"`
+	Cost      string `json:"cost"`
+	Token     int    `json:"token"`
+	Msg       string `json:"msg"`
+	DebugUrl  string `json:"debug_url"`
+	ExecuteId string `json:"execute_id"`
+}
+
+type CozeWorkflowHistoryResponse struct {
+	Code int                         `json:"code"`
+	Msg  string                      `json:"msg"`
+	Data []CozeWorkflowHistoryRecord `json:"data"`
+}
+
+type CozeWorkflowHistoryRecord struct {
+	ExecuteId     string `json:"execute_id"`
+	ExecuteStatus string `json:"execute_status"`
+	BotId         string `json:"bot_id"`
+	ConnectorId   string `json:"connector_id"`
+	ConnectorUid  string `json:"connector_uid"`
+	RunMode       int    `json:"run_mode"`
+	Logid         string `json:"logid"`
+	CreateTime    int64  `json:"create_time"`
+	UpdateTime    int64  `json:"update_time"`
+	Output        string `json:"output"`
+	Token         string `json:"token"`
+	Cost          string `json:"cost"`
+	ErrorCode     string `json:"error_code"`
+	ErrorMessage  string `json:"error_message"`
+	DebugUrl      string `json:"debug_url"`
 }

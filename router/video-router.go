@@ -19,8 +19,9 @@ func SetVideoRouter(router *gin.Engine) {
 	// 适用于 sora-2, sora-2-pro 等模型
 	// 示例请求: POST /v1/videos
 	// 支持参数: model, prompt, size, input_reference (文件), seconds, watermark 等
-	soraVideosRouter := router.Group("/v1")
-	soraVideosRouter.Use(middleware.TokenAuth(), middleware.Distribute())
+    soraVideosRouter := router.Group("/v1")
+    // Place SoraVideosAdapter before TokenAuth/Distribute to preserve body and extract model
+    soraVideosRouter.Use(middleware.SoraVideosAdapter(), middleware.TokenAuth(), middleware.Distribute())
 	{
 		soraVideosRouter.POST("/videos", controller.RelayBltcy)
 		soraVideosRouter.GET("/videos/:id", controller.RelayBltcy)

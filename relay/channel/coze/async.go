@@ -2,6 +2,7 @@ package coze
 
 import (
 	"bufio"
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -13,6 +14,7 @@ import (
 	relaycommon "one-api/relay/common"
 	"one-api/relay/helper"
 	"one-api/service"
+	"strconv"
 	"strings"
 	"time"
 
@@ -42,6 +44,89 @@ type WorkflowAsyncResult struct {
 	FinishTime    int64      `json:"finish_time,omitempty"`
 	DebugUrl      string     `json:"debug_url,omitempty"`
 	CozeExecuteId string     `json:"coze_execute_id,omitempty"`
+}
+
+const (
+	cozeAsyncPollInterval = 5 * time.Second
+	cozeAsyncMaxWait      = 30 * time.Minute
+)
+
+func resolveCozeAuthToken(info *relaycommon.RelayInfo) (string, error) {
+	authType := info.ChannelOtherSettings.CozeAuthType
+	if authType == "" {
+		authType = "pat"
+	}
+
+	if authType == "oauth" {
+		oauthConfig, parseErr := ParseCozeOAuthConfig(info.ApiKey)
+		if parseErr != nil {
+			return "", fmt.Errorf("oauth config parse failed: %w", parseErr)
+		}
+		return GetCozeAccessToken(info, oauthConfig)
+	}
+	return info.ApiKey, nil
+}
+
+func newCozeAsyncHttpClient(info *relaycommon.RelayInfo) (*http.Client, error) {
+	if info.ChannelSetting.Proxy != "" {
+		client, err := service.NewProxyHttpClient(info.ChannelSetting.Proxy)
+		if err != nil {
+			return nil, err
+		}
+		client.Timeout = time.Minute * 5
+		return client, nil
+	}
+	return &http.Client{
+		Timeout: time.Minute * 5,
+	}, nil
+}
+
+func attachCozeExecuteMetadata(executeId string, upstreamExecuteId string, debugUrl string) {
+	task, exist, err := model.GetByOnlyTaskId(executeId)
+	if err != nil || !exist {
+		return
+	}
+
+	var taskData map[string]interface{}
+	if err := task.GetData(&taskData); err != nil || taskData == nil {
+		taskData = make(map[string]interface{})
+	}
+
+	if upstreamExecuteId != "" {
+		taskData["coze_execute_id"] = upstreamExecuteId
+	}
+	if debugUrl != "" {
+		taskData["debug_url"] = debugUrl
+	}
+
+	task.SetData(taskData)
+	_ = task.Update()
+}
+
+func stringifyCozeOutput(output string) string {
+	if output == "" {
+		return ""
+	}
+	return output
+}
+
+func usageFromHistory(record *CozeWorkflowHistoryRecord) *dto.Usage {
+	if record == nil {
+		return &dto.Usage{}
+	}
+
+	var totalTokens int
+	if record.Token != "" {
+		if value, err := strconv.Atoi(record.Token); err == nil {
+			totalTokens = value
+		}
+	}
+
+	return &dto.Usage{
+		PromptTokens:     0,
+		CompletionTokens: totalTokens,
+		TotalTokens:      totalTokens,
+	}
 }
 
 // handleAsyncWorkflowRequest 处理异步工作流请求
@@ -99,7 +184,25 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 		}
 	}()
 
-	common.SysLog(fmt.Sprintf("[Async] Starting background execution for task %s", executeId))
+	handled, err := tryExecuteWorkflowViaOfficialAsync(executeId, info, request)
+	if handled {
+		if err != nil {
+			common.SysLog(fmt.Sprintf("[Async] 官方异步执行失败: %v", err))
+		}
+		return
+	}
+
+	if err != nil {
+		common.SysLog(fmt.Sprintf("[Async] 官方异步接口不可用，退回SSE流式：%v", err))
+	} else {
+		common.SysLog("[Async] 官方异步接口未启用，退回SSE流式")
+	}
+
+	executeWorkflowViaStream(executeId, info, request)
+}
+
+func executeWorkflowViaStream(executeId string, info *relaycommon.RelayInfo, request *dto.GeneralOpenAIRequest) {
+	common.SysLog(fmt.Sprintf("[Async] 使用SSE回退执行任务 %s", executeId))
 
 	// 更新任务状态为进行中
 	updateTaskProgress(executeId, model.TaskStatusInProgress, "0%")
@@ -127,26 +230,10 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	// 设置请求头
 	req.Header.Set("Content-Type", "application/json")
 
-	// 设置认证
-	authType := info.ChannelOtherSettings.CozeAuthType
-	if authType == "" {
-		authType = "pat"
-	}
-
-	var token string
-	if authType == "oauth" {
-		oauthConfig, parseErr := ParseCozeOAuthConfig(info.ApiKey)
-		if parseErr != nil {
-			updateTaskStatus(executeId, model.TaskStatusFailure, "OAuth配置解析失败", "", nil, info, nil)
-			return
-		}
-		token, err = GetCozeAccessToken(info, oauthConfig)
-		if err != nil {
-			updateTaskStatus(executeId, model.TaskStatusFailure, "获取OAuth token失败", "", nil, info, nil)
-			return
-		}
-	} else {
-		token = info.ApiKey
+	token, tokenErr := resolveCozeAuthToken(info)
+	if tokenErr != nil {
+		updateTaskStatus(executeId, model.TaskStatusFailure, tokenErr.Error(), "", nil, info, nil)
+		return
 	}
 
 	req.Header.Set("Authorization", "Bearer "+token)
@@ -190,11 +277,9 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 	}
 
 	// 处理流式响应
-	// 注意：异步工作流可能需要很长时间，不应受到 STREAMING_TIMEOUT 限制
-	common.SysLog(fmt.Sprintf("[Async] 开始处理SSE流式响应"))
+	common.SysLog("[Async] 开始处理SSE流式响应")
 	scanner := bufio.NewScanner(resp.Body)
 	scanner.Split(bufio.ScanLines)
-	// 设置更大的缓冲区以处理长时间流式传输
 	scanner.Buffer(make([]byte, 64*1024), 10*1024*1024) // 64KB 初始，10MB 最大
 
 	var fullOutput strings.Builder
@@ -437,6 +522,184 @@ func executeWorkflowInBackground(executeId string, info *relaycommon.RelayInfo, 
 			"debug_url":       debugUrl,
 		})
 	}
+}
+
+func tryExecuteWorkflowViaOfficialAsync(executeId string, info *relaycommon.RelayInfo, request *dto.GeneralOpenAIRequest) (bool, error) {
+	if request.WorkflowId == "" {
+		return false, fmt.Errorf("workflow_id is required for async execution")
+	}
+
+	updateTaskProgress(executeId, model.TaskStatusInProgress, "0%")
+
+	client, err := newCozeAsyncHttpClient(info)
+	if err != nil {
+		return false, err
+	}
+
+	token, err := resolveCozeAuthToken(info)
+	// 仅当认证失败时才直接返回，不允许 fallback
+	if err != nil {
+		return false, err
+	}
+
+	asyncRequest := *request
+	asyncRequest.Stream = false
+	cozeRequest := convertCozeWorkflowRequest(nil, asyncRequest)
+	cozeRequest.IsAsync = true
+
+	payload, err := json.Marshal(cozeRequest)
+	if err != nil {
+		return false, err
+	}
+
+	startData, err := startCozeAsyncWorkflow(client, token, info, payload)
+	if err != nil {
+		return false, err
+	}
+
+	if startData == nil || startData.ExecuteId == "" {
+		return true, fmt.Errorf("官方异步接口未返回 execute_id")
+	}
+
+	handled := true
+	attachCozeExecuteMetadata(executeId, startData.ExecuteId, startData.DebugUrl)
+	updateTaskProgress(executeId, model.TaskStatusInProgress, "10%")
+
+	record, err := pollCozeWorkflowHistory(client, token, info, request.WorkflowId, startData.ExecuteId, executeId)
+	if err != nil {
+		usage := &dto.Usage{}
+		extra := map[string]interface{}{
+			"coze_execute_id": startData.ExecuteId,
+		}
+		if record != nil && record.DebugUrl != "" {
+			extra["debug_url"] = record.DebugUrl
+		} else if startData.DebugUrl != "" {
+			extra["debug_url"] = startData.DebugUrl
+		}
+		updateTaskStatus(executeId, model.TaskStatusFailure, err.Error(), "", usage, info, extra)
+		return handled, err
+	}
+
+	usage := usageFromHistory(record)
+	outputText := stringifyCozeOutput(record.Output)
+	extra := map[string]interface{}{
+		"coze_execute_id": record.ExecuteId,
+	}
+	if record.DebugUrl != "" {
+		extra["debug_url"] = record.DebugUrl
+	} else if startData.DebugUrl != "" {
+		extra["debug_url"] = startData.DebugUrl
+	}
+
+	updateTaskStatus(executeId, model.TaskStatusSuccess, "", outputText, usage, info, extra)
+	return handled, nil
+}
+
+func startCozeAsyncWorkflow(client *http.Client, token string, info *relaycommon.RelayInfo, payload []byte) (*CozeWorkflowRunResponseData, error) {
+	requestURL := fmt.Sprintf("%s/v1/workflow/run", info.ChannelBaseUrl)
+	req, err := http.NewRequest("POST", requestURL, bytes.NewReader(payload))
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Authorization", "Bearer "+token)
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("workflow run request failed: http %d %s", resp.StatusCode, string(bodyBytes))
+	}
+
+	var runResp CozeWorkflowRunResponse
+	if err := json.Unmarshal(bodyBytes, &runResp); err != nil {
+		return nil, fmt.Errorf("解析工作流执行响应失败: %w", err)
+	}
+	if runResp.Code != 0 {
+		return nil, fmt.Errorf("工作流执行失败: code=%d msg=%s", runResp.Code, runResp.Msg)
+	}
+	return &runResp.Data, nil
+}
+
+func pollCozeWorkflowHistory(client *http.Client, token string, info *relaycommon.RelayInfo, workflowId, executeId, taskId string) (*CozeWorkflowHistoryRecord, error) {
+	start := time.Now()
+	progress := 20
+
+	for time.Since(start) < cozeAsyncMaxWait {
+		record, err := fetchCozeWorkflowHistory(client, token, info, workflowId, executeId)
+		if err != nil {
+			return record, err
+		}
+
+		if record == nil || strings.EqualFold(record.ExecuteStatus, "Running") {
+			if progress < 90 {
+				progress += 5
+				updateTaskProgress(taskId, model.TaskStatusInProgress, fmt.Sprintf("%d%%", progress))
+			}
+			time.Sleep(cozeAsyncPollInterval)
+			continue
+		}
+
+		if strings.EqualFold(record.ExecuteStatus, "Fail") {
+			if record.ErrorMessage != "" {
+				return record, fmt.Errorf("工作流执行失败: %s", record.ErrorMessage)
+			}
+			return record, fmt.Errorf("工作流执行失败")
+		}
+
+		updateTaskProgress(taskId, model.TaskStatusInProgress, "100%")
+		return record, nil
+	}
+
+	return nil, fmt.Errorf("工作流执行超时（超过%d分钟）", int(cozeAsyncMaxWait.Minutes()))
+}
+
+func fetchCozeWorkflowHistory(client *http.Client, token string, info *relaycommon.RelayInfo, workflowId, executeId string) (*CozeWorkflowHistoryRecord, error) {
+	requestURL := fmt.Sprintf("%s/v1/workflows/%s/run_histories/%s", info.ChannelBaseUrl, workflowId, executeId)
+	req, err := http.NewRequest("GET", requestURL, nil)
+	if err != nil {
+		return nil, err
+	}
+
+	req.Header.Set("Authorization", "Bearer "+token)
+	req.Header.Set("Content-Type", "application/json")
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return nil, err
+	}
+	defer resp.Body.Close()
+
+	bodyBytes, err := io.ReadAll(resp.Body)
+	if err != nil {
+		return nil, err
+	}
+
+	if resp.StatusCode != http.StatusOK {
+		return nil, fmt.Errorf("查询执行历史失败: http %d %s", resp.StatusCode, string(bodyBytes))
+	}
+
+	var historyResp CozeWorkflowHistoryResponse
+	if err := json.Unmarshal(bodyBytes, &historyResp); err != nil {
+		return nil, err
+	}
+	if historyResp.Code != 0 {
+		return nil, fmt.Errorf("执行历史查询失败: code=%d msg=%s", historyResp.Code, historyResp.Msg)
+	}
+	if len(historyResp.Data) == 0 {
+		return nil, nil
+	}
+
+	return &historyResp.Data[0], nil
 }
 
 // updateTaskProgress 更新任务进度

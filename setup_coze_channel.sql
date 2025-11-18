@@ -21,7 +21,7 @@ INSERT INTO channels (
     'Coze工作流',  -- 渠道名称
     1,  -- 启用状态
     'https://api.coze.cn',  -- API基础URL
-    'coze-workflow',  -- 支持的模型
+    'coze-workflow,coze-workflow-async',  -- 支持的模型
     '{"coze_auth_type":"oauth"}',  -- 渠道设置
     EXTRACT(EPOCH FROM NOW()),  -- 创建时间
     1000,  -- 权重

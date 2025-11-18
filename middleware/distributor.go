@@ -270,20 +270,36 @@ func getModelRequest(c *gin.Context) (*ModelRequest, bool, error) {
 			modelRequest.Model = c.PostForm("model")
 		}
 	}
-	// Sora 视频生成路由 - 从 multipart/form-data 中提取模型名称
-	if strings.HasPrefix(c.Request.URL.Path, "/v1/videos") && c.Request.Method == http.MethodPost {
-		if strings.Contains(c.Request.Header.Get("Content-Type"), "multipart/form-data") {
-			// 🔧 对于 multipart 请求，直接使用默认模型名，避免消耗请求体
-			// Bltcy 透传会保留完整的 multipart 数据
-			modelRequest.Model = "sora-2" // 默认模型，可以从 header 或其他地方覆盖
-			// TODO: 如果需要从 multipart 中提取模型，需要手动解析而不能使用 PostForm
-		}
-	} else if strings.HasPrefix(c.Request.URL.Path, "/v1/videos/") && c.Request.Method == http.MethodGet {
-		// GET /v1/videos/:id - 查询视频状态
-		// Bltcy 透传模式：仍需选择渠道，使用默认 sora-2 模型
-		modelRequest.Model = "sora-2"
-		// 任务模式才需要 shouldSelectChannel = false
-	}
+    // Sora 视频生成路由 - 透传并区分 sora-2 与 sora-2-pro
+    if strings.HasPrefix(c.Request.URL.Path, "/v1/videos") && c.Request.Method == http.MethodPost {
+        if strings.Contains(c.Request.Header.Get("Content-Type"), "multipart/form-data") {
+            // 优先使用 SoraVideosAdapter 提取到的 billing_model_name
+            if bm, ok := c.Get("billing_model_name"); ok {
+                if modelStr, ok2 := bm.(string); ok2 && modelStr != "" {
+                    modelRequest.Model = modelStr
+                }
+            }
+            // 若未提取到，则回退默认 sora-2
+            if modelRequest.Model == "" {
+                modelRequest.Model = "sora-2"
+            }
+        }
+    } else if strings.HasPrefix(c.Request.URL.Path, "/v1/videos/") && c.Request.Method == http.MethodGet {
+        // GET /v1/videos/:id - 查询视频状态
+        // 尝试从 task_id 前缀推断模型，例如: sora-2-pro:task_xxx 或 sora-2:task_xxx
+        id := c.Param("id")
+        if idx := strings.Index(id, ":"); idx > 0 {
+            prefix := id[:idx]
+            if strings.HasPrefix(prefix, "sora-2-pro") || strings.HasPrefix(prefix, "sora-2") {
+                modelRequest.Model = prefix
+            }
+        }
+        if modelRequest.Model == "" {
+            // 回退默认
+            modelRequest.Model = "sora-2"
+        }
+        // 任务模式才需要 shouldSelectChannel = false
+    }
 	if strings.HasPrefix(c.Request.URL.Path, "/v1/audio") {
 		relayMode := relayconstant.RelayModeAudioSpeech
 		if strings.HasPrefix(c.Request.URL.Path, "/v1/audio/generations") {
