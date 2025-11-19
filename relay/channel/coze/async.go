@@ -44,14 +44,22 @@ type WorkflowAsyncResult struct {
 	CozeExecuteId string     `json:"coze_execute_id,omitempty"`
 }
 
-// handleAsyncWorkflowRequest 处理异步工作流请求
+// CozeAsyncRunResponse Coze官方异步执行响应
+type CozeAsyncRunResponse struct {
+	DebugUrl  string `json:"debug_url"`
+	ExecuteId string `json:"execute_id"`
+	Msg       string `json:"msg"`
+	Code      int    `json:"code"`
+}
+
+// handleAsyncWorkflowRequest 处理异步工作流请求 - 使用官方 is_async=true 接口
 func handleAsyncWorkflowRequest(c *gin.Context, info *relaycommon.RelayInfo, request *dto.GeneralOpenAIRequest) (any, error) {
-	// 生成 execute_id
-	executeId := helper.GetResponseID(c)
+	// 生成本地 execute_id (用于本地任务跟踪)
+	localExecuteId := helper.GetResponseID(c)
 
 	// 创建 Task 记录
 	task := model.InitTask(constant.TaskPlatformCoze, info)
-	task.TaskID = executeId
+	task.TaskID = localExecuteId
 	task.Action = "workflow-async"
 	task.Status = model.TaskStatusSubmitted
 	task.Properties = model.Properties{
@@ -72,19 +80,19 @@ func handleAsyncWorkflowRequest(c *gin.Context, info *relaycommon.RelayInfo, req
 		return nil, fmt.Errorf("failed to create async task: %w", err)
 	}
 
-	common.SysLog(fmt.Sprintf("[Async] Created task %s for workflow %s", executeId, request.WorkflowId))
+	common.SysLog(fmt.Sprintf("[Async] Created local task %s for workflow %s", localExecuteId, request.WorkflowId))
 
-	// 启动后台goroutine执行工作流
+	// 启动后台goroutine调用Coze官方异步接口
 	gopool.Go(func() {
-		executeWorkflowInBackground(executeId, info, request)
+		executeWorkflowAsync(localExecuteId, info, request)
 	})
 
 	// 立即返回响应
 	response := AsyncWorkflowResponse{
-		ExecuteId:  executeId,
+		ExecuteId:  localExecuteId,
 		WorkflowId: request.WorkflowId,
 		Status:     "running",
-		Message:    "工作流已开始异步执行",
+		Message:    "工作流已提交异步执行",
 	}
 
 	return response, nil
