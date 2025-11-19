@@ -45,17 +45,42 @@ var cozeOAuthCache = asynccache.NewAsyncCache(asynccache.Options{
 	},
 })
 
-func expandEnvVar(value string) string {
+func expandEnvVar(value string) (string, error) {
 	if strings.HasPrefix(value, "$") {
 		envVarName := strings.TrimPrefix(value, "$")
 		envValue := os.Getenv(envVarName)
-		if envValue != "" {
-			// 处理转义的换行符，将 \n 转换为实际的换行符
-			envValue = strings.ReplaceAll(envValue, "\\n", "\n")
-			return envValue
+
+		// 如果环境变量不存在,尝试常见的备用名称
+		if envValue == "" {
+			alternatives := []string{
+				envVarName + "_NEW",  // 例如 COZE_PRIVATE_KEY -> COZE_PRIVATE_KEY_NEW
+				"COZE_PRIVATE_KEY_NEW", // 直接尝试新名称
+				"COZE_PRIVATE_KEY",     // 直接尝试旧名称
+			}
+
+			for _, altName := range alternatives {
+				if altName == envVarName {
+					continue // 跳过已经尝试过的原始名称
+				}
+				altValue := os.Getenv(altName)
+				if altValue != "" {
+					envValue = altValue
+					common.SysLog(fmt.Sprintf("[OAuth] 环境变量 %s 未找到,使用备用变量 %s", envVarName, altName))
+					break
+				}
+			}
 		}
+
+		if envValue == "" {
+			return "", fmt.Errorf("environment variable %s is not set or empty (also tried: COZE_PRIVATE_KEY_NEW, COZE_PRIVATE_KEY)", envVarName)
+		}
+
+		// 处理转义的换行符，将 \n 转换为实际的换行符
+		envValue = strings.ReplaceAll(envValue, "\\n", "\n")
+		common.SysLog(fmt.Sprintf("[OAuth] 从环境变量加载私钥成功 (长度: %d)", len(envValue)))
+		return envValue, nil
 	}
-	return value
+	return value, nil
 }
 
 func ParseCozeOAuthConfig(key string) (*CozeOAuthConfig, error) {
@@ -74,11 +99,24 @@ func ParseCozeOAuthConfig(key string) (*CozeOAuthConfig, error) {
 		return nil, errors.New("OAuth config is incomplete: app_id, key_id, and private_key are required")
 	}
 
-	config.PrivateKey = expandEnvVar(config.PrivateKey)
+	// 扩展环境变量
+	expandedKey, err := expandEnvVar(config.PrivateKey)
+	if err != nil {
+		return nil, fmt.Errorf("failed to expand private_key environment variable: %w", err)
+	}
+	config.PrivateKey = expandedKey
+
+	// 验证私钥格式
+	if !strings.Contains(config.PrivateKey, "BEGIN PRIVATE KEY") {
+		return nil, fmt.Errorf("private_key must be a valid PEM format private key (should contain 'BEGIN PRIVATE KEY')")
+	}
 
 	if config.Aud == "" {
 		config.Aud = "api.coze.com"
 	}
+
+	common.SysLog(fmt.Sprintf("[OAuth] OAuth配置解析成功: app_id=%s, aud=%s, 私钥长度=%d",
+		config.AppID, config.Aud, len(config.PrivateKey)))
 
 	return &config, nil
 }
@@ -198,7 +236,7 @@ func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, in
 		return "", fmt.Errorf("failed to create request: %w", err)
 	}
 
-	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("Accept", "application/json")
 	// 官方要求通过请求体中的 assertion 传递 JWT，这里无需再在 Header 里附加
 
