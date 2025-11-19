@@ -204,6 +204,10 @@ func pollAsyncResult(localExecuteId, cozeExecuteId, debugUrl string, info *relay
 	maxAttempts := 2880              // 最多轮询次数 (24小时 = 2880 * 30秒)
 	pollInterval := 30 * time.Second // 轮询间隔 30秒
 
+	// 视频生成工作流预估时间: 5-10分钟
+	// 一般工作流预估时间: 1-3分钟
+	estimatedMinutes := 10 // 预估最长10分钟完成
+
 	var attempt int
 	for attempt = 0; attempt < maxAttempts; attempt++ {
 		// 等待轮询间隔
@@ -234,10 +238,18 @@ func pollAsyncResult(localExecuteId, cozeExecuteId, debugUrl string, info *relay
 
 		// 检查执行状态
 		if history == nil {
-			// 仍在执行中
-			common.SysLog("[AsyncOfficial] 任务仍在执行中")
+			// 仍在执行中,计算进度百分比
+			// 根据预估时间计算进度,但不超过95%
+			elapsedSeconds := (attempt + 1) * 30 // 已执行时间(秒)
+			estimatedSeconds := estimatedMinutes * 60
+			progress := int(float64(elapsedSeconds) / float64(estimatedSeconds) * 100)
+			if progress > 95 {
+				progress = 95 // 不超过95%,留5%给最终完成
+			}
+
+			common.SysLog(fmt.Sprintf("[AsyncOfficial] 任务仍在执行中 (进度约%d%%)", progress))
 			updateTaskProgress(localExecuteId, model.TaskStatusInProgress,
-				fmt.Sprintf("执行中 (已轮询%d次)", attempt+1))
+				fmt.Sprintf("%d%%", progress))
 			continue
 		}
 
@@ -291,10 +303,17 @@ func pollAsyncResult(localExecuteId, cozeExecuteId, debugUrl string, info *relay
 			return
 
 		} else if history.ExecuteStatus == "Running" {
-			// 仍在运行中
-			common.SysLog("[AsyncOfficial] 任务仍在运行中")
+			// 仍在运行中,计算进度百分比
+			elapsedSeconds := (attempt + 1) * 30
+			estimatedSeconds := estimatedMinutes * 60
+			progress := int(float64(elapsedSeconds) / float64(estimatedSeconds) * 100)
+			if progress > 95 {
+				progress = 95
+			}
+
+			common.SysLog(fmt.Sprintf("[AsyncOfficial] 任务仍在运行中 (进度约%d%%)", progress))
 			updateTaskProgress(localExecuteId, model.TaskStatusInProgress,
-				fmt.Sprintf("执行中 (已轮询%d次)", attempt+1))
+				fmt.Sprintf("%d%%", progress))
 			continue
 		}
 	}
