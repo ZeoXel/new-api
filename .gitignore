@@ -10,6 +10,7 @@ build
 web/dist
 one-api
 new-api
+new-api-*
 node_modules/
 web/node_modules/
 
@@ -20,6 +21,7 @@ web/node_modules/
 # 日志和缓存
 logs
 tiktoken_cache
+*.log
 
 # 配置文件
 .env
@@ -32,10 +34,11 @@ deployment_backup/
 *.backup.*
 cleanup_before_deploy.sh
 *.tmp
+start.sh
 
 # 测试日志
 *-test.log
 
-# Railway配置（自动生成）
+# Railway配置(自动生成)
 railway.json
 .railway/new-api
