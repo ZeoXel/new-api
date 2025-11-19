@@ -50,34 +50,23 @@ func expandEnvVar(value string) (string, error) {
 		envVarName := strings.TrimPrefix(value, "$")
 		envValue := os.Getenv(envVarName)
 
-		// 如果环境变量不存在,尝试常见的备用名称
-		if envValue == "" {
-			alternatives := []string{
-				envVarName + "_NEW",  // 例如 COZE_PRIVATE_KEY -> COZE_PRIVATE_KEY_NEW
-				"COZE_PRIVATE_KEY_NEW", // 直接尝试新名称
-				"COZE_PRIVATE_KEY",     // 直接尝试旧名称
-			}
-
-			for _, altName := range alternatives {
-				if altName == envVarName {
-					continue // 跳过已经尝试过的原始名称
-				}
-				altValue := os.Getenv(altName)
-				if altValue != "" {
-					envValue = altValue
-					common.SysLog(fmt.Sprintf("[OAuth] 环境变量 %s 未找到,使用备用变量 %s", envVarName, altName))
-					break
-				}
+		// 如果环境变量不存在,尝试添加 _NEW 后缀
+		if envValue == "" && !strings.HasSuffix(envVarName, "_NEW") {
+			newVarName := envVarName + "_NEW"
+			envValue = os.Getenv(newVarName)
+			if envValue != "" {
+				common.SysLog(fmt.Sprintf("[OAuth] 环境变量 %s 未找到,使用 %s", envVarName, newVarName))
+				envVarName = newVarName
 			}
 		}
 
 		if envValue == "" {
-			return "", fmt.Errorf("environment variable %s is not set or empty (also tried: COZE_PRIVATE_KEY_NEW, COZE_PRIVATE_KEY)", envVarName)
+			return "", fmt.Errorf("environment variable %s is not set or empty", envVarName)
 		}
 
 		// 处理转义的换行符，将 \n 转换为实际的换行符
 		envValue = strings.ReplaceAll(envValue, "\\n", "\n")
-		common.SysLog(fmt.Sprintf("[OAuth] 从环境变量加载私钥成功 (长度: %d)", len(envValue)))
+		common.SysLog(fmt.Sprintf("[OAuth] 从环境变量 %s 加载私钥成功 (长度: %d)", envVarName, len(envValue)))
 		return envValue, nil
 	}
 	return value, nil
@@ -217,19 +206,27 @@ func createCozeSignedJWT(config *CozeOAuthConfig) (string, error) {
 func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, info *relaycommon.RelayInfo) (string, error) {
 	tokenURL := fmt.Sprintf("%s/api/permission/oauth2/token", info.ChannelBaseUrl)
 
-	scope := strings.TrimSpace(config.Scope)
+	// 构造 scopes (必须是 JSON 数组格式)
+	var scopes []string
 	if len(config.Scopes) > 0 {
-		scope = strings.Join(config.Scopes, " ")
+		scopes = config.Scopes
+	} else if config.Scope != "" {
+		scopes = strings.Fields(config.Scope) // 将空格分隔的字符串转为数组
+	} else {
+		scopes = []string{"workflow.run", "listRunHistory"}
 	}
-	if scope == "" {
-		scope = "workflow.run listRunHistory"
+
+	// 将 scopes 转为 JSON 字符串
+	scopesJSON, err := json.Marshal(scopes)
+	if err != nil {
+		return "", fmt.Errorf("failed to marshal scopes: %w", err)
 	}
 
 	form := url.Values{}
 	form.Set("grant_type", "urn:ietf:params:oauth:grant-type:jwt-bearer")
 	form.Set("duration_seconds", "900")
 	form.Set("assertion", signedJWT)
-	form.Set("scope", scope)
+	form.Set("scope", string(scopesJSON)) // 发送 JSON 数组格式
 
 	req, err := http.NewRequest("POST", tokenURL, strings.NewReader(form.Encode()))
 	if err != nil {
@@ -238,7 +235,6 @@ func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, in
 
 	req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
 	req.Header.Set("Accept", "application/json")
-	// 官方要求通过请求体中的 assertion 传递 JWT，这里无需再在 Header 里附加
 
 	var client *http.Client
 	if info.ChannelSetting.Proxy != "" {
@@ -250,7 +246,7 @@ func exchangeJWTForCozeAccessToken(signedJWT string, config *CozeOAuthConfig, in
 		client = service.GetHttpClient()
 	}
 
-	common.SysLog(fmt.Sprintf("[OAuth Debug] 向 %s 发送 token 交换请求 (scope=%s)", tokenURL, scope))
+	common.SysLog(fmt.Sprintf("[OAuth Debug] 向 %s 发送 token 交换请求 (scopes=%s)", tokenURL, string(scopesJSON)))
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", fmt.Errorf("failed to request token: %w", err)
