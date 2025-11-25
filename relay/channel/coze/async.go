@@ -82,6 +82,25 @@ func handleAsyncWorkflowRequest(c *gin.Context, info *relaycommon.RelayInfo, req
 
 	common.SysLog(fmt.Sprintf("[Async] Created local task %s for workflow %s", localExecuteId, request.WorkflowId))
 
+	// 🔧 渠道预热验证: 确保渠道信息完整,避免503错误
+	// 1. 预先初始化ChannelRatio
+	if info.PriceData.GroupRatioInfo.ChannelRatio == 0 {
+		channelRatio := model.GetChannelRatio(info.UsingGroup, "coze-workflow-async", info.ChannelId)
+		info.PriceData.GroupRatioInfo.ChannelRatio = channelRatio
+		common.SysLog(fmt.Sprintf("[Async] 预初始化渠道倍率: channel_id=%d, group=%s, ratio=%.2f",
+			info.ChannelId, info.UsingGroup, channelRatio))
+	}
+
+	// 2. 验证渠道可用性
+	if info.ChannelId == 0 || info.ChannelBaseUrl == "" || info.ApiKey == "" {
+		common.SysLog(fmt.Sprintf("[Async] 警告: 渠道信息不完整! channel_id=%d, base_url=%s, api_key_len=%d",
+			info.ChannelId, info.ChannelBaseUrl, len(info.ApiKey)))
+		return nil, fmt.Errorf("渠道信息不完整,无法启动异步任务")
+	}
+
+	common.SysLog(fmt.Sprintf("[Async] 渠道预热完成: channel_id=%d, name=%s, type=%d, base_url=%s",
+		info.ChannelId, info.ChannelName, info.ChannelType, info.ChannelBaseUrl))
+
 	// 启动后台goroutine调用Coze官方异步接口
 	gopool.Go(func() {
 		executeWorkflowAsync(localExecuteId, info, request)
