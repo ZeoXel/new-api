@@ -139,7 +139,7 @@ func CacheGetRandomSatisfiedChannel(c *gin.Context, group string, model string, 
 			}
 
 			if channel != nil {
-				common.SysLog(fmt.Sprintf("[CacheRetry] 重试成功! 找到渠道 channel_id=%d, name=%s", channel.Id, channel.Name))
+				common.SysLog(fmt.Sprintf("[CacheRetry] 重试成功! 找到渠道 channel_id=%d", channel.Id))
 			} else {
 				common.SysLog(fmt.Sprintf("[CacheRetry] 重试失败! 刷新缓存后仍未找到可用渠道"))
 			}
@@ -181,7 +181,7 @@ func getRandomSatisfiedChannel(group string, model string, retry int) (*Channel,
 		}
 
 		if dbChannel != nil {
-			common.SysLog(fmt.Sprintf("[CacheFallback] 数据库查询成功! 找到渠道 channel_id=%d, name=%s", dbChannel.Id, dbChannel.Name))
+			common.SysLog(fmt.Sprintf("[CacheFallback] 数据库查询成功! 找到渠道 channel_id=%d", dbChannel.Id))
 			return dbChannel, nil
 		}
 

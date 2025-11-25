@@ -123,8 +123,8 @@ func Distribute() func(c *gin.Context) {
 				}
 
 				// 🔧 记录成功选择的渠道
-				common.SysLog(fmt.Sprintf("[Distributor] 渠道选择成功: channel_id=%d, name=%s, type=%d, group=%s, model=%s",
-					channel.Id, channel.Name, channel.Type, userGroup, modelRequest.Model))
+				common.SysLog(fmt.Sprintf("[Distributor] 渠道选择成功: channel_id=%d, type=%d, group=%s, model=%s",
+					channel.Id, channel.Type, userGroup, modelRequest.Model))
 			}
 		}
 		common.SetContextKey(c, constant.ContextKeyRequestStartTime, time.Now())

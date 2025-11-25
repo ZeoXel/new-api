@@ -98,8 +98,8 @@ func handleAsyncWorkflowRequest(c *gin.Context, info *relaycommon.RelayInfo, req
 		return nil, fmt.Errorf("渠道信息不完整,无法启动异步任务")
 	}
 
-	common.SysLog(fmt.Sprintf("[Async] 渠道预热完成: channel_id=%d, name=%s, type=%d, base_url=%s",
-		info.ChannelId, info.ChannelName, info.ChannelType, info.ChannelBaseUrl))
+	common.SysLog(fmt.Sprintf("[Async] 渠道预热完成: channel_id=%d, type=%d, base_url=%s",
+		info.ChannelId, info.ChannelType, info.ChannelBaseUrl))
 
 	// 启动后台goroutine调用Coze官方异步接口
 	gopool.Go(func() {
