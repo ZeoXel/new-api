@@ -125,12 +125,17 @@ func CacheGetRandomSatisfiedChannel(c *gin.Context, group string, model string, 
 			return nil, group, err
 		}
 
-		// 🔧 智能重试机制: 如果缓存中找不到渠道,尝试刷新缓存后重试一次
-		if channel == nil && common.MemoryCacheEnabled {
-			common.SysLog(fmt.Sprintf("[CacheRetry] 缓存未命中 group=%s, model=%s, 尝试刷新缓存后重试", group, model))
+		// 🔧 智能重试机制: 如果查询不到渠道,尝试再次查询(处理缓存过期/同步延迟问题)
+		if channel == nil {
+			common.SysLog(fmt.Sprintf("[CacheRetry] 首次查询未找到渠道 group=%s, model=%s, 准备重试", group, model))
 
-			// 强制刷新渠道缓存
-			InitChannelCache()
+			// 如果启用了内存缓存,强制刷新后重试
+			if common.MemoryCacheEnabled {
+				common.SysLog("[CacheRetry] 内存缓存已启用,刷新缓存后重试")
+				InitChannelCache()
+			} else {
+				common.SysLog("[CacheRetry] 内存缓存未启用,直接重试数据库查询")
+			}
 
 			// 重试查询
 			channel, err = getRandomSatisfiedChannel(group, model, retry)
@@ -141,7 +146,7 @@ func CacheGetRandomSatisfiedChannel(c *gin.Context, group string, model string, 
 			if channel != nil {
 				common.SysLog(fmt.Sprintf("[CacheRetry] 重试成功! 找到渠道 channel_id=%d", channel.Id))
 			} else {
-				common.SysLog(fmt.Sprintf("[CacheRetry] 重试失败! 刷新缓存后仍未找到可用渠道"))
+				common.SysLog(fmt.Sprintf("[CacheRetry] 重试失败! 第二次查询仍未找到可用渠道"))
 			}
 		}
 	}
