@@ -4,9 +4,13 @@ import (
 	"time"
 )
 
+// QuotaPerUnit 额度换算比例：500000 quota = 1 单位货币
+const QuotaPerUnit = 500000
+
 // ConsumptionSummary 消费汇总
 type ConsumptionSummary struct {
 	TotalQuota    int64   `json:"total_quota"`
+	TotalAmount   float64 `json:"total_amount"` // 金额（quota / 500000）
 	TotalRequests int64   `json:"total_requests"`
 	TotalTokens   int64   `json:"total_tokens"`
 	AvgLatencyMs  float64 `json:"avg_latency_ms"`
@@ -16,6 +20,7 @@ type ConsumptionSummary struct {
 type ModelConsumption struct {
 	ModelName  string  `json:"model_name"`
 	Quota      int64   `json:"quota"`
+	Amount     float64 `json:"amount"` // 金额
 	Requests   int64   `json:"requests"`
 	Tokens     int64   `json:"tokens"`
 	Percentage float64 `json:"percentage"`
@@ -23,18 +28,25 @@ type ModelConsumption struct {
 
 // DailyConsumption 按日期分组的消费
 type DailyConsumption struct {
-	Date     string `json:"date"`
-	Quota    int64  `json:"quota"`
-	Requests int64  `json:"requests"`
-	Tokens   int64  `json:"tokens"`
+	Date     string  `json:"date"`
+	Quota    int64   `json:"quota"`
+	Amount   float64 `json:"amount"` // 金额
+	Requests int64   `json:"requests"`
+	Tokens   int64   `json:"tokens"`
 }
 
 // HourlyConsumption 按小时分组的消费
 type HourlyConsumption struct {
-	Hour     string `json:"hour"`
-	Quota    int64  `json:"quota"`
-	Requests int64  `json:"requests"`
-	Tokens   int64  `json:"tokens"`
+	Hour     string  `json:"hour"`
+	Quota    int64   `json:"quota"`
+	Amount   float64 `json:"amount"` // 金额
+	Requests int64   `json:"requests"`
+	Tokens   int64   `json:"tokens"`
+}
+
+// QuotaToAmount 将quota换算为金额
+func QuotaToAmount(quota int64) float64 {
+	return float64(quota) / float64(QuotaPerUnit)
 }
 
 // GetTokenConsumptionSummary 获取Token消费汇总
@@ -50,6 +62,9 @@ func GetTokenConsumptionSummary(tokenId int, start, end int64) (*ConsumptionSumm
 		Where("token_id = ? AND type = ? AND created_at >= ? AND created_at <= ?",
 			tokenId, LogTypeConsume, start, end).
 		Scan(&summary).Error
+	if err == nil {
+		summary.TotalAmount = QuotaToAmount(summary.TotalQuota)
+	}
 	return &summary, err
 }
 
@@ -73,12 +88,13 @@ func GetTokenConsumptionByModel(tokenId int, start, end int64) ([]ModelConsumpti
 		return nil, err
 	}
 
-	// 计算百分比
+	// 计算百分比和金额
 	var total int64
 	for _, r := range results {
 		total += r.Quota
 	}
 	for i := range results {
+		results[i].Amount = QuotaToAmount(results[i].Quota)
 		if total > 0 {
 			results[i].Percentage = float64(results[i].Quota) / float64(total) * 100
 		}
@@ -102,6 +118,10 @@ func GetTokenConsumptionByDay(tokenId int, start, end int64) ([]DailyConsumption
 		Group("TO_CHAR(TO_TIMESTAMP(created_at), 'YYYY-MM-DD')").
 		Order("date ASC").
 		Scan(&results).Error
+	// 计算金额
+	for i := range results {
+		results[i].Amount = QuotaToAmount(results[i].Quota)
+	}
 	return results, err
 }
 
@@ -120,6 +140,10 @@ func GetTokenConsumptionByHour(tokenId int, start, end int64) ([]HourlyConsumpti
 		Group("TO_CHAR(TO_TIMESTAMP(created_at), 'YYYY-MM-DD HH24:00')").
 		Order("hour ASC").
 		Scan(&results).Error
+	// 计算金额
+	for i := range results {
+		results[i].Amount = QuotaToAmount(results[i].Quota)
+	}
 	return results, err
 }
 
