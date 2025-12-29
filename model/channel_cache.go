@@ -124,6 +124,31 @@ func CacheGetRandomSatisfiedChannel(c *gin.Context, group string, model string, 
 		if err != nil {
 			return nil, group, err
 		}
+
+		// 🔧 智能重试机制: 如果查询不到渠道,尝试再次查询(处理缓存过期/同步延迟问题)
+		if channel == nil {
+			common.SysLog(fmt.Sprintf("[CacheRetry] 首次查询未找到渠道 group=%s, model=%s, 准备重试", group, model))
+
+			// 如果启用了内存缓存,强制刷新后重试
+			if common.MemoryCacheEnabled {
+				common.SysLog("[CacheRetry] 内存缓存已启用,刷新缓存后重试")
+				InitChannelCache()
+			} else {
+				common.SysLog("[CacheRetry] 内存缓存未启用,直接重试数据库查询")
+			}
+
+			// 重试查询
+			channel, err = getRandomSatisfiedChannel(group, model, retry)
+			if err != nil {
+				return nil, group, err
+			}
+
+			if channel != nil {
+				common.SysLog(fmt.Sprintf("[CacheRetry] 重试成功! 找到渠道 channel_id=%d", channel.Id))
+			} else {
+				common.SysLog(fmt.Sprintf("[CacheRetry] 重试失败! 第二次查询仍未找到可用渠道"))
+			}
+		}
 	}
 	return channel, selectGroup, nil
 }
@@ -146,7 +171,26 @@ func getRandomSatisfiedChannel(group string, model string, retry int) (*Channel,
 		channels = group2model2channels[group][normalizedModel]
 	}
 
+	// 🔧 降级查询策略: 如果缓存中仍然找不到,尝试直接查询数据库(避免缓存过期问题)
 	if len(channels) == 0 {
+		common.SysLog(fmt.Sprintf("[CacheFallback] 缓存中未找到渠道, 降级到数据库查询: group=%s, model=%s", group, model))
+
+		// 释放读锁后再查询数据库,避免死锁
+		channelSyncLock.RUnlock()
+		dbChannel, err := GetRandomSatisfiedChannel(group, model, retry)
+		channelSyncLock.RLock()
+
+		if err != nil {
+			common.SysLog(fmt.Sprintf("[CacheFallback] 数据库查询失败: %v", err))
+			return nil, err
+		}
+
+		if dbChannel != nil {
+			common.SysLog(fmt.Sprintf("[CacheFallback] 数据库查询成功! 找到渠道 channel_id=%d", dbChannel.Id))
+			return dbChannel, nil
+		}
+
+		common.SysLog(fmt.Sprintf("[CacheFallback] 数据库查询也未找到可用渠道"))
 		return nil, nil
 	}
 

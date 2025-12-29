@@ -121,6 +121,43 @@ New API提供了丰富的功能，详细特性请参考[特性说明](https://do
 6. Claude Messages 格式，[接口文档](https://docs.newapi.pro/api/anthropic-chat)
 7. Dify，当前仅支持chatflow
 
+## 🏗️ 架构概览
+
+New API 由 Web 控制台、Go 网关、Relay 通道适配层、任务调度器与数据服务构成，整体结构如下：
+
+```
+终端 / 控制台（web） 
+        │ 静态资源由 Gin 内置文件系统托管（main.go, web/dist）
+        ▼
+HTTP 入口层：router + middleware
+        │ Token / Session / RateLimit / Logging
+        ▼
+业务控制层：controller + service
+        │ 渠道调度、模型策略、计费、工作流
+        ├─────────► 数据访问层（model, common）→ SQLite/MySQL/PgSQL + Redis 缓存
+        ├─────────► Relay 适配层（relay/channel/*）→ 多云/多模型上游
+        └─────────► 异步任务（controller/task*.go, relay/channel/task/*）
+        ▼
+第三方模型 / 自建推理集群
+```
+
+- **前端与会话层**：`main.go` 通过 `embed` 将 `web/dist` 内的控制台前端打包进进程，结合 `router` 与 `middleware` 完成日志、会话、RequestId 以及多级限流策略。
+- **业务控制层**：`controller` 目录下的子模块负责渠道管理、模型同步、工作流、账号体系、充值/结算等 API，`service` 与 `setting` 则提供调度策略与动态配置。
+- **Relay 适配层**：`relay/channel/*` 针对 OpenAI、Claude、Suno、Midjourney、Runway 等接口实现统一的转发、格式转换与缓存逻辑，并提供 PassThrough、Rerank、Realtime 等专用协议。
+- **任务与调度**：`controller/task*.go` 与 `relay/channel/task/*` 内置异步任务引擎，可持续拉取 Midjourney/Suno/Tripo 等任务状态，结合 `common.SyncFrequency` 支持多实例主从角色。
+- **数据与观测**：`model` 负责 ORM/缓存、`common` 内含配置 & 日志基建，`logger`、`middleware/request-id`、`model/quota_data.go` 等模块输出看板指标、自动巡检与渠道健康检测。
+
+该架构保证了控制层与通道层的解耦，使得新增模型、扩展计费策略或替换数据存储都可以在各自子模块内完成。
+
+## ⚙️ 核心功能模块
+
+- **渠道与模型编排**：`controller/channel.go`、`controller/model.go` 与 `relay` 目录提供模型映射、模型别名、渠道权重/优先级、Rerank/Realtime 等能力，实现“多云多模型”的统一接入。
+- **访问控制与令牌管理**：`controller/token.go`、`controller/group.go` 支持令牌分组、模型白名单、请求限额、IP 审计等策略，可与 `middleware` 中的多级限流器配合完成租户隔离。
+- **计费与资产管理**：`controller/billing.go`、`controller/channel-billing.go`、`model/quota_data.go` 负责额度计算、渠道成本同步、缓存计费、在线充值（Stripe/易支付）与账单导出。
+- **异步任务与多媒体生产**：`controller/midjourney.go`、`controller/task_video.go` 以及 `relay/channel/task/{suno,tripo,kling,...}` 支持 Midjourney、Suno、Kling、Tripo、Vidu 等长耗时作业，提供进度查询、任务回调与提示缓存。
+- **运营与可观测性**：`controller/log.go`、`controller/usedata.go`、`model.UpdateQuotaData()` 为控制台提供实时看板、错误日志、渠道巡检、自动化巡检报告，并可通过 `common.Monitor()` 暴露 pprof/健康检查。
+- **扩展生态**：通过 `docs`、`scripts` 与 `relay` 的插件化实现，开发者可以快速接入 Dify、Suno、Runway 等外部系统，或借助 `passthrough` 模式无损迁移旧网关，满足企业场景中的定制化需求。
+
 ## 环境变量配置
 
 详细配置说明请参考[安装指南-环境变量配置](https://docs.newapi.pro/installation/environment-variables)：

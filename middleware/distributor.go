@@ -95,6 +95,9 @@ func Distribute() func(c *gin.Context) {
 						userGroup = playgroundRequest.Group
 					}
 				}
+				// 🔧 增强诊断日志: 记录渠道选择请求
+				common.SysLog(fmt.Sprintf("[Distributor] 请求渠道: group=%s, model=%s, path=%s", userGroup, modelRequest.Model, c.Request.URL.Path))
+
 				channel, selectGroup, err = model.CacheGetRandomSatisfiedChannel(c, userGroup, modelRequest.Model, 0)
 				if err != nil {
 					showGroup := userGroup
@@ -102,18 +105,26 @@ func Distribute() func(c *gin.Context) {
 						showGroup = fmt.Sprintf("auto(%s)", selectGroup)
 					}
 					message := fmt.Sprintf("获取分组 %s 下模型 %s 的可用渠道失败（数据库一致性已被破坏，distributor）: %s", showGroup, modelRequest.Model, err.Error())
-					// 如果错误，但是渠道不为空，说明是数据库一致性问题
-					//if channel != nil {
-					//	common.SysError(fmt.Sprintf("渠道不存在：%d", channel.Id))
-					//	message = "数据库一致性已被破坏，请联系管理员"
-					//}
+
+					// 🔧 增强错误诊断
+					common.SysError(fmt.Sprintf("[Distributor] 渠道选择失败! group=%s, model=%s, error=%v, memory_cache=%v",
+						userGroup, modelRequest.Model, err, common.MemoryCacheEnabled))
+
 					abortWithOpenAiMessage(c, http.StatusServiceUnavailable, message, string(types.ErrorCodeModelNotFound))
 					return
 				}
 				if channel == nil {
+					// 🔧 增强诊断: 无可用渠道时记录更多信息
+					common.SysError(fmt.Sprintf("[Distributor] 无可用渠道! group=%s, model=%s, path=%s, memory_cache=%v",
+						userGroup, modelRequest.Model, c.Request.URL.Path, common.MemoryCacheEnabled))
+
 					abortWithOpenAiMessage(c, http.StatusServiceUnavailable, fmt.Sprintf("分组 %s 下模型 %s 无可用渠道（distributor）", userGroup, modelRequest.Model), string(types.ErrorCodeModelNotFound))
 					return
 				}
+
+				// 🔧 记录成功选择的渠道
+				common.SysLog(fmt.Sprintf("[Distributor] 渠道选择成功: channel_id=%d, type=%d, group=%s, model=%s",
+					channel.Id, channel.Type, userGroup, modelRequest.Model))
 			}
 		}
 		common.SetContextKey(c, constant.ContextKeyRequestStartTime, time.Now())
