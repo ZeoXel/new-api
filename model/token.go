@@ -26,6 +26,7 @@ type Token struct {
 	AllowIps           *string        `json:"allow_ips" gorm:"default:''"`
 	UsedQuota          int            `json:"used_quota" gorm:"default:0"` // used quota
 	Group              string         `json:"group" gorm:"default:''"`
+	ExternalUserId     string         `json:"external_user_id" gorm:"index;type:varchar(64)"` // 外部用户ID（如Supabase用户UUID）
 	DeletedAt          gorm.DeletedAt `gorm:"index"`
 }
 
@@ -360,4 +361,24 @@ func BatchDeleteTokens(ids []int, userId int) (int, error) {
 	}
 
 	return len(tokens), nil
+}
+
+// GetTokenByExternalUserId 通过外部用户ID获取单个Token（用于查找关联的user_id）
+func GetTokenByExternalUserId(externalUserId string) *Token {
+	if externalUserId == "" {
+		return nil
+	}
+	var token Token
+	err := DB.Where("external_user_id = ?", externalUserId).First(&token).Error
+	if err != nil {
+		return nil
+	}
+	return &token
+}
+
+// GetTokensByExternalUserId 通过外部用户ID获取所有Token
+func GetTokensByExternalUserId(externalUserId string) ([]*Token, error) {
+	var tokens []*Token
+	err := DB.Where("external_user_id = ?", externalUserId).Find(&tokens).Error
+	return tokens, err
 }
