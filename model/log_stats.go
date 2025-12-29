@@ -6,10 +6,10 @@ import (
 
 // ConsumptionSummary 消费汇总
 type ConsumptionSummary struct {
-	TotalQuota    int64 `json:"total_quota"`
-	TotalRequests int64 `json:"total_requests"`
-	TotalTokens   int64 `json:"total_tokens"`
-	AvgLatencyMs  int   `json:"avg_latency_ms"`
+	TotalQuota    int64   `json:"total_quota"`
+	TotalRequests int64   `json:"total_requests"`
+	TotalTokens   int64   `json:"total_tokens"`
+	AvgLatencyMs  float64 `json:"avg_latency_ms"`
 }
 
 // ModelConsumption 按模型分组的消费
