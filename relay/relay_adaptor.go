@@ -27,6 +27,7 @@ import (
 	taskjimeng "one-api/relay/channel/task/jimeng"
 	"one-api/relay/channel/task/kling"
 	taskopenai "one-api/relay/channel/task/openai_video"
+	taskseedance "one-api/relay/channel/task/seedance"
 	"one-api/relay/channel/task/suno"
 	tasktripo "one-api/relay/channel/task/tripo"
 	taskveo "one-api/relay/channel/task/veo"
@@ -143,6 +144,8 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 			return &taskveo.TaskAdaptor{}
 		case constant.ChannelTypeVolcEngine:
 			return &taskopenai.TaskAdaptor{}
+		case constant.ChannelTypeSeedance:
+			return &taskseedance.TaskAdaptor{}
 		case constant.ChannelTypeTripo3D:
 			return &tasktripo.TaskAdaptor{}
 		}

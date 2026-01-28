@@ -53,6 +53,7 @@ const (
     ChannelTypeTripo3D        = 53
     ChannelTypeVeo            = 54
     ChannelTypeBltcy          = 55 // 旧网关透传渠道
+    ChannelTypeSeedance       = 56 // 火山引擎 Seedance 视频生成
 	ChannelTypeDummy          // this one is only for count, do not add any channel after this
 
 )
@@ -114,4 +115,5 @@ var ChannelBaseURLs = []string{
     "https://api.tripo3d.ai",                    //53 Tripo3D
     "",                                          //54 Veo (Google)
     "",                                          //55 Bltcy (旧网关，需要配置具体URL)
+    "https://ark.cn-beijing.volces.com",         //56 Seedance (火山引擎视频生成)
 }
