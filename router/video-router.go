@@ -15,6 +15,14 @@ func SetVideoRouter(router *gin.Engine) {
 		videoV1Router.GET("/video/generations/:task_id", controller.RelayTask)
 	}
 
+	// Veo 视频生成路由 (v2 API)
+	videoV2Router := router.Group("/v2")
+	videoV2Router.Use(middleware.TokenAuth(), middleware.Distribute())
+	{
+		videoV2Router.POST("/videos/generations", controller.RelayTask)
+		videoV2Router.GET("/videos/generations/:task_id", controller.RelayTask)
+	}
+
 	// Sora 视频生成路由 - 支持 multipart/form-data 文件上传
 	// 适用于 sora-2, sora-2-pro 等模型
 	// 示例请求: POST /v1/videos
