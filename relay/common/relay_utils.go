@@ -70,8 +70,25 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 		return createTaskError(err, "invalid_request", http.StatusBadRequest, true)
 	}
 
-	if taskErr := validatePrompt(req.Prompt); taskErr != nil {
-		return taskErr
+	isViduMultiFrame := info.ChannelType == constant.ChannelTypeVidu &&
+		(req.Mode == "multiframe" || req.StartImage != "" || len(req.ImageSettings) > 0)
+
+	if isViduMultiFrame {
+		if strings.TrimSpace(req.StartImage) == "" {
+			return createTaskError(fmt.Errorf("start_image is required"), "invalid_request", http.StatusBadRequest, true)
+		}
+		if len(req.ImageSettings) < 2 {
+			return createTaskError(fmt.Errorf("image_settings must contain at least 2 items"), "invalid_request", http.StatusBadRequest, true)
+		}
+		for i, setting := range req.ImageSettings {
+			if strings.TrimSpace(setting.KeyImage) == "" {
+				return createTaskError(fmt.Errorf("image_settings[%d].key_image is required", i), "invalid_request", http.StatusBadRequest, true)
+			}
+		}
+	} else {
+		if taskErr := validatePrompt(req.Prompt); taskErr != nil {
+			return taskErr
+		}
 	}
 
 	if len(req.Images) == 0 && strings.TrimSpace(req.Image) != "" {
@@ -79,7 +96,11 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 		req.Images = []string{req.Image}
 	}
 
-	if req.HasImage() {
+	if isViduMultiFrame {
+		action = constant.TaskActionMultiFrame
+	}
+
+	if !isViduMultiFrame && req.HasImage() {
 		action = constant.TaskActionGenerate
 		if info.ChannelType == constant.ChannelTypeVidu {
 			// vidu 支持显式指定生成模式
@@ -88,6 +109,8 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 				action = constant.TaskActionFirstTailGenerate
 			case "reference":
 				action = constant.TaskActionReferenceGenerate
+			case "multiframe":
+				action = constant.TaskActionMultiFrame
 			case "img2video":
 				action = constant.TaskActionGenerate
 			default:

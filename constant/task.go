@@ -16,6 +16,7 @@ const (
 	TaskActionTextGenerate      = "textGenerate"
 	TaskActionFirstTailGenerate = "firstTailGenerate"
 	TaskActionReferenceGenerate = "referenceGenerate"
+	TaskActionMultiFrame        = "multiFrame"
 )
 
 var SunoModel2Action = map[string]string{

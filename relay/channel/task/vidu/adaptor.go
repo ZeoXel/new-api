@@ -26,6 +26,7 @@ import (
 type requestPayload struct {
 	Model             string   `json:"model"`
 	Images            []string `json:"images"`
+	Style             string   `json:"style,omitempty"`
 	Prompt            string   `json:"prompt,omitempty"`
 	Duration          int      `json:"duration,omitempty"`
 	Seed              int      `json:"seed,omitempty"`
@@ -33,6 +34,7 @@ type requestPayload struct {
 	Resolution        string   `json:"resolution,omitempty"`         // 分辨率：1080p, 720p
 	MovementAmplitude string   `json:"movement_amplitude,omitempty"` // 运动幅度：auto, small, large
 	Bgm               bool     `json:"bgm,omitempty"`                // 是否添加背景音乐
+	OffPeak           bool     `json:"off_peak,omitempty"`           // 是否使用错峰模式
 	Payload           string   `json:"payload,omitempty"`            // 自定义载荷
 	CallbackUrl       string   `json:"callback_url,omitempty"`       // 回调地址
 }
@@ -62,9 +64,23 @@ type taskResultResponse struct {
 }
 
 type creation struct {
-	ID       string `json:"id"`
-	URL      string `json:"url"`
-	CoverURL string `json:"cover_url"`
+	ID             string `json:"id"`
+	URL            string `json:"url"`
+	CoverURL       string `json:"cover_url"`
+	WatermarkedURL string `json:"watermarked_url"`
+}
+
+type multiFrameRequestPayload struct {
+	Model         string                         `json:"model"`
+	StartImage    string                         `json:"start_image"`
+	ImageSettings []relaycommon.ViduImageSetting `json:"image_settings"`
+	Resolution    string                         `json:"resolution,omitempty"`
+	Watermark     *bool                          `json:"watermark,omitempty"`
+	WmUrl         string                         `json:"wm_url,omitempty"`
+	WmPosition    string                         `json:"wm_position,omitempty"`
+	MetaData      string                         `json:"meta_data,omitempty"`
+	Payload       string                         `json:"payload,omitempty"`
+	CallbackUrl   string                         `json:"callback_url,omitempty"`
 }
 
 // ============================
@@ -85,12 +101,25 @@ func (a *TaskAdaptor) ValidateRequestAndSetAction(c *gin.Context, info *relaycom
 	return relaycommon.ValidateBasicTaskRequest(c, info, constant.TaskActionGenerate)
 }
 
-func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo) (io.Reader, error) {
+func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, info *relaycommon.RelayInfo) (io.Reader, error) {
 	v, exists := c.Get("task_request")
 	if !exists {
 		return nil, fmt.Errorf("request not found in context")
 	}
 	req := v.(relaycommon.TaskSubmitReq)
+
+	if info != nil && info.Action == constant.TaskActionMultiFrame {
+		body, err := a.convertToMultiFramePayload(&req)
+		if err != nil {
+			return nil, err
+		}
+		data, err := json.Marshal(body)
+		if err != nil {
+			return nil, err
+		}
+		fmt.Printf("[DEBUG Vidu] Request body sent to Vidu API: %s\n", string(data))
+		return bytes.NewReader(data), nil
+	}
 
 	body, err := a.convertToRequestPayload(&req)
 	if err != nil {
@@ -121,6 +150,8 @@ func (a *TaskAdaptor) BuildRequestURL(info *relaycommon.RelayInfo) (string, erro
 		path = "/start-end2video"
 	case constant.TaskActionReferenceGenerate:
 		path = "/reference2video"
+	case constant.TaskActionMultiFrame:
+		path = "/multiframe"
 	default:
 		path = "/text2video"
 	}
@@ -160,23 +191,25 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, info *rela
 		return
 	}
 
-	// 确保响应中包含模型名称（用于计费和查询）
-	if vResp.Model == "" && info.OriginModelName != "" {
-		vResp.Model = info.OriginModelName
-	}
-
 	// 将 credits 保存到上下文，用于直接计费（新模型按量计费）
 	if vResp.Credits > 0 {
 		c.Set("vidu_credits", vResp.Credits)
 	}
 
-	// 重新序列化，确保 model 字段包含在 taskData 中
-	taskData, err = json.Marshal(vResp)
-	if err != nil {
-		taskData = responseBody // 降级使用原始响应
+	taskData = responseBody
+
+	// 确保响应中包含模型名称（用于计费和查询）
+	if vResp.Model == "" && info.OriginModelName != "" {
+		var raw map[string]any
+		if err := json.Unmarshal(responseBody, &raw); err == nil {
+			raw["model"] = info.OriginModelName
+			if patched, err := json.Marshal(raw); err == nil {
+				taskData = patched
+			}
+		}
 	}
 
-	c.JSON(http.StatusOK, vResp)
+	c.Data(http.StatusOK, "application/json", taskData)
 	return vResp.TaskId, taskData, nil
 }
 
@@ -238,12 +271,17 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 	r := requestPayload{
 		Model:             defaultString(req.Model, "viduq1"),
 		Images:            req.Images,
+		Style:             req.Style,
 		Prompt:            req.Prompt,
 		Duration:          defaultInt(req.Duration, 5),
+		Seed:              req.Seed,
 		AspectRatio:       aspectRatio, // 🆕 使用转换后的 aspect_ratio
 		Resolution:        resolution,  // 🆕 使用前端配置的分辨率
-		MovementAmplitude: "auto",
-		Bgm:               false,
+		MovementAmplitude: defaultString(req.MovementAmplitude, "auto"),
+		Bgm:               req.Bgm,
+		OffPeak:           req.OffPeak,
+		Payload:           req.Payload,
+		CallbackUrl:       req.CallbackUrl,
 	}
 
 	// 🆕 metadata 可能会覆盖上面的默认值（例如直接传 aspect_ratio）
@@ -259,6 +297,32 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 
 	// 🆕 调试日志：输出最终发送的参数
 	fmt.Printf("[DEBUG Vidu] Final payload - aspect_ratio: %s, resolution: %s\n", r.AspectRatio, r.Resolution)
+
+	return &r, nil
+}
+
+func (a *TaskAdaptor) convertToMultiFramePayload(req *relaycommon.TaskSubmitReq) (*multiFrameRequestPayload, error) {
+	r := multiFrameRequestPayload{
+		Model:         defaultString(req.Model, "viduq2-turbo"),
+		StartImage:    req.StartImage,
+		ImageSettings: req.ImageSettings,
+		Resolution:    req.Resolution,
+		Watermark:     req.Watermark,
+		WmUrl:         req.WmUrl,
+		WmPosition:    req.WmPosition,
+		MetaData:      req.MetaData,
+		Payload:       req.Payload,
+		CallbackUrl:   req.CallbackUrl,
+	}
+
+	metadata := req.Metadata
+	medaBytes, err := json.Marshal(metadata)
+	if err != nil {
+		return nil, errors.Wrap(err, "metadata marshal metadata failed")
+	}
+	if err := json.Unmarshal(medaBytes, &r); err != nil {
+		return nil, errors.Wrap(err, "unmarshal metadata failed")
+	}
 
 	return &r, nil
 }
@@ -283,7 +347,7 @@ func (a *TaskAdaptor) getAspectRatio(req *relaycommon.TaskSubmitReq) string {
 	if req.AspectRatio != "" {
 		// 验证是否为支持的值
 		switch req.AspectRatio {
-		case "1:1", "16:9", "9:16":
+		case "1:1", "16:9", "9:16", "4:3", "3:4":
 			return req.AspectRatio
 		default:
 			// 如果是无效值，记录日志并继续
@@ -295,7 +359,7 @@ func (a *TaskAdaptor) getAspectRatio(req *relaycommon.TaskSubmitReq) string {
 	if aspectRatio, ok := req.Metadata["aspect_ratio"].(string); ok && aspectRatio != "" {
 		// 验证是否为支持的值
 		switch aspectRatio {
-		case "1:1", "16:9", "9:16":
+		case "1:1", "16:9", "9:16", "4:3", "3:4":
 			return aspectRatio
 		}
 	}
@@ -311,6 +375,12 @@ func (a *TaskAdaptor) getAspectRatio(req *relaycommon.TaskSubmitReq) string {
 	// 竖屏 9:16
 	case "1080x1920", "720x1280", "9:16":
 		return "9:16"
+	// 4:3
+	case "1440x1080", "1024x768", "4:3":
+		return "4:3"
+	// 3:4
+	case "1080x1440", "768x1024", "3:4":
+		return "3:4"
 	default:
 		// 默认返回 16:9（最常用的比例）
 		return "16:9"
