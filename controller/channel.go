@@ -188,6 +188,8 @@ func FetchUpstreamModels(c *gin.Context) {
 		url = fmt.Sprintf("%s/v1beta/openai/models", baseURL) // Remove key in url since we need to use AuthHeader
 	case constant.ChannelTypeAli:
 		url = fmt.Sprintf("%s/compatible-mode/v1/models", baseURL)
+	case constant.ChannelTypeVolcEngine:
+		url = fmt.Sprintf("%s/api/v3/models", baseURL)
 	default:
 		url = fmt.Sprintf("%s/v1/models", baseURL)
 	}
@@ -923,7 +925,17 @@ func FetchModels(c *gin.Context) {
 	}
 
 	client := &http.Client{}
-	url := fmt.Sprintf("%s/v1/models", baseURL)
+	var url string
+	switch req.Type {
+	case constant.ChannelTypeAli:
+		url = fmt.Sprintf("%s/compatible-mode/v1/models", baseURL)
+	case constant.ChannelTypeGemini:
+		url = fmt.Sprintf("%s/v1beta/openai/models", baseURL)
+	case constant.ChannelTypeVolcEngine:
+		url = fmt.Sprintf("%s/api/v3/models", baseURL)
+	default:
+		url = fmt.Sprintf("%s/v1/models", baseURL)
+	}
 
 	request, err := http.NewRequest("GET", url, nil)
 	if err != nil {
