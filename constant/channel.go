@@ -51,6 +51,7 @@ const (
     ChannelTypeJimeng         = 51
     ChannelTypeVidu           = 52
     ChannelTypeTripo3D        = 53
+    ChannelTypeVeo            = 54
     ChannelTypeBltcy          = 55 // 旧网关透传渠道
 	ChannelTypeDummy          // this one is only for count, do not add any channel after this
 
@@ -111,6 +112,6 @@ var ChannelBaseURLs = []string{
     "https://visual.volcengineapi.com",          //51
     "https://api.vidu.cn",                       //52
     "https://api.tripo3d.ai",                    //53 Tripo3D
-    "",                                          //54
+    "",                                          //54 Veo (Google)
     "",                                          //55 Bltcy (旧网关，需要配置具体URL)
 }

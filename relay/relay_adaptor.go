@@ -26,8 +26,10 @@ import (
 	"one-api/relay/channel/siliconflow"
 	taskjimeng "one-api/relay/channel/task/jimeng"
 	"one-api/relay/channel/task/kling"
-	tasktripo "one-api/relay/channel/task/tripo"
+	taskopenai "one-api/relay/channel/task/openai_video"
 	"one-api/relay/channel/task/suno"
+	tasktripo "one-api/relay/channel/task/tripo"
+	taskveo "one-api/relay/channel/task/veo"
 	taskvertex "one-api/relay/channel/task/vertex"
 	taskVidu "one-api/relay/channel/task/vidu"
 	"one-api/relay/channel/tencent"
@@ -127,6 +129,8 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 		switch channelType {
 		case constant.ChannelTypeSunoAPI:
 			return &suno.TaskAdaptor{}
+		case constant.ChannelTypeOpenAI:
+			return &taskopenai.TaskAdaptor{}
 		case constant.ChannelTypeKling:
 			return &kling.TaskAdaptor{}
 		case constant.ChannelTypeJimeng:
@@ -135,6 +139,10 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 			return &taskvertex.TaskAdaptor{}
 		case constant.ChannelTypeVidu:
 			return &taskVidu.TaskAdaptor{}
+		case constant.ChannelTypeVeo:
+			return &taskveo.TaskAdaptor{}
+		case constant.ChannelTypeVolcEngine:
+			return &taskopenai.TaskAdaptor{}
 		case constant.ChannelTypeTripo3D:
 			return &tasktripo.TaskAdaptor{}
 		}
