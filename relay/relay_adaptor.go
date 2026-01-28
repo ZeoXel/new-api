@@ -1,6 +1,7 @@
 package relay
 
 import (
+	"fmt"
 	"one-api/constant"
 	"one-api/relay/channel"
 	"one-api/relay/channel/ali"
@@ -120,6 +121,7 @@ func GetTaskPlatform(c *gin.Context) constant.TaskPlatform {
 }
 
 func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
+	fmt.Printf("[DEBUG] GetTaskAdaptor called with platform=%s\n", platform)
 	switch platform {
 	//case constant.APITypeAIProxyLibrary:
 	//	return &aiproxy.Adaptor{}
@@ -127,6 +129,8 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 		return &suno.TaskAdaptor{}
 	}
 	if channelType, err := strconv.ParseInt(string(platform), 10, 64); err == nil {
+		fmt.Printf("[DEBUG] Parsed channelType=%d\n", channelType)
+		fmt.Printf("[DEBUG] ChannelTypeSeedance constant=%d\n", constant.ChannelTypeSeedance)
 		switch channelType {
 		case constant.ChannelTypeSunoAPI:
 			return &suno.TaskAdaptor{}
@@ -145,10 +149,16 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 		case constant.ChannelTypeVolcEngine:
 			return &taskopenai.TaskAdaptor{}
 		case constant.ChannelTypeSeedance:
+			fmt.Printf("[DEBUG] Matched Seedance! Returning adaptor\n")
 			return &taskseedance.TaskAdaptor{}
 		case constant.ChannelTypeTripo3D:
 			return &tasktripo.TaskAdaptor{}
+		default:
+			fmt.Printf("[DEBUG] No match for channelType=%d\n", channelType)
 		}
+	} else {
+		fmt.Printf("[DEBUG] Failed to parse platform as int: %v\n", err)
 	}
+	fmt.Printf("[DEBUG] Returning nil adaptor\n")
 	return nil
 }

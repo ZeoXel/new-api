@@ -40,9 +40,9 @@ func (a *TaskAdaptor) ValidateRequestAndSetAction(c *gin.Context, info *relaycom
 }
 
 // BuildRequestURL constructs the upstream URL.
-// 火山引擎视频生成使用 /v3/video/generations 端点
+// 火山引擎 Seedance 使用 /api/v3/contents/generations/tasks 端点
 func (a *TaskAdaptor) BuildRequestURL(info *relaycommon.RelayInfo) (string, error) {
-	return fmt.Sprintf("%s/api/v3/video/generations", strings.TrimRight(a.baseURL, "/")), nil
+	return fmt.Sprintf("%s/api/v3/contents/generations/tasks", strings.TrimRight(a.baseURL, "/")), nil
 }
 
 // BuildRequestHeader sets required headers.
@@ -60,10 +60,72 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		return nil, fmt.Errorf("request not found in context")
 	}
 	req := v.(relaycommon.TaskSubmitReq)
-	data, err := json.Marshal(req)
+
+	// 根据 Seedance 官方文档，构建请求体
+	// 文档要求使用 content 数组格式
+	body := map[string]interface{}{
+		"model": req.Model,
+	}
+
+	// 构建 content 数组
+	content := []map[string]interface{}{}
+
+	// 添加文本内容
+	if req.Prompt != "" {
+		content = append(content, map[string]interface{}{
+			"type": "text",
+			"text": req.Prompt,
+		})
+	}
+
+	// 添加图片内容
+	if len(req.Images) > 0 {
+		for i, imgUrl := range req.Images {
+			imgContent := map[string]interface{}{
+				"type": "image_url",
+				"image_url": map[string]interface{}{
+					"url": imgUrl,
+				},
+			}
+			// 如果有 image_roles，添加 role 字段
+			if req.Metadata != nil {
+				if roles, ok := req.Metadata["image_roles"].([]interface{}); ok && i < len(roles) {
+					if role, ok := roles[i].(string); ok {
+						imgContent["role"] = role
+					}
+				}
+			}
+			content = append(content, imgContent)
+		}
+	}
+
+	body["content"] = content
+
+	// 添加其他可选参数
+	if req.Metadata != nil {
+		if returnLastFrame, ok := req.Metadata["return_last_frame"].(bool); ok {
+			body["return_last_frame"] = returnLastFrame
+		}
+		if generateAudio, ok := req.Metadata["generate_audio"].(bool); ok {
+			body["generate_audio"] = generateAudio
+		}
+		if serviceTier, ok := req.Metadata["service_tier"].(string); ok {
+			body["service_tier"] = serviceTier
+		}
+		if seed, ok := req.Metadata["seed"].(float64); ok {
+			body["seed"] = int(seed)
+		}
+		if callbackUrl, ok := req.Metadata["callback_url"].(string); ok {
+			body["callback_url"] = callbackUrl
+		}
+	}
+
+	data, err := json.Marshal(body)
 	if err != nil {
 		return nil, err
 	}
+
+	fmt.Printf("[DEBUG Seedance] Request body: %s\n", string(data))
 	return bytes.NewReader(data), nil
 }
 
@@ -96,7 +158,7 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 	if !ok {
 		return nil, fmt.Errorf("invalid task_id")
 	}
-	url := fmt.Sprintf("%s/api/v3/video/generations/%s", strings.TrimRight(baseUrl, "/"), taskID)
+	url := fmt.Sprintf("%s/api/v3/contents/generations/tasks/%s", strings.TrimRight(baseUrl, "/"), taskID)
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err
