@@ -1,897 +1,299 @@
-[SYS] 2026/01/29 - 10:28:39 | 未找到 .env 文件，使用默认环境变量，如果需要，请创建 .env 文件并设置相关变量 
-[SYS] 2026/01/29 - 10:28:39 | No .env file found, using default environment variables. If needed, please create a .env file and set the relevant variables. 
-[SYS] 2026/01/29 - 10:28:39 | initializing token encoders 
-[SYS] 2026/01/29 - 10:28:39 | token encoders initialized 
-[SYS] 2026/01/29 - 10:28:39 | SQL_DSN not set, using SQLite as database 
-[SYS] 2026/01/29 - 10:28:39 | database migration started 
-[SYS] 2026/01/29 - 10:28:39 | system is already initialized at: 2025-11-14 17:16:48 +0800 CST 
-[SYS] 2026/01/29 - 10:28:39 | REDIS_CONN_STRING not set, Redis is not enabled 
-[SYS] 2026/01/29 - 10:28:39 | New API v0.0.0 started 
-[SYS] 2026/01/29 - 10:28:39 | 正在更新数据看板数据... 
-[SYS] 2026/01/29 - 10:28:39 | 保存数据看板数据成功，共保存0条数据 
-[GIN] 2026/01/29 - 10:28:43 | 2026012910284351968000rz5v3raO | 200 |    1.439167ms |             ::1 |     GET /console
-2026/01/29 10:28:43 [sessions] ERROR! securecookie: the value is not valid
-[GIN] 2026/01/29 - 10:28:43 | 20260129102843185029000RuNmgvaX | 401 |     497.375µs |             ::1 |     GET /api/user/self
-[GIN] 2026/01/29 - 10:28:43 | 20260129102843185075000jzkHIcJo | 200 |     531.292µs |             ::1 |     GET /api/status
-[GIN] 2026/01/29 - 10:28:43 | 202601291028432180120002ramLBLj | 200 |     310.333µs |             ::1 |     GET /login?expired=true
-[GIN] 2026/01/29 - 10:28:43 | 20260129102843280688000kbAPN1Yi | 200 |     228.583µs |             ::1 |     GET /api/status
-
-2026/01/29 10:28:44 [31;1m/Users/g/Desktop/工作/统一API网关/new-api/model/twofa.go:46 [35;1mrecord not found
-[0m[33m[0.313ms] [34;1m[rows:0][0m SELECT * FROM `two_fas` WHERE user_id = 1 AND `two_fas`.`deleted_at` IS NULL ORDER BY `two_fas`.`id` LIMIT 1
-2026/01/29 10:28:44 [sessions] ERROR! securecookie: the value is not valid
-[GIN] 2026/01/29 - 10:28:44 | 202601291028443379710009JxcE8I2 | 200 |   82.142084ms |             ::1 |    POST /api/user/login?turnstile=
-[GIN] 2026/01/29 - 10:28:44 | 20260129102844456801000hW1LgntD | 200 |     656.125µs |             ::1 |     GET /api/user/self
-[GIN] 2026/01/29 - 10:28:44 | 20260129102844462583000X8dqNL9p | 200 |     517.875µs |             ::1 |     GET /api/data/?username=&start_timestamp=1769567324&end_timestamp=1769657324&default_time=hour
-[GIN] 2026/01/29 - 10:28:44 | 202601291028444795440009hidBJfe | 200 |     114.708µs |             ::1 |     GET /api/uptime/status
-[SYS] 2026/01/29 - 10:28:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:28:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:28:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:28:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:29:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:29:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:29:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:29:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:29:16 | [Distributor] 请求渠道: group=default, model=veo3.1, path=/v2/videos/generations/video_test_123 
-[SYS] 2026/01/29 - 10:29:16 | [Distributor] 渠道选择成功: channel_id=6, type=54, group=default, model=veo3.1 
-[DEBUG RelayTask] Method: GET, Path: /v2/videos/generations/video_test_123, channel_type: 54
+[SYS] 2026/01/29 - 11:10:20 | 未找到 .env 文件，使用默认环境变量，如果需要，请创建 .env 文件并设置相关变量 
+[SYS] 2026/01/29 - 11:10:20 | No .env file found, using default environment variables. If needed, please create a .env file and set the relevant variables. 
+[SYS] 2026/01/29 - 11:10:20 | initializing token encoders 
+[SYS] 2026/01/29 - 11:10:20 | token encoders initialized 
+[SYS] 2026/01/29 - 11:10:20 | SQL_DSN not set, using SQLite as database 
+[SYS] 2026/01/29 - 11:10:20 | database migration started 
+[SYS] 2026/01/29 - 11:10:20 | system is already initialized at: 2025-11-14 17:16:48 +0800 CST 
+[SYS] 2026/01/29 - 11:10:20 | REDIS_CONN_STRING not set, Redis is not enabled 
+[SYS] 2026/01/29 - 11:10:20 | New API v0.0.0 started 
+[SYS] 2026/01/29 - 11:10:20 | 正在更新数据看板数据... 
+[SYS] 2026/01/29 - 11:10:20 | 保存数据看板数据成功，共保存0条数据 
+[SYS] 2026/01/29 - 11:10:32 | [Distributor] 请求渠道: group=default, model=veo3.1, path=/v2/videos/generations 
+[SYS] 2026/01/29 - 11:10:32 | [Distributor] 渠道选择成功: channel_id=6, type=54, group=default, model=veo3.1 
+[DEBUG RelayTask] Method: POST, Path: /v2/videos/generations, channel_type: 54
 [DEBUG genBaseRelayInfo] No billing_model_name in context
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG BILLING] BillingModelName="", OriginModelName="veo3.1", Final modelName="veo3.1"
+[SYS] 2026/01/29 - 11:10:32 | model price not found: veo3.1 
+[DEBUG PRICE] GetModelPrice("veo3.1") = -1.000000, success=false
+[DEBUG PRICE] Using fallback price 0.1
+[DEBUG RATIO] modelPrice=0.100000, groupRatio=1.000000, channelRatio=1.000000
+[DEBUG QUOTA] final ratio=0.100000, quota=50000
+[DEBUG Veo] Request body sent to Veo API: {"model":"veo3.1","prompt":"一只可爱的猫咪在阳光下玩耍","images":[],"aspect_ratio":"16:9"}
+[SYS] 2026/01/29 - 11:10:35 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:10:35 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:10:35 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[SYS] 2026/01/29 - 11:10:35 | 任务进度轮询完成 
+2026/01/29 11:10:46 [sessions] ERROR! securecookie: the value is not valid
+2026/01/29 11:10:46 [sessions] ERROR! securecookie: the value is not valid
+2026/01/29 11:10:46 [sessions] ERROR! securecookie: the value is not valid
+2026/01/29 11:10:46 [sessions] ERROR! securecookie: the value is not valid
+[GIN] 2026/01/29 - 11:10:46 | 20260129111046660499000YIyBLzvc | 401 |     346.583µs |             ::1 |     GET /api/group/
+[GIN] 2026/01/29 - 11:10:46 | 20260129111046659683000Zkn5qz8R | 401 |    1.587375ms |             ::1 |     GET /api/channel/models
+[GIN] 2026/01/29 - 11:10:46 | 20260129111046660591000wmkH040e | 401 |     729.209µs |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[GIN] 2026/01/29 - 11:10:46 | 20260129111046660663000JSsWN9ls | 401 |     596.958µs |             ::1 |     GET /api/models
+[GIN] 2026/01/29 - 11:10:46 | 202601291110467011230009uIqhIyd | 200 |     483.042µs |             ::1 |     GET /login?expired=true
+[GIN] 2026/01/29 - 11:10:46 | 20260129111046941361000amNOmH8P | 200 |     375.958µs |             ::1 |     GET /api/status
 
-2026/01/29 10:29:16 [31;1m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:206 [35;1mrecord not found
-[0m[33m[0.747ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE user_id = 1 and task_id = "video_test_123" ORDER BY `tasks`.`id` LIMIT 1
-[GIN] 2026/01/29 - 10:29:16 | 20260129102916434326000ZTZoVQUm | 400 |    1.631458ms |             ::1 |     GET /v2/videos/generations/video_test_123?model=veo3.1
-[DEBUG RelayTask] Method: GET, Path: /v2/videos/generations/video_test_123, channel_type: 0
+2026/01/29 11:10:48 [31;1m/Users/g/Desktop/工作/统一API网关/new-api/model/twofa.go:46 [35;1mrecord not found
+[0m[33m[0.925ms] [34;1m[rows:0][0m SELECT * FROM `two_fas` WHERE user_id = 1 AND `two_fas`.`deleted_at` IS NULL ORDER BY `two_fas`.`id` LIMIT 1
+2026/01/29 11:10:48 [sessions] ERROR! securecookie: the value is not valid
+[GIN] 2026/01/29 - 11:10:48 | 2026012911104872982000QzgntIi8 | 200 |   71.206125ms |             ::1 |    POST /api/user/login?turnstile=
+[GIN] 2026/01/29 - 11:10:48 | 20260129111048171167000xgdrw6y6 | 200 |     931.792µs |             ::1 |     GET /api/user/self
+[GIN] 2026/01/29 - 11:10:48 | 20260129111048223075000U8i7573k | 200 |    1.530417ms |             ::1 |     GET /api/user/self
+[GIN] 2026/01/29 - 11:10:48 | 20260129111048224122000wKngBEzI | 200 |    2.465833ms |             ::1 |     GET /api/data/?username=&start_timestamp=1769569848&end_timestamp=1769659848&default_time=hour
+[GIN] 2026/01/29 - 11:10:48 | 20260129111048253441000n9BBNVk1 | 200 |     338.583µs |             ::1 |     GET /api/uptime/status
+[GIN] 2026/01/29 - 11:10:50 | 20260129111050142946000tpQUgMyT | 200 |     523.916µs |             ::1 |     GET /api/group/
+[GIN] 2026/01/29 - 11:10:50 | 20260129111050143164000RbAUdSTd | 200 |      750.75µs |             ::1 |     GET /api/models
+[GIN] 2026/01/29 - 11:10:50 | 2026012911105014259100085T1Zaej | 200 |    1.990458ms |             ::1 |     GET /api/channel/models
+[GIN] 2026/01/29 - 11:10:50 | 20260129111050143162000i8koeCMn | 200 |    1.602833ms |             ::1 |     GET /api/channel/?p=1&page_size=10&id_sort=false&tag_mode=false
+[SYS] 2026/01/29 - 11:10:50 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:10:50 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:10:50 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[SYS] 2026/01/29 - 11:10:50 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:11:05 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:11:05 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:11:05 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[SYS] 2026/01/29 - 11:11:05 | 任务进度轮询完成 
+[INFO] 2026/01/29 - 11:11:20 | 20260129111032426265000PRSPD0PS | record consume log: userId=1, params={"channel_id":6,"prompt_tokens":0,"completion_tokens":0,"model_name":"veo3.1","token_name":"1","quota":50000,"content":"模型固定价格 -1.00，分组倍率 1.00，渠道倍率 1.00，操作 generate","token_id":1,"use_time_seconds":0,"is_stream":false,"group":"default","other":{"billing_mode":"fixed","channel_ratio":1,"group_ratio":1,"model_price":-1}} 
+[GIN] 2026/01/29 - 11:11:20 | 20260129111032426265000PRSPD0PS | 200 |    48.006548s |             ::1 |    POST /v2/videos/generations
+[SYS] 2026/01/29 - 11:11:20 | syncing options from database 
+[SYS] 2026/01/29 - 11:11:20 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:11:20 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:11:20 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:11:20 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:11:20 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:11:25 | [Distributor] 请求渠道: group=default, model=veo3.1, path=/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e 
+[SYS] 2026/01/29 - 11:11:25 | [Distributor] 渠道选择成功: channel_id=6, type=54, group=default, model=veo3.1 
+[DEBUG RelayTask] Method: GET, Path: /v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e, channel_type: 54
 [DEBUG genBaseRelayInfo] No billing_model_name in context
-
-2026/01/29 10:29:16 [31;1m/Users/g/Desktop/工作/统一API网关/new-api/model/task.go:206 [35;1mrecord not found
-[0m[33m[0.048ms] [34;1m[rows:0][0m SELECT * FROM `tasks` WHERE user_id = 1 and task_id = "video_test_123" ORDER BY `tasks`.`id` LIMIT 1
-[GIN] 2026/01/29 - 10:29:16 | 20260129102916439170000Z9Kuk3KM | 400 |     206.292µs |             ::1 |     GET /v2/videos/generations/video_test_123
-[SYS] 2026/01/29 - 10:29:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:29:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:29:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:29:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:29:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:29:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:29:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:29:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:29:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:29:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:29:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:29:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:29:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:30:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:30:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:30:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:30:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:30:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:30:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:30:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:30:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:30:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:30:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:30:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:30:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:30:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:30:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:30:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:30:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:30:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:31:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:31:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:31:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:31:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:31:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:31:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:31:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:31:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:31:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:31:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:31:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:31:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:31:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:31:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:31:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:31:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:31:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:32:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:32:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:32:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:32:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:32:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:32:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:32:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:32:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:32:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:32:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:32:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:32:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:32:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:32:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:32:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:32:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:32:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:33:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:33:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:33:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:33:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:33:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:33:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:33:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:33:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:33:39 | 正在更新数据看板数据... 
-[SYS] 2026/01/29 - 10:33:39 | 保存数据看板数据成功，共保存0条数据 
-[SYS] 2026/01/29 - 10:33:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:33:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:33:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:33:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:33:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:33:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:33:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:33:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:33:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:34:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:34:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:34:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:34:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:34:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:34:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:34:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:34:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:34:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:34:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:34:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:34:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:34:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:34:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:34:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:34:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:34:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:35:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:35:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:35:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:35:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:35:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:35:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:35:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:35:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:35:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:35:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:35:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:35:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:35:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:35:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:35:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:35:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:35:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:36:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:36:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:36:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:36:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:36:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:36:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:36:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:36:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:36:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:36:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:36:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:36:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:36:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:36:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:36:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:36:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:36:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:37:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:37:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:37:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:37:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:37:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:37:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:37:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:37:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:37:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:37:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:37:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:37:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:37:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:37:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:37:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:37:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:37:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:38:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:38:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:38:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:38:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:38:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:38:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:38:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:38:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:38:39 | 正在更新数据看板数据... 
-[SYS] 2026/01/29 - 10:38:39 | 保存数据看板数据成功，共保存0条数据 
-[SYS] 2026/01/29 - 10:38:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:38:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:38:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:38:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:38:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:38:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:38:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:38:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:38:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:39:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:39:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:39:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:39:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:39:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:39:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:39:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:39:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:39:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:39:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:39:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:39:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:39:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:39:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:39:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:39:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:39:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:40:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:40:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:40:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:40:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:40:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:40:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:40:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:40:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:40:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:40:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:40:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:40:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:40:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:40:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:40:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:40:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:40:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:41:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:41:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:41:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:41:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:41:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:41:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:41:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:41:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:41:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:41:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:41:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:41:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:41:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:41:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:41:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:41:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:41:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:42:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:42:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:42:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:42:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:42:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:42:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:42:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:42:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:42:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:42:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:42:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:42:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:42:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:42:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:42:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:42:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:42:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:43:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:43:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:43:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:43:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:43:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:43:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:43:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:43:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:43:39 | 正在更新数据看板数据... 
-[SYS] 2026/01/29 - 10:43:39 | 保存数据看板数据成功，共保存0条数据 
-[SYS] 2026/01/29 - 10:43:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:43:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:43:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:43:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:43:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:43:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:43:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:43:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:43:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:44:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:44:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:44:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:44:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:44:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:44:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:44:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:44:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:44:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:44:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:44:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:44:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:44:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:44:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:44:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:44:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:44:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:45:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:45:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:45:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:45:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:45:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:45:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:45:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:45:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:45:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:45:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:45:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:45:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:45:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:45:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:45:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:45:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:45:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:46:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:46:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:46:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:46:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:46:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:46:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:46:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:46:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:46:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:46:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:46:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:46:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:46:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:46:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:46:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:46:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:46:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:47:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:47:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:47:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:47:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:47:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:47:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:47:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:47:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:47:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:47:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:47:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:47:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:47:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:47:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:47:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:47:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:47:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:48:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:48:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:48:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:48:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:48:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:48:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:48:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:48:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:48:39 | 正在更新数据看板数据... 
-[SYS] 2026/01/29 - 10:48:39 | 保存数据看板数据成功，共保存0条数据 
-[SYS] 2026/01/29 - 10:48:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:48:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:48:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:48:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:48:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:48:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:48:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:48:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:48:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:49:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:49:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:49:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:49:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:49:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:49:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:49:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:49:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:49:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:49:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:49:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:49:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:49:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:49:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:49:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:49:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:49:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:50:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:50:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:50:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:50:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:50:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:50:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:50:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:50:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:50:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:50:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:50:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:50:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:50:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:50:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:50:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:50:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:50:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:51:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:51:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:51:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:51:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:51:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:51:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:51:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:51:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:51:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:51:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:51:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:51:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:51:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:51:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:51:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:51:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:51:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:52:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:52:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:52:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:52:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:52:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:52:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:52:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:52:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:52:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:52:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:52:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:52:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:52:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:52:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:52:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:52:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:52:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:53:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:53:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:53:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:53:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:53:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:53:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:53:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:53:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:53:39 | 正在更新数据看板数据... 
-[SYS] 2026/01/29 - 10:53:39 | 保存数据看板数据成功，共保存0条数据 
-[SYS] 2026/01/29 - 10:53:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:53:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:53:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:53:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:53:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:53:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:53:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:53:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:53:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:54:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:54:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:54:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:54:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:54:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:54:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:54:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:54:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:54:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:54:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:54:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:54:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:54:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:54:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:54:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:54:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:54:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:55:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:55:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:55:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:55:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:55:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:55:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:55:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:55:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:55:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:55:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:55:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:55:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:55:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:55:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:55:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:55:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:55:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:56:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:56:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:56:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:56:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:56:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:56:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:56:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:56:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:56:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:56:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:56:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:56:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:56:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:56:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:56:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:56:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:56:54 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:57:09 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:57:09 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:57:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:57:09 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:57:24 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:57:24 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:57:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:57:24 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:57:39 | syncing options from database 
-[SYS] 2026/01/29 - 10:57:39 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:57:39 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:57:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:57:39 | 任务进度轮询完成 
-[SYS] 2026/01/29 - 10:57:54 | 任务进度轮询开始 
-[INFO] 2026/01/29 - 10:57:54 | SYSTEM | Channel #3 pending video tasks: 20 
-[DEBUG] GetTaskAdaptor called with platform=coze
-[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
-[DEBUG] Returning nil adaptor
-[ERR] 2026/01/29 - 10:57:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
-[SYS] 2026/01/29 - 10:57:54 | 任务进度轮询完成 
+[DEBUG videoFetch] Veo query detected, modelName from query: veo3.1
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG videoFetch] Added model to fetchParams: veo3.1
+[DEBUG videoFetch] fetchParams: map[model:veo3.1 task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] body: map[model:veo3.1 task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] Added model parameter: veo3.1
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e?model=veo3.1
+[GIN] 2026/01/29 - 11:11:26 | 20260129111125438652000s1P4j0X4 | 200 |  705.738458ms |             ::1 |     GET /v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e?model=veo3.1
+[SYS] 2026/01/29 - 11:11:35 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:11:35 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:11:35 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:11:35 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:11:36 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:11:51 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:11:51 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:11:51 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:11:51 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:11:51 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:12:06 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:12:06 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:12:06 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:12:06 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:12:06 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:12:20 | syncing options from database 
+[SYS] 2026/01/29 - 11:12:21 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:12:21 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[INFO] 2026/01/29 - 11:12:21 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:12:21 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[SYS] 2026/01/29 - 11:12:21 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:12:36 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:12:36 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:12:36 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:12:36 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:12:37 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:12:52 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:12:52 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:12:52 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:12:52 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:12:52 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:13:07 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:13:07 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:13:07 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:13:07 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:13:07 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:13:20 | syncing options from database 
+[SYS] 2026/01/29 - 11:13:22 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:13:22 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:13:22 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:13:22 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:13:23 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:13:38 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:13:38 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:13:38 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:13:38 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:13:38 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:13:53 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:13:53 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:13:53 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:13:53 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:13:54 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:14:09 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:14:09 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:14:09 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:14:09 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:14:09 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:14:20 | syncing options from database 
+[SYS] 2026/01/29 - 11:14:24 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:14:24 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:14:24 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:14:24 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:14:24 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:14:39 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:14:39 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:14:39 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:14:39 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:14:39 | 任务进度轮询完成 
+[SYS] 2026/01/29 - 11:14:54 | 任务进度轮询开始 
+[INFO] 2026/01/29 - 11:14:54 | SYSTEM | Channel #3 pending video tasks: 20 
+[DEBUG] GetTaskAdaptor called with platform=coze
+[DEBUG] Failed to parse platform as int: strconv.ParseInt: parsing "coze": invalid syntax
+[DEBUG] Returning nil adaptor
+[ERR] 2026/01/29 - 11:14:54 | SYSTEM | Channel #3 failed to update video async tasks: video adaptor not found 
+[INFO] 2026/01/29 - 11:14:54 | SYSTEM | Channel #6 pending video tasks: 1 
+[DEBUG] GetTaskAdaptor called with platform=54
+[DEBUG] Parsed channelType=54
+[DEBUG] ChannelTypeSeedance constant=56
+[DEBUG Veo FetchTask] body: map[action:generate task_id:video_a5e828c7-d285-4064-903a-3e9991436e3e]
+[DEBUG Veo FetchTask] No model parameter in body
+[DEBUG Veo FetchTask] Final URL: https://api.bltcy.ai/v2/videos/generations/video_a5e828c7-d285-4064-903a-3e9991436e3e
+[SYS] 2026/01/29 - 11:14:55 | 任务进度轮询完成 
