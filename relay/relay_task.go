@@ -456,6 +456,9 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 	}
 	userId := c.GetInt("id")
 
+	// 从查询参数中获取model（如果有）
+	modelName := c.Query("model")
+
 	originTask, exist, err := model.GetByTaskId(userId, taskId)
 	if err != nil {
 		taskResp = service.TaskErrorWrapper(err, "get_task_failed", http.StatusInternalServerError)
@@ -469,6 +472,40 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
     func() {
         channelModel, err2 := model.GetChannelById(originTask.ChannelId, true)
         if err2 != nil {
+            return
+        }
+        // Veo: 直接透传上游查询结果，需要传递model参数
+        if channelModel.Type == constant.ChannelTypeVeo {
+            fmt.Printf("[DEBUG videoFetch] Veo query detected, modelName from query: %s\n", modelName)
+            baseURL := channelModel.GetBaseURL()
+            if baseURL == "" {
+                baseURL = constant.ChannelBaseURLs[channelModel.Type]
+            }
+            adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
+            if adaptor == nil {
+                return
+            }
+            fetchParams := map[string]any{
+                "task_id": originTask.TaskID,
+            }
+            // 如果请求中提供了model参数，则传递给上游
+            if modelName != "" {
+                fetchParams["model"] = modelName
+                fmt.Printf("[DEBUG videoFetch] Added model to fetchParams: %s\n", modelName)
+            } else {
+                fmt.Printf("[DEBUG videoFetch] No model parameter in query\n")
+            }
+            fmt.Printf("[DEBUG videoFetch] fetchParams: %+v\n", fetchParams)
+            resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, fetchParams)
+            if err2 != nil || resp == nil {
+                return
+            }
+            defer resp.Body.Close()
+            body, err2 := io.ReadAll(resp.Body)
+            if err2 != nil {
+                return
+            }
+            respBody = body
             return
         }
         // Tripo3D: 直接透传上游查询结果
