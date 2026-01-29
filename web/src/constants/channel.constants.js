@@ -165,9 +165,19 @@ export const CHANNEL_OPTIONS = [
     label: 'Tripo3D',
   },
   {
+    value: 54,
+    color: 'blue',
+    label: 'Veo',
+  },
+  {
     value: 55,
     color: 'teal',
     label: '旧网关（Bltcy）',
+  },
+  {
+    value: 56,
+    color: 'orange',
+    label: 'Seedance',
   },
 ];
 
