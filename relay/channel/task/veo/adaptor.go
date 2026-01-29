@@ -161,6 +161,12 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 
 	// 根据文档，查询端点应该是 /v2/videos/generations/{task_id}
 	url := fmt.Sprintf("%s/v2/videos/generations/%s", strings.TrimRight(baseUrl, "/"), taskID)
+
+	// 添加model参数（如果提供）
+	if model, ok := body["model"].(string); ok && model != "" {
+		url = fmt.Sprintf("%s?model=%s", url, model)
+	}
+
 	req, err := http.NewRequest(http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err
