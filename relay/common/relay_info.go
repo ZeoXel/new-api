@@ -538,5 +538,6 @@ type TaskInfo struct {
 	Reason        string `json:"reason,omitempty"`
 	Url           string `json:"url,omitempty"`
 	Progress      string `json:"progress,omitempty"`
-	ActualCredits int    `json:"actual_credits,omitempty"` // 实际消耗的积分（用于按量计费）
+	ActualCredits int    `json:"actual_credits,omitempty"` // 实际消耗的积分（用于按量计费，Vidu使用）
+	Usage         int    `json:"usage,omitempty"`          // 实际消耗的tokens（用于按量计费，Seedance等使用）
 }

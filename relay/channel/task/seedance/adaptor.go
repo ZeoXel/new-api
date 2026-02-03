@@ -149,6 +149,17 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, _ *relayco
 		return
 	}
 
+	// 提取 usage.total_tokens 用于按量计费
+	var respData map[string]interface{}
+	if err := json.Unmarshal(responseBody, &respData); err == nil {
+		if usage, ok := respData["usage"].(map[string]interface{}); ok {
+			if totalTokens, ok := usage["total_tokens"].(float64); ok && totalTokens > 0 {
+				c.Set("seedance_tokens", int(totalTokens))
+				fmt.Printf("[DEBUG Seedance] Extracted tokens: %d\n", int(totalTokens))
+			}
+		}
+	}
+
 	c.JSON(http.StatusOK, gin.H{"task_id": taskID})
 	return taskID, responseBody, nil
 }
@@ -204,6 +215,15 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 	}
 
 	taskInfo.Url = extractOutputURL(raw)
+
+	// 提取 usage.total_tokens 用于按量计费（查询时也可能返回）
+	if usage, ok := raw["usage"].(map[string]interface{}); ok {
+		if totalTokens, ok := usage["total_tokens"].(float64); ok && totalTokens > 0 {
+			taskInfo.Usage = int(totalTokens)
+			fmt.Printf("[DEBUG Seedance ParseTaskResult] Extracted tokens: %d\n", int(totalTokens))
+		}
+	}
+
 	return taskInfo, nil
 }
 

@@ -97,6 +97,10 @@ func InitEnv() {
 	GlobalWebRateLimitNum = GetEnvOrDefault("GLOBAL_WEB_RATE_LIMIT", 60)
 	GlobalWebRateLimitDuration = int64(GetEnvOrDefault("GLOBAL_WEB_RATE_LIMIT_DURATION", 180))
 
+	UsageRateLimitEnable = GetEnvOrDefaultBool("USAGE_RATE_LIMIT_ENABLE", true)
+	UsageRateLimitNum = GetEnvOrDefault("USAGE_RATE_LIMIT", 300)
+	UsageRateLimitDuration = int64(GetEnvOrDefault("USAGE_RATE_LIMIT_DURATION", 300))
+
 	initConstantEnv()
 }
 

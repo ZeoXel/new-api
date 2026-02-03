@@ -158,6 +158,10 @@ var (
 	GlobalWebRateLimitNum      int
 	GlobalWebRateLimitDuration int64
 
+	UsageRateLimitEnable   bool
+	UsageRateLimitNum      int
+	UsageRateLimitDuration int64
+
 	UploadRateLimitNum            = 10
 	UploadRateLimitDuration int64 = 60
 

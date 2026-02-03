@@ -152,15 +152,15 @@ func SetApiRouter(router *gin.Engine) {
 		tokenAdminRoute := apiRouter.Group("/token")
 		tokenAdminRoute.Use(middleware.AdminAuth())
 		{
-			tokenAdminRoute.POST("/import", controller.ImportToken)                        // 导入外部密钥
+			tokenAdminRoute.POST("/import", controller.ImportToken)                               // 导入外部密钥
 			tokenAdminRoute.GET("/external/:external_user_id", controller.GetTokenByExternalUser) // 按外部用户ID查询
 		}
 
 		usageRoute := apiRouter.Group("/usage")
-		usageRoute.Use(middleware.CriticalRateLimit())
 		{
 			tokenUsageRoute := usageRoute.Group("/token")
 			tokenUsageRoute.Use(middleware.TokenAuth())
+			tokenUsageRoute.Use(middleware.UsageRateLimit())
 			{
 				tokenUsageRoute.GET("/", controller.GetTokenUsage)
 				tokenUsageRoute.GET("/detail", controller.GetTokenDetail)   // 消费详情
@@ -220,6 +220,7 @@ func SetApiRouter(router *gin.Engine) {
 		taskRoute := apiRouter.Group("/task")
 		{
 			taskRoute.GET("/self", middleware.UserAuth(), controller.GetUserTask)
+			taskRoute.GET("/self/token", middleware.TokenAuth(), controller.GetUserTask)
 			taskRoute.GET("/", middleware.AdminAuth(), controller.GetAllTask)
 		}
 

@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"github.com/gin-gonic/gin"
+	"github.com/redis/go-redis/v9"
 	"net/http"
 	"one-api/common"
 	"time"
@@ -21,6 +22,10 @@ func redisRateLimiter(c *gin.Context, maxRequestNum int, duration int64, mark st
 	ctx := context.Background()
 	rdb := common.RDB
 	key := "rateLimit:" + mark + c.ClientIP()
+	redisRateLimiterWithKey(c, rdb, ctx, maxRequestNum, duration, key)
+}
+
+func redisRateLimiterWithKey(c *gin.Context, rdb *redis.Client, ctx context.Context, maxRequestNum int, duration int64, key string) {
 	listLength, err := rdb.LLen(ctx, key).Result()
 	if err != nil {
 		fmt.Println(err.Error())
@@ -65,6 +70,10 @@ func redisRateLimiter(c *gin.Context, maxRequestNum int, duration int64, mark st
 
 func memoryRateLimiter(c *gin.Context, maxRequestNum int, duration int64, mark string) {
 	key := mark + c.ClientIP()
+	memoryRateLimiterWithKey(c, maxRequestNum, duration, key)
+}
+
+func memoryRateLimiterWithKey(c *gin.Context, maxRequestNum int, duration int64, key string) {
 	if !inMemoryRateLimiter.Request(key, maxRequestNum, duration) {
 		c.Status(http.StatusTooManyRequests)
 		c.Abort()
@@ -98,6 +107,33 @@ func GlobalAPIRateLimit() func(c *gin.Context) {
 		return rateLimitFactory(common.GlobalApiRateLimitNum, common.GlobalApiRateLimitDuration, "GA")
 	}
 	return defNext
+}
+
+func UsageRateLimit() func(c *gin.Context) {
+	if !common.UsageRateLimitEnable {
+		return defNext
+	}
+	return func(c *gin.Context) {
+		key := buildUsageRateLimitKey(c)
+		if common.RedisEnabled {
+			ctx := context.Background()
+			rdb := common.RDB
+			redisRateLimiterWithKey(c, rdb, ctx, common.UsageRateLimitNum, common.UsageRateLimitDuration, key)
+			return
+		}
+		inMemoryRateLimiter.Init(common.RateLimitKeyExpirationDuration)
+		memoryRateLimiterWithKey(c, common.UsageRateLimitNum, common.UsageRateLimitDuration, key)
+	}
+}
+
+func buildUsageRateLimitKey(c *gin.Context) string {
+	if tokenId := c.GetInt("token_id"); tokenId != 0 {
+		return fmt.Sprintf("rateLimit:USG:token:%d", tokenId)
+	}
+	if userId := c.GetInt("id"); userId != 0 {
+		return fmt.Sprintf("rateLimit:USG:user:%d", userId)
+	}
+	return "rateLimit:USG:ip:" + c.ClientIP()
 }
 
 func CriticalRateLimit() func(c *gin.Context) {

@@ -57,6 +57,19 @@ func getViduDefaultCredits(modelName string) int {
 // 已废弃：adjustViduQuotaByCredits 函数已移除
 // Vidu Credits 现在在任务提交时直接根据实际 credits 计费，无需预扣补扣机制
 
+// ============ Seedance Tokens 按量计费配置 ============
+
+// Seedance token 单价：0.000001元/token (1元 = 1,000,000 tokens)
+const seedanceTokenPrice = 0.000001
+
+// isSeedanceTokensModel 判断是否为支持 tokens 按量计费的 Seedance 模型
+func isSeedanceTokensModel(modelName string) bool {
+	// 所有 doubao-seedance 模型都支持按量计费
+	return strings.HasPrefix(modelName, "doubao-seedance-")
+}
+
+// ============ 按量计费配置结束 ============
+
 /*
 Task 任务通过平台、Action 区分任务
 */
@@ -103,9 +116,12 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	var userGroupRatio float64
 	var hasUserGroupRatio bool
 
-	// 判断是否为 Vidu credits 按量计费模型
-	if platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeVidu)) && isViduCreditsModel(modelName) {
-		// ===== Vidu Credits 按量计费模式：不预扣，等待实际 credits 返回后再计费 =====
+	// 判断是否为按量计费模型（Vidu credits 或 Seedance tokens）
+	isViduCredits := platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeVidu)) && isViduCreditsModel(modelName)
+	isSeedanceTokens := platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeSeedance)) && isSeedanceTokensModel(modelName)
+
+	if isViduCredits || isSeedanceTokens {
+		// ===== 按量计费模式：不预扣，等待实际消耗返回后再计费 =====
 		quota = 0 // 不预扣费用
 		groupRatio = ratio_setting.GetGroupRatio(info.UsingGroup)
 		userGroupRatio, hasUserGroupRatio = ratio_setting.GetGroupGroupRatio(info.UserGroup, info.UsingGroup)
@@ -217,8 +233,8 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 				common.SysLog("error consuming token remain quota: " + err.Error())
 			}
 
-			// Vidu Credits 按量计费：跳过预扣逻辑，等待实际 credits 返回后再计费
-			if platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeVidu)) && isViduCreditsModel(modelName) {
+			// 按量计费模式：跳过预扣逻辑，等待实际消耗返回后再计费
+			if isViduCredits || isSeedanceTokens {
 				return // 不进行预扣操作
 			}
 
@@ -315,6 +331,59 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 				TokenName: tokenName,
 				Quota:     quota,
 				Content:   fmt.Sprintf("视频生成任务，实际积分 %d，积分单价 %.4f元，分组倍率 %.2f，渠道倍率 %.2f，操作 %s", actualCredits, viduCreditPrice, finalRatio, channelRatio, info.Action),
+				TokenId:   info.TokenId,
+				Group:     info.UsingGroup,
+				Other:     other,
+			})
+		}
+	}
+
+	// ===== Seedance Tokens 按量计费：根据实际 tokens 直接计费 =====
+	if platform == constant.TaskPlatform(strconv.Itoa(constant.ChannelTypeSeedance)) && isSeedanceTokensModel(modelName) {
+		if seedanceTokens, exists := c.Get("seedance_tokens"); exists && seedanceTokens.(int) > 0 {
+			actualTokens := seedanceTokens.(int)
+
+			// 计算实际费用（使用之前获取的分组倍率和渠道倍率）
+			var finalRatio float64
+			if hasUserGroupRatio {
+				finalRatio = userGroupRatio
+			} else {
+				finalRatio = groupRatio
+			}
+
+			// 获取渠道倍率
+			channelRatio := model.GetChannelRatio(info.UsingGroup, modelName, info.ChannelId)
+
+			// quota = tokens × tokenPrice × groupRatio × channelRatio × QuotaPerUnit
+			quota = int(float64(actualTokens) * seedanceTokenPrice * finalRatio * channelRatio * common.QuotaPerUnit)
+
+			// 扣费
+			err = model.DecreaseUserQuota(info.UserId, quota)
+			if err != nil {
+				taskErr = service.TaskErrorWrapper(err, "insufficient_user_quota", http.StatusForbidden)
+				return
+			}
+			model.UpdateUserUsedQuotaAndRequestCount(info.UserId, quota)
+			model.UpdateChannelUsedQuota(info.ChannelId, quota)
+
+			// 记录日志
+			tokenName := c.GetString("token_name")
+			other := make(map[string]interface{})
+			other["actual_tokens"] = actualTokens
+			other["token_price"] = seedanceTokenPrice
+			other["billing_mode"] = "tokens"
+			other["group_ratio"] = groupRatio
+			other["channel_ratio"] = channelRatio
+			if hasUserGroupRatio {
+				other["user_group_ratio"] = userGroupRatio
+			}
+
+			model.RecordConsumeLog(c, info.UserId, model.RecordConsumeLogParams{
+				ChannelId: info.ChannelId,
+				ModelName: modelName,
+				TokenName: tokenName,
+				Quota:     quota,
+				Content:   fmt.Sprintf("视频生成任务，实际tokens %d，token单价 %.6f元，分组倍率 %.2f，渠道倍率 %.2f，操作 %s", actualTokens, seedanceTokenPrice, finalRatio, channelRatio, info.Action),
 				TokenId:   info.TokenId,
 				Group:     info.UsingGroup,
 				Other:     other,
