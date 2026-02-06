@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 
@@ -24,19 +25,26 @@ import (
 // ============================
 
 type requestPayload struct {
-	Model             string   `json:"model"`
-	Images            []string `json:"images"`
-	Style             string   `json:"style,omitempty"`
-	Prompt            string   `json:"prompt,omitempty"`
-	Duration          int      `json:"duration,omitempty"`
-	Seed              int      `json:"seed,omitempty"`
-	AspectRatio       string   `json:"aspect_ratio,omitempty"`       // 画面比例：1:1, 16:9, 9:16
-	Resolution        string   `json:"resolution,omitempty"`         // 分辨率：1080p, 720p
-	MovementAmplitude string   `json:"movement_amplitude,omitempty"` // 运动幅度：auto, small, large
-	Bgm               bool     `json:"bgm,omitempty"`                // 是否添加背景音乐
-	OffPeak           bool     `json:"off_peak,omitempty"`           // 是否使用错峰模式
-	Payload           string   `json:"payload,omitempty"`            // 自定义载荷
-	CallbackUrl       string   `json:"callback_url,omitempty"`       // 回调地址
+	Model             string      `json:"model"`
+	Images            []string    `json:"images"`
+	Style             string      `json:"style,omitempty"`
+	Prompt            string      `json:"prompt,omitempty"`
+	Duration          int         `json:"duration,omitempty"`
+	Seed              int         `json:"seed,omitempty"`
+	AspectRatio       string      `json:"aspect_ratio,omitempty"`       // 画面比例：1:1, 16:9, 9:16
+	Resolution        string      `json:"resolution,omitempty"`         // 分辨率：1080p, 720p
+	MovementAmplitude string      `json:"movement_amplitude,omitempty"` // 运动幅度：auto, small, large
+	Bgm               bool        `json:"bgm,omitempty"`                // 是否添加背景音乐
+	Audio             bool        `json:"audio,omitempty"`              // 是否音视频直出
+	VoiceID           string      `json:"voice_id,omitempty"`           // 音色ID
+	IsRec             bool        `json:"is_rec,omitempty"`             // 是否推荐提示词
+	OffPeak           bool        `json:"off_peak,omitempty"`           // 是否使用错峰模式
+	Watermark         *bool       `json:"watermark,omitempty"`          // 是否添加水印
+	WmPosition        interface{} `json:"wm_position,omitempty"`        // 水印位置（兼容 int / string）
+	WmUrl             string      `json:"wm_url,omitempty"`             // 水印图片 URL
+	MetaData          string      `json:"meta_data,omitempty"`          // 元数据标识
+	Payload           string      `json:"payload,omitempty"`            // 自定义载荷
+	CallbackUrl       string      `json:"callback_url,omitempty"`       // 回调地址
 }
 
 type responsePayload struct {
@@ -77,7 +85,7 @@ type multiFrameRequestPayload struct {
 	Resolution    string                         `json:"resolution,omitempty"`
 	Watermark     *bool                          `json:"watermark,omitempty"`
 	WmUrl         string                         `json:"wm_url,omitempty"`
-	WmPosition    string                         `json:"wm_position,omitempty"`
+	WmPosition    interface{}                    `json:"wm_position,omitempty"`
 	MetaData      string                         `json:"meta_data,omitempty"`
 	Payload       string                         `json:"payload,omitempty"`
 	CallbackUrl   string                         `json:"callback_url,omitempty"`
@@ -98,7 +106,39 @@ func (a *TaskAdaptor) Init(info *relaycommon.RelayInfo) {
 }
 
 func (a *TaskAdaptor) ValidateRequestAndSetAction(c *gin.Context, info *relaycommon.RelayInfo) *dto.TaskError {
-	return relaycommon.ValidateBasicTaskRequest(c, info, constant.TaskActionGenerate)
+	if taskErr := relaycommon.ValidateBasicTaskRequest(c, info, constant.TaskActionGenerate); taskErr != nil {
+		return taskErr
+	}
+
+	v, exists := c.Get("task_request")
+	if !exists {
+		return nil
+	}
+
+	req, ok := v.(relaycommon.TaskSubmitReq)
+	if !ok {
+		return nil
+	}
+
+	modelName := strings.ToLower(strings.TrimSpace(req.Model))
+	if modelName == "" {
+		return nil
+	}
+
+	// Vidu official docs: text2video only supports viduq3-pro / viduq2 / viduq1.
+	// Fail fast with a clear local error to avoid confusing upstream 400 responses.
+	if info.Action == constant.TaskActionTextGenerate {
+		switch modelName {
+		case "viduq2-turbo", "viduq2-pro", "viduq2-pro-fast":
+			return service.TaskErrorWrapperLocal(
+				fmt.Errorf("model %s is not supported for text2video, please use viduq3-pro / viduq2 / viduq1 or call img2video", req.Model),
+				"invalid_model_for_action",
+				http.StatusBadRequest,
+			)
+		}
+	}
+
+	return nil
 }
 
 func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, info *relaycommon.RelayInfo) (io.Reader, error) {
@@ -234,12 +274,15 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 
 func (a *TaskAdaptor) GetModelList() []string {
 	return []string{
-		"viduq1",       // 传统按次计费
-		"vidu2.0",      // 传统按次计费
-		"vidu1.5",      // 传统按次计费
-		"viduq2-turbo", // 按量计费（credits）
-		"viduq2-pro",   // 按量计费（credits）
-		"viduq2",       // 按量计费（credits）
+		"viduq3-pro",      // 按量计费（credits）
+		"viduq2",          // 按量计费（credits）
+		"viduq2-pro",      // 按量计费（credits）
+		"viduq2-pro-fast", // 按量计费（credits）
+		"viduq2-turbo",    // 按量计费（credits）
+		"viduq1",          // 传统按次计费
+		"viduq1-classic",  // 传统按次计费
+		"vidu2.0",         // 传统按次计费
+		"vidu1.5",         // 传统按次计费（历史兼容）
 	}
 }
 
@@ -279,7 +322,14 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 		Resolution:        resolution,  // 🆕 使用前端配置的分辨率
 		MovementAmplitude: defaultString(req.MovementAmplitude, "auto"),
 		Bgm:               req.Bgm,
+		Audio:             req.Audio,
+		VoiceID:           req.VoiceID,
+		IsRec:             req.IsRec,
 		OffPeak:           req.OffPeak,
+		Watermark:         req.Watermark,
+		WmPosition:        req.WmPosition,
+		WmUrl:             req.WmUrl,
+		MetaData:          req.MetaData,
 		Payload:           req.Payload,
 		CallbackUrl:       req.CallbackUrl,
 	}

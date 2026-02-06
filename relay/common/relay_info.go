@@ -506,9 +506,12 @@ type TaskSubmitReq struct {
 	Resolution        string             `json:"resolution,omitempty"`         // 分辨率：1080p, 720p
 	Watermark         *bool              `json:"watermark,omitempty"`          // 是否添加水印
 	WmUrl             string             `json:"wm_url,omitempty"`             // 水印图片 URL
-	WmPosition        string             `json:"wm_position,omitempty"`        // 水印位置
+	WmPosition        interface{}        `json:"wm_position,omitempty"`        // 水印位置（兼容 int / string）
 	MetaData          string             `json:"meta_data,omitempty"`          // 元数据标识（JSON 字符串）
 	Bgm               bool               `json:"bgm,omitempty"`                // 是否添加背景音乐
+	Audio             bool               `json:"audio,omitempty"`              // 是否输出音视频直出
+	VoiceID           string             `json:"voice_id,omitempty"`           // 音色 ID
+	IsRec             bool               `json:"is_rec,omitempty"`             // 是否使用推荐提示词
 	MovementAmplitude string             `json:"movement_amplitude,omitempty"` // 运动幅度：auto, small, large
 	OffPeak           bool               `json:"off_peak,omitempty"`           // 是否使用非高峰时段
 	Payload           string             `json:"payload,omitempty"`            // 自定义载荷
@@ -523,6 +526,18 @@ func (t TaskSubmitReq) GetPrompt() string {
 
 func (t TaskSubmitReq) HasImage() bool {
 	return len(t.Images) > 0
+}
+
+func (t *TaskSubmitReq) GetTokenCountMeta() *types.TokenCountMeta {
+	return nil
+}
+
+func (t *TaskSubmitReq) IsStream(c *gin.Context) bool {
+	return false
+}
+
+func (t *TaskSubmitReq) SetModelName(modelName string) {
+	t.Model = modelName
 }
 
 type ViduImageSetting struct {

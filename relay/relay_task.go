@@ -13,6 +13,7 @@ import (
 	"one-api/model"
 	relaycommon "one-api/relay/common"
 	relayconstant "one-api/relay/constant"
+	relayhelper "one-api/relay/helper"
 	"one-api/service"
 	"one-api/setting/ratio_setting"
 	"strconv"
@@ -25,12 +26,15 @@ import (
 
 // Vidu 模型默认 credits 估算值（用于预扣）
 var viduModelDefaultCredits = map[string]int{
-	"viduq1":       8,  // 按次计费，不使用 credits
-	"vidu2.0":      8,  // 按次计费，不使用 credits
-	"vidu1.5":      8,  // 按次计费，不使用 credits
-	"viduq2-turbo": 8,  // 5秒视频基础 credits
-	"viduq2-pro":   14, // 5秒视频基础 credits
-	"viduq2":       14, // 5秒视频基础 credits
+	"viduq1":          8,  // 按次计费，不使用 credits
+	"viduq1-classic":  8,  // 按次计费，不使用 credits
+	"vidu2.0":         8,  // 按次计费，不使用 credits
+	"vidu1.5":         8,  // 按次计费，不使用 credits
+	"viduq2-turbo":    8,  // 5秒视频基础 credits
+	"viduq2-pro":      14, // 5秒视频基础 credits
+	"viduq2-pro-fast": 10, // 3秒视频基础 credits（fast 版本）
+	"viduq2":          14, // 5秒视频基础 credits
+	"viduq3-pro":      14, // 估算值，最终以上游返回 credits 为准
 }
 
 // Vidu credits 单价：0.03125元/credit
@@ -38,12 +42,11 @@ const viduCreditPrice = 0.03125
 
 // isViduCreditsModel 判断是否为支持 credits 按量计费的 Vidu 模型
 func isViduCreditsModel(modelName string) bool {
-	switch modelName {
-	case "viduq2-turbo", "viduq2-pro", "viduq2":
-		return true
-	default:
+	if modelName == "" {
 		return false
 	}
+	modelName = strings.ToLower(modelName)
+	return strings.HasPrefix(modelName, "viduq2") || strings.HasPrefix(modelName, "viduq3")
 }
 
 // getViduDefaultCredits 获取 Vidu 模型的默认 credits 估算值
@@ -94,6 +97,23 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	taskErr = adaptor.ValidateRequestAndSetAction(c, info)
 	if taskErr != nil {
 		return
+	}
+
+	// Apply channel model mapping for task requests (e.g. map internal -> upstream model)
+	if v, ok := c.Get("task_request"); ok {
+		switch req := v.(type) {
+		case relaycommon.TaskSubmitReq:
+			if err := relayhelper.ModelMappedHelper(c, info, &req); err != nil {
+				return service.TaskErrorWrapperLocal(err, "channel_model_mapped_error", http.StatusBadRequest)
+			}
+			if info.IsModelMapped {
+				c.Set("task_request", req)
+			}
+		case *relaycommon.TaskSubmitReq:
+			if err := relayhelper.ModelMappedHelper(c, info, req); err != nil {
+				return service.TaskErrorWrapperLocal(err, "channel_model_mapped_error", http.StatusBadRequest)
+			}
+		}
 	}
 
 	// 优先使用 BillingModelName 用于计费（如 kling-v2-master）
@@ -538,72 +558,72 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 		return
 	}
 
-    func() {
-        channelModel, err2 := model.GetChannelById(originTask.ChannelId, true)
-        if err2 != nil {
-            return
-        }
-        // Veo: 直接透传上游查询结果，需要传递model参数
-        if channelModel.Type == constant.ChannelTypeVeo {
-            fmt.Printf("[DEBUG videoFetch] Veo query detected, modelName from query: %s\n", modelName)
-            baseURL := channelModel.GetBaseURL()
-            if baseURL == "" {
-                baseURL = constant.ChannelBaseURLs[channelModel.Type]
-            }
-            adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
-            if adaptor == nil {
-                return
-            }
-            fetchParams := map[string]any{
-                "task_id": originTask.TaskID,
-            }
-            // 如果请求中提供了model参数，则传递给上游
-            if modelName != "" {
-                fetchParams["model"] = modelName
-                fmt.Printf("[DEBUG videoFetch] Added model to fetchParams: %s\n", modelName)
-            } else {
-                fmt.Printf("[DEBUG videoFetch] No model parameter in query\n")
-            }
-            fmt.Printf("[DEBUG videoFetch] fetchParams: %+v\n", fetchParams)
-            resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, fetchParams)
-            if err2 != nil || resp == nil {
-                return
-            }
-            defer resp.Body.Close()
-            body, err2 := io.ReadAll(resp.Body)
-            if err2 != nil {
-                return
-            }
-            respBody = body
-            return
-        }
-        // Tripo3D: 直接透传上游查询结果
-        if channelModel.Type == constant.ChannelTypeTripo3D {
-            baseURL := channelModel.GetBaseURL()
-            if baseURL == "" {
-                baseURL = constant.ChannelBaseURLs[channelModel.Type]
-            }
-            adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
-            if adaptor == nil {
-                return
-            }
-            resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, map[string]any{
-                "task_id": originTask.TaskID,
-            })
-            if err2 != nil || resp == nil {
-                return
-            }
-            defer resp.Body.Close()
-            body, err2 := io.ReadAll(resp.Body)
-            if err2 != nil {
-                return
-            }
-            respBody = body
-            return
-        }
-        if channelModel.Type != constant.ChannelTypeVertexAi {
-            return
-        }
+	func() {
+		channelModel, err2 := model.GetChannelById(originTask.ChannelId, true)
+		if err2 != nil {
+			return
+		}
+		// Veo: 直接透传上游查询结果，需要传递model参数
+		if channelModel.Type == constant.ChannelTypeVeo {
+			fmt.Printf("[DEBUG videoFetch] Veo query detected, modelName from query: %s\n", modelName)
+			baseURL := channelModel.GetBaseURL()
+			if baseURL == "" {
+				baseURL = constant.ChannelBaseURLs[channelModel.Type]
+			}
+			adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
+			if adaptor == nil {
+				return
+			}
+			fetchParams := map[string]any{
+				"task_id": originTask.TaskID,
+			}
+			// 如果请求中提供了model参数，则传递给上游
+			if modelName != "" {
+				fetchParams["model"] = modelName
+				fmt.Printf("[DEBUG videoFetch] Added model to fetchParams: %s\n", modelName)
+			} else {
+				fmt.Printf("[DEBUG videoFetch] No model parameter in query\n")
+			}
+			fmt.Printf("[DEBUG videoFetch] fetchParams: %+v\n", fetchParams)
+			resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, fetchParams)
+			if err2 != nil || resp == nil {
+				return
+			}
+			defer resp.Body.Close()
+			body, err2 := io.ReadAll(resp.Body)
+			if err2 != nil {
+				return
+			}
+			respBody = body
+			return
+		}
+		// Tripo3D: 直接透传上游查询结果
+		if channelModel.Type == constant.ChannelTypeTripo3D {
+			baseURL := channelModel.GetBaseURL()
+			if baseURL == "" {
+				baseURL = constant.ChannelBaseURLs[channelModel.Type]
+			}
+			adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
+			if adaptor == nil {
+				return
+			}
+			resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, map[string]any{
+				"task_id": originTask.TaskID,
+			})
+			if err2 != nil || resp == nil {
+				return
+			}
+			defer resp.Body.Close()
+			body, err2 := io.ReadAll(resp.Body)
+			if err2 != nil {
+				return
+			}
+			respBody = body
+			return
+		}
+		if channelModel.Type != constant.ChannelTypeVertexAi {
+			return
+		}
 		baseURL := constant.ChannelBaseURLs[channelModel.Type]
 		if channelModel.GetBaseURL() != "" {
 			baseURL = channelModel.GetBaseURL()
