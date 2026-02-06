@@ -62,13 +62,41 @@ func getViduDefaultCredits(modelName string) int {
 
 // ============ Seedance Tokens 按量计费配置 ============
 
-// Seedance token 单价：0.000001元/token (1元 = 1,000,000 tokens)
-const seedanceTokenPrice = 0.000001
+// Seedance 兜底单价：1元 / 1,000,000 tokens
+const seedanceTokenPriceLegacy = 0.000001
 
 // isSeedanceTokensModel 判断是否为支持 tokens 按量计费的 Seedance 模型
 func isSeedanceTokensModel(modelName string) bool {
 	// 所有 doubao-seedance 模型都支持按量计费
 	return strings.HasPrefix(modelName, "doubao-seedance-")
+}
+
+func isSeedance15ProModel(modelName string) bool {
+	return strings.Contains(strings.ToLower(modelName), "doubao-seedance-1-5-pro")
+}
+
+// getSeedanceTokenPrice 根据官方定价返回 token 单价（元/token）
+// doubao-seedance-1.5-pro:
+//  - 在线(default): 有声16 / 无声8（元/百万token）
+//  - 离线(flex):    有声8  / 无声4（元/百万token）
+func getSeedanceTokenPrice(modelName, serviceTier string, generateAudio bool) float64 {
+	if !isSeedance15ProModel(modelName) {
+		return seedanceTokenPriceLegacy
+	}
+
+	tier := strings.ToLower(strings.TrimSpace(serviceTier))
+	switch tier {
+	case "flex":
+		if generateAudio {
+			return 8.0 / 1000000
+		}
+		return 4.0 / 1000000
+	default: // default/online
+		if generateAudio {
+			return 16.0 / 1000000
+		}
+		return 8.0 / 1000000
+	}
 }
 
 // ============ 按量计费配置结束 ============
@@ -374,8 +402,20 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 			// 获取渠道倍率
 			channelRatio := model.GetChannelRatio(info.UsingGroup, modelName, info.ChannelId)
 
+			serviceTier := c.GetString("seedance_service_tier")
+			if serviceTier == "" {
+				serviceTier = "default"
+			}
+			generateAudio := true
+			if v, ok := c.Get("seedance_generate_audio"); ok {
+				if b, ok := v.(bool); ok {
+					generateAudio = b
+				}
+			}
+			tokenPrice := getSeedanceTokenPrice(modelName, serviceTier, generateAudio)
+
 			// quota = tokens × tokenPrice × groupRatio × channelRatio × QuotaPerUnit
-			quota = int(float64(actualTokens) * seedanceTokenPrice * finalRatio * channelRatio * common.QuotaPerUnit)
+			quota = int(float64(actualTokens) * tokenPrice * finalRatio * channelRatio * common.QuotaPerUnit)
 
 			// 扣费
 			err = model.DecreaseUserQuota(info.UserId, quota)
@@ -390,10 +430,12 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 			tokenName := c.GetString("token_name")
 			other := make(map[string]interface{})
 			other["actual_tokens"] = actualTokens
-			other["token_price"] = seedanceTokenPrice
+			other["token_price"] = tokenPrice
 			other["billing_mode"] = "tokens"
 			other["group_ratio"] = groupRatio
 			other["channel_ratio"] = channelRatio
+			other["service_tier"] = serviceTier
+			other["generate_audio"] = generateAudio
 			if hasUserGroupRatio {
 				other["user_group_ratio"] = userGroupRatio
 			}
@@ -403,7 +445,7 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 				ModelName: modelName,
 				TokenName: tokenName,
 				Quota:     quota,
-				Content:   fmt.Sprintf("视频生成任务，实际tokens %d，token单价 %.6f元，分组倍率 %.2f，渠道倍率 %.2f，操作 %s", actualTokens, seedanceTokenPrice, finalRatio, channelRatio, info.Action),
+				Content:   fmt.Sprintf("视频生成任务，实际tokens %d，token单价 %.6f元，service_tier %s，generate_audio %t，分组倍率 %.2f，渠道倍率 %.2f，操作 %s", actualTokens, tokenPrice, serviceTier, generateAudio, finalRatio, channelRatio, info.Action),
 				TokenId:   info.TokenId,
 				Group:     info.UsingGroup,
 				Other:     other,

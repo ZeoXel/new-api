@@ -101,16 +101,23 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 
 	body["content"] = content
 
+	// Seedance 1.5 pro 的默认参数：
+	// service_tier=default(在线推理), generate_audio=true(有声)
+	serviceTier := "default"
+	generateAudio := true
+
 	// 添加其他可选参数
 	if req.Metadata != nil {
 		if returnLastFrame, ok := req.Metadata["return_last_frame"].(bool); ok {
 			body["return_last_frame"] = returnLastFrame
 		}
-		if generateAudio, ok := req.Metadata["generate_audio"].(bool); ok {
-			body["generate_audio"] = generateAudio
+		if reqGenerateAudio, ok := req.Metadata["generate_audio"].(bool); ok {
+			generateAudio = reqGenerateAudio
+			body["generate_audio"] = reqGenerateAudio
 		}
-		if serviceTier, ok := req.Metadata["service_tier"].(string); ok {
-			body["service_tier"] = serviceTier
+		if reqServiceTier, ok := req.Metadata["service_tier"].(string); ok {
+			serviceTier = reqServiceTier
+			body["service_tier"] = reqServiceTier
 		}
 		if seed, ok := req.Metadata["seed"].(float64); ok {
 			body["seed"] = int(seed)
@@ -119,6 +126,10 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 			body["callback_url"] = callbackUrl
 		}
 	}
+
+	// 计费阶段需要这两个维度来选择单价
+	c.Set("seedance_generate_audio", generateAudio)
+	c.Set("seedance_service_tier", strings.ToLower(strings.TrimSpace(serviceTier)))
 
 	data, err := json.Marshal(body)
 	if err != nil {
