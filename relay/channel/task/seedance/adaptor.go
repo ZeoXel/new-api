@@ -80,6 +80,12 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 
 	// 添加图片内容
 	if len(req.Images) > 0 {
+		// 解析 image_roles：优先从 metadata，兼容顶层 image_roles 字段
+		var imageRoles []interface{}
+		if req.Metadata != nil {
+			imageRoles, _ = req.Metadata["image_roles"].([]interface{})
+		}
+
 		for i, imgUrl := range req.Images {
 			imgContent := map[string]interface{}{
 				"type": "image_url",
@@ -87,12 +93,10 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 					"url": imgUrl,
 				},
 			}
-			// 如果有 image_roles，添加 role 字段
-			if req.Metadata != nil {
-				if roles, ok := req.Metadata["image_roles"].([]interface{}); ok && i < len(roles) {
-					if role, ok := roles[i].(string); ok {
-						imgContent["role"] = role
-					}
+			// 添加 role 字段
+			if i < len(imageRoles) {
+				if role, ok := imageRoles[i].(string); ok {
+					imgContent["role"] = role
 				}
 			}
 			content = append(content, imgContent)
@@ -106,7 +110,21 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 	serviceTier := "default"
 	generateAudio := true
 
-	// 添加其他可选参数
+	// ── 从 TaskSubmitReq 顶层字段读取通用参数 ──
+	if req.Duration > 0 {
+		body["duration"] = req.Duration
+	}
+	if req.Resolution != "" {
+		body["resolution"] = req.Resolution
+	}
+	if req.AspectRatio != "" {
+		body["ratio"] = req.AspectRatio
+	}
+	if req.Seed > 0 {
+		body["seed"] = req.Seed
+	}
+
+	// ── 从 metadata 读取 Seedance 特有参数（覆盖顶层同名字段）──
 	if req.Metadata != nil {
 		if returnLastFrame, ok := req.Metadata["return_last_frame"].(bool); ok {
 			body["return_last_frame"] = returnLastFrame
@@ -124,6 +142,28 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		}
 		if callbackUrl, ok := req.Metadata["callback_url"].(string); ok {
 			body["callback_url"] = callbackUrl
+		}
+		if cameraFixed, ok := req.Metadata["camera_fixed"].(bool); ok {
+			body["camera_fixed"] = cameraFixed
+		}
+		if watermark, ok := req.Metadata["watermark"].(bool); ok {
+			body["watermark"] = watermark
+		}
+		if draft, ok := req.Metadata["draft"].(bool); ok {
+			body["draft"] = draft
+		}
+		if expiresAfter, ok := req.Metadata["execution_expires_after"].(float64); ok {
+			body["execution_expires_after"] = int(expiresAfter)
+		}
+		// metadata 中的 duration/resolution/ratio 覆盖顶层
+		if dur, ok := req.Metadata["duration"].(float64); ok {
+			body["duration"] = int(dur)
+		}
+		if res, ok := req.Metadata["resolution"].(string); ok {
+			body["resolution"] = res
+		}
+		if ratio, ok := req.Metadata["ratio"].(string); ok {
+			body["ratio"] = ratio
 		}
 	}
 
