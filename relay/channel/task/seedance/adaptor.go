@@ -80,10 +80,15 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 
 	// 添加图片内容
 	if len(req.Images) > 0 {
-		// 解析 image_roles：优先从 metadata，兼容顶层 image_roles 字段
+		// 解析 image_roles：优先从 metadata，回退到顶层 req.ImageRoles
 		var imageRoles []interface{}
 		if req.Metadata != nil {
 			imageRoles, _ = req.Metadata["image_roles"].([]interface{})
+		}
+		if len(imageRoles) == 0 && len(req.ImageRoles) > 0 {
+			for _, r := range req.ImageRoles {
+				imageRoles = append(imageRoles, r)
+			}
 		}
 
 		for i, imgUrl := range req.Images {

@@ -28,6 +28,8 @@ import (
 	taskjimeng "one-api/relay/channel/task/jimeng"
 	"one-api/relay/channel/task/kling"
 	taskopenai "one-api/relay/channel/task/openai_video"
+	taskfalai "one-api/relay/channel/task/falai"
+	taskrunninghub "one-api/relay/channel/task/runninghub"
 	taskseedance "one-api/relay/channel/task/seedance"
 	"one-api/relay/channel/task/suno"
 	tasktripo "one-api/relay/channel/task/tripo"
@@ -153,6 +155,10 @@ func GetTaskAdaptor(platform constant.TaskPlatform) channel.TaskAdaptor {
 			return &taskseedance.TaskAdaptor{}
 		case constant.ChannelTypeTripo3D:
 			return &tasktripo.TaskAdaptor{}
+		case constant.ChannelTypeFalAI:
+			return &taskfalai.TaskAdaptor{}
+		case constant.ChannelTypeRunningHub:
+			return &taskrunninghub.TaskAdaptor{}
 		default:
 			fmt.Printf("[DEBUG] No match for channelType=%d\n", channelType)
 		}

@@ -179,6 +179,16 @@ export const CHANNEL_OPTIONS = [
     color: 'orange',
     label: 'Seedance',
   },
+  {
+    value: 57,
+    color: 'purple',
+    label: 'fal.ai',
+  },
+  {
+    value: 58,
+    color: 'blue',
+    label: 'RunningHub',
+  },
 ];
 
 export const MODEL_TABLE_PAGE_SIZE = 10;

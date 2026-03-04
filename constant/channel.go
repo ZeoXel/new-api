@@ -54,7 +54,9 @@ const (
     ChannelTypeVeo            = 54
     ChannelTypeBltcy          = 55 // 旧网关透传渠道
     ChannelTypeSeedance       = 56 // 火山引擎 Seedance 视频生成
-	ChannelTypeDummy          // this one is only for count, do not add any channel after this
+    ChannelTypeFalAI          = 57 // fal.ai 图片/视频生成
+    ChannelTypeRunningHub     = 58 // RunningHub ComfyUI 工作流
+	ChannelTypeDummy          = 59 // this one is only for count, do not add any channel after this
 
 )
 
@@ -116,4 +118,6 @@ var ChannelBaseURLs = []string{
     "",                                          //54 Veo (Google)
     "",                                          //55 Bltcy (旧网关，需要配置具体URL)
     "https://ark.cn-beijing.volces.com",         //56 Seedance (火山引擎视频生成)
+    "https://queue.fal.run",                     //57 fal.ai
+    "https://www.runninghub.cn",                 //58 RunningHub
 }
