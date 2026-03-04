@@ -29,7 +29,7 @@ type Task struct {
 	UserId        int                   `json:"user_id" gorm:"index"`
 	ChannelId     int                   `json:"channel_id" gorm:"index"`
 	Quota         int                   `json:"quota"`
-	Action        string                `json:"action" gorm:"type:varchar(40);index"` // 任务类型, song, lyrics, description-mode
+	Action        string                `json:"action" gorm:"type:varchar(100);index"` // 任务类型, song, lyrics, description-mode
 	Status        TaskStatus            `json:"status" gorm:"type:varchar(20);index"` // 任务状态
 	FailReason    string                `json:"fail_reason"`
 	SubmitTime    int64                 `json:"submit_time" gorm:"index"`
