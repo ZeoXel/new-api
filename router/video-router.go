@@ -43,6 +43,11 @@ func SetVideoRouter(router *gin.Engine) {
 		klingV1Router.GET("/videos/text2video/:task_id", controller.RelayTask)
 		klingV1Router.GET("/videos/image2video/:task_id", controller.RelayTask)
 		klingV1Router.GET("/videos/omni-video/:task_id", controller.RelayTask)
+		// Element (主体) API
+		klingV1Router.POST("/general/advanced-custom-elements", controller.RelayTask)
+		klingV1Router.GET("/general/advanced-custom-elements/:task_id", controller.RelayTask)
+		klingV1Router.GET("/general/advanced-custom-elements", controller.RelayTask)
+		klingV1Router.POST("/general/delete-elements", controller.RelayTask)
 	}
 
 	// Jimeng official API routes - direct mapping to official API format

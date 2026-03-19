@@ -23,31 +23,60 @@ func KlingRequestConvert() func(c *gin.Context) {
 		c.Set("bltcy_original_path", originalPath)
 		c.Set("bltcy_original_query", originalRawQuery)
 
-		// GET 请求不需要转换请求体，也不需要选择渠道（任务模式从数据库查询）
+		isElementAPI := strings.Contains(originalPath, "/general/")
+
+		// GET 请求
 		if c.Request.Method == "GET" {
-			fmt.Printf("[DEBUG Kling GET] Path: %s, Query: %s\n",
-				originalPath, originalRawQuery)
-			// 为 GET 请求设置空的请求体，避免后续中间件尝试读取导致错误
+			if isElementAPI {
+				// Element API GET 需要设置 model 以便 Distribute 找到渠道
+				c.Set("original_model", "kling")
+				if strings.Contains(originalPath, "advanced-custom-elements") {
+					c.Set("action", constant.TaskActionElementQuery)
+				}
+			}
 			c.Set(common.KeyRequestBody, []byte{})
 			c.Next()
 			return
 		}
 
-		// POST 请求才设置 original_model，用于渠道选择
+		// POST 请求统一设置 original_model
 		c.Set("original_model", "kling")
 
+		// Element API POST: 简化处理，不做视频特有的字段解析
+		if isElementAPI {
+			var originalReq map[string]interface{}
+			if err := common.UnmarshalBodyReusable(c, &originalReq); err == nil {
+				unifiedReq := map[string]interface{}{
+					"model":    "kling",
+					"prompt":   "",
+					"metadata": originalReq,
+				}
+				jsonData, _ := json.Marshal(unifiedReq)
+				c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonData))
+				c.Request.URL.Path = "/v1/video/generations"
+				c.Set(common.KeyRequestBody, jsonData)
+			}
+			if strings.Contains(originalPath, "delete-elements") {
+				c.Set("action", constant.TaskActionElementDelete)
+			} else {
+				c.Set("action", constant.TaskActionElementCreate)
+			}
+			fmt.Printf("[DEBUG KlingRequestConvert] Element API action=%s\n", c.GetString("action"))
+			c.Next()
+			return
+		}
+
+		// 以下为视频 API 的原有逻辑
 		var originalReq map[string]interface{}
 		if err := common.UnmarshalBodyReusable(c, &originalReq); err != nil {
 			c.Next()
 			return
 		}
 
-		// 🆕 保存原始请求体
 		if originalReqBytes, err := json.Marshal(originalReq); err == nil {
 			c.Set("bltcy_original_body", originalReqBytes)
 		}
 
-		// Support both model_name and model fields
 		model, _ := originalReq["model_name"].(string)
 		if model == "" {
 			model, _ = originalReq["model"].(string)
@@ -72,7 +101,6 @@ func KlingRequestConvert() func(c *gin.Context) {
 			return
 		}
 
-		// Rewrite request body and path
 		c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonData))
 		c.Request.URL.Path = "/v1/video/generations"
 		if action, ok := klingActionFromRequestPath(originalPath); ok {
@@ -83,7 +111,6 @@ func KlingRequestConvert() func(c *gin.Context) {
 			c.Set("action", constant.TaskActionTextGenerate)
 		}
 
-		// We have to reset the request body for the next handlers
 		c.Set(common.KeyRequestBody, jsonData)
 		c.Next()
 	}

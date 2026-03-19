@@ -90,6 +90,9 @@ type responsePayload struct {
 				Url      string `json:"url"`
 				Duration string `json:"duration"`
 			} `json:"videos"`
+			Elements []struct {
+				ElementId json.Number `json:"element_id"`
+			} `json:"elements"`
 		} `json:"task_result"`
 		CreatedAt int64 `json:"created_at"`
 		UpdatedAt int64 `json:"updated_at"`
@@ -183,6 +186,16 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, info *relaycommon.RelayIn
 		return nil, fmt.Errorf("request not found in context")
 	}
 	req := v.(relaycommon.TaskSubmitReq)
+
+	// Element API: 直接透传 metadata，不做视频特有的字段转换
+	action := c.GetString("action")
+	if action == constant.TaskActionElementCreate || action == constant.TaskActionElementDelete {
+		data, err := json.Marshal(req.Metadata)
+		if err != nil {
+			return nil, errors.Wrap(err, "marshal element request failed")
+		}
+		return bytes.NewReader(data), nil
+	}
 
 	body, err := a.convertToRequestPayload(&req)
 	if err != nil {
@@ -319,6 +332,10 @@ func klingActionPath(action string) string {
 		return "/v1/videos/image2video"
 	case constant.TaskActionOmniVideo:
 		return "/v1/videos/omni-video"
+	case constant.TaskActionElementCreate, constant.TaskActionElementQuery:
+		return "/v1/general/advanced-custom-elements"
+	case constant.TaskActionElementDelete:
+		return "/v1/general/delete-elements"
 	default:
 		return "/v1/videos/text2video"
 	}
@@ -332,6 +349,10 @@ func klingActionFromPath(path string) (string, bool) {
 		return constant.TaskActionGenerate, true
 	case strings.HasSuffix(path, "/videos/text2video"):
 		return constant.TaskActionTextGenerate, true
+	case strings.Contains(path, "/general/advanced-custom-elements"):
+		return constant.TaskActionElementCreate, true
+	case strings.Contains(path, "/general/delete-elements"):
+		return constant.TaskActionElementDelete, true
 	default:
 		return "", false
 	}
@@ -468,6 +489,10 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 	if videos := resPayload.Data.TaskResult.Videos; len(videos) > 0 {
 		video := videos[0]
 		taskInfo.Url = video.Url
+	}
+	// Element 响应：将 element_id 存入 Url 字段（element 任务无视频 URL）
+	if elements := resPayload.Data.TaskResult.Elements; len(elements) > 0 {
+		taskInfo.Url = elements[0].ElementId.String()
 	}
 	return taskInfo, nil
 }

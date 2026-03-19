@@ -18,6 +18,10 @@ const (
 	TaskActionReferenceGenerate = "referenceGenerate"
 	TaskActionMultiFrame        = "multiFrame"
 	TaskActionOmniVideo         = "omni-video"
+	TaskActionElementCreate     = "element_create"
+	TaskActionElementQuery      = "element_query"
+	TaskActionElementList       = "element_list"
+	TaskActionElementDelete     = "element_delete"
 )
 
 var SunoModel2Action = map[string]string{
