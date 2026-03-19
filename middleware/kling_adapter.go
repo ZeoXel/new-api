@@ -53,7 +53,7 @@ func KlingRequestConvert() func(c *gin.Context) {
 			model, _ = originalReq["model"].(string)
 		}
 		if strings.TrimSpace(model) == "" {
-			model = "kling-v1"
+			model = "kling-v3"
 		}
 		c.Set("billing_model_name", model)
 		fmt.Printf("[DEBUG KlingRequestConvert] Set billing_model_name=%q\n", model)
@@ -75,7 +75,11 @@ func KlingRequestConvert() func(c *gin.Context) {
 		// Rewrite request body and path
 		c.Request.Body = io.NopCloser(bytes.NewBuffer(jsonData))
 		c.Request.URL.Path = "/v1/video/generations"
-		if image, ok := originalReq["image"]; !ok || image == "" {
+		if action, ok := klingActionFromRequestPath(originalPath); ok {
+			c.Set("action", action)
+		} else if hasKlingMediaInput(originalReq) {
+			c.Set("action", constant.TaskActionGenerate)
+		} else {
 			c.Set("action", constant.TaskActionTextGenerate)
 		}
 
@@ -83,4 +87,33 @@ func KlingRequestConvert() func(c *gin.Context) {
 		c.Set(common.KeyRequestBody, jsonData)
 		c.Next()
 	}
+}
+
+func klingActionFromRequestPath(path string) (string, bool) {
+	switch {
+	case strings.HasSuffix(path, "/videos/omni-video"):
+		return constant.TaskActionOmniVideo, true
+	case strings.HasSuffix(path, "/videos/image2video"):
+		return constant.TaskActionGenerate, true
+	case strings.HasSuffix(path, "/videos/text2video"):
+		return constant.TaskActionTextGenerate, true
+	default:
+		return "", false
+	}
+}
+
+func hasKlingMediaInput(req map[string]interface{}) bool {
+	if image, ok := req["image"].(string); ok && strings.TrimSpace(image) != "" {
+		return true
+	}
+	if imageTail, ok := req["image_tail"].(string); ok && strings.TrimSpace(imageTail) != "" {
+		return true
+	}
+
+	for _, key := range []string{"images", "image_list", "video_list", "element_list"} {
+		if values, ok := req[key].([]interface{}); ok && len(values) > 0 {
+			return true
+		}
+	}
+	return false
 }

@@ -111,7 +111,7 @@ var ChannelBaseURLs = []string{
 	"",                                          //47
 	"https://api.x.ai",                          //48
 	"https://api.coze.cn",                       //49
-	"https://api.klingai.com",                   //50
+	"https://api-beijing.klingai.com",           //50
     "https://visual.volcengineapi.com",          //51
     "https://api.vidu.cn",                       //52
     "https://api.tripo3d.ai",                    //53 Tripo3D

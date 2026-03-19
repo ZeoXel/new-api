@@ -10,8 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/samber/lo"
-
 	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt"
 	"github.com/pkg/errors"
@@ -55,6 +53,14 @@ type requestPayload struct {
 	Prompt         string         `json:"prompt,omitempty"`
 	Image          string         `json:"image,omitempty"`
 	ImageTail      string         `json:"image_tail,omitempty"`
+	ImageList      []any          `json:"image_list,omitempty"`
+	VideoList      []any          `json:"video_list,omitempty"`
+	ElementList    []any          `json:"element_list,omitempty"`
+	MultiShot      bool           `json:"multi_shot,omitempty"`
+	ShotType       string         `json:"shot_type,omitempty"`
+	MultiPrompt    []any          `json:"multi_prompt,omitempty"`
+	Sound          string         `json:"sound,omitempty"`
+	VoiceList      []any          `json:"voice_list,omitempty"`
 	NegativePrompt string         `json:"negative_prompt,omitempty"`
 	Mode           string         `json:"mode,omitempty"`
 	Duration       string         `json:"duration,omitempty"`
@@ -111,12 +117,40 @@ func (a *TaskAdaptor) Init(info *relaycommon.RelayInfo) {
 // ValidateRequestAndSetAction parses body, validates fields and sets default action.
 func (a *TaskAdaptor) ValidateRequestAndSetAction(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.TaskError) {
 	// Use the standard validation method for TaskSubmitReq
-	return relaycommon.ValidateBasicTaskRequest(c, info, constant.TaskActionGenerate)
+	if taskErr = relaycommon.ValidateBasicTaskRequest(c, info, constant.TaskActionGenerate); taskErr != nil {
+		return taskErr
+	}
+
+	// Prefer explicitly provided action from middleware.
+	if action := c.GetString("action"); action != "" {
+		info.Action = action
+		return nil
+	}
+
+	// Fallback: derive action from original route path if available.
+	routePath := c.GetString("bltcy_original_path")
+	if routePath == "" {
+		routePath = c.Request.URL.Path
+	}
+	if action, ok := klingActionFromPath(routePath); ok {
+		info.Action = action
+		c.Set("action", action)
+		return nil
+	}
+
+	// Final fallback: infer omni requests by metadata payload shape.
+	if v, exists := c.Get("task_request"); exists {
+		if req, ok := v.(relaycommon.TaskSubmitReq); ok && hasOmniMetadata(req.Metadata) {
+			info.Action = constant.TaskActionOmniVideo
+			c.Set("action", constant.TaskActionOmniVideo)
+		}
+	}
+	return nil
 }
 
 // BuildRequestURL constructs the upstream URL.
 func (a *TaskAdaptor) BuildRequestURL(info *relaycommon.RelayInfo) (string, error) {
-	path := lo.Ternary(info.Action == constant.TaskActionGenerate, "/v1/videos/image2video", "/v1/videos/text2video")
+	path := klingActionPath(info.Action)
 
 	if isNewAPIRelay(info.ApiKey) {
 		return fmt.Sprintf("%s/kling%s", a.baseURL, path), nil
@@ -131,6 +165,9 @@ func (a *TaskAdaptor) BuildRequestHeader(c *gin.Context, req *http.Request, info
 	if err != nil {
 		return fmt.Errorf("failed to create JWT token: %w", err)
 	}
+
+	fmt.Printf("[DEBUG Kling] BuildRequestHeader: baseURL=%q, apiKeyPrefix=%q, tokenLen=%d, requestURL=%s\n",
+		a.baseURL, a.apiKey[:min(len(a.apiKey), 10)]+"...", len(token), req.URL.String())
 
 	req.Header.Set("Content-Type", "application/json")
 	req.Header.Set("Accept", "application/json")
@@ -151,8 +188,15 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, info *relaycommon.RelayIn
 	if err != nil {
 		return nil, err
 	}
-	if body.Image == "" && body.ImageTail == "" {
-		c.Set("action", constant.TaskActionTextGenerate)
+	if c.GetString("action") == "" {
+		action := constant.TaskActionGenerate
+		switch {
+		case body.hasOmniPayload():
+			action = constant.TaskActionOmniVideo
+		case body.Image == "" && body.ImageTail == "":
+			action = constant.TaskActionTextGenerate
+		}
+		c.Set("action", action)
 	}
 	data, err := json.Marshal(body)
 	if err != nil {
@@ -202,7 +246,7 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 	if !ok {
 		return nil, fmt.Errorf("invalid action")
 	}
-	path := lo.Ternary(action == constant.TaskActionGenerate, "/v1/videos/image2video", "/v1/videos/text2video")
+	path := klingActionPath(action)
 	url := fmt.Sprintf("%s%s/%s", baseUrl, path, taskID)
 	if isNewAPIRelay(key) {
 		url = fmt.Sprintf("%s/kling%s/%s", baseUrl, path, taskID)
@@ -226,7 +270,7 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 }
 
 func (a *TaskAdaptor) GetModelList() []string {
-	return []string{"kling-v1", "kling-v1-6", "kling-v2-master"}
+	return []string{"kling-v3", "kling-v2-6", "kling-v3-omni", "kling-video-o1"}
 }
 
 func (a *TaskAdaptor) GetChannelName() string {
@@ -254,9 +298,10 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 		ExternalTaskId: "",
 	}
 	if r.ModelName == "" {
-		r.ModelName = "kling-v1"
+		r.ModelName = "kling-v3"
 	}
 	metadata := req.Metadata
+	normalizeMetadataTypes(metadata)
 	medaBytes, err := json.Marshal(metadata)
 	if err != nil {
 		return nil, errors.Wrap(err, "metadata marshal metadata failed")
@@ -266,6 +311,70 @@ func (a *TaskAdaptor) convertToRequestPayload(req *relaycommon.TaskSubmitReq) (*
 		return nil, errors.Wrap(err, "unmarshal metadata failed")
 	}
 	return &r, nil
+}
+
+func klingActionPath(action string) string {
+	switch action {
+	case constant.TaskActionGenerate, constant.TaskActionFirstTailGenerate:
+		return "/v1/videos/image2video"
+	case constant.TaskActionOmniVideo:
+		return "/v1/videos/omni-video"
+	default:
+		return "/v1/videos/text2video"
+	}
+}
+
+func klingActionFromPath(path string) (string, bool) {
+	switch {
+	case strings.HasSuffix(path, "/videos/omni-video"):
+		return constant.TaskActionOmniVideo, true
+	case strings.HasSuffix(path, "/videos/image2video"):
+		return constant.TaskActionGenerate, true
+	case strings.HasSuffix(path, "/videos/text2video"):
+		return constant.TaskActionTextGenerate, true
+	default:
+		return "", false
+	}
+}
+
+func hasOmniMetadata(metadata map[string]interface{}) bool {
+	if len(metadata) == 0 {
+		return false
+	}
+	for _, key := range []string{"image_list", "video_list", "element_list", "multi_prompt", "voice_list"} {
+		if _, ok := metadata[key]; ok {
+			return true
+		}
+	}
+	return false
+}
+
+func (p *requestPayload) hasOmniPayload() bool {
+	return len(p.ImageList) > 0 ||
+		len(p.VideoList) > 0 ||
+		len(p.ElementList) > 0 ||
+		len(p.MultiPrompt) > 0 ||
+		len(p.VoiceList) > 0
+}
+
+// normalizeMetadataTypes converts numeric values to strings for fields that
+// Kling API expects as strings (e.g. duration). The middleware passes the raw
+// client request body as metadata, so numeric JSON values must be coerced.
+func normalizeMetadataTypes(metadata map[string]interface{}) {
+	if metadata == nil {
+		return
+	}
+	// duration: Kling API expects string, clients may send number
+	if v, ok := metadata["duration"]; ok {
+		switch d := v.(type) {
+		case float64:
+			metadata["duration"] = fmt.Sprintf("%d", int(d))
+		case int:
+			metadata["duration"] = fmt.Sprintf("%d", d)
+		case json.Number:
+			metadata["duration"] = d.String()
+		}
+	}
 }
 
 func (a *TaskAdaptor) getAspectRatio(size string) string {
@@ -320,9 +429,6 @@ func (a *TaskAdaptor) createJWTTokenWithKey(apiKey string) (string, error) {
 		return "", errors.New("invalid api_key, required format is accessKey|secretKey")
 	}
 	accessKey := strings.TrimSpace(keyParts[0])
-	if len(keyParts) == 1 {
-		return accessKey, nil
-	}
 	secretKey := strings.TrimSpace(keyParts[1])
 	now := time.Now().Unix()
 	claims := jwt.MapClaims{
