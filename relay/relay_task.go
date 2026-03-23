@@ -793,8 +793,8 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 			}
 			if ti.Url != "" {
 				originTask.FailReason = ti.Url
-			}
-			if ti.Reason != "" {
+			} else if ti.Reason != "" {
+				// 仅在无 Url 时才用 Reason 覆盖，避免将 "SUCCEED" 消息覆盖 element_id
 				originTask.FailReason = ti.Reason
 			}
 			if ti.ActualCredits > 0 {
