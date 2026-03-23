@@ -5,8 +5,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"math"
 	"net/http"
 	"one-api/model"
+	"strconv"
 	"strings"
 	"time"
 
@@ -94,8 +96,9 @@ type responsePayload struct {
 				ElementId json.Number `json:"element_id"`
 			} `json:"elements"`
 		} `json:"task_result"`
-		CreatedAt int64 `json:"created_at"`
-		UpdatedAt int64 `json:"updated_at"`
+		FinalUnitDeduction string `json:"final_unit_deduction"`
+		CreatedAt          int64  `json:"created_at"`
+		UpdatedAt          int64  `json:"updated_at"`
 	} `json:"data"`
 }
 
@@ -481,6 +484,11 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 		taskInfo.Status = model.TaskStatusInProgress
 	case "succeed":
 		taskInfo.Status = model.TaskStatusSuccess
+		if deduction := resPayload.Data.FinalUnitDeduction; deduction != "" {
+			if v, err2 := strconv.ParseFloat(deduction, 64); err2 == nil && v > 0 {
+				taskInfo.ActualCredits = int(math.Ceil(v))
+			}
+		}
 	case "failed":
 		taskInfo.Status = model.TaskStatusFailure
 	default:
