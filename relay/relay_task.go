@@ -472,7 +472,7 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	task.Quota = quota
 	task.Data = taskData
 	task.Action = info.Action
-	if isKlingCredits {
+	if isKlingCredits || isSeedanceTokens {
 		// 存储 modelName 供 fetch 时计费使用（Properties.Input 作为自由字段）
 		task.Properties = model.Properties{Input: modelName}
 	}
@@ -816,6 +816,63 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 		})
 	}()
 
+	// Seedance: 轮询上游，任务完成时按 usage.total_tokens 计费
+	func() {
+		channelModel, err2 := model.GetChannelById(originTask.ChannelId, true)
+		if err2 != nil || channelModel.Type != constant.ChannelTypeSeedance {
+			return
+		}
+		baseURL := channelModel.GetBaseURL()
+		if baseURL == "" {
+			baseURL = constant.ChannelBaseURLs[channelModel.Type]
+		}
+		adaptor := GetTaskAdaptor(constant.TaskPlatform(strconv.Itoa(channelModel.Type)))
+		if adaptor == nil {
+			return
+		}
+		resp, err2 := adaptor.FetchTask(baseURL, channelModel.Key, map[string]any{
+			"task_id": originTask.TaskID,
+			"action":  originTask.Action,
+		})
+		if err2 != nil || resp == nil {
+			return
+		}
+		defer resp.Body.Close()
+		body, err2 := io.ReadAll(resp.Body)
+		if err2 != nil {
+			return
+		}
+		ti, err2 := adaptor.ParseTaskResult(body)
+		if err2 == nil && ti != nil {
+			prevStatus := originTask.Status
+			if ti.Status != "" {
+				originTask.Status = model.TaskStatus(ti.Status)
+			}
+			if ti.Url != "" {
+				originTask.FailReason = ti.Url
+			}
+			if ti.Reason != "" {
+				originTask.FailReason = ti.Reason
+			}
+			if ti.ActualCredits > 0 {
+				originTask.ActualCredits = ti.ActualCredits
+			}
+			_ = originTask.Update()
+
+			// 首次完成且尚未计费（Quota == 0）时执行按量扣费
+			if originTask.Status == model.TaskStatusSuccess &&
+				prevStatus != model.TaskStatusSuccess &&
+				originTask.ActualCredits > 0 &&
+				originTask.Quota == 0 {
+				postSeedanceConsumeQuota(c, originTask)
+			}
+		}
+		respBody, _ = json.Marshal(dto.TaskResponse[any]{
+			Code: "success",
+			Data: TaskModel2Dto(originTask),
+		})
+	}()
+
 	// 返回任务信息
 	if len(respBody) == 0 {
 		respBody, err = json.Marshal(dto.TaskResponse[any]{
@@ -824,6 +881,69 @@ func videoFetchByIDRespBodyBuilder(c *gin.Context) (respBody []byte, taskResp *d
 		})
 	}
 	return
+}
+
+// postSeedanceConsumeQuota 在 Seedance 任务完成时按 usage.total_tokens 扣费
+// ActualCredits = int(costYuan × 100)，klingCreditPrice=0.01 还原：ActualCredits×0.01=元
+func postSeedanceConsumeQuota(c *gin.Context, task *model.Task) {
+	user, err := model.GetUserById(task.UserId, false)
+	if err != nil || user == nil {
+		common.SysLog(fmt.Sprintf("postSeedanceConsumeQuota: get user failed, userId=%d, err=%v", task.UserId, err))
+		return
+	}
+
+	modelName := task.Properties.Input
+	if modelName == "" {
+		modelName = "doubao-seedance-1-5-pro-251215"
+	}
+
+	groupRatio := ratio_setting.GetGroupRatio(user.Group)
+	userGroupRatio, hasUserGroupRatio := ratio_setting.GetGroupGroupRatio(user.Group, user.Group)
+	channelRatio := model.GetChannelRatio(user.Group, modelName, task.ChannelId)
+
+	var finalRatio float64
+	if hasUserGroupRatio {
+		finalRatio = userGroupRatio
+	} else {
+		finalRatio = groupRatio
+	}
+
+	// 与 Kling 相同比例：ActualCredits×0.01=元
+	quota := int(float64(task.ActualCredits) * klingCreditPrice * finalRatio * channelRatio * common.QuotaPerUnit)
+
+	if err = model.DecreaseUserQuota(task.UserId, quota); err != nil {
+		common.SysLog(fmt.Sprintf("postSeedanceConsumeQuota: decrease quota failed, userId=%d, err=%v", task.UserId, err))
+		return
+	}
+	model.UpdateUserUsedQuotaAndRequestCount(task.UserId, quota)
+	model.UpdateChannelUsedQuota(task.ChannelId, quota)
+
+	// 回写 Quota，防止重复计费
+	task.Quota = quota
+	_ = task.Update()
+
+	tokenName := c.GetString("token_name")
+	other := map[string]interface{}{
+		"actual_credits": task.ActualCredits,
+		"credit_price":   klingCreditPrice,
+		"billing_mode":   "seedance_tokens",
+		"group_ratio":    groupRatio,
+		"channel_ratio":  channelRatio,
+	}
+	if hasUserGroupRatio {
+		other["user_group_ratio"] = userGroupRatio
+	}
+	model.RecordConsumeLog(c, task.UserId, model.RecordConsumeLogParams{
+		ChannelId: task.ChannelId,
+		ModelName: modelName,
+		TokenName: tokenName,
+		Quota:     quota,
+		Content: fmt.Sprintf("Seedance视频生成，实际积分 %d，积分单价 %.3f元，分组倍率 %.2f，渠道倍率 %.2f，操作 %s",
+			task.ActualCredits, klingCreditPrice, finalRatio, channelRatio, task.Action),
+		TokenId: 0,
+		Group:   user.Group,
+		Other:   other,
+	})
 }
 
 // postKlingConsumeQuota 在 Kling 任务完成时按 final_unit_deduction 扣费

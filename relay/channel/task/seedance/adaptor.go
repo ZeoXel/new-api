@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"math"
 	"net/http"
 	"strings"
 
@@ -261,6 +262,40 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 	switch status {
 	case string(model.TaskStatusSuccess):
 		taskInfo.Progress = "100%"
+		// 计算实际费用并存入 ActualCredits（×100 精度，与 Kling 相同比例）
+		if usage, ok := raw["usage"].(map[string]interface{}); ok {
+			if totalTokens, ok := usage["total_tokens"].(float64); ok && totalTokens > 0 {
+				taskInfo.Usage = int(totalTokens)
+				generateAudio := true
+				if v, ok := raw["generate_audio"].(bool); ok {
+					generateAudio = v
+				}
+				serviceTier := "default"
+				if v, ok := raw["service_tier"].(string); ok {
+					serviceTier = strings.ToLower(strings.TrimSpace(v))
+				}
+				// 元/千tokens
+				var pricePerKToken float64
+				if serviceTier == "flex" {
+					if generateAudio {
+						pricePerKToken = 0.008
+					} else {
+						pricePerKToken = 0.004
+					}
+				} else {
+					if generateAudio {
+						pricePerKToken = 0.016
+					} else {
+						pricePerKToken = 0.008
+					}
+				}
+				costYuan := totalTokens / 1000.0 * pricePerKToken
+				// ×100 存储，与 klingCreditPrice=0.01 配合还原：ActualCredits×0.01=元
+				taskInfo.ActualCredits = int(math.Round(costYuan * 100))
+				fmt.Printf("[DEBUG Seedance] tokens=%d audio=%v tier=%s price=%.4f/ktoken cost=%.4f yuan ActualCredits=%d\n",
+					int(totalTokens), generateAudio, serviceTier, pricePerKToken, costYuan, taskInfo.ActualCredits)
+			}
+		}
 	case string(model.TaskStatusFailure):
 		taskInfo.Progress = "100%"
 		taskInfo.Reason = extractError(raw)
@@ -271,14 +306,6 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 	}
 
 	taskInfo.Url = extractOutputURL(raw)
-
-	// 提取 usage.total_tokens 用于按量计费（查询时也可能返回）
-	if usage, ok := raw["usage"].(map[string]interface{}); ok {
-		if totalTokens, ok := usage["total_tokens"].(float64); ok && totalTokens > 0 {
-			taskInfo.Usage = int(totalTokens)
-			fmt.Printf("[DEBUG Seedance ParseTaskResult] Extracted tokens: %d\n", int(totalTokens))
-		}
-	}
 
 	return taskInfo, nil
 }
