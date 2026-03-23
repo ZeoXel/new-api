@@ -46,9 +46,17 @@ func KlingRequestConvert() func(c *gin.Context) {
 		if isElementAPI {
 			var originalReq map[string]interface{}
 			if err := common.UnmarshalBodyReusable(c, &originalReq); err == nil {
+				// 从原始请求提取 prompt，避免校验层因空 prompt 拒绝请求
+				elementPrompt, _ := originalReq["prompt"].(string)
+				if elementPrompt == "" {
+					elementPrompt, _ = originalReq["element_description"].(string)
+				}
+				if elementPrompt == "" {
+					elementPrompt, _ = originalReq["element_name"].(string)
+				}
 				unifiedReq := map[string]interface{}{
 					"model":    "kling",
-					"prompt":   "",
+					"prompt":   elementPrompt,
 					"metadata": originalReq,
 				}
 				jsonData, _ := json.Marshal(unifiedReq)
