@@ -101,8 +101,9 @@ func getSeedanceTokenPrice(modelName, serviceTier string, generateAudio bool) fl
 
 // ============ Kling Credits 按量计费配置 ============
 
-// Kling credits 单价：1元/credit（final_unit_deduction 字段与人民币 1:1）
-const klingCreditPrice = 1.0
+// Kling credits 单价：0.01元/unit
+// ActualCredits = int(final_unit_deduction × 100)，还原公式：ActualCredits × 0.01 = 实际元
+const klingCreditPrice = 0.01
 
 // isKlingCreditsModel 判断是否为 Kling 按量计费模型
 func isKlingCreditsModel(modelName string) bool {

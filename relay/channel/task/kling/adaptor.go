@@ -486,7 +486,9 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 		taskInfo.Status = model.TaskStatusSuccess
 		if deduction := resPayload.Data.FinalUnitDeduction; deduction != "" {
 			if v, err2 := strconv.ParseFloat(deduction, 64); err2 == nil && v > 0 {
-				taskInfo.ActualCredits = int(math.Ceil(v))
+				// ×100 保留两位小数精度（避免 Ceil 将 1.5 截为 2）
+				// postKlingConsumeQuota 中 klingCreditPrice=0.01 对应还原
+				taskInfo.ActualCredits = int(math.Round(v * 100))
 			}
 		}
 	case "failed":
