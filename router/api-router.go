@@ -40,6 +40,9 @@ func SetApiRouter(router *gin.Engine) {
 
 		apiRouter.POST("/stripe/webhook", controller.StripeWebhook)
 
+		// 代理下载接口（用于国内服务器下载海外资源）
+		apiRouter.GET("/proxy/download", controller.ProxyDownload)
+
 		userRoute := apiRouter.Group("/user")
 		{
 			userRoute.POST("/register", middleware.CriticalRateLimit(), middleware.TurnstileCheck(), controller.Register)
