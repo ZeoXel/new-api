@@ -158,7 +158,7 @@ func (a *TaskAdaptor) ValidateRequestAndSetAction(c *gin.Context, info *relaycom
 func (a *TaskAdaptor) BuildRequestURL(info *relaycommon.RelayInfo) (string, error) {
 	path := klingActionPath(info.Action)
 
-	if isNewAPIRelay(info.ApiKey) {
+	if needsKlingPrefix(info.ApiKey, a.baseURL) {
 		return fmt.Sprintf("%s/kling%s", a.baseURL, path), nil
 	}
 
@@ -264,7 +264,7 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 	}
 	path := klingActionPath(action)
 	url := fmt.Sprintf("%s%s/%s", baseUrl, path, taskID)
-	if isNewAPIRelay(key) {
+	if needsKlingPrefix(key, baseUrl) {
 		url = fmt.Sprintf("%s/kling%s/%s", baseUrl, path, taskID)
 	}
 
@@ -509,4 +509,15 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 
 func isNewAPIRelay(apiKey string) bool {
 	return strings.HasPrefix(apiKey, "sk-")
+}
+
+// needsKlingPrefix determines if the /kling path prefix is needed.
+// When relaying through another gateway (sk- key + non-Kling baseURL), the prefix is required.
+// When the baseURL is Kling's official API, no prefix is needed even with sk- keys.
+func needsKlingPrefix(apiKey, baseURL string) bool {
+	if !isNewAPIRelay(apiKey) {
+		return false
+	}
+	// Kling 官方 API 地址不需要 /kling 前缀
+	return !strings.Contains(baseURL, "klingai.com")
 }
