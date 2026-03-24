@@ -42,6 +42,8 @@ func SetApiRouter(router *gin.Engine) {
 
 		// 代理下载接口（用于国内服务器下载海外资源）
 		apiRouter.GET("/proxy/download", controller.ProxyDownload)
+		// 中转上传：Gateway 下载海外文件 → PUT 到 COS 预签名 URL
+		apiRouter.POST("/proxy/cos-transfer", controller.CosTransfer)
 
 		userRoute := apiRouter.Group("/user")
 		{
