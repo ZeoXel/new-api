@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"bytes"
 	"fmt"
 	"io"
 	"net/http"
@@ -42,12 +43,11 @@ func ProxyDownload(c *gin.Context) {
 
 // CosTransferRequest 中转上传请求
 type CosTransferRequest struct {
-	SourceUrl string `json:"sourceUrl" binding:"required"` // 海外源文件 URL
-	UploadUrl string `json:"uploadUrl" binding:"required"` // COS 预签名 PUT URL
+	SourceUrl string `json:"sourceUrl" binding:"required"`
+	UploadUrl string `json:"uploadUrl" binding:"required"`
 }
 
 // CosTransfer 从海外 URL 下载文件并上传到 COS 预签名 URL
-// Gateway(海外) 下载源文件 → PUT 到 COS 加速域名
 // POST /api/proxy/cos-transfer
 func CosTransfer(c *gin.Context) {
 	var req CosTransferRequest
@@ -56,16 +56,20 @@ func CosTransfer(c *gin.Context) {
 		return
 	}
 
-	// 1. 下载源文件
+	fmt.Printf("[CosTransfer] Start: source=%s\n", req.SourceUrl[:min(len(req.SourceUrl), 80)])
+
+	// 1. 下载源文件（先读入内存，确保有 Content-Length）
 	downloadClient := &http.Client{Timeout: 30 * time.Second}
 	downloadResp, err := downloadClient.Get(req.SourceUrl)
 	if err != nil {
+		fmt.Printf("[CosTransfer] Download failed: %v\n", err)
 		c.JSON(http.StatusBadGateway, gin.H{"error": "Download failed: " + err.Error()})
 		return
 	}
 	defer downloadResp.Body.Close()
 
 	if downloadResp.StatusCode != http.StatusOK {
+		fmt.Printf("[CosTransfer] Download status: %s\n", downloadResp.Status)
 		c.JSON(http.StatusBadGateway, gin.H{"error": "Download status: " + downloadResp.Status})
 		return
 	}
@@ -74,25 +78,30 @@ func CosTransfer(c *gin.Context) {
 	if contentType == "" {
 		contentType = "application/octet-stream"
 	}
-	contentLength := downloadResp.ContentLength
 
-	fmt.Printf("[CosTransfer] Downloaded %.1f KB from source, uploading to COS...\n",
-		float64(contentLength)/1024)
+	// 读入内存（COS PUT 需要确切的 Content-Length）
+	data, err := io.ReadAll(downloadResp.Body)
+	if err != nil {
+		fmt.Printf("[CosTransfer] Read body failed: %v\n", err)
+		c.JSON(http.StatusBadGateway, gin.H{"error": "Read body failed: " + err.Error()})
+		return
+	}
+
+	fmt.Printf("[CosTransfer] Downloaded %.1f KB, uploading to COS...\n", float64(len(data))/1024)
 
 	// 2. PUT 到 COS 预签名 URL
-	uploadClient := &http.Client{Timeout: 60 * time.Second}
-	putReq, err := http.NewRequest("PUT", req.UploadUrl, downloadResp.Body)
+	uploadClient := &http.Client{Timeout: 120 * time.Second}
+	putReq, err := http.NewRequest("PUT", req.UploadUrl, bytes.NewReader(data))
 	if err != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": "Create PUT request failed: " + err.Error()})
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "Create PUT failed: " + err.Error()})
 		return
 	}
 	putReq.Header.Set("Content-Type", contentType)
-	if contentLength > 0 {
-		putReq.ContentLength = contentLength
-	}
+	putReq.ContentLength = int64(len(data))
 
 	uploadResp, err := uploadClient.Do(putReq)
 	if err != nil {
+		fmt.Printf("[CosTransfer] COS upload error: %v\n", err)
 		c.JSON(http.StatusBadGateway, gin.H{"error": "COS upload failed: " + err.Error()})
 		return
 	}
@@ -100,12 +109,19 @@ func CosTransfer(c *gin.Context) {
 
 	if uploadResp.StatusCode != http.StatusOK && uploadResp.StatusCode != http.StatusNoContent {
 		body, _ := io.ReadAll(uploadResp.Body)
-		c.JSON(http.StatusBadGateway, gin.H{
-			"error": fmt.Sprintf("COS upload status %d: %s", uploadResp.StatusCode, string(body)),
-		})
+		errMsg := fmt.Sprintf("COS status %d: %s", uploadResp.StatusCode, string(body))
+		fmt.Printf("[CosTransfer] COS upload rejected: %s\n", errMsg)
+		c.JSON(http.StatusBadGateway, gin.H{"error": errMsg})
 		return
 	}
 
-	fmt.Printf("[CosTransfer] Upload to COS done (status %d)\n", uploadResp.StatusCode)
+	fmt.Printf("[CosTransfer] Done (status %d, %.1f KB)\n", uploadResp.StatusCode, float64(len(data))/1024)
 	c.JSON(http.StatusOK, gin.H{"success": true})
+}
+
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
 }
