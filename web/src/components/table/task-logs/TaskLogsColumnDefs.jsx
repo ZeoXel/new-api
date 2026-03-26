@@ -37,7 +37,8 @@ import {
 import {
   TASK_ACTION_FIRST_TAIL_GENERATE,
   TASK_ACTION_GENERATE, TASK_ACTION_REFERENCE_GENERATE,
-  TASK_ACTION_TEXT_GENERATE
+  TASK_ACTION_TEXT_GENERATE,
+  TASK_ACTION_OMNI_VIDEO
 } from '../../../constants/common.constant';
 import { CHANNEL_OPTIONS } from '../../../constants/channel.constants';
 
@@ -122,6 +123,12 @@ const renderType = (type, t) => {
       return (
         <Tag color='blue' shape='circle' prefixIcon={<Sparkles size={14} />}>
           {t('参照生视频')}
+        </Tag>
+      );
+    case TASK_ACTION_OMNI_VIDEO:
+      return (
+        <Tag color='blue' shape='circle' prefixIcon={<Sparkles size={14} />}>
+          {t('多模态视频')}
         </Tag>
       );
     default:
@@ -358,7 +365,8 @@ export const getTaskLogsColumns = ({
           record.action === TASK_ACTION_GENERATE ||
           record.action === TASK_ACTION_TEXT_GENERATE ||
           record.action === TASK_ACTION_FIRST_TAIL_GENERATE ||
-          record.action === TASK_ACTION_REFERENCE_GENERATE;
+          record.action === TASK_ACTION_REFERENCE_GENERATE ||
+          record.action === TASK_ACTION_OMNI_VIDEO;
         const isSuccess = record.status === 'SUCCESS';
         const isUrl = typeof text === 'string' && /^https?:\/\//.test(text);
         if (isSuccess && isVideoTask && isUrl) {

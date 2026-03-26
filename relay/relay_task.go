@@ -476,11 +476,15 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 		// 存储 modelName 供 fetch 时计费使用（Properties.Input 作为自由字段）
 		task.Properties = model.Properties{Input: modelName}
 	}
+	fmt.Printf("[DEBUG TaskInsert] platform=%s, taskID=%s, action=%s, userId=%d, channelId=%d, model=%s\n",
+		platform, taskID, info.Action, info.UserId, info.ChannelId, modelName)
 	err = task.Insert()
 	if err != nil {
+		fmt.Printf("[ERROR TaskInsert] FAILED: platform=%s, taskID=%s, error=%v\n", platform, taskID, err)
 		taskErr = service.TaskErrorWrapper(err, "insert_task_failed", http.StatusInternalServerError)
 		return
 	}
+	fmt.Printf("[DEBUG TaskInsert] SUCCESS: platform=%s, taskID=%s, dbId=%d\n", platform, taskID, task.ID)
 	return nil
 }
 

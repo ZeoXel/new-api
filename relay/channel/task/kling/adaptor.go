@@ -248,6 +248,8 @@ func (a *TaskAdaptor) DoResponse(c *gin.Context, resp *http.Response, info *rela
 		return
 	}
 	kResp.TaskId = kResp.Data.TaskId
+	fmt.Printf("[DEBUG Kling DoResponse] taskId=%s, taskStatus=%s, code=%d\n",
+		kResp.Data.TaskId, kResp.Data.TaskStatus, kResp.Code)
 	c.JSON(http.StatusOK, kResp)
 	return kResp.Data.TaskId, responseBody, nil
 }
