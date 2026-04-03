@@ -73,6 +73,9 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 	isViduMultiFrame := info.ChannelType == constant.ChannelTypeVidu &&
 		(req.Mode == "multiframe" || req.StartImage != "" || len(req.ImageSettings) > 0)
 
+	isSeedanceMultiModal := info.ChannelType == constant.ChannelTypeSeedance &&
+		(len(req.Images) > 0 || len(req.Videos) > 0 || len(req.Audios) > 0)
+
 	if isViduMultiFrame {
 		if strings.TrimSpace(req.StartImage) == "" {
 			return createTaskError(fmt.Errorf("start_image is required"), "invalid_request", http.StatusBadRequest, true)
@@ -85,6 +88,8 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 				return createTaskError(fmt.Errorf("image_settings[%d].key_image is required", i), "invalid_request", http.StatusBadRequest, true)
 			}
 		}
+	} else if isSeedanceMultiModal {
+		// Seedance 2.0 多模态参考：prompt 可选，但至少需要一个媒体输入
 	} else {
 		if taskErr := validatePrompt(req.Prompt); taskErr != nil {
 			return taskErr

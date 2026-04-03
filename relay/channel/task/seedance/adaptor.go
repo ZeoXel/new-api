@@ -109,6 +109,40 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		}
 	}
 
+	// 添加视频内容 (Seedance 2.0)
+	if len(req.Videos) > 0 {
+		for _, videoUrl := range req.Videos {
+			if strings.TrimSpace(videoUrl) == "" {
+				continue
+			}
+			videoContent := map[string]interface{}{
+				"type": "video_url",
+				"video_url": map[string]interface{}{
+					"url": videoUrl,
+				},
+				"role": "reference_video",
+			}
+			content = append(content, videoContent)
+		}
+	}
+
+	// 添加音频内容 (Seedance 2.0, 不可单独输入)
+	if len(req.Audios) > 0 {
+		for _, audioUrl := range req.Audios {
+			if strings.TrimSpace(audioUrl) == "" {
+				continue
+			}
+			audioContent := map[string]interface{}{
+				"type": "audio_url",
+				"audio_url": map[string]interface{}{
+					"url": audioUrl,
+				},
+				"role": "reference_audio",
+			}
+			content = append(content, audioContent)
+		}
+	}
+
 	body["content"] = content
 
 	// Seedance 1.5 pro 的默认参数：
@@ -161,6 +195,13 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		if expiresAfter, ok := req.Metadata["execution_expires_after"].(float64); ok {
 			body["execution_expires_after"] = int(expiresAfter)
 		}
+		// Seedance 2.0 新增参数
+		if tools, ok := req.Metadata["tools"].([]interface{}); ok && len(tools) > 0 {
+			body["tools"] = tools
+		}
+		if safetyID, ok := req.Metadata["safety_identifier"].(string); ok && safetyID != "" {
+			body["safety_identifier"] = safetyID
+		}
 		// metadata 中的 duration/resolution/ratio 覆盖顶层
 		if dur, ok := req.Metadata["duration"].(float64); ok {
 			body["duration"] = int(dur)
@@ -171,6 +212,12 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		if ratio, ok := req.Metadata["ratio"].(string); ok {
 			body["ratio"] = ratio
 		}
+	}
+
+	// Seedance 2.0 不支持 camera_fixed、draft
+	if strings.Contains(req.Model, "seedance-2-0") {
+		delete(body, "camera_fixed")
+		delete(body, "draft")
 	}
 
 	// 计费阶段需要这两个维度来选择单价
@@ -238,6 +285,8 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 
 func (a *TaskAdaptor) GetModelList() []string {
 	return []string{
+		"doubao-seedance-2-0-260128",
+		"doubao-seedance-2-0-fast-250228",
 		"doubao-seedance-1-5-pro-251215",
 	}
 }

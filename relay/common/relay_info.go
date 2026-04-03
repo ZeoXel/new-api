@@ -519,6 +519,8 @@ type TaskSubmitReq struct {
 	Style             string             `json:"style,omitempty"`              // Vidu style
 	Seed              int                `json:"seed,omitempty"`               // 随机种子
 	ImageRoles        []string           `json:"image_roles,omitempty"`        // Seedance 图片角色：first_frame, last_frame, reference_image
+	Videos            []string           `json:"videos,omitempty"`             // Seedance 2.0 参考视频 (0~3)
+	Audios            []string           `json:"audios,omitempty"`             // Seedance 2.0 参考音频 (0~3)
 }
 
 func (t TaskSubmitReq) GetPrompt() string {

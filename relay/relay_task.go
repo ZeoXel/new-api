@@ -75,11 +75,23 @@ func isSeedance15ProModel(modelName string) bool {
 	return strings.Contains(strings.ToLower(modelName), "doubao-seedance-1-5-pro")
 }
 
+func isSeedance20Model(modelName string) bool {
+	return strings.Contains(strings.ToLower(modelName), "seedance-2-0")
+}
+
 // getSeedanceTokenPrice 根据官方定价返回 token 单价（元/token）
 // doubao-seedance-1.5-pro:
 //  - 在线(default): 有声16 / 无声8（元/百万token）
 //  - 离线(flex):    有声8  / 无声4（元/百万token）
 func getSeedanceTokenPrice(modelName, serviceTier string, generateAudio bool) float64 {
+	if isSeedance20Model(modelName) {
+		// Seedance 2.0: 不支持 flex, 定价暂与 1.5 pro default 一致
+		if generateAudio {
+			return 16.0 / 1000000
+		}
+		return 8.0 / 1000000
+	}
+
 	if !isSeedance15ProModel(modelName) {
 		return seedanceTokenPriceLegacy
 	}
