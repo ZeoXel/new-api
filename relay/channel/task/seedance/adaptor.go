@@ -286,7 +286,7 @@ func (a *TaskAdaptor) FetchTask(baseUrl, key string, body map[string]any) (*http
 func (a *TaskAdaptor) GetModelList() []string {
 	return []string{
 		"doubao-seedance-2-0-260128",
-		"doubao-seedance-2-0-fast-250228",
+		"doubao-seedance-2-0-fast-260128",
 		"doubao-seedance-1-5-pro-251215",
 	}
 }
