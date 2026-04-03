@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"math"
 	"net/http"
 	"one-api/common"
 	"one-api/constant"
@@ -80,16 +81,22 @@ func isSeedance20Model(modelName string) bool {
 }
 
 // getSeedanceTokenPrice 根据官方定价返回 token 单价（元/token）
-// doubao-seedance-1.5-pro:
-//  - 在线(default): 有声16 / 无声8（元/百万token）
-//  - 离线(flex):    有声8  / 无声4（元/百万token）
-func getSeedanceTokenPrice(modelName, serviceTier string, generateAudio bool) float64 {
+// doubao-seedance-2.0:      无视频输入 46 / 有视频输入 28（元/百万token），不支持离线
+// doubao-seedance-2.0-fast: 无视频输入 37 / 有视频输入 22（元/百万token），不支持离线
+// doubao-seedance-1.5-pro:  在线有声16/无声8，离线有声8/无声4（元/百万token）
+func getSeedanceTokenPrice(modelName, serviceTier string, generateAudio bool, hasVideoInput bool) float64 {
 	if isSeedance20Model(modelName) {
-		// Seedance 2.0: 不支持 flex, 定价暂与 1.5 pro default 一致
-		if generateAudio {
-			return 16.0 / 1000000
+		isFast := strings.Contains(strings.ToLower(modelName), "fast")
+		if isFast {
+			if hasVideoInput {
+				return 22.0 / 1000000
+			}
+			return 37.0 / 1000000
 		}
-		return 8.0 / 1000000
+		if hasVideoInput {
+			return 28.0 / 1000000
+		}
+		return 46.0 / 1000000
 	}
 
 	if !isSeedance15ProModel(modelName) {
@@ -103,7 +110,7 @@ func getSeedanceTokenPrice(modelName, serviceTier string, generateAudio bool) fl
 			return 8.0 / 1000000
 		}
 		return 4.0 / 1000000
-	default: // default/online
+	default:
 		if generateAudio {
 			return 16.0 / 1000000
 		}
@@ -436,7 +443,13 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 					generateAudio = b
 				}
 			}
-			tokenPrice := getSeedanceTokenPrice(modelName, serviceTier, generateAudio)
+			hasVideoInput := false
+			if v, ok := c.Get("seedance_has_video_input"); ok {
+				if b, ok := v.(bool); ok {
+					hasVideoInput = b
+				}
+			}
+			tokenPrice := getSeedanceTokenPrice(modelName, serviceTier, generateAudio, hasVideoInput)
 
 			// quota = tokens × tokenPrice × groupRatio × channelRatio × QuotaPerUnit
 			quota = int(float64(actualTokens) * tokenPrice * finalRatio * channelRatio * common.QuotaPerUnit)
@@ -486,7 +499,14 @@ func RelayTaskSubmit(c *gin.Context, info *relaycommon.RelayInfo) (taskErr *dto.
 	task.Action = info.Action
 	if isKlingCredits || isSeedanceTokens {
 		// 存储 modelName 供 fetch 时计费使用（Properties.Input 作为自由字段）
-		task.Properties = model.Properties{Input: modelName}
+		propInput := modelName
+		// Seedance 2.0: 编码视频输入标记，用于 postSeedanceConsumeQuota 修正单价
+		if isSeedanceTokens {
+			if hasVideo, ok := c.Get("seedance_has_video_input"); ok && hasVideo.(bool) {
+				propInput = modelName + ":video"
+			}
+		}
+		task.Properties = model.Properties{Input: propInput}
 	}
 	fmt.Printf("[DEBUG TaskInsert] platform=%s, taskID=%s, action=%s, userId=%d, channelId=%d, model=%s\n",
 		platform, taskID, info.Action, info.UserId, info.ChannelId, modelName)
@@ -908,9 +928,16 @@ func postSeedanceConsumeQuota(c *gin.Context, task *model.Task) {
 		return
 	}
 
-	modelName := task.Properties.Input
-	if modelName == "" {
-		modelName = "doubao-seedance-1-5-pro-251215"
+	propInput := task.Properties.Input
+	if propInput == "" {
+		propInput = "doubao-seedance-1-5-pro-251215"
+	}
+	// 解析视频输入标记：格式 "modelName" 或 "modelName:video"
+	modelName := propInput
+	hasVideoInput := false
+	if idx := strings.Index(propInput, ":video"); idx >= 0 {
+		modelName = propInput[:idx]
+		hasVideoInput = true
 	}
 
 	groupRatio := ratio_setting.GetGroupRatio(user.Group)
@@ -922,6 +949,27 @@ func postSeedanceConsumeQuota(c *gin.Context, task *model.Task) {
 		finalRatio = userGroupRatio
 	} else {
 		finalRatio = groupRatio
+	}
+
+	// Seedance 2.0: 如果有视频输入，用正确的单价重新计算 ActualCredits
+	if isSeedance20Model(modelName) && hasVideoInput {
+		// ParseTaskResult 用的是无视频价格，需要按有视频价格重算
+		// 从 task.Data 中提取实际 token 数
+		var taskData map[string]interface{}
+		if task.Data != nil {
+			_ = json.Unmarshal(task.Data, &taskData)
+		}
+		if taskData != nil {
+			if usage, ok := taskData["usage"].(map[string]interface{}); ok {
+				if totalTokens, ok := usage["total_tokens"].(float64); ok && totalTokens > 0 {
+					tokenPrice := getSeedanceTokenPrice(modelName, "default", false, true)
+					costYuan := totalTokens * tokenPrice
+					task.ActualCredits = int(math.Round(costYuan * 100))
+					fmt.Printf("[DEBUG Seedance] Recalculated with video input: model=%s tokens=%d price=%.6f costYuan=%.4f ActualCredits=%d\n",
+						modelName, int(totalTokens), tokenPrice, costYuan, task.ActualCredits)
+				}
+			}
+		}
 	}
 
 	// 与 Kling 相同比例：ActualCredits×0.01=元
@@ -954,8 +1002,8 @@ func postSeedanceConsumeQuota(c *gin.Context, task *model.Task) {
 		ModelName: modelName,
 		TokenName: tokenName,
 		Quota:     quota,
-		Content: fmt.Sprintf("Seedance视频生成，实际积分 %d，积分单价 %.3f元，分组倍率 %.2f，渠道倍率 %.2f，操作 %s",
-			task.ActualCredits, klingCreditPrice, finalRatio, channelRatio, task.Action),
+		Content: fmt.Sprintf("Seedance视频生成，实际积分 %d，积分单价 %.3f元，有视频输入 %t，分组倍率 %.2f，渠道倍率 %.2f，操作 %s",
+			task.ActualCredits, klingCreditPrice, hasVideoInput, finalRatio, channelRatio, task.Action),
 		TokenId: 0,
 		Group:   user.Group,
 		Other:   other,

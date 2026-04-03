@@ -220,9 +220,10 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		delete(body, "draft")
 	}
 
-	// 计费阶段需要这两个维度来选择单价
+	// 计费阶段需要这些维度来选择单价
 	c.Set("seedance_generate_audio", generateAudio)
 	c.Set("seedance_service_tier", strings.ToLower(strings.TrimSpace(serviceTier)))
+	c.Set("seedance_has_video_input", len(req.Videos) > 0)
 
 	data, err := json.Marshal(body)
 	if err != nil {
@@ -315,34 +316,51 @@ func (a *TaskAdaptor) ParseTaskResult(respBody []byte) (*relaycommon.TaskInfo, e
 		if usage, ok := raw["usage"].(map[string]interface{}); ok {
 			if totalTokens, ok := usage["total_tokens"].(float64); ok && totalTokens > 0 {
 				taskInfo.Usage = int(totalTokens)
-				generateAudio := true
-				if v, ok := raw["generate_audio"].(bool); ok {
-					generateAudio = v
+				// 从响应中读取模型名（用于区分 2.0/2.0-fast/1.5）
+				respModel := ""
+				if v, ok := raw["model"].(string); ok {
+					respModel = v
 				}
-				serviceTier := "default"
-				if v, ok := raw["service_tier"].(string); ok {
-					serviceTier = strings.ToLower(strings.TrimSpace(v))
-				}
-				// 元/千tokens
+
+				// 元/千tokens — 按模型系列选择单价
 				var pricePerKToken float64
-				if serviceTier == "flex" {
-					if generateAudio {
-						pricePerKToken = 0.008
-					} else {
-						pricePerKToken = 0.004
-					}
+				if strings.Contains(respModel, "seedance-2-0-fast") || strings.Contains(respModel, "seedance-2.0-fast") {
+					// Seedance 2.0 Fast: 无视频 37 / 有视频 22 元/百万token
+					// 轮询时无法确定原始输入是否含视频，使用无视频价格（保守估计）
+					// 实际扣费在 postSeedanceConsumeQuota 中用 Properties 中存储的标记修正
+					pricePerKToken = 0.037
+				} else if strings.Contains(respModel, "seedance-2-0") || strings.Contains(respModel, "seedance-2.0") {
+					// Seedance 2.0: 无视频 46 / 有视频 28 元/百万token
+					pricePerKToken = 0.046
 				} else {
-					if generateAudio {
-						pricePerKToken = 0.016
+					// Seedance 1.5 Pro 及更早模型
+					generateAudio := true
+					if v, ok := raw["generate_audio"].(bool); ok {
+						generateAudio = v
+					}
+					serviceTier := "default"
+					if v, ok := raw["service_tier"].(string); ok {
+						serviceTier = strings.ToLower(strings.TrimSpace(v))
+					}
+					if serviceTier == "flex" {
+						if generateAudio {
+							pricePerKToken = 0.008
+						} else {
+							pricePerKToken = 0.004
+						}
 					} else {
-						pricePerKToken = 0.008
+						if generateAudio {
+							pricePerKToken = 0.016
+						} else {
+							pricePerKToken = 0.008
+						}
 					}
 				}
 				costYuan := totalTokens / 1000.0 * pricePerKToken
 				// ×100 存储，与 klingCreditPrice=0.01 配合还原：ActualCredits×0.01=元
 				taskInfo.ActualCredits = int(math.Round(costYuan * 100))
-				fmt.Printf("[DEBUG Seedance] tokens=%d audio=%v tier=%s price=%.4f/ktoken cost=%.4f yuan ActualCredits=%d\n",
-					int(totalTokens), generateAudio, serviceTier, pricePerKToken, costYuan, taskInfo.ActualCredits)
+				fmt.Printf("[DEBUG Seedance] model=%s tokens=%d price=%.4f/ktoken cost=%.4f yuan ActualCredits=%d\n",
+					respModel, int(totalTokens), pricePerKToken, costYuan, taskInfo.ActualCredits)
 			}
 		}
 	case string(model.TaskStatusFailure):
