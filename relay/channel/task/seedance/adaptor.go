@@ -110,6 +110,7 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 	}
 
 	// 添加视频内容 (Seedance 2.0)
+	actualVideoCount := 0
 	if len(req.Videos) > 0 {
 		for _, videoUrl := range req.Videos {
 			if strings.TrimSpace(videoUrl) == "" {
@@ -123,6 +124,7 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 				"role": "reference_video",
 			}
 			content = append(content, videoContent)
+			actualVideoCount++
 		}
 	}
 
@@ -223,7 +225,7 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 	// 计费阶段需要这些维度来选择单价
 	c.Set("seedance_generate_audio", generateAudio)
 	c.Set("seedance_service_tier", strings.ToLower(strings.TrimSpace(serviceTier)))
-	c.Set("seedance_has_video_input", len(req.Videos) > 0)
+	c.Set("seedance_has_video_input", actualVideoCount > 0)
 
 	data, err := json.Marshal(body)
 	if err != nil {

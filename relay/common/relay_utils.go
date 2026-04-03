@@ -70,6 +70,11 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 		return createTaskError(err, "invalid_request", http.StatusBadRequest, true)
 	}
 
+	// 兼容单图上传（必须在多模态判断之前，否则 image 字段不会被纳入 Images）
+	if len(req.Images) == 0 && strings.TrimSpace(req.Image) != "" {
+		req.Images = []string{req.Image}
+	}
+
 	isViduMultiFrame := info.ChannelType == constant.ChannelTypeVidu &&
 		(req.Mode == "multiframe" || req.StartImage != "" || len(req.ImageSettings) > 0)
 
@@ -94,11 +99,6 @@ func ValidateBasicTaskRequest(c *gin.Context, info *RelayInfo, action string) *d
 		if taskErr := validatePrompt(req.Prompt); taskErr != nil {
 			return taskErr
 		}
-	}
-
-	if len(req.Images) == 0 && strings.TrimSpace(req.Image) != "" {
-		// 兼容单图上传
-		req.Images = []string{req.Image}
 	}
 
 	if isViduMultiFrame {
