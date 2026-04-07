@@ -216,10 +216,11 @@ func (a *TaskAdaptor) BuildRequestBody(c *gin.Context, _ *relaycommon.RelayInfo)
 		}
 	}
 
-	// Seedance 2.0 不支持 camera_fixed、draft
+	// Seedance 2.0 不支持 camera_fixed、draft、service_tier
 	if strings.Contains(req.Model, "seedance-2-0") {
 		delete(body, "camera_fixed")
 		delete(body, "draft")
+		delete(body, "service_tier")
 	}
 
 	// 计费阶段需要这些维度来选择单价
